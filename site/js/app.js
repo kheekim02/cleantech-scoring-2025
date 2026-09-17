@@ -219,24 +219,32 @@ CTO.App = {
       this.state.syncQueue = []; // Optimistically clear
       
       try {
-        // Simulated fetch with Authorization Header
-        console.log(`[Sync Worker] Dispatching ${batch.length} updates...`, batch);
+        const token = window.netlifyIdentity?.currentUser()?.token?.access_token;
+        if (!token) {
+           console.log("No token available, skipping sync.");
+           this.state.syncQueue.unshift(...batch);
+           return;
+        }
+
+        console.log(`[Sync Worker] Dispatching ${batch.length} updates...`);
         
-        /* 
         const res = await fetch('/.netlify/functions/sync-scores', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${window.netlifyIdentity?.currentUser()?.token?.access_token}`
+            'Authorization': `Bearer ${token}`
           },
-          body: JSON.stringify(batch)
+          body: JSON.stringify({
+            startup_id: 'solarpure_inc', // Connected to the mock/demo startup
+            scores: batch.map(b => ({ qid: b.qid, val: b.value }))
+          })
         });
 
         if (res.status === 401) {
           throw new Error("401_UNAUTHORIZED");
         }
         if (!res.ok) throw new Error("NETWORK_ERROR");
-        */
+
       } catch (error) {
         // Restore batch to queue to prevent data loss
         this.state.syncQueue.unshift(...batch);
@@ -245,15 +253,15 @@ CTO.App = {
            console.warn("JWT Expired. Suspending queue and requesting silent token refresh...");
            this.state.isRefreshingToken = true;
            
-           /*
-           window.netlifyIdentity.refresh().then((token) => {
-             console.log("Token refreshed silently. Resuming sync queue.");
-             this.state.isRefreshingToken = false;
-           }).catch(() => {
-             alert('Your session has expired. Please re-authenticate to save your latest scores.');
-             window.netlifyIdentity.open('login');
-           });
-           */
+           if (window.netlifyIdentity) {
+             window.netlifyIdentity.refresh().then((jwt) => {
+               console.log("Token refreshed silently. Resuming sync queue.");
+               this.state.isRefreshingToken = false;
+             }).catch(() => {
+               alert('Your session has expired. Please re-authenticate to save your latest scores.');
+               window.netlifyIdentity.open('login');
+             });
+           }
         }
       }
     }, 3000);

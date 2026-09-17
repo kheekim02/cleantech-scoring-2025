@@ -1,0 +1,27 @@
+{
+  "name": "startup_scorer",
+  "version": "1.0.0",
+  "description": "A data-driven diligence and triage engine for boutique investment bankers, corporate VCs, and accelerators.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kheekim02/cleantech-scoring-2025.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kheekim02/cleantech-scoring-2025/issues"
+  },
+  "homepage": "https://github.com/kheekim02/cleantech-scoring-2025#readme",
+  "dependencies": {
+    "pg": "^8.23.0"
+  }
+}
