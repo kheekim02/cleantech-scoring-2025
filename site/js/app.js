@@ -42,6 +42,8 @@ CTO.App = {
         document.getElementById('login-modal').style.display = 'none';
         this.startApp();
       } else {
+        const errData = await res.json();
+        document.getElementById('login-error').textContent = errData.error || 'Invalid credentials.';
         document.getElementById('login-error').style.display = 'block';
         btn.textContent = 'Authenticate';
       }
