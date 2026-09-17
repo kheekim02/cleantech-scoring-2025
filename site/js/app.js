@@ -15,7 +15,7 @@ CTO.App = {
     if (stored) {
       this.currentUser = JSON.parse(stored);
       document.getElementById('login-modal').style.display = 'none';
-      this.startApp();
+      this.loadStartupsList().then(() => this.startApp());
     } else {
       document.getElementById('login-modal').style.display = 'flex';
     }
@@ -40,7 +40,7 @@ CTO.App = {
         localStorage.setItem('cto_auth', JSON.stringify(authData));
         this.currentUser = authData;
         document.getElementById('login-modal').style.display = 'none';
-        this.startApp();
+        this.loadStartupsList().then(() => this.startApp());
       } else {
         const errData = await res.json();
         document.getElementById('login-error').textContent = errData.error || 'Invalid credentials.';
@@ -54,11 +54,41 @@ CTO.App = {
     }
   },
 
-  async startApp() {
+
+  async loadStartupsList() {
     try {
-      const res = await fetch('data/startups/solarpure.json');
+      const res = await fetch(`/.netlify/functions/list-startups?judge_id=${this.currentUser.id}&passcode=${this.currentUser.passcode}`);
+      if (res.ok) {
+        const startups = await res.json();
+        const picker = document.getElementById('startup-picker');
+        picker.innerHTML = startups.map(s => `<option value="${s.id}">${s.name}</option>`).join('');
+        picker.style.display = 'inline-block';
+        
+        // If the current activeStartupId is not in the list, default to first
+        if (!startups.find(s => s.id === this.state.activeStartupId) && startups.length > 0) {
+          this.state.activeStartupId = startups[0].id;
+        } else {
+          picker.value = this.state.activeStartupId;
+        }
+
+        picker.addEventListener('change', (e) => {
+          this.state.activeStartupId = e.target.value;
+          this.state.currentStepIndex = 0;
+          this.startApp();
+        });
+      }
+    } catch (e) {
+      console.error("Failed to load startups list", e);
+    }
+  },
+
+  async startApp() {
+
+    try {
+      const res = await fetch(`/.netlify/functions/get-startup?id=${this.state.activeStartupId}&judge_id=${this.currentUser.id}&passcode=${this.currentUser.passcode}`);
       const data = await res.json();
-      this.state.startups['solarpure'] = data;
+      this.state.startups[this.state.activeStartupId] = data;
+      document.getElementById('badge-name').textContent = data.meta?.name || this.state.activeStartupId;
     } catch (e) {
       console.error("Failed to load startup", e);
     }
@@ -254,7 +284,7 @@ CTO.App = {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            startup_id: 'solarpure_inc', // Connected to the mock/demo startup
+            startup_id: this.state.activeStartupId,
             judge_id: this.currentUser.id,
             passcode: this.currentUser.passcode,
             scores: batch.map(b => ({ qid: b.qid, val: b.value }))
