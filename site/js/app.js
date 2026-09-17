@@ -11,24 +11,25 @@ CTO.App = {
   },
 
   init() {
-    // 1. Enforce Authentication (Netlify Identity)
     if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.open(); // Force login
-        } else {
+      window.netlifyIdentity.init(); // Initialize widget
+      
+      const user = window.netlifyIdentity.currentUser();
+      if (!user) {
+        // Open modal if not logged in
+        window.netlifyIdentity.open('login');
+        
+        window.netlifyIdentity.on("login", user => {
           this.currentUser = user;
+          window.netlifyIdentity.close();
           this.startApp();
-        }
-      });
-      window.netlifyIdentity.on("login", user => {
+        });
+      } else {
         this.currentUser = user;
-        window.netlifyIdentity.close();
         this.startApp();
-      });
-      window.netlifyIdentity.init();
+      }
     } else {
-      // Fallback for local development
+      // Fallback
       this.startApp();
     }
   },
