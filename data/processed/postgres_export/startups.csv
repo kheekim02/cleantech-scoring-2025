@@ -1,0 +1,955 @@
+startup_id,company_name,cohort_year,founder,raw_data_dir,evaluation_status
+surge_hydro_2016,Surge Hydro,2016,0,/data/cleantech/data/raw/surge_hydro,DETERMINISTIC_MAPPED
+proper_pipe_inc_2016,Proper Pipe Inc.,2016,0,/data/cleantech/data/raw/proper_pipe_inc,DETERMINISTIC_MAPPED
+pv_pure_2016,PV PURE,2016,0,/data/cleantech/data/raw/pv_pure,DETERMINISTIC_MAPPED
+greenblu_2016,GreenBlu,2016,0,/data/cleantech/data/raw/greenblu,DETERMINISTIC_MAPPED
+kraftwerk_inc_2016,kraftwerk Inc.,2016,0,/data/cleantech/data/raw/kraftwerk_inc,DETERMINISTIC_MAPPED
+viva_green_homes_2016,Viva Green Homes,2016,0,/data/cleantech/data/raw/viva_green_homes,DETERMINISTIC_MAPPED
+nelumbo_2016,Nelumbo,2016,0,/data/cleantech/data/raw/nelumbo,DETERMINISTIC_MAPPED
+birmingham_technologies_2016,Birmingham Technologies,2016,0,/data/cleantech/data/raw/birmingham_technologies,DETERMINISTIC_MAPPED
+big_blue_technologies_2016,Big Blue Technologies,2016,0,/data/cleantech/data/raw/big_blue_technologies,DETERMINISTIC_MAPPED
+crystal_clear_technologies_2016,Crystal Clear Technologies,2016,0,/data/cleantech/data/raw/crystal_clear_technologies,DETERMINISTIC_MAPPED
+urbix_resources_2016,Urbix Resources,2016,0,/data/cleantech/data/raw/urbix_resources,DETERMINISTIC_MAPPED
+wavve_2016,WAVVE,2016,0,/data/cleantech/data/raw/wavve,DETERMINISTIC_MAPPED
+skyven_technologies_2016,Skyven Technologies,2016,0,/data/cleantech/data/raw/skyven_technologies,DETERMINISTIC_MAPPED
+re_module_2016,RE-MODULE,2016,0,/data/cleantech/data/raw/re_module,DETERMINISTIC_MAPPED
+teknapack_inc_2016,Teknapack Inc.,2016,0,/data/cleantech/data/raw/teknapack_inc,DETERMINISTIC_MAPPED
+qlean_tech_enterprises_llc_2016,"Qlean Tech Enterprises, LLC",2016,0,/data/cleantech/data/raw/qlean_tech_enterprises_llc,DETERMINISTIC_MAPPED
+touch_light_innovations_2016,Touch Light Innovations,2016,0,/data/cleantech/data/raw/touch_light_innovations,DETERMINISTIC_MAPPED
+powertech_water_2016,PowerTech Water,2016,0,/data/cleantech/data/raw/powertech_water,DETERMINISTIC_MAPPED
+nanomass_corp_2016,Nanomass Corp,2016,0,/data/cleantech/data/raw/nanomass_corp,DETERMINISTIC_MAPPED
+bamboo_science_group_2016,Bamboo Science Group,2016,0,/data/cleantech/data/raw/bamboo_science_group,DETERMINISTIC_MAPPED
+bioenergysp_2016,BioEnergySP,2016,0,/data/cleantech/data/raw/bioenergysp,DETERMINISTIC_MAPPED
+empower_equity_2016,Empower Equity,2016,0,/data/cleantech/data/raw/empower_equity,DETERMINISTIC_MAPPED
+ekostinger_inc_2016,"EkoStinger, Inc.",2016,0,/data/cleantech/data/raw/ekostinger_inc,DETERMINISTIC_MAPPED
+f_e_wood_natural_energy_2016,F.E. Wood Natural Energy,2016,0,/data/cleantech/data/raw/f_e_wood_natural_energy,DETERMINISTIC_MAPPED
+fbb_combustion_2016,FBB Combustion,2016,0,/data/cleantech/data/raw/fbb_combustion,DETERMINISTIC_MAPPED
+fcg_chemicals_2016,FCG Chemicals,2016,0,/data/cleantech/data/raw/fcg_chemicals,DETERMINISTIC_MAPPED
+helix_power_corporation_2016,Helix Power Corporation,2016,0,/data/cleantech/data/raw/helix_power_corporation,DETERMINISTIC_MAPPED
+microera_power_llc_2016,"MicroEra Power, LLC",2016,0,/data/cleantech/data/raw/microera_power_llc,DETERMINISTIC_MAPPED
+microrganic_technologies_2016,MICROrganic Technologies,2016,0,/data/cleantech/data/raw/microrganic_technologies,DETERMINISTIC_MAPPED
+poly6_technologies_2016,Poly6 Technologies,2016,0,/data/cleantech/data/raw/poly6_technologies,DETERMINISTIC_MAPPED
+sharenergy_2016,SHAREnergy,2016,0,/data/cleantech/data/raw/sharenergy,DETERMINISTIC_MAPPED
+sparkcharge_2016,SparkCharge,2016,0,/data/cleantech/data/raw/sparkcharge,DETERMINISTIC_MAPPED
+sparkplug_power_2016,Sparkplug Power,2016,0,/data/cleantech/data/raw/sparkplug_power,DETERMINISTIC_MAPPED
+sun_island_2016,SUN ISLAND,2016,0,/data/cleantech/data/raw/sun_island,DETERMINISTIC_MAPPED
+cleantech_methods_formely_se_i_2016,CleanTech Methods (formely SE I,2016,0,/data/cleantech/data/raw/cleantech_methods_formely_se_i,DETERMINISTIC_MAPPED
+wicked_science_i_o_2016,Wicked Science I/O,2016,0,/data/cleantech/data/raw/wicked_science_i_o,DETERMINISTIC_MAPPED
+enersave_2016,Enersave,2016,0,/data/cleantech/data/raw/enersave,DETERMINISTIC_MAPPED
+solarkal_2016,SolarKal,2016,0,/data/cleantech/data/raw/solarkal,DETERMINISTIC_MAPPED
+next_wave_motors_llc_2016,"Next Wave Motors, LLC",2016,0,/data/cleantech/data/raw/next_wave_motors_llc,DETERMINISTIC_MAPPED
+illucen_2016,Illucen,2016,0,/data/cleantech/data/raw/illucen,DETERMINISTIC_MAPPED
+bike_leap_2016,Bike Leap,2016,0,/data/cleantech/data/raw/bike_leap,DETERMINISTIC_MAPPED
+cisbay_2016,CISBAY.,2016,0,/data/cleantech/data/raw/cisbay,DETERMINISTIC_MAPPED
+biogenic_energy_inc_2016,"Biogenic Energy, Inc.",2016,0,/data/cleantech/data/raw/biogenic_energy_inc,DETERMINISTIC_MAPPED
+foris_io_inc_2016,foris.io inc,2016,0,/data/cleantech/data/raw/foris_io_inc,DETERMINISTIC_MAPPED
+howpower_2016,HowPower,2016,0,/data/cleantech/data/raw/howpower,DETERMINISTIC_MAPPED
+hydrocore_inc_2016,"Hydrocore, Inc.",2016,0,/data/cleantech/data/raw/hydrocore_inc,DETERMINISTIC_MAPPED
+micronoc_2016,MicroNOC,2016,0,/data/cleantech/data/raw/micronoc,DETERMINISTIC_MAPPED
+roshan_energy_2016,Roshan Energy,2016,0,/data/cleantech/data/raw/roshan_energy,DETERMINISTIC_MAPPED
+sidco_homes_2016,SIDCO Homes,2016,0,/data/cleantech/data/raw/sidco_homes,DETERMINISTIC_MAPPED
+solar_hydrogen_holdings_inc_2016,Solar Hydrogen Holdings Inc.,2016,0,/data/cleantech/data/raw/solar_hydrogen_holdings_inc,DETERMINISTIC_MAPPED
+solensphere_llc_2016,SolenSphere LLC,2016,0,/data/cleantech/data/raw/solensphere_llc,DETERMINISTIC_MAPPED
+sunswarm_community_solar_market_2016,Sunswarm Community Solar Market,2016,0,/data/cleantech/data/raw/sunswarm_community_solar_market,DETERMINISTIC_MAPPED
+utilityscore_2016,UtilityScore,2016,0,/data/cleantech/data/raw/utilityscore,DETERMINISTIC_MAPPED
+waterbit_inc_2016,"WaterBit, Inc.",2016,0,/data/cleantech/data/raw/waterbit_inc,DETERMINISTIC_MAPPED
+drop_on_solar_2016,Drop On Solar,2016,0,/data/cleantech/data/raw/drop_on_solar,DETERMINISTIC_MAPPED
+tinyfarms_2017,TinyFarms,2017,0,/data/cleantech/data/raw/tinyfarms,DETERMINISTIC_MAPPED
+ect_services_solutions_inc_2017,ECT Services & Solutions Inc.,2017,0,/data/cleantech/data/raw/ect_services_solutions_inc,DETERMINISTIC_MAPPED
+prosumergrid_inc_2017,"ProsumerGrid, Inc.",2017,0,/data/cleantech/data/raw/prosumergrid_inc,DETERMINISTIC_MAPPED
+carpoolworld_2017,CarpoolWorld,2017,0,/data/cleantech/data/raw/carpoolworld,DETERMINISTIC_MAPPED
+optimus_technologies_2017,Optimus Technologies,2017,0,/data/cleantech/data/raw/optimus_technologies,DETERMINISTIC_MAPPED
+aquafresco_inc_2017,AquaFresco Inc.,2017,0,/data/cleantech/data/raw/aquafresco_inc,DETERMINISTIC_MAPPED
+storen_technologies_inc_2017,StorEn Technologies Inc.,2017,0,/data/cleantech/data/raw/storen_technologies_inc,DETERMINISTIC_MAPPED
+resonant_energy_2017,Resonant Energy,2017,0,/data/cleantech/data/raw/resonant_energy,DETERMINISTIC_MAPPED
+renw_2017,RENW,2017,0,/data/cleantech/data/raw/renw,DETERMINISTIC_MAPPED
+proton_new_energy_future_inc_2017,"Proton New Energy Future, INC",2017,0,/data/cleantech/data/raw/proton_new_energy_future_inc,DETERMINISTIC_MAPPED
+poem_technology_llc_2017,"Poem Technology, LLC",2017,0,/data/cleantech/data/raw/poem_technology_llc,DETERMINISTIC_MAPPED
+pecos_wind_power_2017,Pecos Wind Power,2017,0,/data/cleantech/data/raw/pecos_wind_power,DETERMINISTIC_MAPPED
+palmos_2017,Palmos,2017,0,/data/cleantech/data/raw/palmos,DETERMINISTIC_MAPPED
+p2s_technologies_inc_2017,P2S Technologies Inc,2017,0,/data/cleantech/data/raw/p2s_technologies_inc,DETERMINISTIC_MAPPED
+mimic_systems_inc_2017,MIMiC Systems Inc.,2017,0,/data/cleantech/data/raw/mimic_systems_inc,DETERMINISTIC_MAPPED
+medley_thermal_2017,Medley Thermal,2017,0,/data/cleantech/data/raw/medley_thermal,DETERMINISTIC_MAPPED
+joro_2017,Joro,2017,0,/data/cleantech/data/raw/joro,DETERMINISTIC_MAPPED
+gaia_x_2017,Gaia X,2017,0,/data/cleantech/data/raw/gaia_x,DETERMINISTIC_MAPPED
+flipswitch_2017,Flipswitch,2017,0,/data/cleantech/data/raw/flipswitch,DETERMINISTIC_MAPPED
+electra_vehicles_inc_2017,"Electra Vehicles, Inc.",2017,0,/data/cleantech/data/raw/electra_vehicles_inc,DETERMINISTIC_MAPPED
+ecolectro_inc_2017,"Ecolectro, Inc.",2017,0,/data/cleantech/data/raw/ecolectro_inc,DETERMINISTIC_MAPPED
+coolcomposites_2017,CoolComposites,2017,0,/data/cleantech/data/raw/coolcomposites,DETERMINISTIC_MAPPED
+consilience_systems_2017,Consilience Systems,2017,0,/data/cleantech/data/raw/consilience_systems,DETERMINISTIC_MAPPED
+changewater_labs_2017,change:WATER Labs,2017,0,/data/cleantech/data/raw/changewater_labs,DETERMINISTIC_MAPPED
+brightcharge_2017,BrightCharge,2017,0,/data/cleantech/data/raw/brightcharge,DETERMINISTIC_MAPPED
+blue_institute_at_cape_cod_inc_2017,"Blue Institute at Cape Cod, Inc.",2017,0,/data/cleantech/data/raw/blue_institute_at_cape_cod_inc,DETERMINISTIC_MAPPED
+arrecife_energy_systems_2017,ARRECIFE ENERGY SYSTEMS,2017,0,/data/cleantech/data/raw/arrecife_energy_systems,DETERMINISTIC_MAPPED
+applied_biorefinery_sciences_l_2017,"Applied Biorefinery Sciences, L",2017,0,/data/cleantech/data/raw/applied_biorefinery_sciences_l,DETERMINISTIC_MAPPED
+allied_microbiota_2017,Allied Microbiota,2017,0,/data/cleantech/data/raw/allied_microbiota,DETERMINISTIC_MAPPED
+advanceh2o_2017,AdvanceH2O,2017,0,/data/cleantech/data/raw/advanceh2o,DETERMINISTIC_MAPPED
+adappt_intelligence_2017,Adappt Intelligence,2017,0,/data/cleantech/data/raw/adappt_intelligence,DETERMINISTIC_MAPPED
+human_lift_2017,Human Lift,2017,0,/data/cleantech/data/raw/human_lift,DETERMINISTIC_MAPPED
+atlas_energy_systems_llc_2017,"Atlas Energy Systems, LLC",2017,0,/data/cleantech/data/raw/atlas_energy_systems_llc,DETERMINISTIC_MAPPED
+amebagone_inc_2017,Amebagone Inc.,2017,0,/data/cleantech/data/raw/amebagone_inc,DETERMINISTIC_MAPPED
+sofis_taste_kineto_2017,Sofi's Taste Kineto,2017,0,/data/cleantech/data/raw/sofis_taste_kineto,DETERMINISTIC_MAPPED
+clearflame_engines_inc_2017,"ClearFlame Engines, Inc.",2017,0,/data/cleantech/data/raw/clearflame_engines_inc,DETERMINISTIC_MAPPED
+teqnizan_2017,Teqnizan,2017,0,/data/cleantech/data/raw/teqnizan,DETERMINISTIC_MAPPED
+accelerate_wind_2017,Accelerate Wind,2017,0,/data/cleantech/data/raw/accelerate_wind,DETERMINISTIC_MAPPED
+kronfeld_motors_2017,Kronfeld Motors,2017,0,/data/cleantech/data/raw/kronfeld_motors,DETERMINISTIC_MAPPED
+activated_research_company_2017,Activated Research Company,2017,0,/data/cleantech/data/raw/activated_research_company,DETERMINISTIC_MAPPED
+emergy_labs_2017,Emergy Labs,2017,0,/data/cleantech/data/raw/emergy_labs,DETERMINISTIC_MAPPED
+the_mackinac_technology_company_2017,The Mackinac Technology Company,2017,0,/data/cleantech/data/raw/the_mackinac_technology_company,DETERMINISTIC_MAPPED
+rwedi_solutions_inc_2017,"RWEDI Solutions, Inc.",2017,0,/data/cleantech/data/raw/rwedi_solutions_inc,DETERMINISTIC_MAPPED
+switched_source_2017,Switched Source,2017,0,/data/cleantech/data/raw/switched_source,DETERMINISTIC_MAPPED
+elinor_specialty_coatings_2017,Elinor Specialty Coatings,2017,0,/data/cleantech/data/raw/elinor_specialty_coatings,DETERMINISTIC_MAPPED
+reinvia_2017,reinvia,2017,0,/data/cleantech/data/raw/reinvia,DETERMINISTIC_MAPPED
+fgc_plasma_solutions_2017,FGC Plasma Solutions,2017,0,/data/cleantech/data/raw/fgc_plasma_solutions,DETERMINISTIC_MAPPED
+plasma_stream_technologies_inc_2017,Plasma Stream Technologies Inc,2017,0,/data/cleantech/data/raw/plasma_stream_technologies_inc,DETERMINISTIC_MAPPED
+shero_llp_2017,SHERO LLP,2017,0,/data/cleantech/data/raw/shero_llp,DETERMINISTIC_MAPPED
+inergy_solar_2017,INERGY SOLAR,2017,0,/data/cleantech/data/raw/inergy_solar,DETERMINISTIC_MAPPED
+yotta_solar_2017,Yotta Solar,2017,0,/data/cleantech/data/raw/yotta_solar,DETERMINISTIC_MAPPED
+xyber_technologies_2017,Xyber Technologies,2017,0,/data/cleantech/data/raw/xyber_technologies,DETERMINISTIC_MAPPED
+shower_stream_2017,Shower Stream,2017,0,/data/cleantech/data/raw/shower_stream,DETERMINISTIC_MAPPED
+inovues_2017,Inovues,2017,0,/data/cleantech/data/raw/inovues,DETERMINISTIC_MAPPED
+tx2o_2017,TX2O,2017,0,/data/cleantech/data/raw/tx2o,DETERMINISTIC_MAPPED
+katz_water_technologies_2017,Katz Water Technologies,2017,0,/data/cleantech/data/raw/katz_water_technologies,DETERMINISTIC_MAPPED
+nova_gas_solutions_2017,Nova Gas Solutions,2017,0,/data/cleantech/data/raw/nova_gas_solutions,DETERMINISTIC_MAPPED
+terra_ferma_2017,Terra Ferma,2017,0,/data/cleantech/data/raw/terra_ferma,DETERMINISTIC_MAPPED
+sunlytix_2017,Sunlytix,2017,0,/data/cleantech/data/raw/sunlytix,DETERMINISTIC_MAPPED
+renewwest_2017,RenewWest,2017,0,/data/cleantech/data/raw/renewwest,DETERMINISTIC_MAPPED
+hyperion_energy_2017,Hyperion Energy,2017,0,/data/cleantech/data/raw/hyperion_energy,DETERMINISTIC_MAPPED
+5th_element_energy_services_llc_2017,5th Element Energy Services LLC,2017,0,/data/cleantech/data/raw/5th_element_energy_services_llc,DETERMINISTIC_MAPPED
+opcondys_inc_2017,"Opcondys, Inc.",2017,0,/data/cleantech/data/raw/opcondys_inc,DETERMINISTIC_MAPPED
+general_engineering_research_2017,General Engineering & Research,2017,0,/data/cleantech/data/raw/general_engineering_research,DETERMINISTIC_MAPPED
+lilac_solutions_inc_2017,"Lilac Solutions, Inc.",2017,0,/data/cleantech/data/raw/lilac_solutions_inc,DETERMINISTIC_MAPPED
+novasolix_inc_2017,"NovaSolix, Inc",2017,0,/data/cleantech/data/raw/novasolix_inc,DETERMINISTIC_MAPPED
+climate_solutions_net_2017,Climate Solutions Net,2017,0,/data/cleantech/data/raw/climate_solutions_net,DETERMINISTIC_MAPPED
+secco2_engines_2017,SECCO2 Engines,2017,0,/data/cleantech/data/raw/secco2_engines,DETERMINISTIC_MAPPED
+carbon_quest_2017,Carbon Quest,2017,0,/data/cleantech/data/raw/carbon_quest,DETERMINISTIC_MAPPED
+whisper_energy_systems_inc_2017,"Whisper Energy Systems, Inc.",2017,0,/data/cleantech/data/raw/whisper_energy_systems_inc,DETERMINISTIC_MAPPED
+clean_terawatts_2017,Clean Terawatts,2017,0,/data/cleantech/data/raw/clean_terawatts,DETERMINISTIC_MAPPED
+cyclescp_inc_2017,"CycleSCP, Inc.",2017,0,/data/cleantech/data/raw/cyclescp_inc,DETERMINISTIC_MAPPED
+hyper_chute_systems_llc_2017,"Hyper-Chute Systems, LLC",2017,0,/data/cleantech/data/raw/hyper_chute_systems_llc,DETERMINISTIC_MAPPED
+operant_solar_2017,Operant Solar,2017,0,/data/cleantech/data/raw/operant_solar,DETERMINISTIC_MAPPED
+prandtl_2017,Prandtl,2017,0,/data/cleantech/data/raw/prandtl,DETERMINISTIC_MAPPED
+meyers_ev_2017,Meyers EV,2017,0,/data/cleantech/data/raw/meyers_ev,DETERMINISTIC_MAPPED
+carbonblu_2017,carbonBLU,2017,0,/data/cleantech/data/raw/carbonblu,DETERMINISTIC_MAPPED
+advanced_paving_technologies_in_2017,Advanced Paving Technologies In,2017,0,/data/cleantech/data/raw/advanced_paving_technologies_in,DETERMINISTIC_MAPPED
+tenkiv_2017,Tenkiv,2017,0,/data/cleantech/data/raw/tenkiv,DETERMINISTIC_MAPPED
+3rd_gen_renewables_2018,3rd Gen Renewables,2018,Denise Hewes,/data/cleantech/data/raw/3rd_gen_renewables,DETERMINISTIC_MAPPED
+altervia_2018,AlterVia,2018,Husnain Sarwar,/data/cleantech/data/raw/altervia,DETERMINISTIC_MAPPED
+angel_city_lumber_2018,Angel City Lumber,2018,Charles DeRosa,/data/cleantech/data/raw/angel_city_lumber,DETERMINISTIC_MAPPED
+apeiron_technology_2018,Apeiron Technology,2018,Han Cai,/data/cleantech/data/raw/apeiron_technology,DETERMINISTIC_MAPPED
+aqua_free_waterless_car_wash_tu_2018,Aqua-Free Waterless Car Wash Tu,2018,0,/data/cleantech/data/raw/aqua_free_waterless_car_wash_tu,DETERMINISTIC_MAPPED
+arctica_solar_2018,Arctica Solar,2018,Adam Plesniak,/data/cleantech/data/raw/arctica_solar,DETERMINISTIC_MAPPED
+astrolabe_analytics_2018,Astrolabe Analytics,2018,Robert Masse,/data/cleantech/data/raw/astrolabe_analytics,DETERMINISTIC_MAPPED
+biopower_enterprises_2018,BioPower Enterprises,2018,Jacqueline Jones,/data/cleantech/data/raw/biopower_enterprises,DETERMINISTIC_MAPPED
+carbon_analytics_2018,Carbon Analytics,2018,Michael Thornton,/data/cleantech/data/raw/carbon_analytics,DETERMINISTIC_MAPPED
+correlate_2018,Correlate,2018,Benjamin Peters,/data/cleantech/data/raw/correlate,DETERMINISTIC_MAPPED
+enerdapt_inc_2018,"EnerDapt, Inc",2018,Zachary Denning,/data/cleantech/data/raw/enerdapt_inc,DETERMINISTIC_MAPPED
+everflux_technologies_2018,Everflux Technologies,2018,Daniel Enking,/data/cleantech/data/raw/everflux_technologies,DETERMINISTIC_MAPPED
+fluency_lighting_technologies_2018,Fluency Lighting Technologies,2018,Kristin Denault,/data/cleantech/data/raw/fluency_lighting_technologies,DETERMINISTIC_MAPPED
+glint_photonics_2018,Glint Photonics,2018,Peter Kozodoy,/data/cleantech/data/raw/glint_photonics,DETERMINISTIC_MAPPED
+hydrobee_2018,Hydrobee,2018,Burt Hammer,/data/cleantech/data/raw/hydrobee,DETERMINISTIC_MAPPED
+intertie_2018,Intertie,2018,Richard Mrlik,/data/cleantech/data/raw/intertie,DETERMINISTIC_MAPPED
+kilowatt_killer_2018,Kilowatt Killer,2018,Antonio Aquino,/data/cleantech/data/raw/kilowatt_killer,DETERMINISTIC_MAPPED
+lucent_optics_2018,Lucent Optics,2018,Sergey Vasylyev,/data/cleantech/data/raw/lucent_optics,DETERMINISTIC_MAPPED
+maxout_renewables_2018,Maxout Renewables,2018,Eric Cummings,/data/cleantech/data/raw/maxout_renewables,DETERMINISTIC_MAPPED
+mmcisolar_2018,MMCISolar,2018,Mark Miles,/data/cleantech/data/raw/mmcisolar,DETERMINISTIC_MAPPED
+msbai_2018,Msbai,2018,Allan Grosvenor,/data/cleantech/data/raw/msbai,DETERMINISTIC_MAPPED
+nativus_2018,Nativus,2018,Dan Poirier,/data/cleantech/data/raw/nativus,DETERMINISTIC_MAPPED
+opus_12_inc_2018,"Opus 12, Inc.",2018,Nicholas Flanders,/data/cleantech/data/raw/opus_12_inc,DETERMINISTIC_MAPPED
+people_power_solar_cooperative_2018,People Power Solar Cooperative,2018,Subin DeVar,/data/cleantech/data/raw/people_power_solar_cooperative,DETERMINISTIC_MAPPED
+positive_energy_community_2018,Positive Energy Community,2018,Yue Wang,/data/cleantech/data/raw/positive_energy_community,DETERMINISTIC_MAPPED
+prime_lightworks_inc_2018,Prime Lightworks Inc.,2018,Kyle Flanagan,/data/cleantech/data/raw/prime_lightworks_inc,DETERMINISTIC_MAPPED
+ride_svp_2018,Ride SVP,2018,Pierre Emmanuel Baud,/data/cleantech/data/raw/ride_svp,DETERMINISTIC_MAPPED
+rna_innovations_2018,RNA Innovations,2018,Amy Tandon,/data/cleantech/data/raw/rna_innovations,DETERMINISTIC_MAPPED
+sepion_technologies_2018,Sepion Technologies,2018,Kira Gardner,/data/cleantech/data/raw/sepion_technologies,DETERMINISTIC_MAPPED
+south_8_technologies_2018,South 8 Technologies,2018,Jungwoo Lee,/data/cleantech/data/raw/south_8_technologies,DETERMINISTIC_MAPPED
+spread_energy_2018,Spread.Energy,2018,Yue Wang,/data/cleantech/data/raw/spread_energy,DETERMINISTIC_MAPPED
+storagy_2018,Storagy,2018,Colin Danahy,/data/cleantech/data/raw/storagy,DETERMINISTIC_MAPPED
+sunswarm_solar_2018,Sunswarm Solar,2018,Aaron Clay,/data/cleantech/data/raw/sunswarm_solar,DETERMINISTIC_MAPPED
+vega_energy_systems_2018,Vega Energy Systems,2018,Terrence Unger,/data/cleantech/data/raw/vega_energy_systems,DETERMINISTIC_MAPPED
+wildnote_2018,Wildnote,2018,Brandon Jones,/data/cleantech/data/raw/wildnote,DETERMINISTIC_MAPPED
+yousolar_2018,YouSolar,2018,Arnold Leitner,/data/cleantech/data/raw/yousolar,DETERMINISTIC_MAPPED
+zevway_2018,Zevway,2018,Jerry Joslyn,/data/cleantech/data/raw/zevway,DETERMINISTIC_MAPPED
+the_solar_payoff_llc_2018,The Solar Payoff LLC,2018,Curtis Dowds,/data/cleantech/data/raw/the_solar_payoff_llc,DETERMINISTIC_MAPPED
+t2m_global_2018,T2M Global,2018,Pinakin Patel,/data/cleantech/data/raw/t2m_global,DETERMINISTIC_MAPPED
+spark_box_2018,Spark Box,2018,Marty Wolf,/data/cleantech/data/raw/spark_box,DETERMINISTIC_MAPPED
+hi_z_technology_inc_2018,Hi-Z Technology Inc,2018,Jill Elsner,/data/cleantech/data/raw/hi_z_technology_inc,DETERMINISTIC_MAPPED
+hapi_water_solutions_2018,HAPI Water Solutions,2018,Valantyn Koziak,/data/cleantech/data/raw/hapi_water_solutions,DETERMINISTIC_MAPPED
+halo_industries_inc_2018,Halo Industries Inc,2018,Andrei Iancu,/data/cleantech/data/raw/halo_industries_inc,DETERMINISTIC_MAPPED
+from_wild_surfaces_2018,From Wild Surfaces,2018,Ilya Danilov,/data/cleantech/data/raw/from_wild_surfaces,DETERMINISTIC_MAPPED
+freedom_motors_2018,Freedom Motors,2018,David Sastry,/data/cleantech/data/raw/freedom_motors,DETERMINISTIC_MAPPED
+ecotel_2018,Ecotel,2018,John Ko,/data/cleantech/data/raw/ecotel,DETERMINISTIC_MAPPED
+tendocean_2018,TendOcean,2018,Domenic Manganelli,/data/cleantech/data/raw/tendocean,DETERMINISTIC_MAPPED
+sulis_2018,Sulis,2018,Sarah Pomeranz,/data/cleantech/data/raw/sulis,DETERMINISTIC_MAPPED
+codecycle_llc_2018,CodeCycle LLC,2018,Kimberly Goodrich,/data/cleantech/data/raw/codecycle_llc,DETERMINISTIC_MAPPED
+chargeme_2018,ChargeMe,2018,Jonathan Rios,/data/cleantech/data/raw/chargeme,DETERMINISTIC_MAPPED
+lotuswrf_2018,LotusWRF,2018,Tony Koop,/data/cleantech/data/raw/lotuswrf,DETERMINISTIC_MAPPED
+terracoh_inc_2018,TerraCOH Inc.,2018,John Griffin,/data/cleantech/data/raw/terracoh_inc,DETERMINISTIC_MAPPED
+woorides_2018,WooRides,2018,Shahbaz Soofi,/data/cleantech/data/raw/woorides,DETERMINISTIC_MAPPED
+weavair_2018,WeavAir,2018,Natalia Mykhaylova,/data/cleantech/data/raw/weavair,DETERMINISTIC_MAPPED
+water_solution_strategies_2018,Water Solution Strategies,2018,Bret Noecker,/data/cleantech/data/raw/water_solution_strategies,DETERMINISTIC_MAPPED
+vorticity_2018,Vorticity,2018,Tim Victor,/data/cleantech/data/raw/vorticity,DETERMINISTIC_MAPPED
+volta_reserve_power_llc_2018,"VOLTA Reserve Power, LLC",2018,Preston Bloss,/data/cleantech/data/raw/volta_reserve_power_llc,DETERMINISTIC_MAPPED
+uficient_2018,Uficient,2018,Matthew Conway,/data/cleantech/data/raw/uficient,DETERMINISTIC_MAPPED
+triocup_2018,Triocup,2018,Tom Chan,/data/cleantech/data/raw/triocup,DETERMINISTIC_MAPPED
+techstyle_materials_2018,TechStyle Materials,2018,Derek Stein,/data/cleantech/data/raw/techstyle_materials,DETERMINISTIC_MAPPED
+social_solar_2018,Social Solar,2018,Donna Sanders,/data/cleantech/data/raw/social_solar,DETERMINISTIC_MAPPED
+shockwave_motors_inc_2018,"Shockwave Motors, Inc.",2018,John McMillian,/data/cleantech/data/raw/shockwave_motors_inc,DETERMINISTIC_MAPPED
+shared_energy_resources_2018,SHared Energy ResourceS,2018,Kunal Mehta,/data/cleantech/data/raw/shared_energy_resources,DETERMINISTIC_MAPPED
+sensible_spreader_technologies_2018,Sensible Spreader Technologies,2018,Andrew Jaccoma,/data/cleantech/data/raw/sensible_spreader_technologies,DETERMINISTIC_MAPPED
+sdmanaged_2018,SDManaged,2018,Daniel Burillo,/data/cleantech/data/raw/sdmanaged,DETERMINISTIC_MAPPED
+sanos_nutrition_llc_2018,Sanos Nutrition LLC,2018,Manuel Santana,/data/cleantech/data/raw/sanos_nutrition_llc,DETERMINISTIC_MAPPED
+saitec_offshore_technologies_2018,Saitec Offshore Technologies,2018,Luis Gonz√°lez-Pinto,/data/cleantech/data/raw/saitec_offshore_technologies,DETERMINISTIC_MAPPED
+sabz_house_2018,Sabz House,2018,Ehsan Reihani,/data/cleantech/data/raw/sabz_house,DETERMINISTIC_MAPPED
+remooble_2018,Remooble,2018,Bart Engendahl,/data/cleantech/data/raw/remooble,DETERMINISTIC_MAPPED
+radical_plastics_2018,Radical Plastics,2018,Yelena Kann,/data/cleantech/data/raw/radical_plastics,DETERMINISTIC_MAPPED
+pyran_2018,Pyran,2018,Kevin Barnett,/data/cleantech/data/raw/pyran,DETERMINISTIC_MAPPED
+phytos_therapeutics_2018,Phytos Therapeutics,2018,Ryan Landis,/data/cleantech/data/raw/phytos_therapeutics,DETERMINISTIC_MAPPED
+name_pending_2018,Name Pending,2018,Jacqueline Gilyard Jones,/data/cleantech/data/raw/name_pending,DETERMINISTIC_MAPPED
+oystertracker_2018,OysterTracker,2018,Catherine Ganim,/data/cleantech/data/raw/oystertracker,DETERMINISTIC_MAPPED
+orun_ododo_power_company_ltd_2018,Orun Ododo Power Company Ltd.,2018,Emmanuel Ajani,/data/cleantech/data/raw/orun_ododo_power_company_ltd,DETERMINISTIC_MAPPED
+onvector_2018,Onvector,2018,Joe Henderson,/data/cleantech/data/raw/onvector,DETERMINISTIC_MAPPED
+obaggo_recycling_llc_2018,"Obaggo Recycling, LLC",2018,David New,/data/cleantech/data/raw/obaggo_recycling_llc,DETERMINISTIC_MAPPED
+oak_square_energy_2018,Oak Square Energy,2018,John Typadis,/data/cleantech/data/raw/oak_square_energy,DETERMINISTIC_MAPPED
+neuralnet_inc_2018,"NeuralNet, Inc.",2018,Martin Arellano,/data/cleantech/data/raw/neuralnet_inc,DETERMINISTIC_MAPPED
+muvin_enterprise_2018,MUVIN Enterprise,2018,Jeffrey Lee,/data/cleantech/data/raw/muvin_enterprise,DETERMINISTIC_MAPPED
+municab_2018,MuniCab,2018,Pete Helvey,/data/cleantech/data/raw/municab,DETERMINISTIC_MAPPED
+microsurgeonbot_inc_2018,microsurgeonbot Inc.,2018,Allan Grosvenor,/data/cleantech/data/raw/microsurgeonbot_inc,DETERMINISTIC_MAPPED
+meib2_carbon_capture_2018,MEIB2 Carbon Capture,2018,Michael Sheidaei,/data/cleantech/data/raw/meib2_carbon_capture,DETERMINISTIC_MAPPED
+makoto_us_2018,MAKOTO US,2018,Scott Englander,/data/cleantech/data/raw/makoto_us,DETERMINISTIC_MAPPED
+majik_water_2018,Majik Water,2018,Anastasia Kaschenko,/data/cleantech/data/raw/majik_water,DETERMINISTIC_MAPPED
+magnomer_2018,Magnomer,2018,Ravish Majithia,/data/cleantech/data/raw/magnomer,DETERMINISTIC_MAPPED
+lithio_storage_2018,Lithio Storage,2018,Anthony DAngelo,/data/cleantech/data/raw/lithio_storage,DETERMINISTIC_MAPPED
+kosmik_energy_inc_2018,Kosmik Energy Inc.,2018,Ricardo Ramirez,/data/cleantech/data/raw/kosmik_energy_inc,DETERMINISTIC_MAPPED
+insanerator_2018,Insanerator,2018,Hannah Hoffmann,/data/cleantech/data/raw/insanerator,DETERMINISTIC_MAPPED
+hygge_power_2018,Hygge Power,2018,Caleb Scalf,/data/cleantech/data/raw/hygge_power,DETERMINISTIC_MAPPED
+hyperborean_llc_2018,"HyperBorean, LLC",2018,Todd Gentry,/data/cleantech/data/raw/hyperborean_llc,DETERMINISTIC_MAPPED
+heliotrope_energy_2018,Heliotrope Energy,2018,Edward Williams,/data/cleantech/data/raw/heliotrope_energy,DETERMINISTIC_MAPPED
+heat_inverse_llc_2018,"Heat Inverse, LLC",2018,Romy Fain,/data/cleantech/data/raw/heat_inverse_llc,DETERMINISTIC_MAPPED
+h2optimize_2018,H2Optimize,2018,Jim Brotherton,/data/cleantech/data/raw/h2optimize,DETERMINISTIC_MAPPED
+haystack_2018,Haystack,2018,Guillaume Defrance de Tersant,/data/cleantech/data/raw/haystack,DETERMINISTIC_MAPPED
+guardion_inc_2018,"Guardion, Inc",2018,Nikin Tharan,/data/cleantech/data/raw/guardion_inc,DETERMINISTIC_MAPPED
+gridspan_energy_2018,Gridspan Energy,2018,Alec Macklis,/data/cleantech/data/raw/gridspan_energy,DETERMINISTIC_MAPPED
+greenpath_energy_solutions_2018,GreenPath Energy Solutions,2018,Samuel Graham,/data/cleantech/data/raw/greenpath_energy_solutions,DETERMINISTIC_MAPPED
+greenchoice_pbc_2018,"GreenChoice, PBC",2018,Galen Karlan Mason,/data/cleantech/data/raw/greenchoice_pbc,DETERMINISTIC_MAPPED
+greater_good_solar_2018,Greater Good Solar,2018,Hannah Beinecke,/data/cleantech/data/raw/greater_good_solar,DETERMINISTIC_MAPPED
+ftorion_inc_2018,Ftorion Inc.,2018,Yuriy Tolmachev,/data/cleantech/data/raw/ftorion_inc,DETERMINISTIC_MAPPED
+footprint_gbc_2018,Footprint GBC,2018,William Heegaard,/data/cleantech/data/raw/footprint_gbc,DETERMINISTIC_MAPPED
+foodspace_2018,foodspace,2018,Ayo Oshinaike,/data/cleantech/data/raw/foodspace,DETERMINISTIC_MAPPED
+fitware_llc_2018,"Fitware, LLC",2018,Marjorie Weir,/data/cleantech/data/raw/fitware_llc,DETERMINISTIC_MAPPED
+entric_analysis_2018,Entric Analysis,2018,Scott Uzzle,/data/cleantech/data/raw/entric_analysis,DETERMINISTIC_MAPPED
+electrona_robotics_2018,Electrona Robotics,2018,Matt Scheuer,/data/cleantech/data/raw/electrona_robotics,DETERMINISTIC_MAPPED
+e_green_llc_2018,E-Green LLC,2018,chia ming chen,/data/cleantech/data/raw/e_green_llc,DETERMINISTIC_MAPPED
+dimensional_energy_2018,Dimensional Energy,2018,jason salfi,/data/cleantech/data/raw/dimensional_energy,DETERMINISTIC_MAPPED
+dig_y_sol_llc_2018,"Dig.y.SoL, LLC",2018,Tom Freund,/data/cleantech/data/raw/dig_y_sol_llc,DETERMINISTIC_MAPPED
+diaper_junkie_2018,Diaper Junkie,2018,Euan Mowat,/data/cleantech/data/raw/diaper_junkie,DETERMINISTIC_MAPPED
+cleanvester_2018,Cleanvester,2018,Seif Benelhani,/data/cleantech/data/raw/cleanvester,DETERMINISTIC_MAPPED
+cardinal_2018,Cardinal,2018,Daniel Kelly,/data/cleantech/data/raw/cardinal,DETERMINISTIC_MAPPED
+carbonsul_2018,CarbonSul,2018,Bill Irvine,/data/cleantech/data/raw/carbonsul,DETERMINISTIC_MAPPED
+capro_x_2018,Capro-X,2018,Juan Guzman,/data/cleantech/data/raw/capro_x,DETERMINISTIC_MAPPED
+cadeion_2018,CaDeIon,2018,Yudhisthira Sahoo,/data/cleantech/data/raw/cadeion,DETERMINISTIC_MAPPED
+bt_solar_hydrogen_energy_2018,BT Solar-Hydrogen Energy,2018,Bernie Barrow,/data/cleantech/data/raw/bt_solar_hydrogen_energy,DETERMINISTIC_MAPPED
+brimes_energy_2018,Brimes Energy,2018,Masoud Masoumi,/data/cleantech/data/raw/brimes_energy,DETERMINISTIC_MAPPED
+biological_energy_2018,Biological Energy,2018,Adrian Cosma,/data/cleantech/data/raw/biological_energy,DETERMINISTIC_MAPPED
+atlas_power_systems_2018,Atlas Power Systems,2018,Claude Reynald Christian Lecorps,/data/cleantech/data/raw/atlas_power_systems,DETERMINISTIC_MAPPED
+aquova_inc_2018,Aquova Inc.,2018,Conrad Hopp,/data/cleantech/data/raw/aquova_inc,DETERMINISTIC_MAPPED
+aquaring_energy_2018,AquaRing Energy,2018,Philip Swan,/data/cleantech/data/raw/aquaring_energy,DETERMINISTIC_MAPPED
+aquagen_infrastructure_systems_2018,"Aquagen Infrastructure Systems,",2018,0,/data/cleantech/data/raw/aquagen_infrastructure_systems,DETERMINISTIC_MAPPED
+aquadynamics_2018,AquaDynamics,2018,E. Andrew Condon,/data/cleantech/data/raw/aquadynamics,DETERMINISTIC_MAPPED
+aquabytes_2018,Aquabytes,2018,Joshua Gyllinsky,/data/cleantech/data/raw/aquabytes,DETERMINISTIC_MAPPED
+aestus_inc_2018,Aestus Inc.,2018,Franz Bronnimann,/data/cleantech/data/raw/aestus_inc,DETERMINISTIC_MAPPED
+aircrew_technologies_inc_2018,"AirCrew Technologies, Inc.",2018,Sissi Liu,/data/cleantech/data/raw/aircrew_technologies_inc,DETERMINISTIC_MAPPED
+aelios_technology_2018,Aelios Technology,2018,Sourav Patel,/data/cleantech/data/raw/aelios_technology,DETERMINISTIC_MAPPED
+acoustic_diagnostic_systems_2018,Acoustic Diagnostic Systems,2018,Sebastien Mannai,/data/cleantech/data/raw/acoustic_diagnostic_systems,DETERMINISTIC_MAPPED
+aclarity_2018,Aclarity,2018,Julie Bliss Mullen,/data/cleantech/data/raw/aclarity,DETERMINISTIC_MAPPED
+14bis_supply_tracking_2018,14bis Supply Tracking,2018,Eleanor Mitch,/data/cleantech/data/raw/14bis_supply_tracking,DETERMINISTIC_MAPPED
+asoleyo_architectural_solar_2020,Asoleyo Architectural Solar,2020,0,/data/cleantech/data/raw/asoleyo_architectural_solar,DETERMINISTIC_MAPPED
+land_maverick_llc_2020,Land Maverick LLC,2020,0,/data/cleantech/data/raw/land_maverick_llc,DETERMINISTIC_MAPPED
+human_dynamics_2020,Human Dynamics,2020,0,/data/cleantech/data/raw/human_dynamics,DETERMINISTIC_MAPPED
+umlauf_2020,Umlauf,2020,0,/data/cleantech/data/raw/umlauf,DETERMINISTIC_MAPPED
+envault_2020,EnVault,2020,0,/data/cleantech/data/raw/envault,DETERMINISTIC_MAPPED
+lutech_2020,LuTech,2020,0,/data/cleantech/data/raw/lutech,DETERMINISTIC_MAPPED
+solo_solar_2020,Solo Solar,2020,0,/data/cleantech/data/raw/solo_solar,DETERMINISTIC_MAPPED
+microbubbles_llc_2020,Microbubbles LLC,2020,0,/data/cleantech/data/raw/microbubbles_llc,DETERMINISTIC_MAPPED
+fourth_wave_energy_2020,Fourth Wave Energy,2020,0,/data/cleantech/data/raw/fourth_wave_energy,DETERMINISTIC_MAPPED
+adc_technologies_inc_2020,ADC Technologies Inc.,2020,0,/data/cleantech/data/raw/adc_technologies_inc,DETERMINISTIC_MAPPED
+aeros_environmental_llc_2020,Aeros Environmental LLC,2020,0,/data/cleantech/data/raw/aeros_environmental_llc,DETERMINISTIC_MAPPED
+alchemr_2020,Alchemr,2020,0,/data/cleantech/data/raw/alchemr,DETERMINISTIC_MAPPED
+andluca_technologies_2020,Andluca Technologies,2020,0,/data/cleantech/data/raw/andluca_technologies,DETERMINISTIC_MAPPED
+atrevida_science_llc_2020,Atrevida Science LLC,2020,0,/data/cleantech/data/raw/atrevida_science_llc,DETERMINISTIC_MAPPED
+baselinees_llc_2020,"BaselineES, LLC",2020,0,/data/cleantech/data/raw/baselinees_llc,DETERMINISTIC_MAPPED
+boston_agritech_2020,Boston Agritech,2020,0,/data/cleantech/data/raw/boston_agritech,DETERMINISTIC_MAPPED
+bright_building_llc_2020,Bright Building LLC,2020,0,/data/cleantech/data/raw/bright_building_llc,DETERMINISTIC_MAPPED
+centsible_house_inc_2020,"Centsible House, Inc",2020,0,/data/cleantech/data/raw/centsible_house_inc,DETERMINISTIC_MAPPED
+clip_2020,CLIP,2020,0,/data/cleantech/data/raw/clip,DETERMINISTIC_MAPPED
+co2storage_2020,CO2Storage,2020,0,/data/cleantech/data/raw/co2storage,DETERMINISTIC_MAPPED
+cogenerate_solar_2020,Cogenerate Solar,2020,0,/data/cleantech/data/raw/cogenerate_solar,DETERMINISTIC_MAPPED
+corepower_magnetics_2020,CorePower Magnetics,2020,0,/data/cleantech/data/raw/corepower_magnetics,DETERMINISTIC_MAPPED
+eaigle_2020,EAIGLE,2020,0,/data/cleantech/data/raw/eaigle,DETERMINISTIC_MAPPED
+elateq_inc_2020,Elateq Inc,2020,0,/data/cleantech/data/raw/elateq_inc,DETERMINISTIC_MAPPED
+emulate_energy_2020,Emulate Energy,2020,0,/data/cleantech/data/raw/emulate_energy,DETERMINISTIC_MAPPED
+extergy_2020,Extergy,2020,0,/data/cleantech/data/raw/extergy,DETERMINISTIC_MAPPED
+farm_to_flame_energy_2020,Farm to Flame Energy,2020,0,/data/cleantech/data/raw/farm_to_flame_energy,DETERMINISTIC_MAPPED
+foothill_fuels_2020,Foothill Fuels,2020,0,/data/cleantech/data/raw/foothill_fuels,DETERMINISTIC_MAPPED
+greenovation_2020,Greenovation,2020,0,/data/cleantech/data/raw/greenovation,DETERMINISTIC_MAPPED
+full_circle_microbes_inc_2020,Full Circle Microbes Inc,2020,0,/data/cleantech/data/raw/full_circle_microbes_inc,DETERMINISTIC_MAPPED
+growflux_inc_2020,"GrowFlux, Inc",2020,0,/data/cleantech/data/raw/growflux_inc,DETERMINISTIC_MAPPED
+growsquares_2020,GrowSquares,2020,0,/data/cleantech/data/raw/growsquares,DETERMINISTIC_MAPPED
+grubterra_2020,GrubTerra,2020,0,/data/cleantech/data/raw/grubterra,DETERMINISTIC_MAPPED
+gsr_solutions_2020,GSR Solutions,2020,0,/data/cleantech/data/raw/gsr_solutions,DETERMINISTIC_MAPPED
+harmony_desal_2020,Harmony Desal,2020,0,/data/cleantech/data/raw/harmony_desal,DETERMINISTIC_MAPPED
+hidden_gems_bevarage_company_2020,Hidden Gems Bevarage Company,2020,0,/data/cleantech/data/raw/hidden_gems_bevarage_company,DETERMINISTIC_MAPPED
+infinite_hydrogen_inc_2020,Infinite Hydrogen Inc,2020,0,/data/cleantech/data/raw/infinite_hydrogen_inc,DETERMINISTIC_MAPPED
+loadai_2020,LoadAI,2020,0,/data/cleantech/data/raw/loadai,DETERMINISTIC_MAPPED
+manifold_robotics_2020,Manifold Robotics,2020,0,/data/cleantech/data/raw/manifold_robotics,DETERMINISTIC_MAPPED
+mantle_technology_greenr_carb_2020,Mantle Technology - Greenr Carb,2020,0,/data/cleantech/data/raw/mantle_technology_greenr_carb,DETERMINISTIC_MAPPED
+qd_solar_inc_2020,QD Solar Inc,2020,0,/data/cleantech/data/raw/qd_solar_inc,DETERMINISTIC_MAPPED
+prisere_llc_2020,Prisere LLC,2020,0,/data/cleantech/data/raw/prisere_llc,DETERMINISTIC_MAPPED
+power2peer_2020,Power2Peer,2020,0,/data/cleantech/data/raw/power2peer,DETERMINISTIC_MAPPED
+polycarbin_2020,Polycarbin,2020,0,/data/cleantech/data/raw/polycarbin,DETERMINISTIC_MAPPED
+path_to_a_green_home_2020,Path to a Green Home,2020,0,/data/cleantech/data/raw/path_to_a_green_home,DETERMINISTIC_MAPPED
+muon_vision_2020,Muon Vision,2020,0,/data/cleantech/data/raw/muon_vision,DETERMINISTIC_MAPPED
+shway_2020,Shway,2020,0,/data/cleantech/data/raw/shway,DETERMINISTIC_MAPPED
+self_cleaning_solar_power_2020,Self Cleaning Solar Power,2020,0,/data/cleantech/data/raw/self_cleaning_solar_power,DETERMINISTIC_MAPPED
+sea_dragon_aquaculture_2020,Sea Dragon Aquaculture,2020,0,/data/cleantech/data/raw/sea_dragon_aquaculture,DETERMINISTIC_MAPPED
+roadpower_systems_2020,RoadPower Systems,2020,0,/data/cleantech/data/raw/roadpower_systems,DETERMINISTIC_MAPPED
+ribbit_2020,Ribbit,2020,0,/data/cleantech/data/raw/ribbit,DETERMINISTIC_MAPPED
+renewco2_llc_2020,RenewCO2 LLC,2020,0,/data/cleantech/data/raw/renewco2_llc,DETERMINISTIC_MAPPED
+volt_dynamics_2020,Volt Dynamics,2020,0,/data/cleantech/data/raw/volt_dynamics,DETERMINISTIC_MAPPED
+thiozen_2020,Thiozen,2020,0,/data/cleantech/data/raw/thiozen,DETERMINISTIC_MAPPED
+tiny_toronto_2020,Tiny Toronto,2020,0,/data/cleantech/data/raw/tiny_toronto,DETERMINISTIC_MAPPED
+sustainable_structures_group_2020,Sustainable Structures Group,2020,0,/data/cleantech/data/raw/sustainable_structures_group,DETERMINISTIC_MAPPED
+sunthetics_2020,Sunthetics,2020,0,/data/cleantech/data/raw/sunthetics,DETERMINISTIC_MAPPED
+sunowner_inc_2020,Sunowner Inc,2020,0,/data/cleantech/data/raw/sunowner_inc,DETERMINISTIC_MAPPED
+spar_energy_2020,Spar Energy,2020,0,/data/cleantech/data/raw/spar_energy,DETERMINISTIC_MAPPED
+volexion_2020,Volexion,2020,0,/data/cleantech/data/raw/volexion,DETERMINISTIC_MAPPED
+photonix_products_2020,Photonix Products,2020,0,/data/cleantech/data/raw/photonix_products,DETERMINISTIC_MAPPED
+jordan_energy_alternative_2020,Jordan Energy Alternative,2020,0,/data/cleantech/data/raw/jordan_energy_alternative,DETERMINISTIC_MAPPED
+power_to_hydrogen_2020,Power to Hydrogen,2020,0,/data/cleantech/data/raw/power_to_hydrogen,DETERMINISTIC_MAPPED
+intelegine_2020,Intelegine,2020,0,/data/cleantech/data/raw/intelegine,DETERMINISTIC_MAPPED
+battery_tour_2020,Battery Tour,2020,0,/data/cleantech/data/raw/battery_tour,DETERMINISTIC_MAPPED
+werewool_2020,Werewool,2020,0,/data/cleantech/data/raw/werewool,DETERMINISTIC_MAPPED
+aeromutable_2020,Aeromutable,2020,0,/data/cleantech/data/raw/aeromutable,DETERMINISTIC_MAPPED
+forest_founders_2020,Forest Founders,2020,0,/data/cleantech/data/raw/forest_founders,DETERMINISTIC_MAPPED
+unocup_2020,Unocup,2020,0,/data/cleantech/data/raw/unocup,DETERMINISTIC_MAPPED
+arc_industries_2020,ARC Industries,2020,0,/data/cleantech/data/raw/arc_industries,DETERMINISTIC_MAPPED
+true_data_ops_2020,True Data Ops,2020,0,/data/cleantech/data/raw/true_data_ops,DETERMINISTIC_MAPPED
+reusepac_inc_2020,ReusePac Inc.,2020,0,/data/cleantech/data/raw/reusepac_inc,DETERMINISTIC_MAPPED
+greentech_motors_corp_2020,GreenTech Motors Corp,2020,0,/data/cleantech/data/raw/greentech_motors_corp,DETERMINISTIC_MAPPED
+electric_fish_2020,Electric Fish,2020,0,/data/cleantech/data/raw/electric_fish,DETERMINISTIC_MAPPED
+anthro_energy_2020,Anthro Energy,2020,0,/data/cleantech/data/raw/anthro_energy,DETERMINISTIC_MAPPED
+antora_energy_2020,Antora Energy,2020,0,/data/cleantech/data/raw/antora_energy,DETERMINISTIC_MAPPED
+aura_technology_2020,Aura Technology,2020,0,/data/cleantech/data/raw/aura_technology,DETERMINISTIC_MAPPED
+carbon_footprint_2020,Carbon Footprint,2020,0,/data/cleantech/data/raw/carbon_footprint,DETERMINISTIC_MAPPED
+chargerhelp_2020,ChargerHelp!,2020,0,/data/cleantech/data/raw/chargerhelp,DETERMINISTIC_MAPPED
+enzinc_inc_2020,EnZinc Inc,2020,0,/data/cleantech/data/raw/enzinc_inc,DETERMINISTIC_MAPPED
+co2zero_2020,CO2Zero,2020,0,/data/cleantech/data/raw/co2zero,DETERMINISTIC_MAPPED
+coreshell_technologies_2020,Coreshell Technologies,2020,0,/data/cleantech/data/raw/coreshell_technologies,DETERMINISTIC_MAPPED
+dae_technologies_2020,DAE Technologies,2020,0,/data/cleantech/data/raw/dae_technologies,DETERMINISTIC_MAPPED
+endlis_energy_2020,EndLiS Energy,2020,0,/data/cleantech/data/raw/endlis_energy,DETERMINISTIC_MAPPED
+community_energy_labs_2020,Community Energy Labs,2020,0,/data/cleantech/data/raw/community_energy_labs,DETERMINISTIC_MAPPED
+bluedot_photonics_2020,BlueDot Photonics,2020,0,/data/cleantech/data/raw/bluedot_photonics,DETERMINISTIC_MAPPED
+daanaa_resolution_2020,Daanaa Resolution,2020,0,/data/cleantech/data/raw/daanaa_resolution,DETERMINISTIC_MAPPED
+eip_technologies_2020,EiP Technologies,2020,0,/data/cleantech/data/raw/eip_technologies,DETERMINISTIC_MAPPED
+ferropower_technologies_2020,FerroPower Technologies,2020,0,/data/cleantech/data/raw/ferropower_technologies,DETERMINISTIC_MAPPED
+fixing_co2_2020,Fixing CO2,2020,0,/data/cleantech/data/raw/fixing_co2,DETERMINISTIC_MAPPED
+jumpwatts_2020,JumpWatts,2020,0,/data/cleantech/data/raw/jumpwatts,DETERMINISTIC_MAPPED
+ivy_energy_2020,Ivy Energy,2020,0,/data/cleantech/data/raw/ivy_energy,DETERMINISTIC_MAPPED
+icarus_rt_inc_2020,"Icarus RT, Inc",2020,0,/data/cleantech/data/raw/icarus_rt_inc,DETERMINISTIC_MAPPED
+mobi_homes_inc_2020,MOBI Homes Inc,2020,0,/data/cleantech/data/raw/mobi_homes_inc,DETERMINISTIC_MAPPED
+luciant_inc_2020,Luciant Inc,2020,0,/data/cleantech/data/raw/luciant_inc,DETERMINISTIC_MAPPED
+liquid8_2020,Liquid8,2020,0,/data/cleantech/data/raw/liquid8,DETERMINISTIC_MAPPED
+karbon_2020,Karbon,2020,0,/data/cleantech/data/raw/karbon,DETERMINISTIC_MAPPED
+perigo_company_llc_2020,Perigo Company LLC,2020,0,/data/cleantech/data/raw/perigo_company_llc,DETERMINISTIC_MAPPED
+p_kap_systems_llc_2020,P-Kap Systems LLC,2020,0,/data/cleantech/data/raw/p_kap_systems_llc,DETERMINISTIC_MAPPED
+optec_led_inc_2020,"Optec Led, Inc",2020,0,/data/cleantech/data/raw/optec_led_inc,DETERMINISTIC_MAPPED
+ocean_motion_technologies_2020,Ocean Motion Technologies,2020,0,/data/cleantech/data/raw/ocean_motion_technologies,DETERMINISTIC_MAPPED
+nrgtek_2020,Nrgtek,2020,0,/data/cleantech/data/raw/nrgtek,DETERMINISTIC_MAPPED
+noon_energy_inc_2020,"Noon Energy, Inc",2020,0,/data/cleantech/data/raw/noon_energy_inc,DETERMINISTIC_MAPPED
+nanodian_inc_2020,"NanoDian, Inc",2020,0,/data/cleantech/data/raw/nanodian_inc,DETERMINISTIC_MAPPED
+raf_electronics_corp_2020,RAF Electronics Corp,2020,0,/data/cleantech/data/raw/raf_electronics_corp,DETERMINISTIC_MAPPED
+pureplus_2020,PurePlus+,2020,0,/data/cleantech/data/raw/pureplus,DETERMINISTIC_MAPPED
+proof_energy_2020,Proof Energy,2020,0,/data/cleantech/data/raw/proof_energy,DETERMINISTIC_MAPPED
+powerup_fuel_cells_2020,PowerUp Fuel Cells,2020,0,/data/cleantech/data/raw/powerup_fuel_cells,DETERMINISTIC_MAPPED
+power_global_2020,Power Global,2020,0,/data/cleantech/data/raw/power_global,DETERMINISTIC_MAPPED
+sierracrete_2020,SierraCrete,2020,0,/data/cleantech/data/raw/sierracrete,DETERMINISTIC_MAPPED
+roadpower_systems_2020_2,RoadPower Systems,2020,0,/data/cleantech/data/raw/roadpower_systems,DETERMINISTIC_MAPPED
+renulogix_2020,RenuLogix,2020,0,/data/cleantech/data/raw/renulogix,DETERMINISTIC_MAPPED
+rejoule_2020,ReJoule,2020,0,/data/cleantech/data/raw/rejoule,DETERMINISTIC_MAPPED
+sili_ion_inc_2020,SiLi-ion Inc,2020,0,/data/cleantech/data/raw/sili_ion_inc,DETERMINISTIC_MAPPED
+zyd_energy_inc_2020,ZYD Energy Inc.,2020,0,/data/cleantech/data/raw/zyd_energy_inc,DETERMINISTIC_MAPPED
+verne_2020,Verne,2020,0,/data/cleantech/data/raw/verne,DETERMINISTIC_MAPPED
+uplift_solar_2020,Uplift Solar,2020,0,/data/cleantech/data/raw/uplift_solar,DETERMINISTIC_MAPPED
+terra2_2020,Terra2,2020,0,/data/cleantech/data/raw/terra2,DETERMINISTIC_MAPPED
+takachar_2020,Takachar,2020,0,/data/cleantech/data/raw/takachar,DETERMINISTIC_MAPPED
+summit_nanotech_2020,Summit Nanotech,2020,0,/data/cleantech/data/raw/summit_nanotech,DETERMINISTIC_MAPPED
+solarflexes_2020,SolarFlexes,2020,0,/data/cleantech/data/raw/solarflexes,DETERMINISTIC_MAPPED
+smartville_inc_2020,Smartville Inc.,2020,0,/data/cleantech/data/raw/smartville_inc,DETERMINISTIC_MAPPED
+veltra_bikes_2020,Veltra Bikes,2020,0,/data/cleantech/data/raw/veltra_bikes,DETERMINISTIC_MAPPED
+florrent_2022,florrent,2022,0,/data/cleantech/data/raw/florrent,DETERMINISTIC_MAPPED
+tekmara_2022,TEKMARA,2022,0,/data/cleantech/data/raw/tekmara,DETERMINISTIC_MAPPED
+waste_exploration_technologies_2022,Waste Exploration Technologies,2022,0,/data/cleantech/data/raw/waste_exploration_technologies,DETERMINISTIC_MAPPED
+stranded_solutions_2022,Stranded Solutions,2022,0,/data/cleantech/data/raw/stranded_solutions,DETERMINISTIC_MAPPED
+solo_solar_2022,Solo Solar,2022,0,/data/cleantech/data/raw/solo_solar,DETERMINISTIC_MAPPED
+sustainafy_2022,Sustainafy,2022,0,/data/cleantech/data/raw/sustainafy,DETERMINISTIC_MAPPED
+vermillion_power_technologies_i_2022,Vermillion Power Technologies I,2022,0,/data/cleantech/data/raw/vermillion_power_technologies_i,DETERMINISTIC_MAPPED
+vortrex_llc_2022,"Vortrex, LLC",2022,0,/data/cleantech/data/raw/vortrex_llc,DETERMINISTIC_MAPPED
+washloft_inc_2022,"WASHLOFT, INC.",2022,0,/data/cleantech/data/raw/washloft_inc,DETERMINISTIC_MAPPED
+think_air_2022,Think Air,2022,0,/data/cleantech/data/raw/think_air,DETERMINISTIC_MAPPED
+solais_ventures_llc_2022,Solais Ventures LLC,2022,0,/data/cleantech/data/raw/solais_ventures_llc,DETERMINISTIC_MAPPED
+kite_magnetics_2022,Kite Magnetics,2022,0,/data/cleantech/data/raw/kite_magnetics,DETERMINISTIC_MAPPED
+little_bob_technologies_2022,Little Bob Technologies,2022,0,/data/cleantech/data/raw/little_bob_technologies,DETERMINISTIC_MAPPED
+m4t_2022,M4T,2022,0,/data/cleantech/data/raw/m4t,DETERMINISTIC_MAPPED
+positive_energy_2022,Positive Energy,2022,0,/data/cleantech/data/raw/positive_energy,DETERMINISTIC_MAPPED
+lemongraft_2022,lemonGRAFT,2022,0,/data/cleantech/data/raw/lemongraft,DETERMINISTIC_MAPPED
+miplus_solar_inc_2022,MIplus Solar Inc.,2022,0,/data/cleantech/data/raw/miplus_solar_inc,DETERMINISTIC_MAPPED
+sheru_2022,Sheru,2022,0,/data/cleantech/data/raw/sheru,DETERMINISTIC_MAPPED
+kineticurrents_company_2022,Kineticurrents Company,2022,0,/data/cleantech/data/raw/kineticurrents_company,DETERMINISTIC_MAPPED
+seah4_pty_ltd_2022,Seah4 pty ltd,2022,0,/data/cleantech/data/raw/seah4_pty_ltd,DETERMINISTIC_MAPPED
+recharge_e_2022,re:Charge-e,2022,0,/data/cleantech/data/raw/recharge_e,DETERMINISTIC_MAPPED
+reusabowl_llc_2022,ReusaBowl LLC,2022,0,/data/cleantech/data/raw/reusabowl_llc,DETERMINISTIC_MAPPED
+smart_cocoon_2022,Smart Cocoon,2022,0,/data/cleantech/data/raw/smart_cocoon,DETERMINISTIC_MAPPED
+oga_street_tech_2022,OGA Street Tech,2022,0,/data/cleantech/data/raw/oga_street_tech,DETERMINISTIC_MAPPED
+plexflo_2022,Plexflo,2022,0,/data/cleantech/data/raw/plexflo,DETERMINISTIC_MAPPED
+avocet_wind_formerly_obvia_2022,Avocet Wind (formerly OBVIA),2022,0,/data/cleantech/data/raw/avocet_wind_formerly_obvia,DETERMINISTIC_MAPPED
+relastics_company_2022,Relastics Company,2022,0,/data/cleantech/data/raw/relastics_company,DETERMINISTIC_MAPPED
+spelements_2022,SPElements,2022,0,/data/cleantech/data/raw/spelements,DETERMINISTIC_MAPPED
+moby_2022,MOBY,2022,0,/data/cleantech/data/raw/moby,DETERMINISTIC_MAPPED
+prime_lightworks_inc_2022,Prime Lightworks Inc.,2022,0,/data/cleantech/data/raw/prime_lightworks_inc,DETERMINISTIC_MAPPED
+planete_greenleaves_2022,Planete GreenLeaves,2022,0,/data/cleantech/data/raw/planete_greenleaves,DETERMINISTIC_MAPPED
+softly_incorporated_2022,Softly Incorporated,2022,0,/data/cleantech/data/raw/softly_incorporated,DETERMINISTIC_MAPPED
+navfeas_inc_2022,"Navfeas, Inc.",2022,0,/data/cleantech/data/raw/navfeas_inc,DETERMINISTIC_MAPPED
+levanta_tech_llc_2022,LeVanta Tech LLC,2022,0,/data/cleantech/data/raw/levanta_tech_llc,DETERMINISTIC_MAPPED
+one_world_clean_energy_2022,One World Clean Energy,2022,0,/data/cleantech/data/raw/one_world_clean_energy,DETERMINISTIC_MAPPED
+linebird_2022,Linebird,2022,0,/data/cleantech/data/raw/linebird,DETERMINISTIC_MAPPED
+nectar_2022,nectar,2022,0,/data/cleantech/data/raw/nectar,DETERMINISTIC_MAPPED
+dynamic_wpt_llc_2022,"Dynamic WPT, LLC",2022,0,/data/cleantech/data/raw/dynamic_wpt_llc,DETERMINISTIC_MAPPED
+bloom_2022,Bloom,2022,0,/data/cleantech/data/raw/bloom,DETERMINISTIC_MAPPED
+amellea_2022,Amellea,2022,0,/data/cleantech/data/raw/amellea,DETERMINISTIC_MAPPED
+earthen_inc_2022,EarthEn Inc,2022,0,/data/cleantech/data/raw/earthen_inc,DETERMINISTIC_MAPPED
+influent_2022,Influent,2022,0,/data/cleantech/data/raw/influent,DETERMINISTIC_MAPPED
+hygge_energy_2022,Hygge Energy,2022,0,/data/cleantech/data/raw/hygge_energy,DETERMINISTIC_MAPPED
+evbuddy_2022,EVbuddy,2022,0,/data/cleantech/data/raw/evbuddy,DETERMINISTIC_MAPPED
+4_0_analytics_inc_2022,"4.0 Analytics, Inc.",2022,0,/data/cleantech/data/raw/4_0_analytics_inc,DETERMINISTIC_MAPPED
+decarbon_2022,Decarbon,2022,0,/data/cleantech/data/raw/decarbon,DETERMINISTIC_MAPPED
+eden_concept_fill_inc_2022,EDEN Concept Fill Inc,2022,0,/data/cleantech/data/raw/eden_concept_fill_inc,DETERMINISTIC_MAPPED
+ca_hybrid_2022,CA Hybrid,2022,0,/data/cleantech/data/raw/ca_hybrid,DETERMINISTIC_MAPPED
+beam_tech_inc_2022,Beam Tech Inc.,2022,0,/data/cleantech/data/raw/beam_tech_inc,DETERMINISTIC_MAPPED
+bison_underground_2022,Bison Underground,2022,0,/data/cleantech/data/raw/bison_underground,DETERMINISTIC_MAPPED
+buildinglens_inc_2022,BuildingLens Inc.,2022,0,/data/cleantech/data/raw/buildinglens_inc,DETERMINISTIC_MAPPED
+blochsoft_technologies_inc_2022,Blochsoft Technologies Inc.,2022,0,/data/cleantech/data/raw/blochsoft_technologies_inc,DETERMINISTIC_MAPPED
+icheck_energy_2022,iCheck Energy,2022,0,/data/cleantech/data/raw/icheck_energy,DETERMINISTIC_MAPPED
+clean_terawatts_llc_2022,Clean Terawatts LLC,2022,0,/data/cleantech/data/raw/clean_terawatts_llc,DETERMINISTIC_MAPPED
+grain_2022,GRAIN,2022,0,/data/cleantech/data/raw/grain,DETERMINISTIC_MAPPED
+3d_architech_2022,3D Architech,2022,0,/data/cleantech/data/raw/3d_architech,DETERMINISTIC_MAPPED
+amatec_2022,AMATEC,2022,0,/data/cleantech/data/raw/amatec,DETERMINISTIC_MAPPED
+carbonbridge_inc_2022,CarbonBridge Inc.,2022,0,/data/cleantech/data/raw/carbonbridge_inc,DETERMINISTIC_MAPPED
+digital_mailbox_inc_dba_zipin_2022,"Digital Mailbox, Inc. dba Zipin",2022,0,/data/cleantech/data/raw/digital_mailbox_inc_dba_zipin,DETERMINISTIC_MAPPED
+ai_can_recycling_corp_2022,Ai Can Recycling Corp,2022,0,/data/cleantech/data/raw/ai_can_recycling_corp,DETERMINISTIC_MAPPED
+sensible_photonics_2022,Sensible Photonics,2022,0,/data/cleantech/data/raw/sensible_photonics,DETERMINISTIC_MAPPED
+virv_llc_2022,VIRV LLC,2022,0,/data/cleantech/data/raw/virv_llc,DETERMINISTIC_MAPPED
+tycho_solutions_2022,Tycho Solutions,2022,0,/data/cleantech/data/raw/tycho_solutions,DETERMINISTIC_MAPPED
+verde_technologies_incorporated_2022,Verde Technologies Incorporated,2022,0,/data/cleantech/data/raw/verde_technologies_incorporated,DETERMINISTIC_MAPPED
+renegade_plastics_corporation_2022,Renegade Plastics Corporation,2022,0,/data/cleantech/data/raw/renegade_plastics_corporation,DETERMINISTIC_MAPPED
+relyion_energy_inc_2022,Relyion Energy Inc,2022,0,/data/cleantech/data/raw/relyion_energy_inc,DETERMINISTIC_MAPPED
+soar_optics_2022,Soar Optics,2022,0,/data/cleantech/data/raw/soar_optics,DETERMINISTIC_MAPPED
+kasava_llc_2022,Kasava LLC,2022,0,/data/cleantech/data/raw/kasava_llc,DETERMINISTIC_MAPPED
+mirai_solar_2022,Mirai Solar,2022,0,/data/cleantech/data/raw/mirai_solar,DETERMINISTIC_MAPPED
+g_force_waste_sorters_inc_2022,"G Force Waste Sorters, Inc.",2022,0,/data/cleantech/data/raw/g_force_waste_sorters_inc,DETERMINISTIC_MAPPED
+hit_nano_inc_2022,HiT Nano Inc,2022,0,/data/cleantech/data/raw/hit_nano_inc,DETERMINISTIC_MAPPED
+coral_charge_inc_2022,Coral Charge Inc,2022,0,/data/cleantech/data/raw/coral_charge_inc,DETERMINISTIC_MAPPED
+aquora_biosystems_inc_2022,Aquora Biosystems Inc.,2022,0,/data/cleantech/data/raw/aquora_biosystems_inc,DETERMINISTIC_MAPPED
+argyle_earth_2022,Argyle Earth,2022,0,/data/cleantech/data/raw/argyle_earth,DETERMINISTIC_MAPPED
+clean_valley_bio_filtration_tec_2022,Clean Valley Bio-filtration Tec,2022,0,/data/cleantech/data/raw/clean_valley_bio_filtration_tec,DETERMINISTIC_MAPPED
+green_edge_computing_corp_aka_2022,Green Edge Computing Corp. (aka,2022,0,/data/cleantech/data/raw/green_edge_computing_corp_aka,DETERMINISTIC_MAPPED
+ntp_technologies_2022,NTP Technologies,2022,0,/data/cleantech/data/raw/ntp_technologies,DETERMINISTIC_MAPPED
+cool_cats_tech_2023,Cool Cats Tech,2023,0,/data/cleantech/data/raw/cool_cats_tech,DETERMINISTIC_MAPPED
+nulyzer_inc_2023,Nulyzer Inc,2023,0,/data/cleantech/data/raw/nulyzer_inc,DETERMINISTIC_MAPPED
+rushnu_2023,Rushnu,2023,Matin Hanifzadeh,/data/cleantech/data/raw/rushnu,DETERMINISTIC_MAPPED
+zero_house_co_2023,Zero House Co,2023,0,/data/cleantech/data/raw/zero_house_co,DETERMINISTIC_MAPPED
+ridio_2023,Ridio,2023,0,/data/cleantech/data/raw/ridio,DETERMINISTIC_MAPPED
+cyclei_2023,Cyclei,2023,Cher Lei,/data/cleantech/data/raw/cyclei,DETERMINISTIC_MAPPED
+foodware_2023,FoodWare,2023,Ignas Bolsakovas,/data/cleantech/data/raw/foodware,DETERMINISTIC_MAPPED
+korganotech_inc_2023,Korganotech Inc,2023,Steve Perotin,/data/cleantech/data/raw/korganotech_inc,DETERMINISTIC_MAPPED
+hyverde_2023,HyVerde,2023,Kimberly de Castro,/data/cleantech/data/raw/hyverde,DETERMINISTIC_MAPPED
+darmoktech_2023,DarmokTech,2023,Deepak Upadhyaya,/data/cleantech/data/raw/darmoktech,DETERMINISTIC_MAPPED
+rcam_technologies_2023,RCAM Technologies,2023,0,/data/cleantech/data/raw/rcam_technologies,DETERMINISTIC_MAPPED
+benchmark_labs_inc_2023,"Benchmark Labs, Inc.",2023,Carlos Gaitan,/data/cleantech/data/raw/benchmark_labs_inc,DETERMINISTIC_MAPPED
+omniflow_2023,OmniFlow,2023,0,/data/cleantech/data/raw/omniflow,DETERMINISTIC_MAPPED
+climformatics_inc_2023,Climformatics Inc.,2023,Subarna Bhattacharyya,/data/cleantech/data/raw/climformatics_inc,DETERMINISTIC_MAPPED
+metavoxel_2023,Metavoxel,2023,Benjamin Jenett,/data/cleantech/data/raw/metavoxel,DETERMINISTIC_MAPPED
+community_energy_labs_2023,Community Energy Labs,2023,Rebecca Peredo,/data/cleantech/data/raw/community_energy_labs,DETERMINISTIC_MAPPED
+perch_sensing_inc_2023,Perch Sensing Inc.,2023,0,/data/cleantech/data/raw/perch_sensing_inc,DETERMINISTIC_MAPPED
+ariya_energy_2023,Ariya Energy,2023,Arthur Kariya,/data/cleantech/data/raw/ariya_energy,DETERMINISTIC_MAPPED
+tecsi_solar_inc_2023,TECSI Solar Inc.,2023,0,/data/cleantech/data/raw/tecsi_solar_inc,DETERMINISTIC_MAPPED
+hawk_spider_energy_corp_2023,Hawk Spider Energy Corp.,2023,0,/data/cleantech/data/raw/hawk_spider_energy_corp,DETERMINISTIC_MAPPED
+maelstrom_water_technologies_2023,Maelstrom Water Technologies,2023,Jiacheng Zheng,/data/cleantech/data/raw/maelstrom_water_technologies,DETERMINISTIC_MAPPED
+active_surfaces_2023,Active Surfaces,2023,0,/data/cleantech/data/raw/active_surfaces,DETERMINISTIC_MAPPED
+electromaim_2023,Electromaim,2023,0,/data/cleantech/data/raw/electromaim,DETERMINISTIC_MAPPED
+shred_electric_2023,Shred Electric,2023,0,/data/cleantech/data/raw/shred_electric,DETERMINISTIC_MAPPED
+silisiumtech_inc_2023,SilisiumTech Inc.,2023,0,/data/cleantech/data/raw/silisiumtech_inc,DETERMINISTIC_MAPPED
+power_3d_2023,Power 3D,2023,0,/data/cleantech/data/raw/power_3d,DETERMINISTIC_MAPPED
+rivieh_2023,Rivieh,2023,0,/data/cleantech/data/raw/rivieh,DETERMINISTIC_MAPPED
+tyfast_2023,Tyfast,2023,0,/data/cleantech/data/raw/tyfast,DETERMINISTIC_MAPPED
+ohm_2023,Ohm,2023,0,/data/cleantech/data/raw/ohm,DETERMINISTIC_MAPPED
+the_hopeware_center_2023,The Hopeware Center,2023,0,/data/cleantech/data/raw/the_hopeware_center,DETERMINISTIC_MAPPED
+algal_tech_inc_2023,"ALGAL TECH, INC.",2023,Jose Garcia,/data/cleantech/data/raw/algal_tech_inc,DETERMINISTIC_MAPPED
+expost_technology_2023,ExPost Technology,2023,Weikang Li,/data/cleantech/data/raw/expost_technology,DETERMINISTIC_MAPPED
+sollow_2023,Sollow,2023,0,/data/cleantech/data/raw/sollow,DETERMINISTIC_MAPPED
+moon_five_technologies_2023,Moon Five Technologies,2023,0,/data/cleantech/data/raw/moon_five_technologies,DETERMINISTIC_MAPPED
+brevian_energy_2023,Brevian Energy,2023,Rod Matthews,/data/cleantech/data/raw/brevian_energy,DETERMINISTIC_MAPPED
+molecule_systems_2023,Molecule Systems,2023,0,/data/cleantech/data/raw/molecule_systems,DETERMINISTIC_MAPPED
+brigade_automation_corporation_2023,Brigade Automation Corporation,2023,Tom Burns,/data/cleantech/data/raw/brigade_automation_corporation,DETERMINISTIC_MAPPED
+pwron_2023,PwrOn,2023,0,/data/cleantech/data/raw/pwron,DETERMINISTIC_MAPPED
+build_smartr_robotics_2023,Build Smartr Robotics,2023,0,/data/cleantech/data/raw/build_smartr_robotics,DETERMINISTIC_MAPPED
+fuelgems_inc_2023,FuelGems Inc.,2023,Yu-Chieh Lin,/data/cleantech/data/raw/fuelgems_inc,DETERMINISTIC_MAPPED
+niu_planet_2023,NIU Planet,2023,0,/data/cleantech/data/raw/niu_planet,DETERMINISTIC_MAPPED
+peteca_llc_2023,"Peteca, LLC",2023,0,/data/cleantech/data/raw/peteca_llc,DETERMINISTIC_MAPPED
+lemma_2023,Lemma,2023,0,/data/cleantech/data/raw/lemma,DETERMINISTIC_MAPPED
+vayve_mobility_2023,Vayve Mobility,2023,0,/data/cleantech/data/raw/vayve_mobility,DETERMINISTIC_MAPPED
+c_quester_inc_2023,"C-Quester, Inc.",2023,Clement Cid,/data/cleantech/data/raw/c_quester_inc,DETERMINISTIC_MAPPED
+spirited_2023,Spirited,2023,0,/data/cleantech/data/raw/spirited,DETERMINISTIC_MAPPED
+ergsol_inc_2023,"ergSol, Inc.",2023,Wolfgang Weiss,/data/cleantech/data/raw/ergsol_inc,DETERMINISTIC_MAPPED
+phlytech_2023,Phlytech,2023,0,/data/cleantech/data/raw/phlytech,DETERMINISTIC_MAPPED
+eeli_technology_2023,eeLi Technology,2023,Mert Akin,/data/cleantech/data/raw/eeli_technology,DETERMINISTIC_MAPPED
+westwood_aerogel_2023,Westwood Aerogel,2023,0,/data/cleantech/data/raw/westwood_aerogel,DETERMINISTIC_MAPPED
+ecotech_research_center_2023,Ecotech Research Center,2023,Meng-Chen Lee,/data/cleantech/data/raw/ecotech_research_center,DETERMINISTIC_MAPPED
+revolve_solar_2023,Revolve Solar,2023,0,/data/cleantech/data/raw/revolve_solar,DETERMINISTIC_MAPPED
+anywherenergy_systems_inc_2023,AnywherEnergy Systems Inc.,2023,0,/data/cleantech/data/raw/anywherenergy_systems_inc,DETERMINISTIC_MAPPED
+adhesion_technologies_inc_2023,"Adhesion technologies, Inc.",2023,0,/data/cleantech/data/raw/adhesion_technologies_inc,DETERMINISTIC_MAPPED
+amply_energy_2023,Amply Energy,2023,0,/data/cleantech/data/raw/amply_energy,DETERMINISTIC_MAPPED
+bamboo_energy_2023,Bamboo Energy,2023,0,/data/cleantech/data/raw/bamboo_energy,DETERMINISTIC_MAPPED
+blockcarbon_2023,BlockCarbon,2023,0,/data/cleantech/data/raw/blockcarbon,DETERMINISTIC_MAPPED
+blueiq_2023,BLUEiQ,2023,0,/data/cleantech/data/raw/blueiq,DETERMINISTIC_MAPPED
+upward_formerly_canopy_2023,Upward (formerly Canopy),2023,0,/data/cleantech/data/raw/upward_formerly_canopy,DETERMINISTIC_MAPPED
+circular_interiors_2023,Circular Interiors,2023,0,/data/cleantech/data/raw/circular_interiors,DETERMINISTIC_MAPPED
+clean_flame_thermal_solutions_2023,Clean Flame Thermal Solutions,2023,0,/data/cleantech/data/raw/clean_flame_thermal_solutions,DETERMINISTIC_MAPPED
+cleonmaye_corp_2023,Cleonmaye Corp.,2023,0,/data/cleantech/data/raw/cleonmaye_corp,DETERMINISTIC_MAPPED
+cold_volt_2023,Cold Volt,2023,0,/data/cleantech/data/raw/cold_volt,DETERMINISTIC_MAPPED
+crum_creek_technologies_llc_2023,"Crum Creek Technologies, LLC",2023,0,/data/cleantech/data/raw/crum_creek_technologies_llc,DETERMINISTIC_MAPPED
+detoxyfi_2023,DetoXyFi,2023,0,/data/cleantech/data/raw/detoxyfi,DETERMINISTIC_MAPPED
+ellexco_2023,Ellexco,2023,0,/data/cleantech/data/raw/ellexco,DETERMINISTIC_MAPPED
+elyte_energy_llc_2023,"Elyte Energy, LLC",2023,0,/data/cleantech/data/raw/elyte_energy_llc,DETERMINISTIC_MAPPED
+greenify_2023,Greenify,2023,0,/data/cleantech/data/raw/greenify,DETERMINISTIC_MAPPED
+foogly_2023,Foogly,2023,0,/data/cleantech/data/raw/foogly,DETERMINISTIC_MAPPED
+ephemeron_labs_2023,Ephemeron Labs,2023,0,/data/cleantech/data/raw/ephemeron_labs,DETERMINISTIC_MAPPED
+greenirr_llc_2023,GreenIRR LLC,2023,0,/data/cleantech/data/raw/greenirr_llc,DETERMINISTIC_MAPPED
+epic_renewal_2023,Epic Renewal,2023,0,/data/cleantech/data/raw/epic_renewal,DETERMINISTIC_MAPPED
+ionworks_technologies_inc_2023,Ionworks Technologies Inc,2023,0,/data/cleantech/data/raw/ionworks_technologies_inc,DETERMINISTIC_MAPPED
+hyeyield_2023,HyeYield,2023,0,/data/cleantech/data/raw/hyeyield,DETERMINISTIC_MAPPED
+livity_yoga_2023,Livity Yoga,2023,0,/data/cleantech/data/raw/livity_yoga,DETERMINISTIC_MAPPED
+inceptev_2023,InceptEV,2023,0,/data/cleantech/data/raw/inceptev,DETERMINISTIC_MAPPED
+haylon_technologies_2023,Haylon Technologies,2023,0,/data/cleantech/data/raw/haylon_technologies,DETERMINISTIC_MAPPED
+hydropore_2023,Hydropore,2023,0,/data/cleantech/data/raw/hydropore,DETERMINISTIC_MAPPED
+incentivize_2023,Incentivize,2023,Emmanuel Makagon,/data/cleantech/data/raw/incentivize,DETERMINISTIC_MAPPED
+redifarms_2023,Redifarms,2023,0,/data/cleantech/data/raw/redifarms,DETERMINISTIC_MAPPED
+matcha_2023,Matcha,2023,0,/data/cleantech/data/raw/matcha,DETERMINISTIC_MAPPED
+prezerv_technologies_2023,Prezerv Technologies,2023,0,/data/cleantech/data/raw/prezerv_technologies,DETERMINISTIC_MAPPED
+rivalia_chemical_co_2023,Rivalia Chemical Co,2023,0,/data/cleantech/data/raw/rivalia_chemical_co,DETERMINISTIC_MAPPED
+orus_energy_2023,Orus Energy,2023,0,/data/cleantech/data/raw/orus_energy,DETERMINISTIC_MAPPED
+aquasaic_formerly_htomic_2023,Aquasaic (formerly HTomic),2023,0,/data/cleantech/data/raw/aquasaic_formerly_htomic,DETERMINISTIC_MAPPED
+peoples_energy_analytics_2023,Peoples Energy Analytics,2023,Melia,/data/cleantech/data/raw/peoples_energy_analytics,DETERMINISTIC_MAPPED
+tsi_wave_gen_2023,TSI Wave Gen,2023,0,/data/cleantech/data/raw/tsi_wave_gen,DETERMINISTIC_MAPPED
+spacesense_2023,SPACESENSE,2023,0,/data/cleantech/data/raw/spacesense,DETERMINISTIC_MAPPED
+table_2_ground_llc_2023,Table 2 Ground LLC,2023,0,/data/cleantech/data/raw/table_2_ground_llc,DETERMINISTIC_MAPPED
+siclic_advanced_materials_2023,Siclic Advanced Materials,2023,0,/data/cleantech/data/raw/siclic_advanced_materials,DETERMINISTIC_MAPPED
+xenoil_2023,Xenoil,2023,0,/data/cleantech/data/raw/xenoil,DETERMINISTIC_MAPPED
+wenew_carbology_llc_2023,WeNeW Carbology LLC,2023,0,/data/cleantech/data/raw/wenew_carbology_llc,DETERMINISTIC_MAPPED
+shutterbug_exchange_inc_sbx_2023,Shutterbug Exchange Inc (SBX),2023,0,/data/cleantech/data/raw/shutterbug_exchange_inc_sbx,DETERMINISTIC_MAPPED
+zinco_verde_2023,Zinco Verde,2023,0,/data/cleantech/data/raw/zinco_verde,DETERMINISTIC_MAPPED
+carbonbright_2023,CarbonBright,2023,0,/data/cleantech/data/raw/carbonbright,DETERMINISTIC_MAPPED
+arx_pax_labs_inc_2023,Arx Pax Labs Inc.,2023,Sean Gibson,/data/cleantech/data/raw/arx_pax_labs_inc,DETERMINISTIC_MAPPED
+skipso_2024,Skipso,2024,0,/data/cleantech/data/raw/skipso,DETERMINISTIC_MAPPED
+tanda_biotech_corp_2024,Tanda Biotech Corp,2024,0,/data/cleantech/data/raw/tanda_biotech_corp,DETERMINISTIC_MAPPED
+airbuild_inc_2024,Airbuild Inc,2024,0,/data/cleantech/data/raw/airbuild_inc,DETERMINISTIC_MAPPED
+floraponics_2024,Floraponics,2024,0,/data/cleantech/data/raw/floraponics,DETERMINISTIC_MAPPED
+solwise_2024,Solwise,2024,0,/data/cleantech/data/raw/solwise,DETERMINISTIC_MAPPED
+gigaflow_inc_2024,Gigaflow Inc,2024,0,/data/cleantech/data/raw/gigaflow_inc,DETERMINISTIC_MAPPED
+olympian_motors_2024,Olympian Motors,2024,0,/data/cleantech/data/raw/olympian_motors,DETERMINISTIC_MAPPED
+arecos_llc_2024,AReCoS LLC,2024,0,/data/cleantech/data/raw/arecos_llc,DETERMINISTIC_MAPPED
+mosso_2024,Mosso,2024,0,/data/cleantech/data/raw/mosso,DETERMINISTIC_MAPPED
+aigreen_2024,AIGreen,2024,0,/data/cleantech/data/raw/aigreen,DETERMINISTIC_MAPPED
+cascadia_carbon_inc_2024,Cascadia Carbon Inc,2024,0,/data/cleantech/data/raw/cascadia_carbon_inc,DETERMINISTIC_MAPPED
+aeros_corp_2024,Aeros Corp,2024,0,/data/cleantech/data/raw/aeros_corp,DETERMINISTIC_MAPPED
+hydrophos_sol_2024,hydroPhos Sol,2024,0,/data/cleantech/data/raw/hydrophos_sol,DETERMINISTIC_MAPPED
+fbs_2024,FBS,2024,0,/data/cleantech/data/raw/fbs,DETERMINISTIC_MAPPED
+zemlia_2024,Zemlia,2024,0,/data/cleantech/data/raw/zemlia,DETERMINISTIC_MAPPED
+derisk_energy_2024,DERisk Energy,2024,0,/data/cleantech/data/raw/derisk_energy,DETERMINISTIC_MAPPED
+rhea_factory_2024,Rhea Factory,2024,0,/data/cleantech/data/raw/rhea_factory,DETERMINISTIC_MAPPED
+narralytics_2024,Narralytics,2024,0,/data/cleantech/data/raw/narralytics,DETERMINISTIC_MAPPED
+nanolyx_inc_2024,Nanolyx Inc,2024,0,/data/cleantech/data/raw/nanolyx_inc,DETERMINISTIC_MAPPED
+project_k_energy_inc_2024,Project K Energy Inc,2024,0,/data/cleantech/data/raw/project_k_energy_inc,DETERMINISTIC_MAPPED
+thermoshade_2024,ThermoShade,2024,0,/data/cleantech/data/raw/thermoshade,DETERMINISTIC_MAPPED
+ptech_2024,PTech,2024,0,/data/cleantech/data/raw/ptech,DETERMINISTIC_MAPPED
+carbon_blade_corp_2024,Carbon Blade Corp,2024,0,/data/cleantech/data/raw/carbon_blade_corp,DETERMINISTIC_MAPPED
+activated_energy_llc_2024,Activated Energy LLC,2024,0,/data/cleantech/data/raw/activated_energy_llc,DETERMINISTIC_MAPPED
+photon_vault_inc_2024,Photon Vault Inc,2024,0,/data/cleantech/data/raw/photon_vault_inc,DETERMINISTIC_MAPPED
+safe_shower_2024,Safe Shower,2024,0,/data/cleantech/data/raw/safe_shower,DETERMINISTIC_MAPPED
+hidrogenics_2024,Hidrogenics,2024,0,/data/cleantech/data/raw/hidrogenics,DETERMINISTIC_MAPPED
+currents_2024,Currents,2024,0,/data/cleantech/data/raw/currents,DETERMINISTIC_MAPPED
+sunchem_2024,Sunchem,2024,0,/data/cleantech/data/raw/sunchem,DETERMINISTIC_MAPPED
+energizedai_2024,EnergizedAI,2024,0,/data/cleantech/data/raw/energizedai,DETERMINISTIC_MAPPED
+uniscrap_pbc_2024,UNISCRAP PBC,2024,0,/data/cleantech/data/raw/uniscrap_pbc,DETERMINISTIC_MAPPED
+vuv_tech_inc_2024,VUV Tech Inc,2024,0,/data/cleantech/data/raw/vuv_tech_inc,DETERMINISTIC_MAPPED
+data_company_one_inc_2024,Data Company One Inc,2024,0,/data/cleantech/data/raw/data_company_one_inc,DETERMINISTIC_MAPPED
+litech_llc_2024,LiTech LLC,2024,0,/data/cleantech/data/raw/litech_llc,DETERMINISTIC_MAPPED
+conusant_inc_2024,Conusant Inc,2024,0,/data/cleantech/data/raw/conusant_inc,DETERMINISTIC_MAPPED
+global_agriculture_sustainabili_2024,Global Agriculture Sustainabili,2024,0,/data/cleantech/data/raw/global_agriculture_sustainabili,DETERMINISTIC_MAPPED
+leeta_materials_inc_2024,Leeta Materials Inc,2024,0,/data/cleantech/data/raw/leeta_materials_inc,DETERMINISTIC_MAPPED
+coulomb_tech_2024,Coulomb Tech,2024,0,/data/cleantech/data/raw/coulomb_tech,DETERMINISTIC_MAPPED
+sea_dragon_energy_inc_2024,Sea Dragon Energy Inc,2024,0,/data/cleantech/data/raw/sea_dragon_energy_inc,DETERMINISTIC_MAPPED
+solar_ice_llc_2024,Solar Ice LLC,2024,0,/data/cleantech/data/raw/solar_ice_llc,DETERMINISTIC_MAPPED
+pinegem_2024,Pinegem,2024,0,/data/cleantech/data/raw/pinegem,DETERMINISTIC_MAPPED
+turnover_labs_2024,Turnover Labs,2024,0,/data/cleantech/data/raw/turnover_labs,DETERMINISTIC_MAPPED
+sustainabli_2024,Sustainabli,2024,0,/data/cleantech/data/raw/sustainabli,DETERMINISTIC_MAPPED
+global_sustainable_products_inc_2024,Global Sustainable Products Inc,2024,0,/data/cleantech/data/raw/global_sustainable_products_inc,DETERMINISTIC_MAPPED
+enamp_2024,ENAMP,2024,0,/data/cleantech/data/raw/enamp,DETERMINISTIC_MAPPED
+revvit_inc_2024,Revvit Inc,2024,0,/data/cleantech/data/raw/revvit_inc,DETERMINISTIC_MAPPED
+grid_science_2024,GRID SCIENCE,2024,0,/data/cleantech/data/raw/grid_science,DETERMINISTIC_MAPPED
+stranergy_2024,Stranergy,2024,0,/data/cleantech/data/raw/stranergy,DETERMINISTIC_MAPPED
+chrgsystem_2024,CHRGSystem,2024,0,/data/cleantech/data/raw/chrgsystem,DETERMINISTIC_MAPPED
+waste_salt_tech_llc_2024,Waste Salt Tech LLC,2024,0,/data/cleantech/data/raw/waste_salt_tech_llc,DETERMINISTIC_MAPPED
+contractpower_2024,Contractpower,2024,0,/data/cleantech/data/raw/contractpower,DETERMINISTIC_MAPPED
+carbon_utility_llc_2024,Carbon Utility LLC,2024,0,/data/cleantech/data/raw/carbon_utility_llc,DETERMINISTIC_MAPPED
+further_products_inc_2024,Further Products Inc,2024,0,/data/cleantech/data/raw/further_products_inc,DETERMINISTIC_MAPPED
+energy_releaf_2024,Energy ReLeaf,2024,0,/data/cleantech/data/raw/energy_releaf,DETERMINISTIC_MAPPED
+kin_tech_energy_inc_2024,Kin-Tech Energy Inc,2024,0,/data/cleantech/data/raw/kin_tech_energy_inc,DETERMINISTIC_MAPPED
+kinetix_energy_storage_2024,Kinetix Energy Storage,2024,0,/data/cleantech/data/raw/kinetix_energy_storage,DETERMINISTIC_MAPPED
+aepnus_tech_inc_2024,Aepnus Tech Inc,2024,0,/data/cleantech/data/raw/aepnus_tech_inc,DETERMINISTIC_MAPPED
+scalvy_inc_2024,Scalvy Inc,2024,0,/data/cleantech/data/raw/scalvy_inc,DETERMINISTIC_MAPPED
+furno_materials_inc_2024,Furno Materials Inc,2024,0,/data/cleantech/data/raw/furno_materials_inc,DETERMINISTIC_MAPPED
+biozen_batteries_2024,BioZen Batteries,2024,0,/data/cleantech/data/raw/biozen_batteries,DETERMINISTIC_MAPPED
+electric_air_2024,Electric Air,2024,0,/data/cleantech/data/raw/electric_air,DETERMINISTIC_MAPPED
+solarflux_energy_tech_inc_2024,Solarflux Energy Tech Inc,2024,0,/data/cleantech/data/raw/solarflux_energy_tech_inc,DETERMINISTIC_MAPPED
+hatchless_inc_2024,Hatchless Inc,2024,0,/data/cleantech/data/raw/hatchless_inc,DETERMINISTIC_MAPPED
+c_crete_technologies_2024,C-Crete Technologies,2024,0,/data/cleantech/data/raw/c_crete_technologies,DETERMINISTIC_MAPPED
+ceja_engineering_llc_2024,Ceja Engineering LLC,2024,0,/data/cleantech/data/raw/ceja_engineering_llc,DETERMINISTIC_MAPPED
+van_cor_threads_llc_2024,Van Cor Threads LLC,2024,0,/data/cleantech/data/raw/van_cor_threads_llc,DETERMINISTIC_MAPPED
+next_marine_solutions_inc_2024,Next Marine Solutions Inc,2024,0,/data/cleantech/data/raw/next_marine_solutions_inc,DETERMINISTIC_MAPPED
+grain_ecosystem_inc_2024,Grain Ecosystem Inc,2024,0,/data/cleantech/data/raw/grain_ecosystem_inc,DETERMINISTIC_MAPPED
+aquadynamics_2024,AquaDynamics,2024,0,/data/cleantech/data/raw/aquadynamics,DETERMINISTIC_MAPPED
+panelcleantech_2024,PanelCleanTech,2024,0,/data/cleantech/data/raw/panelcleantech,DETERMINISTIC_MAPPED
+kwh_bot_2024,kWh Bot,2024,0,/data/cleantech/data/raw/kwh_bot,DETERMINISTIC_MAPPED
+gs_vortex_systems_2024,GS VORTEX SYSTEMS,2024,0,/data/cleantech/data/raw/gs_vortex_systems,DETERMINISTIC_MAPPED
+breatheev_2024,BreatheEV,2024,0,/data/cleantech/data/raw/breatheev,DETERMINISTIC_MAPPED
+aionergy_2024,Aionergy,2024,0,/data/cleantech/data/raw/aionergy,DETERMINISTIC_MAPPED
+iprotech_2024,IProTech,2024,0,/data/cleantech/data/raw/iprotech,DETERMINISTIC_MAPPED
+blueurbn_2024,BlueUrbn,2024,0,/data/cleantech/data/raw/blueurbn,DETERMINISTIC_MAPPED
+energy_ai_solutions_llc_2024,Energy AI Solutions LLC,2024,0,/data/cleantech/data/raw/energy_ai_solutions_llc,DETERMINISTIC_MAPPED
+chargemate_ai_inc_2024,ChargeMate AI Inc,2024,0,/data/cleantech/data/raw/chargemate_ai_inc,DETERMINISTIC_MAPPED
+arculus_solutions_inc_2024,Arculus Solutions Inc,2024,0,/data/cleantech/data/raw/arculus_solutions_inc,DETERMINISTIC_MAPPED
+eqo_2024,EQO,2024,0,/data/cleantech/data/raw/eqo,DETERMINISTIC_MAPPED
+finev_inc_2024,Finev Inc,2024,0,/data/cleantech/data/raw/finev_inc,DETERMINISTIC_MAPPED
+virge_corp_2024,Virge Corp,2024,0,/data/cleantech/data/raw/virge_corp,DETERMINISTIC_MAPPED
+enchargo_inc_2024,Enchargo Inc,2024,0,/data/cleantech/data/raw/enchargo_inc,DETERMINISTIC_MAPPED
+ap_renewables_2024,AP Renewables,2024,0,/data/cleantech/data/raw/ap_renewables,DETERMINISTIC_MAPPED
+net_offset_2024,NET Offset,2024,0,/data/cleantech/data/raw/net_offset,DETERMINISTIC_MAPPED
+sylvan_systems_2024,Sylvan Systems,2024,0,/data/cleantech/data/raw/sylvan_systems,DETERMINISTIC_MAPPED
+changewater_labs_inc_2024,change:WATER Labs Inc,2024,0,/data/cleantech/data/raw/changewater_labs_inc,DETERMINISTIC_MAPPED
+globewater_solar_tech_llc_2024,GlobeWater & Solar Tech LLC,2024,0,/data/cleantech/data/raw/globewater_solar_tech_llc,DETERMINISTIC_MAPPED
+fibercrete_2024,FiberCrete,2024,0,/data/cleantech/data/raw/fibercrete,DETERMINISTIC_MAPPED
+betterkitchen_2024,BetterKitchen,2024,0,/data/cleantech/data/raw/betterkitchen,DETERMINISTIC_MAPPED
+climative_2024,Climative,2024,0,/data/cleantech/data/raw/climative,DETERMINISTIC_MAPPED
+gamotech_2024,Gamotech,2024,0,/data/cleantech/data/raw/gamotech,DETERMINISTIC_MAPPED
+multicharge_2024,MultiCharge,2024,0,/data/cleantech/data/raw/multicharge,DETERMINISTIC_MAPPED
+pila_energy_2024,Pila Energy,2024,0,/data/cleantech/data/raw/pila_energy,DETERMINISTIC_MAPPED
+thermalshell_technologies_2024,ThermalShell Technologies,2024,0,/data/cleantech/data/raw/thermalshell_technologies,DETERMINISTIC_MAPPED
+materium_tech_llc_2024,Materium Tech LLC,2024,0,/data/cleantech/data/raw/materium_tech_llc,DETERMINISTIC_MAPPED
+spare_it_2024,Spare-it,2024,0,/data/cleantech/data/raw/spare_it,DETERMINISTIC_MAPPED
+the_dridi_foundation_2024,The Dridi Foundation,2024,0,/data/cleantech/data/raw/the_dridi_foundation,DETERMINISTIC_MAPPED
+sunray_scientific_inc_2024,SunRay Scientific Inc,2024,0,/data/cleantech/data/raw/sunray_scientific_inc,DETERMINISTIC_MAPPED
+very_good_tech_inc_2024,Very Good Tech Inc,2024,0,/data/cleantech/data/raw/very_good_tech_inc,DETERMINISTIC_MAPPED
+nanospan_inc_2024,Nanospan Inc,2024,0,/data/cleantech/data/raw/nanospan_inc,DETERMINISTIC_MAPPED
+sept_2024,SEPT,2024,0,/data/cleantech/data/raw/sept,DETERMINISTIC_MAPPED
+sponge_2024,Sponge,2024,0,/data/cleantech/data/raw/sponge,DETERMINISTIC_MAPPED
+sili_ion_inc_2024,SiLi-ion Inc,2024,0,/data/cleantech/data/raw/sili_ion_inc,DETERMINISTIC_MAPPED
+d_to_inc_2024,D.TO INC,2024,0,/data/cleantech/data/raw/d_to_inc,DETERMINISTIC_MAPPED
+ecoforge_2024,EcoForge,2024,0,/data/cleantech/data/raw/ecoforge,DETERMINISTIC_MAPPED
+puremelting_inc_2024,Puremelting Inc,2024,0,/data/cleantech/data/raw/puremelting_inc,DETERMINISTIC_MAPPED
+replace_inc_2024,REplace Inc,2024,0,/data/cleantech/data/raw/replace_inc,DETERMINISTIC_MAPPED
+hydrogel_2024,hydroGel,2024,0,/data/cleantech/data/raw/hydrogel,DETERMINISTIC_MAPPED
+paradoxy_particles_llc_2024,ParadOxy Particles LLC,2024,0,/data/cleantech/data/raw/paradoxy_particles_llc,DETERMINISTIC_MAPPED
+chargewonder_2024,ChargeWonder,2024,0,/data/cleantech/data/raw/chargewonder,DETERMINISTIC_MAPPED
+1110_plasma_solutions_2024,1110 Plasma Solutions,2024,0,/data/cleantech/data/raw/1110_plasma_solutions,DETERMINISTIC_MAPPED
+cirq_2024,CIRQ+,2024,0,/data/cleantech/data/raw/cirq,DETERMINISTIC_MAPPED
+eternium_aerospace_2024,Eternium Aerospace,2024,0,/data/cleantech/data/raw/eternium_aerospace,DETERMINISTIC_MAPPED
+fluix_2024,FLUIX,2024,0,/data/cleantech/data/raw/fluix,DETERMINISTIC_MAPPED
+one_power_usa_2024,One Power USA,2024,0,/data/cleantech/data/raw/one_power_usa,DETERMINISTIC_MAPPED
+sulakorea_co_ltd_2024,Sulakorea Co. Ltd,2024,0,/data/cleantech/data/raw/sulakorea_co_ltd,DETERMINISTIC_MAPPED
+helios_industries_2024,Helios Industries,2024,0,/data/cleantech/data/raw/helios_industries,DETERMINISTIC_MAPPED
+green_spear_2024,Green Spear,2024,0,/data/cleantech/data/raw/green_spear,DETERMINISTIC_MAPPED
+liter_2024,Liter,2024,0,/data/cleantech/data/raw/liter,DETERMINISTIC_MAPPED
+macrocycle_2024,MacroCycle,2024,0,/data/cleantech/data/raw/macrocycle,DETERMINISTIC_MAPPED
+fentome_corp_2024,Fentome Corp,2024,0,/data/cleantech/data/raw/fentome_corp,DETERMINISTIC_MAPPED
+orentrix_inc_2024,Orentrix Inc,2024,0,/data/cleantech/data/raw/orentrix_inc,DETERMINISTIC_MAPPED
+viridium_energy_2024,Viridium Energy,2024,0,/data/cleantech/data/raw/viridium_energy,DETERMINISTIC_MAPPED
+rehydrate_2024,Rehydrate,2024,0,/data/cleantech/data/raw/rehydrate,DETERMINISTIC_MAPPED
+solidec_2024,Solidec,2024,0,/data/cleantech/data/raw/solidec,DETERMINISTIC_MAPPED
+round_for_a_reason_llc_2024,Round for a Reason LLC,2024,0,/data/cleantech/data/raw/round_for_a_reason_llc,DETERMINISTIC_MAPPED
+bakz4ever_2024,Bakz4ever,2024,0,/data/cleantech/data/raw/bakz4ever,DETERMINISTIC_MAPPED
+sofi_tec_2024,SOFI TEC,2024,0,/data/cleantech/data/raw/sofi_tec,DETERMINISTIC_MAPPED
+park_watch_2024,Park Watch,2024,0,/data/cleantech/data/raw/park_watch,DETERMINISTIC_MAPPED
+gencores_inc_2024,Gencores Inc,2024,0,/data/cleantech/data/raw/gencores_inc,DETERMINISTIC_MAPPED
+terrament_2024,Terrament,2024,0,/data/cleantech/data/raw/terrament,DETERMINISTIC_MAPPED
+aartech_solonics_inc_2024,Aartech Solonics Inc,2024,0,/data/cleantech/data/raw/aartech_solonics_inc,DETERMINISTIC_MAPPED
+helios_climate_industries_2024,Helios Climate Industries,2024,0,/data/cleantech/data/raw/helios_climate_industries,DETERMINISTIC_MAPPED
+lpcv_2024,LPCV,2024,0,/data/cleantech/data/raw/lpcv,DETERMINISTIC_MAPPED
+gaiaverse_2024,GaiaVerse,2024,0,/data/cleantech/data/raw/gaiaverse,DETERMINISTIC_MAPPED
+trellisense_2024,TrelliSense,2024,0,/data/cleantech/data/raw/trellisense,DETERMINISTIC_MAPPED
+biodome_inc_2024,BioDome Inc,2024,0,/data/cleantech/data/raw/biodome_inc,DETERMINISTIC_MAPPED
+suryatech_2024,SuryaTech,2024,0,/data/cleantech/data/raw/suryatech,DETERMINISTIC_MAPPED
+new_paradigm_energy_inc_2024,New Paradigm Energy Inc,2024,0,/data/cleantech/data/raw/new_paradigm_energy_inc,DETERMINISTIC_MAPPED
+credential_2024,Credential,2024,0,/data/cleantech/data/raw/credential,DETERMINISTIC_MAPPED
+liteon_2024,Liteon,2024,0,/data/cleantech/data/raw/liteon,DETERMINISTIC_MAPPED
+cascara_energy_2024,Cascara Energy,2024,0,/data/cleantech/data/raw/cascara_energy,DETERMINISTIC_MAPPED
+aerterra_inc_2024,AerTerra Inc,2024,0,/data/cleantech/data/raw/aerterra_inc,DETERMINISTIC_MAPPED
+ev_bots_inc_2024,EV Bots Inc,2024,0,/data/cleantech/data/raw/ev_bots_inc,DETERMINISTIC_MAPPED
+algreen_2024,ALGreen,2024,0,/data/cleantech/data/raw/algreen,DETERMINISTIC_MAPPED
+ohm_digital_solutions_2024,Ohm Digital Solutions,2024,0,/data/cleantech/data/raw/ohm_digital_solutions,DETERMINISTIC_MAPPED
+syrena_dac_2024,Syrena DAC,2024,0,/data/cleantech/data/raw/syrena_dac,DETERMINISTIC_MAPPED
+vybe_energy_llc_2024,Vybe Energy LLC,2024,0,/data/cleantech/data/raw/vybe_energy_llc,DETERMINISTIC_MAPPED
+neptunechain_2024,NeptuneChain,2024,0,/data/cleantech/data/raw/neptunechain,DETERMINISTIC_MAPPED
+drop_labs_2024,Drop Labs,2024,0,/data/cleantech/data/raw/drop_labs,DETERMINISTIC_MAPPED
+paulsson_inc_2021,"Paulsson, Inc.",2021,Bjorn Paulsson,/data/cleantech/data/raw/paulsson_inc,DETERMINISTIC_MAPPED
+pharos_group_2021,Pharos Group,2021,Christopher Bassett,/data/cleantech/data/raw/pharos_group,DETERMINISTIC_MAPPED
+photia_2021,Photia,2021,Joseph Geddes,/data/cleantech/data/raw/photia,DETERMINISTIC_MAPPED
+planet_a_energy_2021,Planet A Energy,2021,Brad Hines,/data/cleantech/data/raw/planet_a_energy,DETERMINISTIC_MAPPED
+popion_mobility_2021,Popion Mobility,2021,Hadi Hajimiri,/data/cleantech/data/raw/popion_mobility,DETERMINISTIC_MAPPED
+portable_solar_inc_2021,Portable Solar Inc.,2021,Dennis Nickerson,/data/cleantech/data/raw/portable_solar_inc,DETERMINISTIC_MAPPED
+powersilo_inc_2021,Powersilo Inc,2021,Rod Nash,/data/cleantech/data/raw/powersilo_inc,DETERMINISTIC_MAPPED
+rhyze_inc_2021,"Rhyze, Inc.",2021,Rick Kjellberg,/data/cleantech/data/raw/rhyze_inc,DETERMINISTIC_MAPPED
+rstream_recycling_2021,rStream Recycling,2021,Ethan Walko,/data/cleantech/data/raw/rstream_recycling,DETERMINISTIC_MAPPED
+seunwater_by_blockheads_develop_2021,SEUNwater by Blockheads Develop,2021,0,/data/cleantech/data/raw/seunwater_by_blockheads_develop,DETERMINISTIC_MAPPED
+sinergy_flow_2021,Sinergy Flow,2021,Alessandra Accogli,/data/cleantech/data/raw/sinergy_flow,DETERMINISTIC_MAPPED
+sonocharge_2021,Sonocharge,2021,An Huang,/data/cleantech/data/raw/sonocharge,DETERMINISTIC_MAPPED
+sustainloop_2021,SustainLoop,2021,Terence Ciavarra,/data/cleantech/data/raw/sustainloop,DETERMINISTIC_MAPPED
+tainr_2021,TAINR,2021,Katherine Silva,/data/cleantech/data/raw/tainr,DETERMINISTIC_MAPPED
+taka_solar_corporation_2021,Taka Solar Corporation,2021,Christopher Barnes,/data/cleantech/data/raw/taka_solar_corporation,DETERMINISTIC_MAPPED
+technocarbon_2021,TechnoCarbon,2021,Stephan Savarese,/data/cleantech/data/raw/technocarbon,DETERMINISTIC_MAPPED
+the_lichen_lab_co_2021,The Lichen Lab Co.,2021,William Landry,/data/cleantech/data/raw/the_lichen_lab_co,DETERMINISTIC_MAPPED
+tolo_inc_2021,"Tolo, Inc",2021,Thomas Karagianes,/data/cleantech/data/raw/tolo_inc,DETERMINISTIC_MAPPED
+topolonet_corporation_2021,Topolonet Corporation,2021,Reza Sabzehgar,/data/cleantech/data/raw/topolonet_corporation,DETERMINISTIC_MAPPED
+toro_water_air_thermal_technolo_2021,TORO Water Air Thermal Technolo,2021,0,/data/cleantech/data/raw/toro_water_air_thermal_technolo,DETERMINISTIC_MAPPED
+trace_2021,Trace,2021,Matthew Keller,/data/cleantech/data/raw/trace,DETERMINISTIC_MAPPED
+transfoam_2021,Transfoam,2021,Kobe Rogers,/data/cleantech/data/raw/transfoam,DETERMINISTIC_MAPPED
+transformax_2021,TransforMAX,2021,Chijioke Ejimuda,/data/cleantech/data/raw/transformax,DETERMINISTIC_MAPPED
+trianon_renewable_grid_stabilit_2021,Trianon Renewable Grid Stabilit,2021,0,/data/cleantech/data/raw/trianon_renewable_grid_stabilit,DETERMINISTIC_MAPPED
+unigrid_llc_2021,UNIGRID LLC,2021,Erik Wu,/data/cleantech/data/raw/unigrid_llc,DETERMINISTIC_MAPPED
+voltpost_inc_2021,Voltpost Inc.,2021,Jeffrey Posserman,/data/cleantech/data/raw/voltpost_inc,DETERMINISTIC_MAPPED
+waterhound_california_2021,Waterhound California,2021,Tony Jones,/data/cleantech/data/raw/waterhound_california,DETERMINISTIC_MAPPED
+xizan_energy_2021,XIZAN Energy,2021,Luis Casla,/data/cleantech/data/raw/xizan_energy,DETERMINISTIC_MAPPED
+zero_2021,ZERO,2021,Grant Gunnison,/data/cleantech/data/raw/zero,DETERMINISTIC_MAPPED
+108dlt_inc_2021,"108dlt, Inc.",2021,0,/data/cleantech/data/raw/108dlt_inc,DETERMINISTIC_MAPPED
+aaa_academy_for_children_inc_2021,AAA Academy For Children Inc,2021,0,/data/cleantech/data/raw/aaa_academy_for_children_inc,DETERMINISTIC_MAPPED
+acadian_composite_materials_in_2021,"Acadian Composite Materials, In",2021,0,/data/cleantech/data/raw/acadian_composite_materials_in,DETERMINISTIC_MAPPED
+activemems_2021,ActiveMEMS,2021,Erkan Aktakka,/data/cleantech/data/raw/activemems,DETERMINISTIC_MAPPED
+ageto_energy_2021,Ageto Energy,2021,0,/data/cleantech/data/raw/ageto_energy,DETERMINISTIC_MAPPED
+air_earth_llc_2021,Air & Earth LLC,2021,0,/data/cleantech/data/raw/air_earth_llc,DETERMINISTIC_MAPPED
+alim_innovations_2021,Alim Innovations,2021,0,/data/cleantech/data/raw/alim_innovations,DETERMINISTIC_MAPPED
+ampup_2021,AmpUp,2021,0,/data/cleantech/data/raw/ampup,DETERMINISTIC_MAPPED
+arom_r_2021,AROM R,2021,0,/data/cleantech/data/raw/arom_r,DETERMINISTIC_MAPPED
+ascentool_inc_2021,Ascentool Inc,2021,0,/data/cleantech/data/raw/ascentool_inc,DETERMINISTIC_MAPPED
+aura_technology_llc_2021,"Aura Technology, LLC",2021,0,/data/cleantech/data/raw/aura_technology_llc,DETERMINISTIC_MAPPED
+buildingpulse_2021,BuildingPulse,2021,0,/data/cleantech/data/raw/buildingpulse,DETERMINISTIC_MAPPED
+c_e_century_enterprises_2021,C.E. CENTURY ENTERPRISES,2021,0,/data/cleantech/data/raw/c_e_century_enterprises,DETERMINISTIC_MAPPED
+counterflow_technologies_inc_2021,CounterFlow Technologies Inc.,2021,0,/data/cleantech/data/raw/counterflow_technologies_inc,DETERMINISTIC_MAPPED
+ecoship_2021,EcoShip,2021,0,/data/cleantech/data/raw/ecoship,DETERMINISTIC_MAPPED
+enerpaper_srl_2021,Enerpaper srl,2021,0,/data/cleantech/data/raw/enerpaper_srl,DETERMINISTIC_MAPPED
+fine_tech_2021,Fine.tech,2021,0,/data/cleantech/data/raw/fine_tech,DETERMINISTIC_MAPPED
+flywire_cameras_2021,FlyWire Cameras,2021,0,/data/cleantech/data/raw/flywire_cameras,DETERMINISTIC_MAPPED
+fuelgems_inc_2021,FuelGems Inc.,2021,0,/data/cleantech/data/raw/fuelgems_inc,DETERMINISTIC_MAPPED
+grade_for_good_2021,Grade for Good,2021,0,/data/cleantech/data/raw/grade_for_good,DETERMINISTIC_MAPPED
+granular_2021,Granular,2021,0,/data/cleantech/data/raw/granular,DETERMINISTIC_MAPPED
+green_deeds_2021,Green Deeds,2021,0,/data/cleantech/data/raw/green_deeds,DETERMINISTIC_MAPPED
+hawaii_solar_and_wind_llc_2021,Hawaii Solar and Wind LLC,2021,0,/data/cleantech/data/raw/hawaii_solar_and_wind_llc,DETERMINISTIC_MAPPED
+hydro_gen_tech_llc_2021,Hydro Gen Tech LLC,2021,0,/data/cleantech/data/raw/hydro_gen_tech_llc,DETERMINISTIC_MAPPED
+irradiance_inc_2021,Irradiance Inc.,2021,0,/data/cleantech/data/raw/irradiance_inc,DETERMINISTIC_MAPPED
+hydropore_2021,Hydropore,2021,0,/data/cleantech/data/raw/hydropore,DETERMINISTIC_MAPPED
+khepra_2021,Khepra,2021,0,/data/cleantech/data/raw/khepra,DETERMINISTIC_MAPPED
+layer_seven_technologies_2021,Layer Seven Technologies,2021,0,/data/cleantech/data/raw/layer_seven_technologies,DETERMINISTIC_MAPPED
+m4t_2021,M4T,2021,0,/data/cleantech/data/raw/m4t,DETERMINISTIC_MAPPED
+meknology_llc_2021,Meknology LLC,2021,0,/data/cleantech/data/raw/meknology_llc,DETERMINISTIC_MAPPED
+meterleader_2021,MeterLeader,2021,0,/data/cleantech/data/raw/meterleader,DETERMINISTIC_MAPPED
+nanohydrochem_llc_2021,NanoHydroChem LLC,2021,0,/data/cleantech/data/raw/nanohydrochem_llc,DETERMINISTIC_MAPPED
+natrion_2021,Natrion,2021,0,/data/cleantech/data/raw/natrion,DETERMINISTIC_MAPPED
+oceanforesters_2021,OceanForesters,2021,0,/data/cleantech/data/raw/oceanforesters,DETERMINISTIC_MAPPED
+origen_air_systems_ltd_2021,Origen Air Systems Ltd.,2021,0,/data/cleantech/data/raw/origen_air_systems_ltd,DETERMINISTIC_MAPPED
+paragon_auto_motive_2021,PARAGON Auto-Motive,2021,0,/data/cleantech/data/raw/paragon_auto_motive,DETERMINISTIC_MAPPED
+power_to_yah_2021,Power to YAH,2021,0,/data/cleantech/data/raw/power_to_yah,DETERMINISTIC_MAPPED
+proagni_2021,ProAgni,2021,0,/data/cleantech/data/raw/proagni,DETERMINISTIC_MAPPED
+saturnu_solutions_corp_2021,Saturnu Solutions Corp.,2021,0,/data/cleantech/data/raw/saturnu_solutions_corp,DETERMINISTIC_MAPPED
+shortcut_2021,Shortcut,2021,0,/data/cleantech/data/raw/shortcut,DETERMINISTIC_MAPPED
+spectral_key_2021,Spectral Key,2021,0,/data/cleantech/data/raw/spectral_key,DETERMINISTIC_MAPPED
+spiral_technology_2021,Spiral Technology,2021,0,/data/cleantech/data/raw/spiral_technology,DETERMINISTIC_MAPPED
+springbay_studio_ltd_2021,Springbay Studio Ltd.,2021,0,/data/cleantech/data/raw/springbay_studio_ltd,DETERMINISTIC_MAPPED
+sunbeis_2021,SUNBEIS,2021,0,/data/cleantech/data/raw/sunbeis,DETERMINISTIC_MAPPED
+sustain_tek_llc_2021,Sustain Tek LLC,2021,0,/data/cleantech/data/raw/sustain_tek_llc,DETERMINISTIC_MAPPED
+sustainable_energy_inc_2021,Sustainable Energy Inc.,2021,0,/data/cleantech/data/raw/sustainable_energy_inc,DETERMINISTIC_MAPPED
+threemain_2021,ThreeMain,2021,0,/data/cleantech/data/raw/threemain,DETERMINISTIC_MAPPED
+ubu_2021,UBU,2021,0,/data/cleantech/data/raw/ubu,DETERMINISTIC_MAPPED
+up_catalyst_2021,UP Catalyst,2021,0,/data/cleantech/data/raw/up_catalyst,DETERMINISTIC_MAPPED
+wyoming_hyperscale_white_box_ll_2021,Wyoming Hyperscale White Box LL,2021,0,/data/cleantech/data/raw/wyoming_hyperscale_white_box_ll,DETERMINISTIC_MAPPED
+alchemist_metal_2019,Alchemist Metal,2019,Aichemist Metal,/data/cleantech/data/raw/alchemist_metal,DETERMINISTIC_MAPPED
+alina_2019,ALINA,2019,0,/data/cleantech/data/raw/alina,DETERMINISTIC_MAPPED
+armita_x_2019,Armita-X,2019,0,/data/cleantech/data/raw/armita_x,DETERMINISTIC_MAPPED
+barracuda_technologies_inc_2019,Barracuda Technologies Inc,2019,Barracuda Tech,/data/cleantech/data/raw/barracuda_technologies_inc,DETERMINISTIC_MAPPED
+crossnokaye_2019,CrossnoKaye,2019,0,/data/cleantech/data/raw/crossnokaye,DETERMINISTIC_MAPPED
+emc_squared_2019,EMC Squared,2019,0,/data/cleantech/data/raw/emc_squared,DETERMINISTIC_MAPPED
+empow_lighting_2019,Empow Lighting,2019,0,/data/cleantech/data/raw/empow_lighting,DETERMINISTIC_MAPPED
+eve_2019,EVE,2019,0,/data/cleantech/data/raw/eve,DETERMINISTIC_MAPPED
+evolve_energy_2019,Evolve Energy,2019,0,/data/cleantech/data/raw/evolve_energy,DETERMINISTIC_MAPPED
+genh_2019,GenH,2019,0,/data/cleantech/data/raw/genh,DETERMINISTIC_MAPPED
+hago_energetics_2019,Hago Energetics,2019,0,/data/cleantech/data/raw/hago_energetics,DETERMINISTIC_MAPPED
+industrial_climate_solutions_2019,Industrial Climate Solutions,2019,0,/data/cleantech/data/raw/industrial_climate_solutions,DETERMINISTIC_MAPPED
+inpipe_energy_2019,InPipe Energy,2019,InPipe Energy,/data/cleantech/data/raw/inpipe_energy,DETERMINISTIC_MAPPED
+mobile_recycling_systems_2019,Mobile Recycling Systems,2019,0,/data/cleantech/data/raw/mobile_recycling_systems,DETERMINISTIC_MAPPED
+oasence_2019,Oasence,2019,0,/data/cleantech/data/raw/oasence,DETERMINISTIC_MAPPED
+pick_my_solar_2019,Pick My Solar,2019,0,/data/cleantech/data/raw/pick_my_solar,DETERMINISTIC_MAPPED
+pronoia_energy_2019,Pronoia Energy,2019,Pronoia,/data/cleantech/data/raw/pronoia_energy,DETERMINISTIC_MAPPED
+radii_robotics_inc_2019,"Radii Robotics, Inc.",2019,0,/data/cleantech/data/raw/radii_robotics_inc,DETERMINISTIC_MAPPED
+repurpose_energy_2019,RePurpose Energy,2019,0,/data/cleantech/data/raw/repurpose_energy,DETERMINISTIC_MAPPED
+revest_properties_2019,Revest Properties,2019,0,/data/cleantech/data/raw/revest_properties,DETERMINISTIC_MAPPED
+safer_enrivonmental_lubricants_2019,Safer Enrivonmental Lubricants,2019,"Safer Environmental Lubricants, Inc.",/data/cleantech/data/raw/safer_enrivonmental_lubricants,DETERMINISTIC_MAPPED
+solarskyrise_2019,SolarSkyrise,2019,0,/data/cleantech/data/raw/solarskyrise,DETERMINISTIC_MAPPED
+stasis_group_2019,Stasis Group,2019,0,/data/cleantech/data/raw/stasis_group,DETERMINISTIC_MAPPED
+swirltex_2019,Swirltex,2019,0,/data/cleantech/data/raw/swirltex,DETERMINISTIC_MAPPED
+taka_solar_co_2019,Taka Solar Co,2019,0,/data/cleantech/data/raw/taka_solar_co,DETERMINISTIC_MAPPED
+terrafuse_2019,Terrafuse,2019,0,/data/cleantech/data/raw/terrafuse,DETERMINISTIC_MAPPED
+terrajoule_co_2019,Terrajoule Co,2019,Terrajoule Co,/data/cleantech/data/raw/terrajoule_co,DETERMINISTIC_MAPPED
+transformation_village_2019,Transformation Village,2019,Transformation Village Inc,/data/cleantech/data/raw/transformation_village,DETERMINISTIC_MAPPED
+wise_earthcare_2019,Wise Earthcare,2019,0,/data/cleantech/data/raw/wise_earthcare,DETERMINISTIC_MAPPED
+yellowtin_2019,Yellowtin,2019,0,/data/cleantech/data/raw/yellowtin,DETERMINISTIC_MAPPED
+dte_materials_2019,DTE Materials,2019,Jose Urizar,/data/cleantech/data/raw/dte_materials,DETERMINISTIC_MAPPED
+walbom_wall_2019,Walbom Wall,2019,Sheila Blake,/data/cleantech/data/raw/walbom_wall,DETERMINISTIC_MAPPED
+vigti_2019,Vigti,2019,Ishaan Gupta,/data/cleantech/data/raw/vigti,DETERMINISTIC_MAPPED
+uniqa_2019,UNIQA,2019,Galina Coada,/data/cleantech/data/raw/uniqa,DETERMINISTIC_MAPPED
+teratonix_2019,Teratonix,2019,Johnny Huang,/data/cleantech/data/raw/teratonix,DETERMINISTIC_MAPPED
+soli_2019,Soli,2019,Brian Bauer,/data/cleantech/data/raw/soli,DETERMINISTIC_MAPPED
+somev_2019,SomEV,2019,Natasha George,/data/cleantech/data/raw/somev,DETERMINISTIC_MAPPED
+springpower_international_inc_2019,Springpower International Inc.,2019,Michael Wang,/data/cleantech/data/raw/springpower_international_inc,DETERMINISTIC_MAPPED
+soilless_2019,Soilless,2019,Westen Johnson,/data/cleantech/data/raw/soilless,DETERMINISTIC_MAPPED
+skycool_systems_inc_2019,"SkyCool Systems, inc.",2019,Eli Goldstein,/data/cleantech/data/raw/skycool_systems_inc,DETERMINISTIC_MAPPED
+sky_canoe_inc_2019,Sky Canoe Inc.,2019,Jason Dudek,/data/cleantech/data/raw/sky_canoe_inc,DETERMINISTIC_MAPPED
+scanifly_2019,Scanifly,2019,Jason Steinberg,/data/cleantech/data/raw/scanifly,DETERMINISTIC_MAPPED
+roco_industries_inc_2019,RoCo Industries Inc.,2019,Roderick Costain,/data/cleantech/data/raw/roco_industries_inc,DETERMINISTIC_MAPPED
+recapture_technologies_llc_2019,Recapture Technologies LLC,2019,Stephen Steele,/data/cleantech/data/raw/recapture_technologies_llc,DETERMINISTIC_MAPPED
+quatcare_2019,QUATCARE,2019,Mario Mercado,/data/cleantech/data/raw/quatcare,DETERMINISTIC_MAPPED
+power_hv_inc_2019,Power HV Inc.,2019,Sizwe Dhlamini,/data/cleantech/data/raw/power_hv_inc,DETERMINISTIC_MAPPED
+nhu_energy_2019,Nhu Energy,2019,Rick Meeker,/data/cleantech/data/raw/nhu_energy,DETERMINISTIC_MAPPED
+nexus_reliability_2019,Nexus Reliability,2019,Fritz Ogden,/data/cleantech/data/raw/nexus_reliability,DETERMINISTIC_MAPPED
+necoplastics_2019,necoPlastics,2019,Steve Flaherty,/data/cleantech/data/raw/necoplastics,DETERMINISTIC_MAPPED
+mycocycle_llc_2019,"Mycocycle, LLC",2019,Joanne Rodriguez,/data/cleantech/data/raw/mycocycle_llc,DETERMINISTIC_MAPPED
+maxwellian_2019,MAXWELLIAN,2019,Alireza Hassani,/data/cleantech/data/raw/maxwellian,DETERMINISTIC_MAPPED
+low_carbon_beef_2019,Low Carbon Beef,2019,Colin Beal,/data/cleantech/data/raw/low_carbon_beef,DETERMINISTIC_MAPPED
+livingwaters_2019,LivingWaters,2019,Joshua Kao,/data/cleantech/data/raw/livingwaters,DETERMINISTIC_MAPPED
+kara_atmospheric_water_inc_2019,"Kara Atmospheric Water, Inc.",2019,Cody Soodeen,/data/cleantech/data/raw/kara_atmospheric_water_inc,DETERMINISTIC_MAPPED
+littoral_power_systems_inc_2019,"Littoral Power Systems, Inc.",2019,David Duquette,/data/cleantech/data/raw/littoral_power_systems_inc,DETERMINISTIC_MAPPED
+ko_systems_2019,√çko Systems,2019,Santiago Alegria,/data/cleantech/data/raw/ko_systems,DETERMINISTIC_MAPPED
+hoplite_power_inc_2019,Hoplite Power Inc.,2019,Nikolas Schreiber,/data/cleantech/data/raw/hoplite_power_inc,DETERMINISTIC_MAPPED
+halo_charging_2019,Halo Charging,2019,Kurt Carlson,/data/cleantech/data/raw/halo_charging,DETERMINISTIC_MAPPED
+gridtwin_grideus_2019,Gridtwin/GriDeus,2019,Matthew Brusnahan,/data/cleantech/data/raw/gridtwin_grideus,DETERMINISTIC_MAPPED
+green_grubbox_2019,Green GrubBox,2019,Ted Wallis,/data/cleantech/data/raw/green_grubbox,DETERMINISTIC_MAPPED
+gbat_2019,gBat,2019,Mudit Bhargava,/data/cleantech/data/raw/gbat,DETERMINISTIC_MAPPED
+flux_marine_2019,Flux Marine,2019,Daylin Frantin,/data/cleantech/data/raw/flux_marine,DETERMINISTIC_MAPPED
+fluid_sense_2019,Fluid Sense,2019,Jeffrey Poole,/data/cleantech/data/raw/fluid_sense,DETERMINISTIC_MAPPED
+flooid_power_systems_inc_2019,"Flooid Power Systems, Inc.",2019,Ben Schwartz,/data/cleantech/data/raw/flooid_power_systems_inc,DETERMINISTIC_MAPPED
+feedback_solutions_2019,Feedback Solutions,2019,Karen Smith,/data/cleantech/data/raw/feedback_solutions,DETERMINISTIC_MAPPED
+enersion_2019,Enersion,2019,Hanif Montazeri,/data/cleantech/data/raw/enersion,DETERMINISTIC_MAPPED
+ecospears_2019,ecoSPEARS,2019,Ian Doromal,/data/cleantech/data/raw/ecospears,DETERMINISTIC_MAPPED
+dispomeds_2019,DispoMeds,2019,Reza Royaee,/data/cleantech/data/raw/dispomeds,DETERMINISTIC_MAPPED
+chi_botanic_2019,Chi Botanic,2019,Jonathan Meuser,/data/cleantech/data/raw/chi_botanic,DETERMINISTIC_MAPPED
+cf_technologies_inc_2019,"CF Technologies, Inc.",2019,Jessica Sweeney,/data/cleantech/data/raw/cf_technologies_inc,DETERMINISTIC_MAPPED
+cbc_wind_energy_2019,CBC Wind Energy,2019,Robert Baxter,/data/cleantech/data/raw/cbc_wind_energy,DETERMINISTIC_MAPPED
+camberline_technologies_2019,Camberline Technologies,2019,Adam Studdard,/data/cleantech/data/raw/camberline_technologies,DETERMINISTIC_MAPPED
+blue_dot_motorworks_2019,Blue Dot Motorworks,2019,Tom Gurski,/data/cleantech/data/raw/blue_dot_motorworks,DETERMINISTIC_MAPPED
+arc_technology_2019,ARC Technology,2019,William Carey,/data/cleantech/data/raw/arc_technology,DETERMINISTIC_MAPPED
+aquarealtime_2019,AquaRealTime,2019,Christopher Lee,/data/cleantech/data/raw/aquarealtime,DETERMINISTIC_MAPPED
+aquaneers_2019,Aquaneers,2019,Richard Day,/data/cleantech/data/raw/aquaneers,DETERMINISTIC_MAPPED
+aqua_alchemist_2019,Aqua Alchemist,2019,Maher Hadaya,/data/cleantech/data/raw/aqua_alchemist,DETERMINISTIC_MAPPED
+apis_innovation_2019,Apis Innovation,2019,Gregory Chrin,/data/cleantech/data/raw/apis_innovation,DETERMINISTIC_MAPPED
+anessa_2019,Anessa,2019,Kenneth Kent,/data/cleantech/data/raw/anessa,DETERMINISTIC_MAPPED
+anax_power_2019,Anax Power,2019,Michael Longo,/data/cleantech/data/raw/anax_power,DETERMINISTIC_MAPPED
+alba_power_inc_2019,"Alba Power, Inc.",2019,Katharina Loden,/data/cleantech/data/raw/alba_power_inc,DETERMINISTIC_MAPPED
+aeroshield_2019,AeroShield,2019,Elise Strobach,/data/cleantech/data/raw/aeroshield,DETERMINISTIC_MAPPED
+aqualumos_2021,Aqualumos,2021,Nikolas Franceschi-Hofmann,/data/cleantech/data/raw/aqualumos,DETERMINISTIC_MAPPED
+calmura_natural_walls_inc_2021,Calmura Natural Walls Inc.,2021,Monty Chong-Walden,/data/cleantech/data/raw/calmura_natural_walls_inc,DETERMINISTIC_MAPPED
+ecocrumb_2021,Ecocrumb,2021,Gautam Muralidharan,/data/cleantech/data/raw/ecocrumb,DETERMINISTIC_MAPPED
+fine_bubble_technologies_2021,Fine Bubble Technologies,2021,Paul Botha,/data/cleantech/data/raw/fine_bubble_technologies,DETERMINISTIC_MAPPED
+gridware_2021,Gridware,2021,Tim Barat,/data/cleantech/data/raw/gridware,DETERMINISTIC_MAPPED
+infinirel_corporation_2021,infiniRel Corporation,2021,Bert Wank,/data/cleantech/data/raw/infinirel_corporation,DETERMINISTIC_MAPPED
+innovia_geo_corp_2021,Innovia GEO Corp.,2021,Andrew Lee,/data/cleantech/data/raw/innovia_geo_corp,DETERMINISTIC_MAPPED
+infisense_2021,InfiSense,2021,Tim Guiterman,/data/cleantech/data/raw/infisense,DETERMINISTIC_MAPPED
+julius_education_2021,Julius Education,2021,Daniel Goldsmith,/data/cleantech/data/raw/julius_education,DETERMINISTIC_MAPPED
+leap_photovoltaics_2021,Leap Photovoltaics,2021,David Berney Needleman,/data/cleantech/data/raw/leap_photovoltaics,DETERMINISTIC_MAPPED
+luftcar_2021,LuftCar,2021,SANTH SATHYA,/data/cleantech/data/raw/luftcar,DETERMINISTIC_MAPPED
+measured_air_performance_2021,Measured Air Performance,2021,Steven Graves,/data/cleantech/data/raw/measured_air_performance,DETERMINISTIC_MAPPED
+neuterra_2021,Neuterra,2021,Fatimah Walee,/data/cleantech/data/raw/neuterra,DETERMINISTIC_MAPPED
+noble_thermodynamic_systems_in_2021,"Noble Thermodynamic Systems, In",2021,0,/data/cleantech/data/raw/noble_thermodynamic_systems_in,DETERMINISTIC_MAPPED
+nucleic_sensing_systems_llc_2021,"Nucleic Sensing Systems, LLC",2021,Edgar Rudberg,/data/cleantech/data/raw/nucleic_sensing_systems_llc,DETERMINISTIC_MAPPED
+osmoses_2021,Osmoses,2021,Francesco Maria Benedetti,/data/cleantech/data/raw/osmoses,DETERMINISTIC_MAPPED
+oxbyel_technologies_inc_2021,"OXbyEL Technologies, Inc.",2021,Edward Ricci,/data/cleantech/data/raw/oxbyel_technologies_inc,DETERMINISTIC_MAPPED
+princeton_nuenergy_2021,Princeton NuEnergy,2021,Chao Yan,/data/cleantech/data/raw/princeton_nuenergy,DETERMINISTIC_MAPPED
+stac_technology_2021,STAC Technology,2021,Robert Svenning,/data/cleantech/data/raw/stac_technology,DETERMINISTIC_MAPPED
+whisper_energy_systems_inc_2021,"Whisper Energy Systems, Inc.",2021,Michael Gould,/data/cleantech/data/raw/whisper_energy_systems_inc,DETERMINISTIC_MAPPED
+13_mari_ltd_2021,13 Mari Ltd,2021,Krassi Fotev,/data/cleantech/data/raw/13_mari_ltd,DETERMINISTIC_MAPPED
+2040_energy_2021,2040 Energy,2021,Joseph Strommen,/data/cleantech/data/raw/2040_energy,DETERMINISTIC_MAPPED
+acua_ocean_2021,ACUA Ocean,2021,Mike Tinmouth,/data/cleantech/data/raw/acua_ocean,DETERMINISTIC_MAPPED
+agrivolution_llc_2021,Agrivolution LLC,2021,Richard Fu,/data/cleantech/data/raw/agrivolution_llc,DETERMINISTIC_MAPPED
+ald_technical_solutions_2021,ALD Technical Solutions,2021,Davoud Zamani,/data/cleantech/data/raw/ald_technical_solutions,DETERMINISTIC_MAPPED
+alonetics_llc_2021,"Alonetics, LLC",2021,Lance Ahearn,/data/cleantech/data/raw/alonetics_llc,DETERMINISTIC_MAPPED
+ashipa_electric_2021,Ashipa Electric,2021,Olugbenga Ajala,/data/cleantech/data/raw/ashipa_electric,DETERMINISTIC_MAPPED
+barrio_elctrico_2021,Barrio El√©ctrico,2021,Lauren Rosenblatt,/data/cleantech/data/raw/barrio_elctrico,DETERMINISTIC_MAPPED
+biovert_protein_co_ltd_2021,"Biovert Protein Co.,Ltd",2021,0,/data/cleantech/data/raw/biovert_protein_co_ltd,DETERMINISTIC_MAPPED
+blip_energy_2021,Blip Energy,2021,Sophia Wennstedt,/data/cleantech/data/raw/blip_energy,DETERMINISTIC_MAPPED
+bonzer_inc_2021,Bonzer Inc,2021,Ivan Li Huang,/data/cleantech/data/raw/bonzer_inc,DETERMINISTIC_MAPPED
+brayfoil_technologies_2021,Brayfoil Technologies,2021,Matthew Bray,/data/cleantech/data/raw/brayfoil_technologies,DETERMINISTIC_MAPPED
+carbonii_2021,Carbonii,2021,Francis Grahner,/data/cleantech/data/raw/carbonii,DETERMINISTIC_MAPPED
+clean_earth_rovers_llc_2021,"Clean Earth Rovers, LLC",2021,Michael Arens,/data/cleantech/data/raw/clean_earth_rovers_llc,DETERMINISTIC_MAPPED
+climate_companion_2021,Climate Companion,2021,Cindi Thompson,/data/cleantech/data/raw/climate_companion,DETERMINISTIC_MAPPED
+cupod_2021,CUPOD,2021,Wayne Osterholm,/data/cleantech/data/raw/cupod,DETERMINISTIC_MAPPED
+curbhub_2021,Curbhub,2021,Amir Khaleghi,/data/cleantech/data/raw/curbhub,DETERMINISTIC_MAPPED
+cyclonatix_inc_2021,"Cyclonatix, Inc.",2021,Jae Young Lim,/data/cleantech/data/raw/cyclonatix_inc,DETERMINISTIC_MAPPED
+dnd_biotech_2021,DND Biotech,2021,cosimo masini,/data/cleantech/data/raw/dnd_biotech,DETERMINISTIC_MAPPED
+easyev_2021,EasyEV,2021,Anish Sinha,/data/cleantech/data/raw/easyev,DETERMINISTIC_MAPPED
+ecotone_renewables_2021,Ecotone Renewables,2021,Kyle Wyche,/data/cleantech/data/raw/ecotone_renewables,DETERMINISTIC_MAPPED
+eh_group_technologies_inc_2021,EH Group Technologies Inc.,2021,Sven Dybdahl,/data/cleantech/data/raw/eh_group_technologies_inc,DETERMINISTIC_MAPPED
+ehemphouse_2021,eHempHouse,2021,Peter Miles,/data/cleantech/data/raw/ehemphouse,DETERMINISTIC_MAPPED
+energos_inc_2021,Energos Inc.,2021,Rajesh Solanki,/data/cleantech/data/raw/energos_inc,DETERMINISTIC_MAPPED
+envault_2021,EnVault,2021,Matthis Herrera,/data/cleantech/data/raw/envault,DETERMINISTIC_MAPPED
+equilibrium_2021,Equilibrium,2021,Paolo Ronchetti,/data/cleantech/data/raw/equilibrium,DETERMINISTIC_MAPPED
+ev_life_2021,EV Life,2021,Peter Glenn,/data/cleantech/data/raw/ev_life,DETERMINISTIC_MAPPED
+evtek_2021,Evtek,2021,Martin Naro,/data/cleantech/data/raw/evtek,DETERMINISTIC_MAPPED
+exocell_power_2021,ExoCell Power,2021,Matthew Mayer,/data/cleantech/data/raw/exocell_power,DETERMINISTIC_MAPPED
+facil_ai_2021,Facil.ai,2021,Peter Willette,/data/cleantech/data/raw/facil_ai,DETERMINISTIC_MAPPED
+farmernet_org_2021,farmernet.org,2021,Lucy Low,/data/cleantech/data/raw/farmernet_org,DETERMINISTIC_MAPPED
+finsulate_2021,FINSULATE,2021,Bernard Hidier,/data/cleantech/data/raw/finsulate,DETERMINISTIC_MAPPED
+forest_founders_rewards_2021,Forest Founders Rewards,2021,Ford Seeman,/data/cleantech/data/raw/forest_founders_rewards,DETERMINISTIC_MAPPED
+frakktal_2021,frakktal,2021,jhana porter,/data/cleantech/data/raw/frakktal,DETERMINISTIC_MAPPED
+gaia_ai_2021,Gaia AI,2021,Peter McHale,/data/cleantech/data/raw/gaia_ai,DETERMINISTIC_MAPPED
+goleafe_2021,GOLeafe,2021,Arsheen Allam,/data/cleantech/data/raw/goleafe,DETERMINISTIC_MAPPED
+good4earth_2021,Good4Earth,2021,Payal Shah,/data/cleantech/data/raw/good4earth,DETERMINISTIC_MAPPED
+hago_energetics_2021,Hago Energetics,2021,Wilson Hago,/data/cleantech/data/raw/hago_energetics,DETERMINISTIC_MAPPED
+hexas_biomass_inc_2021,Hexas Biomass Inc.,2021,Wendy Owens,/data/cleantech/data/raw/hexas_biomass_inc,DETERMINISTIC_MAPPED
+hoopoe_energy_2021,Hoopoe Energy,2021,Ali Karimian,/data/cleantech/data/raw/hoopoe_energy,DETERMINISTIC_MAPPED
+hydragas_energy_limited_2021,Hydragas Energy Limited,2021,Philip Morkel,/data/cleantech/data/raw/hydragas_energy_limited,DETERMINISTIC_MAPPED
+hydronic_shell_technologies_2021,Hydronic Shell Technologies,2021,David Goldstein,/data/cleantech/data/raw/hydronic_shell_technologies,DETERMINISTIC_MAPPED
+hydrova_2021,Hydrova,2021,Julian Davis,/data/cleantech/data/raw/hydrova,DETERMINISTIC_MAPPED
+hyfoil_marine_2021,HYFOIL Marine,2021,Kyra Goldsmith,/data/cleantech/data/raw/hyfoil_marine,DETERMINISTIC_MAPPED
+innovasion_labs_pinc_inc_2021,Innovasion Labs PINC Inc,2021,Inanc Ortac,/data/cleantech/data/raw/innovasion_labs_pinc_inc,DETERMINISTIC_MAPPED
+inrg_solutions_llc_2021,"inRG Solutions, LLC",2021,Kerry McBee,/data/cleantech/data/raw/inrg_solutions_llc,DETERMINISTIC_MAPPED
+iwatertech_2021,iWaterTech,2021,Connor Payne,/data/cleantech/data/raw/iwatertech,DETERMINISTIC_MAPPED
+joule_inc_2021,"Joule, Inc",2021,Barry Isaac,/data/cleantech/data/raw/joule_inc,DETERMINISTIC_MAPPED
+kai_systems_2021,KAI Systems,2021,Michael Mason,/data/cleantech/data/raw/kai_systems,DETERMINISTIC_MAPPED
+kairospace_technologies_2021,Kairospace Technologies,2021,Juan Bravin,/data/cleantech/data/raw/kairospace_technologies,DETERMINISTIC_MAPPED
+long_island_clean_water_technol_2021,Long Island Clean Water Technol,2021,0,/data/cleantech/data/raw/long_island_clean_water_technol,DETERMINISTIC_MAPPED
+meltek_2021,Meltek,2021,Frank Bruckner,/data/cleantech/data/raw/meltek,DETERMINISTIC_MAPPED
+mespac_2021,MESPAC,2021,Andrea Gulisano,/data/cleantech/data/raw/mespac,DETERMINISTIC_MAPPED
+middle_east_well_services_2021,Middle East Well Services,2021,Heather Brooks,/data/cleantech/data/raw/middle_east_well_services,DETERMINISTIC_MAPPED
+moduly_2021,Moduly,2021,Jonathan Lamer,/data/cleantech/data/raw/moduly,DETERMINISTIC_MAPPED
+mold_srl_2021,Mold Srl,2021,Nicola Rubini,/data/cleantech/data/raw/mold_srl,DETERMINISTIC_MAPPED
+nanolyx_inc_2021,Nanolyx Inc.,2021,Jakob Farnham,/data/cleantech/data/raw/nanolyx_inc,DETERMINISTIC_MAPPED
+nordee_enterprise_2021,Nordee Enterprise,2021,Chiderah Okoye,/data/cleantech/data/raw/nordee_enterprise,DETERMINISTIC_MAPPED
+nosetsa_2021,Nosetsa,2021,Pontsho Moletsane,/data/cleantech/data/raw/nosetsa,DETERMINISTIC_MAPPED
+offgridbox_usa_2021,OffGridBox USA,2021,Troy Billett,/data/cleantech/data/raw/offgridbox_usa,DETERMINISTIC_MAPPED
+ogive_technology_inc_2021,"Ogive Technology, Inc.",2021,Durham Giles,/data/cleantech/data/raw/ogive_technology_inc,DETERMINISTIC_MAPPED
+parthian_energy_2021,Parthian Energy,2021,Farshid Roumi,/data/cleantech/data/raw/parthian_energy,DETERMINISTIC_MAPPED

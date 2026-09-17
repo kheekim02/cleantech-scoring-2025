@@ -1,0 +1,458 @@
+question_id,orig_q_id,cat_code,category_name,data_type,verification_role,question_text,weight
+BC_Q1a,BC_Q1,BC,1. Business Canvas,BINARY,AI,"Value proposition states specific, quantified performance improvement or cost savings metric",1.0
+BC_Q1b,BC_Q1,BC,1. Business Canvas,BINARY,AI,Value proposition explicitly identifies incumbent technology or baseline alternative being replaced,1.0
+BC_Q2a,BC_Q2,BC,1. Business Canvas,BINARY,AI,Specific target customer segment or institutional buyer category explicitly named,1.0
+BC_Q2b,BC_Q2,BC,1. Business Canvas,BINARY,AI,"Defines at least one quantifiable customer attribute (size, fleet, expenditure, geography)",1.0
+BC_Q2c,BC_Q2,BC,1. Business Canvas,BINARY,AI,Specific internal decision-maker title or economic buyer identified,1.0
+BC_Q3_val,BC_Q3,BC,1. Business Canvas,INTEGER,AI,Total count of customer discovery interviews conducted,1.0
+BC_Q3a,BC_Q3,BC,1. Business Canvas,BINARY,AI,States conducting discovery interviews with 5 or more prospective customers,1.0
+BC_Q3b,BC_Q3,BC,1. Business Canvas,BINARY,AI,"Cites specific direct quotes, synthesis, or feedback derived from customer interviews",1.0
+BC_Q4a,BC_Q4,BC,1. Business Canvas,BINARY,AI,"Value Propositions block of the BMC contains substantive descriptive entries (bulleted items or complete sentences, not placeholders)",1.0
+BC_Q4b,BC_Q4,BC,1. Business Canvas,BINARY,AI,"Customer Segments block of the BMC contains substantive descriptive entries (bulleted items or complete sentences, not placeholders)",1.0
+BC_Q4c,BC_Q4,BC,1. Business Canvas,BINARY,AI,"Revenue Streams block of the BMC contains substantive descriptive entries (bulleted items or complete sentences, not placeholders)",1.0
+BC_Q5a,BC_Q5,BC,1. Business Canvas,BINARY,AI,Key Partners block of the BMC contains substantive descriptive entries,1.0
+BC_Q5b,BC_Q5,BC,1. Business Canvas,BINARY,AI,Key Activities block of the BMC contains substantive descriptive entries,1.0
+BC_Q5c,BC_Q5,BC,1. Business Canvas,BINARY,AI,Key Resources block of the BMC contains substantive descriptive entries,1.0
+BC_Q5d,BC_Q5,BC,1. Business Canvas,BINARY,AI,Cost Structure block of the BMC contains substantive descriptive entries,1.0
+IS_Q1a,IS_Q1,IS,2. Impact/ Sustainability,BINARY,AI,Company purpose directly addresses at least 1 UN Sustainable Development Goal,1.0
+IS_Q1b,IS_Q1,IS,2. Impact/ Sustainability,BINARY,AI,Company purpose directly addresses 2 or more UN SDGs,1.0
+IS_Q10,IS_Q10,IS,2. Impact/ Sustainability,BINARY,AI,"Categorizes operational waste streams by percentage, OR confirms business model generates zero physical manufacturing waste",1.0
+IS_Q2a,IS_Q2,IS,2. Impact/ Sustainability,BINARY,AI,Maps at least 1 applicable SDG across company value chain,1.0
+IS_Q2b,IS_Q2,IS,2. Impact/ Sustainability,BINARY,AI,Maps 2 or more applicable SDGs across company value chain,1.0
+IS_Q3,IS_Q3,IS,2. Impact/ Sustainability,BINARY,AI,"Addresses whether impact priority is mitigation, resilience/adaptation, or both",1.0
+IS_Q4,IS_Q4,IS,2. Impact/ Sustainability,BINARY,AI,Quantifies environmental/efficiency advantage using numerical metrics against baseline,1.0
+IS_Q5a,IS_Q5,IS,2. Impact/ Sustainability,BINARY,HUMAN,"Describes company culture, mission values, and social purpose",1.0
+IS_Q5b,IS_Q5,IS,2. Impact/ Sustainability,BINARY,AI,Documents policy/plan for reinvestment or allocation of company profits,1.0
+IS_Q6,IS_Q6,IS,2. Impact/ Sustainability,BINARY,AI,Lists formal certification by environmental or sustainability organizations,1.0
+IS_Q7,IS_Q7,IS,2. Impact/ Sustainability,BINARY,AI,Identifies applicable environmental/operating regulations (or confirms none exist),1.0
+IS_Q8,IS_Q8,IS,2. Impact/ Sustainability,BINARY,AI,"Identifies environmental or social risks of physical materials, OR explicitly documents that business model is asset-light/software with no physical material risk",1.0
+IS_Q9a,IS_Q9,IS,2. Impact/ Sustainability,BINARY,AI,Identifies largest sources of energy consumption in operations,1.0
+IS_Q9b,IS_Q9,IS,2. Impact/ Sustainability,BINARY,AI,"Identifies operational land use footprint, OR confirms operations require no dedicated land footprint",1.0
+PMF_Q1a,PMF_Q1,PMF,3. Product/ Market Fit,BINARY,AI,Startup has determined and named a specific target market,1.0
+PMF_Q1b,PMF_Q1,PMF,3. Product/ Market Fit,BINARY,HUMAN,Startup articulates why the chosen target market segment is superior to alternative segments for its initial beachhead entry,1.0
+PMF_Q10,PMF_Q10,PMF,3. Product/ Market Fit,BINARY,AI,"Did the startup create multiple customer segments based on demographic factors (ex: age, income, etc)",1.0
+PMF_Q11,PMF_Q11,PMF,3. Product/ Market Fit,BINARY,AI,"Did the startup create multiple customer segments based on psychological factors (ex: comfort with technology, attitudes towards cost)",1.0
+PMF_Q12,PMF_Q12,PMF,3. Product/ Market Fit,BINARY,HUMAN,Did the startup identify important psychographic attributes associated with their target audience? (ex. Our target audience tends to be skeptical about tech companies),1.0
+PMF_Q13,PMF_Q13,PMF,3. Product/ Market Fit,BINARY,AI,Has the startup validated the size and representativeness of their target market psychographic segmentation through a statistically significant quantitative methodology?,1.0
+PMF_Q14,PMF_Q14,PMF,3. Product/ Market Fit,BINARY,AI,Startup has a research-validated range potential customers would be willing to pay for their product or service.,1.0
+PMF_Q15,PMF_Q15,PMF,3. Product/ Market Fit,BINARY,AI,Start up has implemented feedback mechanisms into their service or product experience to gather ongoing feedback from individuals who are using or who will use their product/service.,1.0
+PMF_Q16,PMF_Q16,PMF,3. Product/ Market Fit,BINARY,AI,Startups has embedded Net Promoter Score (NPS) into ongoing feedback.,1.0
+PMF_Q17,PMF_Q17,PMF,3. Product/ Market Fit,BINARY,AI,Has the startup articulated all of the stakeholders in the market they are addressing?,1.0
+PMF_Q18,PMF_Q18,PMF,3. Product/ Market Fit,BINARY,HUMAN,Has the start up identified and addressed the needs of all key stakeholders?,1.0
+PMF_Q19,PMF_Q19,PMF,3. Product/ Market Fit,BINARY,AI,Have they identified who the purchasing decision-makers in the system are?,1.0
+PMF_Q2,PMF_Q2,PMF,3. Product/ Market Fit,BINARY,AI,Startup has identified a need the target market has that the product fills.,1.0
+PMF_Q20,PMF_Q20,PMF,3. Product/ Market Fit,BINARY,AI,Startup has someone dedicated to tech tools and ops.,1.0
+PMF_Q21,PMF_Q21,PMF,3. Product/ Market Fit,BINARY,AI,"Startup has dedicated resources, or individual on team, to user experience.",1.0
+PMF_Q22,PMF_Q22,PMF,3. Product/ Market Fit,BINARY,AI,Startup has worked with a user/customer research professional.,1.0
+PMF_Q23,PMF_Q23,PMF,3. Product/ Market Fit,BINARY,HUMAN,Startup has a logo that is discernible when smaller than ½ an inch.,1.0
+PMF_Q24,PMF_Q24,PMF,3. Product/ Market Fit,BINARY,HUMAN,Startup has a logo that is discernible when billboard size.,1.0
+PMF_Q25,PMF_Q25,PMF,3. Product/ Market Fit,BINARY,HUMAN,Startup has a logo that is discernible in greyscale,1.0
+PMF_Q26,PMF_Q26,PMF,3. Product/ Market Fit,BINARY,HUMAN,"Startup has a cohesive visual design system that is consistent across, e.g., email, website, and other assets.",1.0
+PMF_Q27,PMF_Q27,PMF,3. Product/ Market Fit,BINARY,AI,"Startup has a branding professional, or has worked with one.",1.0
+PMF_Q28,PMF_Q28,PMF,3. Product/ Market Fit,BINARY,HUMAN,Startup has a brand strategy based in customer insights.,1.0
+PMF_Q29,PMF_Q29,PMF,3. Product/ Market Fit,BINARY,AI,Has the startup completed a competitive analysis?,1.0
+PMF_Q3,PMF_Q3,PMF,3. Product/ Market Fit,BINARY,AI,Startup has had live research-focused discussions with at least 4 members of its target audience.,1.0
+PMF_Q30,PMF_Q30,PMF,3. Product/ Market Fit,BINARY,AI,Has the startup analyzed the reasons why customers use the competition?,1.0
+PMF_Q31,PMF_Q31,PMF,3. Product/ Market Fit,BINARY,HUMAN,Has the startup identified unique value that it can deliver to customers?,1.0
+PMF_Q32,PMF_Q32,PMF,3. Product/ Market Fit,BINARY,AI,Has the startup identified customer experience pain-points in at least 1 major competitor's product?,1.0
+PMF_Q33,PMF_Q33,PMF,3. Product/ Market Fit,BINARY,AI,Has the startup identified customer experience pain-points in at least 3 major competitor's product?,1.0
+PMF_Q34,PMF_Q34,PMF,3. Product/ Market Fit,BINARY,HUMAN,Has the startup validated customer experience pain-points through user research?,1.0
+PMF_Q4,PMF_Q4,PMF,3. Product/ Market Fit,BINARY,AI,Startup has had live research-focused discussions with at least 6 members of its target audience.,1.0
+PMF_Q5,PMF_Q5,PMF,3. Product/ Market Fit,BINARY,AI,Startup has had live research-focused discussions with 10 or more members of its target audience.,1.0
+PMF_Q6,PMF_Q6,PMF,3. Product/ Market Fit,BINARY,AI,Startup updated or created customer segments based on research.,1.0
+PMF_Q7,PMF_Q7,PMF,3. Product/ Market Fit,BINARY,AI,Startup updated or created customer archetypes/personas based on research.,1.0
+PMF_Q8,PMF_Q8,PMF,3. Product/ Market Fit,BINARY,AI,Startup updated or changed its user experience based on research.,1.0
+PMF_Q9a,PMF_Q9,PMF,3. Product/ Market Fit,BINARY,AI,Articulates specific insight or finding learned from customer research,1.0
+PMF_Q9b,PMF_Q9,PMF,3. Product/ Market Fit,BINARY,AI,Identifies concrete change made to strategy or product experience based on research,1.0
+M_Q1a,M_Q1,M,4. Markets,BINARY,AI,Identifies commercial distribution channels for product delivery,1.0
+M_Q1b,M_Q1,M,4. Markets,BINARY,AI,"Identifies media, marketing, or industry channels for customer acquisition",1.0
+M_Q10,M_Q10,M,4. Markets,BINARY,AI,Has the startup identified and prioritized the most important features to customers for GTM rollout?,1.0
+M_Q11a,M_Q11,M,4. Markets,BINARY,AI,Provides visual or scheduled product roadmap across future quarters/years,1.0
+M_Q11b,M_Q11,M,4. Markets,BINARY,AI,Provides technical or commercial rationale for feature sequencing,1.0
+M_Q12,M_Q12,M,4. Markets,BINARY,AI,Has the startup anticipated the need to gather feedback and pivot in the future?,1.0
+M_Q2,M_Q2,M,4. Markets,BINARY,HUMAN,Does the startup have a clear operational plan to distribute its product or service via distribution channels that customers frequently use?,1.0
+M_Q3,M_Q3,M,4. Markets,BINARY,AI,"Has the startup identified ways to leverage their advocates, customers or community to spread their product or service?",1.0
+M_Q4,M_Q4,M,4. Markets,BINARY,HUMAN,Has the startup designed a viral marketing campaign for their product or service targeted at a specific audience?,1.0
+M_Q5,M_Q5,M,4. Markets,BINARY,HUMAN,Has the startup created engagement mechanisms to allow for different levels of user participation?,1.0
+M_Q6,M_Q6,M,4. Markets,BINARY,HUMAN,Has the startup generated a clear strategy to on-board new users?,1.0
+M_Q7,M_Q7,M,4. Markets,BINARY,AI,Has startup identified key barriers to customer purchases?,1.0
+M_Q8,M_Q8,M,4. Markets,BINARY,AI,Has the startup identified sales tactics to address key purchasing barriers?,1.0
+M_Q9,M_Q9,M,4. Markets,BINARY,AI,Has the startup created a customer feedback channel within the sales process?,1.0
+TP_Q1,TP_Q1,TP,5. Tech and Product,BINARY,AI,Did the company cite peer-reviewed articles about its core technology?,1.0
+TP_Q10,TP_Q10,TP,5. Tech and Product,BINARY,AI,"Has the company identified its third-party validation entity (university, national lab, independent test organization, etc.)?",1.0
+TP_Q11,TP_Q11,TP,5. Tech and Product,BINARY,AI,Does the company have documentation for the cost of third-party validation (anticipated or paid)?,1.0
+TP_Q12a,TP_Q12,TP,5. Tech and Product,BINARY,AI,Engaged an independent 3rd-party validation entity,1.0
+TP_Q12b,TP_Q12,TP,5. Tech and Product,BINARY,AI,3rd-party technical validation testing completed with formal documentation delivered,1.0
+TP_Q13,TP_Q13,TP,5. Tech and Product,BINARY,AI,Does the company have any field installations with potential customers?,1.0
+TP_Q14,TP_Q14,TP,5. Tech and Product,BINARY,AI,Does the company have any paid field installations?,1.0
+TP_Q15a,TP_Q15,TP,5. Tech and Product,BINARY,AI,"Product certification (UL, ASTM) obtained or confirmed not needed",1.0
+TP_Q15b,TP_Q15,TP,5. Tech and Product,BINARY,AI,Formal written roadmap/testing plan to achieve required certifications (OR certification confirmed not needed),1.0
+TP_Q16,TP_Q16,TP,5. Tech and Product,BINARY,HUMAN,Is the product ready for manufacture or deployment?,1.0
+TP_Q2,TP_Q2,TP,5. Tech and Product,BINARY,AI,Has the company tested the technology internally?,1.0
+TP_Q3,TP_Q3,TP,5. Tech and Product,BINARY,AI,Does the company have third-party validation?,1.0
+TP_Q4,TP_Q4,TP,5. Tech and Product,BINARY,AI,Has the company identified whether or not there are other companies using the same or similar core technology?,1.0
+TP_Q5_val,TP_Q5,TP,5. Tech and Product,INTEGER,AI,Total count of filed patent applications,1.0
+TP_Q5a,TP_Q5,TP,5. Tech and Product,BINARY,AI,"Filed at least 1 patent application (utility, non-provisional, or PCT)",1.0
+TP_Q5b,TP_Q5,TP,5. Tech and Product,BINARY,AI,Filed 3 or more patent applications,1.0
+TP_Q5c,TP_Q5,TP,5. Tech and Product,BINARY,AI,Patent application serial numbers explicitly listed in materials,1.0
+TP_Q6_val,TP_Q6,TP,5. Tech and Product,INTEGER,AI,Total count of granted patents,1.0
+TP_Q6a,TP_Q6,TP,5. Tech and Product,BINARY,AI,Owns or exclusively licenses at least 1 granted patent,1.0
+TP_Q6b,TP_Q6,TP,5. Tech and Product,BINARY,AI,Owns or exclusively licenses 3 or more granted patents,1.0
+TP_Q7_val,TP_Q7,TP,5. Tech and Product,INTEGER,AI,Explicitly stated Technology Readiness Level (1-9),1.0
+TP_Q7a,TP_Q7,TP,5. Tech and Product,BINARY,AI,Technology validated in laboratory environment (TRL >= 4),1.0
+TP_Q7b,TP_Q7,TP,5. Tech and Product,BINARY,AI,Integrated system demonstrated in operational field environment (TRL >= 7),1.0
+TP_Q7c,TP_Q7,TP,5. Tech and Product,BINARY,AI,TRL validated by external 3rd-party engineering report or partner letter,1.0
+TP_Q8,TP_Q8,TP,5. Tech and Product,BINARY,AI,Does the company have an initial prototype?,1.0
+TP_Q9,TP_Q9,TP,5. Tech and Product,BINARY,AI,Does the company have a full-scale prototype or software beta version?,1.0
+F_Q1,F_Q1,F,6. Financials,BINARY,AI,Does the company have an operating budget?,1.0
+F_Q10a,F_Q10,F,6. Financials,BINARY,AI,Capital budget includes revenues broken down by project,1.0
+F_Q10b,F_Q10,F,6. Financials,BINARY,AI,Capital budget includes expenses broken down by project,1.0
+F_Q11a,F_Q11,F,6. Financials,BINARY,AI,Project revenues identified by source or contract line item,1.0
+F_Q11b,F_Q11,F,6. Financials,BINARY,AI,Project expenses identified by category line item,1.0
+F_Q12,F_Q12,F,6. Financials,BINARY,AI,"Are the revenue, expense, and market assumptions upon which the capital budget is based identified by project?",1.0
+F_Q13,F_Q13,F,6. Financials,BINARY,AI,"If the capital budget has been in place for more than the current year, does it compare actual revenue and expenses by project and line item against budgeted revenue and expenses by project and line item?",1.0
+F_Q14a,F_Q14,F,6. Financials,BINARY,AI,Capital budget includes 3-year multi-project projections,1.0
+F_Q14b,F_Q14,F,6. Financials,BINARY,AI,Capital budget includes 5-year multi-project projections,1.0
+F_Q15,F_Q15,F,6. Financials,BINARY,AI,"Are the revenue, expense, and market assumptions upon which the capital budget projections are based identified by project?",1.0
+F_Q16a,F_Q16,F,6. Financials,BINARY,AI,Profit and loss statement (P&L / Income Statement) provided,1.0
+F_Q16b,F_Q16,F,6. Financials,BINARY,AI,Balance sheet provided,1.0
+F_Q16c,F_Q16,F,6. Financials,BINARY,AI,Cash flow statement provided,1.0
+F_Q16d,F_Q16,F,6. Financials,BINARY,AI,Financial model includes a month-by-month cash flow and runway forecast for at least the initial 12–24 months,1.0
+F_Q17,F_Q17,F,6. Financials,BINARY,AI,"Are the balance sheet, profit and loss statement, and cash flow statement reconciled monthly and annually to the company’s bank statement?",1.0
+F_Q18,F_Q18,F,6. Financials,BINARY,AI,"Are the balance sheet, profit and loss statement, and cash flow statement reconciled monthly and annually to the budget?",1.0
+F_Q19a,F_Q19,F,6. Financials,BINARY,AI,Return on equity (ROE) calculated in financial model,1.0
+F_Q19b,F_Q19,F,6. Financials,BINARY,AI,Return on assets (ROA) calculated in financial model,1.0
+F_Q2a,F_Q2,F,6. Financials,BINARY,AI,Operating budget includes projected revenues,1.0
+F_Q2b,F_Q2,F,6. Financials,BINARY,AI,Operating budget includes projected operating expenses,1.0
+F_Q20a,F_Q20,F,6. Financials,BINARY,AI,Projections for Return on Equity (ROE) provided for 3+ years,1.0
+F_Q20b,F_Q20,F,6. Financials,BINARY,AI,Projections for Return on Assets (ROA) provided for 3+ years,1.0
+F_Q21,F_Q21,F,6. Financials,BINARY,AI,Are the market assumptions upon which return on equity and return on assets projections are based identified?,1.0
+F_Q22,F_Q22,F,6. Financials,BINARY,AI,Do return on equity and return on assets projections assume repayment of investor equity and return on investor equity?,1.0
+F_Q23,F_Q23,F,6. Financials,BINARY,AI,Does the company have prior-year audited financial statements?,1.0
+F_Q24,F_Q24,F,6. Financials,BINARY,AI,Does the company have prior-year income tax returns?,1.0
+F_Q25,F_Q25,F,6. Financials,BINARY,AI,(5) Does the company have actual sales or revenue data?,1.0
+F_Q26,F_Q26,F,6. Financials,BINARY,AI,(5) Does the company compare actual sales or revenue data to industry total sales to calculate market share based on similar companies in the same industry?,1.0
+F_Q27a,F_Q27,F,6. Financials,BINARY,AI,Sales or revenue data projected for at least 3 years,1.0
+F_Q27b,F_Q27,F,6. Financials,BINARY,AI,Sales or revenue data projected for 5 or more years,1.0
+F_Q28,F_Q28,F,6. Financials,BINARY,AI,"(5) Does the company compare projected sales or revenue data for the next 3, 5, or 10 years to industry projected total sales to calculate projected market share based on similar companies in the same industry?",1.0
+F_Q29,F_Q29,F,6. Financials,BINARY,AI,(5) Does the company identify assumptions upon which projected sales or revenue data are based?,1.0
+F_Q3a,F_Q3,F,6. Financials,BINARY,AI,"Revenues broken down by individual customer stream, SKU, or contract",1.0
+F_Q3b,F_Q3,F,6. Financials,BINARY,AI,"Expenses categorized by functional line item (COGS, R&D, S&M, G&A)",1.0
+F_Q4,F_Q4,F,6. Financials,BINARY,AI,"Are the revenue, expense, and market assumptions upon which the operating budget is based identified?",1.0
+F_Q5,F_Q5,F,6. Financials,BINARY,AI,"If the operating budget has been in place for more than the current year, does it compare actual revenue and expenses by line item against budgeted revenue and expenses by line item?",1.0
+F_Q6a,F_Q6,F,6. Financials,BINARY,AI,Operating budget includes at least 3 years of pro-forma projections,1.0
+F_Q6b,F_Q6,F,6. Financials,BINARY,AI,Operating budget includes 5 or more years of pro-forma projections,1.0
+F_Q6c,F_Q6,F,6. Financials,BINARY,AI,Model projects market share or unit volume adoption alongside dollars,1.0
+F_Q7,F_Q7,F,6. Financials,BINARY,AI,"Are revenue and expense projections identified as fixed, variable, or marginal?",1.0
+F_Q8,F_Q8,F,6. Financials,BINARY,AI,"Are the revenue, expense, and market assumptions upon which the operating budget projections are based identified?",1.0
+F_Q9,F_Q9,F,6. Financials,BINARY,AI,Does the company have a capital budget?,1.0
+L_Q1,L_Q1,L,7. Legal,BINARY,AI,Does the company have an intellectual property strategy?,1.0
+L_Q10,L_Q10,L,7. Legal,BINARY,AI,Has the Company successfully obtained a trademark or service mark registration for any of its marks?,1.0
+L_Q11,L_Q11,L,7. Legal,BINARY,AI,"Does the Company plan to sell its products or services internationally?
+- If no: award 1 pt.
+- If yes: award 1 pt only if the Company provides evidence that it has applied for trademark registrations in any foreign countries. Otherwise, award 0 pts.",1.0
+L_Q12,L_Q12,L,7. Legal,BINARY,AI,Does the company have a copyright strategy?,1.0
+L_Q13,L_Q13,L,7. Legal,BINARY,AI,"Does the product involve source code?
+- If no: award 1 pt.
+- If yes: award 1 pt only if the Company has written agreements with every engineer who wrote code that properly assign their copyrights to the Company. Otherwise, award 0 pts.",1.0
+L_Q14,L_Q14,L,7. Legal,BINARY,AI,"Is there any open-source code in the product?
+- If no: award 1 pt.
+- If yes: award 1 pt only if the Company has copies of the open-source license for the code. Otherwise, award 0 pts.",1.0
+L_Q15,L_Q15,L,7. Legal,BINARY,AI,"If the company does not think it has open-source code, has it conducted rigorous testing to confirm that there is no open-source code in the product?",1.0
+L_Q16,L_Q16,L,7. Legal,BINARY,AI,Has the company filed any copyright registrations?,1.0
+L_Q17,L_Q17,L,7. Legal,BINARY,AI,Has the company registered its website?,1.0
+L_Q18,L_Q18,L,7. Legal,BINARY,AI,Does the company have good archival information so that it can prove exactly what was on its website on any specific day in the past?,1.0
+L_Q19,L_Q19,L,7. Legal,BINARY,AI,Does the company have a patent strategy?,1.0
+L_Q2,L_Q2,L,7. Legal,BINARY,AI,Does this company spend time on developing and implementing an intellectual property strategy?,1.0
+L_Q20,L_Q20,L,7. Legal,BINARY,AI,Has the company filed any applications for patents?,1.0
+L_Q21,L_Q21,L,7. Legal,BINARY,AI,Does the company know in which countries it plans to seek patent protections?,1.0
+L_Q22,L_Q22,L,7. Legal,BINARY,AI,Does the company know which of its competitors is filing patent applications?,1.0
+L_Q23,L_Q23,L,7. Legal,BINARY,AI,Has the company evaluated their patent portfolios?,1.0
+L_Q24,L_Q24,L,7. Legal,BINARY,AI,Has the company evaluated their products?,1.0
+L_Q25,L_Q25,L,7. Legal,BINARY,AI,Does the company know what technical features distinguish its product from those of its competitors?,1.0
+L_Q26,L_Q26,L,7. Legal,BINARY,AI,Does the company know whether customers buy its products based on any particular technical feature that it invented?,1.0
+L_Q27,L_Q27,L,7. Legal,BINARY,AI,Does the company have a trade secret strategy?,1.0
+L_Q28,L_Q28,L,7. Legal,BINARY,AI,Is the company taking reasonable steps to ensure that its trade secrets remain secret?,1.0
+L_Q29,L_Q29,L,7. Legal,BINARY,AI,Have all employees signed non-disclosure and invention assignment agreements?,1.0
+L_Q3,L_Q3,L,7. Legal,BINARY,AI,Is there a person in the organization who is tasked with managing intellectual property?,1.0
+L_Q30,L_Q30,L,7. Legal,BINARY,HUMAN,"Has the company identified technical information that is known to the company, is not generally known or readily accessible to competitors, and derives value from not being generally known or readily accessible?",1.0
+L_Q31,L_Q31,L,7. Legal,BINARY,HUMAN,"Has the company identified business information that is known to the company, is not generally known or readily accessible to competitors, and derives value from not being generally known or readily accessible?",1.0
+L_Q32,L_Q32,L,7. Legal,BINARY,AI,"Has the Company hired any people who worked for competitors?
+- If no: award 1 pt.
+- If yes: award 1 pt only if the Company took steps to ensure that it does not learn or use the competitor's trade secret information. Otherwise, award 0 pts.",1.0
+L_Q33,L_Q33,L,7. Legal,BINARY,AI,"Has the company already filed documents establishing a legal entity (e.g. C Corp, S Corp, LLC)?",1.0
+L_Q34,L_Q34,L,7. Legal,BINARY,AI,"If the Company has already filed documents establishing a legal entity, has it listed all documents related to the legal entity (e.g., articles of incorporation, bylaws, amendments; minutes of board of directors, committee and shareholders' meetings; consents)?",1.0
+L_Q35,L_Q35,L,7. Legal,BINARY,AI,"Has the Company signed any loan agreements, including promissory notes, financing arrangements, or lines of credit?
+- If no: award 1 pt.
+- If yes: award 1 pt only if the Company provides a complete list of banks or other lenders with whom it has a financial relationship, together with copies of all related credit agreements, debt instruments, security agreements, mortgages, collateral pledges, indentures, financial or performance guaranties, indemnifications, liens, equipment leases, or other agreements evidencing outstanding loans to which the Company is or was a party within the past two years. Otherwise, award 0 pts.",1.0
+L_Q36,L_Q36,L,7. Legal,BINARY,AI,"Is the Company a party to any nondisclosure or noncompete agreements?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides a list of such agreements. Otherwise, 0 pts.",1.0
+L_Q37,L_Q37,L,7. Legal,BINARY,AI,"Has the Company signed any sales, distribution, franchise, or licensing agreements?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides a list of such agreements, including but not limited to distribution, sales, marketing, and supply agreements; price quote, invoice, purchase, or warranty forms; contracts, transcripts, or letters of divestiture from any merger or acquisition within the past five years; powers of attorney; exclusivity agreements; franchise agreements; and indemnification agreements. Otherwise, 0 pts.",1.0
+L_Q38,L_Q38,L,7. Legal,BINARY,AI,"Has the Company been involved in any past litigation, or does it face any pending litigation?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides: copies of pleadings or correspondence for past or pending lawsuits involving the Company or Founders; a summary of any disputes with suppliers, competitors, or customers; a history of any issues with regulatory bodies such as the SEC or IRS; any harassment, wrongful termination, or discrimination disputes within the past three years; correspondence with auditors or accountants regarding threatened or pending litigation, assessments, or claims; and lists of any decrees, injunctions, settlements, orders, or judgments of courts or governmental agencies, settlement documentation, and unsatisfied judgments. Otherwise, 0 pts.",1.0
+L_Q39,L_Q39,L,7. Legal,BINARY,AI,"Is the Company subject to any environmental regulations?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides: descriptions of any environmental hazards, liabilities, or contingencies; a list of any materials or processes that may negatively impact the environment; copies of notices and filings with the Environmental Protection Agency (EPA); and environmental audits, if any, for each Company property. Otherwise, 0 pts.",1.0
+L_Q4,L_Q4,L,7. Legal,BINARY,AI,"If yes, does that person have more than 5 years of experience managing intellectual property?",1.0
+L_Q40,L_Q40,L,7. Legal,BINARY,AI,"Has the Company or its Founders signed any agreements with officers, advisors, employees, consultants, or third-party service providers?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides: all employment and consulting agreements, loan agreements, and documents relating to other transactions with officers, directors, key employees, and related parties; a schedule of all compensation paid to officers, directors, and key employees for the most recent fiscal year, showing salary separately; a summary of employee benefits, including pension, profit-sharing, compensation, and retirement plans; a summary of management incentive or bonus plans and other non-cash compensation; confidentiality agreements with employees; and a description of all related-party transactions during the last three years and any currently proposed transactions. Otherwise, 0 pts.",1.0
+L_Q41,L_Q41,L,7. Legal,BINARY,AI,"Has the Company drafted guidelines for employees, contractors, and other affiliated workers?
+ - Award 1 pt only if the Company provides a copy of the employee handbook, including policies on vacation, sick days, benefits, holidays, and paid leave; documents on pension plan funding and distributions; and copies of all Occupational Safety and Health Administration (OSHA) examinations. Otherwise, 0 pts.",1.0
+L_Q42,L_Q42,L,7. Legal,BINARY,AI,"Does the Company own, or plan to acquire, real or material personal property?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides: a list of real and material personal property owned by the Company; documents of title, mortgages, deeds of trust, and security agreements pertaining to those properties; and all outstanding leases with an original term greater than one year for real and personal property to which the Company is either lessor or lessee. Otherwise, 0 pts.",1.0
+L_Q43,L_Q43,L,7. Legal,BINARY,AI,"Is the Company a party to any insurance or liability agreements?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides: a schedule or copies of all material insurance policies covering property, liabilities, and operations, including product liability; a schedule of any other policies in force, such as key-man or director indemnification policies; and all other relevant documents pertaining to the Company's insurance and liability exposure. Otherwise, 0 pts.",1.0
+L_Q44,L_Q44,L,7. Legal,BINARY,AI,"Is the Company a party to any acquisition, partnership, or joint venture agreements?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides: copies of all acquisition, partnership, or joint venture agreements; documents pertaining to potential acquisitions or alliances; and any agreements regarding divestiture of assets. Otherwise, 0 pts.",1.0
+L_Q45,L_Q45,L,7. Legal,BINARY,AI,"Has the Company engaged in any marketing, promotional, or public relations activities?
+ - Award 1 pt only if the Company provides: copies of any press releases from the last two years; articles and other pertinent marketing studies or reports relating to the Company or its industry; information regarding competitors; customer satisfaction surveys, if any; and current brochures and sales materials describing the Company's products or services. Otherwise, 0 pts.",1.0
+L_Q46,L_Q46,L,7. Legal,BINARY,AI,"Does the Company require any special permits, licenses, or authorizations to operate in any state, country, or other jurisdiction?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides: recently obtained good-standing certificates for all states and jurisdictions where the Company does or plans to do business; copies of all permits and licenses necessary for operations; a summary of any inquiry during the past three years involving federal, state, or other governmental agencies; and a summary of all federal, state, and local laws, rules, and regulations applicable to the Company's main business. Otherwise, 0 pts.",1.0
+L_Q47,L_Q47,L,7. Legal,BINARY,HUMAN,"Are there any corporate or equity structural issues that may pose problems in the future, particularly for investors or partners?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company explains how it will address them. Otherwise, 0 pts.",1.0
+L_Q48,L_Q48,L,7. Legal,BINARY,AI,"Has the Company ever applied for, issued, or transferred securities, or signed any contracts, arrangements, documents, or commitments relating to the Company's stock?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides documents relating to its equity structure, including: stock certificates, warrants, and options; stockholder information with number of shares held, dates of issuance, and consideration paid; employee stock benefit plans and equity agreements; any voting trust, buy/sell, stockholder, warrant, proxy, or right-of-first-refusal agreements; any registration rights or pre-emptive rights agreements; powers of attorney on any matter; convertible debt instruments; and any debt arrangements, guarantees, or indemnifications between officers, directors, or shareholders and the Company. Otherwise, 0 pts.",1.0
+L_Q49,L_Q49,L,7. Legal,BINARY,AI,Has the Company created a comprehensive information and data privacy policy?,1.0
+L_Q5,L_Q5,L,7. Legal,BINARY,AI,Does the company have a trademark/service mark strategy?,1.0
+L_Q50,L_Q50,L,7. Legal,BINARY,AI,"If the Company has created a comprehensive information and data privacy policy, has it provided a copy of this policy, as well as a summary of all federal, state, local and international laws, rules and regulations applicable to the Company's data collecting and data processing activities?",1.0
+L_Q51,L_Q51,L,7. Legal,BINARY,AI,"Has the Company crafted a policy to keep its customers' personal data safe?
+ - Award 1 pt only if the Company provides a copy of this policy, together with a summary of all federal, state, local, and international laws, rules, and regulations applicable to its data collection and processing activities. Otherwise, 0 pts.",1.0
+L_Q52,L_Q52,L,7. Legal,BINARY,AI,"Will the Company use cookies for advertising or tracking purposes, send direct marketing communications to people with whom it has no pre-existing business relationship, or process sensitive personal data of any kind?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company has, or plans to hire, an Information and Privacy Officer familiar with applicable privacy law, including the GDPR, the California Online Privacy Protection Act, and the California Consumer Privacy Act (CCPA). Otherwise, 0 pts.",1.0
+L_Q53,L_Q53,L,7. Legal,BINARY,AI,"Has the Company signed any agreements with, or established relationships involving, any subsidiaries, partnerships, or joint ventures?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides a list of these arrangements and any related agreements. Otherwise, 0 pts.",1.0
+L_Q6,L_Q6,L,7. Legal,BINARY,AI,Has the company filed any applications for trademark registration?,1.0
+L_Q7,L_Q7,L,7. Legal,BINARY,AI,Has the company done a clearance search to determine whether or not it is okay to use the trade or service mark it wants?,1.0
+L_Q8,L_Q8,L,7. Legal,BINARY,AI,"If the Company plans to apply for more than one trade or service mark, has it done a clearance search for every mark it plans to apply for?
+- Not applicable (the Company plans to apply for no marks): award 1 pt.
+- Yes (a clearance search was done for every mark): award 1 pt.
+- No (one or more marks lack a clearance search): award 0 pts.",1.0
+L_Q9,L_Q9,L,7. Legal,BINARY,HUMAN,"Primary commercial brand name is distinctive (suggestive, arbitrary, or fanciful) rather than merely descriptive or generic under USPTO Abercrombie standards",1.0
+T_Q1a,T_Q1,T,8. Team,BINARY,AI,Any co-founder previously founded or co-founded an operating commercial startup (venture-backed or bootstrapped),1.0
+T_Q1b,T_Q1,T,8. Team,BINARY,AI,Any co-founder previously worked as early employee (<= 10th) at a venture startup,1.0
+T_Q10,T_Q10,T,8. Team,BINARY,AI,"""What is the breadth of the team's capabilities in human resources?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts""",1.0
+T_Q11,T_Q11,T,8. Team,BINARY,AI,"What is the breadth of the team's capabilities in sales/marketing?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts",1.0
+T_Q12,T_Q12,T,8. Team,BINARY,AI,"What is the breadth of the team's capabilities in general management?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts",1.0
+T_Q13,T_Q13,T,8. Team,BINARY,AI,"What is the breadth of the team's capabilities in systems/IT?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts",1.0
+T_Q14,T_Q14,T,8. Team,BINARY,AI,"What is the breadth of the team's functional experience?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts",1.0
+T_Q15a,T_Q15,T,8. Team,BINARY,AI,Technical executive holds Master degree or higher,1.0
+T_Q15b,T_Q15,T,8. Team,BINARY,AI,Technical executive holds Ph.D. or terminal engineering doctorate,1.0
+T_Q16a,T_Q16,T,8. Team,BINARY,AI,At least one management executive holds a Bachelor degree or higher,1.0
+T_Q16b,T_Q16,T,8. Team,BINARY,AI,"At least one management executive holds an MBA, JD, or Master degree",1.0
+T_Q17a,T_Q17,T,8. Team,BINARY,AI,Scientific advisor holds Master degree or higher,1.0
+T_Q17b,T_Q17,T,8. Team,BINARY,AI,Scientific advisor holds Ph.D.,1.0
+T_Q18a,T_Q18,T,8. Team,BINARY,AI,"Board member holds Master, MBA, or JD degree",1.0
+T_Q18b,T_Q18,T,8. Team,BINARY,AI,Board member holds Ph.D.,1.0
+T_Q19a,T_Q19,T,8. Team,BINARY,AI,Primary CEO/founder dedicated full-time to startup with no outside employment,1.0
+T_Q19b,T_Q19,T,8. Team,BINARY,AI,All primary co-founders operating full-time on the business,1.0
+T_Q2_val,T_Q2,T,8. Team,INTEGER,AI,Total count of prior startups team members were involved with,1.0
+T_Q2a,T_Q2,T,8. Team,BINARY,AI,Team members previously involved with at least 1 startup,1.0
+T_Q2b,T_Q2,T,8. Team,BINARY,AI,Team members previously involved with 3 or more startups,1.0
+T_Q20,T_Q20,T,8. Team,BINARY,AI,"Has any personal capital been directly invested?
+ - Yes
+ - No",1.0
+T_Q21a,T_Q21,T,8. Team,BINARY,AI,Team has worked together for at least 1 year,1.0
+T_Q21b,T_Q21,T,8. Team,BINARY,AI,Team has worked together for more than 3 years,1.0
+T_Q22,T_Q22,T,8. Team,BINARY,AI,"Has the management team taken a formal assessment of team building dynamics?
+ - Yes
+ - No",1.0
+T_Q23,T_Q23,T,8. Team,BINARY,HUMAN,"Is the team using the insight to actively improve the team dynamics of the founding team?
+ - Very: award 1 pt
+ - Somewhat: award 0.5 pts
+ - Not much or N/A: award 0 pts",1.0
+T_Q24,T_Q24,T,8. Team,BINARY,HUMAN,"Is there a structured approach to engaging the advisory team?
+ - Yes
+ - No",1.0
+T_Q25,T_Q25,T,8. Team,BINARY,HUMAN,"What percent of advisors are actively engaged with the company?
+ - More than 90%: award 1 pt
+ - 50% to 90%: award 0.5 pts
+ - Less than 50% or no information: award 0 pts",1.0
+T_Q26a,T_Q26,T,8. Team,BINARY,AI,Raised capital or completed commercial deals with Angel Investors (>= $250K),1.0
+T_Q26b,T_Q26,T,8. Team,BINARY,AI,Raised >= $2M in cumulative capital or completed major enterprise deals with Angel Investors,1.0
+T_Q26c,T_Q26,T,8. Team,BINARY,AI,Raised >= $10M in cumulative capital from Angel Investors,1.0
+T_Q27a,T_Q27,T,8. Team,BINARY,AI,Raised capital or completed commercial deals with Family Offices (>= $250K),1.0
+T_Q27b,T_Q27,T,8. Team,BINARY,AI,Raised >= $2M in cumulative capital or completed major enterprise deals with Family Offices,1.0
+T_Q27c,T_Q27,T,8. Team,BINARY,AI,Raised >= $10M in cumulative capital from Family Offices,1.0
+T_Q28a,T_Q28,T,8. Team,BINARY,AI,Raised capital or completed commercial deals with VCs (>= $250K),1.0
+T_Q28b,T_Q28,T,8. Team,BINARY,AI,Raised >= $2M in cumulative capital or completed major enterprise deals with VCs,1.0
+T_Q28c,T_Q28,T,8. Team,BINARY,AI,Raised >= $10M in cumulative capital from VCs,1.0
+T_Q29a,T_Q29,T,8. Team,BINARY,AI,Raised capital or completed commercial deals with Grants/NGOs (>= $250K),1.0
+T_Q29b,T_Q29,T,8. Team,BINARY,AI,Raised >= $2M in cumulative capital or completed major enterprise deals with Grants/NGOs,1.0
+T_Q29c,T_Q29,T,8. Team,BINARY,AI,Raised >= $10M in cumulative capital from Grants/NGOs,1.0
+T_Q3_val,T_Q3,T,8. Team,INTEGER,AI,Total count of prior exits across full-time founders,1.0
+T_Q3a,T_Q3,T,8. Team,BINARY,AI,Any full-time executive involved in at least 1 prior startup exit (M&A/IPO),1.0
+T_Q3b,T_Q3,T,8. Team,BINARY,AI,Any full-time executive involved in 2 or more prior startup exits,1.0
+T_Q30a,T_Q30,T,8. Team,BINARY,AI,Raised capital or completed commercial deals with Strategic Investors (>= $250K),1.0
+T_Q30b,T_Q30,T,8. Team,BINARY,AI,Raised >= $2M in cumulative capital or completed major enterprise deals with Strategic Investors,1.0
+T_Q30c,T_Q30,T,8. Team,BINARY,AI,Raised >= $10M in cumulative capital from Strategic Investors,1.0
+T_Q31,T_Q31,T,8. Team,BINARY,AI,"To what extent has the team hired or supervised senior subject matter/functional experts?
+ - More than 10 people: award 1 pt
+ - 2 to 10 people: award 0.67 pts
+ - 1 to 2 people: award 0.33 pts
+ - None: award 0 pts",1.0
+T_Q4a,T_Q4,T,8. Team,BINARY,AI,Team has 5 or more combined years of experience in company target industry,1.0
+T_Q4b,T_Q4,T,8. Team,BINARY,AI,Team has 15 or more combined years of experience in company target industry,1.0
+T_Q5a,T_Q5,T,8. Team,BINARY,AI,Team member previously held VP or Director level seniority in target industry,1.0
+T_Q5b,T_Q5,T,8. Team,BINARY,AI,Team member previously held CEO or C-Suite seniority in target industry,1.0
+T_Q6,T_Q6,T,8. Team,BINARY,AI,"What is the breadth of the team's capabilities in technical/engineering?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts",1.0
+T_Q7,T_Q7,T,8. Team,BINARY,AI,"What is the breadth of the team's capabilities in supply chain?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts",1.0
+T_Q8,T_Q8,T,8. Team,BINARY,AI,"What is the breadth of the team's capabilities in operations?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts",1.0
+T_Q9,T_Q9,T,8. Team,BINARY,AI,"What is the breadth of the team's capabilities in finance?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts",1.0
+ES_Q1,ES_Q1,ES,9. Executive Summary,BINARY,AI,Does the company have a formal company name?,1.0
+ES_Q10a,ES_Q10,ES,9. Executive Summary,BINARY,AI,Identifies upstream suppliers and manufacturing partners in value chain,1.0
+ES_Q10b,ES_Q10,ES,9. Executive Summary,BINARY,AI,Identifies downstream distributors and buyers in value chain,1.0
+ES_Q11a,ES_Q11,ES,9. Executive Summary,BINARY,AI,Company has paying commercial customers who have purchased product,1.0
+ES_Q11b,ES_Q11,ES,9. Executive Summary,BINARY,AI,Company has active confirmed beta testing or pilot development partners,1.0
+ES_Q11c,ES_Q11,ES,9. Executive Summary,BINARY,AI,Company has signed non-binding Letters of Intent (LOIs) or MOUs,1.0
+ES_Q12,ES_Q12,ES,9. Executive Summary,BINARY,AI,Are key milestone accomplishments presented?,1.0
+ES_Q13,ES_Q13,ES,9. Executive Summary,BINARY,AI,Does the company describe its technology status (TRL or otherwise)?,1.0
+ES_Q14,ES_Q14,ES,9. Executive Summary,BINARY,AI,Is an IP strategy defined?,1.0
+ES_Q15,ES_Q15,ES,9. Executive Summary,BINARY,AI,Is how the company's IP supports the value proposition described?,1.0
+ES_Q16a,ES_Q16,ES,9. Executive Summary,BINARY,AI,Environmental impact goals and metrics stated,1.0
+ES_Q16b,ES_Q16,ES,9. Executive Summary,BINARY,AI,Social or community impact goals stated,1.0
+ES_Q16c,ES_Q16,ES,9. Executive Summary,BINARY,AI,Financial sustainability / cost benefit impact stated,1.0
+ES_Q17,ES_Q17,ES,9. Executive Summary,BINARY,AI,Is there a description of the target market?,1.0
+ES_Q18a,ES_Q18,ES,9. Executive Summary,BINARY,AI,Numerical Total Addressable Market (TAM) dollar valuation explicitly stated,1.0
+ES_Q18b,ES_Q18,ES,9. Executive Summary,BINARY,AI,Underlying TAM calculation assumptions and methodology documented,1.0
+ES_Q19a,ES_Q19,ES,9. Executive Summary,BINARY,AI,Numerical Serviceable Available Market (SAM) dollar valuation explicitly stated,1.0
+ES_Q19b,ES_Q19,ES,9. Executive Summary,BINARY,AI,Underlying SAM calculation assumptions and methodology documented,1.0
+ES_Q2,ES_Q2,ES,9. Executive Summary,BINARY,AI,Is clear and complete contact information provided?,1.0
+ES_Q20a,ES_Q20,ES,9. Executive Summary,BINARY,AI,Target market share percentage explicitly presented,1.0
+ES_Q20b,ES_Q20,ES,9. Executive Summary,BINARY,AI,Market share capture assumptions documented,1.0
+ES_Q21,ES_Q21,ES,9. Executive Summary,BINARY,AI,Are additional markets identified?,1.0
+ES_Q22,ES_Q22,ES,9. Executive Summary,BINARY,AI,Are the key costs/challenges of entering these additional markets discussed?,1.0
+ES_Q23a,ES_Q23,ES,9. Executive Summary,BINARY,AI,Identifies direct competitors,1.0
+ES_Q23b,ES_Q23,ES,9. Executive Summary,BINARY,AI,Identifies indirect competitors and substitutes,1.0
+ES_Q24,ES_Q24,ES,9. Executive Summary,BINARY,AI,Are the company's proposed benefits over the competition described?,1.0
+ES_Q25,ES_Q25,ES,9. Executive Summary,BINARY,AI,Has the company presented its funding history?,1.0
+ES_Q26,ES_Q26,ES,9. Executive Summary,BINARY,AI,Has the company presented its fundraising plans (forward looking)?,1.0
+ES_Q27,ES_Q27,ES,9. Executive Summary,BINARY,AI,Is the use of defined funds discussed?,1.0
+ES_Q28,ES_Q28,ES,9. Executive Summary,BINARY,AI,Does the company have a video that is current and consistent with the overview?,1.0
+ES_Q29,ES_Q29,ES,9. Executive Summary,BINARY,AI,Is the video available to the public?,1.0
+ES_Q3,ES_Q3,ES,9. Executive Summary,BINARY,AI,Does the company have a formal company logo?,1.0
+ES_Q30,ES_Q30,ES,9. Executive Summary,BINARY,AI,Is there a description of the management team?,1.0
+ES_Q31,ES_Q31,ES,9. Executive Summary,BINARY,AI,Is there a formal location? (E.G. HQ address),1.0
+ES_Q32a,ES_Q32,ES,9. Executive Summary,BINARY,AI,Historical revenue stated (or stated zero if pre-revenue),1.0
+ES_Q32b,ES_Q32,ES,9. Executive Summary,BINARY,AI,Forward-looking multi-year revenue projections presented,1.0
+ES_Q33,ES_Q33,ES,9. Executive Summary,BINARY,AI,Is the projection consistent with SAM and target market share? (IE SAM x Market Share % = projected revenue),1.0
+ES_Q34,ES_Q34,ES,9. Executive Summary,BINARY,AI,"Is revenue for year N divided by revenue for year N-1 a constant? If yes, is that assumption explained?",1.0
+ES_Q4,ES_Q4,ES,9. Executive Summary,BINARY,AI,Has the company identified a market category (or CleanTech Category)?,1.0
+ES_Q5,ES_Q5,ES,9. Executive Summary,BINARY,AI,"Is a brief company business history provided? (EG employees, years operational, etc.)",1.0
+ES_Q6,ES_Q6,ES,9. Executive Summary,BINARY,AI,Does the company list current senior management skills and identify skill gaps?,1.0
+ES_Q7a,ES_Q7,ES,9. Executive Summary,BINARY,AI,Clear non-technical problem and solution summary statement provided,1.0
+ES_Q7b,ES_Q7,ES,9. Executive Summary,BINARY,AI,Specific initial beachhead market defined,1.0
+ES_Q7c,ES_Q7,ES,9. Executive Summary,BINARY,AI,Operational route-to-market or distribution channel described,1.0
+ES_Q8,ES_Q8,ES,9. Executive Summary,BINARY,AI,Has the company specified the initial commercial offering(s)?,1.0
+ES_Q9,ES_Q9,ES,9. Executive Summary,BINARY,AI,Is factual / third-party / verifiable information supporting this provided?,1.0
+IP_Q1,IP_Q1,IP,10. Investor Pitch,BINARY,AI,Is there an elevator pitch?,1.0
+IP_Q10,IP_Q10,IP,10. Investor Pitch,BINARY,HUMAN,Does the problem suggest a large market?,1.0
+IP_Q11,IP_Q11,IP,10. Investor Pitch,BINARY,HUMAN,"Is the solution a compelling value proposition clearly benefitting the customer's business (revenues, costs, time, productivity, market, etc.)?",1.0
+IP_Q12,IP_Q12,IP,10. Investor Pitch,BINARY,AI,"Is there a visual ""model"" depicting the solution?",1.0
+IP_Q13,IP_Q13,IP,10. Investor Pitch,BINARY,HUMAN,Does the solution clearly fit in the customer's ecosystem?,1.0
+IP_Q14,IP_Q14,IP,10. Investor Pitch,BINARY,HUMAN,Does the presentation depict differentiation and technical elegance but avoid the weeds?,1.0
+IP_Q15,IP_Q15,IP,10. Investor Pitch,BINARY,HUMAN,Does the presentation clearly define the market?,1.0
+IP_Q16,IP_Q16,IP,10. Investor Pitch,BINARY,AI,"Is there a target vertical, buyer/user, or application?",1.0
+IP_Q17,IP_Q17,IP,10. Investor Pitch,BINARY,AI,Are market size/growth presented?,1.0
+IP_Q18,IP_Q18,IP,10. Investor Pitch,BINARY,AI,Are any of the following shown: TAM/SAM/SOM/CAGR?,1.0
+IP_Q19,IP_Q19,IP,10. Investor Pitch,BINARY,AI,Are historical trends projected into the future?,1.0
+IP_Q2,IP_Q2,IP,10. Investor Pitch,BINARY,AI,Does the presentation define the business and reason for existence?,1.0
+IP_Q20,IP_Q20,IP,10. Investor Pitch,BINARY,HUMAN,Does the methodology combine quantitative rigor with qualitative sensitivity?,1.0
+IP_Q21,IP_Q21,IP,10. Investor Pitch,BINARY,HUMAN,Is there a balance between exciting opportunity vs. chance of success?,1.0
+IP_Q22a,IP_Q22,IP,10. Investor Pitch,BINARY,AI,Explicitly identifies legacy corporate incumbents and emerging venture startup competitors,1.0
+IP_Q22b,IP_Q22,IP,10. Investor Pitch,BINARY,AI,Explicitly discusses indirect substitutes and customer in-house / build-your-own alternatives,1.0
+IP_Q22c,IP_Q22,IP,10. Investor Pitch,BINARY,AI,"Presentation includes competitive landscape framework (matrix, table, or feature grid)",1.0
+IP_Q23,IP_Q23,IP,10. Investor Pitch,BINARY,HUMAN,Does the presentation provide a framework to demonstrate differentiation (BCG grid and/or benefits matrix)?,1.0
+IP_Q24,IP_Q24,IP,10. Investor Pitch,BINARY,AI,Does the presentation use customer-centric attributes and dimensions?,1.0
+IP_Q25,IP_Q25,IP,10. Investor Pitch,BINARY,HUMAN,"Does the presentation demonstrate knowledge of the landscape, including past failures?",1.0
+IP_Q26,IP_Q26,IP,10. Investor Pitch,BINARY,AI,Does the presentation embrace competitor strengths + know its own weaknesses (self-awareness)?,1.0
+IP_Q27,IP_Q27,IP,10. Investor Pitch,BINARY,AI,"Does the presentation highlight secret sauce, competitive advantages, barriers to entry?",1.0
+IP_Q28,IP_Q28,IP,10. Investor Pitch,BINARY,AI,Does the presentation translate key points between business and technical domain?,1.0
+IP_Q29,IP_Q29,IP,10. Investor Pitch,BINARY,AI,"Does it show how customers and partners fit in, if possible?",1.0
+IP_Q3,IP_Q3,IP,10. Investor Pitch,BINARY,AI,"Is there a visual ""model"" built upon in the ""problem"" and ""solution"" slides?",1.0
+IP_Q30,IP_Q30,IP,10. Investor Pitch,BINARY,HUMAN,Does it remain focused on the essential value proposition?,1.0
+IP_Q31,IP_Q31,IP,10. Investor Pitch,BINARY,HUMAN,Does it talk to important but peripheral issues and details while avoiding clutter?,1.0
+IP_Q32,IP_Q32,IP,10. Investor Pitch,BINARY,AI,"Does it address ""invent vs. integrate"" issues?",1.0
+IP_Q33,IP_Q33,IP,10. Investor Pitch,BINARY,HUMAN,Does it show that the company will invent only uniquely competitive elements?,1.0
+IP_Q34,IP_Q34,IP,10. Investor Pitch,BINARY,HUMAN,"Does it show an incremental development path that reduces risk, if possible?",1.0
+IP_Q35,IP_Q35,IP,10. Investor Pitch,BINARY,AI,Does the presentation show what customers buy and how they buy it?,1.0
+IP_Q36,IP_Q36,IP,10. Investor Pitch,BINARY,AI,"Does it discuss high level pricing (e.g., annuity or one fee)?",1.0
+IP_Q37,IP_Q37,IP,10. Investor Pitch,BINARY,AI,Does it describe what the customer will get (today and beyond)?,1.0
+IP_Q38,IP_Q38,IP,10. Investor Pitch,BINARY,AI,Does it profile the customer (vertical/buyer or user/application)?,1.0
+IP_Q39,IP_Q39,IP,10. Investor Pitch,BINARY,AI,Does it profile critical partner relationships (current and future)?,1.0
+IP_Q4,IP_Q4,IP,10. Investor Pitch,BINARY,AI,Does the overview contain two to five high-level succinct bullets?,1.0
+IP_Q40,IP_Q40,IP,10. Investor Pitch,BINARY,AI,Does it show a marketing and sales plan?,1.0
+IP_Q41,IP_Q41,IP,10. Investor Pitch,BINARY,AI,Does it show a value chain and sales cycle?,1.0
+IP_Q42,IP_Q42,IP,10. Investor Pitch,BINARY,AI,Does it compare and contrast to industry comparables?,1.0
+IP_Q43,IP_Q43,IP,10. Investor Pitch,BINARY,HUMAN,Does the presentation show credibility and strategic orchestration of team members?,1.0
+IP_Q44,IP_Q44,IP,10. Investor Pitch,BINARY,HUMAN,Does the team show domain expertise and unique customer insight?,1.0
+IP_Q45,IP_Q45,IP,10. Investor Pitch,BINARY,HUMAN,Does the CEO hire people with skills better than their own?,1.0
+IP_Q46,IP_Q46,IP,10. Investor Pitch,BINARY,HUMAN,"Does the presentation show what's missing, if applicable, or show that nothing is missing?",1.0
+IP_Q47,IP_Q47,IP,10. Investor Pitch,BINARY,AI,Does it show previous companies and titles (industry recognition where meaningful)?,1.0
+IP_Q48,IP_Q48,IP,10. Investor Pitch,BINARY,AI,Does it show the Board of Directors?,1.0
+IP_Q49,IP_Q49,IP,10. Investor Pitch,BINARY,HUMAN,Does the Company present thorough and thoughtful financials?,1.0
+IP_Q5,IP_Q5,IP,10. Investor Pitch,BINARY,HUMAN,"Is there a compelling pain point that will make a customer write a check (revenues, costs, time, productivity, market reach, etc.)?",1.0
+IP_Q50a,IP_Q50,IP,10. Investor Pitch,BINARY,AI,P&L / Income statement slide provided,1.0
+IP_Q50b,IP_Q50,IP,10. Investor Pitch,BINARY,AI,Balance sheet summary slide provided,1.0
+IP_Q51,IP_Q51,IP,10. Investor Pitch,BINARY,AI,Has the Company provided high-level 3- or 5-year projections?,1.0
+IP_Q52,IP_Q52,IP,10. Investor Pitch,BINARY,AI,Do the financials break out revenues and expenses by major category?,1.0
+IP_Q53a,IP_Q53,IP,10. Investor Pitch,BINARY,AI,Financials include pre-tax profit (loss) projection,1.0
+IP_Q53b,IP_Q53,IP,10. Investor Pitch,BINARY,AI,Financials include cash flow and capital requirements,1.0
+IP_Q53c,IP_Q53,IP,10. Investor Pitch,BINARY,AI,Financials include headcount / staffing projections,1.0
+IP_Q54,IP_Q54,IP,10. Investor Pitch,BINARY,AI,Has the Company defined milestone targets?,1.0
+IP_Q55,IP_Q55,IP,10. Investor Pitch,BINARY,AI,Do the financials identify when the Company expects its first revenues?,1.0
+IP_Q56,IP_Q56,IP,10. Investor Pitch,BINARY,AI,Do the financials identify when the Company expects to become cash-flow positive?,1.0
+IP_Q57,IP_Q57,IP,10. Investor Pitch,BINARY,AI,"Has the Company demonstrated tangible competitive barriers (e.g., customers, IP)?",1.0
+IP_Q58,IP_Q58,IP,10. Investor Pitch,BINARY,AI,Do the projections show a $100M/yr run rate by year 5?,1.0
+IP_Q6,IP_Q6,IP,10. Investor Pitch,BINARY,HUMAN,"Is it a ""must-solve"" not merely ""nice-to-solve"" problem?",1.0
+IP_Q7,IP_Q7,IP,10. Investor Pitch,BINARY,AI,"Is there a visual ""model"" depicting the problem?",1.0
+IP_Q8,IP_Q8,IP,10. Investor Pitch,BINARY,AI,Is a historical evolution depicted?,1.0
+IP_Q9,IP_Q9,IP,10. Investor Pitch,BINARY,HUMAN,Are meaningful validating quotes included?,1.0

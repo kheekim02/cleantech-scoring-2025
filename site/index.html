@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CleanTech Open 2025 | Scoring Interface</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="top-nav">
+    <div class="nav-left">
+      <div class="logo-icon">🌱</div>
+      <div class="nav-title"><strong>CleanTech Open 2025</strong> | Scoring Interface</div>
+    </div>
+    <div class="nav-right">
+      <div class="startup-badge">
+        <span id="hdr-startup-name">SolarPure Inc.</span>
+        <span class="demo-tag">DEMO</span>
+      </div>
+      <button class="reset-btn" onclick="location.reload()">Reset Demo</button>
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <main class="app-layout">
+    
+    <!-- LEFT PANE: Source vs AI Extraction -->
+    <section class="left-pane">
+      <div class="pane-header">
+        <div class="pane-title">
+          <span class="icon">📑</span> Source vs. AI Extraction Viewer
+        </div>
+        <div class="step-pill" id="left-step-pill">Executive Summary</div>
+      </div>
+      
+      <div class="pane-body" id="extraction-viewer">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- RIGHT PANE: Scoring / Review Area -->
+    <section class="right-pane">
+      
+      <!-- Right Pane Header -->
+      <div class="right-header">
+        <div class="step-info">
+          <div class="step-counter" id="step-counter">STEP 1 OF 10</div>
+          <h1 class="step-title" id="step-title">Business Canvas</h1>
+        </div>
+        <div class="progress-pill" id="step-progress-pill">
+          0 / 2 human questions done
+        </div>
+      </div>
+
+      <div class="right-scroll-area">
+        
+        <!-- AI Verified Section -->
+        <div class="section-block">
+          <h3 class="section-label">🤖 AI-VERIFIED CHECKS (AUTO-PASSED)</h3>
+          
+          <div class="ai-summary-box">
+            <div class="ai-summary-header">
+              <span class="ai-checks-count" id="ai-checks-count">44/44 checks passed</span>
+              <span class="ai-conf-badge" id="ai-avg-conf">Avg Conf: 0.96</span>
+            </div>
+            <div class="ai-pills-container" id="ai-pills-container">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Human Review Section -->
+        <div class="section-block">
+          <h3 class="section-label">👤 HUMAN REVIEW REQUIRED</h3>
+          
+          <div class="human-cards-container" id="human-cards-container">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Navigation -->
+      <div class="bottom-nav">
+        <button class="nav-btn btn-prev" id="btn-prev" disabled>← Previous</button>
+        <div class="overall-progress">
+          <div class="progress-label">Overall Assessment Progress</div>
+          <div class="progress-track">
+            <div class="progress-fill" id="overall-progress-fill" style="width: 0%"></div>
+          </div>
+        </div>
+        <button class="nav-btn btn-next" id="btn-next">Next Section →</button>
+      </div>
+      
+    </section>
+
+  </main>
+
+  <!-- Submission Modal (Audit Screen) -->
+  <div class="modal-overlay" id="submit-modal" style="display:none;">
+    <div class="modal-content">
+      <h2 id="modal-title">Evaluation Complete</h2>
+      <p id="modal-desc">All categories have been reviewed. Are you ready to submit this scorecard?</p>
+      
+      <div id="audit-container" style="display:none; margin-top: 16px; max-height: 200px; overflow-y: auto; background: var(--bg-left); padding: 16px; border-radius: 6px;">
+        <div style="font-size: 11px; font-weight: 700; color: var(--accent-red); margin-bottom: 12px; letter-spacing: 0.05em;">MISSING QUESTIONS:</div>
+        <ul id="audit-list" style="list-style: none; padding: 0; font-size: 13px; display: flex; flex-direction: column; gap: 10px;">
+          <!-- Populated by JS -->
+        </ul>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:12px; margin-top: 24px;">
+        <button class="nav-btn" onclick="document.getElementById('submit-modal').style.display='none'">Cancel</button>
+        <button class="nav-btn btn-next" id="modal-confirm-btn" onclick="alert('Submitted successfully!')">Confirm & Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/scoring.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

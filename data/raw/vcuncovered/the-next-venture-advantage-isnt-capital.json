@@ -1,0 +1,236 @@
+{
+  "audience": "everyone",
+  "audience_before_archived": null,
+  "canonical_url": "https://www.vcuncovered.com/p/the-next-venture-advantage-isnt-capital",
+  "default_comment_sort": null,
+  "editor_v2": false,
+  "exempt_from_archive_paywall": false,
+  "free_unlock_required": false,
+  "id": 212723960,
+  "podcast_art_url": null,
+  "podcast_duration": null,
+  "podcast_preview_upload_id": null,
+  "podcast_upload_id": null,
+  "podcast_url": null,
+  "post_date": "2026-08-25T17:48:12.359Z",
+  "updated_at": "2026-08-25T17:50:48.615Z",
+  "publication_id": 5837669,
+  "search_engine_description": null,
+  "search_engine_title": null,
+  "section_id": null,
+  "should_send_free_preview": false,
+  "show_guest_bios": true,
+  "slug": "the-next-venture-advantage-isnt-capital",
+  "social_title": null,
+  "subtitle": "FGV Capital closed a $35 million Fund II by betting that what happens after the check is more important than the size. ",
+  "teaser_post_eligible": true,
+  "title": "The Next Venture Advantage Isn\u2019t Capital",
+  "type": "newsletter",
+  "video_upload_id": null,
+  "write_comment_permissions": "everyone",
+  "meter_type": "none",
+  "live_stream_id": null,
+  "is_published": true,
+  "restacks": 0,
+  "reactions": {
+    "\u2764": 2
+  },
+  "top_exclusions": [],
+  "pins": [],
+  "section_pins": [],
+  "has_shareable_clips": false,
+  "previous_post_slug": "morgan-blumberg-m13",
+  "next_post_slug": "vaughn-e-crowe",
+  "cover_image": "https://substackcdn.com/image/fetch/$s_!DWso!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdacf1c02-7835-441d-93e6-5cb54767c39c_1200x800.webp",
+  "cover_image_is_square": false,
+  "cover_image_is_explicit": false,
+  "videoUpload": null,
+  "podcastFields": {
+    "post_id": 212723960,
+    "podcast_episode_number": null,
+    "podcast_season_number": null,
+    "podcast_episode_type": null,
+    "should_syndicate_to_other_feed": null,
+    "syndicate_to_section_id": null,
+    "hide_from_feed": false,
+    "free_podcast_url": null,
+    "free_podcast_duration": null,
+    "preview_contains_ad": false,
+    "was_imported_self_serve_sync": false,
+    "draft_free_podcast_url": null,
+    "draft_free_podcast_duration": null
+  },
+  "podcastUpload": null,
+  "podcastPreviewUpload": null,
+  "voiceover_upload_id": null,
+  "voiceoverUpload": null,
+  "has_voiceover": false,
+  "description": "FGV Capital closed a $35 million Fund II by betting that what happens after the check is more important than the size.",
+  "body_html": "<div class=\"captioned-image-container\"><figure><a class=\"image-link image2 is-viewable-img\" target=\"_blank\" href=\"https://substackcdn.com/image/fetch/$s_!DWso!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdacf1c02-7835-441d-93e6-5cb54767c39c_1200x800.webp\" data-component-name=\"Image2ToDOM\"><div class=\"image2-inset\"><picture><source type=\"image/webp\" srcset=\"https://substackcdn.com/image/fetch/$s_!DWso!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdacf1c02-7835-441d-93e6-5cb54767c39c_1200x800.webp 424w, https://substackcdn.com/image/fetch/$s_!DWso!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdacf1c02-7835-441d-93e6-5cb54767c39c_1200x800.webp 848w, https://substackcdn.com/image/fetch/$s_!DWso!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdacf1c02-7835-441d-93e6-5cb54767c39c_1200x800.webp 1272w, https://substackcdn.com/image/fetch/$s_!DWso!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdacf1c02-7835-441d-93e6-5cb54767c39c_1200x800.webp 1456w\" sizes=\"100vw\"><img src=\"https://substackcdn.com/image/fetch/$s_!DWso!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdacf1c02-7835-441d-93e6-5cb54767c39c_1200x800.webp\" width=\"1200\" height=\"800\" data-attrs=\"{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/dacf1c02-7835-441d-93e6-5cb54767c39c_1200x800.webp&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:800,&quot;width&quot;:1200,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:98008,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/webp&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://www.vcuncovered.com/i/212723960?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdacf1c02-7835-441d-93e6-5cb54767c39c_1200x800.webp&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}\" class=\"sizing-normal\" alt=\"\" srcset=\"https://substackcdn.com/image/fetch/$s_!DWso!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdacf1c02-7835-441d-93e6-5cb54767c39c_1200x800.webp 424w, https://substackcdn.com/image/fetch/$s_!DWso!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdacf1c02-7835-441d-93e6-5cb54767c39c_1200x800.webp 848w, https://substackcdn.com/image/fetch/$s_!DWso!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdacf1c02-7835-441d-93e6-5cb54767c39c_1200x800.webp 1272w, https://substackcdn.com/image/fetch/$s_!DWso!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdacf1c02-7835-441d-93e6-5cb54767c39c_1200x800.webp 1456w\" sizes=\"100vw\" fetchpriority=\"high\"></picture><div class=\"image-link-expand\"><div class=\"pencraft pc-display-flex pc-gap-8 pc-reset\"><button tabindex=\"0\" type=\"button\" class=\"pencraft pc-reset pencraft icon-container restack-image\"><svg aria-hidden=\"true\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" stroke-width=\"1.5\" stroke=\"var(--color-fg-primary)\" stroke-linecap=\"round\" stroke-linejoin=\"round\" xmlns=\"http://www.w3.org/2000/svg\"><g><path d=\"M2.53001 7.81595C3.49179 4.73911 6.43281 2.5 9.91173 2.5C13.1684 2.5 15.9537 4.46214 17.0852 7.23684L17.6179 8.67647M17.6179 8.67647L18.5002 4.26471M17.6179 8.67647L13.6473 6.91176M17.4995 12.1841C16.5378 15.2609 13.5967 17.5 10.1178 17.5C6.86118 17.5 4.07589 15.5379 2.94432 12.7632L2.41165 11.3235M2.41165 11.3235L1.5293 15.7353M2.41165 11.3235L6.38224 13.0882\"></path></g></svg></button><button tabindex=\"0\" type=\"button\" class=\"pencraft pc-reset pencraft icon-container view-image\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-maximize2 lucide-maximize-2\"><polyline points=\"15 3 21 3 21 9\"></polyline><polyline points=\"9 21 3 21 3 15\"></polyline><line x1=\"21\" x2=\"14\" y1=\"3\" y2=\"10\"></line><line x1=\"3\" x2=\"10\" y1=\"21\" y2=\"14\"></line></svg></button></div></div></div></a></figure></div><div class=\"captioned-image-container\"><figure><a class=\"image-link image2\" target=\"_blank\" href=\"https://substackcdn.com/image/fetch/$s_!w_yO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8daa893e-aacf-414e-804b-080490b93885_1346x325.png\" data-component-name=\"Image2ToDOM\"><div class=\"image2-inset\"><picture><source type=\"image/webp\" srcset=\"https://substackcdn.com/image/fetch/$s_!w_yO!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8daa893e-aacf-414e-804b-080490b93885_1346x325.png 424w, https://substackcdn.com/image/fetch/$s_!w_yO!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8daa893e-aacf-414e-804b-080490b93885_1346x325.png 848w, https://substackcdn.com/image/fetch/$s_!w_yO!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8daa893e-aacf-414e-804b-080490b93885_1346x325.png 1272w, https://substackcdn.com/image/fetch/$s_!w_yO!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8daa893e-aacf-414e-804b-080490b93885_1346x325.png 1456w\" sizes=\"100vw\"><img src=\"https://substackcdn.com/image/fetch/$s_!w_yO!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8daa893e-aacf-414e-804b-080490b93885_1346x325.png\" width=\"1346\" height=\"325\" data-attrs=\"{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/8daa893e-aacf-414e-804b-080490b93885_1346x325.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:325,&quot;width&quot;:1346,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:161093,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:false,&quot;internalRedirect&quot;:&quot;https://www.vcuncovered.com/i/212723960?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8daa893e-aacf-414e-804b-080490b93885_1346x325.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}\" class=\"sizing-normal\" alt=\"\" srcset=\"https://substackcdn.com/image/fetch/$s_!w_yO!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8daa893e-aacf-414e-804b-080490b93885_1346x325.png 424w, https://substackcdn.com/image/fetch/$s_!w_yO!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8daa893e-aacf-414e-804b-080490b93885_1346x325.png 848w, https://substackcdn.com/image/fetch/$s_!w_yO!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8daa893e-aacf-414e-804b-080490b93885_1346x325.png 1272w, https://substackcdn.com/image/fetch/$s_!w_yO!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8daa893e-aacf-414e-804b-080490b93885_1346x325.png 1456w\" sizes=\"100vw\"></picture><div></div></div></a></figure></div><p>Venture capital has spent the past decade getting bigger.</p><p>Funds got larger, platforms got larger, and firms built out recruiting, marketing, talent and operating teams to prove they could offer more than a check.</p><p><a href=\"https://fgv.co\">FGV Capital </a>has taken a different route.</p><p>The firm formerly known as Fiat Ventures announced today that it\u2019s closed a <a href=\"https://www.businesswire.com/news/home/20260825768138/en/Fiat-Ventures-Rebrands-to-FGV-Capital-Announces-%2435M-Oversubscribed-Fund-II\">$35 million second fund</a>, oversubscribed from an original $25 million target, while Fiat Ventures and Fiat Growth, its sister consultancy, are coming together under the FGV brand.</p><p>The fund isn\u2019t enormous. That\u2019s part of what makes the strategy interesting.</p><p>FGV is betting that the next generation of venture firms won\u2019t win because they can write the largest check. They\u2019ll win because founders believe they can actually change what happens after the money arrives.</p><p><a href=\"https://www.instagram.com/glovejones/\">Drew Glover</a>, FGV co-founder and general partner, put it more plainly after the close: \u201cIf your only product as a venture capitalist is money, your product is becoming harder to differentiate.\u201d</p><h3>FGV built the growth business first</h3><p>Most venture firms raise a fund first and then start adding services around it.</p><p>FGV came at it from the other direction.</p><p>Since 2018, Fiat Growth has worked with more than 325 companies across customer acquisition, sales, partnerships and other go-to-market problems. The firm says that work has helped drive billions of dollars through those businesses.</p><p>The venture arm came later.</p><p>\u201cWe started by building the infrastructure founders actually needed,\u201d Glover wrote. \u201cStrategy, execution, and distribution.\u201d<br><br>There\u2019s another distinctive piece to the model. </p><p>Fiat Growth negotiated a contractual Right to Invest in many of the companies it worked with. That meant the team wasn\u2019t simply meeting startups through the consultancy and hoping those relationships might someday lead to deals. In many cases, it had a defined path to invest if the company became compelling enough.</p><p>That gave FGV something most new venture firms spend years trying to build, access with additional information attached. </p><p>Instead of meeting a founder for the first time in the middle of a fundraising process, the team could sometimes watch how that company operated before an investment decision ever came up. They could see whether a sales strategy worked, how the founders reacted when growth stalled, and whether the team could actually execute against the story in the deck.</p><p><a href=\"https://www.vcuncovered.com/p/marcos-fernandez-fiat-ventures?r=6dls28\">Marcos Fernandez</a>, co-founder and managing partner, has described FGV\u2019s investment framework as the \u201cFour Ts\u201d: Team, TAM, Traction and Trust.</p><p>The first three are familiar. The fourth is where the broader platform starts to matter.</p><p>\u201cWe see, we develop a thesis, we work with companies, and then we invest,\u201d <a href=\"https://www.linkedin.com/in/marcosfernandez0401/\">Fernandez</a> has said.</p><p>That\u2019s a different information set from meeting a founder during a fundraise and trying to make a conviction call in a few weeks.</p><p>It also explains why FGV doesn\u2019t really fit the traditional venture-platform model. The consultancy can work with companies whether FGV Capital invests in them or not. Some of those relationships may later become investments. Portfolio companies can use the growth business, while limited partners can become customers or partners.</p><p>Fernandez described it to <a href=\"https://techcrunch.com/2026/08/25/fgv-capital-bets-on-a-new-venture-model-raises-35m-fund-ii/\">TechCrunch</a> as a \u201cfull-stack model.\u201d</p><p>\u201cCompanies we invest in can become clients we help scale. Companies we work with can become investments. LPs can become customers or partners to the portfolio.\u201d</p><p>It\u2019s an unusual setup, and probably more useful to think of it as a network of commercial relationships with a fund running through it than as a traditional venture platform.</p><h3>Can the investor get you in the front door</h3><p>None of this means capital is easy to raise. It isn\u2019t.</p><p>But for the startups every venture firm wants, there are often several sources of money around the table \u2014 specialist funds, angels, family offices, corporate investors, syndicates and former founders investing personally.</p><p>So if two investors are offering roughly the same amount of capital on roughly the same terms, the founder eventually has to ask a simple question \u2014 why you?</p><p>This is where venture firms tend to say the same things. They\u2019re founder friendly. They\u2019re hands-on. They have a deep network. They can help.</p><p>Founders have heard it all before.</p><p>The better test comes later. Can the investor get you in front of the person who actually owns a budget at a bank? Can they recognize that you\u2019ve got a sales problem before you spend six months blaming marketing? Do they know a customer acquisition channel is getting too expensive because they\u2019re seeing the same thing across the market?</p><p>That\u2019s harder to fake.</p><p>And it\u2019s why Glover\u2019s point about capital being commoditized holds up. A $1 million check from one fund looks remarkably similar to a $1 million check from another once it lands in the bank account.</p><p>Whatever makes the investor valuable has to show up after that.</p><h3>AI is making the distribution problem more apparent</h3><p>Fund II will focus on early-stage companies where fintech intersects with AI, healthcare, commerce, insurance and other parts of financial services. FGV expects initial checks to fall between $1 million and $1.5 million.</p><p>The firm plans to invest in at least 25 companies and has already backed 13 from the new fund. Across its funds and co-investment vehicles, FGV has invested in more than 40 companies, including <a href=\"https://www.possiblefinance.com\">Possible Finance</a>, <a href=\"https://wagmo.io/\">Wagmo</a>, <a href=\"https://www.splitero.com/?utm_source=RAN&amp;utm_medium=affiliate&amp;utm_content=Partnermatic&amp;utm_campaign=1817585&amp;utm_term=1&amp;ranMID=53704&amp;ranEAID=wVnhk*alDNI&amp;ranSiteID=wVnhk.alDNI-xD5bDT3tqKMMPkkKttm2pg&amp;gad_source=1&amp;gad_campaignid=24052622866&amp;gbraid=0AAAABESBM5D_pgzQ9CAEWkHUFmajD7Ai5&amp;gclid=CjwKCAjw-rTUBhAiEiwADv8gBMexN_QVQZeucJwWQ56TycmsJfVmLsMfQPEAcUm5zTyj0GD4k7C7cxoCw70QAvD_BwE\">Splitero</a>, <a href=\"https://www.brellium.com/?utm_campaign=brand-defence&amp;utm_term=brellium&amp;utm_source=adwords&amp;utm_medium=ppc&amp;hsa_acc=8560244607&amp;hsa_cam=24049565514&amp;hsa_grp=201271006729&amp;hsa_ad=817803136012&amp;hsa_src=g&amp;hsa_tgt=kwd-1052356805183&amp;hsa_kw=brellium&amp;hsa_mt=e&amp;hsa_net=adwords&amp;hsa_ver=3&amp;hstk_creative=817803136012&amp;hstk_campaign=24049565514&amp;hstk_network=googleAds&amp;gad_source=1&amp;gad_campaignid=24049565514&amp;gbraid=0AAAAA-RupJvdvzLYO_0PVhYdN1SgPtNlh&amp;gclid=CjwKCAjw-rTUBhAiEiwADv8gBN3qXeO-MOfaPBTCgGMtzMdHlg6XfOEahesK3_I6nhJv8CxQlRB63RoCkxkQAvD_BwE\">Brellium</a>, <a href=\"https://runtrellis.com\">Trellis</a> and <a href=\"https://www.joinsunfish.com\">Sunfish</a>.</p><p>The timing of the growth-first strategy is interesting because AI is making some parts of company building dramatically easier.</p><p>Small teams can ship software faster, automate support, test creative, build internal tools and get products into market without hiring nearly as many people as they might\u2019ve a few years ago.</p><p>That doesn\u2019t mean the technology stops mattering. It does mean more decent products can arrive at roughly the same time.</p><p>We\u2019re already seeing that play out. Someone ships a useful AI feature, and a few months later several competitors have something that looks pretty similar.</p><p>Then the problem changes.</p><p>The best demo doesn\u2019t necessarily win. The company still has to reach customers, earn trust and stay there.</p><p>That\u2019s especially true in fintech, where selling financial technology is rarely as simple as finding a user and getting them to download something. A startup may need a bank partner, an insurer, regulatory approval, enterprise procurement or access to customers who already trust a much larger institution.</p><p>You can\u2019t prompt-engineer your way into those relationships.</p><p>That\u2019s where FGV\u2019s growth background starts to feel less like an add-on and more like the logic behind the fund.</p><h3>An LP base that\u2019s part of the strategy</h3><p>FGV spent about 18 months raising Fund II, and its LP base includes <a href=\"https://www.privatebank.bankofamerica.com\">Bank of America</a>, <a href=\"https://www.massmutual.com\">MassMutual</a>, <a href=\"https://www.rgare.com\">Reinsurance Group of America</a> and the <a href=\"https://stellar.org/foundation\">Stellar Development Foundation</a>.</p><p>The mix lines up closely with the markets FGV is investing into. </p><p>A young fintech company doesn\u2019t need \u201caccess to Bank of America\u201d in the abstract. It needs the right person inside the bank, preferably someone who understands the problem, controls a budget and can explain where a pilot is likely to get stuck.</p><p>That kind of access can save months.</p><p>The same is true in insurance. Knowing an executive at RGA or MassMutual only matters if the relationship turns into useful information, a partnership conversation or a customer opportunity.</p><p>FGV says that\u2019s the point of the network.</p><p>Every venture firm can produce a slide full of impressive logos. Founders usually figure out which networks are real the first time they ask for an introduction.</p><h3>The fund isn\u2019t the interesting part</h3><p>A $35 million fund isn\u2019t going to outspend a multibillion-dollar venture firm, and it shouldn\u2019t try.</p><p>The better emerging managers usually have one thing they do really well. Maybe they own a community. Maybe they understand a technical field better than generalist investors. Maybe they have access to a market others overlook.</p><p>FGV\u2019s answer is growth and distribution.</p><p>And unlike \u201cfounder friendly\u201d or \u201cdeep network,\u201d that\u2019s something founders should eventually be able to measure.</p><p>Did the investor help shorten a sales cycle? Open a door that would\u2019ve taken six months to find? Spot a growth problem early? Help the company avoid hiring around the wrong strategy?</p><p>FGV built the growth business before it built the venture firm, and Fund II is its attempt to prove that sequence matters.</p><p>Money still matters. So does brand. So does access.</p><p>But the venture firms that define the next decade probably won\u2019t be the ones that simply accumulate the most money.</p><p>They\u2019ll be the ones founders believe can materially change what happens to the company after they take it.</p><div><hr></div><h3>More from Uncovered Media</h3><div class=\"captioned-image-container\"><figure><a class=\"image-link image2\" target=\"_blank\" href=\"http://thesisuncovered.com\" data-component-name=\"Image2ToDOM\"><div class=\"image2-inset\"><picture><source type=\"image/webp\" srcset=\"https://substackcdn.com/image/fetch/$s_!S7bJ!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdfaa5ea7-0a7f-48d5-9ac7-12b79a928ab9_1456x156.png 424w, https://substackcdn.com/image/fetch/$s_!S7bJ!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdfaa5ea7-0a7f-48d5-9ac7-12b79a928ab9_1456x156.png 848w, https://substackcdn.com/image/fetch/$s_!S7bJ!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdfaa5ea7-0a7f-48d5-9ac7-12b79a928ab9_1456x156.png 1272w, https://substackcdn.com/image/fetch/$s_!S7bJ!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdfaa5ea7-0a7f-48d5-9ac7-12b79a928ab9_1456x156.png 1456w\" sizes=\"100vw\"><img src=\"https://substackcdn.com/image/fetch/$s_!S7bJ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdfaa5ea7-0a7f-48d5-9ac7-12b79a928ab9_1456x156.png\" width=\"1456\" height=\"156\" data-attrs=\"{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/dfaa5ea7-0a7f-48d5-9ac7-12b79a928ab9_1456x156.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:156,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:18257,&quot;alt&quot;:&quot;&quot;,&quot;title&quot;:&quot;&quot;,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:&quot;http://thesisuncovered.com&quot;,&quot;belowTheFold&quot;:true,&quot;topImage&quot;:false,&quot;internalRedirect&quot;:null,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}\" class=\"sizing-normal\" alt=\"\" title=\"\" srcset=\"https://substackcdn.com/image/fetch/$s_!S7bJ!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdfaa5ea7-0a7f-48d5-9ac7-12b79a928ab9_1456x156.png 424w, https://substackcdn.com/image/fetch/$s_!S7bJ!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdfaa5ea7-0a7f-48d5-9ac7-12b79a928ab9_1456x156.png 848w, https://substackcdn.com/image/fetch/$s_!S7bJ!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdfaa5ea7-0a7f-48d5-9ac7-12b79a928ab9_1456x156.png 1272w, https://substackcdn.com/image/fetch/$s_!S7bJ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdfaa5ea7-0a7f-48d5-9ac7-12b79a928ab9_1456x156.png 1456w\" sizes=\"100vw\" loading=\"lazy\"></picture><div></div></div></a></figure></div><div class=\"captioned-image-container\"><figure><a class=\"image-link image2\" target=\"_blank\" href=\"http://lpuncovered.com\" data-component-name=\"Image2ToDOM\"><div class=\"image2-inset\"><picture><source type=\"image/webp\" srcset=\"https://substackcdn.com/image/fetch/$s_!vY6j!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb0eb23d5-df9f-4af9-bba6-e1a00eb7813e_1456x156.png 424w, https://substackcdn.com/image/fetch/$s_!vY6j!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb0eb23d5-df9f-4af9-bba6-e1a00eb7813e_1456x156.png 848w, https://substackcdn.com/image/fetch/$s_!vY6j!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb0eb23d5-df9f-4af9-bba6-e1a00eb7813e_1456x156.png 1272w, https://substackcdn.com/image/fetch/$s_!vY6j!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb0eb23d5-df9f-4af9-bba6-e1a00eb7813e_1456x156.png 1456w\" sizes=\"100vw\"><img src=\"https://substackcdn.com/image/fetch/$s_!vY6j!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb0eb23d5-df9f-4af9-bba6-e1a00eb7813e_1456x156.png\" width=\"1456\" height=\"156\" data-attrs=\"{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/b0eb23d5-df9f-4af9-bba6-e1a00eb7813e_1456x156.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:156,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:12244,&quot;alt&quot;:&quot;&quot;,&quot;title&quot;:&quot;&quot;,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:&quot;http://lpuncovered.com&quot;,&quot;belowTheFold&quot;:true,&quot;topImage&quot;:false,&quot;internalRedirect&quot;:null,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}\" class=\"sizing-normal\" alt=\"\" title=\"\" srcset=\"https://substackcdn.com/image/fetch/$s_!vY6j!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb0eb23d5-df9f-4af9-bba6-e1a00eb7813e_1456x156.png 424w, https://substackcdn.com/image/fetch/$s_!vY6j!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb0eb23d5-df9f-4af9-bba6-e1a00eb7813e_1456x156.png 848w, https://substackcdn.com/image/fetch/$s_!vY6j!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb0eb23d5-df9f-4af9-bba6-e1a00eb7813e_1456x156.png 1272w, https://substackcdn.com/image/fetch/$s_!vY6j!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb0eb23d5-df9f-4af9-bba6-e1a00eb7813e_1456x156.png 1456w\" sizes=\"100vw\" loading=\"lazy\"></picture><div></div></div></a></figure></div><div class=\"captioned-image-container\"><figure><a class=\"image-link image2\" target=\"_blank\" href=\"http://founderuncovered.com\" data-component-name=\"Image2ToDOM\"><div class=\"image2-inset\"><picture><source type=\"image/webp\" srcset=\"https://substackcdn.com/image/fetch/$s_!W-FX!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F00990086-7a04-4d23-ba26-f7562ca9a53d_1456x156.png 424w, https://substackcdn.com/image/fetch/$s_!W-FX!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F00990086-7a04-4d23-ba26-f7562ca9a53d_1456x156.png 848w, https://substackcdn.com/image/fetch/$s_!W-FX!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F00990086-7a04-4d23-ba26-f7562ca9a53d_1456x156.png 1272w, https://substackcdn.com/image/fetch/$s_!W-FX!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F00990086-7a04-4d23-ba26-f7562ca9a53d_1456x156.png 1456w\" sizes=\"100vw\"><img src=\"https://substackcdn.com/image/fetch/$s_!W-FX!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F00990086-7a04-4d23-ba26-f7562ca9a53d_1456x156.png\" width=\"1456\" height=\"156\" data-attrs=\"{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/00990086-7a04-4d23-ba26-f7562ca9a53d_1456x156.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:156,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:17889,&quot;alt&quot;:&quot;&quot;,&quot;title&quot;:&quot;&quot;,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:&quot;http://founderuncovered.com&quot;,&quot;belowTheFold&quot;:true,&quot;topImage&quot;:false,&quot;internalRedirect&quot;:null,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}\" class=\"sizing-normal\" alt=\"\" title=\"\" srcset=\"https://substackcdn.com/image/fetch/$s_!W-FX!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F00990086-7a04-4d23-ba26-f7562ca9a53d_1456x156.png 424w, https://substackcdn.com/image/fetch/$s_!W-FX!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F00990086-7a04-4d23-ba26-f7562ca9a53d_1456x156.png 848w, https://substackcdn.com/image/fetch/$s_!W-FX!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F00990086-7a04-4d23-ba26-f7562ca9a53d_1456x156.png 1272w, https://substackcdn.com/image/fetch/$s_!W-FX!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F00990086-7a04-4d23-ba26-f7562ca9a53d_1456x156.png 1456w\" sizes=\"100vw\" loading=\"lazy\"></picture><div></div></div></a></figure></div><div class=\"captioned-image-container\"><figure><a class=\"image-link image2\" target=\"_blank\" href=\"http://cmouncovered.com\" data-component-name=\"Image2ToDOM\"><div class=\"image2-inset\"><picture><source type=\"image/webp\" srcset=\"https://substackcdn.com/image/fetch/$s_!nAyx!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6ce0c863-cd8d-4f31-8c86-5f3cccca9f1b_1456x156.png 424w, https://substackcdn.com/image/fetch/$s_!nAyx!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6ce0c863-cd8d-4f31-8c86-5f3cccca9f1b_1456x156.png 848w, https://substackcdn.com/image/fetch/$s_!nAyx!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6ce0c863-cd8d-4f31-8c86-5f3cccca9f1b_1456x156.png 1272w, https://substackcdn.com/image/fetch/$s_!nAyx!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6ce0c863-cd8d-4f31-8c86-5f3cccca9f1b_1456x156.png 1456w\" sizes=\"100vw\"><img src=\"https://substackcdn.com/image/fetch/$s_!nAyx!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6ce0c863-cd8d-4f31-8c86-5f3cccca9f1b_1456x156.png\" width=\"1456\" height=\"156\" data-attrs=\"{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/6ce0c863-cd8d-4f31-8c86-5f3cccca9f1b_1456x156.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:156,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:15024,&quot;alt&quot;:&quot;&quot;,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:&quot;http://cmouncovered.com&quot;,&quot;belowTheFold&quot;:true,&quot;topImage&quot;:false,&quot;internalRedirect&quot;:null,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}\" class=\"sizing-normal\" alt=\"\" title=\"\" srcset=\"https://substackcdn.com/image/fetch/$s_!nAyx!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6ce0c863-cd8d-4f31-8c86-5f3cccca9f1b_1456x156.png 424w, https://substackcdn.com/image/fetch/$s_!nAyx!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6ce0c863-cd8d-4f31-8c86-5f3cccca9f1b_1456x156.png 848w, https://substackcdn.com/image/fetch/$s_!nAyx!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6ce0c863-cd8d-4f31-8c86-5f3cccca9f1b_1456x156.png 1272w, https://substackcdn.com/image/fetch/$s_!nAyx!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6ce0c863-cd8d-4f31-8c86-5f3cccca9f1b_1456x156.png 1456w\" sizes=\"100vw\" loading=\"lazy\"></picture><div></div></div></a></figure></div><div class=\"captioned-image-container\"><figure><a class=\"image-link image2\" target=\"_blank\" href=\"http://ctouncovered.com\" data-component-name=\"Image2ToDOM\"><div class=\"image2-inset\"><picture><source type=\"image/webp\" srcset=\"https://substackcdn.com/image/fetch/$s_!JlcQ!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F21f9b4af-ed2a-4946-99ca-0da5e1ccaadc_1456x156.png 424w, https://substackcdn.com/image/fetch/$s_!JlcQ!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F21f9b4af-ed2a-4946-99ca-0da5e1ccaadc_1456x156.png 848w, https://substackcdn.com/image/fetch/$s_!JlcQ!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F21f9b4af-ed2a-4946-99ca-0da5e1ccaadc_1456x156.png 1272w, https://substackcdn.com/image/fetch/$s_!JlcQ!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F21f9b4af-ed2a-4946-99ca-0da5e1ccaadc_1456x156.png 1456w\" sizes=\"100vw\"><img src=\"https://substackcdn.com/image/fetch/$s_!JlcQ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F21f9b4af-ed2a-4946-99ca-0da5e1ccaadc_1456x156.png\" width=\"1456\" height=\"156\" data-attrs=\"{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/21f9b4af-ed2a-4946-99ca-0da5e1ccaadc_1456x156.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:156,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:14169,&quot;alt&quot;:&quot;&quot;,&quot;title&quot;:&quot;&quot;,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:&quot;http://ctouncovered.com&quot;,&quot;belowTheFold&quot;:true,&quot;topImage&quot;:false,&quot;internalRedirect&quot;:null,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}\" class=\"sizing-normal\" alt=\"\" title=\"\" srcset=\"https://substackcdn.com/image/fetch/$s_!JlcQ!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F21f9b4af-ed2a-4946-99ca-0da5e1ccaadc_1456x156.png 424w, https://substackcdn.com/image/fetch/$s_!JlcQ!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F21f9b4af-ed2a-4946-99ca-0da5e1ccaadc_1456x156.png 848w, https://substackcdn.com/image/fetch/$s_!JlcQ!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F21f9b4af-ed2a-4946-99ca-0da5e1ccaadc_1456x156.png 1272w, https://substackcdn.com/image/fetch/$s_!JlcQ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F21f9b4af-ed2a-4946-99ca-0da5e1ccaadc_1456x156.png 1456w\" sizes=\"100vw\" loading=\"lazy\"></picture><div></div></div></a></figure></div>",
+  "has_dynamic_content": false,
+  "truncated_body_text": "",
+  "wordcount": 1416,
+  "post_preview_limit": null,
+  "language": "en",
+  "postTags": [
+    {
+      "id": "322a41b7-585b-49fe-8c39-0edd637b2554",
+      "publication_id": 5837669,
+      "name": "fintech",
+      "slug": "fintech",
+      "hidden": false
+    },
+    {
+      "id": "81a6111f-a8ea-45cd-a726-f21b9b08ff50",
+      "publication_id": 5837669,
+      "name": "venture capital",
+      "slug": "venture-capital",
+      "hidden": false
+    }
+  ],
+  "postCountryBlocks": [],
+  "headlineTest": null,
+  "coverImagePalette": {
+    "Vibrant": {
+      "rgb": [
+        166,
+        100,
+        78
+      ],
+      "population": 7
+    },
+    "DarkVibrant": {
+      "rgb": [
+        12,
+        28,
+        68
+      ],
+      "population": 6
+    },
+    "LightVibrant": {
+      "rgb": [
+        244,
+        236,
+        220
+      ],
+      "population": 22
+    },
+    "Muted": {
+      "rgb": [
+        175,
+        121,
+        89
+      ],
+      "population": 27
+    },
+    "DarkMuted": {
+      "rgb": [
+        51,
+        57,
+        74
+      ],
+      "population": 386
+    },
+    "LightMuted": {
+      "rgb": [
+        213,
+        196,
+        181
+      ],
+      "population": 179
+    }
+  },
+  "publishedBylines": [
+    {
+      "id": 385648208,
+      "name": "Brandy Whalen",
+      "handle": "edchief",
+      "previous_name": null,
+      "photo_url": "https://substack-post-media.s3.amazonaws.com/public/images/181dd559-8fb3-4549-a7db-c6ddc7b1528a_1365x1365.jpeg",
+      "bio": "Editor-in-Chief of Uncovered. I listen closely, gather what others overlook, and arrange it so the hidden story can live.",
+      "profile_set_up_at": "2025-09-04T16:45:34.872Z",
+      "reader_installed_at": null,
+      "publicationUsers": [],
+      "is_guest": false,
+      "bestseller_tier": null,
+      "status": {
+        "bestsellerTier": null,
+        "subscriberTier": null,
+        "leaderboard": null,
+        "vip": false,
+        "badge": null,
+        "subscriber": null
+      }
+    }
+  ],
+  "reaction": null,
+  "reaction_count": 2,
+  "comment_count": 0,
+  "child_comment_count": 0,
+  "audio_items": [
+    {
+      "post_id": 212723960,
+      "voice_id": "en-US-AlloyTurboMultilingualNeural",
+      "audio_url": "https://substack-video.s3.amazonaws.com/video_upload/post/212723960/tts/a72d375f-0af2-4929-aa0c-dc6ed4e34409/en-US-AlloyTurboMultilingualNeural.mp3",
+      "type": "tts",
+      "status": "completed"
+    }
+  ],
+  "is_geoblocked": false,
+  "hasCashtag": false,
+  "unlockedWithIP": false,
+  "unlockedWithCampaign": false,
+  "themeVariables": {
+    "color_theme_bg_pop": "#2563eb",
+    "background_pop": "#2563eb",
+    "color_theme_bg_web": "#fafafa",
+    "cover_bg_color": "#fafafa",
+    "cover_bg_color_secondary": "#ebebeb",
+    "background_pop_darken": "#1555e2",
+    "print_on_pop": "#ffffff",
+    "color_theme_bg_pop_darken": "#1555e2",
+    "color_theme_print_on_pop": "#ffffff",
+    "color_theme_bg_pop_20": "rgba(37, 99, 235, 0.2)",
+    "color_theme_bg_pop_30": "rgba(37, 99, 235, 0.3)",
+    "print_pop": "#2563eb",
+    "color_theme_accent": "#2563eb",
+    "cover_print_primary": "#363737",
+    "cover_print_secondary": "#757575",
+    "cover_print_tertiary": "#b6b6b6",
+    "cover_border_color": "#2563eb",
+    "font_family_headings_preset": "'Roboto Mono',monospace",
+    "font_weight_headings_preset": 700,
+    "font_family_body_preset": "'Roboto Mono',monospace",
+    "font_weight_body_preset": 400,
+    "font_size_body_offset": "-1px",
+    "font_preset_heading": "mono",
+    "font_preset_body": "mono",
+    "home_hero": "magaziney",
+    "home_posts": "list",
+    "home_show_top_posts": true,
+    "web_bg_color": "#fafafa",
+    "background_contrast_1": "#ebebeb",
+    "background_contrast_2": "#d8d8d8",
+    "background_contrast_3": "#b3b3b3",
+    "background_contrast_4": "#909090",
+    "background_contrast_5": "#4f4f4f",
+    "color_theme_bg_contrast_1": "#ebebeb",
+    "color_theme_bg_contrast_2": "#d8d8d8",
+    "color_theme_bg_contrast_3": "#b3b3b3",
+    "color_theme_bg_contrast_4": "#909090",
+    "color_theme_bg_contrast_5": "#4f4f4f",
+    "color_theme_bg_elevated": "#fafafa",
+    "color_theme_bg_elevated_secondary": "#ebebeb",
+    "color_theme_bg_elevated_tertiary": "#d8d8d8",
+    "color_theme_detail": "#e1e1e1",
+    "background_contrast_pop": "rgba(37, 99, 235, 0.4)",
+    "color_theme_bg_contrast_pop": "rgba(37, 99, 235, 0.4)",
+    "theme_bg_is_dark": "0",
+    "print_on_web_bg_color": "#363737",
+    "print_secondary_on_web_bg_color": "#848585",
+    "background_pop_rgb": "37, 99, 235",
+    "color_theme_bg_pop_rgb": "37, 99, 235",
+    "color_theme_accent_rgb": "37, 99, 235"
+  },
+  "comments": []
+}

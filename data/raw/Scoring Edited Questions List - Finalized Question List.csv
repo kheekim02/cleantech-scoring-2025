@@ -1,0 +1,451 @@
+,Question,Range,Scorer 2 - Objective (1) / Subjective (0),Scorer 1 - Objective (1) / Subjective (0),Needs review?,82.98%,Comments 
+,1. Business Canvas ,,,,,,
+1,How clearly is the value proposition understood?,"[0, 0.25, 0.5, 0.75,1]",,0,FALSE,,
+2,Does the company clearly identify its customer segments and customer attributes?,"[0, 0.25, 0.5, 0.75,1]",,0,FALSE,,
+3,Has the company interviewed at least 5 customers?,"[0, 0.25, 0.5, 0.75,1]",,1,FALSE,,
+4,Are the large sections of the BMC clearly filled and articulated?,"[0, 0.25, 0.5, 0.75,1]",,0,FALSE,,
+5,Are the small sections of the BMC clearly filled and articulated?,"[0, 0.5, 1]",,0,FALSE,,
+,,,,,,,
+,2. Impact/ Sustainability ,,,,,,
+1,"Company purpose directly addresses two or more United Nations Sustainable Development Goals (SDGs), maximizing environmental, economic, and social value (Two or more: 1, One only: 0.5, None: 0).","[0, 0.5, 1]",,1,FALSE,,
+2,"Clearly maps applicable SDGs across the company’s value chain (Two or more: 1, One only: 0.5, None: 0). ","[0, 0.5, 1]",,1,FALSE,,
+3,"Addresses whether the impact priority is climate mitigation, climate resilience + adaptation, or both.","[0,1]",,0,FALSE,,
+4,Clearly explains how the startup is better than conventional companies in its sector using a quantifiable number.,"[0,1]",,1,FALSE,,
+5,Does the company describe its culture and how it plans to use profits?,"[0,1]",,1,FALSE,,
+6,Is the company certified by any environmental organizations?,"[0,1]",,1,FALSE,,
+7,"If applicable, does the company mention the existing regulations (local, state, federal, international) that have a direct impact on the company’s license to operate? (If no applicable regulations exist, give one point for this question)","[0,1]",,1,FALSE,,
+8,"Has the company identified the environmental or social risks of the materials in the product/service? (e.g. toxicity, availability, recyclability, etc.) (If not applicable, give one point for this question because it is not a business risk)","[0,1]",,1,FALSE,,
+9,"Has the company identified its largest sources of energy use and land use? (If not applicable, give one point for this question because there are no large sources necessary)","[0,1]",,1,FALSE,,
+10,"Has the company categorized its waste stream by percentage? (If not applicable, give one point for this question because there is no waste stream necessary)","[0,1]",,1,FALSE,,
+,,,,,,,
+,3. Product/ Market Fit ,,,,,,
+1,Startup has determined a specific target market and has articulated why they are a better option than other segments,"[0,1]",,1,FALSE,,
+2,Startup has identified a need the target market has that the product fills.,"[0,1]",,1,FALSE,,
+3,Startup has had live research-focused discussions with at least 4 members of its target audience.,"[0,1]",,1,FALSE,,
+4,Startup has had live research-focused discussions with at least 6 members of its target audience.,"[0,1]",,1,FALSE,,
+5,Startup has had live research-focused discussions with 10 or more members of its target audience.,"[0,1]",,1,FALSE,,
+6,Startup updated or created customer segments based on research.,"[0,1]",,1,FALSE,,
+7,Startup updated or created customer archetypes/personas based on research.,"[0,1]",,1,FALSE,,
+8,Startup updated or changed its user experience based on research.,"[0,1]",,1,FALSE,,
+9,"Based on research, did the startup clearly articulate something it learned that changed some aspect of its strategy or product experience?","[0,1]",,1,FALSE,,
+10,"Did the startup create multiple customer segments based on demographic factors (ex: age, income, etc)","[0,1]",,1,FALSE,,
+11,"Did the startup create multiple customer segments based on psychological factors (ex: comfort with technology, attitudes towards cost)","[0,1]",,1,FALSE,,
+12,Did the startup identify important psychographic attributes associated with their target audience? (ex. Our target audience tends to be skeptical about tech companies),"[0,1]",,0,FALSE,,
+13,Has the startup validated the size and representativeness of their target market psychographic segmentation through a statistically significant quantitative methodology?,"[0,1]",,1,FALSE,,
+14,Startup has a research-validated range potential customers would be willing to pay for their product or service.,"[0,1]",,1,FALSE,*,
+15,Start up has implemented feedback mechanisms into their service or product experience to gather ongoing feedback from individuals who are using or who will use their product/service.,"[0,1]",,1,FALSE,,
+16,Startups has embedded Net Promoter Score (NPS) into ongoing feedback.,"[0,1]",,1,FALSE,,
+17,Has the startup articulated all of the stakeholders in the market they are addressing?,"[0,1]",,1,FALSE,*,does it mean mentioning stakeholders or addressing the concerns?
+18,Has the start up identified and addressed the needs of all key stakeholders?,"[0,1]",,0,FALSE,,
+19,Have they identified who the purchasing decision-makers in the system are?,"[0,1]",,1,FALSE,,
+20,Startup has someone dedicated to tech tools and ops.,"[0,1]",,1,FALSE,,
+21,"Startup has dedicated resources, or individual on team, to user experience.","[0,1]",,1,FALSE,,
+22,Startup has worked with a user/customer research professional.,"[0,1]",,1,FALSE,,
+23,Startup has a logo that is discernible when smaller than ½ an inch.,"[0,1]",,0,FALSE,*,
+24,Startup has a logo that is discernible when billboard size.,"[0,1]",,0,FALSE,*,
+25,Startup has a logo that is discernible in greyscale,"[0,1]",,0,FALSE,*,
+26,"Startup has a cohesive visual design system that is consistent across, e.g., email, website, and other assets.","[0,1]",,0,FALSE,*,
+27,"Startup has a branding professional, or has worked with one.","[0,1]",,1,FALSE,,
+28,Startup has a brand strategy based in customer insights.,"[0,1]",,0,FALSE,,
+29,Has the startup completed a competitive analysis?,"[0,1]",,1,FALSE,*,"""competitive analysis"" : the matrix or just a general analysis?"
+30,Has the startup analyzed the reasons why customers use the competition?,"[0,1]",,1,FALSE,*,use competition's product vs use product in general?
+31,Has the startup identified unique value that it can deliver to customers?,"[0,1]",,0,FALSE,,
+32,Has the startup identified customer experience pain-points in at least 1 major competitor's product?,"[0,1]",,1,FALSE,,
+33,Has the startup identified customer experience pain-points in at least 3 major competitor's product?,"[0,1]",,1,FALSE,,
+34,Has the startup validated customer experience pain-points through user research?,"[0,1]",,0,FALSE,,
+,,,,,FALSE,,
+,4. Markets ,,,,,,
+1,"Has the startup identified the channels that its key customers frequently consume media, products, and services via? (eg. Facebook marketplace, Best Buy physical locations, word of mouth)","[0,1]",,1,FALSE,*,
+2,Does the startup have a clear operational plan to distribute its product or service via distribution channels that customers frequently use?,"[0,1]",,0,FALSE,,
+3,"Has the startup identified ways to leverage their advocates, customers or community to spread their product or service?","[0,1]",,1,FALSE,,
+4,Has the startup designed a viral marketing campaign for their product or service targeted at a specific audience?,"[0,1]",,0,FALSE,,
+5,Has the startup created engagement mechanisms to allow for different levels of user participation?,"[0,1]",,0,FALSE,,
+6,Has the startup generated a clear strategy to on-board new users?,"[0,1]",,0,FALSE,,
+7,Has startup identified key barriers to customer purchases?,"[0,1]",,1,FALSE,*,"""key"" makes it seemingly subjective "
+8,Has the startup identified sales tactics to address key purchasing barriers?,"[0,1]",,1,FALSE,*,
+9,Has the startup created a customer feedback channel within the sales process?,"[0,1]",,1,FALSE,,
+10,Has the startup identified and prioritized the most important features to customers for GTM rollout?,"[0,1]",,1,FALSE,,
+11,"Has the startup created a product or service roadmap, detailing when features will roll out, and why?","[0,1]",,1,FALSE,*,
+12,Has the startup anticipated the need to gather feedback and pivot in the future?,"[0,1]",,1,FALSE,*,
+,,,,,,,
+,5. Tech and Product ,,,,,,
+1,Did the company cite peer-reviewed articles about its core technology?,"[0,1]",,1,FALSE,,
+2,Has the company tested the technology internally?,"[0,1]",,1,FALSE,,
+3,Does the company have third-party validation?,"[0,1]",,1,FALSE,,
+4,Has the company identified whether or not there are other companies using the same or similar core technology? ,"[0,1]",,1,FALSE,,
+5,"How many patents has the company filed, including subsequently granted patents? (If only 1 patent: 0 pts, If only 1-2 patents: 0.5 pts, If 3+ patents: 1 pt)","[0, 0.5, 1]",,1,FALSE,,
+6,"How many granted patents does the company have? (If only 1 patent: 0 pts, If only 1-2 patents: 0.5 pts, If 3+ patents: 1 pt)","[0, 0.5, 1]",,1,FALSE,,
+7,"What is the product’s DOD/DOE/Isles Utilities Technology Readiness Level?  (If Levels 1-3: 0 pts, If Levels 4-6: 0.5 pts, If Levels 7-9: 1 pt)","[0, 0.5, 1]",,1,FALSE,,
+8,Does the company have an initial prototype?,"[0, 1]",,1,FALSE,,
+9,Does the company have a full-scale prototype or software beta version?,"[0, 1]",,1,FALSE,,
+10,"Has the company identified its third-party validation entity (university, national lab, independent test organization, etc.)?","[0, 1]",,1,FALSE,,
+11,Does the company have documentation for the cost of third-party validation (anticipated or paid)?,"[0, 1]",,1,FALSE,,
+12,"(0: not started, 0.33: preliminary talks, 0.67: pending, 1: completed) What stage is the validation in?","[0, 0.33, 0.67, 1]",,0,FALSE,,
+13,Does the company have any field installations with potential customers?,"[0, 1]",,1,FALSE,,
+14,Does the company have any paid field installations?,"[0, 1]",,1,FALSE,,
+15,"Does the product need certification (UL, ASTM, etc.)? Score +1 if certification is not needed or already obtained, +0.5 if there is at least a written plan to complete it, and zero if certification is needed but there is no written plan.","[0, 0.5, 1]",,0,FALSE,*,
+16,Is the product ready for manufacture or deployment?,"[0, 1]",,0,FALSE,*,
+,,,,,,,
+,6. Financials,,,,,,
+1,Does the company have an operating budget?,"[0, 1]",,1,FALSE,,
+2,Does the operating budget include revenue and expenses?,"[0, 1]",,1,FALSE,,
+3,Are revenue and expenses identified by source or line item?,"[0, 1]",,1,FALSE,,
+4,"Are the revenue, expense, and market assumptions upon which the operating budget is based identified?","[0, 1]",,1,FALSE,,
+5,"If the operating budget has been in place for more than the current year, does it compare actual revenue and expenses by line item against budgeted revenue and expenses by line item?","[0, 1]",,1,FALSE,,
+6,"Does the operating budget include revenue, expense, and market projections for the next 3, 5, or 10 years?","[0, 1]",,1,FALSE,,
+7,"Are revenue and expense projections identified as fixed, variable, or marginal?","[0, 1]",,1,FALSE,,
+8,"Are the revenue, expense, and market assumptions upon which the operating budget projections are based identified?","[0, 1]",,1,FALSE,,
+9,Does the company have a capital budget?,"[0, 1]",,1,FALSE,,
+10,Does the capital budget include revenue and expenses by project?,"[0, 1]",,1,FALSE,,
+11,Are revenue and expenses by project identified by source or line item?,"[0, 1]",,1,FALSE,,
+12,"Are the revenue, expense, and market assumptions upon which the capital budget is based identified by project?","[0, 1]",,1,FALSE,,
+13,"If the capital budget has been in place for more than the current year, does it compare actual revenue and expenses by project and line item against budgeted revenue and expenses by project and line item?","[0, 1]",,1,FALSE,,
+14,"Does the capital budget include revenue, expense, and market projections for the next 3, 5, or 10 years, or for the life of each project?","[0, 1]",,1,FALSE,,
+15,"Are the revenue, expense, and market assumptions upon which the capital budget projections are based identified by project?","[0, 1]",,1,FALSE,,
+16,"Does the company have monthly and annual balance sheets, profit and loss statements, and cash flow statements?","[0, 1]",,1,FALSE,,
+17,"Are the balance sheet, profit and loss statement, and cash flow statement reconciled monthly and annually to the company’s bank statement?","[0, 1]",,1,FALSE,,
+18,"Are the balance sheet, profit and loss statement, and cash flow statement reconciled monthly and annually to the budget?","[0, 1]",,1,FALSE,,
+19,Are return on equity and return on assets calculated?,"[0, 1]",,1,FALSE,,
+20,"Are 3-, 5-, or 10-year projections for return on equity and return on assets calculated?","[0, 1]",,1,FALSE,,
+21,Are the market assumptions upon which return on equity and return on assets projections are based identified?,"[0, 1]",,1,FALSE,,
+22,Do return on equity and return on assets projections assume repayment of investor equity and return on investor equity?,"[0, 1]",,1,FALSE,,
+23,Does the company have prior-year audited financial statements?,"[0, 1]",,1,FALSE,,
+24,Does the company have prior-year income tax returns?,"[0, 1]",,1,FALSE,,
+25,(5) Does the company have actual sales or revenue data?,"[0, 1]",,1,FALSE,,
+26,(5) Does the company compare actual sales or revenue data to industry total sales to calculate market share based on similar companies in the same industry?,"[0, 1]",,1,FALSE,,
+27,"(5) Does the company project sales or revenue data for the next 3, 5, or 10 years?","[0, 1]",,1,FALSE,,
+28,"(5) Does the company compare projected sales or revenue data for the next 3, 5, or 10 years to industry projected total sales to calculate projected market share based on similar companies in the same industry?","[0, 1]",,1,FALSE,,
+29,(5) Does the company identify assumptions upon which projected sales or revenue data are based?,"[0, 1]",,1,FALSE,,
+,,,,,,,
+,7. Legal ,,,,,,
+1,Does the company have an intellectual property strategy?,"[0, 1]",,1,FALSE,,
+2,Does this company spend time on developing and implementing an intellectual property strategy?,"[0, 1]",,1,FALSE,,
+3,Is there a person in the organization who is tasked with managing intellectual property?,"[0, 1]",,1,FALSE,,
+4,"If yes, does that person have more than 5 years of experience managing intellectual property?","[0, 1]",,1,FALSE,,
+5,Does the company have a trademark/service mark strategy?,"[0, 1]",,1,FALSE,,
+6,Has the company filed any applications for trademark registration?,"[0, 1]",,1,FALSE,,
+7,Has the company done a clearance search to determine whether or not it is okay to use the trade or service mark it wants?,"[0, 1]",,1,FALSE,,
+8,"If the Company plans to apply for more than one trade or service mark, has it done a clearance search for every mark it plans to apply for?
+- Not applicable (the Company plans to apply for no marks): award 1 pt.
+- Yes (a clearance search was done for every mark): award 1 pt.
+- No (one or more marks lack a clearance search): award 0 pts.","[0, 1]",,1,FALSE,,
+9,"According to the USPTO, strong, highly registerable marks are creative or unique names that set a brand apart. These include fanciful marks (made-up words like Pepsi), arbitrary marks (unrelated real words like Apple for computers), and suggestive marks (words hinting at a quality without stating it outright like Coppertone). Conversely, weak or unacceptable marks are hard to protect and usually cannot be federally registered. These include descriptive marks (merely detailing a feature or quality, like Creamy for yogurt) and generic terms (the common, everyday product name, like Bagel shop).
+On average across every mark the Company plans to apply for, how descriptive are they on a scale of 1–5? Please rate them with 1 being a weak mark that concisely describes a feature or quality of the goods or services, and 5 being a strong mark that has no relationship to what the Company is selling.","[0, 0.25, 0.5, 0.75, 1]",,1,FALSE,,
+10,Has the Company successfully obtained a trademark or service mark registration for any of its marks?,"[0, 1]",,1,FALSE,,
+11,"Does the Company plan to sell its products or services internationally?
+- If no: award 1 pt.
+- If yes: award 1 pt only if the Company provides evidence that it has applied for trademark registrations in any foreign countries. Otherwise, award 0 pts.","[0, 1]",,1,FALSE,,
+12,Does the company have a copyright strategy?,"[0, 1]",,1,FALSE,,
+13,"Does the product involve source code?
+- If no: award 1 pt.
+- If yes: award 1 pt only if the Company has written agreements with every engineer who wrote code that properly assign their copyrights to the Company. Otherwise, award 0 pts.","[0, 1]",,1,FALSE,,
+14,"Is there any open-source code in the product?
+- If no: award 1 pt.
+- If yes: award 1 pt only if the Company has copies of the open-source license for the code. Otherwise, award 0 pts.","[0, 1]",,1,FALSE,,
+15,"If the company does not think it has open-source code, has it conducted rigorous testing to confirm that there is no open-source code in the product?","[0, 1]",,1,FALSE,,
+16,Has the company filed any copyright registrations?,"[0, 1]",,1,FALSE,,
+17,Has the company registered its website?,"[0, 1]",,1,FALSE,,
+18,Does the company have good archival information so that it can prove exactly what was on its website on any specific day in the past?,"[0, 1]",,1,FALSE,,
+19,Does the company have a patent strategy?,"[0, 1]",,1,FALSE,,
+20,Has the company filed any applications for patents?,"[0, 1]",,1,FALSE,,
+21,Does the company know in which countries it plans to seek patent protections?,"[0, 1]",,1,FALSE,,
+22,Does the company know which of its competitors is filing patent applications?,"[0, 1]",,1,FALSE,,
+23,Has the company evaluated their patent portfolios?,"[0, 1]",,1,FALSE,,
+24,Has the company evaluated their products?,"[0, 1]",,1,FALSE,,
+25,Does the company know what technical features distinguish its product from those of its competitors?,"[0, 1]",,1,FALSE,,
+26,Does the company know whether customers buy its products based on any particular technical feature that it invented?,"[0, 1]",,1,FALSE,,
+27,Does the company have a trade secret strategy?,"[0, 1]",,1,FALSE,,
+28,Is the company taking reasonable steps to ensure that its trade secrets remain secret?,"[0, 1]",,1,FALSE,,
+29,Have all employees signed non-disclosure and invention assignment agreements?,"[0, 1]",,1,FALSE,,
+30,"Has the company identified technical information that is known to the company, is not generally known or readily accessible to competitors, and derives value from not being generally known or readily accessible?","[0, 1]",,0,FALSE,,
+31,"Has the company identified business information that is known to the company, is not generally known or readily accessible to competitors, and derives value from not being generally known or readily accessible?","[0, 1]",,0,FALSE,,
+32,"Has the Company hired any people who worked for competitors?
+- If no: award 1 pt.
+- If yes: award 1 pt only if the Company took steps to ensure that it does not learn or use the competitor's trade secret information. Otherwise, award 0 pts.","[0, 1]",,1,FALSE,,
+33,"Has the company already filed documents establishing a legal entity (e.g. C Corp, S Corp, LLC)?","[0, 1]",,1,FALSE,,
+34,"If the Company has already filed documents establishing a legal entity, has it listed all documents related to the legal entity (e.g., articles of incorporation, bylaws, amendments; minutes of board of directors, committee and shareholders' meetings; consents)?","[0, 1]",,1,FALSE,,
+35,"Has the Company signed any loan agreements, including promissory notes, financing arrangements, or lines of credit?
+- If no: award 1 pt.
+- If yes: award 1 pt only if the Company provides a complete list of banks or other lenders with whom it has a financial relationship, together with copies of all related credit agreements, debt instruments, security agreements, mortgages, collateral pledges, indentures, financial or performance guaranties, indemnifications, liens, equipment leases, or other agreements evidencing outstanding loans to which the Company is or was a party within the past two years. Otherwise, award 0 pts.","[0, 1]",,1,FALSE,,
+36,"Is the Company a party to any nondisclosure or noncompete agreements?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides a list of such agreements. Otherwise, 0 pts.","[0, 1]",,1,FALSE,,
+37,"Has the Company signed any sales, distribution, franchise, or licensing agreements?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides a list of such agreements, including but not limited to distribution, sales, marketing, and supply agreements; price quote, invoice, purchase, or warranty forms; contracts, transcripts, or letters of divestiture from any merger or acquisition within the past five years; powers of attorney; exclusivity agreements; franchise agreements; and indemnification agreements. Otherwise, 0 pts.","[0, 1]",,1,FALSE,,
+38,"Has the Company been involved in any past litigation, or does it face any pending litigation?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides: copies of pleadings or correspondence for past or pending lawsuits involving the Company or Founders; a summary of any disputes with suppliers, competitors, or customers; a history of any issues with regulatory bodies such as the SEC or IRS; any harassment, wrongful termination, or discrimination disputes within the past three years; correspondence with auditors or accountants regarding threatened or pending litigation, assessments, or claims; and lists of any decrees, injunctions, settlements, orders, or judgments of courts or governmental agencies, settlement documentation, and unsatisfied judgments. Otherwise, 0 pts.","[0, 1]",,1,FALSE,,
+39,"Is the Company subject to any environmental regulations?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides: descriptions of any environmental hazards, liabilities, or contingencies; a list of any materials or processes that may negatively impact the environment; copies of notices and filings with the Environmental Protection Agency (EPA); and environmental audits, if any, for each Company property. Otherwise, 0 pts.","[0, 1]",,1,FALSE,,
+40,"Has the Company or its Founders signed any agreements with officers, advisors, employees, consultants, or third-party service providers?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides: all employment and consulting agreements, loan agreements, and documents relating to other transactions with officers, directors, key employees, and related parties; a schedule of all compensation paid to officers, directors, and key employees for the most recent fiscal year, showing salary separately; a summary of employee benefits, including pension, profit-sharing, compensation, and retirement plans; a summary of management incentive or bonus plans and other non-cash compensation; confidentiality agreements with employees; and a description of all related-party transactions during the last three years and any currently proposed transactions. Otherwise, 0 pts.","[0, 1]",,1,FALSE,,
+41,"Has the Company drafted guidelines for employees, contractors, and other affiliated workers?
+ - Award 1 pt only if the Company provides a copy of the employee handbook, including policies on vacation, sick days, benefits, holidays, and paid leave; documents on pension plan funding and distributions; and copies of all Occupational Safety and Health Administration (OSHA) examinations. Otherwise, 0 pts.","[0, 1]",,1,FALSE,,
+42,"Does the Company own, or plan to acquire, real or material personal property?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides: a list of real and material personal property owned by the Company; documents of title, mortgages, deeds of trust, and security agreements pertaining to those properties; and all outstanding leases with an original term greater than one year for real and personal property to which the Company is either lessor or lessee. Otherwise, 0 pts.","[0, 1]",,1,FALSE,,
+43,"Is the Company a party to any insurance or liability agreements?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides: a schedule or copies of all material insurance policies covering property, liabilities, and operations, including product liability; a schedule of any other policies in force, such as key-man or director indemnification policies; and all other relevant documents pertaining to the Company's insurance and liability exposure. Otherwise, 0 pts.","[0, 1]",,1,FALSE,,
+44,"Is the Company a party to any acquisition, partnership, or joint venture agreements?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides: copies of all acquisition, partnership, or joint venture agreements; documents pertaining to potential acquisitions or alliances; and any agreements regarding divestiture of assets. Otherwise, 0 pts.","[0, 1]",,1,FALSE,,
+45,"Has the Company engaged in any marketing, promotional, or public relations activities?
+ - Award 1 pt only if the Company provides: copies of any press releases from the last two years; articles and other pertinent marketing studies or reports relating to the Company or its industry; information regarding competitors; customer satisfaction surveys, if any; and current brochures and sales materials describing the Company's products or services. Otherwise, 0 pts.","[0, 1]",,1,FALSE,,
+46,"Does the Company require any special permits, licenses, or authorizations to operate in any state, country, or other jurisdiction?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides: recently obtained good-standing certificates for all states and jurisdictions where the Company does or plans to do business; copies of all permits and licenses necessary for operations; a summary of any inquiry during the past three years involving federal, state, or other governmental agencies; and a summary of all federal, state, and local laws, rules, and regulations applicable to the Company's main business. Otherwise, 0 pts.","[0, 1]",,1,FALSE,,
+47,"Are there any corporate or equity structural issues that may pose problems in the future, particularly for investors or partners?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company explains how it will address them. Otherwise, 0 pts.","[0, 1]",,1,FALSE,,
+48,"Has the Company ever applied for, issued, or transferred securities, or signed any contracts, arrangements, documents, or commitments relating to the Company's stock?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides documents relating to its equity structure, including: stock certificates, warrants, and options; stockholder information with number of shares held, dates of issuance, and consideration paid; employee stock benefit plans and equity agreements; any voting trust, buy/sell, stockholder, warrant, proxy, or right-of-first-refusal agreements; any registration rights or pre-emptive rights agreements; powers of attorney on any matter; convertible debt instruments; and any debt arrangements, guarantees, or indemnifications between officers, directors, or shareholders and the Company. Otherwise, 0 pts.","[0, 1]",,1,FALSE,,
+49,Has the Company created a comprehensive information and data privacy policy?,"[0, 1]",,0,FALSE,,
+50,"If the Company has created a comprehensive information and data privacy policy, has it provided a copy of this policy, as well as a summary of all federal, state, local and international laws, rules and regulations applicable to the Company's data collecting and data processing activities?","[0, 1]",,1,FALSE,,
+51,"Has the Company crafted a policy to keep its customers' personal data safe?
+ - Award 1 pt only if the Company provides a copy of this policy, together with a summary of all federal, state, local, and international laws, rules, and regulations applicable to its data collection and processing activities. Otherwise, 0 pts.","[0, 1]",,1,FALSE,,
+52,"Will the Company use cookies for advertising or tracking purposes, send direct marketing communications to people with whom it has no pre-existing business relationship, or process sensitive personal data of any kind?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company has, or plans to hire, an Information and Privacy Officer familiar with applicable privacy law, including the GDPR, the California Online Privacy Protection Act, and the California Consumer Privacy Act (CCPA). Otherwise, 0 pts.","[0, 1]",,1,FALSE,,
+53,"Has the Company signed any agreements with, or established relationships involving, any subsidiaries, partnerships, or joint ventures?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides a list of these arrangements and any related agreements. Otherwise, 0 pts.","[0, 1]",,1,FALSE,,
+,,,,,,,
+,8. Team ,,,,,,
+1,"Have any team members been involved in previous startups, and in what role?
+- Founder or co-founder: award 1 pt.
+- Around the 10th employee: award 0.67 pts.
+- After the 10th employee: award 0.33 pts.
+- No startup experience: award 0 pts.","[1, 0.67, 0.33, 0]",,1,FALSE,,
+2,"How many startups have the team members previously been involved with?
+ - 3 or more startups: award 1 pt
+ - 1–2 startups: award 0.5 pts
+ - None: award 0 pts","[1, 0.5, 0]",,1,FALSE,,
+3,"How many successful exits have team members been involved in?
+ - 2 or more startups: award 1 pt
+ - 1 startup: award 0.5 pts
+ - None: award 0 pts","[1, 0.5, 0]",,1,FALSE,,
+4,"How many years of experience does the team have in the company's industry?
+ - 15+ years: award 1 pt
+ - 5 to 14 years: award 0.5 pts
+ - Fewer than 5 years: award 0 pts","[1, 0.5, 0]",,1,FALSE,,
+5,"What was the team member's role/seniority in the company's industry?
+ - CEO, C-Suite: award 1 pt
+ - Middle management: award 0.5 pts
+ - Team member: award 0 pts","[1, 0.5, 0]",,1,FALSE,,
+6,"What is the breadth of the team's capabilities in technical/engineering?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",,1,FALSE,,
+7,"What is the breadth of the team's capabilities in supply chain?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",,1,FALSE,,
+8,"What is the breadth of the team's capabilities in operations?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",,1,FALSE,,
+9,"What is the breadth of the team's capabilities in finance?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",,1,FALSE,,
+10,"""What is the breadth of the team's capabilities in human resources?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts""","[1, 0.67, 0.33, 0]",,1,FALSE,,
+11,"What is the breadth of the team's capabilities in sales/marketing?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",,1,FALSE,,
+12,"What is the breadth of the team's capabilities in general management?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",,1,FALSE,,
+13,"What is the breadth of the team's capabilities in systems/IT?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",,1,FALSE,,
+14,"What is the breadth of the team's functional experience?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",,1,FALSE,,
+15,"What is the education level of the technical/engineering executives?
+ - Ph.D: award 1 pt
+ - Master's: award 0.5 pts
+ - Bachelor's or below: award 0 pts","[1, 0.5, 0]",,1,FALSE,,
+16,"What is the education level of management executives?
+ - MBA, JD, or other Master's degree: award 1 pt
+ - Bachelor's degree: award 0.5 pts
+ - Below bachelor's: award 0 pts","[1, 0.5, 0]",,1,FALSE,,
+17,"What is the education level of scientific advisors?
+ - Ph.D: award 1 pt
+ - Master's: award 0.5 pts
+ - Bachelor's or below: award 0 pts","[1, 0.5, 0]",,1,FALSE,,
+18,"What is the education level of board members?
+ - Ph.D, JD, MBA: award 1 pt
+ - Master's: award 0.5 pts
+ - Bachelor's or below: award 0 pts","[1, 0.5, 0]",,1,FALSE,,
+19,"What percentage of team time is spent on the startup?
+ - More than 90%: award 1 pt
+ - 50% to 90%: award 0.5 pts
+ - Less than 50%: award 0 pts","[1, 0.5, 0]",,1,FALSE,,
+20,"Has any personal capital been directly invested?
+ - Yes
+ - No","[1, 0]",,1,FALSE,,
+21,"How long has the team worked together?
+ - More than 3 years: award 1 pt
+ - 1 to 3 years: award 0.5 pts
+ - Less than 1 year: award 0 pts","[1, 0.5, 0]",,1,FALSE,,
+22,"Has the management team taken a formal assessment of team building dynamics?
+ - Yes
+ - No","[1, 0]",,1,FALSE,,
+23,"Is the team using the insight to actively improve the team dynamics of the founding team?
+ - Very: award 1 pt
+ - Somewhat: award 0.5 pts
+ - Not much or N/A: award 0 pts","[1, 0.5, 0]",,0,FALSE,,
+24,"Is there a structured approach to engaging the advisory team?
+ - Yes
+ - No","[1, 0]",,0,FALSE,,
+25,"What percent of advisors are actively engaged with the company?
+ - More than 90%: award 1 pt
+ - 50% to 90%: award 0.5 pts
+ - Less than 50% or no information: award 0 pts","[1, 0.5, 0]",,0,FALSE,,
+26,"From which ecosystem has the company hired from, raised money, or completed deals — Angel Investors?
+ - $10m+: award 1 pt
+ - $2m to $10m: award 0.67 pts
+ - $250k to $2m: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",,1,FALSE,,
+27,"From which ecosystem has the company hired from, raised money, or completed deals — Family Offices?
+ - $10m+: award 1 pt
+ - $2m to $10m: award 0.67 pts
+ - $250k to $2m: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",,1,FALSE,,
+28,"From which ecosystem has the company hired from, raised money, or completed deals — VCs?
+ - $10m+: award 1 pt
+ - $2m to $10m: award 0.67 pts
+ - $250k to $2m: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",,1,FALSE,,
+29,"From which ecosystem has the company hired from, raised money, or completed deals — Grants/NGOs?
+ - $10m+: award 1 pt
+ - $2m to $10m: award 0.67 pts
+ - $250k to $2m: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",,1,FALSE,,
+30,"From which ecosystem has the company hired from, raised money, or completed deals — Strategic Investors?
+ - $10m+: award 1 pt
+ - $2m to $10m: award 0.67 pts
+ - $250k to $2m: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",,1,FALSE,,
+31,"To what extent has the team hired or supervised senior subject matter/functional experts?
+ - More than 10 people: award 1 pt
+ - 2 to 10 people: award 0.67 pts
+ - 1 to 2 people: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",,1,FALSE,,
+,,,,1,FALSE,,
+,9. Executive Summary ,,,,,,
+1,Does the company have a formal company name?,"[0, 1]",,1,FALSE,,
+2,Is clear and complete contact information provided?,"[0, 1]",,1,FALSE,,
+3,Does the company have a formal company logo?,"[0, 1]",,1,FALSE,,
+4,Has the company identified a market category (or CleanTech Category)?,"[0, 1]",,1,FALSE,,
+5,"Is a brief company business history provided? (EG employees, years operational, etc.)","[0, 1]",,1,FALSE,,
+6,Does the company list current senior management skills and identify skill gaps?,"[0, 1]",,1,FALSE,,
+7,"Business Description: Has the company provided an easily understood, concise overview of its vision and value proposition to defined market(s) and routes to those market(s) that is clear to a non-expert?","[0, 1]",,0,FALSE,,
+8,Has the company specified the initial commercial offering(s)?,"[0, 1]",,1,FALSE,,
+9,Is factual / third-party / verifiable information supporting this provided?,"[0, 1]",,1,FALSE,,
+10,"Is a clear description of the value chain provided that identifies associated, involved, or required existing industry entities?","[0, 1]",,1,FALSE,,
+11,"Does the company identify customers (IE have bought), development partners (IE beta product test program), or LOIs with potential customers?","[0, 1]",,1,FALSE,,
+12,Are key milestone accomplishments presented?,"[0, 1]",,1,FALSE,,
+13,Does the company describe its technology status (TRL or otherwise)?,"[0, 1]",,1,FALSE,,
+14,Is an IP strategy defined?,"[0, 1]",,1,FALSE,,
+15,Is how the company's IP supports the value proposition described?,"[0, 1]",,1,FALSE,,
+16,"Is a clear impact statement presented that covers environmental, social, and financial impact?","[0, 1]",,1,FALSE,,
+17,Is there a description of the target market?,"[0, 1]",,1,FALSE,,
+18,Is the TAM (total addressable market) evaluated and are assumptions provided?,"[0, 1]",,1,FALSE,,
+19,Is the SAM (serviceable available market) evaluated and are assumptions provided?,"[0, 1]",,1,FALSE,,
+20,"Is the target market share presented, with assumptions?","[0, 1]",,1,FALSE,,
+21,Are additional markets identified?,"[0, 1]",,1,FALSE,,
+22,Are the key costs/challenges of entering these additional markets discussed?,"[0, 1]",,1,FALSE,,
+23,Has the company described anticipated direct and indirect competition?,"[0, 1]",,1,FALSE,,
+24,Are the company's proposed benefits over the competition described?,"[0, 1]",,1,FALSE,,
+25,Has the company presented its funding history?,"[0, 1]",,1,FALSE,,
+26,Has the company presented its fundraising plans (forward looking)?,"[0, 1]",,1,FALSE,,
+27,Is the use of defined funds discussed?,"[0, 1]",,1,FALSE,,
+28,Does the company have a video that is current and consistent with the overview?,"[0, 1]",,1,FALSE,,
+29,Is the video available to the public?,"[0, 1]",,1,FALSE,,
+30,Is there a description of the management team?,"[0, 1]",,1,FALSE,,
+31,Is there a formal location? (E.G. HQ address),"[0, 1]",,1,FALSE,,
+32,Is the company's revenue history and projection(s) presented?,"[0, 1]",,1,FALSE,,
+33,Is the projection consistent with SAM and target market share? (IE SAM x Market Share % = projected revenue),"[0, 1]",,1,FALSE,,
+34,"Is revenue for year N divided by revenue for year N-1 a constant? If yes, is that assumption explained?","[0, 1]",,1,FALSE,,
+,,,,,,,
+,10. Investor Pitch ,,,,,,
+1,Is there an elevator pitch?,"[0, 1]",,1,FALSE,,
+2,Does the presentation define the business and reason for existence?,"[0, 1]",,1,FALSE,,
+3,"Is there a visual ""model"" built upon in the ""problem"" and ""solution"" slides?","[0, 1]",,1,FALSE,,
+4,Does the overview contain two to five high-level succinct bullets?,"[0, 1]",,1,FALSE,,
+5,"Is there a compelling pain point that will make a customer write a check (revenues, costs, time, productivity, market reach, etc.)?","[0, 1]",,0,FALSE,,
+6,"Is it a ""must-solve"" not merely ""nice-to-solve"" problem?","[0, 1]",,0,FALSE,,
+7,"Is there a visual ""model"" depicting the problem?","[0, 1]",,1,FALSE,,
+8,Is a historical evolution depicted?,"[0, 1]",,1,FALSE,,
+9,Are meaningful validating quotes included?,"[0, 1]",,0,FALSE,,
+10,Does the problem suggest a large market?,"[0, 1]",,0,FALSE,,
+11,"Is the solution a compelling value proposition clearly benefitting the customer's business (revenues, costs, time, productivity, market, etc.)?","[0, 1]",,0,FALSE,,
+12,"Is there a visual ""model"" depicting the solution?","[0, 1]",,1,FALSE,,
+13,Does the solution clearly fit in the customer's ecosystem?,"[0, 1]",,0,FALSE,,
+14,Does the presentation depict differentiation and technical elegance but avoid the weeds?,"[0, 1]",,0,FALSE,,
+15,Does the presentation clearly define the market?,"[0, 1]",,0,FALSE,,"""clearly"" makes it seemingly subjective "
+16,"Is there a target vertical, buyer/user, or application?","[0, 1]",,1,FALSE,,
+17,Are market size/growth presented?,"[0, 1]",,1,FALSE,,
+18,Are any of the following shown: TAM/SAM/SOM/CAGR?,"[0, 1]",,1,FALSE,,
+19,Are historical trends projected into the future?,"[0, 1]",,1,FALSE,,
+20,Does the methodology combine quantitative rigor with qualitative sensitivity?,"[0, 1]",,0,FALSE,,
+21,Is there a balance between exciting opportunity vs. chance of success?,"[0, 1]",,0,FALSE,,
+22,"Does the presentation discuss current and potential competitors (Incumbents, Startups, In-House, Substitutes)?","[0, 1]",,1,FALSE,,
+23,Does the presentation provide a framework to demonstrate differentiation (BCG grid and/or benefits matrix)?,"[0, 1]",,0,FALSE,,
+24,Does the presentation use customer-centric attributes and dimensions?,"[0, 1]",,1,FALSE,,
+25,"Does the presentation demonstrate knowledge of the landscape, including past failures?","[0, 1]",,0,FALSE,,
+26,Does the presentation embrace competitor strengths + know its own weaknesses (self-awareness)?,"[0, 1]",,1,FALSE,,
+27,"Does the presentation highlight secret sauce, competitive advantages, barriers to entry?","[0, 1]",,1,FALSE,,
+28,Does the presentation translate key points between business and technical domain?,"[0, 1]",,1,FALSE,,
+29,"Does it show how customers and partners fit in, if possible?","[0, 1]",,1,FALSE,,
+30,Does it remain focused on the essential value proposition?,"[0, 1]",,0,FALSE,,
+31,Does it talk to important but peripheral issues and details while avoiding clutter?,"[0, 1]",,0,FALSE,,
+32,"Does it address ""invent vs. integrate"" issues?","[0, 1]",,1,FALSE,,
+33,Does it show that the company will invent only uniquely competitive elements?,"[0, 1]",,0,FALSE,,
+34,"Does it show an incremental development path that reduces risk, if possible?","[0, 1]",,0,FALSE,,
+35,Does the presentation show what customers buy and how they buy it?,"[0, 1]",,1,FALSE,,
+36,"Does it discuss high level pricing (e.g., annuity or one fee)?","[0, 1]",,1,FALSE,,
+37,Does it describe what the customer will get (today and beyond)?,"[0, 1]",,1,FALSE,,
+38,Does it profile the customer (vertical/buyer or user/application)?,"[0, 1]",,1,FALSE,,
+39,Does it profile critical partner relationships (current and future)?,"[0, 1]",,1,FALSE,,
+40,Does it show a marketing and sales plan?,"[0, 1]",,1,FALSE,,
+41,Does it show a value chain and sales cycle?,"[0, 1]",,1,FALSE,,
+42,Does it compare and contrast to industry comparables?,"[0, 1]",,1,FALSE,,
+43,Does the presentation show credibility and strategic orchestration of team members?,"[0, 1]",,0,FALSE,,
+44,Does the team show domain expertise and unique customer insight?,"[0, 1]",,0,FALSE,,
+45,Does the CEO hire people with skills better than their own?,"[0, 1]",,0,FALSE,,"Does it mean ""better"" or ""different""?"
+46,"Does the presentation show what's missing, if applicable, or show that nothing is missing?","[0, 1]",,0,FALSE,*,
+47,Does it show previous companies and titles (industry recognition where meaningful)?,"[0, 1]",,1,FALSE,,
+48,Does it show the Board of Directors?,"[0, 1]",,1,FALSE,,
+49,Does the Company present thorough and thoughtful financials?,"[0, 1]",,0,FALSE,,
+50,"Has the Company provided a P&L, income statement, and balance sheet?","[0, 1]",,1,FALSE,,
+51,Has the Company provided high-level 3- or 5-year projections?,"[0, 1]",,1,FALSE,,
+52,Do the financials break out revenues and expenses by major category?,"[0, 1]",,1,FALSE,,
+53,"Do the financials include pre-tax profit (loss), cash flow, capital requirements, and headcount?","[0, 1]",,1,FALSE,,
+54,Has the Company defined milestone targets?,"[0, 1]",,1,FALSE,,
+55,Do the financials identify when the Company expects its first revenues?,"[0, 1]",,1,FALSE,,
+56,Do the financials identify when the Company expects to become cash-flow positive?,"[0, 1]",,1,FALSE,,
+57,"Has the Company demonstrated tangible competitive barriers (e.g., customers, IP)?","[0, 1]",,1,FALSE,,
+58,Do the projections show a $100M/yr run rate by year 5?,"[0, 1]",,1,FALSE,,

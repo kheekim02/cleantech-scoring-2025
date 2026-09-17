@@ -1,0 +1,274 @@
+cat_code,q_num,n_both,n_disagree,disagree_rate,mad,text,range,obj,archetype
+BC,2,847,423,0.49940968122786306,0.6463990554899646,Does the company clearly identify its customer segments and customer attributes?,"[0, 0.25, 0.5, 0.75,1]",0.0,SUBJECTIVE_LIKERT
+BC,1,847,372,0.43919716646989376,0.5938606847697757,How clearly is the value proposition understood?,"[0, 0.25, 0.5, 0.75,1]",0.0,SUBJECTIVE_LIKERT
+BC,4,841,364,0.4328180737217598,0.5524375743162901,Are the large sections of the BMC clearly filled and articulated?,"[0, 0.25, 0.5, 0.75,1]",0.0,SUBJECTIVE_LIKERT
+BC,5,722,263,0.36426592797783935,0.4629501385041551,Are the small sections of the BMC clearly filled and articulated?,"[0, 0.5, 1]",0.0,ORDINAL_MILESTONE
+BC,3,846,306,0.3617021276595745,0.5975177304964538,Has the company interviewed at least 5 customers?,"[0, 0.25, 0.5, 0.75,1]",1.0,CUMULATIVE_LADDER
+L,9,799,261,0.32665832290362956,0.5738423028785983,"According to the USPTO, strong, highly registerable marks are creative or unique names that set a brand apart. These include fanciful marks (made-up words like Pepsi), arbitrary marks (unrelated real words like Apple for computers), and suggestive marks (words hinting at a quality without stating it outright like Coppertone). Conversely, weak or unacceptable marks are hard to protect and usually cannot be federally registered. These include descriptive marks (merely detailing a feature or quality, like Creamy for yogurt) and generic terms (the common, everyday product name, like Bagel shop).
+On average across every mark the Company plans to apply for, how descriptive are they on a scale of 1–5? Please rate them with 1 being a weak mark that concisely describes a feature or quality of the goods or services, and 5 being a strong mark that has no relationship to what the Company is selling.","[0, 0.25, 0.5, 0.75, 1]",1.0,SUBJECTIVE_LIKERT
+T,7,821,254,0.3093788063337393,0.6199756394640682,"What is the breadth of the team's capabilities in supply chain?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",1.0,ORDINAL_MILESTONE
+T,9,821,252,0.30694275274056027,0.6881851400730816,"What is the breadth of the team's capabilities in finance?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",1.0,ORDINAL_MILESTONE
+IS,2,836,256,0.3062200956937799,0.38217703349282295,"Clearly maps applicable SDGs across the company’s value chain (Two or more: 1, One only: 0.5, None: 0).","[0, 0.5, 1]",1.0,ORDINAL_MILESTONE
+T,11,821,244,0.2971985383678441,0.6516443361753959,"What is the breadth of the team's capabilities in sales/marketing?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",1.0,ORDINAL_MILESTONE
+TP,7,831,245,0.29482551143200963,0.44584837545126355,"What is the product’s DOD/DOE/Isles Utilities Technology Readiness Level?  (If Levels 1-3: 0 pts, If Levels 4-6: 0.5 pts, If Levels 7-9: 1 pt)","[0, 0.5, 1]",1.0,ORDINAL_MILESTONE
+T,13,821,242,0.29476248477466505,0.6358099878197321,"What is the breadth of the team's capabilities in systems/IT?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",1.0,ORDINAL_MILESTONE
+T,19,816,238,0.2916666666666667,0.6850490196078431,"What percentage of team time is spent on the startup?
+ - More than 90%: award 1 pt
+ - 50% to 90%: award 0.5 pts
+ - Less than 50%: award 0 pts","[1, 0.5, 0]",1.0,ORDINAL_MILESTONE
+T,8,821,235,0.2862362971985384,0.6406820950060901,"What is the breadth of the team's capabilities in operations?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",1.0,ORDINAL_MILESTONE
+TP,5,835,238,0.28502994011976046,0.39880239520958083,"How many patents has the company filed, including subsequently granted patents? (If only 1 patent: 0 pts, If only 1-2 patents: 0.5 pts, If 3+ patents: 1 pt)","[0, 0.5, 1]",1.0,ORDINAL_MILESTONE
+T,6,821,229,0.2789281364190012,0.6674786845310596,"What is the breadth of the team's capabilities in technical/engineering?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",1.0,ORDINAL_MILESTONE
+T,12,821,228,0.2777101096224117,0.6321559074299634,"What is the breadth of the team's capabilities in general management?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",1.0,ORDINAL_MILESTONE
+TP,12,832,225,0.2704326923076923,0.375,"(0: not started, 0.33: preliminary talks, 0.67: pending, 1: completed) What stage is the validation in?","[0, 0.33, 0.67, 1]",0.0,ORDINAL_MILESTONE
+TP,6,836,226,0.2703349282296651,0.3660287081339713,"How many granted patents does the company have? (If only 1 patent: 0 pts, If only 1-2 patents: 0.5 pts, If 3+ patents: 1 pt)","[0, 0.5, 1]",1.0,ORDINAL_MILESTONE
+M,1,834,224,0.2685851318944844,0.29790167865707434,"Has the startup identified the channels that its key customers frequently consume media, products, and services via? (eg. Facebook marketplace, Best Buy physical locations, word of mouth)","[0,1]",1.0,BINARY
+M,2,833,221,0.2653061224489796,0.2680072028811525,Does the startup have a clear operational plan to distribute its product or service via distribution channels that customers frequently use?,"[0,1]",0.0,BINARY
+T,17,816,216,0.2647058823529412,0.6642156862745098,"What is the education level of scientific advisors?
+ - Ph.D: award 1 pt
+ - Master's: award 0.5 pts
+ - Bachelor's or below: award 0 pts","[1, 0.5, 0]",1.0,ORDINAL_MILESTONE
+T,14,820,213,0.2597560975609756,0.6073170731707317,"What is the breadth of the team's functional experience?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",1.0,ORDINAL_MILESTONE
+T,10,821,212,0.2582216808769793,0.4762484774665043,"""What is the breadth of the team's capabilities in human resources?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts""","[1, 0.67, 0.33, 0]",1.0,ORDINAL_MILESTONE
+M,3,833,214,0.25690276110444177,0.17411764705882352,"Has the startup identified ways to leverage their advocates, customers or community to spread their product or service?","[0,1]",1.0,BINARY
+T,1,817,206,0.2521419828641371,0.7466340269277846,"Have any team members been involved in previous startups, and in what role?
+- Founder or co-founder: award 1 pt.
+- Around the 10th employee: award 0.67 pts.
+- After the 10th employee: award 0.33 pts.
+- No startup experience: award 0 pts.","[1, 0.67, 0.33, 0]",1.0,ORDINAL_MILESTONE
+IP,6,834,207,0.24820143884892087,0.02913669064748202,"Is it a ""must-solve"" not merely ""nice-to-solve"" problem?","[0, 1]",0.0,BINARY
+T,5,818,203,0.24816625916870416,0.6528117359413202,"What was the team member's role/seniority in the company's industry?
+ - CEO, C-Suite: award 1 pt
+ - Middle management: award 0.5 pts
+ - Team member: award 0 pts","[1, 0.5, 0]",1.0,ORDINAL_MILESTONE
+T,4,821,203,0.24725943970767356,0.6711327649208283,"How many years of experience does the team have in the company's industry?
+ - 15+ years: award 1 pt
+ - 5 to 14 years: award 0.5 pts
+ - Fewer than 5 years: award 0 pts","[1, 0.5, 0]",1.0,ORDINAL_MILESTONE
+T,2,820,200,0.24390243902439024,0.5560975609756098,"How many startups have the team members previously been involved with?
+ - 3 or more startups: award 1 pt
+ - 1–2 startups: award 0.5 pts
+ - None: award 0 pts","[1, 0.5, 0]",1.0,ORDINAL_MILESTONE
+T,32,804,196,0.24378109452736318,0.4968905472636816,,,,
+PMF,19,822,200,0.24330900243309003,0.11783941605839417,Have they identified who the purchasing decision-makers in the system are?,"[0,1]",1.0,BINARY
+L,32,811,196,0.24167694204685575,0.24167694204685575,"Has the Company hired any people who worked for competitors?
+- If no: award 1 pt.
+- If yes: award 1 pt only if the Company took steps to ensure that it does not learn or use the competitor's trade secret information. Otherwise, award 0 pts.","[0, 1]",1.0,BINARY
+M,6,832,201,0.24158653846153846,0.1547716346153846,Has the startup generated a clear strategy to on-board new users?,"[0,1]",0.0,BINARY
+PMF,6,828,200,0.24154589371980675,0.10252415458937199,Startup updated or created customer segments based on research.,"[0,1]",1.0,BINARY
+IP,21,831,200,0.24067388688327315,0.020120336943441636,Is there a balance between exciting opportunity vs. chance of success?,"[0, 1]",0.0,BINARY
+T,16,819,197,0.24053724053724054,0.6178266178266179,"What is the education level of management executives?
+ - MBA, JD, or other Master's degree: award 1 pt
+ - Bachelor's degree: award 0.5 pts
+ - Below bachelor's: award 0 pts","[1, 0.5, 0]",1.0,ORDINAL_MILESTONE
+L,48,793,190,0.23959646910466584,0.23959646910466584,"Has the Company ever applied for, issued, or transferred securities, or signed any contracts, arrangements, documents, or commitments relating to the Company's stock?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides documents relating to its equity structure, including: stock certificates, warrants, and options; stockholder information with number of shares held, dates of issuance, and consideration paid; employee stock benefit plans and equity agreements; any voting trust, buy/sell, stockholder, warrant, proxy, or right-of-first-refusal agreements; any registration rights or pre-emptive rights agreements; powers of attorney on any matter; convertible debt instruments; and any debt arrangements, guarantees, or indemnifications between officers, directors, or shareholders and the Company. Otherwise, 0 pts.","[0, 1]",1.0,BINARY
+T,23,817,194,0.23745410036719705,0.35924112607099146,"Is the team using the insight to actively improve the team dynamics of the founding team?
+ - Very: award 1 pt
+ - Somewhat: award 0.5 pts
+ - Not much or N/A: award 0 pts","[1, 0.5, 0]",0.0,ORDINAL_MILESTONE
+PMF,7,828,195,0.23550724637681159,0.1079830917874396,Startup updated or created customer archetypes/personas based on research.,"[0,1]",1.0,BINARY
+L,42,795,184,0.23144654088050315,0.23144654088050315,"Does the Company own, or plan to acquire, real or material personal property?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides: a list of real and material personal property owned by the Company; documents of title, mortgages, deeds of trust, and security agreements pertaining to those properties; and all outstanding leases with an original term greater than one year for real and personal property to which the Company is either lessor or lessee. Otherwise, 0 pts.","[0, 1]",1.0,BINARY
+T,21,820,189,0.2304878048780488,0.5209756097560976,"How long has the team worked together?
+ - More than 3 years: award 1 pt
+ - 1 to 3 years: award 0.5 pts
+ - Less than 1 year: award 0 pts","[1, 0.5, 0]",1.0,ORDINAL_MILESTONE
+PMF,26,821,189,0.23020706455542023,0.09202192448233862,"Startup has a cohesive visual design system that is consistent across, e.g., email, website, and other assets.","[0,1]",0.0,BINARY
+IS,4,836,192,0.22966507177033493,0.21830143540669855,Clearly explains how the startup is better than conventional companies in its sector using a quantifiable number.,"[0,1]",1.0,BINARY
+L,35,798,183,0.22932330827067668,0.22932330827067668,"Has the Company signed any loan agreements, including promissory notes, financing arrangements, or lines of credit?
+- If no: award 1 pt.
+- If yes: award 1 pt only if the Company provides a complete list of banks or other lenders with whom it has a financial relationship, together with copies of all related credit agreements, debt instruments, security agreements, mortgages, collateral pledges, indentures, financial or performance guaranties, indemnifications, liens, equipment leases, or other agreements evidencing outstanding loans to which the Company is or was a party within the past two years. Otherwise, award 0 pts.","[0, 1]",1.0,BINARY
+L,47,795,182,0.2289308176100629,0.22767295597484277,"Are there any corporate or equity structural issues that may pose problems in the future, particularly for investors or partners?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company explains how it will address them. Otherwise, 0 pts.","[0, 1]",1.0,BINARY
+L,14,817,186,0.22766217870257038,0.22888616891064872,"Is there any open-source code in the product?
+- If no: award 1 pt.
+- If yes: award 1 pt only if the Company has copies of the open-source license for the code. Otherwise, award 0 pts.","[0, 1]",1.0,BINARY
+L,13,810,184,0.2271604938271605,0.22654320987654322,"Does the product involve source code?
+- If no: award 1 pt.
+- If yes: award 1 pt only if the Company has written agreements with every engineer who wrote code that properly assign their copyrights to the Company. Otherwise, award 0 pts.","[0, 1]",1.0,BINARY
+T,18,818,185,0.22616136919315402,0.5073349633251834,"What is the education level of board members?
+ - Ph.D, JD, MBA: award 1 pt
+ - Master's: award 0.5 pts
+ - Bachelor's or below: award 0 pts","[1, 0.5, 0]",1.0,ORDINAL_MILESTONE
+IS,7,838,189,0.22553699284009546,0.22374701670644392,"If applicable, does the company mention the existing regulations (local, state, federal, international) that have a direct impact on the company’s license to operate? (If no applicable regulations exist, give one point for this question)","[0,1]",1.0,CONDITIONAL_NA
+T,25,814,183,0.22481572481572482,0.39545454545454545,"What percent of advisors are actively engaged with the company?
+ - More than 90%: award 1 pt
+ - 50% to 90%: award 0.5 pts
+ - Less than 50% or no information: award 0 pts","[1, 0.5, 0]",0.0,ORDINAL_MILESTONE
+L,40,797,179,0.2245922208281054,0.2245922208281054,"Has the Company or its Founders signed any agreements with officers, advisors, employees, consultants, or third-party service providers?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides: all employment and consulting agreements, loan agreements, and documents relating to other transactions with officers, directors, key employees, and related parties; a schedule of all compensation paid to officers, directors, and key employees for the most recent fiscal year, showing salary separately; a summary of employee benefits, including pension, profit-sharing, compensation, and retirement plans; a summary of management incentive or bonus plans and other non-cash compensation; confidentiality agreements with employees; and a description of all related-party transactions during the last three years and any currently proposed transactions. Otherwise, 0 pts.","[0, 1]",1.0,BINARY
+L,44,794,178,0.22418136020151133,0.22418136020151133,"Is the Company a party to any acquisition, partnership, or joint venture agreements?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides: copies of all acquisition, partnership, or joint venture agreements; documents pertaining to potential acquisitions or alliances; and any agreements regarding divestiture of assets. Otherwise, 0 pts.","[0, 1]",1.0,BINARY
+PMF,23,823,183,0.22235722964763063,0.05087970838396111,Startup has a logo that is discernible when smaller than ½ an inch.,"[0,1]",0.0,BINARY
+PMF,30,824,182,0.220873786407767,0.1032766990291262,Has the startup analyzed the reasons why customers use the competition?,"[0,1]",1.0,BINARY
+T,15,819,179,0.21855921855921856,0.5970695970695971,"What is the education level of the technical/engineering executives?
+ - Ph.D: award 1 pt
+ - Master's: award 0.5 pts
+ - Bachelor's or below: award 0 pts","[1, 0.5, 0]",1.0,ORDINAL_MILESTONE
+L,43,795,173,0.21761006289308177,0.21761006289308177,"Is the Company a party to any insurance or liability agreements?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides: a schedule or copies of all material insurance policies covering property, liabilities, and operations, including product liability; a schedule of any other policies in force, such as key-man or director indemnification policies; and all other relevant documents pertaining to the Company's insurance and liability exposure. Otherwise, 0 pts.","[0, 1]",1.0,BINARY
+L,53,786,171,0.21755725190839695,0.21723918575063614,"Has the Company signed any agreements with, or established relationships involving, any subsidiaries, partnerships, or joint ventures?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides a list of these arrangements and any related agreements. Otherwise, 0 pts.","[0, 1]",1.0,BINARY
+L,36,797,172,0.21580928481806774,0.21518193224592222,"Is the Company a party to any nondisclosure or noncompete agreements?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides a list of such agreements. Otherwise, 0 pts.","[0, 1]",1.0,BINARY
+L,37,796,171,0.21482412060301506,0.21419597989949749,"Has the Company signed any sales, distribution, franchise, or licensing agreements?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides a list of such agreements, including but not limited to distribution, sales, marketing, and supply agreements; price quote, invoice, purchase, or warranty forms; contracts, transcripts, or letters of divestiture from any merger or acquisition within the past five years; powers of attorney; exclusivity agreements; franchise agreements; and indemnification agreements. Otherwise, 0 pts.","[0, 1]",1.0,BINARY
+PMF,18,824,174,0.2111650485436893,0.04924757281553398,Has the start up identified and addressed the needs of all key stakeholders?,"[0,1]",0.0,BINARY
+L,39,796,167,0.20979899497487436,0.2091708542713568,"Is the Company subject to any environmental regulations?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides: descriptions of any environmental hazards, liabilities, or contingencies; a list of any materials or processes that may negatively impact the environment; copies of notices and filings with the Environmental Protection Agency (EPA); and environmental audits, if any, for each Company property. Otherwise, 0 pts.","[0, 1]",1.0,BINARY
+IP,32,828,173,0.20893719806763286,0.018538647342995172,"Does it address ""invent vs. integrate"" issues?","[0, 1]",1.0,BINARY
+L,46,793,164,0.2068095838587642,0.20617906683480455,"Does the Company require any special permits, licenses, or authorizations to operate in any state, country, or other jurisdiction?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides: recently obtained good-standing certificates for all states and jurisdictions where the Company does or plans to do business; copies of all permits and licenses necessary for operations; a summary of any inquiry during the past three years involving federal, state, or other governmental agencies; and a summary of all federal, state, and local laws, rules, and regulations applicable to the Company's main business. Otherwise, 0 pts.","[0, 1]",1.0,BINARY
+PMF,17,826,170,0.20581113801452786,0.0476271186440678,Has the startup articulated all of the stakeholders in the market they are addressing?,"[0,1]",1.0,BINARY
+T,3,819,167,0.2039072039072039,0.38583638583638585,"How many successful exits have team members been involved in?
+ - 2 or more startups: award 1 pt
+ - 1 startup: award 0.5 pts
+ - None: award 0 pts","[1, 0.5, 0]",1.0,ORDINAL_MILESTONE
+IP,5,834,170,0.2038369304556355,0.021342925659472423,"Is there a compelling pain point that will make a customer write a check (revenues, costs, time, productivity, market reach, etc.)?","[0, 1]",0.0,BINARY
+IP,25,834,169,0.2026378896882494,0.019988009592326137,"Does the presentation demonstrate knowledge of the landscape, including past failures?","[0, 1]",0.0,BINARY
+PMF,29,825,166,0.2012121212121212,0.0913939393939394,Has the startup completed a competitive analysis?,"[0,1]",1.0,BINARY
+IP,33,832,167,0.20072115384615385,0.01703125,Does it show that the company will invent only uniquely competitive elements?,"[0, 1]",0.0,BINARY
+TP,15,835,166,0.19880239520958085,0.14910179640718563,"Does the product need certification (UL, ASTM, etc.)? Score +1 if certification is not needed or already obtained, +0.5 if there is at least a written plan to complete it, and zero if certification is needed but there is no written plan.","[0, 0.5, 1]",0.0,ORDINAL_MILESTONE
+IP,29,832,164,0.1971153846153846,0.01747716346153846,"Does it show how customers and partners fit in, if possible?","[0, 1]",1.0,BINARY
+L,52,787,154,0.19567979669631513,0.19504447268106734,"Will the Company use cookies for advertising or tracking purposes, send direct marketing communications to people with whom it has no pre-existing business relationship, or process sensitive personal data of any kind?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company has, or plans to hire, an Information and Privacy Officer familiar with applicable privacy law, including the GDPR, the California Online Privacy Protection Act, and the California Consumer Privacy Act (CCPA). Otherwise, 0 pts.","[0, 1]",1.0,BINARY
+M,11,833,161,0.19327731092436976,0.17130852340936373,"Has the startup created a product or service roadmap, detailing when features will roll out, and why?","[0,1]",1.0,BINARY
+PMF,14,826,159,0.19249394673123488,0.039697336561743346,Startup has a research-validated range potential customers would be willing to pay for their product or service.,"[0,1]",1.0,BINARY
+F,9,830,155,0.18674698795180722,0.5272481927710844,Does the company have a capital budget?,"[0, 1]",1.0,BINARY
+IS,8,835,155,0.18562874251497005,0.17994011976047905,"Has the company identified the environmental or social risks of the materials in the product/service? (e.g. toxicity, availability, recyclability, etc.) (If not applicable, give one point for this question because it is not a business risk)","[0,1]",1.0,CONDITIONAL_NA
+M,10,831,154,0.18531889290012032,0.16919374247894103,Has the startup identified and prioritized the most important features to customers for GTM rollout?,"[0,1]",1.0,BINARY
+F,27,826,153,0.18523002421307505,0.7000000000000001,"(5) Does the company project sales or revenue data for the next 3, 5, or 10 years?","[0, 1]",1.0,BINARY
+L,11,805,149,0.18509316770186335,0.18695652173913044,"Does the Company plan to sell its products or services internationally?
+- If no: award 1 pt.
+- If yes: award 1 pt only if the Company provides evidence that it has applied for trademark registrations in any foreign countries. Otherwise, award 0 pts.","[0, 1]",1.0,BINARY
+F,16,828,153,0.18478260869565216,0.33013285024154587,"Does the company have monthly and annual balance sheets, profit and loss statements, and cash flow statements?","[0, 1]",1.0,BINARY
+TP,4,837,151,0.18040621266427717,0.1741338112305854,Has the company identified whether or not there are other companies using the same or similar core technology?,"[0,1]",1.0,BINARY
+F,29,822,147,0.17883211678832117,0.6672749391727494,(5) Does the company identify assumptions upon which projected sales or revenue data are based?,"[0, 1]",1.0,BINARY
+IP,47,828,147,0.17753623188405798,0.01691425120772947,Does it show previous companies and titles (industry recognition where meaningful)?,"[0, 1]",1.0,BINARY
+F,7,829,145,0.17490952955367914,0.45416164053075997,"Are revenue and expense projections identified as fixed, variable, or marginal?","[0, 1]",1.0,BINARY
+F,8,829,145,0.17490952955367914,0.4161640530759952,"Are the revenue, expense, and market assumptions upon which the operating budget projections are based identified?","[0, 1]",1.0,BINARY
+ES,10,832,144,0.17307692307692307,0.16346153846153846,"Is a clear description of the value chain provided that identifies associated, involved, or required existing industry entities?","[0, 1]",1.0,BINARY
+IP,31,831,140,0.1684717208182912,0.013718411552346573,Does it talk to important but peripheral issues and details while avoiding clutter?,"[0, 1]",0.0,BINARY
+L,38,798,134,0.16791979949874686,0.16791979949874686,"Has the Company been involved in any past litigation, or does it face any pending litigation?
+ - If no: award 1 pt.
+ - If yes: award 1 pt only if the Company provides: copies of pleadings or correspondence for past or pending lawsuits involving the Company or Founders; a summary of any disputes with suppliers, competitors, or customers; a history of any issues with regulatory bodies such as the SEC or IRS; any harassment, wrongful termination, or discrimination disputes within the past three years; correspondence with auditors or accountants regarding threatened or pending litigation, assessments, or claims; and lists of any decrees, injunctions, settlements, orders, or judgments of courts or governmental agencies, settlement documentation, and unsatisfied judgments. Otherwise, 0 pts.","[0, 1]",1.0,BINARY
+IP,43,831,139,0.16726835138387486,0.01589049338146811,Does the presentation show credibility and strategic orchestration of team members?,"[0, 1]",0.0,BINARY
+IS,9,832,138,0.1658653846153846,0.16165865384615385,"Has the company identified its largest sources of energy use and land use? (If not applicable, give one point for this question because there are no large sources necessary)","[0,1]",1.0,CONDITIONAL_NA
+M,5,833,137,0.1644657863145258,0.11119447779111645,Has the startup created engagement mechanisms to allow for different levels of user participation?,"[0,1]",0.0,BINARY
+IP,46,827,136,0.16444981862152358,0.026692865779927452,"Does the presentation show what's missing, if applicable, or show that nothing is missing?","[0, 1]",0.0,BINARY
+L,8,708,116,0.1638418079096045,0.192090395480226,"If the Company plans to apply for more than one trade or service mark, has it done a clearance search for every mark it plans to apply for?
+- Not applicable (the Company plans to apply for no marks): award 1 pt.
+- Yes (a clearance search was done for every mark): award 1 pt.
+- No (one or more marks lack a clearance search): award 0 pts.","[0, 1]",1.0,BINARY
+PMF,9,828,134,0.16183574879227053,0.20695652173913046,"Based on research, did the startup clearly articulate something it learned that changed some aspect of its strategy or product experience?","[0,1]",1.0,BINARY
+F,14,825,133,0.16121212121212122,0.4603151515151515,"Does the capital budget include revenue, expense, and market projections for the next 3, 5, or 10 years, or for the life of each project?","[0, 1]",1.0,BINARY
+ES,19,835,134,0.16047904191616766,0.15149700598802396,Is the SAM (serviceable available market) evaluated and are assumptions provided?,"[0, 1]",1.0,BINARY
+ES,16,834,130,0.15587529976019185,0.14159112709832133,"Is a clear impact statement presented that covers environmental, social, and financial impact?","[0, 1]",1.0,BINARY
+IP,28,832,129,0.15504807692307693,0.013341346153846155,Does the presentation translate key points between business and technical domain?,"[0, 1]",1.0,BINARY
+F,4,831,128,0.15403128760529483,0.35318892900120336,"Are the revenue, expense, and market assumptions upon which the operating budget is based identified?","[0, 1]",1.0,BINARY
+IP,14,832,127,0.15264423076923078,0.02054086538461539,Does the presentation depict differentiation and technical elegance but avoid the weeds?,"[0, 1]",0.0,BINARY
+PMF,1,828,126,0.15217391304347827,0.055712560386473424,Startup has determined a specific target market and has articulated why they are a better option than other segments,"[0,1]",1.0,BINARY
+ES,11,835,127,0.15209580838323353,0.1437125748502994,"Does the company identify customers (IE have bought), development partners (IE beta product test program), or LOIs with potential customers?","[0, 1]",1.0,BINARY
+F,6,831,123,0.148014440433213,0.3279181708784597,"Does the operating budget include revenue, expense, and market projections for the next 3, 5, or 10 years?","[0, 1]",1.0,BINARY
+F,5,826,121,0.14648910411622276,0.38438256658595643,"If the operating budget has been in place for more than the current year, does it compare actual revenue and expenses by line item against budgeted revenue and expenses by line item?","[0, 1]",1.0,BINARY
+IS,3,837,120,0.14336917562724014,0.13599761051373954,"Addresses whether the impact priority is climate mitigation, climate resilience + adaptation, or both.","[0,1]",0.0,BINARY
+IS,1,838,120,0.1431980906921241,0.17840095465393796,"Company purpose directly addresses two or more United Nations Sustainable Development Goals (SDGs), maximizing environmental, economic, and social value (Two or more: 1, One only: 0.5, None: 0).","[0, 0.5, 1]",1.0,ORDINAL_MILESTONE
+IP,36,805,114,0.14161490683229813,0.012807453416149068,"Does it discuss high level pricing (e.g., annuity or one fee)?","[0, 1]",1.0,BINARY
+IP,22,830,114,0.13734939759036144,0.013602409638554216,"Does the presentation discuss current and potential competitors (Incumbents, Startups, In-House, Substitutes)?","[0, 1]",1.0,BINARY
+IP,53,822,109,0.13260340632603407,0.008801703163017031,"Do the financials include pre-tax profit (loss), cash flow, capital requirements, and headcount?","[0, 1]",1.0,BINARY
+TP,11,834,109,0.13069544364508393,0.1288968824940048,Does the company have documentation for the cost of third-party validation (anticipated or paid)?,"[0, 1]",1.0,BINARY
+F,11,828,108,0.13043478260869565,0.39603381642512075,Are revenue and expenses by project identified by source or line item?,"[0, 1]",1.0,BINARY
+PMF,13,826,107,0.12953995157384987,0.05292978208232446,Has the startup validated the size and representativeness of their target market psychographic segmentation through a statistically significant quantitative methodology?,"[0,1]",1.0,BINARY
+IP,50,827,107,0.1293833131801693,0.009353688029020557,"Has the Company provided a P&L, income statement, and balance sheet?","[0, 1]",1.0,BINARY
+PMF,15,825,104,0.12606060606060607,0.051539393939393954,Start up has implemented feedback mechanisms into their service or product experience to gather ongoing feedback from individuals who are using or who will use their product/service.,"[0,1]",1.0,BINARY
+T,26,550,69,0.12545454545454546,0.20909090909090908,"From which ecosystem has the company hired from, raised money, or completed deals — Angel Investors?
+ - $10m+: award 1 pt
+ - $2m to $10m: award 0.67 pts
+ - $250k to $2m: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",1.0,ORDINAL_MILESTONE
+L,2,816,101,0.12377450980392157,0.12040441176470588,Does this company spend time on developing and implementing an intellectual property strategy?,"[0, 1]",1.0,BINARY
+F,18,828,102,0.12318840579710146,0.22490942028985503,"Are the balance sheet, profit and loss statement, and cash flow statement reconciled monthly and annually to the budget?","[0, 1]",1.0,BINARY
+F,25,830,102,0.12289156626506025,0.5111987951807229,(5) Does the company have actual sales or revenue data?,"[0, 1]",1.0,BINARY
+IP,16,832,102,0.12259615384615384,0.010805288461538462,"Is there a target vertical, buyer/user, or application?","[0, 1]",1.0,BINARY
+L,30,811,99,0.1220715166461159,0.11843403205918619,"Has the company identified technical information that is known to the company, is not generally known or readily accessible to competitors, and derives value from not being generally known or readily accessible?","[0, 1]",0.0,BINARY
+T,30,772,94,0.12176165803108809,0.17584196891191708,"From which ecosystem has the company hired from, raised money, or completed deals — Strategic Investors?
+ - $10m+: award 1 pt
+ - $2m to $10m: award 0.67 pts
+ - $250k to $2m: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",1.0,ORDINAL_MILESTONE
+L,45,792,81,0.10227272727272728,0.10164141414141414,"Has the Company engaged in any marketing, promotional, or public relations activities?
+ - Award 1 pt only if the Company provides: copies of any press releases from the last two years; articles and other pertinent marketing studies or reports relating to the Company or its industry; information regarding competitors; customer satisfaction surveys, if any; and current brochures and sales materials describing the Company's products or services. Otherwise, 0 pts.","[0, 1]",1.0,BINARY
+F,28,826,75,0.09079903147699758,0.37203389830508476,"(5) Does the company compare projected sales or revenue data for the next 3, 5, or 10 years to industry projected total sales to calculate projected market share based on similar companies in the same industry?","[0, 1]",1.0,BINARY
+L,41,793,57,0.07187894073139975,0.07187894073139975,"Has the Company drafted guidelines for employees, contractors, and other affiliated workers?
+ - Award 1 pt only if the Company provides a copy of the employee handbook, including policies on vacation, sick days, benefits, holidays, and paid leave; documents on pension plan funding and distributions; and copies of all Occupational Safety and Health Administration (OSHA) examinations. Otherwise, 0 pts.","[0, 1]",1.0,BINARY
+T,27,764,46,0.060209424083769635,0.08835078534031414,"From which ecosystem has the company hired from, raised money, or completed deals — Family Offices?
+ - $10m+: award 1 pt
+ - $2m to $10m: award 0.67 pts
+ - $250k to $2m: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",1.0,ORDINAL_MILESTONE
+L,51,789,43,0.05449936628643853,0.05449936628643853,"Has the Company crafted a policy to keep its customers' personal data safe?
+ - Award 1 pt only if the Company provides a copy of this policy, together with a summary of all federal, state, local, and international laws, rules, and regulations applicable to its data collection and processing activities. Otherwise, 0 pts.","[0, 1]",1.0,BINARY
+T,31,763,39,0.05111402359108781,0.07732634338138926,"To what extent has the team hired or supervised senior subject matter/functional experts?
+ - More than 10 people: award 1 pt
+ - 2 to 10 people: award 0.67 pts
+ - 1 to 2 people: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",1.0,ORDINAL_MILESTONE
+T,28,766,28,0.03655352480417755,0.044386422976501305,"From which ecosystem has the company hired from, raised money, or completed deals — VCs?
+ - $10m+: award 1 pt
+ - $2m to $10m: award 0.67 pts
+ - $250k to $2m: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",1.0,ORDINAL_MILESTONE
+T,29,767,28,0.03650586701434159,0.061277705345501955,"From which ecosystem has the company hired from, raised money, or completed deals — Grants/NGOs?
+ - $10m+: award 1 pt
+ - $2m to $10m: award 0.67 pts
+ - $250k to $2m: award 0.33 pts
+ - None: award 0 pts","[1, 0.67, 0.33, 0]",1.0,ORDINAL_MILESTONE

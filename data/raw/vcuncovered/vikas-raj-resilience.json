@@ -1,0 +1,584 @@
+{
+  "audience": "everyone",
+  "audience_before_archived": null,
+  "canonical_url": "https://www.vcuncovered.com/p/vikas-raj-resilience",
+  "default_comment_sort": null,
+  "editor_v2": false,
+  "exempt_from_archive_paywall": false,
+  "free_unlock_required": false,
+  "id": 179276035,
+  "podcast_art_url": null,
+  "podcast_duration": null,
+  "podcast_preview_upload_id": null,
+  "podcast_upload_id": null,
+  "podcast_url": null,
+  "post_date": "2026-01-12T17:17:36.898Z",
+  "updated_at": "2026-01-12T17:18:28.041Z",
+  "publication_id": 5837669,
+  "search_engine_description": null,
+  "search_engine_title": null,
+  "section_id": null,
+  "should_send_free_preview": false,
+  "show_guest_bios": true,
+  "slug": "vikas-raj-resilience",
+  "social_title": "Vikas Raj - Resilience",
+  "subtitle": "\"We try to avoid abstraction. We try to follow the throughline of what the company is offering all the way to how it generates real value for an end customer. We call that value \u201cresilience.\u201d",
+  "teaser_post_eligible": true,
+  "title": "Vikas Raj - ResilienceVC",
+  "type": "newsletter",
+  "video_upload_id": null,
+  "write_comment_permissions": "everyone",
+  "meter_type": "none",
+  "live_stream_id": null,
+  "is_published": true,
+  "restacks": 1,
+  "reactions": {
+    "\u2764": 6
+  },
+  "top_exclusions": [],
+  "pins": [],
+  "section_pins": [],
+  "has_shareable_clips": false,
+  "previous_post_slug": "peter-day-superset",
+  "next_post_slug": "tanvi-lal-intuit-ventures",
+  "cover_image": "https://substackcdn.com/image/fetch/$s_!U6yi!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7bd0540e-8073-4035-af4e-5bf2c8b83ca5_2250x1670.png",
+  "cover_image_is_square": false,
+  "cover_image_is_explicit": false,
+  "videoUpload": null,
+  "podcastFields": {
+    "post_id": 179276035,
+    "podcast_episode_number": null,
+    "podcast_season_number": null,
+    "podcast_episode_type": null,
+    "should_syndicate_to_other_feed": null,
+    "syndicate_to_section_id": null,
+    "hide_from_feed": false,
+    "free_podcast_url": null,
+    "free_podcast_duration": null,
+    "preview_contains_ad": false,
+    "was_imported_self_serve_sync": false,
+    "draft_free_podcast_url": null,
+    "draft_free_podcast_duration": null
+  },
+  "podcastUpload": null,
+  "podcastPreviewUpload": null,
+  "voiceover_upload_id": null,
+  "voiceoverUpload": null,
+  "has_voiceover": false,
+  "description": "\u201cThe most important role VCs play is that of a friend and coach.\u201d",
+  "body_html": "<div class=\"captioned-image-container\"><figure><a class=\"image-link image2\" target=\"_blank\" href=\"https://substackcdn.com/image/fetch/$s_!x7fu!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4b87320f-e229-49ff-aabc-75d86cbfc8f5_1346x325.png\" data-component-name=\"Image2ToDOM\"><div class=\"image2-inset\"><picture><source type=\"image/webp\" srcset=\"https://substackcdn.com/image/fetch/$s_!x7fu!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4b87320f-e229-49ff-aabc-75d86cbfc8f5_1346x325.png 424w, https://substackcdn.com/image/fetch/$s_!x7fu!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4b87320f-e229-49ff-aabc-75d86cbfc8f5_1346x325.png 848w, https://substackcdn.com/image/fetch/$s_!x7fu!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4b87320f-e229-49ff-aabc-75d86cbfc8f5_1346x325.png 1272w, https://substackcdn.com/image/fetch/$s_!x7fu!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4b87320f-e229-49ff-aabc-75d86cbfc8f5_1346x325.png 1456w\" sizes=\"100vw\"><img src=\"https://substackcdn.com/image/fetch/$s_!x7fu!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4b87320f-e229-49ff-aabc-75d86cbfc8f5_1346x325.png\" width=\"1346\" height=\"325\" data-attrs=\"{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/4b87320f-e229-49ff-aabc-75d86cbfc8f5_1346x325.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:325,&quot;width&quot;:1346,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:64835,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://www.vcuncovered.com/i/179276035?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4b87320f-e229-49ff-aabc-75d86cbfc8f5_1346x325.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}\" class=\"sizing-normal\" alt=\"\" srcset=\"https://substackcdn.com/image/fetch/$s_!x7fu!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4b87320f-e229-49ff-aabc-75d86cbfc8f5_1346x325.png 424w, https://substackcdn.com/image/fetch/$s_!x7fu!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4b87320f-e229-49ff-aabc-75d86cbfc8f5_1346x325.png 848w, https://substackcdn.com/image/fetch/$s_!x7fu!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4b87320f-e229-49ff-aabc-75d86cbfc8f5_1346x325.png 1272w, https://substackcdn.com/image/fetch/$s_!x7fu!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4b87320f-e229-49ff-aabc-75d86cbfc8f5_1346x325.png 1456w\" sizes=\"100vw\" fetchpriority=\"high\"></picture><div></div></div></a></figure></div><div class=\"captioned-image-container\"><figure><a class=\"image-link image2 is-viewable-img\" target=\"_blank\" href=\"https://substackcdn.com/image/fetch/$s_!U6yi!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7bd0540e-8073-4035-af4e-5bf2c8b83ca5_2250x1670.png\" data-component-name=\"Image2ToDOM\"><div class=\"image2-inset\"><picture><source type=\"image/webp\" srcset=\"https://substackcdn.com/image/fetch/$s_!U6yi!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7bd0540e-8073-4035-af4e-5bf2c8b83ca5_2250x1670.png 424w, https://substackcdn.com/image/fetch/$s_!U6yi!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7bd0540e-8073-4035-af4e-5bf2c8b83ca5_2250x1670.png 848w, https://substackcdn.com/image/fetch/$s_!U6yi!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7bd0540e-8073-4035-af4e-5bf2c8b83ca5_2250x1670.png 1272w, https://substackcdn.com/image/fetch/$s_!U6yi!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7bd0540e-8073-4035-af4e-5bf2c8b83ca5_2250x1670.png 1456w\" sizes=\"100vw\"><img src=\"https://substackcdn.com/image/fetch/$s_!U6yi!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7bd0540e-8073-4035-af4e-5bf2c8b83ca5_2250x1670.png\" width=\"1456\" height=\"1081\" data-attrs=\"{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/7bd0540e-8073-4035-af4e-5bf2c8b83ca5_2250x1670.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:1081,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:3150992,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:false,&quot;internalRedirect&quot;:&quot;https://www.vcuncovered.com/i/179276035?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7bd0540e-8073-4035-af4e-5bf2c8b83ca5_2250x1670.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}\" class=\"sizing-normal\" alt=\"\" srcset=\"https://substackcdn.com/image/fetch/$s_!U6yi!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7bd0540e-8073-4035-af4e-5bf2c8b83ca5_2250x1670.png 424w, https://substackcdn.com/image/fetch/$s_!U6yi!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7bd0540e-8073-4035-af4e-5bf2c8b83ca5_2250x1670.png 848w, https://substackcdn.com/image/fetch/$s_!U6yi!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7bd0540e-8073-4035-af4e-5bf2c8b83ca5_2250x1670.png 1272w, https://substackcdn.com/image/fetch/$s_!U6yi!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7bd0540e-8073-4035-af4e-5bf2c8b83ca5_2250x1670.png 1456w\" sizes=\"100vw\"></picture><div class=\"image-link-expand\"><div class=\"pencraft pc-display-flex pc-gap-8 pc-reset\"><button tabindex=\"0\" type=\"button\" class=\"pencraft pc-reset pencraft icon-container restack-image\"><svg aria-hidden=\"true\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" stroke-width=\"1.5\" stroke=\"var(--color-fg-primary)\" stroke-linecap=\"round\" stroke-linejoin=\"round\" xmlns=\"http://www.w3.org/2000/svg\"><g><path d=\"M2.53001 7.81595C3.49179 4.73911 6.43281 2.5 9.91173 2.5C13.1684 2.5 15.9537 4.46214 17.0852 7.23684L17.6179 8.67647M17.6179 8.67647L18.5002 4.26471M17.6179 8.67647L13.6473 6.91176M17.4995 12.1841C16.5378 15.2609 13.5967 17.5 10.1178 17.5C6.86118 17.5 4.07589 15.5379 2.94432 12.7632L2.41165 11.3235M2.41165 11.3235L1.5293 15.7353M2.41165 11.3235L6.38224 13.0882\"></path></g></svg></button><button tabindex=\"0\" type=\"button\" class=\"pencraft pc-reset pencraft icon-container view-image\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-maximize2 lucide-maximize-2\"><polyline points=\"15 3 21 3 21 9\"></polyline><polyline points=\"9 21 3 21 3 15\"></polyline><line x1=\"21\" x2=\"14\" y1=\"3\" y2=\"10\"></line><line x1=\"3\" x2=\"10\" y1=\"21\" y2=\"14\"></line></svg></button></div></div></div></a></figure></div><div><hr></div><h3>Connect with Vikas</h3><p><a href=\"https://www.linkedin.com/in/vikasraj1/\">https://www.linkedin.com/in/vikasraj1/</a></p><h1>VC Uncovered\u2019s View</h1><pre><code>The future of venture capital belongs to the focused, mission-driven funds that identify massive and systemic market failures and build businesses to solve them. Vikas Raj, Managing Partner at <a href=\"https://www.resilience.vc/\">ResilienceVC</a>, is a prime example of this new wave, dedicating his career to financial resilience. A theme that has evolved through the three distinct waves of innovation in financial services he has witnessed.\n\nFrom micro-lending in India to co-founding ResilienceVC, Raj\u2019s journey is a powerful counter-narrative to the legacy funds that often prioritize abstract financial models over measurable real-world impact. His firm is lean, specialized, and focused on the tens of millions of underserved US consumers and small businesses that are \u201cdeemed too small and too risky\u201d by the mainstream system. This aligns perfectly with the VC Uncovered manifesto: celebrating investors who are not afraid to take bold risks on emerging ideas and who are actively searching for what might work tomorrow, instead of clinging to proven narratives from the past.\n\nResilienceVC has a clear, measurable goal: build financial resilience for its portfolio companies. This isn\u2019t just a mission; it\u2019s their core investment strategy. They back founders using embedded, frictionless, AI-driven fintech to reach people where they already are - an approach that delivers real scale, superior unit economics and meaningful customer impact. This hands-on, product- and insight-led style, following the company\u2019s value proposition all the way to the end customer, is the essential mentorship seed-stage VCs can offer. Raj\u2019s vision for an AI-driven \u201creal-time resilience engine\u201d demonstrates a strong commitment to solving a major societal problem, highlighting the forward-thinking pace VC Uncovered champions.\n</code></pre><h1>Meet Vikas</h1><p><strong>Q: You can be anywhere. Eating, drinking, and reading your favorite thing. Paint the scene.</strong></p><p>A: Nothing beats my Sunday morning ritual with my sons. Since they were babies, we\u2019ve walked to our local spot, picked up bagels and a celebratory donut, and brought them home for breakfast. Sunday mornings on the couch, reading the paper, having my first sip of coffee, a toasted sesame bagel with cream cheese, and my kids at my side, are about as good as it gets.</p><h1>Key Quotes</h1><blockquote><p>\u201cWe try to avoid abstraction. We try to follow the throughline of what the company is offering all the way to how it generates real value for an end customer. We call that value \u201cresilience.\u201d</p><p>\u201cI knew that if I wanted to have maximum leverage - on returns and impact - I needed to be a part of supporting companies when core decisions about product and business model and long term economics were being formed.\u201d</p><p>\u201cThe perfect pitch is ultimately the story of why this founder has an earned insight that makes them the right person to build this business at this moment.\u201d</p><p>\u201cAI will lead us toward a real-time resilience engine. The power of an always-on, incredibly smart, and effectively free financial advisor is that people should ultimately be more financially resilient because that technology can constantly optimize for them.\u201d</p><p>\u201cThe most important role VCs play is being a low-ego, calm, long-view partner who absorbs founder stress and does not amplify it.\u201d</p></blockquote><div><hr></div><div class=\"subscription-widget-wrap-editor\" data-attrs=\"{&quot;url&quot;:&quot;https://www.vcuncovered.com/subscribe?&quot;,&quot;text&quot;:&quot;Subscribe&quot;,&quot;language&quot;:&quot;en&quot;}\" data-component-name=\"SubscribeWidgetToDOM\"><div class=\"subscription-widget show-subscribe\"><div class=\"preamble\"><p class=\"cta-caption\">Enjoying VC Uncovered? Subscribe, it\u2019s Free!</p></div><form class=\"subscription-widget-subscribe\"><input type=\"email\" class=\"email-input\" name=\"email\" placeholder=\"Type your email\u2026\" tabindex=\"-1\"><input type=\"submit\" class=\"button primary\" value=\"Subscribe\"><div class=\"fake-input-wrapper\"><div class=\"fake-input\"></div><div class=\"fake-button\"></div></div></form></div></div><div><hr></div><p><em>Original Responses (Lightly Edited for Clarity and Flow)</em></p><h1><strong>Background and Personal Journey</strong></h1><h3><strong>Experiences Shaping My Investment Approach</strong></h3><p>I have been lucky in my career to have a front row seat to three major waves of innovation in financial services for all. Each wave taught me a lot, and ultimately created opportunities to include more people in the financial system and build truly big and profitable businesses. We have moved from analog financial services to a first wave of digital fintech, and now to what I view a third, embedded and AI-driven opportunity that reduces friction and expands who can be served efficiently.</p><p>The first wave, and one of my formative professional experience, began when I left my job at a hedge fund in Stamford, Connecticut, to move to India to join an early stage micro-lending business in Bangalore. I saw clearly that this was a business-model innovation; a new, more efficient way of serving a massive underserved population previously untapped by conventional incumbent institutions, led by a business-minded person. In raising money for it, I also saw the power of private capital markets to drive both outcomes and returns, and how distribution and underwriting innovation can unlock meaningful new customer segments.</p><p>Several years later, after a handful of years doing M&amp;A on Wall St, I became an early team-member, and ultimately ran, a global seed-stage fintech fund called <a href=\"https://www.accion.org/how-we-work/investment-strategies/accion-impact-management/accion-ventures/\">Accion Ventures</a> (previously Accion Venture Lab). This was the second wave. At Accion, we were focused on reaching and serving billions more in the financial system: people microfinance had not reached but could now be accessed due to the ubiquity of the internet and the smartphone. My biggest learning there was how critical investing at the earliest stages is. I knew that if I wanted to have maximum leverage - on returns and impact - I needed to be a part of supporting companies when core decisions about product and business model and long term economics were being formed.</p><p>The third wave aligns with co-founding and now being the Managing Partner of ResilienceVC. This is the opportunity in embedded, frictionless, and now AI-driven fintech. We focus on US businesses that serve the massive pool of underserved US consumers and small businesses by situating their products where customers already are, allowing them to build great unit economics and scale for critical fintech products.</p><h3><strong>Best Advice Received</strong></h3><p>Not sure I\u2019d call it advice, but a value I try to live by is actively appreciating the stability in my life, while staying focused on ambitious long-term work. It\u2019s something I talk to my kids about a lot too. Having stability and strong networks has made me more comfortable taking meaningful risk when my conviction in someone and a big idea is real, and I hope it\u2019s made me the kind of investor who shows up early with trust and support, and stays steady even when things get noisy or uncertain. I really try to be steady and drama-free when things get inevitably messy, and part of that comes from having a very long view and staying grounded in feeling lucky today.</p><div><hr></div><h2><strong>Philosophy and Insights</strong></h2><h3><strong>Approach to Investing</strong></h3><p>Our goal at ResilienceVC is to support visionary entrepreneurs who are using new technologies and new business models to build financial resilience for all Americans. This means the tens of millions of Americans who own micro and small businesses, who are employed or unemployed, but have been historically underserved by the mainstream financial system for a simple reason: they are deemed too small and too risky to make the numbers work. We believe that startups that understand technology have something powerful to say about this, so we back those companies that are building big, transformative businesses in financial services for all.</p><h3><strong>Values When Working with Founders</strong></h3><p>One of the great things I have seen in VC is how founders and investors seem to ultimately find each other. A lot of the best deals we have ever done have been with founders where there was a natural alignment of values and yes, vibe. For me, that means shared values around the mission, common values around ambition, and a desire to do something truly big. Ultimately, it is a desire to solve a very real problem.</p><p>We try to avoid abstraction. We try to follow the through line of what the company is offering all the way to how it generates real value for an end customer. We call that value \u201cresilience.\u201d</p><h3><strong>The Perfect Founder Pitch</strong></h3><p>The perfect pitch is ultimately the story of why this founder has an earned insight that makes them the right person to build this business at this moment.  Now.  The pitch is really about two things: who is the founder, and what is the insight? That is what I am trying to understand: what is this insight that no one else has really figured out, and how does it overlap with your experience?</p><h3><strong>Success Beyond Returns</strong></h3><p>We name the value we want for financial<strong> </strong>resilience. It is key to ensuring we invest in the best companies that are building for the long term.  If we cannot look at the product or service and see that it is building financial resilience, we will not invest. While we will invest in B2B businesses that sell to large enterprises, we must be able to follow the value all the way to how it builds financial resilience for a small business or a consumer.  To me that means you have a business here - something that people will pay for and build a relationship around over time.</p><p>We measure this very directly, by asking: is it driving new sources of net income, meaning higher revenue or lower expense? Is it building long-term net worth? Or, is it lowering risk?</p><div><hr></div><h2><strong>Trends and Future Vision</strong></h2><h3><strong>Exciting Trends and Technologies</strong></h3><p>AI is going to be a critical part of how any business builds from now on. If done right, AI will lead us toward a real-time resilience engine. The power of an always-on, incredibly smart, and effectively free financial advisor is that people should ultimately be more financially resilient because that technology can constantly optimize for them. This includes accessing benefits, smoothing income, optimizing assets, and planning for the long term and short term. The intersection of AI and financial services for all is incredibly powerful and could be the key to unlocking significant new brands in fintech.</p><h3><strong>Improving the VC Ecosystem</strong></h3><p>My frustration with venture is that it often operates in a kind of nebulous abstraction, where broad narratives around valuation or innovation can overshadow a clear-eyed analysis of what customers are willing and able to pay for, what truly earns engagement and retention over the long haul. I wish our industry spent more time grounded in how products behave in the hands of real customers and how they affect their lives. Following the product all the way to its endpoint, seeing how value shows up in daily use, and whether it holds up, is what ultimately builds durable companies.</p><h3><strong>Challenge for Early-Stage Founders</strong></h3><p>The most important role VCs play is being a low-ego, calm, long-view partner who absorbs founder stress and does not amplify it. As VCs, we end up playing many roles - friend, coach, occasional tough voice when needed - but we are never the main character.  After investing, it\u2019s about being a consistent partner, a source of calm and perspective through the noise, especially during cycles like today when everyone\u2019s deep into the hype.  When investors provide that steadiness, founders can stay centered on what matters instead of chasing the next shiny object.</p><div><hr></div><h3>More from Uncovered Media</h3><div class=\"captioned-image-container\"><figure><a class=\"image-link image2\" target=\"_blank\" href=\"http://lpuncovered.com\" data-component-name=\"Image2ToDOM\"><div class=\"image2-inset\"><picture><source type=\"image/webp\" srcset=\"https://substackcdn.com/image/fetch/$s_!JaG9!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9dfe1897-8f43-4902-994d-85aff3fd64ac_1456x156.png 424w, https://substackcdn.com/image/fetch/$s_!JaG9!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9dfe1897-8f43-4902-994d-85aff3fd64ac_1456x156.png 848w, https://substackcdn.com/image/fetch/$s_!JaG9!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9dfe1897-8f43-4902-994d-85aff3fd64ac_1456x156.png 1272w, https://substackcdn.com/image/fetch/$s_!JaG9!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9dfe1897-8f43-4902-994d-85aff3fd64ac_1456x156.png 1456w\" sizes=\"100vw\"><img src=\"https://substackcdn.com/image/fetch/$s_!JaG9!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9dfe1897-8f43-4902-994d-85aff3fd64ac_1456x156.png\" width=\"1456\" height=\"156\" data-attrs=\"{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/9dfe1897-8f43-4902-994d-85aff3fd64ac_1456x156.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:156,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:12004,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:&quot;http://lpuncovered.com&quot;,&quot;belowTheFold&quot;:true,&quot;topImage&quot;:false,&quot;internalRedirect&quot;:&quot;https://www.vcuncovered.com/i/179276035?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9dfe1897-8f43-4902-994d-85aff3fd64ac_1456x156.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}\" class=\"sizing-normal\" alt=\"\" srcset=\"https://substackcdn.com/image/fetch/$s_!JaG9!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9dfe1897-8f43-4902-994d-85aff3fd64ac_1456x156.png 424w, https://substackcdn.com/image/fetch/$s_!JaG9!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9dfe1897-8f43-4902-994d-85aff3fd64ac_1456x156.png 848w, https://substackcdn.com/image/fetch/$s_!JaG9!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9dfe1897-8f43-4902-994d-85aff3fd64ac_1456x156.png 1272w, https://substackcdn.com/image/fetch/$s_!JaG9!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9dfe1897-8f43-4902-994d-85aff3fd64ac_1456x156.png 1456w\" sizes=\"100vw\" loading=\"lazy\"></picture><div></div></div></a></figure></div><div class=\"captioned-image-container\"><figure><a class=\"image-link image2\" target=\"_blank\" href=\"http://thesisuncovered.com\" data-component-name=\"Image2ToDOM\"><div class=\"image2-inset\"><picture><source type=\"image/webp\" srcset=\"https://substackcdn.com/image/fetch/$s_!mVd6!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7ab91524-9c6a-4726-9013-cf10fe716111_1456x156.png 424w, https://substackcdn.com/image/fetch/$s_!mVd6!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7ab91524-9c6a-4726-9013-cf10fe716111_1456x156.png 848w, https://substackcdn.com/image/fetch/$s_!mVd6!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7ab91524-9c6a-4726-9013-cf10fe716111_1456x156.png 1272w, https://substackcdn.com/image/fetch/$s_!mVd6!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7ab91524-9c6a-4726-9013-cf10fe716111_1456x156.png 1456w\" sizes=\"100vw\"><img src=\"https://substackcdn.com/image/fetch/$s_!mVd6!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7ab91524-9c6a-4726-9013-cf10fe716111_1456x156.png\" width=\"1456\" height=\"156\" data-attrs=\"{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/7ab91524-9c6a-4726-9013-cf10fe716111_1456x156.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:156,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:33991,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:&quot;http://thesisuncovered.com&quot;,&quot;belowTheFold&quot;:true,&quot;topImage&quot;:false,&quot;internalRedirect&quot;:&quot;https://www.vcuncovered.com/i/179276035?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7ab91524-9c6a-4726-9013-cf10fe716111_1456x156.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}\" class=\"sizing-normal\" alt=\"\" srcset=\"https://substackcdn.com/image/fetch/$s_!mVd6!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7ab91524-9c6a-4726-9013-cf10fe716111_1456x156.png 424w, https://substackcdn.com/image/fetch/$s_!mVd6!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7ab91524-9c6a-4726-9013-cf10fe716111_1456x156.png 848w, https://substackcdn.com/image/fetch/$s_!mVd6!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7ab91524-9c6a-4726-9013-cf10fe716111_1456x156.png 1272w, https://substackcdn.com/image/fetch/$s_!mVd6!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7ab91524-9c6a-4726-9013-cf10fe716111_1456x156.png 1456w\" sizes=\"100vw\" loading=\"lazy\"></picture><div></div></div></a></figure></div><div><hr></div><div class=\"subscription-widget-wrap-editor\" data-attrs=\"{&quot;url&quot;:&quot;https://www.vcuncovered.com/subscribe?&quot;,&quot;text&quot;:&quot;Subscribe&quot;,&quot;language&quot;:&quot;en&quot;}\" data-component-name=\"SubscribeWidgetToDOM\"><div class=\"subscription-widget show-subscribe\"><div class=\"preamble\"><p class=\"cta-caption\">Thank you for reading VC Uncovered! Subscribe for free to receive new posts and support our work.</p></div><form class=\"subscription-widget-subscribe\"><input type=\"email\" class=\"email-input\" name=\"email\" placeholder=\"Type your email\u2026\" tabindex=\"-1\"><input type=\"submit\" class=\"button primary\" value=\"Subscribe\"><div class=\"fake-input-wrapper\"><div class=\"fake-input\"></div><div class=\"fake-button\"></div></div></form></div></div><p></p>",
+  "has_dynamic_content": false,
+  "truncated_body_text": "",
+  "wordcount": 1842,
+  "post_preview_limit": null,
+  "language": "en",
+  "postTags": [
+    {
+      "id": "02ad387f-efad-42a5-9cc5-eb7cd5a3ca5e",
+      "publication_id": 5837669,
+      "name": "micro-lending",
+      "slug": "micro-lending",
+      "hidden": false
+    },
+    {
+      "id": "81a6111f-a8ea-45cd-a726-f21b9b08ff50",
+      "publication_id": 5837669,
+      "name": "venture capital",
+      "slug": "venture-capital",
+      "hidden": false
+    },
+    {
+      "id": "a320558c-b803-4992-98cc-204d544ae330",
+      "publication_id": 5837669,
+      "name": "investing",
+      "slug": "investing",
+      "hidden": false
+    },
+    {
+      "id": "d07aa9d3-8774-4e1c-8aa5-c936b009c73f",
+      "publication_id": 5837669,
+      "name": "technology",
+      "slug": "technology",
+      "hidden": false
+    }
+  ],
+  "postCountryBlocks": [],
+  "headlineTest": null,
+  "coverImagePalette": {
+    "Vibrant": {
+      "rgb": [
+        52,
+        124,
+        228
+      ],
+      "population": 2
+    },
+    "DarkVibrant": {
+      "rgb": [
+        4,
+        20,
+        36
+      ],
+      "population": 1361
+    },
+    "LightVibrant": {
+      "rgb": [
+        249,
+        172,
+        124
+      ],
+      "population": 3
+    },
+    "Muted": {
+      "rgb": [
+        78,
+        134,
+        143
+      ],
+      "population": 43
+    },
+    "DarkMuted": {
+      "rgb": [
+        35,
+        60,
+        78
+      ],
+      "population": 32
+    },
+    "LightMuted": {
+      "rgb": [
+        138,
+        181,
+        191
+      ],
+      "population": 17
+    }
+  },
+  "publishedBylines": [
+    {
+      "id": 370480260,
+      "name": "Uncovered Media",
+      "handle": "uncoveredmedia",
+      "previous_name": "Nick Madrid",
+      "photo_url": "https://substack-post-media.s3.amazonaws.com/public/images/16cfed5b-cf1a-4ba4-bc5c-f7b7b9896069_500x500.png",
+      "bio": "Uncovered Media cuts through tech/VC noise with focused content & events. Through brands like VC Uncovered, we spotlight overlooked people, ideas, & trends to build authentic communities and foster genuine connection.",
+      "profile_set_up_at": "2025-07-30T19:38:18.973Z",
+      "reader_installed_at": "2025-08-12T20:08:31.985Z",
+      "publicationUsers": [
+        {
+          "id": 5954625,
+          "user_id": 370480260,
+          "publication_id": 5837669,
+          "role": "admin",
+          "public": true,
+          "is_primary": true,
+          "publication": {
+            "id": 5837669,
+            "name": "VC Uncovered",
+            "subdomain": "vcuncovered",
+            "custom_domain": "www.vcuncovered.com",
+            "custom_domain_optional": false,
+            "hero_text": "A newsletter and podcast series to profile the next generation of venture capital leaders",
+            "logo_url": "https://substack-post-media.s3.amazonaws.com/public/images/44aa980f-86ca-4172-988f-b7b3b57e5bd0_190x190.png",
+            "author_id": 370480260,
+            "primary_user_id": 370480260,
+            "theme_var_background_pop": "#FF6719",
+            "created_at": "2025-07-30T19:46:35.448Z",
+            "email_from_name": "VC Uncovered",
+            "copyright": "Uncovered Media",
+            "founding_plan_name": null,
+            "community_enabled": true,
+            "invite_only": false,
+            "payments_state": "disabled",
+            "language": null,
+            "explicit": false,
+            "homepage_type": "magaziney",
+            "is_personal_mode": false,
+            "logo_url_wide": null
+          }
+        },
+        {
+          "id": 6223852,
+          "user_id": 370480260,
+          "publication_id": 6101005,
+          "role": "admin",
+          "public": true,
+          "is_primary": false,
+          "publication": {
+            "id": 6101005,
+            "name": "Thesis Uncovered",
+            "subdomain": "thesisuncovered",
+            "custom_domain": "www.thesisuncovered.com",
+            "custom_domain_optional": false,
+            "hero_text": "We help founders and other investors by highlighting the distinct operating styles and thought processes behind some of the best VCs.",
+            "logo_url": "https://substack-post-media.s3.amazonaws.com/public/images/04fc1d43-6745-499c-ac6e-f1ea3e56cf78_1000x1000.png",
+            "author_id": 370480260,
+            "primary_user_id": null,
+            "theme_var_background_pop": "#FF6719",
+            "created_at": "2025-08-26T04:38:38.021Z",
+            "email_from_name": "Thesis Uncovered",
+            "copyright": "Uncovered Media",
+            "founding_plan_name": null,
+            "community_enabled": true,
+            "invite_only": false,
+            "payments_state": "disabled",
+            "language": null,
+            "explicit": false,
+            "homepage_type": "magaziney",
+            "is_personal_mode": false,
+            "logo_url_wide": "https://substack-post-media.s3.amazonaws.com/public/images/0fdc0678-4006-4381-9b27-f64c874e9427_1346x325.png"
+          }
+        },
+        {
+          "id": 6367421,
+          "user_id": 370480260,
+          "publication_id": 6241044,
+          "role": "admin",
+          "public": true,
+          "is_primary": false,
+          "publication": {
+            "id": 6241044,
+            "name": "CTO Uncovered",
+            "subdomain": "ctouncovered",
+            "custom_domain": "www.ctouncovered.com",
+            "custom_domain_optional": false,
+            "hero_text": "At CTO Uncovered, we go behind the scenes with the technical leaders who are architecting the future. In an era defined by rapid transformation, we interview the CTOs of both AI-native startups and established industry titans.",
+            "logo_url": "https://substack-post-media.s3.amazonaws.com/public/images/c46d890a-4907-47c7-a3ce-ac5e28ced22a_1000x1000.png",
+            "author_id": 370480260,
+            "primary_user_id": null,
+            "theme_var_background_pop": "#FF6719",
+            "created_at": "2025-09-10T04:58:54.880Z",
+            "email_from_name": null,
+            "copyright": "Uncovered Media",
+            "founding_plan_name": null,
+            "community_enabled": true,
+            "invite_only": false,
+            "payments_state": "disabled",
+            "language": null,
+            "explicit": false,
+            "homepage_type": "magaziney",
+            "is_personal_mode": false,
+            "logo_url_wide": null
+          }
+        },
+        {
+          "id": 6367434,
+          "user_id": 370480260,
+          "publication_id": 6241057,
+          "role": "admin",
+          "public": true,
+          "is_primary": false,
+          "publication": {
+            "id": 6241057,
+            "name": "LP Uncovered",
+            "subdomain": "lpuncovered",
+            "custom_domain": "www.lpuncovered.com",
+            "custom_domain_optional": false,
+            "hero_text": "We explore the world of Limited Partners to highlight the individuals, rather than just the firms, who fund innovation.",
+            "logo_url": "https://substack-post-media.s3.amazonaws.com/public/images/4dc59e88-509e-46cf-ada6-60fe03741525_1000x1000.png",
+            "author_id": 370480260,
+            "primary_user_id": null,
+            "theme_var_background_pop": "#FF6719",
+            "created_at": "2025-09-10T05:02:27.885Z",
+            "email_from_name": "LP Uncovered",
+            "copyright": "Uncovered Media",
+            "founding_plan_name": null,
+            "community_enabled": true,
+            "invite_only": false,
+            "payments_state": "disabled",
+            "language": null,
+            "explicit": false,
+            "homepage_type": "magaziney",
+            "is_personal_mode": false,
+            "logo_url_wide": "https://substack-post-media.s3.amazonaws.com/public/images/5e8d4657-ab35-4911-94ae-10bce20a7379_1346x325.png"
+          }
+        },
+        {
+          "id": 7317760,
+          "user_id": 370480260,
+          "publication_id": 7170671,
+          "role": "admin",
+          "public": true,
+          "is_primary": false,
+          "publication": {
+            "id": 7170671,
+            "name": "Uncovered Media",
+            "subdomain": "uncoveredmedia",
+            "custom_domain": null,
+            "custom_domain_optional": false,
+            "hero_text": "The old guard of tech content is dusty and out of date. We believe that a headline in a major publication shouldn't just be a vanity metric, it should be a growth engine.",
+            "logo_url": "https://substack-post-media.s3.amazonaws.com/public/images/16cfed5b-cf1a-4ba4-bc5c-f7b7b9896069_500x500.png",
+            "author_id": 370480260,
+            "primary_user_id": null,
+            "theme_var_background_pop": "#FF6719",
+            "created_at": "2025-12-05T23:08:14.411Z",
+            "email_from_name": "Uncovered Media",
+            "copyright": "Uncovered Media",
+            "founding_plan_name": null,
+            "community_enabled": true,
+            "invite_only": false,
+            "payments_state": "disabled",
+            "language": null,
+            "explicit": false,
+            "homepage_type": "magaziney",
+            "is_personal_mode": false,
+            "logo_url_wide": null
+          }
+        },
+        {
+          "id": 7687791,
+          "user_id": 370480260,
+          "publication_id": 7534847,
+          "role": "admin",
+          "public": true,
+          "is_primary": false,
+          "publication": {
+            "id": 7534847,
+            "name": "CMO Uncovered",
+            "subdomain": "cmouncovered",
+            "custom_domain": "www.cmouncovered.com",
+            "custom_domain_optional": false,
+            "hero_text": "At CMO Uncovered, we go behind the curtain with the marketing leaders who are redefining how brands grow, scale, and endure. We profile the CMOs of both hyper-growth startups and established global giants.",
+            "logo_url": "https://substack-post-media.s3.amazonaws.com/public/images/25bde1cf-63f3-423e-8f87-c6c4987a8f46_1000x1000.png",
+            "author_id": 370480260,
+            "primary_user_id": null,
+            "theme_var_background_pop": "#FF6719",
+            "created_at": "2026-01-07T20:07:10.134Z",
+            "email_from_name": null,
+            "copyright": "Uncovered Media",
+            "founding_plan_name": null,
+            "community_enabled": true,
+            "invite_only": false,
+            "payments_state": "disabled",
+            "language": null,
+            "explicit": false,
+            "homepage_type": "magaziney",
+            "is_personal_mode": false,
+            "logo_url_wide": "https://substack-post-media.s3.amazonaws.com/public/images/344cd337-a042-494d-8760-ff4c7397b419_1346x325.png"
+          }
+        },
+        {
+          "id": 7687814,
+          "user_id": 370480260,
+          "publication_id": 7534868,
+          "role": "admin",
+          "public": true,
+          "is_primary": false,
+          "publication": {
+            "id": 7534868,
+            "name": "Founder Uncovered",
+            "subdomain": "founderuncovered",
+            "custom_domain": "www.founderuncovered.com",
+            "custom_domain_optional": false,
+            "hero_text": "At Founder Uncovered, we introduce you to the builders, the innovators and the operators that are making a difference. We go beyond the PR to get to what's real, the how, and the why. ",
+            "logo_url": "https://substack-post-media.s3.amazonaws.com/public/images/84b67bc0-1196-4700-9f2c-840e544790f1_1000x1000.png",
+            "author_id": 370480260,
+            "primary_user_id": null,
+            "theme_var_background_pop": "#FF6719",
+            "created_at": "2026-01-07T20:08:32.975Z",
+            "email_from_name": "Founder Uncovered",
+            "copyright": "Uncovered Media",
+            "founding_plan_name": null,
+            "community_enabled": true,
+            "invite_only": false,
+            "payments_state": "disabled",
+            "language": null,
+            "explicit": false,
+            "homepage_type": "magaziney",
+            "is_personal_mode": false,
+            "logo_url_wide": "https://substack-post-media.s3.amazonaws.com/public/images/fdcdfc60-3ad1-4162-906f-c101b364c080_4206x1016.png"
+          }
+        }
+      ],
+      "is_guest": false,
+      "bestseller_tier": null,
+      "status": {
+        "bestsellerTier": null,
+        "subscriberTier": null,
+        "leaderboard": null,
+        "vip": false,
+        "badge": null,
+        "subscriber": null
+      }
+    },
+    {
+      "id": 1245631,
+      "name": "Nick Madrid",
+      "handle": "nickmadrid",
+      "previous_name": "Uncovered Media",
+      "photo_url": "https://substackcdn.com/image/fetch/$s_!fwlP!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3e3887e1-f3c2-472d-897f-27b8117e34b1_1069x1069.png",
+      "bio": "I run Uncovered Media and The Free Toaster | dad of 2 | publisher of publications | sarcastic when appropriate, sometimes when it\u2019s not | avid runner who loves to read, not at the same time | fan of pipe separators |",
+      "profile_set_up_at": "2023-06-23T21:09:59.275Z",
+      "reader_installed_at": "2023-06-23T21:09:43.480Z",
+      "is_guest": true,
+      "bestseller_tier": null,
+      "status": null
+    }
+  ],
+  "reaction": null,
+  "reaction_count": 6,
+  "comment_count": 1,
+  "child_comment_count": 1,
+  "audio_items": [
+    {
+      "post_id": 179276035,
+      "voice_id": "en-US-AlloyTurboMultilingualNeural",
+      "audio_url": "https://substack-video.s3.amazonaws.com/video_upload/post/179276035/tts/1f8c7bb6-7caa-41f3-9398-580e8a82b564/en-US-AlloyTurboMultilingualNeural.mp3",
+      "type": "tts",
+      "status": "completed"
+    }
+  ],
+  "is_geoblocked": false,
+  "hasCashtag": false,
+  "unlockedWithIP": false,
+  "unlockedWithCampaign": false,
+  "themeVariables": {
+    "color_theme_bg_pop": "#2563eb",
+    "background_pop": "#2563eb",
+    "color_theme_bg_web": "#fafafa",
+    "cover_bg_color": "#fafafa",
+    "cover_bg_color_secondary": "#ebebeb",
+    "background_pop_darken": "#1555e2",
+    "print_on_pop": "#ffffff",
+    "color_theme_bg_pop_darken": "#1555e2",
+    "color_theme_print_on_pop": "#ffffff",
+    "color_theme_bg_pop_20": "rgba(37, 99, 235, 0.2)",
+    "color_theme_bg_pop_30": "rgba(37, 99, 235, 0.3)",
+    "print_pop": "#2563eb",
+    "color_theme_accent": "#2563eb",
+    "cover_print_primary": "#363737",
+    "cover_print_secondary": "#757575",
+    "cover_print_tertiary": "#b6b6b6",
+    "cover_border_color": "#2563eb",
+    "font_family_headings_preset": "'Roboto Mono',monospace",
+    "font_weight_headings_preset": 700,
+    "font_family_body_preset": "'Roboto Mono',monospace",
+    "font_weight_body_preset": 400,
+    "font_size_body_offset": "-1px",
+    "font_preset_heading": "mono",
+    "font_preset_body": "mono",
+    "home_hero": "magaziney",
+    "home_posts": "list",
+    "home_show_top_posts": true,
+    "web_bg_color": "#fafafa",
+    "background_contrast_1": "#ebebeb",
+    "background_contrast_2": "#d8d8d8",
+    "background_contrast_3": "#b3b3b3",
+    "background_contrast_4": "#909090",
+    "background_contrast_5": "#4f4f4f",
+    "color_theme_bg_contrast_1": "#ebebeb",
+    "color_theme_bg_contrast_2": "#d8d8d8",
+    "color_theme_bg_contrast_3": "#b3b3b3",
+    "color_theme_bg_contrast_4": "#909090",
+    "color_theme_bg_contrast_5": "#4f4f4f",
+    "color_theme_bg_elevated": "#fafafa",
+    "color_theme_bg_elevated_secondary": "#ebebeb",
+    "color_theme_bg_elevated_tertiary": "#d8d8d8",
+    "color_theme_detail": "#e1e1e1",
+    "background_contrast_pop": "rgba(37, 99, 235, 0.4)",
+    "color_theme_bg_contrast_pop": "rgba(37, 99, 235, 0.4)",
+    "theme_bg_is_dark": "0",
+    "print_on_web_bg_color": "#363737",
+    "print_secondary_on_web_bg_color": "#848585",
+    "background_pop_rgb": "37, 99, 235",
+    "color_theme_bg_pop_rgb": "37, 99, 235",
+    "color_theme_accent_rgb": "37, 99, 235"
+  },
+  "comments": [
+    {
+      "id": 202818927,
+      "body": "Appreciate the focus on avoiding abstraction and tracing value to the end customer - especially for underserved SMBs. That same \u201cthrough line\u201d matters in trade credit and working capital, where financial products often fail to connect to real payment cycles, inventory turns, or supplier terms. TCLM explores that operational layer where embedded fintech meets daily cash flow. A grounded perspective.\n\n(It\u2019s free)- https://tradecredit.substack.com/",
+      "body_json": {
+        "type": "doc",
+        "attrs": {
+          "schemaVersion": "v1"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Appreciate the focus on avoiding abstraction and tracing value to the end customer - especially for underserved SMBs. That same \u201cthrough line\u201d matters in trade credit and working capital, where financial products often fail to connect to real payment cycles, inventory turns, or supplier terms. TCLM explores that operational layer where embedded fintech meets daily cash flow. A grounded perspective."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "(It\u2019s free)- "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "link",
+                    "attrs": {
+                      "href": "https://tradecredit.substack.com/",
+                      "target": "_blank",
+                      "rel": "nofollow ugc noopener",
+                      "class": "note-link"
+                    }
+                  }
+                ],
+                "text": "https://tradecredit.substack.com/"
+              }
+            ]
+          }
+        ]
+      },
+      "publication_id": 5837669,
+      "post_id": 179276035,
+      "user_id": 7616288,
+      "ancestor_path": "",
+      "type": "comment",
+      "deleted": false,
+      "date": "2026-01-21T06:22:58.405Z",
+      "edited_at": "2026-01-21T06:23:04.146Z",
+      "status": "published",
+      "pinned_by_user_id": null,
+      "restacks": 0,
+      "name": "Debarshi Ghosh",
+      "photo_url": "https://substack-post-media.s3.amazonaws.com/public/images/1f09dfc3-0ebf-4165-b464-f0de6c837b00_342x342.png",
+      "handle": "debarshighosh1",
+      "reactor_names": [],
+      "reaction": null,
+      "reactions": {
+        "\u2764": 0
+      },
+      "reaction_count": 0,
+      "children": [],
+      "bans": [],
+      "suppressed": false,
+      "user_banned": false,
+      "user_banned_for_comment": false,
+      "user_slug": "debarshighosh1",
+      "metadata": {
+        "is_author": false,
+        "membership_state": null,
+        "eligibleForGift": false,
+        "author_on_other_pub": {
+          "name": "The Efficiency Playbook",
+          "id": 6460077,
+          "base_url": "https://efficiencyplaybook.substack.com"
+        }
+      },
+      "user_bestseller_tier": null,
+      "can_dm": true,
+      "userStatus": {
+        "bestsellerTier": null,
+        "subscriberTier": null,
+        "leaderboard": null,
+        "vip": false,
+        "badge": null,
+        "subscriber": null
+      },
+      "score": 1,
+      "children_count": 0,
+      "reported_by_user": false,
+      "restacked": false
+    }
+  ]
+}

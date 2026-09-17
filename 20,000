@@ -1,0 +1,20 @@
+Time: 1.63s
+Response:
+Here is the extracted criteria in valid JSON format:
+
+{
+  "evaluations": [
+    {
+      "question_id": "BC_Q1a",
+      "binary_score": 1,
+      "confidence": 0.95,
+      "citation": "producing 3x more energy than traditional small wind turbines"
+    },
+    {
+      "question_id": "BC_Q2a",
+      "binary_score": 1,
+      "confidence": 0.98,
+      "citation": "Commercial real estate owners, big box retail with flat roofs > 20,000 sq ft."
+    }
+  ]
+}

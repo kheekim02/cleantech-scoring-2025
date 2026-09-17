@@ -1,0 +1,3047 @@
+{
+  "meta": {
+    "id": "solarpure",
+    "name": "SolarPure Inc.",
+    "cohort_year": 2025,
+    "founder": "Dr. Elena Vasquez",
+    "category": "Solar Performance Intelligence"
+  },
+  "document": {
+    "title": "Executive Summary: SolarPure Inc.",
+    "sections": [
+      {
+        "cat_code": "BC",
+        "heading": "Company Overview & Value Prop",
+        "text": "SolarPure Inc. is an AI-driven solar performance monitoring platform. <span class=\"cite highlight\">Our proprietary technology reduces utility-scale solar underperformance losses by 34% through edge-based anomaly detection.</span> By deploying intelligent sensor pods directly at the inverter level, we provide real-time diagnostics.",
+        "extractions": [
+          {
+            "label": "EXTRACTED METRIC",
+            "value": "34% reduction in underperformance losses",
+            "highlight": true
+          },
+          {
+            "label": "CORE TECHNOLOGY",
+            "value": "Edge-based anomaly detection",
+            "highlight": false
+          }
+        ]
+      },
+      {
+        "cat_code": "BC",
+        "heading": "Target Market",
+        "text": "Our target customer segment is strictly utility-scale solar asset owners and O&M providers managing portfolios larger than 20MW.",
+        "extractions": [
+          {
+            "label": "PRIMARY SEGMENT",
+            "value": "Utility-scale solar asset owners",
+            "highlight": false
+          },
+          {
+            "label": "CONSTRAINTS",
+            "value": "Portfolios > 20MW",
+            "highlight": false
+          }
+        ]
+      },
+      {
+        "cat_code": "ES",
+        "heading": "Environmental Impact",
+        "text": "By optimizing existing infrastructure, we <span class=\"cite highlight\">prevent 12,000 tons of CO2 emissions annually per 100MW managed.</span>",
+        "extractions": [
+          {
+            "label": "EMISSIONS REDUCTION",
+            "value": "12,000 tons CO2/yr per 100MW",
+            "highlight": true
+          }
+        ]
+      },
+      {
+        "cat_code": "F",
+        "heading": "Generic Data for F",
+        "text": "This is mock extraction text for this specific category step.",
+        "extractions": [
+          {
+            "label": "EXTRACTED METRIC",
+            "value": "Mock metric for F",
+            "highlight": false
+          }
+        ]
+      },
+      {
+        "cat_code": "IP",
+        "heading": "Generic Data for IP",
+        "text": "This is mock extraction text for this specific category step.",
+        "extractions": [
+          {
+            "label": "EXTRACTED METRIC",
+            "value": "Mock metric for IP",
+            "highlight": false
+          }
+        ]
+      },
+      {
+        "cat_code": "IS",
+        "heading": "Generic Data for IS",
+        "text": "This is mock extraction text for this specific category step.",
+        "extractions": [
+          {
+            "label": "EXTRACTED METRIC",
+            "value": "Mock metric for IS",
+            "highlight": false
+          }
+        ]
+      },
+      {
+        "cat_code": "L",
+        "heading": "Generic Data for L",
+        "text": "This is mock extraction text for this specific category step.",
+        "extractions": [
+          {
+            "label": "EXTRACTED METRIC",
+            "value": "Mock metric for L",
+            "highlight": false
+          }
+        ]
+      },
+      {
+        "cat_code": "M",
+        "heading": "Generic Data for M",
+        "text": "This is mock extraction text for this specific category step.",
+        "extractions": [
+          {
+            "label": "EXTRACTED METRIC",
+            "value": "Mock metric for M",
+            "highlight": false
+          }
+        ]
+      },
+      {
+        "cat_code": "PMF",
+        "heading": "Generic Data for PMF",
+        "text": "This is mock extraction text for this specific category step.",
+        "extractions": [
+          {
+            "label": "EXTRACTED METRIC",
+            "value": "Mock metric for PMF",
+            "highlight": false
+          }
+        ]
+      },
+      {
+        "cat_code": "T",
+        "heading": "Generic Data for T",
+        "text": "This is mock extraction text for this specific category step.",
+        "extractions": [
+          {
+            "label": "EXTRACTED METRIC",
+            "value": "Mock metric for T",
+            "highlight": false
+          }
+        ]
+      },
+      {
+        "cat_code": "TP",
+        "heading": "Generic Data for TP",
+        "text": "This is mock extraction text for this specific category step.",
+        "extractions": [
+          {
+            "label": "EXTRACTED METRIC",
+            "value": "Mock metric for TP",
+            "highlight": false
+          }
+        ]
+      }
+    ]
+  },
+  "ai_cats": {
+    "BC": {
+      "full_name": "Business Canvas",
+      "total": 12,
+      "passed": 12,
+      "failed": 0,
+      "avg_conf": 0.87,
+      "questions": [
+        {
+          "new_q_id": "BC_Q1a",
+          "text": "Value proposition states specific, quantified performance improvement or cost savings metric",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.75,
+          "citation": "...evidence showing value proposition states specific, quant..."
+        },
+        {
+          "new_q_id": "BC_Q1b",
+          "text": "Value proposition explicitly identifies incumbent technology or baseline alternative being replaced",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.9,
+          "citation": "...evidence showing value proposition explicitly identifies ..."
+        },
+        {
+          "new_q_id": "BC_Q2a",
+          "text": "Specific target customer segment or institutional buyer category explicitly named",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.62,
+          "citation": "...evidence showing specific target customer segment or inst..."
+        },
+        {
+          "new_q_id": "BC_Q2b",
+          "text": "Defines at least one quantifiable customer attribute (size, fleet, expenditure, geography)",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.9,
+          "citation": "...evidence showing defines at least one quantifiable custom..."
+        },
+        {
+          "new_q_id": "BC_Q2c",
+          "text": "Specific internal decision-maker title or economic buyer identified",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.93,
+          "citation": "...evidence showing specific internal decision-maker title o..."
+        },
+        {
+          "new_q_id": "BC_Q3a",
+          "text": "States conducting discovery interviews with 5 or more prospective customers",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.79,
+          "citation": "...evidence showing states conducting discovery interviews w..."
+        },
+        {
+          "new_q_id": "BC_Q3b",
+          "text": "Cites specific direct quotes, synthesis, or feedback derived from customer interviews",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.74,
+          "citation": "...evidence showing cites specific direct quotes, synthesis,..."
+        },
+        {
+          "new_q_id": "BC_Q3_val",
+          "text": "Total count of customer discovery interviews conducted",
+          "type": "INTEGER",
+          "verdict": 777,
+          "confidence": null,
+          "citation": null
+        },
+        {
+          "new_q_id": "BC_Q4a",
+          "text": "Value Propositions block of the BMC completed with text",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.85,
+          "citation": "...evidence showing value propositions block of the bmc comp..."
+        },
+        {
+          "new_q_id": "BC_Q4b",
+          "text": "Customer Segments block completed with text",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.77,
+          "citation": "...evidence showing customer segments block completed with t..."
+        },
+        {
+          "new_q_id": "BC_Q4c",
+          "text": "Revenue Streams block completed with text",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.84,
+          "citation": "...evidence showing revenue streams block completed with tex..."
+        },
+        {
+          "new_q_id": "BC_Q5a",
+          "text": "Key Partners and Key Activities blocks completed",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.86,
+          "citation": "...evidence showing key partners and key activities blocks c..."
+        },
+        {
+          "new_q_id": "BC_Q5b",
+          "text": "Cost Structure and Key Resources blocks completed",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.73,
+          "citation": "...evidence showing cost structure and key resources blocks ..."
+        }
+      ]
+    },
+    "ES": {
+      "full_name": "Environmental & Social",
+      "total": 46,
+      "passed": 41,
+      "failed": 5,
+      "avg_conf": 0.87,
+      "questions": [
+        {
+          "new_q_id": "ES_Q1",
+          "text": "Does the company have a formal company name?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.82,
+          "citation": "...evidence showing does the company have a formal company n..."
+        },
+        {
+          "new_q_id": "ES_Q2",
+          "text": "Is clear and complete contact information provided?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.97,
+          "citation": "...evidence showing is clear and complete contact informatio..."
+        },
+        {
+          "new_q_id": "ES_Q3",
+          "text": "Does the company have a formal company logo?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.76,
+          "citation": "...evidence showing does the company have a formal company l..."
+        },
+        {
+          "new_q_id": "ES_Q4",
+          "text": "Has the company identified a market category (or CleanTech Category)?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.82,
+          "citation": "...evidence showing has the company identified a market cate..."
+        },
+        {
+          "new_q_id": "ES_Q5",
+          "text": "Is a brief company business history provided? (EG employees, years operational, etc.)",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.68,
+          "citation": "...evidence showing is a brief company business history prov..."
+        },
+        {
+          "new_q_id": "ES_Q6",
+          "text": "Does the company list current senior management skills and identify skill gaps?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.84,
+          "citation": "...evidence showing does the company list current senior man..."
+        },
+        {
+          "new_q_id": "ES_Q7a",
+          "text": "Clear non-technical problem and solution summary statement provided",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.88,
+          "citation": "...evidence showing clear non-technical problem and solution..."
+        },
+        {
+          "new_q_id": "ES_Q7b",
+          "text": "Specific initial beachhead market defined",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.85,
+          "citation": "...evidence showing specific initial beachhead market define..."
+        },
+        {
+          "new_q_id": "ES_Q7c",
+          "text": "Operational route-to-market or distribution channel described",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.7,
+          "citation": "...evidence showing operational route-to-market or distribut..."
+        },
+        {
+          "new_q_id": "ES_Q8",
+          "text": "Has the company specified the initial commercial offering(s)?",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.62,
+          "citation": "...evidence showing has the company specified the initial co..."
+        },
+        {
+          "new_q_id": "ES_Q9",
+          "text": "Is factual / third-party / verifiable information supporting this provided?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.95,
+          "citation": "...evidence showing is factual / third-party / verifiable in..."
+        },
+        {
+          "new_q_id": "ES_Q10a",
+          "text": "Identifies upstream suppliers and manufacturing partners in value chain",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.45,
+          "citation": "...evidence showing identifies upstream suppliers and manufa..."
+        },
+        {
+          "new_q_id": "ES_Q10b",
+          "text": "Identifies downstream distributors and buyers in value chain",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.91,
+          "citation": "...evidence showing identifies downstream distributors and b..."
+        },
+        {
+          "new_q_id": "ES_Q11a",
+          "text": "Company has paying commercial customers who have purchased product",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing company has paying commercial customers ..."
+        },
+        {
+          "new_q_id": "ES_Q11b",
+          "text": "Company has active confirmed beta testing or pilot development partners",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.97,
+          "citation": "...evidence showing company has active confirmed beta testin..."
+        },
+        {
+          "new_q_id": "ES_Q11c",
+          "text": "Company has signed non-binding Letters of Intent (LOIs) or MOUs",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.86,
+          "citation": "...evidence showing company has signed non-binding letters o..."
+        },
+        {
+          "new_q_id": "ES_Q12",
+          "text": "Are key milestone accomplishments presented?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.92,
+          "citation": "...evidence showing are key milestone accomplishments presen..."
+        },
+        {
+          "new_q_id": "ES_Q13",
+          "text": "Does the company describe its technology status (TRL or otherwise)?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.89,
+          "citation": "...evidence showing does the company describe its technology..."
+        },
+        {
+          "new_q_id": "ES_Q14",
+          "text": "Is an IP strategy defined?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.81,
+          "citation": "...evidence showing is an ip strategy defined?..."
+        },
+        {
+          "new_q_id": "ES_Q15",
+          "text": "Is how the company's IP supports the value proposition described?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing is how the company's ip supports the val..."
+        },
+        {
+          "new_q_id": "ES_Q16a",
+          "text": "Environmental impact goals and metrics stated",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.83,
+          "citation": "...evidence showing environmental impact goals and metrics s..."
+        },
+        {
+          "new_q_id": "ES_Q16b",
+          "text": "Social or community impact goals stated",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.93,
+          "citation": "...evidence showing social or community impact goals stated..."
+        },
+        {
+          "new_q_id": "ES_Q16c",
+          "text": "Financial sustainability / cost benefit impact stated",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.84,
+          "citation": "...evidence showing financial sustainability / cost benefit ..."
+        },
+        {
+          "new_q_id": "ES_Q17",
+          "text": "Is there a description of the target market?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.82,
+          "citation": "...evidence showing is there a description of the target mar..."
+        },
+        {
+          "new_q_id": "ES_Q18a",
+          "text": "Numerical Total Addressable Market (TAM) dollar valuation explicitly stated",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.45,
+          "citation": "...evidence showing numerical total addressable market (tam)..."
+        },
+        {
+          "new_q_id": "ES_Q18b",
+          "text": "Underlying TAM calculation assumptions and methodology documented",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.95,
+          "citation": "...evidence showing underlying tam calculation assumptions a..."
+        },
+        {
+          "new_q_id": "ES_Q19a",
+          "text": "Numerical Serviceable Available Market (SAM) dollar valuation explicitly stated",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.57,
+          "citation": "...evidence showing numerical serviceable available market (..."
+        },
+        {
+          "new_q_id": "ES_Q19b",
+          "text": "Underlying SAM calculation assumptions and methodology documented",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.98,
+          "citation": "...evidence showing underlying sam calculation assumptions a..."
+        },
+        {
+          "new_q_id": "ES_Q20a",
+          "text": "Target market share percentage explicitly presented",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.6,
+          "citation": "...evidence showing target market share percentage explicitl..."
+        },
+        {
+          "new_q_id": "ES_Q20b",
+          "text": "Market share capture assumptions documented",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.5,
+          "citation": "...evidence showing market share capture assumptions documen..."
+        },
+        {
+          "new_q_id": "ES_Q21",
+          "text": "Are additional markets identified?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.93,
+          "citation": "...evidence showing are additional markets identified?..."
+        },
+        {
+          "new_q_id": "ES_Q22",
+          "text": "Are the key costs/challenges of entering these additional markets discussed?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.85,
+          "citation": "...evidence showing are the key costs/challenges of entering..."
+        },
+        {
+          "new_q_id": "ES_Q23a",
+          "text": "Identifies direct competitors",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.63,
+          "citation": "...evidence showing identifies direct competitors..."
+        },
+        {
+          "new_q_id": "ES_Q23b",
+          "text": "Identifies indirect competitors and substitutes",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.74,
+          "citation": "...evidence showing identifies indirect competitors and subs..."
+        },
+        {
+          "new_q_id": "ES_Q24",
+          "text": "Are the company's proposed benefits over the competition described?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.73,
+          "citation": "...evidence showing are the company's proposed benefits over..."
+        },
+        {
+          "new_q_id": "ES_Q25",
+          "text": "Has the company presented its funding history?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.95,
+          "citation": "...evidence showing has the company presented its funding hi..."
+        },
+        {
+          "new_q_id": "ES_Q26",
+          "text": "Has the company presented its fundraising plans (forward looking)?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.77,
+          "citation": "...evidence showing has the company presented its fundraisin..."
+        },
+        {
+          "new_q_id": "ES_Q27",
+          "text": "Is the use of defined funds discussed?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.92,
+          "citation": "...evidence showing is the use of defined funds discussed?..."
+        },
+        {
+          "new_q_id": "ES_Q28",
+          "text": "Does the company have a video that is current and consistent with the overview?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.87,
+          "citation": "...evidence showing does the company have a video that is cu..."
+        },
+        {
+          "new_q_id": "ES_Q29",
+          "text": "Is the video available to the public?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.83,
+          "citation": "...evidence showing is the video available to the public?..."
+        },
+        {
+          "new_q_id": "ES_Q30",
+          "text": "Is there a description of the management team?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.86,
+          "citation": "...evidence showing is there a description of the management..."
+        },
+        {
+          "new_q_id": "ES_Q31",
+          "text": "Is there a formal location? (E.G. HQ address)",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.92,
+          "citation": "...evidence showing is there a formal location? (e.g. hq add..."
+        },
+        {
+          "new_q_id": "ES_Q32a",
+          "text": "Historical revenue stated (or stated zero if pre-revenue)",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.74,
+          "citation": "...evidence showing historical revenue stated (or stated zer..."
+        },
+        {
+          "new_q_id": "ES_Q32b",
+          "text": "Forward-looking multi-year revenue projections presented",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.82,
+          "citation": "...evidence showing forward-looking multi-year revenue proje..."
+        },
+        {
+          "new_q_id": "ES_Q33",
+          "text": "Is the projection consistent with SAM and target market share? (IE SAM x Market Share % = projected revenue)",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.74,
+          "citation": "...evidence showing is the projection consistent with sam an..."
+        },
+        {
+          "new_q_id": "ES_Q34",
+          "text": "Is revenue for year N divided by revenue for year N-1 a constant? If yes, is that assumption explained?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing is revenue for year n divided by revenue..."
+        }
+      ]
+    },
+    "F": {
+      "full_name": "Financials",
+      "total": 41,
+      "passed": 33,
+      "failed": 8,
+      "avg_conf": 0.91,
+      "questions": [
+        {
+          "new_q_id": "F_Q1",
+          "text": "Does the company have an operating budget?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.83,
+          "citation": "...evidence showing does the company have an operating budge..."
+        },
+        {
+          "new_q_id": "F_Q2a",
+          "text": "Operating budget includes projected revenues",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.44,
+          "citation": "...evidence showing operating budget includes projected reve..."
+        },
+        {
+          "new_q_id": "F_Q2b",
+          "text": "Operating budget includes projected operating expenses",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.83,
+          "citation": "...evidence showing operating budget includes projected oper..."
+        },
+        {
+          "new_q_id": "F_Q3a",
+          "text": "Revenues broken down by individual customer stream, SKU, or contract",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.9,
+          "citation": "...evidence showing revenues broken down by individual custo..."
+        },
+        {
+          "new_q_id": "F_Q3b",
+          "text": "Expenses categorized by functional line item (COGS, R&D, S&M, G&A)",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.96,
+          "citation": "...evidence showing expenses categorized by functional line ..."
+        },
+        {
+          "new_q_id": "F_Q4",
+          "text": "Are the revenue, expense, and market assumptions upon which the operating budget is based identified?",
+          "type": "BINARY",
+          "verdict": -1,
+          "confidence": null,
+          "citation": null
+        },
+        {
+          "new_q_id": "F_Q5",
+          "text": "If the operating budget has been in place for more than the current year, does it compare actual revenue and expenses by line item against budgeted revenue and expenses by line item?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.77,
+          "citation": "...evidence showing if the operating budget has been in plac..."
+        },
+        {
+          "new_q_id": "F_Q6a",
+          "text": "Operating budget includes at least 3 years of pro-forma projections",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing operating budget includes at least 3 yea..."
+        },
+        {
+          "new_q_id": "F_Q6b",
+          "text": "Operating budget includes 5 or more years of pro-forma projections",
+          "type": "BINARY",
+          "verdict": -1,
+          "confidence": null,
+          "citation": null
+        },
+        {
+          "new_q_id": "F_Q6c",
+          "text": "Model projects market share or unit volume adoption alongside dollars",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.74,
+          "citation": "...evidence showing model projects market share or unit volu..."
+        },
+        {
+          "new_q_id": "F_Q7",
+          "text": "Are revenue and expense projections identified as fixed, variable, or marginal?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.97,
+          "citation": "...evidence showing are revenue and expense projections iden..."
+        },
+        {
+          "new_q_id": "F_Q8",
+          "text": "Are the revenue, expense, and market assumptions upon which the operating budget projections are based identified?",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.66,
+          "citation": "...evidence showing are the revenue, expense, and market ass..."
+        },
+        {
+          "new_q_id": "F_Q9",
+          "text": "Does the company have a capital budget?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing does the company have a capital budget?..."
+        },
+        {
+          "new_q_id": "F_Q10a",
+          "text": "Capital budget includes revenues broken down by project",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.8,
+          "citation": "...evidence showing capital budget includes revenues broken ..."
+        },
+        {
+          "new_q_id": "F_Q10b",
+          "text": "Capital budget includes expenses broken down by project",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.89,
+          "citation": "...evidence showing capital budget includes expenses broken ..."
+        },
+        {
+          "new_q_id": "F_Q11a",
+          "text": "Project revenues identified by source or contract line item",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.82,
+          "citation": "...evidence showing project revenues identified by source or..."
+        },
+        {
+          "new_q_id": "F_Q11b",
+          "text": "Project expenses identified by category line item",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.79,
+          "citation": "...evidence showing project expenses identified by category ..."
+        },
+        {
+          "new_q_id": "F_Q12",
+          "text": "Are the revenue, expense, and market assumptions upon which the capital budget is based identified by project?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.69,
+          "citation": "...evidence showing are the revenue, expense, and market ass..."
+        },
+        {
+          "new_q_id": "F_Q13",
+          "text": "If the capital budget has been in place for more than the current year, does it compare actual revenue and expenses by project and line item against budgeted revenue and expenses by project and line item?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing if the capital budget has been in place ..."
+        },
+        {
+          "new_q_id": "F_Q14a",
+          "text": "Capital budget includes 3-year multi-project projections",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.87,
+          "citation": "...evidence showing capital budget includes 3-year multi-pro..."
+        },
+        {
+          "new_q_id": "F_Q14b",
+          "text": "Capital budget includes 5-year multi-project projections",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.56,
+          "citation": "...evidence showing capital budget includes 5-year multi-pro..."
+        },
+        {
+          "new_q_id": "F_Q15",
+          "text": "Are the revenue, expense, and market assumptions upon which the capital budget projections are based identified by project?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.77,
+          "citation": "...evidence showing are the revenue, expense, and market ass..."
+        },
+        {
+          "new_q_id": "F_Q16a",
+          "text": "Profit and loss statement (P&L / Income Statement) provided",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.69,
+          "citation": "...evidence showing profit and loss statement (p&l / income ..."
+        },
+        {
+          "new_q_id": "F_Q16b",
+          "text": "Balance sheet provided",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.5,
+          "citation": "...evidence showing balance sheet provided..."
+        },
+        {
+          "new_q_id": "F_Q16c",
+          "text": "Cash flow statement provided",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing cash flow statement provided..."
+        },
+        {
+          "new_q_id": "F_Q17",
+          "text": "Are the balance sheet, profit and loss statement, and cash flow statement reconciled monthly and annually to the company\u2019s bank statement?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.94,
+          "citation": "...evidence showing are the balance sheet, profit and loss s..."
+        },
+        {
+          "new_q_id": "F_Q18",
+          "text": "Are the balance sheet, profit and loss statement, and cash flow statement reconciled monthly and annually to the budget?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.67,
+          "citation": "...evidence showing are the balance sheet, profit and loss s..."
+        },
+        {
+          "new_q_id": "F_Q19a",
+          "text": "Return on equity (ROE) calculated in financial model",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing return on equity (roe) calculated in fin..."
+        },
+        {
+          "new_q_id": "F_Q19b",
+          "text": "Return on assets (ROA) calculated in financial model",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.92,
+          "citation": "...evidence showing return on assets (roa) calculated in fin..."
+        },
+        {
+          "new_q_id": "F_Q20a",
+          "text": "Projections for Return on Equity (ROE) provided for 3+ years",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.77,
+          "citation": "...evidence showing projections for return on equity (roe) p..."
+        },
+        {
+          "new_q_id": "F_Q20b",
+          "text": "Projections for Return on Assets (ROA) provided for 3+ years",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.85,
+          "citation": "...evidence showing projections for return on assets (roa) p..."
+        },
+        {
+          "new_q_id": "F_Q21",
+          "text": "Are the market assumptions upon which return on equity and return on assets projections are based identified?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.97,
+          "citation": "...evidence showing are the market assumptions upon which re..."
+        },
+        {
+          "new_q_id": "F_Q22",
+          "text": "Do return on equity and return on assets projections assume repayment of investor equity and return on investor equity?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.81,
+          "citation": "...evidence showing do return on equity and return on assets..."
+        },
+        {
+          "new_q_id": "F_Q23",
+          "text": "Does the company have prior-year audited financial statements?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.82,
+          "citation": "...evidence showing does the company have prior-year audited..."
+        },
+        {
+          "new_q_id": "F_Q24",
+          "text": "Does the company have prior-year income tax returns?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.88,
+          "citation": "...evidence showing does the company have prior-year income ..."
+        },
+        {
+          "new_q_id": "F_Q25",
+          "text": "(5) Does the company have actual sales or revenue data?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.95,
+          "citation": "...evidence showing (5) does the company have actual sales o..."
+        },
+        {
+          "new_q_id": "F_Q26",
+          "text": "(5) Does the company compare actual sales or revenue data to industry total sales to calculate market share based on similar companies in the same industry?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.96,
+          "citation": "...evidence showing (5) does the company compare actual sale..."
+        },
+        {
+          "new_q_id": "F_Q27a",
+          "text": "Sales or revenue data projected for at least 3 years",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.91,
+          "citation": "...evidence showing sales or revenue data projected for at l..."
+        },
+        {
+          "new_q_id": "F_Q27b",
+          "text": "Sales or revenue data projected for 5 or more years",
+          "type": "BINARY",
+          "verdict": -1,
+          "confidence": null,
+          "citation": null
+        },
+        {
+          "new_q_id": "F_Q28",
+          "text": "(5) Does the company compare projected sales or revenue data for the next 3, 5, or 10 years to industry projected total sales to calculate projected market share based on similar companies in the same industry?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.76,
+          "citation": "...evidence showing (5) does the company compare projected s..."
+        },
+        {
+          "new_q_id": "F_Q29",
+          "text": "(5) Does the company identify assumptions upon which projected sales or revenue data are based?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.88,
+          "citation": "...evidence showing (5) does the company identify assumption..."
+        }
+      ]
+    },
+    "IP": {
+      "full_name": "Investor Pitch",
+      "total": 42,
+      "passed": 38,
+      "failed": 4,
+      "avg_conf": 0.94,
+      "questions": [
+        {
+          "new_q_id": "IP_Q1",
+          "text": "Is there an elevator pitch?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.91,
+          "citation": "...evidence showing is there an elevator pitch?..."
+        },
+        {
+          "new_q_id": "IP_Q2",
+          "text": "Does the presentation define the business and reason for existence?",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.48,
+          "citation": "...evidence showing does the presentation define the busines..."
+        },
+        {
+          "new_q_id": "IP_Q3",
+          "text": "Is there a visual \"model\" built upon in the \"problem\" and \"solution\" slides?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.79,
+          "citation": "...evidence showing is there a visual \"model\" built upon in ..."
+        },
+        {
+          "new_q_id": "IP_Q4",
+          "text": "Does the overview contain two to five high-level succinct bullets?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.81,
+          "citation": "...evidence showing does the overview contain two to five hi..."
+        },
+        {
+          "new_q_id": "IP_Q7",
+          "text": "Is there a visual \"model\" depicting the problem?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.82,
+          "citation": "...evidence showing is there a visual \"model\" depicting the ..."
+        },
+        {
+          "new_q_id": "IP_Q8",
+          "text": "Is a historical evolution depicted?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.8,
+          "citation": "...evidence showing is a historical evolution depicted?..."
+        },
+        {
+          "new_q_id": "IP_Q12",
+          "text": "Is there a visual \"model\" depicting the solution?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.93,
+          "citation": "...evidence showing is there a visual \"model\" depicting the ..."
+        },
+        {
+          "new_q_id": "IP_Q16",
+          "text": "Is there a target vertical, buyer/user, or application?",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.4,
+          "citation": "...evidence showing is there a target vertical, buyer/user, ..."
+        },
+        {
+          "new_q_id": "IP_Q17",
+          "text": "Are market size/growth presented?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.75,
+          "citation": "...evidence showing are market size/growth presented?..."
+        },
+        {
+          "new_q_id": "IP_Q18",
+          "text": "Are any of the following shown: TAM/SAM/SOM/CAGR?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing are any of the following shown: tam/sam/..."
+        },
+        {
+          "new_q_id": "IP_Q19",
+          "text": "Are historical trends projected into the future?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.91,
+          "citation": "...evidence showing are historical trends projected into the..."
+        },
+        {
+          "new_q_id": "IP_Q22a",
+          "text": "Explicitly names legacy corporate incumbents in market",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.8,
+          "citation": "...evidence showing explicitly names legacy corporate incumb..."
+        },
+        {
+          "new_q_id": "IP_Q22b",
+          "text": "Identifies emerging venture-backed startup competitors",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.84,
+          "citation": "...evidence showing identifies emerging venture-backed start..."
+        },
+        {
+          "new_q_id": "IP_Q22c",
+          "text": "Includes competitive matrix, 2x2 quadrant, or comparison table",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.81,
+          "citation": "...evidence showing includes competitive matrix, 2x2 quadran..."
+        },
+        {
+          "new_q_id": "IP_Q24",
+          "text": "Does the presentation use customer-centric attributes and dimensions?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.84,
+          "citation": "...evidence showing does the presentation use customer-centr..."
+        },
+        {
+          "new_q_id": "IP_Q26",
+          "text": "Does the presentation embrace competitor strengths + know its own weaknesses (self-awareness)?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.79,
+          "citation": "...evidence showing does the presentation embrace competitor..."
+        },
+        {
+          "new_q_id": "IP_Q27",
+          "text": "Does the presentation highlight secret sauce, competitive advantages, barriers to entry?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.65,
+          "citation": "...evidence showing does the presentation highlight secret s..."
+        },
+        {
+          "new_q_id": "IP_Q28",
+          "text": "Does the presentation translate key points between business and technical domain?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.87,
+          "citation": "...evidence showing does the presentation translate key poin..."
+        },
+        {
+          "new_q_id": "IP_Q29",
+          "text": "Does it show how customers and partners fit in, if possible?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.98,
+          "citation": "...evidence showing does it show how customers and partners ..."
+        },
+        {
+          "new_q_id": "IP_Q32",
+          "text": "Does it address \"invent vs. integrate\" issues?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.84,
+          "citation": "...evidence showing does it address \"invent vs. integrate\" i..."
+        },
+        {
+          "new_q_id": "IP_Q35",
+          "text": "Does the presentation show what customers buy and how they buy it?",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.41,
+          "citation": "...evidence showing does the presentation show what customer..."
+        },
+        {
+          "new_q_id": "IP_Q36",
+          "text": "Does it discuss high level pricing (e.g., annuity or one fee)?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing does it discuss high level pricing (e.g...."
+        },
+        {
+          "new_q_id": "IP_Q37",
+          "text": "Does it describe what the customer will get (today and beyond)?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.97,
+          "citation": "...evidence showing does it describe what the customer will ..."
+        },
+        {
+          "new_q_id": "IP_Q38",
+          "text": "Does it profile the customer (vertical/buyer or user/application)?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.78,
+          "citation": "...evidence showing does it profile the customer (vertical/b..."
+        },
+        {
+          "new_q_id": "IP_Q39",
+          "text": "Does it profile critical partner relationships (current and future)?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.71,
+          "citation": "...evidence showing does it profile critical partner relatio..."
+        },
+        {
+          "new_q_id": "IP_Q40",
+          "text": "Does it show a marketing and sales plan?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing does it show a marketing and sales plan?..."
+        },
+        {
+          "new_q_id": "IP_Q41",
+          "text": "Does it show a value chain and sales cycle?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.85,
+          "citation": "...evidence showing does it show a value chain and sales cyc..."
+        },
+        {
+          "new_q_id": "IP_Q42",
+          "text": "Does it compare and contrast to industry comparables?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.75,
+          "citation": "...evidence showing does it compare and contrast to industry..."
+        },
+        {
+          "new_q_id": "IP_Q47",
+          "text": "Does it show previous companies and titles (industry recognition where meaningful)?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.8,
+          "citation": "...evidence showing does it show previous companies and titl..."
+        },
+        {
+          "new_q_id": "IP_Q48",
+          "text": "Does it show the Board of Directors?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.69,
+          "citation": "...evidence showing does it show the board of directors?..."
+        },
+        {
+          "new_q_id": "IP_Q50a",
+          "text": "P&L / Income statement slide provided",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.87,
+          "citation": "...evidence showing p&l / income statement slide provided..."
+        },
+        {
+          "new_q_id": "IP_Q50b",
+          "text": "Balance sheet summary slide provided",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.88,
+          "citation": "...evidence showing balance sheet summary slide provided..."
+        },
+        {
+          "new_q_id": "IP_Q51",
+          "text": "Has the Company provided high-level 3- or 5-year projections?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.67,
+          "citation": "...evidence showing has the company provided high-level 3- o..."
+        },
+        {
+          "new_q_id": "IP_Q52",
+          "text": "Do the financials break out revenues and expenses by major category?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.85,
+          "citation": "...evidence showing do the financials break out revenues and..."
+        },
+        {
+          "new_q_id": "IP_Q53a",
+          "text": "Financials include pre-tax profit (loss) projection",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.93,
+          "citation": "...evidence showing financials include pre-tax profit (loss)..."
+        },
+        {
+          "new_q_id": "IP_Q53b",
+          "text": "Financials include cash flow and capital requirements",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.9,
+          "citation": "...evidence showing financials include cash flow and capital..."
+        },
+        {
+          "new_q_id": "IP_Q53c",
+          "text": "Financials include headcount / staffing projections",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.87,
+          "citation": "...evidence showing financials include headcount / staffing ..."
+        },
+        {
+          "new_q_id": "IP_Q54",
+          "text": "Has the Company defined milestone targets?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.8,
+          "citation": "...evidence showing has the company defined milestone target..."
+        },
+        {
+          "new_q_id": "IP_Q55",
+          "text": "Do the financials identify when the Company expects its first revenues?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.73,
+          "citation": "...evidence showing do the financials identify when the comp..."
+        },
+        {
+          "new_q_id": "IP_Q56",
+          "text": "Do the financials identify when the Company expects to become cash-flow positive?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing do the financials identify when the comp..."
+        },
+        {
+          "new_q_id": "IP_Q57",
+          "text": "Has the Company demonstrated tangible competitive barriers (e.g., customers, IP)?",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.59,
+          "citation": "...evidence showing has the company demonstrated tangible co..."
+        },
+        {
+          "new_q_id": "IP_Q58",
+          "text": "Do the projections show a $100M/yr run rate by year 5?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.7,
+          "citation": "...evidence showing do the projections show a $100m/yr run r..."
+        }
+      ]
+    },
+    "IS": {
+      "full_name": "Impact Strategy",
+      "total": 13,
+      "passed": 13,
+      "failed": 0,
+      "avg_conf": 0.9,
+      "questions": [
+        {
+          "new_q_id": "IS_Q1a",
+          "text": "Company purpose directly addresses at least 1 UN Sustainable Development Goal",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.78,
+          "citation": "...evidence showing company purpose directly addresses at le..."
+        },
+        {
+          "new_q_id": "IS_Q1b",
+          "text": "Company purpose directly addresses 2 or more UN SDGs",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.92,
+          "citation": "...evidence showing company purpose directly addresses 2 or ..."
+        },
+        {
+          "new_q_id": "IS_Q2a",
+          "text": "Maps at least 1 applicable SDG across company value chain",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing maps at least 1 applicable sdg across co..."
+        },
+        {
+          "new_q_id": "IS_Q2b",
+          "text": "Maps 2 or more applicable SDGs across company value chain",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.94,
+          "citation": "...evidence showing maps 2 or more applicable sdgs across co..."
+        },
+        {
+          "new_q_id": "IS_Q3",
+          "text": "Addresses whether impact priority is mitigation, resilience/adaptation, or both",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.88,
+          "citation": "...evidence showing addresses whether impact priority is mit..."
+        },
+        {
+          "new_q_id": "IS_Q4",
+          "text": "Quantifies environmental/efficiency advantage using numerical metrics against baseline",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing quantifies environmental/efficiency adva..."
+        },
+        {
+          "new_q_id": "IS_Q5b",
+          "text": "Documents policy/plan for reinvestment or allocation of company profits",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.85,
+          "citation": "...evidence showing documents policy/plan for reinvestment o..."
+        },
+        {
+          "new_q_id": "IS_Q6",
+          "text": "Lists formal certification by environmental or sustainability organizations",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.87,
+          "citation": "...evidence showing lists formal certification by environmen..."
+        },
+        {
+          "new_q_id": "IS_Q7",
+          "text": "Identifies applicable environmental/operating regulations (or confirms none exist)",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.74,
+          "citation": "...evidence showing identifies applicable environmental/oper..."
+        },
+        {
+          "new_q_id": "IS_Q8",
+          "text": "Identifies environmental or social risks of materials (toxicity, recyclability, supply)",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.84,
+          "citation": "...evidence showing identifies environmental or social risks..."
+        },
+        {
+          "new_q_id": "IS_Q9a",
+          "text": "Identifies largest sources of energy consumption in operations",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.82,
+          "citation": "...evidence showing identifies largest sources of energy con..."
+        },
+        {
+          "new_q_id": "IS_Q9b",
+          "text": "Identifies largest sources of land use in operations",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.87,
+          "citation": "...evidence showing identifies largest sources of land use i..."
+        },
+        {
+          "new_q_id": "IS_Q10",
+          "text": "Categorizes operational waste streams by percentage",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.96,
+          "citation": "...evidence showing categorizes operational waste streams by..."
+        }
+      ]
+    },
+    "L": {
+      "full_name": "Legal",
+      "total": 51,
+      "passed": 45,
+      "failed": 6,
+      "avg_conf": 0.93,
+      "questions": [
+        {
+          "new_q_id": "L_Q1",
+          "text": "Does the company have an intellectual property strategy?",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.47,
+          "citation": "...evidence showing does the company have an intellectual pr..."
+        },
+        {
+          "new_q_id": "L_Q2",
+          "text": "Does this company spend time on developing and implementing an intellectual property strategy?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.68,
+          "citation": "...evidence showing does this company spend time on developi..."
+        },
+        {
+          "new_q_id": "L_Q3",
+          "text": "Is there a person in the organization who is tasked with managing intellectual property?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.98,
+          "citation": "...evidence showing is there a person in the organization wh..."
+        },
+        {
+          "new_q_id": "L_Q4",
+          "text": "If yes, does that person have more than 5 years of experience managing intellectual property?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing if yes, does that person have more than ..."
+        },
+        {
+          "new_q_id": "L_Q5",
+          "text": "Does the company have a trademark/service mark strategy?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.85,
+          "citation": "...evidence showing does the company have a trademark/servic..."
+        },
+        {
+          "new_q_id": "L_Q6",
+          "text": "Has the company filed any applications for trademark registration?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.86,
+          "citation": "...evidence showing has the company filed any applications f..."
+        },
+        {
+          "new_q_id": "L_Q7",
+          "text": "Has the company done a clearance search to determine whether or not it is okay to use the trade or service mark it wants?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.93,
+          "citation": "...evidence showing has the company done a clearance search ..."
+        },
+        {
+          "new_q_id": "L_Q8",
+          "text": "If the Company plans to apply for more than one trade or service mark, has it done a clearance search for every mark it plans to apply for?\n- Not applicable (the Company plans to apply for no marks): award 1 pt.\n- Yes (a clearance search was done for every mark): award 1 pt.\n- No (one or more marks lack a clearance search): award 0 pts.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.75,
+          "citation": "...evidence showing if the company plans to apply for more t..."
+        },
+        {
+          "new_q_id": "L_Q9a",
+          "text": "Conducted formal trademark clearance search with the USPTO",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.75,
+          "citation": "...evidence showing conducted formal trademark clearance sea..."
+        },
+        {
+          "new_q_id": "L_Q9b",
+          "text": "Filed formal trademark application for primary commercial brand name",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.88,
+          "citation": "...evidence showing filed formal trademark application for p..."
+        },
+        {
+          "new_q_id": "L_Q10",
+          "text": "Has the Company successfully obtained a trademark or service mark registration for any of its marks?",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.4,
+          "citation": "...evidence showing has the company successfully obtained a ..."
+        },
+        {
+          "new_q_id": "L_Q11",
+          "text": "Does the Company plan to sell its products or services internationally?\n- If no: award 1 pt.\n- If yes: award 1 pt only if the Company provides evidence that it has applied for trademark registrations in any foreign countries. Otherwise, award 0 pts.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.88,
+          "citation": "...evidence showing does the company plan to sell its produc..."
+        },
+        {
+          "new_q_id": "L_Q12",
+          "text": "Does the company have a copyright strategy?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.85,
+          "citation": "...evidence showing does the company have a copyright strate..."
+        },
+        {
+          "new_q_id": "L_Q13",
+          "text": "Does the product involve source code?\n- If no: award 1 pt.\n- If yes: award 1 pt only if the Company has written agreements with every engineer who wrote code that properly assign their copyrights to the Company. Otherwise, award 0 pts.",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.52,
+          "citation": "...evidence showing does the product involve source code?\n- ..."
+        },
+        {
+          "new_q_id": "L_Q14",
+          "text": "Is there any open-source code in the product?\n- If no: award 1 pt.\n- If yes: award 1 pt only if the Company has copies of the open-source license for the code. Otherwise, award 0 pts.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.79,
+          "citation": "...evidence showing is there any open-source code in the pro..."
+        },
+        {
+          "new_q_id": "L_Q15",
+          "text": "If the company does not think it has open-source code, has it conducted rigorous testing to confirm that there is no open-source code in the product?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.77,
+          "citation": "...evidence showing if the company does not think it has ope..."
+        },
+        {
+          "new_q_id": "L_Q16",
+          "text": "Has the company filed any copyright registrations?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.9,
+          "citation": "...evidence showing has the company filed any copyright regi..."
+        },
+        {
+          "new_q_id": "L_Q17",
+          "text": "Has the company registered its website?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.83,
+          "citation": "...evidence showing has the company registered its website?..."
+        },
+        {
+          "new_q_id": "L_Q18",
+          "text": "Does the company have good archival information so that it can prove exactly what was on its website on any specific day in the past?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.91,
+          "citation": "...evidence showing does the company have good archival info..."
+        },
+        {
+          "new_q_id": "L_Q19",
+          "text": "Does the company have a patent strategy?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.79,
+          "citation": "...evidence showing does the company have a patent strategy?..."
+        },
+        {
+          "new_q_id": "L_Q20",
+          "text": "Has the company filed any applications for patents?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing has the company filed any applications f..."
+        },
+        {
+          "new_q_id": "L_Q21",
+          "text": "Does the company know in which countries it plans to seek patent protections?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.87,
+          "citation": "...evidence showing does the company know in which countries..."
+        },
+        {
+          "new_q_id": "L_Q22",
+          "text": "Does the company know which of its competitors is filing patent applications?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.89,
+          "citation": "...evidence showing does the company know which of its compe..."
+        },
+        {
+          "new_q_id": "L_Q23",
+          "text": "Has the company evaluated their patent portfolios?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.95,
+          "citation": "...evidence showing has the company evaluated their patent p..."
+        },
+        {
+          "new_q_id": "L_Q24",
+          "text": "Has the company evaluated their products?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.89,
+          "citation": "...evidence showing has the company evaluated their products..."
+        },
+        {
+          "new_q_id": "L_Q25",
+          "text": "Does the company know what technical features distinguish its product from those of its competitors?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.83,
+          "citation": "...evidence showing does the company know what technical fea..."
+        },
+        {
+          "new_q_id": "L_Q26",
+          "text": "Does the company know whether customers buy its products based on any particular technical feature that it invented?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.76,
+          "citation": "...evidence showing does the company know whether customers ..."
+        },
+        {
+          "new_q_id": "L_Q27",
+          "text": "Does the company have a trade secret strategy?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.85,
+          "citation": "...evidence showing does the company have a trade secret str..."
+        },
+        {
+          "new_q_id": "L_Q28",
+          "text": "Is the company taking reasonable steps to ensure that its trade secrets remain secret?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing is the company taking reasonable steps t..."
+        },
+        {
+          "new_q_id": "L_Q29",
+          "text": "Have all employees signed non-disclosure and invention assignment agreements?",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.55,
+          "citation": "...evidence showing have all employees signed non-disclosure..."
+        },
+        {
+          "new_q_id": "L_Q32",
+          "text": "Has the Company hired any people who worked for competitors?\n- If no: award 1 pt.\n- If yes: award 1 pt only if the Company took steps to ensure that it does not learn or use the competitor's trade secret information. Otherwise, award 0 pts.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing has the company hired any people who wor..."
+        },
+        {
+          "new_q_id": "L_Q33",
+          "text": "Has the company already filed documents establishing a legal entity (e.g. C Corp, S Corp, LLC)?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.79,
+          "citation": "...evidence showing has the company already filed documents ..."
+        },
+        {
+          "new_q_id": "L_Q34",
+          "text": "If the Company has already filed documents establishing a legal entity, has it listed all documents related to the legal entity (e.g., articles of incorporation, bylaws, amendments; minutes of board of directors, committee and shareholders' meetings; consents)?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.84,
+          "citation": "...evidence showing if the company has already filed documen..."
+        },
+        {
+          "new_q_id": "L_Q35",
+          "text": "Has the Company signed any loan agreements, including promissory notes, financing arrangements, or lines of credit?\n- If no: award 1 pt.\n- If yes: award 1 pt only if the Company provides a complete list of banks or other lenders with whom it has a financial relationship, together with copies of all related credit agreements, debt instruments, security agreements, mortgages, collateral pledges, indentures, financial or performance guaranties, indemnifications, liens, equipment leases, or other agreements evidencing outstanding loans to which the Company is or was a party within the past two years. Otherwise, award 0 pts.",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.62,
+          "citation": "...evidence showing has the company signed any loan agreemen..."
+        },
+        {
+          "new_q_id": "L_Q36",
+          "text": "Is the Company a party to any nondisclosure or noncompete agreements?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company provides a list of such agreements. Otherwise, 0 pts.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.77,
+          "citation": "...evidence showing is the company a party to any nondisclos..."
+        },
+        {
+          "new_q_id": "L_Q37",
+          "text": "Has the Company signed any sales, distribution, franchise, or licensing agreements?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company provides a list of such agreements, including but not limited to distribution, sales, marketing, and supply agreements; price quote, invoice, purchase, or warranty forms; contracts, transcripts, or letters of divestiture from any merger or acquisition within the past five years; powers of attorney; exclusivity agreements; franchise agreements; and indemnification agreements. Otherwise, 0 pts.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.72,
+          "citation": "...evidence showing has the company signed any sales, distri..."
+        },
+        {
+          "new_q_id": "L_Q38",
+          "text": "Has the Company been involved in any past litigation, or does it face any pending litigation?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company provides: copies of pleadings or correspondence for past or pending lawsuits involving the Company or Founders; a summary of any disputes with suppliers, competitors, or customers; a history of any issues with regulatory bodies such as the SEC or IRS; any harassment, wrongful termination, or discrimination disputes within the past three years; correspondence with auditors or accountants regarding threatened or pending litigation, assessments, or claims; and lists of any decrees, injunctions, settlements, orders, or judgments of courts or governmental agencies, settlement documentation, and unsatisfied judgments. Otherwise, 0 pts.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.77,
+          "citation": "...evidence showing has the company been involved in any pas..."
+        },
+        {
+          "new_q_id": "L_Q39",
+          "text": "Is the Company subject to any environmental regulations?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company provides: descriptions of any environmental hazards, liabilities, or contingencies; a list of any materials or processes that may negatively impact the environment; copies of notices and filings with the Environmental Protection Agency (EPA); and environmental audits, if any, for each Company property. Otherwise, 0 pts.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing is the company subject to any environmen..."
+        },
+        {
+          "new_q_id": "L_Q40",
+          "text": "Has the Company or its Founders signed any agreements with officers, advisors, employees, consultants, or third-party service providers?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company provides: all employment and consulting agreements, loan agreements, and documents relating to other transactions with officers, directors, key employees, and related parties; a schedule of all compensation paid to officers, directors, and key employees for the most recent fiscal year, showing salary separately; a summary of employee benefits, including pension, profit-sharing, compensation, and retirement plans; a summary of management incentive or bonus plans and other non-cash compensation; confidentiality agreements with employees; and a description of all related-party transactions during the last three years and any currently proposed transactions. Otherwise, 0 pts.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.72,
+          "citation": "...evidence showing has the company or its founders signed a..."
+        },
+        {
+          "new_q_id": "L_Q41",
+          "text": "Has the Company drafted guidelines for employees, contractors, and other affiliated workers?\n - Award 1 pt only if the Company provides a copy of the employee handbook, including policies on vacation, sick days, benefits, holidays, and paid leave; documents on pension plan funding and distributions; and copies of all Occupational Safety and Health Administration (OSHA) examinations. Otherwise, 0 pts.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.84,
+          "citation": "...evidence showing has the company drafted guidelines for e..."
+        },
+        {
+          "new_q_id": "L_Q42",
+          "text": "Does the Company own, or plan to acquire, real or material personal property?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company provides: a list of real and material personal property owned by the Company; documents of title, mortgages, deeds of trust, and security agreements pertaining to those properties; and all outstanding leases with an original term greater than one year for real and personal property to which the Company is either lessor or lessee. Otherwise, 0 pts.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.77,
+          "citation": "...evidence showing does the company own, or plan to acquire..."
+        },
+        {
+          "new_q_id": "L_Q43",
+          "text": "Is the Company a party to any insurance or liability agreements?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company provides: a schedule or copies of all material insurance policies covering property, liabilities, and operations, including product liability; a schedule of any other policies in force, such as key-man or director indemnification policies; and all other relevant documents pertaining to the Company's insurance and liability exposure. Otherwise, 0 pts.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.74,
+          "citation": "...evidence showing is the company a party to any insurance ..."
+        },
+        {
+          "new_q_id": "L_Q44",
+          "text": "Is the Company a party to any acquisition, partnership, or joint venture agreements?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company provides: copies of all acquisition, partnership, or joint venture agreements; documents pertaining to potential acquisitions or alliances; and any agreements regarding divestiture of assets. Otherwise, 0 pts.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.92,
+          "citation": "...evidence showing is the company a party to any acquisitio..."
+        },
+        {
+          "new_q_id": "L_Q45",
+          "text": "Has the Company engaged in any marketing, promotional, or public relations activities?\n - Award 1 pt only if the Company provides: copies of any press releases from the last two years; articles and other pertinent marketing studies or reports relating to the Company or its industry; information regarding competitors; customer satisfaction surveys, if any; and current brochures and sales materials describing the Company's products or services. Otherwise, 0 pts.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.72,
+          "citation": "...evidence showing has the company engaged in any marketing..."
+        },
+        {
+          "new_q_id": "L_Q46",
+          "text": "Does the Company require any special permits, licenses, or authorizations to operate in any state, country, or other jurisdiction?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company provides: recently obtained good-standing certificates for all states and jurisdictions where the Company does or plans to do business; copies of all permits and licenses necessary for operations; a summary of any inquiry during the past three years involving federal, state, or other governmental agencies; and a summary of all federal, state, and local laws, rules, and regulations applicable to the Company's main business. Otherwise, 0 pts.",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.67,
+          "citation": "...evidence showing does the company require any special per..."
+        },
+        {
+          "new_q_id": "L_Q48",
+          "text": "Has the Company ever applied for, issued, or transferred securities, or signed any contracts, arrangements, documents, or commitments relating to the Company's stock?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company provides documents relating to its equity structure, including: stock certificates, warrants, and options; stockholder information with number of shares held, dates of issuance, and consideration paid; employee stock benefit plans and equity agreements; any voting trust, buy/sell, stockholder, warrant, proxy, or right-of-first-refusal agreements; any registration rights or pre-emptive rights agreements; powers of attorney on any matter; convertible debt instruments; and any debt arrangements, guarantees, or indemnifications between officers, directors, or shareholders and the Company. Otherwise, 0 pts.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.89,
+          "citation": "...evidence showing has the company ever applied for, issued..."
+        },
+        {
+          "new_q_id": "L_Q49",
+          "text": "Has the Company created a comprehensive information and data privacy policy?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.91,
+          "citation": "...evidence showing has the company created a comprehensive ..."
+        },
+        {
+          "new_q_id": "L_Q50",
+          "text": "If the Company has created a comprehensive information and data privacy policy, has it provided a copy of this policy, as well as a summary of all federal, state, local and international laws, rules and regulations applicable to the Company's data collecting and data processing activities?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.78,
+          "citation": "...evidence showing if the company has created a comprehensi..."
+        },
+        {
+          "new_q_id": "L_Q51",
+          "text": "Has the Company crafted a policy to keep its customers' personal data safe?\n - Award 1 pt only if the Company provides a copy of this policy, together with a summary of all federal, state, local, and international laws, rules, and regulations applicable to its data collection and processing activities. Otherwise, 0 pts.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.75,
+          "citation": "...evidence showing has the company crafted a policy to keep..."
+        },
+        {
+          "new_q_id": "L_Q52",
+          "text": "Will the Company use cookies for advertising or tracking purposes, send direct marketing communications to people with whom it has no pre-existing business relationship, or process sensitive personal data of any kind?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company has, or plans to hire, an Information and Privacy Officer familiar with applicable privacy law, including the GDPR, the California Online Privacy Protection Act, and the California Consumer Privacy Act (CCPA). Otherwise, 0 pts.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.81,
+          "citation": "...evidence showing will the company use cookies for adverti..."
+        },
+        {
+          "new_q_id": "L_Q53",
+          "text": "Has the Company signed any agreements with, or established relationships involving, any subsidiaries, partnerships, or joint ventures?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company provides a list of these arrangements and any related agreements. Otherwise, 0 pts.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.7,
+          "citation": "...evidence showing has the company signed any agreements wi..."
+        }
+      ]
+    },
+    "M": {
+      "full_name": "Marketing",
+      "total": 10,
+      "passed": 9,
+      "failed": 1,
+      "avg_conf": 0.94,
+      "questions": [
+        {
+          "new_q_id": "M_Q1a",
+          "text": "Identifies commercial distribution channels for product delivery",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.93,
+          "citation": "...evidence showing identifies commercial distribution chann..."
+        },
+        {
+          "new_q_id": "M_Q1b",
+          "text": "Identifies media, marketing, or industry channels for customer acquisition",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.86,
+          "citation": "...evidence showing identifies media, marketing, or industry..."
+        },
+        {
+          "new_q_id": "M_Q3",
+          "text": "Has the startup identified ways to leverage their advocates, customers or community to spread their product or service?",
+          "type": "BINARY",
+          "verdict": -1,
+          "confidence": null,
+          "citation": null
+        },
+        {
+          "new_q_id": "M_Q7",
+          "text": "Has startup identified key barriers to customer purchases?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.82,
+          "citation": "...evidence showing has startup identified key barriers to c..."
+        },
+        {
+          "new_q_id": "M_Q8",
+          "text": "Has the startup identified sales tactics to address key purchasing barriers?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.98,
+          "citation": "...evidence showing has the startup identified sales tactics..."
+        },
+        {
+          "new_q_id": "M_Q9",
+          "text": "Has the startup created a customer feedback channel within the sales process?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.75,
+          "citation": "...evidence showing has the startup created a customer feedb..."
+        },
+        {
+          "new_q_id": "M_Q10",
+          "text": "Has the startup identified and prioritized the most important features to customers for GTM rollout?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.9,
+          "citation": "...evidence showing has the startup identified and prioritiz..."
+        },
+        {
+          "new_q_id": "M_Q11a",
+          "text": "Provides visual or scheduled product roadmap across future quarters/years",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.78,
+          "citation": "...evidence showing provides visual or scheduled product roa..."
+        },
+        {
+          "new_q_id": "M_Q11b",
+          "text": "Provides technical or commercial rationale for feature sequencing",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.84,
+          "citation": "...evidence showing provides technical or commercial rationa..."
+        },
+        {
+          "new_q_id": "M_Q12",
+          "text": "Has the startup anticipated the need to gather feedback and pivot in the future?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.92,
+          "citation": "...evidence showing has the startup anticipated the need to ..."
+        }
+      ]
+    },
+    "PMF": {
+      "full_name": "Product Market Fit",
+      "total": 26,
+      "passed": 22,
+      "failed": 4,
+      "avg_conf": 0.89,
+      "questions": [
+        {
+          "new_q_id": "PMF_Q1a",
+          "text": "Startup has determined and named a specific target market",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.91,
+          "citation": "...evidence showing startup has determined and named a speci..."
+        },
+        {
+          "new_q_id": "PMF_Q2",
+          "text": "Startup has identified a need the target market has that the product fills.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.82,
+          "citation": "...evidence showing startup has identified a need the target..."
+        },
+        {
+          "new_q_id": "PMF_Q3",
+          "text": "Startup has had live research-focused discussions with at least 4 members of its target audience.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.74,
+          "citation": "...evidence showing startup has had live research-focused di..."
+        },
+        {
+          "new_q_id": "PMF_Q4",
+          "text": "Startup has had live research-focused discussions with at least 6 members of its target audience.",
+          "type": "BINARY",
+          "verdict": -1,
+          "confidence": null,
+          "citation": null
+        },
+        {
+          "new_q_id": "PMF_Q5",
+          "text": "Startup has had live research-focused discussions with 10 or more members of its target audience.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.8,
+          "citation": "...evidence showing startup has had live research-focused di..."
+        },
+        {
+          "new_q_id": "PMF_Q6",
+          "text": "Startup updated or created customer segments based on research.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.93,
+          "citation": "...evidence showing startup updated or created customer segm..."
+        },
+        {
+          "new_q_id": "PMF_Q7",
+          "text": "Startup updated or created customer archetypes/personas based on research.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing startup updated or created customer arch..."
+        },
+        {
+          "new_q_id": "PMF_Q8",
+          "text": "Startup updated or changed its user experience based on research.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing startup updated or changed its user expe..."
+        },
+        {
+          "new_q_id": "PMF_Q9a",
+          "text": "Articulates specific insight or finding learned from customer research",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.49,
+          "citation": "...evidence showing articulates specific insight or finding ..."
+        },
+        {
+          "new_q_id": "PMF_Q9b",
+          "text": "Identifies concrete change made to strategy or product experience based on research",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.7,
+          "citation": "...evidence showing identifies concrete change made to strat..."
+        },
+        {
+          "new_q_id": "PMF_Q10",
+          "text": "Did the startup create multiple customer segments based on demographic factors (ex: age, income, etc)",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.82,
+          "citation": "...evidence showing did the startup create multiple customer..."
+        },
+        {
+          "new_q_id": "PMF_Q11",
+          "text": "Did the startup create multiple customer segments based on psychological factors (ex: comfort with technology, attitudes towards cost)",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.9,
+          "citation": "...evidence showing did the startup create multiple customer..."
+        },
+        {
+          "new_q_id": "PMF_Q13",
+          "text": "Has the startup validated the size and representativeness of their target market psychographic segmentation through a statistically significant quantitative methodology?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.86,
+          "citation": "...evidence showing has the startup validated the size and r..."
+        },
+        {
+          "new_q_id": "PMF_Q14",
+          "text": "Startup has a research-validated range potential customers would be willing to pay for their product or service.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.9,
+          "citation": "...evidence showing startup has a research-validated range p..."
+        },
+        {
+          "new_q_id": "PMF_Q15",
+          "text": "Start up has implemented feedback mechanisms into their service or product experience to gather ongoing feedback from individuals who are using or who will use their product/service.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.65,
+          "citation": "...evidence showing start up has implemented feedback mechan..."
+        },
+        {
+          "new_q_id": "PMF_Q16",
+          "text": "Startups has embedded Net Promoter Score (NPS) into ongoing feedback.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.91,
+          "citation": "...evidence showing startups has embedded net promoter score..."
+        },
+        {
+          "new_q_id": "PMF_Q17",
+          "text": "Has the startup articulated all of the stakeholders in the market they are addressing?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.83,
+          "citation": "...evidence showing has the startup articulated all of the s..."
+        },
+        {
+          "new_q_id": "PMF_Q19",
+          "text": "Have they identified who the purchasing decision-makers in the system are?",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.45,
+          "citation": "...evidence showing have they identified who the purchasing ..."
+        },
+        {
+          "new_q_id": "PMF_Q20",
+          "text": "Startup has someone dedicated to tech tools and ops.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.94,
+          "citation": "...evidence showing startup has someone dedicated to tech to..."
+        },
+        {
+          "new_q_id": "PMF_Q21",
+          "text": "Startup has dedicated resources, or individual on team, to user experience.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.96,
+          "citation": "...evidence showing startup has dedicated resources, or indi..."
+        },
+        {
+          "new_q_id": "PMF_Q22",
+          "text": "Startup has worked with a user/customer research professional.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.88,
+          "citation": "...evidence showing startup has worked with a user/customer ..."
+        },
+        {
+          "new_q_id": "PMF_Q27",
+          "text": "Startup has a branding professional, or has worked with one.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.79,
+          "citation": "...evidence showing startup has a branding professional, or ..."
+        },
+        {
+          "new_q_id": "PMF_Q29",
+          "text": "Has the startup completed a competitive analysis?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.95,
+          "citation": "...evidence showing has the startup completed a competitive ..."
+        },
+        {
+          "new_q_id": "PMF_Q30",
+          "text": "Has the startup analyzed the reasons why customers use the competition?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing has the startup analyzed the reasons why..."
+        },
+        {
+          "new_q_id": "PMF_Q32",
+          "text": "Has the startup identified customer experience pain-points in at least 1 major competitor's product?",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.4,
+          "citation": "...evidence showing has the startup identified customer expe..."
+        },
+        {
+          "new_q_id": "PMF_Q33",
+          "text": "Has the startup identified customer experience pain-points in at least 3 major competitor's product?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.71,
+          "citation": "...evidence showing has the startup identified customer expe..."
+        }
+      ]
+    },
+    "T": {
+      "full_name": "Team",
+      "total": 43,
+      "passed": 40,
+      "failed": 3,
+      "avg_conf": 0.92,
+      "questions": [
+        {
+          "new_q_id": "T_Q1a",
+          "text": "Any co-founder previously founded/co-founded a funded startup",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.83,
+          "citation": "...evidence showing any co-founder previously founded/co-fou..."
+        },
+        {
+          "new_q_id": "T_Q1b",
+          "text": "Any co-founder previously worked as early employee (<= 10th) at a venture startup",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.49,
+          "citation": "...evidence showing any co-founder previously worked as earl..."
+        },
+        {
+          "new_q_id": "T_Q2a",
+          "text": "Team members previously involved with at least 1 startup",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.84,
+          "citation": "...evidence showing team members previously involved with at..."
+        },
+        {
+          "new_q_id": "T_Q2b",
+          "text": "Team members previously involved with 3 or more startups",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.65,
+          "citation": "...evidence showing team members previously involved with 3 ..."
+        },
+        {
+          "new_q_id": "T_Q2_val",
+          "text": "Total count of prior startups team members were involved with",
+          "type": "INTEGER",
+          "verdict": 908,
+          "confidence": null,
+          "citation": null
+        },
+        {
+          "new_q_id": "T_Q3a",
+          "text": "Any full-time executive involved in at least 1 prior startup exit (M&A/IPO)",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.74,
+          "citation": "...evidence showing any full-time executive involved in at l..."
+        },
+        {
+          "new_q_id": "T_Q3b",
+          "text": "Any full-time executive involved in 2 or more prior startup exits",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.85,
+          "citation": "...evidence showing any full-time executive involved in 2 or..."
+        },
+        {
+          "new_q_id": "T_Q3_val",
+          "text": "Total count of prior exits across full-time founders",
+          "type": "INTEGER",
+          "verdict": 441,
+          "confidence": null,
+          "citation": null
+        },
+        {
+          "new_q_id": "T_Q4a",
+          "text": "Team has 5 or more combined years of experience in company target industry",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.82,
+          "citation": "...evidence showing team has 5 or more combined years of exp..."
+        },
+        {
+          "new_q_id": "T_Q4b",
+          "text": "Team has 15 or more combined years of experience in company target industry",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.75,
+          "citation": "...evidence showing team has 15 or more combined years of ex..."
+        },
+        {
+          "new_q_id": "T_Q5a",
+          "text": "Team member previously held VP or Director level seniority in target industry",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.76,
+          "citation": "...evidence showing team member previously held vp or direct..."
+        },
+        {
+          "new_q_id": "T_Q5b",
+          "text": "Team member previously held CEO or C-Suite seniority in target industry",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.75,
+          "citation": "...evidence showing team member previously held ceo or c-sui..."
+        },
+        {
+          "new_q_id": "T_Q6",
+          "text": "What is the breadth of the team's capabilities in technical/engineering?\n - Technical, engineering operations, sales + marketing, finance: award 1 pt\n - Technical, engineering operations: award 0.67 pts\n - Technical only: award 0.33 pts\n - None: award 0 pts",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.73,
+          "citation": "...evidence showing what is the breadth of the team's capabi..."
+        },
+        {
+          "new_q_id": "T_Q7",
+          "text": "What is the breadth of the team's capabilities in supply chain?\n - Technical, engineering operations, sales + marketing, finance: award 1 pt\n - Technical, engineering operations: award 0.67 pts\n - Technical only: award 0.33 pts\n - None: award 0 pts",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.79,
+          "citation": "...evidence showing what is the breadth of the team's capabi..."
+        },
+        {
+          "new_q_id": "T_Q8",
+          "text": "What is the breadth of the team's capabilities in operations?\n - Technical, engineering operations, sales + marketing, finance: award 1 pt\n - Technical, engineering operations: award 0.67 pts\n - Technical only: award 0.33 pts\n - None: award 0 pts",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.9,
+          "citation": "...evidence showing what is the breadth of the team's capabi..."
+        },
+        {
+          "new_q_id": "T_Q9",
+          "text": "What is the breadth of the team's capabilities in finance?\n - Technical, engineering operations, sales + marketing, finance: award 1 pt\n - Technical, engineering operations: award 0.67 pts\n - Technical only: award 0.33 pts\n - None: award 0 pts",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.65,
+          "citation": "...evidence showing what is the breadth of the team's capabi..."
+        },
+        {
+          "new_q_id": "T_Q10",
+          "text": "\"What is the breadth of the team's capabilities in human resources?\n - Technical, engineering operations, sales + marketing, finance: award 1 pt\n - Technical, engineering operations: award 0.67 pts\n - Technical only: award 0.33 pts\n - None: award 0 pts\"",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.82,
+          "citation": "...evidence showing \"what is the breadth of the team's capab..."
+        },
+        {
+          "new_q_id": "T_Q11",
+          "text": "What is the breadth of the team's capabilities in sales/marketing?\n - Technical, engineering operations, sales + marketing, finance: award 1 pt\n - Technical, engineering operations: award 0.67 pts\n - Technical only: award 0.33 pts\n - None: award 0 pts",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.81,
+          "citation": "...evidence showing what is the breadth of the team's capabi..."
+        },
+        {
+          "new_q_id": "T_Q12",
+          "text": "What is the breadth of the team's capabilities in general management?\n - Technical, engineering operations, sales + marketing, finance: award 1 pt\n - Technical, engineering operations: award 0.67 pts\n - Technical only: award 0.33 pts\n - None: award 0 pts",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.78,
+          "citation": "...evidence showing what is the breadth of the team's capabi..."
+        },
+        {
+          "new_q_id": "T_Q13",
+          "text": "What is the breadth of the team's capabilities in systems/IT?\n - Technical, engineering operations, sales + marketing, finance: award 1 pt\n - Technical, engineering operations: award 0.67 pts\n - Technical only: award 0.33 pts\n - None: award 0 pts",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.91,
+          "citation": "...evidence showing what is the breadth of the team's capabi..."
+        },
+        {
+          "new_q_id": "T_Q14",
+          "text": "What is the breadth of the team's functional experience?\n - Technical, engineering operations, sales + marketing, finance: award 1 pt\n - Technical, engineering operations: award 0.67 pts\n - Technical only: award 0.33 pts\n - None: award 0 pts",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.86,
+          "citation": "...evidence showing what is the breadth of the team's functi..."
+        },
+        {
+          "new_q_id": "T_Q15a",
+          "text": "Technical executive holds Master degree or higher",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing technical executive holds master degree ..."
+        },
+        {
+          "new_q_id": "T_Q15b",
+          "text": "Technical executive holds Ph.D. or terminal engineering doctorate",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.89,
+          "citation": "...evidence showing technical executive holds ph.d. or termi..."
+        },
+        {
+          "new_q_id": "T_Q16",
+          "text": "Management executive holds MBA, JD, or Master degree",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.71,
+          "citation": "...evidence showing management executive holds mba, jd, or m..."
+        },
+        {
+          "new_q_id": "T_Q17a",
+          "text": "Scientific advisor holds Master degree or higher",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.78,
+          "citation": "...evidence showing scientific advisor holds master degree o..."
+        },
+        {
+          "new_q_id": "T_Q17b",
+          "text": "Scientific advisor holds Ph.D.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.88,
+          "citation": "...evidence showing scientific advisor holds ph.d...."
+        },
+        {
+          "new_q_id": "T_Q18a",
+          "text": "Board member holds Master, MBA, or JD degree",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.42,
+          "citation": "...evidence showing board member holds master, mba, or jd de..."
+        },
+        {
+          "new_q_id": "T_Q18b",
+          "text": "Board member holds Ph.D.",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.8,
+          "citation": "...evidence showing board member holds ph.d...."
+        },
+        {
+          "new_q_id": "T_Q19a",
+          "text": "Primary CEO/founder dedicated full-time to startup with no outside employment",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.5,
+          "citation": "...evidence showing primary ceo/founder dedicated full-time ..."
+        },
+        {
+          "new_q_id": "T_Q19b",
+          "text": "All primary co-founders operating full-time on the business",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.8,
+          "citation": "...evidence showing all primary co-founders operating full-t..."
+        },
+        {
+          "new_q_id": "T_Q20",
+          "text": "Has any personal capital been directly invested?\n - Yes\n - No",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.9,
+          "citation": "...evidence showing has any personal capital been directly i..."
+        },
+        {
+          "new_q_id": "T_Q21a",
+          "text": "Team has worked together for at least 1 year",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.82,
+          "citation": "...evidence showing team has worked together for at least 1 ..."
+        },
+        {
+          "new_q_id": "T_Q21b",
+          "text": "Team has worked together for more than 3 years",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.92,
+          "citation": "...evidence showing team has worked together for more than 3..."
+        },
+        {
+          "new_q_id": "T_Q22",
+          "text": "Has the management team taken a formal assessment of team building dynamics?\n - Yes\n - No",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.99,
+          "citation": "...evidence showing has the management team taken a formal a..."
+        },
+        {
+          "new_q_id": "T_Q26a",
+          "text": "Raised capital from or completed deals with Angel Investors",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.89,
+          "citation": "...evidence showing raised capital from or completed deals w..."
+        },
+        {
+          "new_q_id": "T_Q26b",
+          "text": "Raised >= $1M in cumulative capital from Angel Investors",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.71,
+          "citation": "...evidence showing raised >= $1m in cumulative capital from..."
+        },
+        {
+          "new_q_id": "T_Q27a",
+          "text": "Raised capital from or completed deals with Family Offices",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.82,
+          "citation": "...evidence showing raised capital from or completed deals w..."
+        },
+        {
+          "new_q_id": "T_Q27b",
+          "text": "Raised >= $1M in cumulative capital from Family Offices",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.92,
+          "citation": "...evidence showing raised >= $1m in cumulative capital from..."
+        },
+        {
+          "new_q_id": "T_Q28a",
+          "text": "Raised capital from or completed deals with VCs",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.87,
+          "citation": "...evidence showing raised capital from or completed deals w..."
+        },
+        {
+          "new_q_id": "T_Q28b",
+          "text": "Raised >= $1M in cumulative capital from VCs",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.82,
+          "citation": "...evidence showing raised >= $1m in cumulative capital from..."
+        },
+        {
+          "new_q_id": "T_Q29a",
+          "text": "Raised capital from or completed deals with Grants/NGOs",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.79,
+          "citation": "...evidence showing raised capital from or completed deals w..."
+        },
+        {
+          "new_q_id": "T_Q29b",
+          "text": "Raised >= $1M in cumulative capital from Grants/NGOs",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.93,
+          "citation": "...evidence showing raised >= $1m in cumulative capital from..."
+        },
+        {
+          "new_q_id": "T_Q30a",
+          "text": "Raised capital from or completed deals with Strategic Investors",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.83,
+          "citation": "...evidence showing raised capital from or completed deals w..."
+        },
+        {
+          "new_q_id": "T_Q30b",
+          "text": "Raised >= $1M in cumulative capital from Strategic Investors",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.86,
+          "citation": "...evidence showing raised >= $1m in cumulative capital from..."
+        },
+        {
+          "new_q_id": "T_Q31",
+          "text": "To what extent has the team hired or supervised senior subject matter/functional experts?\n - More than 10 people: award 1 pt\n - 2 to 10 people: award 0.67 pts\n - 1 to 2 people: award 0.33 pts\n - None: award 0 pts",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.8,
+          "citation": "...evidence showing to what extent has the team hired or sup..."
+        }
+      ]
+    },
+    "TP": {
+      "full_name": "Tech / Product",
+      "total": 22,
+      "passed": 15,
+      "failed": 7,
+      "avg_conf": 0.96,
+      "questions": [
+        {
+          "new_q_id": "TP_Q1",
+          "text": "Did the company cite peer-reviewed articles about its core technology?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.79,
+          "citation": "...evidence showing did the company cite peer-reviewed artic..."
+        },
+        {
+          "new_q_id": "TP_Q2",
+          "text": "Has the company tested the technology internally?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.73,
+          "citation": "...evidence showing has the company tested the technology in..."
+        },
+        {
+          "new_q_id": "TP_Q3",
+          "text": "Does the company have third-party validation?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.74,
+          "citation": "...evidence showing does the company have third-party valida..."
+        },
+        {
+          "new_q_id": "TP_Q4",
+          "text": "Has the company identified whether or not there are other companies using the same or similar core technology?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.59,
+          "citation": "...evidence showing has the company identified whether or no..."
+        },
+        {
+          "new_q_id": "TP_Q5a",
+          "text": "Filed at least 1 patent application (utility, non-provisional, or PCT)",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.92,
+          "citation": "...evidence showing filed at least 1 patent application (uti..."
+        },
+        {
+          "new_q_id": "TP_Q5b",
+          "text": "Filed 3 or more patent applications",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.4,
+          "citation": "...evidence showing filed 3 or more patent applications..."
+        },
+        {
+          "new_q_id": "TP_Q5c",
+          "text": "Patent application serial numbers explicitly listed in materials",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.9,
+          "citation": "...evidence showing patent application serial numbers explic..."
+        },
+        {
+          "new_q_id": "TP_Q5_val",
+          "text": "Total count of filed patent applications",
+          "type": "INTEGER",
+          "verdict": 400,
+          "confidence": null,
+          "citation": null
+        },
+        {
+          "new_q_id": "TP_Q6a",
+          "text": "Owns or exclusively licenses at least 1 granted patent",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.61,
+          "citation": "...evidence showing owns or exclusively licenses at least 1 ..."
+        },
+        {
+          "new_q_id": "TP_Q6b",
+          "text": "Owns or exclusively licenses 3 or more granted patents",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.81,
+          "citation": "...evidence showing owns or exclusively licenses 3 or more g..."
+        },
+        {
+          "new_q_id": "TP_Q6_val",
+          "text": "Total count of granted patents",
+          "type": "INTEGER",
+          "verdict": 823,
+          "confidence": null,
+          "citation": null
+        },
+        {
+          "new_q_id": "TP_Q7a",
+          "text": "Technology validated in laboratory environment (TRL >= 4)",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.76,
+          "citation": "...evidence showing technology validated in laboratory envir..."
+        },
+        {
+          "new_q_id": "TP_Q7b",
+          "text": "Integrated system demonstrated in operational field environment (TRL >= 7)",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.73,
+          "citation": "...evidence showing integrated system demonstrated in operat..."
+        },
+        {
+          "new_q_id": "TP_Q7c",
+          "text": "TRL validated by external 3rd-party engineering report or partner letter",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.84,
+          "citation": "...evidence showing trl validated by external 3rd-party engi..."
+        },
+        {
+          "new_q_id": "TP_Q7_val",
+          "text": "Explicitly stated Technology Readiness Level (1-9)",
+          "type": "INTEGER",
+          "verdict": 498,
+          "confidence": null,
+          "citation": null
+        },
+        {
+          "new_q_id": "TP_Q8",
+          "text": "Does the company have an initial prototype?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.83,
+          "citation": "...evidence showing does the company have an initial prototy..."
+        },
+        {
+          "new_q_id": "TP_Q9",
+          "text": "Does the company have a full-scale prototype or software beta version?",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.52,
+          "citation": "...evidence showing does the company have a full-scale proto..."
+        },
+        {
+          "new_q_id": "TP_Q10",
+          "text": "Has the company identified its third-party validation entity (university, national lab, independent test organization, etc.)?",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.4,
+          "citation": "...evidence showing has the company identified its third-par..."
+        },
+        {
+          "new_q_id": "TP_Q11",
+          "text": "Does the company have documentation for the cost of third-party validation (anticipated or paid)?",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.91,
+          "citation": "...evidence showing does the company have documentation for ..."
+        },
+        {
+          "new_q_id": "TP_Q12a",
+          "text": "Engaged an independent 3rd-party validation entity",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.75,
+          "citation": "...evidence showing engaged an independent 3rd-party validat..."
+        },
+        {
+          "new_q_id": "TP_Q12b",
+          "text": "3rd-party technical validation testing completed with formal documentation delivered",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.89,
+          "citation": "...evidence showing 3rd-party technical validation testing c..."
+        },
+        {
+          "new_q_id": "TP_Q13",
+          "text": "Does the company have any field installations with potential customers?",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.61,
+          "citation": "...evidence showing does the company have any field installa..."
+        },
+        {
+          "new_q_id": "TP_Q14",
+          "text": "Does the company have any paid field installations?",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.49,
+          "citation": "...evidence showing does the company have any paid field ins..."
+        },
+        {
+          "new_q_id": "TP_Q15a",
+          "text": "Product certification (UL, ASTM) obtained or confirmed not needed",
+          "type": "BINARY",
+          "verdict": 0,
+          "confidence": 0.52,
+          "citation": "...evidence showing product certification (ul, astm) obtaine..."
+        },
+        {
+          "new_q_id": "TP_Q15b",
+          "text": "Formal written roadmap/testing plan to achieve required certifications",
+          "type": "BINARY",
+          "verdict": 1,
+          "confidence": 0.81,
+          "citation": "...evidence showing formal written roadmap/testing plan to a..."
+        }
+      ]
+    }
+  },
+  "human_questions": [
+    {
+      "cat_code": "IS",
+      "new_q_id": "IS_Q5a",
+      "text": "Describes company culture, mission values, and social purpose",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.84
+    },
+    {
+      "cat_code": "PMF",
+      "new_q_id": "PMF_Q1b",
+      "text": "Startup articulates why it is a superior option compared to alternatives",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.84
+    },
+    {
+      "cat_code": "PMF",
+      "new_q_id": "PMF_Q12",
+      "text": "Did the startup identify important psychographic attributes associated with their target audience? (ex. Our target audience tends to be skeptical about tech companies)",
+      "ai_suggestion": 0,
+      "ai_confidence": 0.66
+    },
+    {
+      "cat_code": "PMF",
+      "new_q_id": "PMF_Q18",
+      "text": "Has the start up identified and addressed the needs of all key stakeholders?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.71
+    },
+    {
+      "cat_code": "PMF",
+      "new_q_id": "PMF_Q23",
+      "text": "Startup has a logo that is discernible when smaller than \u00bd an inch.",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.81
+    },
+    {
+      "cat_code": "PMF",
+      "new_q_id": "PMF_Q24",
+      "text": "Startup has a logo that is discernible when billboard size.",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.71
+    },
+    {
+      "cat_code": "PMF",
+      "new_q_id": "PMF_Q25",
+      "text": "Startup has a logo that is discernible in greyscale",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.57
+    },
+    {
+      "cat_code": "PMF",
+      "new_q_id": "PMF_Q26",
+      "text": "Startup has a cohesive visual design system that is consistent across, e.g., email, website, and other assets.",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.87
+    },
+    {
+      "cat_code": "PMF",
+      "new_q_id": "PMF_Q28",
+      "text": "Startup has a brand strategy based in customer insights.",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.72
+    },
+    {
+      "cat_code": "PMF",
+      "new_q_id": "PMF_Q31",
+      "text": "Has the startup identified unique value that it can deliver to customers?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.76
+    },
+    {
+      "cat_code": "PMF",
+      "new_q_id": "PMF_Q34",
+      "text": "Has the startup validated customer experience pain-points through user research?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.67
+    },
+    {
+      "cat_code": "M",
+      "new_q_id": "M_Q2",
+      "text": "Does the startup have a clear operational plan to distribute its product or service via distribution channels that customers frequently use?",
+      "ai_suggestion": 0,
+      "ai_confidence": 0.57
+    },
+    {
+      "cat_code": "M",
+      "new_q_id": "M_Q4",
+      "text": "Has the startup designed a viral marketing campaign for their product or service targeted at a specific audience?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.68
+    },
+    {
+      "cat_code": "M",
+      "new_q_id": "M_Q5",
+      "text": "Has the startup created engagement mechanisms to allow for different levels of user participation?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.83
+    },
+    {
+      "cat_code": "M",
+      "new_q_id": "M_Q6",
+      "text": "Has the startup generated a clear strategy to on-board new users?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.95
+    },
+    {
+      "cat_code": "TP",
+      "new_q_id": "TP_Q16",
+      "text": "Is the product ready for manufacture or deployment?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.57
+    },
+    {
+      "cat_code": "L",
+      "new_q_id": "L_Q30",
+      "text": "Has the company identified technical information that is known to the company, is not generally known or readily accessible to competitors, and derives value from not being generally known or readily accessible?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.72
+    },
+    {
+      "cat_code": "L",
+      "new_q_id": "L_Q31",
+      "text": "Has the company identified business information that is known to the company, is not generally known or readily accessible to competitors, and derives value from not being generally known or readily accessible?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.45
+    },
+    {
+      "cat_code": "L",
+      "new_q_id": "L_Q47",
+      "text": "Are there any corporate or equity structural issues that may pose problems in the future, particularly for investors or partners?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company explains how it will address them. Otherwise, 0 pts.",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.75
+    },
+    {
+      "cat_code": "T",
+      "new_q_id": "T_Q23",
+      "text": "Is the team using the insight to actively improve the team dynamics of the founding team?\n - Very: award 1 pt\n - Somewhat: award 0.5 pts\n - Not much or N/A: award 0 pts",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.6
+    },
+    {
+      "cat_code": "T",
+      "new_q_id": "T_Q24",
+      "text": "Is there a structured approach to engaging the advisory team?\n - Yes\n - No",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.77
+    },
+    {
+      "cat_code": "T",
+      "new_q_id": "T_Q25",
+      "text": "What percent of advisors are actively engaged with the company?\n - More than 90%: award 1 pt\n - 50% to 90%: award 0.5 pts\n - Less than 50% or no information: award 0 pts",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.63
+    },
+    {
+      "cat_code": "IP",
+      "new_q_id": "IP_Q5",
+      "text": "Is there a compelling pain point that will make a customer write a check (revenues, costs, time, productivity, market reach, etc.)?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.63
+    },
+    {
+      "cat_code": "IP",
+      "new_q_id": "IP_Q6",
+      "text": "Is it a \"must-solve\" not merely \"nice-to-solve\" problem?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.75
+    },
+    {
+      "cat_code": "IP",
+      "new_q_id": "IP_Q9",
+      "text": "Are meaningful validating quotes included?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.88
+    },
+    {
+      "cat_code": "IP",
+      "new_q_id": "IP_Q10",
+      "text": "Does the problem suggest a large market?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.53
+    },
+    {
+      "cat_code": "IP",
+      "new_q_id": "IP_Q11",
+      "text": "Is the solution a compelling value proposition clearly benefitting the customer's business (revenues, costs, time, productivity, market, etc.)?",
+      "ai_suggestion": 0,
+      "ai_confidence": 0.56
+    },
+    {
+      "cat_code": "IP",
+      "new_q_id": "IP_Q13",
+      "text": "Does the solution clearly fit in the customer's ecosystem?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.62
+    },
+    {
+      "cat_code": "IP",
+      "new_q_id": "IP_Q14",
+      "text": "Does the presentation depict differentiation and technical elegance but avoid the weeds?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.76
+    },
+    {
+      "cat_code": "IP",
+      "new_q_id": "IP_Q15",
+      "text": "Does the presentation clearly define the market?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.68
+    },
+    {
+      "cat_code": "IP",
+      "new_q_id": "IP_Q20",
+      "text": "Does the methodology combine quantitative rigor with qualitative sensitivity?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.7
+    },
+    {
+      "cat_code": "IP",
+      "new_q_id": "IP_Q21",
+      "text": "Is there a balance between exciting opportunity vs. chance of success?",
+      "ai_suggestion": 0,
+      "ai_confidence": 0.66
+    },
+    {
+      "cat_code": "IP",
+      "new_q_id": "IP_Q23",
+      "text": "Does the presentation provide a framework to demonstrate differentiation (BCG grid and/or benefits matrix)?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.65
+    },
+    {
+      "cat_code": "IP",
+      "new_q_id": "IP_Q25",
+      "text": "Does the presentation demonstrate knowledge of the landscape, including past failures?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.63
+    },
+    {
+      "cat_code": "IP",
+      "new_q_id": "IP_Q30",
+      "text": "Does it remain focused on the essential value proposition?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.53
+    },
+    {
+      "cat_code": "IP",
+      "new_q_id": "IP_Q31",
+      "text": "Does it talk to important but peripheral issues and details while avoiding clutter?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.79
+    },
+    {
+      "cat_code": "IP",
+      "new_q_id": "IP_Q33",
+      "text": "Does it show that the company will invent only uniquely competitive elements?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.69
+    },
+    {
+      "cat_code": "IP",
+      "new_q_id": "IP_Q34",
+      "text": "Does it show an incremental development path that reduces risk, if possible?",
+      "ai_suggestion": 0,
+      "ai_confidence": 0.78
+    },
+    {
+      "cat_code": "IP",
+      "new_q_id": "IP_Q43",
+      "text": "Does the presentation show credibility and strategic orchestration of team members?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.77
+    },
+    {
+      "cat_code": "IP",
+      "new_q_id": "IP_Q44",
+      "text": "Does the team show domain expertise and unique customer insight?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.62
+    },
+    {
+      "cat_code": "IP",
+      "new_q_id": "IP_Q45",
+      "text": "Does the CEO hire people with skills better than their own?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.62
+    },
+    {
+      "cat_code": "IP",
+      "new_q_id": "IP_Q46",
+      "text": "Does the presentation show what's missing, if applicable, or show that nothing is missing?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.87
+    },
+    {
+      "cat_code": "IP",
+      "new_q_id": "IP_Q49",
+      "text": "Does the Company present thorough and thoughtful financials?",
+      "ai_suggestion": 1,
+      "ai_confidence": 0.46
+    }
+  ]
+}

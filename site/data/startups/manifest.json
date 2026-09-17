@@ -1,0 +1,28 @@
+{
+  "startups": [
+    {
+      "id": "solarpure",
+      "name": "SolarPure Inc.",
+      "cohort_year": 2025,
+      "founder": "Dr. Elena Vasquez",
+      "category": "Solar Performance Intelligence",
+      "file": "solarpure.json"
+    },
+    {
+      "id": "aquavolt",
+      "name": "AquaVolt Energy",
+      "cohort_year": 2025,
+      "founder": "Marcus Chen",
+      "category": "Electrochemical Water Treatment",
+      "file": "aquavolt.json"
+    },
+    {
+      "id": "carbonweave",
+      "name": "CarbonWeave Materials",
+      "cohort_year": 2025,
+      "founder": "Dr. Priya Sharma",
+      "category": "Carbon Fiber Recycling",
+      "file": "carbonweave.json"
+    }
+  ]
+}
