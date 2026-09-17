@@ -82,23 +82,25 @@ body {
 
 /* LEFT PANE */
 .left-pane {
-  width: 50%;
+  flex: 1 1 50%;
+  min-width: 0;
   background: var(--bg-left);
   border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
 }
 .pane-header {
-  height: 68px;
-  padding: 0 32px;
+  min-height: 68px;
+  padding: 12px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
   border-bottom: 1px solid var(--border);
   background: #fff;
   flex-shrink: 0;
 }
-.pane-title { font-weight: 700; font-size: 16px; color: var(--text-main); display: flex; align-items: center; gap: 8px;}
+.pane-title { font-weight: 700; font-size: 16px; color: var(--text-main); display: flex; align-items: center; gap: 8px; min-width: 0; }
 .step-pill {
   background: var(--bg-left);
   padding: 8px 16px;
@@ -106,22 +108,29 @@ body {
   font-size: 13px;
   font-weight: 600;
   color: var(--text-muted);
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 .pane-body {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
+  overflow-x: hidden;
   padding: 32px;
   display: flex;
   flex-direction: column;
   gap: 32px;
+  /* Lets the doc cards respond to the pane's own width, not the viewport's */
+  container-type: inline-size;
+  container-name: docpane;
 }
 
 /* Document Cards */
 .doc-card {
   background: #fff;
   border-radius: 8px;
-  overflow: hidden;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  /* No overflow:hidden here - it silently clipped extraction text */
 }
 .doc-card-header {
   background: var(--card-header);
@@ -130,27 +139,51 @@ body {
   font-size: 15px;
   font-weight: 600;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
+  border-radius: 8px 8px 0 0;
+  overflow-wrap: anywhere;
 }
 .doc-card-body {
   display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  border-radius: 0 0 8px 8px;
+}
+.doc-text-col,
+.doc-ext-col {
+  /* min-width:0 is what allows long words/URLs to wrap instead of
+     pushing the column past the card edge */
+  min-width: 0;
+  padding: 24px;
 }
 .doc-text-col {
-  width: 60%;
-  padding: 24px;
+  flex: 3 1 280px;
   border-right: 1px solid var(--border);
 }
 .doc-ext-col {
-  width: 40%;
-  padding: 24px;
+  flex: 2 1 200px;
   background: #fafafa;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  border-radius: 0 0 8px 0;
+}
+/* When the pane is too narrow for two readable columns, stack them */
+@container docpane (max-width: 520px) {
+  .doc-text-col {
+    flex-basis: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .doc-ext-col {
+    flex-basis: 100%;
+    border-radius: 0 0 8px 8px;
+  }
 }
 .col-label {
   font-size: 12px;
+  overflow-wrap: anywhere;
   font-weight: 700;
   color: var(--text-muted);
   letter-spacing: 0.05em;
@@ -162,6 +195,8 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: var(--text-main);
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 .raw-text .highlight {
   background: var(--yellow-light);
@@ -173,6 +208,9 @@ body {
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 16px;
+  min-width: 0;
+  /* Grows with its own content rather than being cropped */
+  flex: 0 0 auto;
 }
 .ext-box.highlighted {
   border-color: var(--accent-yellow);
@@ -184,18 +222,22 @@ body {
   color: var(--text-muted);
   text-transform: uppercase;
   margin-bottom: 6px;
+  overflow-wrap: anywhere;
 }
 .ext-value {
   font-size: 15px;
   font-weight: 600;
   color: var(--text-main);
   line-height: 1.4;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
 }
 
 
 /* RIGHT PANE */
 .right-pane {
-  width: 50%;
+  flex: 1 1 50%;
+  min-width: 0;
   background: var(--bg-right);
   display: flex;
   flex-direction: column;
@@ -206,8 +248,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
   flex-shrink: 0;
 }
+.step-info { min-width: 0; }
 .step-counter {
   font-size: 13px;
   font-weight: 700;
@@ -217,9 +262,10 @@ body {
   margin-bottom: 8px;
 }
 .step-title {
-  font-size: 28px;
+  font-size: clamp(20px, 2.2vw, 28px);
   font-weight: 800;
   color: var(--text-main);
+  overflow-wrap: anywhere;
 }
 .progress-pill {
   background: var(--bg-left);
@@ -228,10 +274,13 @@ body {
   font-size: 14px;
   font-weight: 600;
   color: var(--text-main);
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 
 .right-scroll-area {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
   padding: 32px;
   display: flex;
@@ -258,6 +307,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
   margin-bottom: 16px;
 }
 .ai-checks-count {
@@ -315,6 +366,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 .h-tag {
   background: var(--bg-left);
@@ -342,6 +395,7 @@ body {
   font-weight: 600;
   color: var(--text-main);
   line-height: 1.6;
+  overflow-wrap: anywhere;
 }
 
 .h-card-footer {
@@ -350,6 +404,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
   background: #f8fafc;
 }
 .link-source {
@@ -386,12 +442,16 @@ body {
 
 /* FOOTER */
 .bottom-nav {
-  height: 88px;
+  min-height: 88px;
   border-top: 1px solid var(--border);
-  padding: 0 32px;
+  padding: 16px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* Keeps a real gutter between the buttons and the progress bar so the
+     rounded ends of the track are always visible */
+  gap: 24px;
+  flex-wrap: wrap;
   background: #fff;
   flex-shrink: 0;
 }
@@ -404,6 +464,9 @@ body {
   font-weight: 600;
   color: var(--text-muted);
   cursor: pointer;
+  /* Buttons keep their intrinsic width instead of being squeezed */
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 .nav-btn:hover:not(:disabled) { background: var(--bg-left); color: var(--text-main); }
 .nav-btn:disabled { opacity: 0.5; cursor: not-allowed; }
@@ -411,7 +474,9 @@ body {
 .nav-btn.btn-next.ready { background: var(--accent-blue); color: #fff; }
 
 .overall-progress {
-  flex: 1;
+  /* Takes the leftover room, but never eats into the nav buttons */
+  flex: 1 1 180px;
+  min-width: 0;
   max-width: 400px;
   display: flex;
   flex-direction: column;
@@ -422,18 +487,41 @@ body {
   font-size: 13px;
   font-weight: 600;
   color: var(--text-muted);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 .progress-track {
   width: 100%;
+  min-width: 0;
   height: 8px;
   background: var(--border);
-  border-radius: 4px;
+  border-radius: 999px;
   overflow: hidden;
 }
 .progress-fill {
   height: 100%;
+  min-width: 0;
   background: var(--accent-blue);
+  border-radius: 999px;
   transition: width 0.3s;
+}
+
+/* Narrow panes: put the full-width progress bar on its own row above the
+   buttons instead of letting the three items fight for one line */
+@media (max-width: 900px) {
+  .bottom-nav {
+    row-gap: 14px;
+  }
+  .overall-progress {
+    order: -1;
+    flex-basis: 100%;
+    max-width: none;
+  }
+  .btn-prev { order: 1; }
+  .btn-next { order: 2; }
 }
 
 /* MODAL */
