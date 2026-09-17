@@ -6,9 +6,7 @@
   <title>CleanTech Open 2025 | Scoring Interface</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -123,6 +121,28 @@
       <div style="display:flex; justify-content:flex-end; gap:12px; margin-top: 24px;">
         <button class="nav-btn" onclick="document.getElementById('submit-modal').style.display='none'">Cancel</button>
         <button class="nav-btn btn-next" id="modal-confirm-btn" onclick="alert('Submitted successfully!')">Confirm & Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Internal Login Modal -->
+  <div class="modal-overlay" id="login-modal" style="display:none; z-index: 999;">
+    <div class="modal-content" style="max-width: 400px; padding: 40px;">
+      <div style="text-align: center; margin-bottom: 24px;">
+        <h2 style="font-size: 24px; font-weight: 800;">Internal Portal</h2>
+        <p style="color: var(--text-muted); font-size: 14px;">Enter your assigned scorer credentials.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div>
+          <label style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Scorer ID</label>
+          <input type="text" id="auth-judge-id" style="width: 100%; padding: 12px; margin-top: 8px; border: 1px solid var(--border); border-radius: 6px; font-family: var(--sans); font-size: 15px; outline: none;" placeholder="e.g. J-042">
+        </div>
+        <div>
+          <label style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Passcode</label>
+          <input type="password" id="auth-passcode" style="width: 100%; padding: 12px; margin-top: 8px; border: 1px solid var(--border); border-radius: 6px; font-family: var(--sans); font-size: 15px; outline: none;">
+        </div>
+        <button class="nav-btn btn-next ready" style="width: 100%; justify-content: center; margin-top: 8px;" onclick="window.CTO.App.handleLogin()">Authenticate</button>
+        <div id="login-error" style="color: var(--accent-red); font-size: 13px; text-align: center; display: none;">Invalid credentials.</div>
       </div>
     </div>
   </div>

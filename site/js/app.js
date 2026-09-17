@@ -11,26 +11,44 @@ CTO.App = {
   },
 
   init() {
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.init(); // Initialize widget
-      
-      const user = window.netlifyIdentity.currentUser();
-      if (!user) {
-        // Open modal if not logged in
-        window.netlifyIdentity.open('login');
-        
-        window.netlifyIdentity.on("login", user => {
-          this.currentUser = user;
-          window.netlifyIdentity.close();
-          this.startApp();
-        });
-      } else {
-        this.currentUser = user;
-        this.startApp();
-      }
-    } else {
-      // Fallback
+    const stored = localStorage.getItem('cto_auth');
+    if (stored) {
+      this.currentUser = JSON.parse(stored);
+      document.getElementById('login-modal').style.display = 'none';
       this.startApp();
+    } else {
+      document.getElementById('login-modal').style.display = 'flex';
+    }
+  },
+
+  async handleLogin() {
+    const id = document.getElementById('auth-judge-id').value.trim();
+    const pass = document.getElementById('auth-passcode').value.trim();
+    if (!id || !pass) return;
+    
+    const btn = document.querySelector('#login-modal button');
+    btn.textContent = 'Verifying...';
+    
+    try {
+      const res = await fetch('/.netlify/functions/sync-scores', {
+        method: 'POST',
+        body: JSON.stringify({ startup_id: 'auth_check', scores: [], judge_id: id, passcode: pass })
+      });
+      
+      if (res.ok) {
+        const authData = { id, passcode: pass };
+        localStorage.setItem('cto_auth', JSON.stringify(authData));
+        this.currentUser = authData;
+        document.getElementById('login-modal').style.display = 'none';
+        this.startApp();
+      } else {
+        document.getElementById('login-error').style.display = 'block';
+        btn.textContent = 'Authenticate';
+      }
+    } catch (e) {
+      document.getElementById('login-error').textContent = 'Network error connecting to database.';
+      document.getElementById('login-error').style.display = 'block';
+      btn.textContent = 'Authenticate';
     }
   },
 
@@ -220,9 +238,8 @@ CTO.App = {
       this.state.syncQueue = []; // Optimistically clear
       
       try {
-        const token = window.netlifyIdentity?.currentUser()?.token?.access_token;
-        if (!token) {
-           console.log("No token available, skipping sync.");
+        if (!this.currentUser || !this.currentUser.id) {
+           console.log("No credentials available, skipping sync.");
            this.state.syncQueue.unshift(...batch);
            return;
         }
@@ -232,11 +249,12 @@ CTO.App = {
         const res = await fetch('/.netlify/functions/sync-scores', {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
+            'Content-Type': 'application/json'
           },
           body: JSON.stringify({
             startup_id: 'solarpure_inc', // Connected to the mock/demo startup
+            judge_id: this.currentUser.id,
+            passcode: this.currentUser.passcode,
             scores: batch.map(b => ({ qid: b.qid, val: b.value }))
           })
         });
@@ -247,22 +265,13 @@ CTO.App = {
         if (!res.ok) throw new Error("NETWORK_ERROR");
 
       } catch (error) {
-        // Restore batch to queue to prevent data loss
         this.state.syncQueue.unshift(...batch);
         
         if (error.message === "401_UNAUTHORIZED") {
-           console.warn("JWT Expired. Suspending queue and requesting silent token refresh...");
-           this.state.isRefreshingToken = true;
-           
-           if (window.netlifyIdentity) {
-             window.netlifyIdentity.refresh().then((jwt) => {
-               console.log("Token refreshed silently. Resuming sync queue.");
-               this.state.isRefreshingToken = false;
-             }).catch(() => {
-               alert('Your session has expired. Please re-authenticate to save your latest scores.');
-               window.netlifyIdentity.open('login');
-             });
-           }
+           console.warn("Credentials rejected by server.");
+           localStorage.removeItem('cto_auth');
+           alert('Your scorer access has been revoked or expired. Please log in again.');
+           document.getElementById('login-modal').style.display = 'flex';
         }
       }
     }, 3000);
