@@ -61,7 +61,7 @@ exports.handler = async (event, context) => {
     console.error("Database Error:", err);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: "Internal Database Error" })
+      body: JSON.stringify({ error: "DB Error: " + err.message })
     };
   }
 };
