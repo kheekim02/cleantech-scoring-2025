@@ -10,7 +10,30 @@ CTO.App = {
     syncQueue: [] // REC 5: Optimistic Sync Queue
   },
 
-  async init() {
+  init() {
+    // 1. Enforce Authentication (Netlify Identity)
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.open(); // Force login
+        } else {
+          this.currentUser = user;
+          this.startApp();
+        }
+      });
+      window.netlifyIdentity.on("login", user => {
+        this.currentUser = user;
+        window.netlifyIdentity.close();
+        this.startApp();
+      });
+      window.netlifyIdentity.init();
+    } else {
+      // Fallback for local development
+      this.startApp();
+    }
+  },
+
+  async startApp() {
     try {
       const res = await fetch('data/startups/solarpure.json');
       const data = await res.json();
