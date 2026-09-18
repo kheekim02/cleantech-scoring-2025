@@ -6,7 +6,7 @@
   <title>CleanTech Open 2025 | Scoring Interface</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="style.css?v=15">
+  <link rel="stylesheet" href="style.css?v=16">
 </head>
 <body>
 
@@ -64,8 +64,16 @@
           <div class="step-counter" id="step-counter">STEP 1 OF 10</div>
           <h1 class="step-title" id="step-title">Business Canvas</h1>
         </div>
-        <div class="progress-pill" id="step-progress-pill">
-          0 / 2 human questions done
+        <div class="header-metrics">
+          <div class="overall-progress">
+            <div class="progress-label">OVERALL ASSESSMENT PROGRESS</div>
+            <div class="progress-track">
+              <div class="progress-fill" id="overall-progress-fill" style="width: 0%"></div>
+            </div>
+          </div>
+          <div class="progress-pill" id="step-progress-pill">
+            0 / 2 human questions done
+          </div>
         </div>
       </div>
 
@@ -99,12 +107,6 @@
       <!-- Footer Navigation -->
       <div class="bottom-nav">
         <button class="nav-btn btn-prev" id="btn-prev" disabled>← Previous</button>
-        <div class="overall-progress">
-          <div class="progress-label">Overall Assessment Progress</div>
-          <div class="progress-track">
-            <div class="progress-fill" id="overall-progress-fill" style="width: 0%"></div>
-          </div>
-        </div>
         <button class="nav-btn btn-next" id="btn-next">Next Section →</button>
       </div>
       
@@ -154,8 +156,8 @@
     </div>
   </div>
 
-  <script src="js/scoring.js?v=15"></script>
-  <script src="js/render.js?v=15"></script>
-  <script src="js/app.js?v=15"></script>
+  <script src="js/scoring.js?v=16"></script>
+  <script src="js/render.js?v=16"></script>
+  <script src="js/app.js?v=16"></script>
 </body>
 </html>
