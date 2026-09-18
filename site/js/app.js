@@ -118,15 +118,6 @@ CTO.App = {
 
     // REC 4: Event Delegation for human review buttons
     document.getElementById('human-cards-container').addEventListener('click', (e) => {
-      // Button answer logic
-      const btn = e.target.closest('.h-btn');
-      if (btn) {
-        const qid = btn.dataset.qid;
-        const val = parseInt(btn.dataset.val, 10);
-        this.answerHuman(qid, val);
-        return;
-      }
-      
       // Scroll to citation logic
       let card = e.target.closest('.h-card');
       const link = e.target.closest('.link-source');
@@ -142,6 +133,14 @@ CTO.App = {
             targetSpan.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
         }
+      }
+
+      // Button answer logic
+      const btn = e.target.closest('.h-btn');
+      if (btn) {
+        const qid = btn.dataset.qid;
+        const val = parseInt(btn.dataset.val, 10);
+        this.answerHuman(qid, val);
       }
     });
 
