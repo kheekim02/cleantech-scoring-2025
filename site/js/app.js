@@ -30,7 +30,7 @@ CTO.App = {
     btn.textContent = 'Verifying...';
     
     try {
-      const res = await fetch('/.netlify/functions/sync-scores', {
+      const res = await fetch('/api/sync-scores', {
         method: 'POST',
         body: JSON.stringify({ startup_id: 'auth_check', scores: [], judge_id: id, passcode: pass })
       });
@@ -57,7 +57,7 @@ CTO.App = {
 
   async loadStartupsList() {
     try {
-      const res = await fetch(`/.netlify/functions/list-startups?judge_id=${this.currentUser.id}&passcode=${this.currentUser.passcode}`);
+      const res = await fetch(`/api/list-startups?judge_id=${this.currentUser.id}&passcode=${this.currentUser.passcode}`);
       if (res.ok) {
         const startups = await res.json();
         const picker = document.getElementById('startup-picker');
@@ -85,7 +85,7 @@ CTO.App = {
   async startApp() {
 
     try {
-      const res = await fetch(`/.netlify/functions/get-startup?id=${this.state.activeStartupId}&judge_id=${this.currentUser.id}&passcode=${this.currentUser.passcode}`);
+      const res = await fetch(`/api/get-startup?id=${this.state.activeStartupId}&judge_id=${this.currentUser.id}&passcode=${this.currentUser.passcode}`);
       const data = await res.json();
       this.state.startups[this.state.activeStartupId] = data;
       document.getElementById('hdr-startup-name').textContent = data.meta?.name || this.state.activeStartupId;
@@ -295,7 +295,7 @@ CTO.App = {
 
         console.log(`[Sync Worker] Dispatching ${batch.length} updates...`);
         
-        const res = await fetch('/.netlify/functions/sync-scores', {
+        const res = await fetch('/api/sync-scores', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

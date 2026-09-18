@@ -46,7 +46,7 @@ window.CTO.Render = {
               <div class="pdf-header" style="background: var(--surface-sunk); padding: 12px 16px; border-bottom: 1px solid var(--border); font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 8px;">
                 ${this.icons.doc} <span>${pdf.label || pdf.filename}</span>
               </div>
-              <iframe src="${pdf.url}" width="100%" height="100%" style="border: none; flex: 1;"></iframe>
+              <iframe src="${pdf.url}#navpanes=0&pagemode=none" width="100%" height="100%" style="border: none; flex: 1;"></iframe>
             </div>
           `;
         });
