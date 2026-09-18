@@ -395,3 +395,14 @@ body {
 }
 .modal-content h2 { margin-bottom: 16px; font-size: 24px; font-weight: 800; }
 .modal-content p { color: var(--text-muted); font-size: 16px; line-height: 1.6; }
+
+/* Active Citation Highlight */
+.raw-text .highlight {
+  transition: all 0.3s ease;
+}
+.raw-text .highlight.active-cite {
+  background: #ffdb4d;
+  border-bottom: 2px solid #e69500;
+  box-shadow: 0 0 0 4px #ffdb4d;
+  color: #000;
+}

@@ -118,11 +118,31 @@ CTO.App = {
 
     // REC 4: Event Delegation for human review buttons
     document.getElementById('human-cards-container').addEventListener('click', (e) => {
+      // Button answer logic
       const btn = e.target.closest('.h-btn');
-      if (!btn) return;
-      const qid = btn.dataset.qid;
-      const val = parseInt(btn.dataset.val, 10);
-      this.answerHuman(qid, val);
+      if (btn) {
+        const qid = btn.dataset.qid;
+        const val = parseInt(btn.dataset.val, 10);
+        this.answerHuman(qid, val);
+        return;
+      }
+      
+      // Scroll to citation logic
+      let card = e.target.closest('.h-card');
+      const link = e.target.closest('.link-source');
+      if (link) e.preventDefault(); // prevent default anchor jump
+      
+      if (card) {
+        const citeId = card.dataset.cite;
+        if (citeId) {
+          const targetSpan = document.getElementById(citeId);
+          if (targetSpan) {
+            document.querySelectorAll('.cite.highlight').forEach(el => el.classList.remove('active-cite'));
+            targetSpan.classList.add('active-cite');
+            targetSpan.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }
+      }
     });
 
     // REC 2: Event Delegation for audit list jumps

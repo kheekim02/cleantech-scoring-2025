@@ -136,7 +136,7 @@ window.CTO.Render = {
         if (confNum < 0.60) tierClass = 'conf-red';
 
         hHtml += `
-          <div class="h-card" id="card-${q.new_q_id}" style="animation-delay: ${(idx * 40) + 100}ms">
+          <div class="h-card" id="card-${q.new_q_id}" data-cite="${q.citation_id || ''}" style="animation-delay: ${(idx * 40) + 100}ms; cursor: pointer;">
             <div class="h-card-header">
               <div>
                 <span class="h-tag">${q.cat_code}</span>
