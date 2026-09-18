@@ -36,34 +36,38 @@ window.CTO.Render = {
       return;
     }
 
-    let html = '';
-    sections.forEach((sec, idx) => {
-      let extHtml = '';
-      if (sec.extractions && sec.extractions.length > 0) {
-        extHtml = sec.extractions.map(ext => `
-          <div class="ext-box ${ext.highlight ? 'highlighted' : ''}">
-            <div class="ext-label">${ext.label}</div>
-            <div class="ext-value">${ext.value}</div>
+    // Render PDF Iframes
+    let html = '<div class="pdf-viewer-container" style="display:flex; flex-direction:column; gap:24px; height:100%; width:100%;">';
+    sections.forEach((sec) => {
+      if (sec.pdfs && sec.pdfs.length > 0) {
+        sec.pdfs.forEach((pdf, idx) => {
+          html += `
+            <div class="pdf-wrapper" style="flex: 1; display: flex; flex-direction: column; min-height: 600px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; animation-delay: ${idx * 40}ms; background: #fff;">
+              <div class="pdf-header" style="background: var(--surface-sunk); padding: 12px 16px; border-bottom: 1px solid var(--border); font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+                ${this.icons.doc} <span>${pdf.label || pdf.filename}</span>
+              </div>
+              <iframe src="${pdf.url}" width="100%" height="100%" style="border: none; flex: 1;"></iframe>
+            </div>
+          `;
+        });
+      } else if (sec.text) {
+        // Fallback for old HTML sections if any still exist
+        html += `
+          <div class="doc-card">
+            <div class="doc-card-header">${this.icons.doc}<span>${sec.heading}</span></div>
+            <div class="doc-card-body">
+              <div class="doc-text-col">
+                <div class="col-label">Raw Application Text</div>
+                <div class="raw-text">${sec.text}</div>
+              </div>
+            </div>
           </div>
-        `).join('');
+        `;
       }
-
-      html += `
-        <div class="doc-card" style="animation-delay: ${idx * 40}ms">
-          <div class="doc-card-header">${this.icons.doc}<span>${sec.heading}</span></div>
-          <div class="doc-card-body">
-            <div class="doc-text-col">
-              <div class="col-label">Raw Application Text</div>
-              <div class="raw-text">${sec.text}</div>
-            </div>
-            <div class="doc-ext-col">
-              <div class="col-label">AI Data Extraction</div>
-              ${extHtml || '<div class="ext-value" style="color:var(--text-faint); font-weight:400; font-size:13px;">No specific extractions detected.</div>'}
-            </div>
-          </div>
-        </div>
-      `;
     });
+    html += '</div>';
+    
+    container.style.padding = '0'; // Let the iframes stretch fully
     container.innerHTML = html;
   },
 
@@ -129,14 +133,24 @@ window.CTO.Render = {
         const suggYes = q.ai_suggestion === 1;
         const suggNo = q.ai_suggestion === 0;
 
-        // Confidence Tier Badge Logic
         const confNum = parseFloat(q.ai_confidence || 0);
         let tierClass = 'conf-amber';
         if (confNum >= 0.85) tierClass = 'conf-green';
         if (confNum < 0.60) tierClass = 'conf-red';
 
+        // Prepare citation block
+        const hasCitation = q.verbatim_citation && q.verbatim_citation.length > 5;
+        const citeHtml = hasCitation ? `
+          <div class="h-card-citation" style="display: none; padding: 12px; background: #fff8e1; border-left: 3px solid var(--accent-yellow); margin: 0 0 16px 0; font-size: 13px; color: var(--text-main);">
+            <strong style="color: var(--accent-orange);">AI Citation:</strong> "${q.verbatim_citation}"<br>
+            <em style="color: var(--text-muted); display: block; margin-top: 6px;">Use Cmd+F / Ctrl+F in the PDF viewer to locate this text.</em>
+          </div>
+        ` : '';
+
+        const linkHtml = hasCitation ? `<a href="#" class="link-source" data-action="toggle-cite">${this.icons.link} View AI Citation</a>` : `<span style="color:var(--text-faint); font-size:13px;">No citation extracted</span>`;
+
         hHtml += `
-          <div class="h-card" id="card-${q.new_q_id}" data-cite="${q.citation_id || ''}" style="animation-delay: ${(idx * 40) + 100}ms; cursor: pointer;">
+          <div class="h-card" id="card-${q.new_q_id}" style="animation-delay: ${(idx * 40) + 100}ms;">
             <div class="h-card-header">
               <div>
                 <span class="h-tag">${q.cat_code}</span>
@@ -152,8 +166,9 @@ window.CTO.Render = {
             <div class="h-card-body">
               ${q.text}
             </div>
+            ${citeHtml}
             <div class="h-card-footer">
-              <a href="#" class="link-source">${this.icons.link} Linked to Source</a>
+              ${linkHtml}
               <div class="h-actions">
                 <button class="h-btn yes ${isYesSelected}" data-qid="${q.new_q_id}" data-val="1">
                   ${this.icons.check} YES

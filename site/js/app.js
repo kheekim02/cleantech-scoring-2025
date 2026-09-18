@@ -118,19 +118,17 @@ CTO.App = {
 
     // REC 4: Event Delegation for human review buttons
     document.getElementById('human-cards-container').addEventListener('click', (e) => {
-      // Scroll to citation logic
+      // Toggle citation logic for PDFs
       let card = e.target.closest('.h-card');
       const link = e.target.closest('.link-source');
-      if (link) e.preventDefault(); // prevent default anchor jump
-      
-      if (card) {
-        const citeId = card.dataset.cite;
-        if (citeId) {
-          const targetSpan = document.getElementById(citeId);
-          if (targetSpan) {
-            document.querySelectorAll('.cite.highlight').forEach(el => el.classList.remove('active-cite'));
-            targetSpan.classList.add('active-cite');
-            targetSpan.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (link) {
+        e.preventDefault(); // prevent default anchor jump
+        if (card) {
+          const citeBlock = card.querySelector('.h-card-citation');
+          if (citeBlock) {
+            const isHidden = citeBlock.style.display === 'none';
+            citeBlock.style.display = isHidden ? 'block' : 'none';
+            link.innerHTML = isHidden ? `${CTO.Render.icons.link} Hide Citation` : `${CTO.Render.icons.link} View AI Citation`;
           }
         }
       }
