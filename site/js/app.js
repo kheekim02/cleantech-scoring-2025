@@ -88,7 +88,7 @@ CTO.App = {
       const res = await fetch(`/.netlify/functions/get-startup?id=${this.state.activeStartupId}&judge_id=${this.currentUser.id}&passcode=${this.currentUser.passcode}`);
       const data = await res.json();
       this.state.startups[this.state.activeStartupId] = data;
-      document.getElementById('badge-name').textContent = data.meta?.name || this.state.activeStartupId;
+      document.getElementById('hdr-startup-name').textContent = data.meta?.name || this.state.activeStartupId;
     } catch (e) {
       console.error("Failed to load startup", e);
     }

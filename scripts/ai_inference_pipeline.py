@@ -281,9 +281,9 @@ def update_database_results(startup_id: str, results: list[dict]):
     for res in results:
         qid = res.get("question_id")
         score = res.get("binary_score")
-        conf = float(res.get("confidence", 0.80))
-        citation = str(res.get("citation", "")).replace("'", "''")[:1000]
-        page = int(res.get("page_number", 1))
+        conf = float(res.get("confidence") or 0.80)
+        citation = str(res.get("citation") or "No citation provided.").replace("'", "''")[:1000]
+        page = int(res.get("page_number") or 1)
 
         if qid and score in (0, 1):
             sql_statements.append(f"""
