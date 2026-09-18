@@ -1,3 +1,4 @@
+console.log('DEBUG V6: app.js loaded');
 window.CTO = window.CTO || {};
 
 CTO.App = {
