@@ -134,9 +134,9 @@ CTO.App = {
       }
 
       // Button answer logic
-      const card = e.target.closest('.h-card.collapsed');
-      if (card) {
-        CTO.Render.expandCard(card.dataset.qid, card.dataset.citation);
+      const collapsedCard = e.target.closest('.h-card.collapsed');
+      if (collapsedCard) {
+        CTO.Render.expandCard(collapsedCard.dataset.qid, collapsedCard.dataset.citation);
         return;
       }
       
