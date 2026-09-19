@@ -170,12 +170,24 @@ window.CTO.Render = {
             <div class="h-card-footer">
               ${linkHtml}
               <div class="h-actions">
-                <button class="h-btn yes ${isYesSelected}" data-qid="${q.new_q_id}" data-val="1">
-                  ${this.icons.check} YES
-                </button>
-                <button class="h-btn no ${isNoSelected}" data-qid="${q.new_q_id}" data-val="0">
-                  ${this.icons.cross} NO
-                </button>
+                ${q.text.includes('0.5 pts') || q.text.includes('0.5 points') ? `
+                  <button class="h-btn yes ${ans === 1 ? 'selected' : ''}" data-qid="${q.new_q_id}" data-val="1">
+                    1 PT
+                  </button>
+                  <button class="h-btn yes ${ans === 0.5 ? 'selected' : ''}" data-qid="${q.new_q_id}" data-val="0.5" style="${ans === 0.5 ? 'background: var(--accent-orange); color: white; border-color: var(--accent-orange);' : ''}">
+                    0.5 PTS
+                  </button>
+                  <button class="h-btn no ${ans === 0 ? 'selected' : ''}" data-qid="${q.new_q_id}" data-val="0">
+                    0 PTS
+                  </button>
+                ` : `
+                  <button class="h-btn yes ${ans === 1 ? 'selected' : ''}" data-qid="${q.new_q_id}" data-val="1">
+                    ${this.icons.check} YES
+                  </button>
+                  <button class="h-btn no ${ans === 0 ? 'selected' : ''}" data-qid="${q.new_q_id}" data-val="0">
+                    ${this.icons.cross} NO
+                  </button>
+                `}
               </div>
             </div>
           </div>
@@ -201,15 +213,12 @@ window.CTO.Render = {
   },
 
   updateQuestionState(qid, value) {
-    const btnYes = document.querySelector(`.h-btn.yes[data-qid="${qid}"]`);
-    const btnNo = document.querySelector(`.h-btn.no[data-qid="${qid}"]`);
-    if (!btnYes || !btnNo) return;
-
-    btnYes.classList.remove('selected');
-    btnNo.classList.remove('selected');
-
-    if (value === 1) btnYes.classList.add('selected');
-    if (value === 0) btnNo.classList.add('selected');
+    const btns = document.querySelectorAll(`.h-btn[data-qid="${qid}"]`);
+    btns.forEach(btn => btn.classList.remove('selected'));
+    if (value !== null && value !== undefined) {
+      const selectedBtn = Array.from(btns).find(b => parseFloat(b.dataset.val) === value);
+      if (selectedBtn) selectedBtn.classList.add('selected');
+    }
   },
 
   updateProgressText(stepAnswered, stepTotal) {

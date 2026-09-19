@@ -137,7 +137,7 @@ CTO.App = {
       const btn = e.target.closest('.h-btn');
       if (btn) {
         const qid = btn.dataset.qid;
-        const val = parseInt(btn.dataset.val, 10);
+        const val = parseFloat(btn.dataset.val);
         this.answerHuman(qid, val);
       }
     });
