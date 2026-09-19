@@ -413,3 +413,43 @@ body {
   box-shadow: 0 0 0 4px #ffdb4d;
   color: #000;
 }
+
+
+/* Progressive Disclosure UX */
+.h-card {
+  transition: all 0.3s ease;
+}
+.h-card.collapsed {
+  cursor: pointer;
+  padding: 12px 16px;
+  opacity: 0.6;
+  background: var(--surface-sunk);
+}
+.h-card.collapsed:hover {
+  opacity: 1;
+  background: var(--surface-hover);
+}
+.h-card.collapsed .h-ai-suggest,
+.h-card.collapsed .h-actions,
+.h-card.collapsed .h-card-citation,
+.h-card.collapsed .link-source {
+  display: none !important;
+}
+.h-collapsed-summary {
+  display: none;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-green);
+  margin-top: 6px;
+}
+.h-card.collapsed .h-collapsed-summary {
+  display: block;
+}
+.h-card.collapsed .h-card-title {
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 4px;
+  color: var(--text-muted);
+}

@@ -149,8 +149,14 @@ window.CTO.Render = {
 
         const linkHtml = hasCitation ? `<a href="#" class="link-source" data-action="toggle-cite">${this.icons.link} View AI Citation</a>` : `<span style="color:var(--text-faint); font-size:13px;">No citation extracted</span>`;
 
+        
+        const isAnswered = ans !== undefined && ans !== null;
+        const collapsedClass = isAnswered ? 'collapsed' : '';
+        const summaryText = isAnswered ? `Answered: ${ans} PTS` : '';
+        const safeCit = (q.verbatim_citation || '').replace(/"/g, '&quot;');
+        
         hHtml += `
-          <div class="h-card" id="card-${q.new_q_id}" style="animation-delay: ${(idx * 40) + 100}ms;">
+          <div class="h-card ${collapsedClass}" id="card-${q.new_q_id}" data-qid="${q.new_q_id}" data-citation="${safeCit}" style="animation-delay: ${(idx * 40) + 100}ms;">
             <div class="h-card-header">
               <div>
                 <span class="h-tag">${q.cat_code}</span>
@@ -196,6 +202,17 @@ window.CTO.Render = {
     }
     
     hContainer.innerHTML = hHtml;
+    
+    // Progressive Disclosure Init: Collapse all unanswered except the first one
+    setTimeout(() => {
+       const allUnanswered = Array.from(document.querySelectorAll('.h-card:not(.collapsed)'));
+       allUnanswered.forEach((c, index) => {
+           if (index > 0) c.classList.add('collapsed');
+       });
+       if (allUnanswered.length > 0) {
+           allUnanswered[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+       }
+    }, 100);
   },
 
   renderFooter(stepIndex, totalSteps) {
@@ -209,6 +226,31 @@ window.CTO.Render = {
        btnNext.innerHTML = `Submit Evaluation ${this.icons.arrowRight}`;
     } else {
        btnNext.innerHTML = `Next Section ${this.icons.arrowRight}`;
+    }
+  },
+
+  expandCard(qid, citation) {
+    document.querySelectorAll('.h-card').forEach(c => {
+       if (c.querySelector('.h-btn.selected') && c.dataset.qid !== qid) {
+           c.classList.add('collapsed');
+       }
+    });
+    const target = document.querySelector(`.h-card[data-qid="${qid}"]`);
+    if (target) {
+        target.classList.remove('collapsed');
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    
+    // PDF Auto-Scrolling (Context Anchoring)
+    if (citation && citation.length > 5) {
+        const words = citation.replace(/[^a-zA-Z0-9 ]/g, '').split(' ').filter(w => w.length > 3).slice(0, 5).join(' ');
+        if (words) {
+            const searchStr = encodeURIComponent(words);
+            document.querySelectorAll('.pdf-wrapper iframe').forEach(iframe => {
+                const baseSrc = iframe.src.split('#')[0];
+                iframe.src = `${baseSrc}#search=${searchStr}&navpanes=0`;
+            });
+        }
     }
   },
 
