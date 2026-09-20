@@ -176,21 +176,23 @@ window.CTO.Render = {
             <div class="h-card-footer">
               ${linkHtml}
               <div class="h-actions">
-                ${q.text.includes('0.5 pts') || q.text.includes('0.5 points') ? `
-                  <button class="h-btn yes ${ans === 1 ? 'selected' : ''}" data-qid="${q.new_q_id}" data-val="1">
-                    1 PT
-                  </button>
-                  <button class="h-btn yes ${ans === 0.5 ? 'selected' : ''}" data-qid="${q.new_q_id}" data-val="0.5" style="${ans === 0.5 ? 'background: var(--accent-orange); color: white; border-color: var(--accent-orange);' : ''}">
-                    0.5 PTS
-                  </button>
-                  <button class="h-btn no ${ans === 0 ? 'selected' : ''}" data-qid="${q.new_q_id}" data-val="0">
-                    0 PTS
-                  </button>
-                ` : `
-                  <button class="h-btn yes ${ans === 1 ? 'selected' : ''}" data-qid="${q.new_q_id}" data-val="1">
+                ${q.options && q.options.length > 0 ? q.options.map(opt => {
+                    const isSel = ans === opt.val ? 'selected' : '';
+                    const cls = opt.val > 0 ? 'yes' : 'no';
+                    let style = '';
+                    if (opt.val > 0 && opt.val < 1) {
+                        style = isSel ? 'background: var(--accent-orange); color: white; border-color: var(--accent-orange);' : 'color: var(--accent-orange); border-color: var(--accent-orange);';
+                    }
+                    return `
+                      <button class="h-btn ${cls} ${isSel}" data-qid="${q.new_q_id || q.q_id}" data-val="${opt.val}" style="${style}">
+                        ${opt.label}
+                      </button>
+                    `;
+                }).join('') : `
+                  <button class="h-btn yes ${ans === 1 ? 'selected' : ''}" data-qid="${q.new_q_id || q.q_id}" data-val="1">
                     ${this.icons.check} YES
                   </button>
-                  <button class="h-btn no ${ans === 0 ? 'selected' : ''}" data-qid="${q.new_q_id}" data-val="0">
+                  <button class="h-btn no ${ans === 0 ? 'selected' : ''}" data-qid="${q.new_q_id || q.q_id}" data-val="0">
                     ${this.icons.cross} NO
                   </button>
                 `}
