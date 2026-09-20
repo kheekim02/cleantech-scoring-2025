@@ -83,35 +83,7 @@ window.CTO.Render = {
     const answeredCount = hqs.filter(q => answers[q.new_q_id] !== undefined).length;
     this.updateProgressText(answeredCount, hqs.length);
 
-    const aiCat = aiCats[stepCat];
-    const aiPillsContainer = document.getElementById('ai-pills-container');
-    
-    if (aiCat && aiCat.questions && aiCat.questions.length > 0) {
-      const passed = aiCat.passed;
-      const total = aiCat.total;
-      document.getElementById('ai-checks-count').textContent = `${passed}/${total} checks passed`;
-      document.getElementById('ai-avg-conf').textContent = `Avg Conf: ${aiCat.avg_conf || 0.90}`;
-      
-      const maxPills = 6;
-      let pillsHtml = '';
-      let rendered = 0;
-      for (let i = 0; i < aiCat.questions.length; i++) {
-        const q = aiCat.questions[i];
-        if (q.verdict === 1 && q.type !== 'INTEGER') {
-           pillsHtml += `<div class="ai-pill" style="animation-delay: ${rendered * 30}ms">${this.icons.check}${q.new_q_id}</div>`;
-           rendered++;
-           if (rendered >= maxPills) break;
-        }
-      }
-      if (passed > maxPills) {
-        pillsHtml += `<div class="ai-pill-more" style="animation-delay: ${rendered * 30}ms">+${passed - maxPills} more verified</div>`;
-      }
-      aiPillsContainer.innerHTML = pillsHtml || '<span class="ai-pill-more">No checks passed.</span>';
-    } else {
-      document.getElementById('ai-checks-count').textContent = `0/0 checks`;
-      document.getElementById('ai-avg-conf').textContent = `N/A`;
-      aiPillsContainer.innerHTML = '';
-    }
+
 
     const hContainer = document.getElementById('human-cards-container');
     let hHtml = '';
