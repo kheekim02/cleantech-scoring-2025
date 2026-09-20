@@ -62,46 +62,135 @@ window.CTO.Render = {
               </div>
             </div>
           </div>
-        `;              <div class="h-actions">
-                ${q.options ? q.options.map(opt => {
-                    const isSel = ans === opt.val ? 'selected' : '';
-                    const cls = opt.val > 0 ? 'yes' : 'no';
-                    let style = '';
-                    if (opt.val > 0 && opt.val < 1) {
-                        style = isSel ? 'background: var(--accent-orange); color: white; border-color: var(--accent-orange);' : 'color: var(--accent-orange); border-color: var(--accent-orange);';
-                    }
-                    return `
-                      <button class="h-btn ${cls} ${isSel}" data-qid="${(q.new_q_id || q.q_id) || q.q_id}" data-val="${opt.val}" style="${style}">
-                        ${opt.label}
-                      </button>
-                    `;
-                }).join('') : `
-                  <button class="h-btn yes ${ans === 1 ? 'selected' : ''}" data-qid="${(q.new_q_id || q.q_id) || q.q_id}" data-val="1">
-                    ${this.icons.check} YES
-                  </button>
-                  <button class="h-btn no ${ans === 0 ? 'selected' : ''}" data-qid="${(q.new_q_id || q.q_id) || q.q_id}" data-val="0">
-                    ${this.icons.cross} NO
-                  </button>
-                `}
+        `;
+      }
+    });
+    html += '</div>';
+    
+    container.style.padding = '0'; // Let the iframes stretch fully
+    container.innerHTML = html;
+  },
+
+  renderRightPane(stepCat, stepIndex, totalSteps, aiCats, humanQuestions, answers) {
+    document.getElementById('step-counter').textContent = `STEP ${stepIndex + 1} OF ${totalSteps}`;
+    document.getElementById('step-title').textContent = this.categoryNames[stepCat] || stepCat;
+    
+    const hqs = humanQuestions.filter(q => q.cat_code === stepCat);
+    const sortedHqs = (window.CTO.Scoring && window.CTO.Scoring.sortHumanQueue) 
+        ? window.CTO.Scoring.sortHumanQueue(hqs, answers) 
+        : hqs;
+
+    const answeredCount = hqs.filter(q => answers[q.new_q_id] !== undefined).length;
+    this.updateProgressText(answeredCount, hqs.length);
+
+    const aiCat = aiCats[stepCat];
+    const aiPillsContainer = document.getElementById('ai-pills-container');
+    
+    if (aiCat && aiCat.questions && aiCat.questions.length > 0) {
+      const passed = aiCat.passed;
+      const total = aiCat.total;
+      document.getElementById('ai-checks-count').textContent = `${passed}/${total} checks passed`;
+      document.getElementById('ai-avg-conf').textContent = `Avg Conf: ${aiCat.avg_conf || 0.90}`;
+      
+      const maxPills = 6;
+      let pillsHtml = '';
+      let rendered = 0;
+      for (let i = 0; i < aiCat.questions.length; i++) {
+        const q = aiCat.questions[i];
+        if (q.verdict === 1 && q.type !== 'INTEGER') {
+           pillsHtml += `<div class="ai-pill" style="animation-delay: ${rendered * 30}ms">${this.icons.check}${q.new_q_id}</div>`;
+           rendered++;
+           if (rendered >= maxPills) break;
+        }
+      }
+      if (passed > maxPills) {
+        pillsHtml += `<div class="ai-pill-more" style="animation-delay: ${rendered * 30}ms">+${passed - maxPills} more verified</div>`;
+      }
+      aiPillsContainer.innerHTML = pillsHtml || '<span class="ai-pill-more">No checks passed.</span>';
+    } else {
+      document.getElementById('ai-checks-count').textContent = `0/0 checks`;
+      document.getElementById('ai-avg-conf').textContent = `N/A`;
+      aiPillsContainer.innerHTML = '';
+    }
+
+    const hContainer = document.getElementById('human-cards-container');
+    let hHtml = '';
+    
+    if (sortedHqs.length === 0) {
+      hHtml = `
+        <div class="pane-empty verified">
+          <div class="pane-empty-mark">${this.icons.shield}</div>
+          <strong>Fully Machine-Verified</strong>
+          <p>All checks in this section passed automated extraction. No human review is required.</p>
+        </div>
+      `;
+    } else {
+      sortedHqs.forEach((q, idx) => {
+        const ans = answers[q.new_q_id];
+        const isYesSelected = ans === 1 ? 'selected' : '';
+        const isNoSelected = ans === 0 ? 'selected' : '';
+        
+        const suggYes = q.ai_suggestion === 1;
+        const suggNo = q.ai_suggestion === 0;
+
+        const confNum = parseFloat(q.ai_confidence || 0);
+        let tierClass = 'conf-amber';
+        if (confNum >= 0.85) tierClass = 'conf-green';
+        if (confNum < 0.60) tierClass = 'conf-red';
+
+        // Prepare citation block
+        const hasCitation = q.verbatim_citation && q.verbatim_citation.length > 5;
+        const citeHtml = hasCitation ? `
+          <div class="h-card-citation" style="display: none; padding: 12px; background: #fff8e1; border-left: 3px solid var(--accent-yellow); margin: 0 0 16px 0; font-size: 13px; color: var(--text-main);">
+            <strong style="color: var(--accent-orange);">AI Citation:</strong> "${q.verbatim_citation}"<br>
+            <em style="color: var(--text-muted); display: block; margin-top: 6px;">Use Cmd+F / Ctrl+F in the PDF viewer to locate this text.</em>
+          </div>
+        ` : '';
+
+        const linkHtml = hasCitation ? `<a href="#" class="link-source" data-action="toggle-cite">${this.icons.link} View AI Citation</a>` : `<span style="color:var(--text-faint); font-size:13px;">No citation extracted</span>`;
+
+        
+        const isAnswered = ans !== undefined && ans !== null;
+        const collapsedClass = isAnswered ? 'collapsed' : '';
+        const summaryText = isAnswered ? `Answered: ${ans} PTS` : '';
+        const safeCit = (q.verbatim_citation || '').replace(/"/g, '&quot;');
+        
+        hHtml += `
+          <div class="h-card ${collapsedClass}" id="card-${q.new_q_id}" data-qid="${q.new_q_id}" data-citation="${safeCit}" style="animation-delay: ${(idx * 40) + 100}ms;">
+            <div class="h-card-header">
+              <div>
+                <span class="h-tag">${q.cat_code}</span>
+                <span class="h-qid">${q.new_q_id}</span>
+              </div>
+              <div class="h-ai-suggest ${tierClass}">
+                ${this.icons.spark}
+                <span class="verdict">${suggYes ? 'YES' : 'NO'}</span>
+                <span class="divider"></span>
+                <span class="score">${q.ai_confidence}</span>
               </div>
             </div>
-          </div>
-        `;              <div class="h-actions">
+            <div class="h-card-body">
+              ${q.text}
+            </div>
+            ${citeHtml}
+            <div class="h-card-footer">
+              ${linkHtml}
+              <div class="h-actions">
                 ${q.text.includes('0.5 pts') || q.text.includes('0.5 points') ? `
-                  <button class="h-btn yes ${ans === 1 ? 'selected' : ''}" data-qid="${(q.new_q_id || q.q_id)}" data-val="1">
+                  <button class="h-btn yes ${ans === 1 ? 'selected' : ''}" data-qid="${q.new_q_id}" data-val="1">
                     1 PT
                   </button>
-                  <button class="h-btn yes ${ans === 0.5 ? 'selected' : ''}" data-qid="${(q.new_q_id || q.q_id)}" data-val="0.5" style="${ans === 0.5 ? 'background: var(--accent-orange); color: white; border-color: var(--accent-orange);' : ''}">
+                  <button class="h-btn yes ${ans === 0.5 ? 'selected' : ''}" data-qid="${q.new_q_id}" data-val="0.5" style="${ans === 0.5 ? 'background: var(--accent-orange); color: white; border-color: var(--accent-orange);' : ''}">
                     0.5 PTS
                   </button>
-                  <button class="h-btn no ${ans === 0 ? 'selected' : ''}" data-qid="${(q.new_q_id || q.q_id)}" data-val="0">
+                  <button class="h-btn no ${ans === 0 ? 'selected' : ''}" data-qid="${q.new_q_id}" data-val="0">
                     0 PTS
                   </button>
                 ` : `
-                  <button class="h-btn yes ${ans === 1 ? 'selected' : ''}" data-qid="${(q.new_q_id || q.q_id)}" data-val="1">
+                  <button class="h-btn yes ${ans === 1 ? 'selected' : ''}" data-qid="${q.new_q_id}" data-val="1">
                     ${this.icons.check} YES
                   </button>
-                  <button class="h-btn no ${ans === 0 ? 'selected' : ''}" data-qid="${(q.new_q_id || q.q_id)}" data-val="0">
+                  <button class="h-btn no ${ans === 0 ? 'selected' : ''}" data-qid="${q.new_q_id}" data-val="0">
                     ${this.icons.cross} NO
                   </button>
                 `}
