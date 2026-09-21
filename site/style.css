@@ -335,7 +335,7 @@ body {
 .h-card-body { padding: 24px; font-size: 16px; font-weight: 500; color: var(--text-main); line-height: 1.6; }
 
 .h-card-footer {
-  padding: 16px 24px; border-top: 1px solid var(--hairline); display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 24px; border-top: 1px solid var(--hairline); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
   background: var(--surface-sunk); border-radius: 0 0 11px 11px;
 }
 .link-source {
@@ -343,11 +343,11 @@ body {
 }
 
 /* Premium Buttons */
-.h-actions { display: flex; gap: 12px; }
+.h-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
 .h-btn {
   background: linear-gradient(180deg, #ffffff 0%, #f7f7f8 100%);
   border: 1px solid var(--border-strong);
-  padding: 10px 24px; border-radius: 8px;
+  padding: 10px 16px; border-radius: 8px;
   font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--text-main);
   cursor: pointer; display: flex; align-items: center; gap: 8px;
   box-shadow: var(--shadow-xs), var(--inset-top);

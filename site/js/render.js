@@ -102,10 +102,19 @@ window.CTO.Render = {
         const isYesSelected = ans === 1 ? 'selected' : '';
         const isNoSelected = ans === 0 ? 'selected' : '';
         
-        const suggYes = q.ai_suggestion === 1;
-        const suggNo = q.ai_suggestion === 0;
-
         const confNum = parseFloat(q.ai_confidence || 0);
+        let confText = (q.ai_confidence !== undefined && q.ai_confidence !== null) ? `${Math.round(q.ai_confidence * 100)}%` : 'N/A';
+        
+        let verdictText = 'N/A';
+        if (q.ai_suggestion !== undefined && q.ai_suggestion !== null) {
+            if (q.options && q.options.length > 0) {
+                const optMatch = q.options.find(o => o.val === q.ai_suggestion);
+                if (optMatch) verdictText = optMatch.label;
+                else verdictText = q.ai_suggestion;
+            } else {
+                verdictText = q.ai_suggestion === 1 ? 'YES' : 'NO';
+            }
+        }
         let tierClass = 'conf-amber';
         if (confNum >= 0.85) tierClass = 'conf-green';
         if (confNum < 0.60) tierClass = 'conf-red';
@@ -136,9 +145,9 @@ window.CTO.Render = {
               </div>
               <div class="h-ai-suggest ${tierClass}">
                 ${this.icons.spark}
-                <span class="verdict">${suggYes ? 'YES' : 'NO'}</span>
+                <span class="verdict">${verdictText}</span>
                 <span class="divider"></span>
-                <span class="score">${q.ai_confidence}</span>
+                <span class="score">${confText}</span>
               </div>
             </div>
             <div class="h-card-body">
