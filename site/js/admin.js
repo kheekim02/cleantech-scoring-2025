@@ -95,9 +95,10 @@ window.AdminApp = {
 
   renderAssignments() {
     const container = document.getElementById('company-list-container');
+    const chartContainer = document.getElementById('assignment-chart');
     const selectedJudge = document.getElementById('judge-select').value;
     
-    // Calculate global assignment counts for progress bar
+    // 1. Calculate global assignment counts for the Bar Chart
     const globalCounts = {};
     this.data.assignments.forEach(a => {
         globalCounts[a.startup_id] = (globalCounts[a.startup_id] || 0) + 1;
@@ -111,67 +112,88 @@ window.AdminApp = {
         else count2++;
     });
     
-    const total = this.data.startups.length || 1;
-    const pct0 = (count0 / total) * 100;
-    const pct1 = (count1 / total) * 100;
-    const pct2 = (count2 / total) * 100;
-
-    const progressHtml = `
-      <div style="margin-bottom: 20px;">
-        <div style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px;">
-          <span style="color: #166534;">Fully Assigned (2+): ${count2}</span>
-          <span style="color: #9a3412;">Assigned (1): ${count1}</span>
-          <span style="color: #854d0e;">Unassigned (0): ${count0}</span>
-        </div>
-        <div style="display: flex; height: 10px; border-radius: 5px; overflow: hidden; background: var(--surface-sunk); border: 1px solid var(--border);">
-          <div style="width: ${pct2}%; background: #4ade80;" title="${count2} fully assigned"></div>
-          <div style="width: ${pct1}%; background: #fb923c;" title="${count1} partially assigned"></div>
-          <div style="width: ${pct0}%; background: #fde047;" title="${count0} unassigned"></div>
-        </div>
-      </div>
-    `;
-
-    // Inject progress bar into DOM if we have a placeholder, or just above the dropdown.
-    // Wait, the select is static in HTML. Let's create a placeholder for it dynamically or inject it.
-    let progressContainer = document.getElementById('progress-container');
-    if (!progressContainer) {
-        const selectDiv = document.getElementById('judge-select').parentNode;
-        progressContainer = document.createElement('div');
-        progressContainer.id = 'progress-container';
-        selectDiv.parentNode.insertBefore(progressContainer, selectDiv);
+    // Render Bar Chart
+    const maxVal = Math.max(count0, count1, count2, 1);
+    const h0 = (count0 / maxVal) * 100;
+    const h1 = (count1 / maxVal) * 100;
+    const h2 = (count2 / maxVal) * 100;
+    
+    if (chartContainer) {
+        chartContainer.innerHTML = `
+          <div style="display: flex; align-items: flex-end; justify-content: space-around; height: 140px; border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-top: 10px;">
+            
+            <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
+               <span style="font-size: 11px; font-weight: 600; margin-bottom: 4px; color: var(--text-muted);">${count0}</span>
+               <div style="width: 40px; height: ${h0}%; background: #fde047; border-radius: 4px 4px 0 0; min-height: 4px; border: 1px solid #eab308; border-bottom: none;"></div>
+               <span style="font-size: 11px; margin-top: 8px; font-weight: 600; text-align: center;">Unassigned</span>
+            </div>
+            
+            <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
+               <span style="font-size: 11px; font-weight: 600; margin-bottom: 4px; color: var(--text-muted);">${count1}</span>
+               <div style="width: 40px; height: ${h1}%; background: #fb923c; border-radius: 4px 4px 0 0; min-height: 4px; border: 1px solid #ea580c; border-bottom: none;"></div>
+               <span style="font-size: 11px; margin-top: 8px; font-weight: 600; text-align: center;">Assigned (1)</span>
+            </div>
+            
+            <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
+               <span style="font-size: 11px; font-weight: 600; margin-bottom: 4px; color: var(--text-muted);">${count2}</span>
+               <div style="width: 40px; height: ${h2}%; background: #4ade80; border-radius: 4px 4px 0 0; min-height: 4px; border: 1px solid #16a34a; border-bottom: none;"></div>
+               <span style="font-size: 11px; margin-top: 8px; font-weight: 600; text-align: center;">Fully Assigned (2+)</span>
+            </div>
+            
+          </div>
+        `;
     }
-    progressContainer.innerHTML = progressHtml;
 
     if (!selectedJudge) {
       container.innerHTML = '<div style="padding: 20px; text-align: center; color: var(--text-muted); font-size: 14px;">Please select a scorer first.</div>';
       return;
     }
 
-    // Filter assignments for this judge
+    // 2. Filter assignments for this judge
     const assignedSet = new Set(
       this.data.assignments
         .filter(a => a.judge_id === selectedJudge)
         .map(a => a.startup_id)
     );
-
     
+    // Map progress for this judge
+    const progressMap = {};
+    if (this.data.progress) {
+      this.data.progress
+        .filter(p => p.judge_id === selectedJudge)
+        .forEach(p => {
+          progressMap[p.startup_id] = parseInt(p.answered_count, 10);
+        });
+    }
 
     let html = '';
     this.data.startups.forEach(s => {
       const isChecked = assignedSet.has(s.id) ? 'checked' : '';
       const count = globalCounts[s.id] || 0;
       
+      // Global Assignment Badge
       let badge = '';
-      if (count === 0) badge = `<span style="background: #fef08a; color: #854d0e; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700; margin-left: auto;">0 Assigned</span>`;
-      else if (count === 1) badge = `<span style="background: #fed7aa; color: #9a3412; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700; margin-left: auto;">1 Assigned</span>`;
-      else badge = `<span style="background: #bbf7d0; color: #166534; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700; margin-left: auto;">${count} Assigned</span>`;
+      if (count === 0) badge = `<span style="background: #fef08a; color: #854d0e; padding: 2px 8px; border-radius: 12px; font-size: 10px; font-weight: 700; margin-left: auto;">0 Assigned</span>`;
+      else if (count === 1) badge = `<span style="background: #fed7aa; color: #9a3412; padding: 2px 8px; border-radius: 12px; font-size: 10px; font-weight: 700; margin-left: auto;">1 Assigned</span>`;
+      else badge = `<span style="background: #bbf7d0; color: #166534; padding: 2px 8px; border-radius: 12px; font-size: 10px; font-weight: 700; margin-left: auto;">${count} Assigned</span>`;
+
+      // Submission Tracker Badge (only if assigned to this judge)
+      let subBadge = '';
+      if (isChecked) {
+        const pCount = progressMap[s.id] || 0;
+        if (pCount === 0) {
+            subBadge = `<span style="color: #ef4444; font-size: 11px; font-weight: 600; margin-left: 10px; border: 1px solid #fca5a5; padding: 2px 6px; border-radius: 4px; background: #fef2f2;">Not Started</span>`;
+        } else {
+            subBadge = `<span style="color: #0369a1; font-size: 11px; font-weight: 600; margin-left: 10px; border: 1px solid #7dd3fc; padding: 2px 6px; border-radius: 4px; background: #f0f9ff;">${pCount} Answers</span>`;
+        }
+      }
 
       html += `
-        <div class="company-item" style="display: flex; align-items: center; justify-content: flex-start; gap: 10px; padding: 10px 12px; border-bottom: 1px solid var(--hairline);">
+        <div class="company-item" style="display: flex; align-items: center; justify-content: flex-start; gap: 10px; padding: 10px 12px; border-bottom: 1px solid var(--hairline); background: ${isChecked ? '#fafafa' : '#fff'};">
           <input type="checkbox" id="chk-${s.id}" ${isChecked} onchange="AdminApp.toggleAssignment('${selectedJudge}', '${s.id}', this.checked)" style="margin: 0; width: 16px; height: 16px; cursor: pointer;">
           <label for="chk-${s.id}" style="font-size: 14px; cursor: pointer; display: flex; flex: 1; align-items: center;">
             <span style="font-weight: 500;">${s.name}</span>
-            
+            ${subBadge}
             ${badge}
           </label>
         </div>
@@ -179,7 +201,7 @@ window.AdminApp = {
     });
     
     container.innerHTML = html;
-  },
+  }
 
   async createScorer() {
     const idInput = document.getElementById('new-judge-id');
