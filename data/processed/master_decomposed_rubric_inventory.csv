@@ -348,30 +348,30 @@ category,cat_code,orig_q_id,new_q_id,type,verification_role,text
  - Technical only: award 0.33 pts
  - None: award 0 pts"
 9. Executive Summary,ES,ES_Q1,ES_Q1,BINARY,AI,Does the company have a formal company name?
-9. Executive Summary,ES,ES_Q10,ES_Q10a,BINARY,AI,Identifies upstream suppliers and manufacturing partners in value chain
-9. Executive Summary,ES,ES_Q10,ES_Q10b,BINARY,AI,Identifies downstream distributors and buyers in value chain
-9. Executive Summary,ES,ES_Q11,ES_Q11a,BINARY,AI,Company has paying commercial customers who have purchased product
-9. Executive Summary,ES,ES_Q11,ES_Q11b,BINARY,AI,Company has active confirmed beta testing or pilot development partners
-9. Executive Summary,ES,ES_Q11,ES_Q11c,BINARY,AI,Company has signed non-binding Letters of Intent (LOIs) or MOUs
+9. Executive Summary,IS,IS_Q10,IS_Q10a,BINARY,AI,Identifies upstream suppliers and manufacturing partners in value chain
+9. Executive Summary,IS,IS_Q10,IS_Q10b,BINARY,AI,Identifies downstream distributors and buyers in value chain
+9. Executive Summary,IS,IS_Q11,IS_Q11a,BINARY,AI,Company has paying commercial customers who have purchased product
+9. Executive Summary,IS,IS_Q11,IS_Q11b,BINARY,AI,Company has active confirmed beta testing or pilot development partners
+9. Executive Summary,IS,IS_Q11,IS_Q11c,BINARY,AI,Company has signed non-binding Letters of Intent (LOIs) or MOUs
 9. Executive Summary,ES,ES_Q12,ES_Q12,BINARY,AI,Are key milestone accomplishments presented?
 9. Executive Summary,ES,ES_Q13,ES_Q13,BINARY,AI,Does the company describe its technology status (TRL or otherwise)?
 9. Executive Summary,ES,ES_Q14,ES_Q14,BINARY,AI,Is an IP strategy defined?
 9. Executive Summary,ES,ES_Q15,ES_Q15,BINARY,AI,Is how the company's IP supports the value proposition described?
-9. Executive Summary,ES,ES_Q16,ES_Q16a,BINARY,AI,Environmental impact goals and metrics stated
-9. Executive Summary,ES,ES_Q16,ES_Q16b,BINARY,AI,Social or community impact goals stated
-9. Executive Summary,ES,ES_Q16,ES_Q16c,BINARY,AI,Financial sustainability / cost benefit impact stated
+9. Executive Summary,IS,IS_Q16,IS_Q16a,BINARY,AI,Environmental impact goals and metrics stated
+9. Executive Summary,IS,IS_Q16,IS_Q16b,BINARY,AI,Social or community impact goals stated
+9. Executive Summary,IS,IS_Q16,IS_Q16c,BINARY,AI,Financial sustainability / cost benefit impact stated
 9. Executive Summary,ES,ES_Q17,ES_Q17,BINARY,AI,Is there a description of the target market?
-9. Executive Summary,ES,ES_Q18,ES_Q18a,BINARY,AI,Numerical Total Addressable Market (TAM) dollar valuation explicitly stated
-9. Executive Summary,ES,ES_Q18,ES_Q18b,BINARY,AI,Underlying TAM calculation assumptions and methodology documented
-9. Executive Summary,ES,ES_Q19,ES_Q19a,BINARY,AI,Numerical Serviceable Available Market (SAM) dollar valuation explicitly stated
-9. Executive Summary,ES,ES_Q19,ES_Q19b,BINARY,AI,Underlying SAM calculation assumptions and methodology documented
+9. Executive Summary,IS,IS_Q18,IS_Q18a,BINARY,AI,Numerical Total Addressable Market (TAM) dollar valuation explicitly stated
+9. Executive Summary,IS,IS_Q18,IS_Q18b,BINARY,AI,Underlying TAM calculation assumptions and methodology documented
+9. Executive Summary,IS,IS_Q19,IS_Q19a,BINARY,AI,Numerical Serviceable Available Market (SAM) dollar valuation explicitly stated
+9. Executive Summary,IS,IS_Q19,IS_Q19b,BINARY,AI,Underlying SAM calculation assumptions and methodology documented
 9. Executive Summary,ES,ES_Q2,ES_Q2,BINARY,AI,Is clear and complete contact information provided?
-9. Executive Summary,ES,ES_Q20,ES_Q20a,BINARY,AI,Target market share percentage explicitly presented
-9. Executive Summary,ES,ES_Q20,ES_Q20b,BINARY,AI,Market share capture assumptions documented
+9. Executive Summary,IS,IS_Q20,IS_Q20a,BINARY,AI,Target market share percentage explicitly presented
+9. Executive Summary,IS,IS_Q20,IS_Q20b,BINARY,AI,Market share capture assumptions documented
 9. Executive Summary,ES,ES_Q21,ES_Q21,BINARY,AI,Are additional markets identified?
 9. Executive Summary,ES,ES_Q22,ES_Q22,BINARY,AI,Are the key costs/challenges of entering these additional markets discussed?
-9. Executive Summary,ES,ES_Q23,ES_Q23a,BINARY,AI,Identifies direct competitors
-9. Executive Summary,ES,ES_Q23,ES_Q23b,BINARY,AI,Identifies indirect competitors and substitutes
+9. Executive Summary,IS,IS_Q23,IS_Q23a,BINARY,AI,Identifies direct competitors
+9. Executive Summary,IS,IS_Q23,IS_Q23b,BINARY,AI,Identifies indirect competitors and substitutes
 9. Executive Summary,ES,ES_Q24,ES_Q24,BINARY,AI,Are the company's proposed benefits over the competition described?
 9. Executive Summary,ES,ES_Q25,ES_Q25,BINARY,AI,Has the company presented its funding history?
 9. Executive Summary,ES,ES_Q26,ES_Q26,BINARY,AI,Has the company presented its fundraising plans (forward looking)?
@@ -381,16 +381,16 @@ category,cat_code,orig_q_id,new_q_id,type,verification_role,text
 9. Executive Summary,ES,ES_Q3,ES_Q3,BINARY,AI,Does the company have a formal company logo?
 9. Executive Summary,ES,ES_Q30,ES_Q30,BINARY,AI,Is there a description of the management team?
 9. Executive Summary,ES,ES_Q31,ES_Q31,BINARY,AI,Is there a formal location? (E.G. HQ address)
-9. Executive Summary,ES,ES_Q32,ES_Q32a,BINARY,AI,Historical revenue stated (or stated zero if pre-revenue)
-9. Executive Summary,ES,ES_Q32,ES_Q32b,BINARY,AI,Forward-looking multi-year revenue projections presented
+9. Executive Summary,IS,IS_Q32,IS_Q32a,BINARY,AI,Historical revenue stated (or stated zero if pre-revenue)
+9. Executive Summary,IS,IS_Q32,IS_Q32b,BINARY,AI,Forward-looking multi-year revenue projections presented
 9. Executive Summary,ES,ES_Q33,ES_Q33,BINARY,AI,Is the projection consistent with SAM and target market share? (IE SAM x Market Share % = projected revenue)
 9. Executive Summary,ES,ES_Q34,ES_Q34,BINARY,AI,"Is revenue for year N divided by revenue for year N-1 a constant? If yes, is that assumption explained?"
 9. Executive Summary,ES,ES_Q4,ES_Q4,BINARY,AI,Has the company identified a market category (or CleanTech Category)?
 9. Executive Summary,ES,ES_Q5,ES_Q5,BINARY,AI,"Is a brief company business history provided? (EG employees, years operational, etc.)"
 9. Executive Summary,ES,ES_Q6,ES_Q6,BINARY,AI,Does the company list current senior management skills and identify skill gaps?
-9. Executive Summary,ES,ES_Q7,ES_Q7a,BINARY,AI,Clear non-technical problem and solution summary statement provided
-9. Executive Summary,ES,ES_Q7,ES_Q7b,BINARY,AI,Specific initial beachhead market defined
-9. Executive Summary,ES,ES_Q7,ES_Q7c,BINARY,AI,Operational route-to-market or distribution channel described
+9. Executive Summary,IS,IS_Q7,IS_Q7a,BINARY,AI,Clear non-technical problem and solution summary statement provided
+9. Executive Summary,IS,IS_Q7,IS_Q7b,BINARY,AI,Specific initial beachhead market defined
+9. Executive Summary,IS,IS_Q7,IS_Q7c,BINARY,AI,Operational route-to-market or distribution channel described
 9. Executive Summary,ES,ES_Q8,ES_Q8,BINARY,AI,Has the company specified the initial commercial offering(s)?
 9. Executive Summary,ES,ES_Q9,ES_Q9,BINARY,AI,Is factual / third-party / verifiable information supporting this provided?
 10. Investor Pitch,IP,IP_Q1,IP_Q1,BINARY,AI,Is there an elevator pitch?

@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/kheekim02/cleantech-scoring-2025#readme",
   "dependencies": {
+    "@supabase/supabase-js": "^2.116.0",
     "pg": "^8.23.0"
   }
 }

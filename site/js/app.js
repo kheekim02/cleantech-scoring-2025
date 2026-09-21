@@ -130,6 +130,15 @@ CTO.App = {
     // REC 4: Event Delegation for human review buttons
 
     document.getElementById('human-cards-container').addEventListener('click', (e) => {
+      // Toggle rubric modal
+
+      const rubricLink = e.target.closest('.view-rubric');
+      if (rubricLink) {
+        e.preventDefault();
+        this.openRubricModal(rubricLink.dataset.qid);
+        return;
+      }
+
       // Toggle citation logic for PDFs
       let card = e.target.closest('.h-card');
       const link = e.target.closest('.link-source');
@@ -161,6 +170,16 @@ CTO.App = {
     });
 
     // REC 2: Event Delegation for audit list jumps
+
+    document.getElementById('rubric-modal-close').addEventListener('click', () => {
+      document.getElementById('rubric-modal').style.display = 'none';
+    });
+    document.getElementById('rubric-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'rubric-modal') {
+        e.target.style.display = 'none';
+      }
+    });
+
     document.getElementById('submit-modal').addEventListener('click', (e) => {
       if (e.target.tagName === 'A' && e.target.dataset.qid) {
         e.preventDefault();
@@ -169,6 +188,65 @@ CTO.App = {
         this.jumpToQuestion(catCode, qid);
       }
     });
+  },
+
+
+  openRubricModal(qid) {
+    const modal = document.getElementById('rubric-modal');
+    const title = document.getElementById('rubric-modal-title');
+    const body = document.getElementById('rubric-modal-body');
+    
+    let rubricContent = '';
+    
+    // Hardcoded tables parsed from markdown for rapid reference
+    if (qid === 'BC_Q1') {
+      title.textContent = 'Value Proposition Scoring (BC_Q1)';
+      rubricContent = `
+      <table style="width: 100%; border-collapse: collapse; text-align: left; margin-top: 10px;">
+        <tr style="background: var(--surface-sunk);"><th style="padding: 10px; border: 1px solid var(--border);">Rating</th><th style="padding: 10px; border: 1px solid var(--border);">Example Justification / Content</th></tr>
+        <tr><td style="padding: 10px; border: 1px solid var(--border); font-weight: bold;">1</td><td style="padding: 10px; border: 1px solid var(--border);">"Dirty water solution, we remove the waste just like other companies."</td></tr>
+        <tr><td style="padding: 10px; border: 1px solid var(--border); font-weight: bold;">2</td><td style="padding: 10px; border: 1px solid var(--border);">"Municipalities, industrial facilities, and commercial establishments grappling with diverse wastewater treatment requirements."</td></tr>
+        <tr><td style="padding: 10px; border: 1px solid var(--border); font-weight: bold;">3</td><td style="padding: 10px; border: 1px solid var(--border);">"Save customer money while reducing carbon footprint, help meet upcoming regulations and requirements set by industry."</td></tr>
+        <tr><td style="padding: 10px; border: 1px solid var(--border); font-weight: bold;">4</td><td style="padding: 10px; border: 1px solid var(--border);">"Easy integratable filtration technology, save 60% on costs, creates a more eco friendly and efficient wastewater process, cost competitive price with reliable service."</td></tr>
+        <tr><td style="padding: 10px; border: 1px solid var(--border); font-weight: bold;">5</td><td style="padding: 10px; border: 1px solid var(--border);">"Advanced filtration membrane designed to effectively remove up to 95% of contaminants and pollutants from wastewater, help reduce WTTP energy costs of up to 60%... provide a more cost effective way to deal with your wastewater than market alternatives."</td></tr>
+      </table>
+      `;
+    } else if (qid === 'BC_Q2') {
+      title.textContent = 'Customer Segments Scoring (BC_Q2)';
+      rubricContent = `
+      <table style="width: 100%; border-collapse: collapse; text-align: left; margin-top: 10px;">
+        <tr style="background: var(--surface-sunk);"><th style="padding: 10px; border: 1px solid var(--border);">Rating</th><th style="padding: 10px; border: 1px solid var(--border);">Example Justification / Content</th></tr>
+        <tr><td style="padding: 10px; border: 1px solid var(--border); font-weight: bold;">1</td><td style="padding: 10px; border: 1px solid var(--border);">"Businesses who need to deal with wastewater"</td></tr>
+        <tr><td style="padding: 10px; border: 1px solid var(--border); font-weight: bold;">2</td><td style="padding: 10px; border: 1px solid var(--border);">"Industrial waste benefaction, chemical producers, power companies, manufacturing companies, and biochemical industries"</td></tr>
+        <tr><td style="padding: 10px; border: 1px solid var(--border); font-weight: bold;">3</td><td style="padding: 10px; border: 1px solid var(--border);">"Industrial waste benefaction Chemical producers Power companies... Manufacturing companies Biochemical industries"</td></tr>
+        <tr><td style="padding: 10px; border: 1px solid var(--border); font-weight: bold;">4</td><td style="padding: 10px; border: 1px solid var(--border);">"Domestic US Corporations: chief sustainability officer And health and safety. Communities: Waste management & economic Development"</td></tr>
+        <tr><td style="padding: 10px; border: 1px solid var(--border); font-weight: bold;">5</td><td style="padding: 10px; border: 1px solid var(--border);">"Oil and gas: Refinery wastewater Treatment Hydraulic fracturing... Commercial Properties: Hotels, Restaurants... Agriculture: Fertilizer production Livestock operations Irrigation water reuse"</td></tr>
+      </table>
+      `;
+    } else if (qid === 'BC_Q4') {
+      title.textContent = 'Big Brackets Scoring (BC_Q4)';
+      rubricContent = `
+      <p style="margin-top: 10px; margin-bottom: 10px;"><strong>Key Sections:</strong> Value Propositions, Customer Segments, Channels, Customer Relationships, Revenue Streams</p>
+      <ul style="padding-left: 20px;">
+        <li><strong>Score 1-2:</strong> Vague generalities ("social media", "branding", "businesses")</li>
+        <li><strong>Score 3:</strong> Includes some specific mediums (e.g. "Trade show participation") but lacks clear segmentation</li>
+        <li><strong>Score 4-5:</strong> Extremely detailed, granular pricing ("Starter kit: $1,000", "Annual O+M service $2,000"), distinct relationships (short-term vs long-term), and robust channels.</li>
+      </ul>
+      `;
+    } else if (qid === 'BC_Q5') {
+      title.textContent = 'Small Brackets Scoring (BC_Q5)';
+      rubricContent = `
+      <p style="margin-top: 10px; margin-bottom: 10px;"><strong>Key Sections:</strong> Key Partners, Key Activities, Key Resources, Cost Structure</p>
+      <ul style="padding-left: 20px;">
+        <li><strong>Score 1-2:</strong> Generic ("The cost to manufacture", "Money and employees")</li>
+        <li><strong>Score 3:</strong> Mentions some specific resources or partners (e.g. "Columbia university lab") but lacks exhaustive detail</li>
+        <li><strong>Score 4-5:</strong> Granular breakdowns ("M&E costs for prototype", "3rd party evaluation", "Local permitting", "Unit Operations vs Ammonia Sales")</li>
+      </ul>
+      `;
+    }
+    
+    body.innerHTML = rubricContent;
+    modal.style.display = 'flex';
   },
 
   updateUI() {

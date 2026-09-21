@@ -160,12 +160,18 @@ window.CTO.Render = {
         const requiresJustification = q.cat_code === 'BC' || subjectiveQids.has(q.new_q_id);
         const existingJustification = humanJustifications[q.new_q_id] || '';
         
-        let justHtml = '';
+                let justHtml = '';
         if (requiresJustification) {
+          const hasRubric = ['BC_Q1', 'BC_Q2', 'BC_Q4', 'BC_Q5'].includes(q.new_q_id);
+          const rubricLink = hasRubric ? `<a href="#" class="view-rubric" data-qid="${q.new_q_id}" style="float: right; color: var(--accent-blue); text-decoration: none; font-weight: 500;">${window.CTO.Render.icons.doc || '📄'} View Examples</a>` : '';
+          
           justHtml = `
-            <div class="h-card-justification" style="margin-top: 12px; margin-bottom: 12px;">
-              <label style="display: block; font-size: 12px; font-weight: 600; color: var(--text-main); margin-bottom: 6px;">Justification (Required)</label>
-              <textarea class="justification-input" data-qid="${q.new_q_id}" placeholder="Provide justification based on the markdown rubrics..." style="width: 100%; min-height: 70px; padding: 10px; border: 1px solid var(--border); border-radius: 6px; font-family: inherit; font-size: 13px; resize: vertical; box-sizing: border-box; background: var(--surface-main);">${existingJustification}</textarea>
+            <div class="h-card-justification" style="padding: 0 24px 16px 24px;">
+              <label style="display: block; font-size: 13px; font-weight: 600; color: var(--text-main); margin-bottom: 8px;">
+                Justification
+                ${rubricLink}
+              </label>
+              <textarea class="justification-input" data-qid="${q.new_q_id}" placeholder="Provide justification based on the markdown rubrics..." style="width: 100%; min-height: 80px; padding: 12px; border: 1px solid var(--border); border-radius: 6px; font-family: inherit; font-size: 13px; resize: vertical; box-sizing: border-box; background: var(--surface-main);">${existingJustification}</textarea>
             </div>
           `;
         }
