@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Portal | CleanTech Open 2025</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { background-color: var(--surface-subdued); margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .admin-container { max-width: 1000px; margin: 40px auto; padding: 20px; }
+    .card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: var(--shadow-sm); border: 1px solid var(--border); margin-bottom: 24px; }
+    .btn { background: var(--accent-blue); color: white; border: none; padding: 10px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; }
+    .btn:hover { background: #0056b3; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px; }
+    .form-group input { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; box-sizing: border-box; }
+    .grid { display: grid; grid-template-columns: 1fr 2fr; gap: 24px; }
+    @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+    .company-list { max-height: 500px; overflow-y: auto; border: 1px solid var(--border); border-radius: 6px; padding: 10px; }
+    .company-item { padding: 8px; border-bottom: 1px solid var(--hairline); display: flex; align-items: center; gap: 10px; }
+    .company-item:last-child { border-bottom: none; }
+  </style>
+</head>
+<body>
+  
+  <!-- Login Modal -->
+  <div class="modal-overlay" id="admin-login-modal" style="display:none; z-index: 999;">
+    <div class="modal-content" style="max-width: 400px; padding: 40px; background:#fff; border-radius:12px;">
+      <div style="text-align: center; margin-bottom: 24px;">
+        <h2 style="font-size: 24px; font-weight: 800;">Admin Portal</h2>
+        <p style="color: var(--text-muted); font-size: 14px;">Enter administrator credentials.</p>
+      </div>
+      <div class="form-group">
+        <label>Admin Username</label>
+        <input type="text" id="auth-admin-user" placeholder="e.g. admin">
+      </div>
+      <div class="form-group">
+        <label>Passcode</label>
+        <input type="password" id="auth-admin-pass" placeholder="••••••••">
+      </div>
+      <button class="btn" style="width: 100%; margin-top: 10px;" onclick="AdminApp.login()">Log In</button>
+    </div>
+  </div>
+
+  <!-- Main Dashboard -->
+  <div class="admin-container" id="admin-dashboard" style="display:none;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+      <h1 style="font-size: 24px; margin: 0;">CleanTech Open - Admin Portal</h1>
+      <button class="btn" style="background: var(--surface-sunk); color: var(--text-main); border: 1px solid var(--border);" onclick="AdminApp.logout()">Log Out</button>
+    </div>
+    
+    <div class="grid">
+      <!-- Left Column: Create Scorer -->
+      <div>
+        <div class="card">
+          <h2 style="font-size: 18px; margin-top: 0; border-bottom: 1px solid var(--border); padding-bottom: 12px;">Create New Scorer</h2>
+          <div class="form-group" style="margin-top: 16px;">
+            <label>Scorer ID (Username)</label>
+            <input type="text" id="new-judge-id" placeholder="e.g. judge_smith">
+          </div>
+          <div class="form-group">
+            <label>Passcode</label>
+            <input type="text" id="new-judge-pass" placeholder="e.g. 1234">
+          </div>
+          <button class="btn" style="width: 100%;" onclick="AdminApp.createScorer()">Create Scorer</button>
+          <div id="create-msg" style="margin-top: 12px; font-size: 13px; font-weight: 600; text-align: center;"></div>
+        </div>
+      </div>
+      
+      <!-- Right Column: Assignments -->
+      <div>
+        <div class="card">
+          <h2 style="font-size: 18px; margin-top: 0; border-bottom: 1px solid var(--border); padding-bottom: 12px;">Company Assignments</h2>
+          
+          <div class="form-group" style="margin-top: 16px;">
+            <label>Select Scorer to Assign Companies</label>
+            <select id="judge-select" style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 14px;" onchange="AdminApp.renderAssignments()">
+              <option value="">-- Choose a Scorer --</option>
+            </select>
+          </div>
+          
+          <div class="company-list" id="company-list-container">
+            <div style="padding: 20px; text-align: center; color: var(--text-muted); font-size: 14px;">Please select a scorer first.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

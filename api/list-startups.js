@@ -21,7 +21,7 @@ module.exports = async (req, res) => {
       return res.status(401).json({ error: "Unauthorized" });
     }
 
-    const listQuery = await client.query('SELECT startup_id as id, company_name as name FROM startup_extractions ORDER BY company_name ASC');
+    const listQuery = await client.query('SELECT s.startup_id as id, s.company_name as name FROM startup_extractions s INNER JOIN judge_assignments ja ON s.startup_id = ja.startup_id WHERE ja.judge_id = $1 ORDER BY s.company_name ASC', [judge_id]);
     await client.end();
 
     return res.status(200).json(listQuery.rows);
