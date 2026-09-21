@@ -62,7 +62,16 @@
             <input type="text" id="new-judge-pass" placeholder="e.g. 1234">
           </div>
           <button class="btn" style="width: 100%;" onclick="AdminApp.createScorer()">Create Scorer</button>
+          
           <div id="create-msg" style="margin-top: 12px; font-size: 13px; font-weight: 600; text-align: center;"></div>
+          
+          <div style="margin-top: 32px;">
+            <h3 style="font-size: 15px; margin-top: 0; border-bottom: 1px solid var(--border); padding-bottom: 8px; color: var(--text-main);">Existing Scorers</h3>
+            <div id="scorers-list" style="max-height: 280px; overflow-y: auto; font-size: 13px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface-subdued);">
+              <!-- Scorers injected here -->
+            </div>
+          </div>
+
         </div>
       </div>
       

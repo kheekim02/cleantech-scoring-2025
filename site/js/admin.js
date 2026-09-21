@@ -68,13 +68,28 @@ window.AdminApp = {
 
   renderScorers() {
     const select = document.getElementById('judge-select');
+    const scorersList = document.getElementById('scorers-list');
+    
     select.innerHTML = '<option value="">-- Choose a Scorer --</option>';
+    let listHtml = '';
+    
     this.data.judges.forEach(j => {
+      // Dropdown option
       const opt = document.createElement('option');
       opt.value = j.judge_id;
       opt.textContent = j.judge_id;
       select.appendChild(opt);
+      
+      // List item
+      listHtml += `
+        <div style="display: flex; justify-content: space-between; padding: 10px; border-bottom: 1px solid var(--border);">
+          <strong style="color: var(--accent-blue);">${j.judge_id}</strong>
+          <span style="font-family: monospace; color: var(--text-muted); background: #fff; padding: 2px 6px; border-radius: 4px; border: 1px solid var(--hairline);">${j.passcode}</span>
+        </div>
+      `;
     });
+    
+    scorersList.innerHTML = listHtml;
     this.renderAssignments();
   },
 
@@ -94,13 +109,30 @@ window.AdminApp = {
         .map(a => a.startup_id)
     );
 
+        // Calculate global assignment counts
+    const globalCounts = {};
+    this.data.assignments.forEach(a => {
+        globalCounts[a.startup_id] = (globalCounts[a.startup_id] || 0) + 1;
+    });
+
     let html = '';
     this.data.startups.forEach(s => {
       const isChecked = assignedSet.has(s.id) ? 'checked' : '';
+      const count = globalCounts[s.id] || 0;
+      
+      let badge = '';
+      if (count === 0) badge = `<span style="background: #fef08a; color: #854d0e; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700; margin-left: auto;">0 Assigned</span>`;
+      else if (count === 1) badge = `<span style="background: #fed7aa; color: #9a3412; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700; margin-left: auto;">1 Assigned</span>`;
+      else badge = `<span style="background: #bbf7d0; color: #166534; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700; margin-left: auto;">${count} Assigned</span>`;
+
       html += `
-        <div class="company-item">
-          <input type="checkbox" id="chk-${s.id}" ${isChecked} onchange="AdminApp.toggleAssignment('${selectedJudge}', '${s.id}', this.checked)">
-          <label for="chk-${s.id}" style="font-size: 14px; cursor: pointer;">${s.name} <span style="color: var(--text-muted); font-size: 12px; margin-left: 6px;">(${s.id})</span></label>
+        <div class="company-item" style="display: flex; align-items: center; justify-content: flex-start; gap: 10px; padding: 10px 12px; border-bottom: 1px solid var(--hairline);">
+          <input type="checkbox" id="chk-${s.id}" ${isChecked} onchange="AdminApp.toggleAssignment('${selectedJudge}', '${s.id}', this.checked)" style="margin: 0; width: 16px; height: 16px; cursor: pointer;">
+          <label for="chk-${s.id}" style="font-size: 14px; cursor: pointer; display: flex; flex: 1; align-items: center;">
+            <span style="font-weight: 500;">${s.name}</span>
+            <span style="color: var(--text-muted); font-size: 12px; margin-left: 8px;">(${s.id})</span>
+            ${badge}
+          </label>
         </div>
       `;
     });
