@@ -85,7 +85,7 @@ CTO.App = {
   async startApp() {
 
     try {
-      const res = await fetch(`/api/get-startup?id=${this.state.activeStartupId}&judge_id=${this.currentUser.id}&passcode=${this.currentUser.passcode}`);
+      const res = await fetch(`/api/get-startup?id=${encodeURIComponent(this.state.activeStartupId)}&judge_id=${encodeURIComponent(this.currentUser.id)}&passcode=${encodeURIComponent(this.currentUser.passcode)}`);
       const data = await res.json();
       this.state.startups[this.state.activeStartupId] = data;
       document.getElementById('hdr-startup-name').textContent = data.meta?.name || this.state.activeStartupId;
