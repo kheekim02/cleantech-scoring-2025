@@ -100,6 +100,8 @@ CTO.App = {
   },
 
   setupListeners() {
+    if (this._listenersSetup) return;
+    this._listenersSetup = true;
     document.getElementById('btn-prev').addEventListener('click', () => {
       if (this.state.currentStepIndex > 0) {
         this.state.currentStepIndex--;
