@@ -160,10 +160,7 @@ window.CTO.Render = {
                 ${q.options && q.options.length > 0 ? q.options.map(opt => {
                     const isSel = ans === opt.val ? 'selected' : '';
                     const cls = opt.val > 0 ? 'yes' : 'no';
-                    let style = '';
-                    if (opt.val > 0 && opt.val < 1) {
-                        style = isSel ? 'background: var(--accent-orange); color: white; border-color: var(--accent-orange);' : 'color: var(--accent-orange); border-color: var(--accent-orange);';
-                    }
+                    const style = '';
                     return `
                       <button class="h-btn ${cls} ${isSel}" data-qid="${q.new_q_id || q.q_id}" data-val="${opt.val}" style="${style}">
                         ${opt.label}
