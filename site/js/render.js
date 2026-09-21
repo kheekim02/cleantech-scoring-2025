@@ -95,7 +95,7 @@ window.CTO.Render = {
     }
   },
 
-  renderRightPane(stepCat, stepIndex, totalSteps, aiCats, humanQuestions, answers) {
+  renderRightPane(stepCat, stepIndex, totalSteps, aiCats, humanQuestions, answers, humanJustifications = {}) {
     document.getElementById('step-counter').textContent = `STEP ${stepIndex + 1} OF ${totalSteps}`;
     document.getElementById('step-title').textContent = this.categoryNames[stepCat] || stepCat;
     
@@ -155,7 +155,23 @@ window.CTO.Render = {
         const linkHtml = hasCitation ? `<a href="#" class="link-source" data-action="toggle-cite">${this.icons.link} View AI Citation</a>` : `<span style="color:var(--text-faint); font-size:13px;">No citation extracted</span>`;
 
         
+        
+        const subjectiveQids = new Set(['BC_Q1', 'BC_Q2', 'BC_Q3', 'BC_Q4', 'BC_Q5', 'IS_Q7', 'IS_Q16', 'PMF_Q15', 'PMF_Q17', 'TP_Q13', 'TP_Q14', 'TP_Q15', 'F_Q22', 'F_Q23', 'F_Q24', 'IP_Q22', 'IP_Q50']);
+        const requiresJustification = q.cat_code === 'BC' || subjectiveQids.has(q.new_q_id);
+        const existingJustification = humanJustifications[q.new_q_id] || '';
+        
+        let justHtml = '';
+        if (requiresJustification) {
+          justHtml = `
+            <div class="h-card-justification" style="margin-top: 12px; margin-bottom: 12px;">
+              <label style="display: block; font-size: 12px; font-weight: 600; color: var(--text-main); margin-bottom: 6px;">Justification (Required)</label>
+              <textarea class="justification-input" data-qid="${q.new_q_id}" placeholder="Provide justification based on the markdown rubrics..." style="width: 100%; min-height: 70px; padding: 10px; border: 1px solid var(--border); border-radius: 6px; font-family: inherit; font-size: 13px; resize: vertical; box-sizing: border-box; background: var(--surface-main);">${existingJustification}</textarea>
+            </div>
+          `;
+        }
+        
         const isAnswered = ans !== undefined && ans !== null;
+
         const collapsedClass = isAnswered ? 'collapsed' : '';
         const summaryText = isAnswered ? `Answered: ${ans} PTS` : '';
         const safeCit = (q.verbatim_citation || '').replace(/"/g, '&quot;');
@@ -178,6 +194,7 @@ window.CTO.Render = {
               ${q.text}
             </div>
             ${citeHtml}
+            ${justHtml}
             <div class="h-card-footer">
               ${linkHtml}
               <div class="h-actions">

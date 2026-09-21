@@ -38,11 +38,11 @@ module.exports = async (req, res) => {
 
     for (const item of scores) {
       await client.query(`
-        INSERT INTO human_reviews (startup_id, question_id, judge_id, score_value)
-        VALUES ($1, $2, $3, $4)
+        INSERT INTO human_reviews (startup_id, question_id, judge_id, score_value, justification)
+        VALUES ($1, $2, $3, $4, $5)
         ON CONFLICT (startup_id, question_id, judge_id) 
-        DO UPDATE SET score_value = EXCLUDED.score_value, updated_at = NOW();
-      `, [startup_id, item.qid, judge_id, item.val]);
+        DO UPDATE SET score_value = EXCLUDED.score_value, justification = EXCLUDED.justification, updated_at = NOW();
+      `, [startup_id, item.qid, judge_id, item.val, item.justification || null]);
     }
 
     await client.end();
