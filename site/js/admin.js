@@ -201,7 +201,7 @@ window.AdminApp = {
     });
     
     container.innerHTML = html;
-  }
+  },
 
   async createScorer() {
     const idInput = document.getElementById('new-judge-id');
