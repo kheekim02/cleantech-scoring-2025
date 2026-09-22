@@ -195,6 +195,26 @@ CTO.App = {
         this.jumpToQuestion(catCode, qid);
       }
     });
+
+    const confirmBtn = document.getElementById('modal-confirm-btn');
+    if (confirmBtn) {
+      confirmBtn.addEventListener('click', async () => {
+        confirmBtn.textContent = 'Submitting to Database...';
+        confirmBtn.disabled = true;
+
+        await this.flushSyncQueue();
+
+        confirmBtn.textContent = '✓ Logged to Database';
+        confirmBtn.style.background = 'var(--accent-green)';
+        setTimeout(() => {
+          document.getElementById('submit-modal').style.display = 'none';
+          confirmBtn.textContent = 'Confirm & Submit';
+          confirmBtn.disabled = false;
+          confirmBtn.style.background = '';
+          alert('Your evaluation has been successfully submitted and logged in the database!');
+        }, 800);
+      });
+    }
   },
 
 
@@ -351,8 +371,29 @@ CTO.App = {
     if (!sData) return;
 
     const totalHumanQs = sData.human_questions.length;
-    const answeredCount = Object.values(sEval.humanAnswers).filter(v => v === 1 || v === 0).length;
+    const answeredCount = Object.values(sEval.humanAnswers).filter(v => v !== null && v !== undefined && !isNaN(v)).length;
     CTO.Render.updateOverallProgress(answeredCount, totalHumanQs);
+  },
+
+  async flushSyncQueue() {
+    if (this.state.syncQueue.length === 0) return;
+    const batch = [...this.state.syncQueue];
+    this.state.syncQueue = [];
+    try {
+      await fetch('/api/sync-scores', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          startup_id: this.state.activeStartupId,
+          judge_id: this.currentUser.id,
+          passcode: this.currentUser.passcode,
+          scores: batch.map(b => ({ qid: b.qid, val: b.value !== undefined ? b.value : null, justification: b.justification || '' }))
+        })
+      });
+    } catch (e) {
+      console.error('Flush sync failed:', e);
+      this.state.syncQueue.unshift(...batch);
+    }
   },
 
   submitEvaluation() {
@@ -482,14 +523,31 @@ CTO.App = {
     if (!this.state.evaluations[sId]) {
       this.state.evaluations[sId] = { humanAnswers: {}, humanJustifications: {} };
     }
+
+    // 1. Seed from database reviews if returned by API
+    const sData = this.state.startups[sId];
+    if (sData && Array.isArray(sData.judge_reviews)) {
+      sData.judge_reviews.forEach(r => {
+        if (r.score_value !== null && r.score_value !== undefined) {
+          this.state.evaluations[sId].humanAnswers[r.question_id] = parseFloat(r.score_value);
+        }
+        if (r.justification) {
+          this.state.evaluations[sId].humanJustifications[r.question_id] = r.justification;
+        }
+      });
+    }
+
+    // 2. Overlay any local storage changes
     try {
       const stored = localStorage.getItem('cto2025_state');
       if (stored) {
         const data = JSON.parse(stored);
         if (data[sId]) {
-          this.state.evaluations[sId] = data[sId];
-          if (!this.state.evaluations[sId].humanJustifications) {
-            this.state.evaluations[sId].humanJustifications = {};
+          if (data[sId].humanAnswers) {
+            Object.assign(this.state.evaluations[sId].humanAnswers, data[sId].humanAnswers);
+          }
+          if (data[sId].humanJustifications) {
+            Object.assign(this.state.evaluations[sId].humanJustifications, data[sId].humanJustifications);
           }
         }
       }

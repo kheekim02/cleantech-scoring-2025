@@ -22,13 +22,21 @@ module.exports = async (req, res) => {
     }
 
     const startupQuery = await client.query('SELECT payload FROM startup_extractions WHERE startup_id = $1', [id]);
-    await client.end();
-
     if (startupQuery.rows.length === 0) {
+      await client.end();
       return res.status(404).json({ error: "Startup not found" });
     }
 
-    return res.status(200).json(startupQuery.rows[0].payload);
+    const reviewsQuery = await client.query(
+      'SELECT question_id, score_value, justification FROM human_reviews WHERE startup_id = $1 AND judge_id = $2',
+      [id, judge_id]
+    );
+    await client.end();
+
+    const payload = startupQuery.rows[0].payload;
+    payload.judge_reviews = reviewsQuery.rows;
+
+    return res.status(200).json(payload);
 
   } catch (err) {
     console.error("Database Error:", err);

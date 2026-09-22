@@ -37,12 +37,18 @@ module.exports = async (req, res) => {
     }
 
     for (const item of scores) {
+      const scoreVal = (item.val !== null && item.val !== undefined) ? parseFloat(item.val) : null;
+      const justVal = (item.justification && item.justification.trim().length > 0) ? item.justification.trim() : null;
+
       await client.query(`
         INSERT INTO human_reviews (startup_id, question_id, judge_id, score_value, justification)
         VALUES ($1, $2, $3, $4, $5)
         ON CONFLICT (startup_id, question_id, judge_id) 
-        DO UPDATE SET score_value = EXCLUDED.score_value, justification = EXCLUDED.justification, updated_at = NOW();
-      `, [startup_id, item.qid, judge_id, item.val, item.justification || null]);
+        DO UPDATE SET 
+          score_value = COALESCE(EXCLUDED.score_value, human_reviews.score_value),
+          justification = COALESCE(EXCLUDED.justification, human_reviews.justification),
+          updated_at = NOW();
+      `, [startup_id, item.qid, judge_id, scoreVal, justVal]);
     }
 
     await client.end();
