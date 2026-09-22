@@ -207,7 +207,7 @@ window.CTO.Render = {
         
                 let justHtml = '';
         if (requiresJustification) {
-          const hasRubric = ['BC_Q1', 'BC_Q2', 'BC_Q4', 'BC_Q5'].includes(q.new_q_id);
+          const hasRubric = ['BC_Q1', 'BC_Q2', 'BC_Q3', 'BC_Q4', 'BC_Q5'].includes(q.new_q_id);
           const rubricLink = hasRubric ? `<a href="#" class="view-rubric" data-qid="${q.new_q_id}" style="float: right; color: var(--accent-blue); text-decoration: none; font-weight: 500;">${window.CTO.Render.icons.doc || '📄'} View Examples</a>` : '';
           
           justHtml = `
