@@ -1,12 +1,7 @@
 const { Client } = require('pg');
+const { requireSession } = require('./_auth');
 
 module.exports = async (req, res) => {
-  const { username, passcode } = req.query || {};
-
-  if (!username || !passcode) {
-    return res.status(401).json({ error: "Missing auth" });
-  }
-
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: { rejectUnauthorized: false }
@@ -15,15 +10,14 @@ module.exports = async (req, res) => {
   try {
     await client.connect();
     
-    // Auth check
-    const authQuery = await client.query('SELECT * FROM admins WHERE username = $1 AND passcode = $2', [username, passcode]);
-    if (authQuery.rows.length === 0) {
+    const session = await requireSession(client, req, res, 'admin');
+    if (!session) {
       await client.end();
-      return res.status(401).json({ error: "Unauthorized" });
+      return;
     }
 
     // Fetch data
-    const judgesRes = await client.query('SELECT judge_id, passcode FROM judges ORDER BY judge_id ASC');
+    const judgesRes = await client.query('SELECT judge_id FROM judges ORDER BY judge_id ASC');
     const startupsRes = await client.query("SELECT startup_id as id, company_name as name, COALESCE((payload->'meta'->>'clean_ready')::boolean, false) as clean_ready FROM startup_extractions ORDER BY company_name ASC");
     const assignmentsRes = await client.query('SELECT judge_id, startup_id, assigned_at FROM judge_assignments');
     const progressRes = await client.query('SELECT judge_id, startup_id, count(question_id) as answered_count FROM human_reviews GROUP BY judge_id, startup_id');

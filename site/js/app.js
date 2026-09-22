@@ -11,14 +11,17 @@ CTO.App = {
   },
 
   init() {
-    const stored = localStorage.getItem('cto_auth');
-    if (stored) {
-      this.currentUser = JSON.parse(stored);
+    fetch('/api/auth-session?role=scorer').then(async res => {
+      if (!res.ok) throw new Error('No active session');
+      return res.json();
+    }).then(data => {
+      this.currentUser = data.user;
       document.getElementById('login-modal').style.display = 'none';
       this.loadStartupsList().then(() => this.startApp());
-    } else {
+    }).catch(() => {
       document.getElementById('login-modal').style.display = 'flex';
-    }
+      this.setSaveStatus('Sign in required');
+    });
   },
 
   async handleLogin() {
@@ -30,15 +33,15 @@ CTO.App = {
     btn.textContent = 'Verifying...';
     
     try {
-      const res = await fetch('/api/sync-scores', {
+      const res = await fetch('/api/auth-login', {
         method: 'POST',
-        body: JSON.stringify({ startup_id: 'auth_check', scores: [], judge_id: id, passcode: pass })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ role: 'scorer', judge_id: id, password: pass })
       });
       
       if (res.ok) {
-        const authData = { id, passcode: pass };
-        localStorage.setItem('cto_auth', JSON.stringify(authData));
-        this.currentUser = authData;
+        const authData = await res.json();
+        this.currentUser = authData.user;
         document.getElementById('login-modal').style.display = 'none';
         this.loadStartupsList().then(() => this.startApp());
       } else {
@@ -57,7 +60,7 @@ CTO.App = {
 
   async loadStartupsList() {
     try {
-      const res = await fetch(`/api/list-startups?judge_id=${this.currentUser.id}&passcode=${this.currentUser.passcode}`);
+      const res = await fetch('/api/list-startups');
       if (res.ok) {
         const startups = await res.json();
         const picker = document.getElementById('startup-picker');
@@ -85,7 +88,7 @@ CTO.App = {
   async startApp() {
 
     try {
-      const res = await fetch(`/api/get-startup?id=${encodeURIComponent(this.state.activeStartupId)}&judge_id=${encodeURIComponent(this.currentUser.id)}&passcode=${encodeURIComponent(this.currentUser.passcode)}`);
+      const res = await fetch(`/api/get-startup?id=${encodeURIComponent(this.state.activeStartupId)}`);
       const data = await res.json();
       this.state.startups[this.state.activeStartupId] = data;
       document.getElementById('hdr-startup-name').textContent = data.meta?.name || this.state.activeStartupId;
@@ -96,6 +99,7 @@ CTO.App = {
     this.loadState();
     this.setupListeners();
     this.startSyncWorker(); // REC 5
+    this.setSaveStatus('Saved');
     this.updateUI();
   },
 
@@ -196,7 +200,13 @@ CTO.App = {
         confirmBtn.textContent = 'Submitting to Database...';
         confirmBtn.disabled = true;
 
-        await this.flushSyncQueue();
+        const saved = await this.flushSyncQueue();
+        if (!saved) {
+          confirmBtn.textContent = 'Save failed — retry';
+          confirmBtn.disabled = false;
+          this.setSaveStatus('Save failed — retrying');
+          return;
+        }
 
         confirmBtn.textContent = '✓ Logged to Database';
         confirmBtn.style.background = 'var(--accent-green)';
@@ -452,6 +462,7 @@ CTO.App = {
     this.saveState();
     const justification = sEval.humanJustifications ? (sEval.humanJustifications[qid] || '') : '';
     this.state.syncQueue.push({ qid, value, justification, timestamp: Date.now() });
+    this.setSaveStatus('Saving…');
   },
 
 
@@ -463,6 +474,7 @@ CTO.App = {
     
     const value = sEval.humanAnswers[qid] !== undefined ? sEval.humanAnswers[qid] : null;
     this.state.syncQueue.push({ qid, value, justification: text, timestamp: Date.now() });
+    this.setSaveStatus('Saving…');
   },
 
   refreshOverallProgress() {
@@ -477,23 +489,26 @@ CTO.App = {
   },
 
   async flushSyncQueue() {
-    if (this.state.syncQueue.length === 0) return;
+    if (this.state.syncQueue.length === 0) return true;
     const batch = [...this.state.syncQueue];
     this.state.syncQueue = [];
     try {
-      await fetch('/api/sync-scores', {
+      const res = await fetch('/api/sync-scores', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           startup_id: this.state.activeStartupId,
-          judge_id: this.currentUser.id,
-          passcode: this.currentUser.passcode,
           scores: batch.map(b => ({ qid: b.qid, val: b.value !== undefined ? b.value : null, justification: b.justification || '' }))
         })
       });
+      if (!res.ok) throw new Error('SAVE_FAILED');
+      this.setSaveStatus('Saved');
+      return true;
     } catch (e) {
       console.error('Flush sync failed:', e);
       this.state.syncQueue.unshift(...batch);
+      this.setSaveStatus('Save failed — retrying');
+      return false;
     }
   },
 
@@ -595,8 +610,6 @@ CTO.App = {
           },
           body: JSON.stringify({
             startup_id: this.state.activeStartupId,
-            judge_id: this.currentUser.id,
-            passcode: this.currentUser.passcode,
             scores: batch.map(b => ({ qid: b.qid, val: b.value !== undefined ? b.value : null, justification: b.justification || '' }))
           })
         });
@@ -605,13 +618,13 @@ CTO.App = {
           throw new Error("401_UNAUTHORIZED");
         }
         if (!res.ok) throw new Error("NETWORK_ERROR");
+        this.setSaveStatus('Saved');
 
       } catch (error) {
         this.state.syncQueue.unshift(...batch);
         
         if (error.message === "401_UNAUTHORIZED") {
            console.warn("Credentials rejected by server.");
-           localStorage.removeItem('cto_auth');
            alert('Your scorer access has been revoked or expired. Please log in again.');
            document.getElementById('login-modal').style.display = 'flex';
         }
@@ -643,12 +656,13 @@ CTO.App = {
       const stored = localStorage.getItem('cto2025_state');
       if (stored) {
         const data = JSON.parse(stored);
-        if (data[sId]) {
-          if (data[sId].humanAnswers) {
-            Object.assign(this.state.evaluations[sId].humanAnswers, data[sId].humanAnswers);
+        const draftKey = `${this.currentUser?.id || 'unknown'}:${sId}`;
+        if (data[draftKey]) {
+          if (data[draftKey].humanAnswers) {
+            Object.assign(this.state.evaluations[sId].humanAnswers, data[draftKey].humanAnswers);
           }
-          if (data[sId].humanJustifications) {
-            Object.assign(this.state.evaluations[sId].humanJustifications, data[sId].humanJustifications);
+          if (data[draftKey].humanJustifications) {
+            Object.assign(this.state.evaluations[sId].humanJustifications, data[draftKey].humanJustifications);
           }
         }
       }
@@ -659,9 +673,45 @@ CTO.App = {
     try {
       const stored = localStorage.getItem('cto2025_state');
       let data = stored ? JSON.parse(stored) : {};
-      data[this.state.activeStartupId] = this.state.evaluations[this.state.activeStartupId];
+      const draftKey = `${this.currentUser?.id || 'unknown'}:${this.state.activeStartupId}`;
+      data[draftKey] = this.state.evaluations[this.state.activeStartupId];
       localStorage.setItem('cto2025_state', JSON.stringify(data));
     } catch (e) {}
+  },
+
+  setSaveStatus(message) {
+    const status = document.getElementById('save-status');
+    if (status) status.textContent = message;
+  },
+
+  async logout() {
+    await fetch('/api/auth-logout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ role: 'scorer' }) });
+    this.currentUser = null;
+    document.getElementById('login-modal').style.display = 'flex';
+    this.setSaveStatus('Signed out');
+  },
+
+  openPasswordModal() {
+    document.getElementById('password-modal').style.display = 'flex';
+  },
+
+  closePasswordModal() {
+    document.getElementById('password-modal').style.display = 'none';
+    document.getElementById('password-message').textContent = '';
+  },
+
+  async changePassword() {
+    const current_password = document.getElementById('current-password').value;
+    const new_password = document.getElementById('new-password').value;
+    const confirm_password = document.getElementById('confirm-password').value;
+    const message = document.getElementById('password-message');
+    const res = await fetch('/api/change-password', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ role: 'scorer', current_password, new_password, confirm_password })
+    });
+    const body = await res.json();
+    message.textContent = body.message || body.error;
+    message.style.color = res.ok ? 'var(--accent-green)' : 'var(--accent-red)';
   }
 };
 

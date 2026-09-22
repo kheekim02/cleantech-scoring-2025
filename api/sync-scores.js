@@ -1,4 +1,11 @@
 const { Client } = require('pg');
+const { requireSession } = require('./_auth');
+
+const JUSTIFICATION_QUESTION_IDS = new Set(['BC_Q1', 'BC_Q2', 'BC_Q3', 'BC_Q4', 'BC_Q5', 'IS_Q7', 'IS_Q16', 'PMF_Q15', 'PMF_Q17', 'TP_Q13', 'TP_Q14', 'TP_Q15', 'F_Q22', 'F_Q23', 'F_Q24', 'IP_Q22', 'IP_Q50']);
+
+function requiresJustification(question) {
+  return question.cat_code === 'BC' || JUSTIFICATION_QUESTION_IDS.has(question.new_q_id || question.q_id);
+}
 
 module.exports = async (req, res) => {
   if (req.method !== 'POST') {
@@ -10,10 +17,10 @@ module.exports = async (req, res) => {
     try { payload = JSON.parse(payload); } catch(e) {}
   }
 
-  const { startup_id, scores, judge_id, passcode } = payload || {};
+  const { startup_id, scores } = payload || {};
   
-  if (!judge_id || !passcode) {
-    return res.status(401).json({ error: "Missing Scorer ID or Passcode" });
+  if (!startup_id) {
+    return res.status(400).json({ error: 'Missing startup ID.' });
   }
 
   const client = new Client({
@@ -24,11 +31,10 @@ module.exports = async (req, res) => {
   try {
     await client.connect();
 
-    const authQuery = await client.query('SELECT * FROM judges WHERE judge_id = $1 AND passcode = $2', [judge_id, passcode]);
-    
-    if (authQuery.rows.length === 0) {
+    const session = await requireSession(client, req, res, 'scorer');
+    if (!session) {
       await client.end();
-      return res.status(401).json({ error: "Invalid Scorer ID or Passcode." });
+      return;
     }
 
     if (!scores || scores.length === 0) {
@@ -36,9 +42,41 @@ module.exports = async (req, res) => {
       return res.status(200).json({ success: true, message: "Authenticated." });
     }
 
+    const assignment = await client.query(
+      'SELECT 1 FROM judge_assignments WHERE judge_id = $1 AND startup_id = $2',
+      [session.principalId, startup_id]
+    );
+    if (assignment.rows.length === 0) {
+      await client.end();
+      return res.status(403).json({ error: 'This startup is not assigned to you.' });
+    }
+
+    const startup = await client.query('SELECT payload FROM startup_extractions WHERE startup_id = $1', [startup_id]);
+    if (startup.rows.length !== 1) {
+      await client.end();
+      return res.status(404).json({ error: 'Startup not found.' });
+    }
+    const questions = new Map((startup.rows[0].payload?.human_questions || []).map(question => [question.new_q_id || question.q_id, question]));
+
     for (const item of scores) {
+      const question = questions.get(item.qid);
+      if (!question) {
+        await client.end();
+        return res.status(400).json({ error: `Unknown question: ${item.qid}` });
+      }
       const scoreVal = (item.val !== null && item.val !== undefined) ? parseFloat(item.val) : null;
       const justVal = (item.justification && item.justification.trim().length > 0) ? item.justification.trim() : null;
+      const allowedScores = Array.isArray(question.options) && question.options.length > 0
+        ? question.options.map(option => Number(option.val))
+        : [0, 0.25, 0.5, 0.75, 1];
+      if (scoreVal !== null && (!Number.isFinite(scoreVal) || !allowedScores.includes(scoreVal))) {
+        await client.end();
+        return res.status(400).json({ error: `Invalid score for ${item.qid}` });
+      }
+      if (requiresJustification(question) && scoreVal !== null && !justVal) {
+        await client.end();
+        return res.status(400).json({ error: `A justification is required for ${item.qid}` });
+      }
 
       await client.query(`
         INSERT INTO human_reviews (startup_id, question_id, judge_id, score_value, justification)
@@ -48,7 +86,7 @@ module.exports = async (req, res) => {
           score_value = COALESCE(EXCLUDED.score_value, human_reviews.score_value),
           justification = COALESCE(EXCLUDED.justification, human_reviews.justification),
           updated_at = NOW();
-      `, [startup_id, item.qid, judge_id, scoreVal, justVal]);
+      `, [startup_id, item.qid, session.principalId, scoreVal, justVal]);
     }
 
     await client.end();

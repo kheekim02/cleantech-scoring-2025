@@ -28,15 +28,17 @@ window.AdminApp = {
   },
 
   init() {
-    const stored = localStorage.getItem('cto_admin_auth');
-    if (stored) {
-      this.auth = JSON.parse(stored);
+    fetch('/api/auth-session?role=admin').then(async res => {
+      if (!res.ok) throw new Error('No active session');
+      return res.json();
+    }).then(data => {
+      this.auth = data.user;
       document.getElementById('admin-login-modal').style.display = 'none';
       this.loadData();
-    } else {
+    }).catch(() => {
       document.getElementById('admin-login-modal').style.display = 'flex';
       document.getElementById('admin-dashboard').style.display = 'none';
-    }
+    });
   },
 
   async login() {
@@ -45,14 +47,13 @@ window.AdminApp = {
     if (!user || !pass) return;
 
     try {
-      const res = await fetch('/api/admin-auth', {
+      const res = await fetch('/api/auth-login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: user, passcode: pass })
+        body: JSON.stringify({ role: 'admin', username: user, password: pass })
       });
       if (res.ok) {
-        this.auth = { username: user, passcode: pass };
-        localStorage.setItem('cto_admin_auth', JSON.stringify(this.auth));
+        this.auth = (await res.json()).user;
         document.getElementById('admin-login-modal').style.display = 'none';
         this.loadData();
       } else {
@@ -64,7 +65,7 @@ window.AdminApp = {
   },
 
   logout() {
-    localStorage.removeItem('cto_admin_auth');
+    fetch('/api/auth-logout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ role: 'admin' }) });
     this.auth = null;
     document.getElementById('admin-login-modal').style.display = 'flex';
     document.getElementById('admin-dashboard').style.display = 'none';
@@ -73,7 +74,7 @@ window.AdminApp = {
   async loadData() {
     if (!this.auth) return;
     try {
-      const res = await fetch(`/api/admin-data?username=${encodeURIComponent(this.auth.username)}&passcode=${encodeURIComponent(this.auth.passcode)}`);
+      const res = await fetch('/api/admin-data');
       if (res.status === 401) {
         this.logout();
         return;
@@ -105,7 +106,7 @@ window.AdminApp = {
       listHtml += `
         <div style="display: flex; justify-content: space-between; padding: 10px; border-bottom: 1px solid var(--border);">
           <strong style="color: var(--accent-blue);">${j.judge_id}</strong>
-          <span style="font-family: monospace; color: var(--text-muted); background: #fff; padding: 2px 6px; border-radius: 4px; border: 1px solid var(--hairline);">${j.passcode}</span>
+          <span style="font-size: 11px; color: var(--text-muted);">Password protected</span>
         </div>
       `;
     });
@@ -296,9 +297,9 @@ window.AdminApp = {
     const msg = document.getElementById('create-msg');
     
     const new_judge_id = idInput.value.trim();
-    const new_passcode = passInput.value.trim();
+    const new_password = passInput.value.trim();
     
-    if (!new_judge_id || !new_passcode) {
+    if (!new_judge_id || !new_password) {
       msg.textContent = "Please fill out both fields.";
       msg.style.color = 'var(--accent-red)';
       return;
@@ -309,10 +310,8 @@ window.AdminApp = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          username: this.auth.username,
-          passcode: this.auth.passcode,
           action: 'CREATE_JUDGE',
-          data: { new_judge_id, new_passcode }
+          data: { new_judge_id, new_password }
         })
       });
       
@@ -341,8 +340,6 @@ window.AdminApp = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          username: this.auth.username,
-          passcode: this.auth.passcode,
           action: 'TOGGLE_ASSIGNMENT',
           data: { judge_id, startup_id, assigned }
         })

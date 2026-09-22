@@ -149,6 +149,7 @@ window.CTO.Render = {
       `;
     } else {
       sortedHqs.forEach((q, idx) => {
+        const safeQuestionText = this.escapeHtml(q.text || '');
         const ans = answers[q.new_q_id];
         const isYesSelected = ans === 1 ? 'selected' : '';
         const isNoSelected = ans === 0 ? 'selected' : '';
@@ -190,7 +191,7 @@ window.CTO.Render = {
 
         // Prepare citation block
         const pageLabel = q.page_number ? ` (Page ${q.page_number})` : '';
-        const docBadge = q.source_pdf ? `<span style="font-family: monospace; font-size: 11px; background: rgba(0,0,0,0.06); padding: 2px 6px; border-radius: 4px; color: var(--text-main); font-weight: 500;">📄 ${q.source_pdf}</span>` : '';
+        const docBadge = q.source_pdf ? `<span style="font-family: monospace; font-size: 11px; background: rgba(0,0,0,0.06); padding: 2px 6px; border-radius: 4px; color: var(--text-main); font-weight: 500;">📄 ${this.escapeHtml(q.source_pdf)}</span>` : '';
         const citeHint = q.page_number ? `Switched viewer to Page ${q.page_number}. Use Cmd+F / Ctrl+F in the document to locate exact text.` : `Use Cmd+F / Ctrl+F in the PDF viewer to locate this text.`;
 
         const citeHtml = hasCitation ? `
@@ -199,7 +200,7 @@ window.CTO.Render = {
               <strong style="color: var(--accent-orange);">AI Citation${pageLabel}:</strong>
               ${docBadge}
             </div>
-            "${q.verbatim_citation}"<br>
+            "${this.escapeHtml(q.verbatim_citation)}"<br>
             <em class="ai-citation-disclaimer">AI-extracted citation — verify it against the source document before relying on it.</em>
             <em style="color: var(--text-muted); display: block; margin-top: 6px;">${citeHint}</em>
           </div>
@@ -262,7 +263,7 @@ window.CTO.Render = {
               ${aiSuggestHtml}
             </div>
             <div class="h-card-body">
-              ${q.text}
+              ${safeQuestionText}
             </div>
             <div class="h-card-actions">
               <div class="h-actions">
@@ -288,6 +289,10 @@ window.CTO.Render = {
     const score = Number(value);
     if (!Number.isFinite(score)) return String(value);
     return `${score} ${score === 1 ? 'pt' : 'pts'}`;
+  },
+
+  escapeHtml(value) {
+    return String(value).replace(/[&<>'"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[char]);
   },
 
   renderFooter(stepIndex, totalSteps) {

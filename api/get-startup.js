@@ -1,9 +1,10 @@
 const { Client } = require('pg');
+const { requireSession } = require('./_auth');
 
 module.exports = async (req, res) => {
-  const { id, judge_id, passcode } = req.query || {};
+  const { id } = req.query || {};
 
-  if (!id || !judge_id || !passcode) {
+  if (!id) {
     return res.status(400).json({ error: "Missing required parameters" });
   }
 
@@ -15,10 +16,19 @@ module.exports = async (req, res) => {
   try {
     await client.connect();
     
-    const authQuery = await client.query('SELECT * FROM judges WHERE judge_id = $1 AND passcode = $2', [judge_id, passcode]);
-    if (authQuery.rows.length === 0) {
+    const session = await requireSession(client, req, res, 'scorer');
+    if (!session) {
       await client.end();
-      return res.status(401).json({ error: "Unauthorized" });
+      return;
+    }
+
+    const assignment = await client.query(
+      'SELECT 1 FROM judge_assignments WHERE judge_id = $1 AND startup_id = $2',
+      [session.principalId, id]
+    );
+    if (assignment.rows.length === 0) {
+      await client.end();
+      return res.status(403).json({ error: 'This startup is not assigned to you.' });
     }
 
     const startupQuery = await client.query('SELECT payload FROM startup_extractions WHERE startup_id = $1', [id]);
@@ -29,7 +39,7 @@ module.exports = async (req, res) => {
 
     const reviewsQuery = await client.query(
       'SELECT question_id, score_value, justification FROM human_reviews WHERE startup_id = $1 AND judge_id = $2',
-      [id, judge_id]
+      [id, session.principalId]
     );
     await client.end();
 
