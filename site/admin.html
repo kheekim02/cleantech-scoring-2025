@@ -22,6 +22,12 @@
     .company-name { font-size: 14px; font-weight: 600; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .assignment-meta { display: flex; flex-wrap: wrap; gap: 6px; width: 100%; }
     .assignment-badge { white-space: nowrap; }
+    .assignment-toolbar { display: grid; grid-template-columns: minmax(180px, 1fr) auto; gap: 12px; align-items: center; margin-bottom: 10px; }
+    .assignment-toolbar input { width: 100%; padding: 9px 10px; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; font: inherit; font-size: 13px; }
+    .assignment-filters { display: flex; gap: 6px; flex-wrap: wrap; }
+    .assignment-filter { border: 1px solid var(--border); border-radius: 16px; padding: 6px 10px; background: var(--surface-subdued); color: var(--text-muted); font-size: 12px; font-weight: 600; cursor: pointer; }
+    .assignment-filter.active { background: var(--accent-blue); border-color: var(--accent-blue); color: #fff; }
+    .assignment-summary { margin: 0 0 10px; color: var(--text-muted); font-size: 12px; font-weight: 600; }
     @media (max-width: 960px) { .admin-container { padding: 20px; } .grid { grid-template-columns: 1fr; } }
     @media (max-width: 560px) { .company-item { grid-template-columns: auto minmax(0, 1fr); } .assignment-badge { grid-column: 2; justify-self: start; } }
   </style>
@@ -97,7 +103,15 @@
               <option value="">-- Choose a Scorer --</option>
             </select>
           </div>
-          
+          <div class="assignment-toolbar">
+            <input id="company-search" type="search" placeholder="Search companies" oninput="AdminApp.setSearch(this.value)">
+            <div class="assignment-filters">
+              <button class="assignment-filter active" data-filter="all" onclick="AdminApp.setAssignmentFilter('all')">All</button>
+              <button class="assignment-filter" data-filter="assigned" onclick="AdminApp.setAssignmentFilter('assigned')">Assigned</button>
+              <button class="assignment-filter" data-filter="unassigned" onclick="AdminApp.setAssignmentFilter('unassigned')">Unassigned</button>
+            </div>
+          </div>
+          <div class="assignment-summary" id="assignment-summary"></div>
           <div class="company-list" id="company-list-container">
             <div style="padding: 20px; text-align: center; color: var(--text-muted); font-size: 14px;">Please select a scorer first.</div>
           </div>
@@ -107,6 +121,6 @@
     </div>
   </div>
 
-  <script src="js/admin.js?v=4"></script>
+  <script src="js/admin.js?v=5"></script>
 </body>
 </html>

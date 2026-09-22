@@ -1,9 +1,23 @@
 window.AdminApp = {
   auth: null,
+  assignmentFilter: 'all',
+  companySearch: '',
+  selectedJudgeId: sessionStorage.getItem('cto_admin_selected_judge') || '',
   data: {
     judges: [],
     startups: [],
     assignments: [] // array of { judge_id, startup_id, assigned_at }
+  },
+
+  setAssignmentFilter(filter) {
+    this.assignmentFilter = filter;
+    document.querySelectorAll('.assignment-filter').forEach(button => button.classList.toggle('active', button.dataset.filter === filter));
+    this.renderAssignments();
+  },
+
+  setSearch(value) {
+    this.companySearch = value.trim().toLowerCase();
+    this.renderAssignments();
   },
 
   init() {
@@ -89,6 +103,12 @@ window.AdminApp = {
         </div>
       `;
     });
+    if (this.data.judges.some(j => j.judge_id === this.selectedJudgeId)) select.value = this.selectedJudgeId;
+    select.onchange = () => {
+      this.selectedJudgeId = select.value;
+      sessionStorage.setItem('cto_admin_selected_judge', this.selectedJudgeId);
+      this.renderAssignments();
+    };
     
     scorersList.innerHTML = listHtml;
     this.renderAssignments();
@@ -188,7 +208,13 @@ window.AdminApp = {
         });
     }
 
-    const startupsToRender = this.data.startups;
+    const startupsToRender = this.data.startups.filter(s => {
+      const assigned = assignedSet.has(s.id);
+      const matchesFilter = this.assignmentFilter === 'all' || (this.assignmentFilter === 'assigned' && assigned) || (this.assignmentFilter === 'unassigned' && !assigned);
+      return matchesFilter && (!this.companySearch || s.name.toLowerCase().includes(this.companySearch));
+    });
+    const summary = document.getElementById('assignment-summary');
+    if (summary) summary.textContent = `${assignedSet.size} of ${this.data.startups.length} companies assigned to ${selectedJudge} · showing ${startupsToRender.length}`;
 
     let html = '';
     if (startupsToRender.length === 0) {
