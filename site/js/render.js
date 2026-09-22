@@ -142,9 +142,22 @@ window.CTO.Render = {
         let tierClass = 'conf-amber';
         if (confNum >= 0.85) tierClass = 'conf-green';
         if (confNum < 0.60) tierClass = 'conf-red';
+        // Only show AI-assisted scores when confidence is high (>=80%) OR there is a direct extracted citation
+        const hasCitation = !!(q.verbatim_citation && q.verbatim_citation.trim().length > 5);
+        const isHighConfidence = confNum >= 0.80;
+        const hasValidSuggestion = q.ai_suggestion !== undefined && q.ai_suggestion !== null && verdictText !== 'N/A';
+        const showAiAssist = (isHighConfidence || hasCitation) && hasValidSuggestion;
+
+        const aiSuggestHtml = showAiAssist ? `
+              <div class="h-ai-suggest ${tierClass}">
+                ${this.icons.spark}
+                <span class="verdict">${verdictText}</span>
+                <span class="divider"></span>
+                <span class="score">${confText}</span>
+              </div>
+        ` : '';
 
         // Prepare citation block
-        const hasCitation = q.verbatim_citation && q.verbatim_citation.length > 5;
         const citeHtml = hasCitation ? `
           <div class="h-card-citation" style="display: none; padding: 12px; background: #fff8e1; border-left: 3px solid var(--accent-yellow); margin: 0 0 16px 0; font-size: 13px; color: var(--text-main);">
             <strong style="color: var(--accent-orange);">AI Citation:</strong> "${q.verbatim_citation}"<br>
@@ -189,12 +202,7 @@ window.CTO.Render = {
                 <span class="h-tag">${q.cat_code}</span>
                 <span class="h-qid">${q.new_q_id}</span>
               </div>
-              <div class="h-ai-suggest ${tierClass}">
-                ${this.icons.spark}
-                <span class="verdict">${verdictText}</span>
-                <span class="divider"></span>
-                <span class="score">${confText}</span>
-              </div>
+              ${aiSuggestHtml}
             </div>
             <div class="h-card-body">
               ${q.text}
