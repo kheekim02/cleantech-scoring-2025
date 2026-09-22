@@ -41,7 +41,16 @@ module.exports = async (req, res) => {
       if (!judge_id || !startup_id || assigned === undefined) throw new Error("Missing assignment data");
       
       if (assigned) {
-        await client.query('INSERT INTO judge_assignments (judge_id, startup_id) VALUES ($1, $2) ON CONFLICT DO NOTHING', [judge_id, startup_id]);
+        const assignmentRes = await client.query(
+          `INSERT INTO judge_assignments (judge_id, startup_id, assigned_at)
+           VALUES ($1, $2, NOW())
+           ON CONFLICT (judge_id, startup_id) DO UPDATE
+             SET assigned_at = judge_assignments.assigned_at
+           RETURNING judge_id, startup_id, assigned_at`,
+          [judge_id, startup_id]
+        );
+        await client.end();
+        return res.status(200).json({ success: true, assignment: assignmentRes.rows[0] });
       } else {
         await client.query('DELETE FROM judge_assignments WHERE judge_id = $1 AND startup_id = $2', [judge_id, startup_id]);
       }

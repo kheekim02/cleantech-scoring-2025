@@ -25,7 +25,7 @@ module.exports = async (req, res) => {
     // Fetch data
     const judgesRes = await client.query('SELECT judge_id, passcode FROM judges ORDER BY judge_id ASC');
     const startupsRes = await client.query("SELECT startup_id as id, company_name as name, COALESCE((payload->'meta'->>'clean_ready')::boolean, false) as clean_ready FROM startup_extractions ORDER BY company_name ASC");
-    const assignmentsRes = await client.query('SELECT judge_id, startup_id FROM judge_assignments');
+    const assignmentsRes = await client.query('SELECT judge_id, startup_id, assigned_at FROM judge_assignments');
     const progressRes = await client.query('SELECT judge_id, startup_id, count(question_id) as answered_count FROM human_reviews GROUP BY judge_id, startup_id');
     
     // Optional: Fetch review progress (how many distinct startups each judge has started/completed)

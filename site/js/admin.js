@@ -4,7 +4,7 @@ window.AdminApp = {
   data: {
     judges: [],
     startups: [],
-    assignments: [] // array of { judge_id, startup_id }
+    assignments: [] // array of { judge_id, startup_id, assigned_at }
   },
 
   setFilter(mode) {
@@ -192,6 +192,11 @@ window.AdminApp = {
         .filter(a => a.judge_id === selectedJudge)
         .map(a => a.startup_id)
     );
+    const assignmentByStartup = new Map(
+      this.data.assignments
+        .filter(a => a.judge_id === selectedJudge)
+        .map(a => [a.startup_id, a])
+    );
     
     // Map progress for this judge
     const progressMap = {};
@@ -239,6 +244,10 @@ window.AdminApp = {
         }
       }
 
+      const assignmentTiming = isChecked
+        ? this.formatAssignmentTiming(assignmentByStartup.get(s.id)?.assigned_at)
+        : '';
+
       // Clean AI Ready Badge
       const readyBadge = s.clean_ready
         ? `<span style="background: #ecfdf5; color: #047857; padding: 2px 7px; border-radius: 4px; font-size: 10px; font-weight: 600; margin-left: 8px; border: 1px solid #a7f3d0;">✓ Clean AI Ready</span>`
@@ -251,6 +260,7 @@ window.AdminApp = {
             <span style="font-weight: 500;">${s.name}</span>
             ${readyBadge}
             ${subBadge}
+            ${assignmentTiming}
             ${badge}
           </label>
         </div>
@@ -258,6 +268,26 @@ window.AdminApp = {
     });
     
     container.innerHTML = html;
+  },
+
+  formatAssignmentTiming(assignedAt) {
+    if (!assignedAt) {
+      return `<span style="color: var(--text-muted); font-size: 11px; margin-left: 10px;">Assigned before date tracking</span>`;
+    }
+
+    const assignmentDate = new Date(assignedAt);
+    if (Number.isNaN(assignmentDate.getTime())) {
+      return `<span style="color: var(--text-muted); font-size: 11px; margin-left: 10px;">Assignment date unavailable</span>`;
+    }
+
+    const elapsedMs = Math.max(0, Date.now() - assignmentDate.getTime());
+    const elapsedDays = Math.floor(elapsedMs / (1000 * 60 * 60 * 24));
+    const elapsedText = elapsedDays === 0 ? 'today' : `${elapsedDays} ${elapsedDays === 1 ? 'day' : 'days'} ago`;
+    const dateText = new Intl.DateTimeFormat(undefined, {
+      month: 'short', day: 'numeric', year: 'numeric'
+    }).format(assignmentDate);
+
+    return `<span style="color: #0369a1; font-size: 11px; font-weight: 600; margin-left: 10px; border: 1px solid #7dd3fc; padding: 2px 6px; border-radius: 4px; background: #f0f9ff;">Assigned ${dateText} · ${elapsedText}</span>`;
   },
 
   async createScorer() {
@@ -319,12 +349,17 @@ window.AdminApp = {
       });
       
       if (res.ok) {
+        const result = await res.json();
         // Update local state to avoid full reload
         if (assigned) {
-          this.data.assignments.push({ judge_id, startup_id });
+          const assignment = result.assignment || { judge_id, startup_id, assigned_at: new Date().toISOString() };
+          const existingIndex = this.data.assignments.findIndex(a => a.judge_id === judge_id && a.startup_id === startup_id);
+          if (existingIndex === -1) this.data.assignments.push(assignment);
+          else this.data.assignments[existingIndex] = assignment;
         } else {
           this.data.assignments = this.data.assignments.filter(a => !(a.judge_id === judge_id && a.startup_id === startup_id));
         }
+        this.renderAssignments();
       } else {
         alert("Failed to update assignment. Refresh the page.");
         this.loadData();
