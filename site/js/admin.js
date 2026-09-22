@@ -1,9 +1,30 @@
 window.AdminApp = {
   auth: null,
+  filterMode: 'ready',
   data: {
     judges: [],
     startups: [],
     assignments: [] // array of { judge_id, startup_id }
+  },
+
+  setFilter(mode) {
+    this.filterMode = mode;
+    const btnReady = document.getElementById('filter-ready-btn');
+    const btnAll = document.getElementById('filter-all-btn');
+    if (btnReady && btnAll) {
+      if (mode === 'ready') {
+        btnReady.style.background = '#059669';
+        btnReady.style.color = '#fff';
+        btnAll.style.background = 'var(--surface-subdued)';
+        btnAll.style.color = 'var(--text-muted)';
+      } else {
+        btnAll.style.background = '#059669';
+        btnAll.style.color = '#fff';
+        btnReady.style.background = 'var(--surface-subdued)';
+        btnReady.style.color = 'var(--text-muted)';
+      }
+    }
+    this.renderAssignments();
   },
 
   init() {
@@ -182,8 +203,22 @@ window.AdminApp = {
         });
     }
 
+    const readyCount = this.data.startups.filter(s => s.clean_ready).length;
+    const statusPill = document.getElementById('ready-status-pill');
+    if (statusPill) {
+      statusPill.textContent = `${readyCount} / ${this.data.startups.length} Ready for Assignment`;
+    }
+
+    const startupsToRender = (this.filterMode === 'ready') 
+      ? this.data.startups.filter(s => s.clean_ready) 
+      : this.data.startups;
+
     let html = '';
-    this.data.startups.forEach(s => {
+    if (startupsToRender.length === 0) {
+      html = '<div style="padding: 24px; text-align: center; color: var(--text-muted); font-size: 14px;">No startups found for current filter.</div>';
+    }
+
+    startupsToRender.forEach(s => {
       const isChecked = assignedSet.has(s.id) ? 'checked' : '';
       const count = globalCounts[s.id] || 0;
       
@@ -204,11 +239,17 @@ window.AdminApp = {
         }
       }
 
+      // Clean AI Ready Badge
+      const readyBadge = s.clean_ready
+        ? `<span style="background: #ecfdf5; color: #047857; padding: 2px 7px; border-radius: 4px; font-size: 10px; font-weight: 600; margin-left: 8px; border: 1px solid #a7f3d0;">✓ Clean AI Ready</span>`
+        : `<span style="background: #f3f4f6; color: #6b7280; padding: 2px 7px; border-radius: 4px; font-size: 10px; font-weight: 500; margin-left: 8px;">⏳ Extracting AI</span>`;
+
       html += `
         <div class="company-item" style="display: flex; align-items: center; justify-content: flex-start; gap: 10px; padding: 10px 12px; border-bottom: 1px solid var(--hairline); background: ${isChecked ? '#fafafa' : '#fff'};">
           <input type="checkbox" id="chk-${s.id}" ${isChecked} onchange="AdminApp.toggleAssignment('${selectedJudge}', '${s.id}', this.checked)" style="margin: 0; width: 16px; height: 16px; cursor: pointer;">
           <label for="chk-${s.id}" style="font-size: 14px; cursor: pointer; display: flex; flex: 1; align-items: center;">
             <span style="font-weight: 500;">${s.name}</span>
+            ${readyBadge}
             ${subBadge}
             ${badge}
           </label>

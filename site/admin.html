@@ -92,6 +92,14 @@
             </select>
           </div>
           
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; margin-top: 16px;">
+            <div style="display: flex; gap: 8px;">
+              <button id="filter-ready-btn" class="btn" style="padding: 6px 14px; font-size: 12px; background: #059669; color: white; border-radius: 20px;" onclick="AdminApp.setFilter('ready')">✓ Ready for Assignment</button>
+              <button id="filter-all-btn" class="btn" style="padding: 6px 14px; font-size: 12px; background: var(--surface-subdued); color: var(--text-muted); border: 1px solid var(--border); border-radius: 20px;" onclick="AdminApp.setFilter('all')">Show All</button>
+            </div>
+            <span id="ready-status-pill" style="font-size: 12px; font-weight: 600; color: #059669;"></span>
+          </div>
+          
           <div class="company-list" id="company-list-container">
             <div style="padding: 20px; text-align: center; color: var(--text-muted); font-size: 14px;">Please select a scorer first.</div>
           </div>
