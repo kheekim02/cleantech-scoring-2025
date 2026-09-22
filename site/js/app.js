@@ -149,7 +149,14 @@ CTO.App = {
           if (citeBlock) {
             const isHidden = citeBlock.style.display === 'none';
             citeBlock.style.display = isHidden ? 'block' : 'none';
-            link.innerHTML = isHidden ? `${CTO.Render.icons.link} Hide Citation` : `${CTO.Render.icons.link} View AI Citation`;
+            const pageNum = link.dataset.page;
+            const pageText = pageNum ? ` (p. ${pageNum})` : '';
+            link.innerHTML = isHidden ? `${CTO.Render.icons.link} Hide Citation` : `${CTO.Render.icons.link} View AI Citation${pageText}`;
+            
+            // Auto-jump viewer to document & page when opening citation
+            if (isHidden && link.dataset.pdf) {
+              CTO.Render.jumpToCitation(link.dataset.pdf, link.dataset.page);
+            }
           }
         }
       }

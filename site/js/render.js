@@ -95,6 +95,27 @@ window.CTO.Render = {
     }
   },
 
+  jumpToCitation(pdfFilename, pageNumber) {
+    if (!pdfFilename) return;
+    const selector = document.getElementById('universal-pdf-selector');
+    if (!selector) return;
+
+    const cleanName = pdfFilename.toLowerCase();
+    const targetOption = Array.from(selector.options).find(opt => {
+      const val = opt.value.toLowerCase();
+      return val.endsWith(cleanName) || val.includes(encodeURIComponent(pdfFilename).toLowerCase()) || opt.textContent.toLowerCase().includes(cleanName.replace('.pdf', '').replace(/[_ -]/g, ' '));
+    });
+
+    if (targetOption) {
+      selector.value = targetOption.value;
+      const iframe = document.getElementById('primary-pdf-viewer');
+      if (iframe) {
+        const pageHash = pageNumber ? `#page=${pageNumber}&navpanes=0&pagemode=none` : `#navpanes=0&pagemode=none`;
+        iframe.src = targetOption.value.split('#')[0] + pageHash;
+      }
+    }
+  },
+
   renderRightPane(stepCat, stepIndex, totalSteps, aiCats, humanQuestions, answers, humanJustifications = {}) {
     document.getElementById('step-counter').textContent = `STEP ${stepIndex + 1} OF ${totalSteps}`;
     document.getElementById('step-title').textContent = this.categoryNames[stepCat] || stepCat;
@@ -158,14 +179,25 @@ window.CTO.Render = {
         ` : '';
 
         // Prepare citation block
+        const pageLabel = q.page_number ? ` (Page ${q.page_number})` : '';
+        const docBadge = q.source_pdf ? `<span style="font-family: monospace; font-size: 11px; background: rgba(0,0,0,0.06); padding: 2px 6px; border-radius: 4px; color: var(--text-main); font-weight: 500;">📄 ${q.source_pdf}</span>` : '';
+        const citeHint = q.page_number ? `Switched viewer to Page ${q.page_number}. Use Cmd+F / Ctrl+F in the document to locate exact text.` : `Use Cmd+F / Ctrl+F in the PDF viewer to locate this text.`;
+
         const citeHtml = hasCitation ? `
           <div class="h-card-citation" style="display: none; padding: 12px; background: #fff8e1; border-left: 3px solid var(--accent-yellow); margin: 0 0 16px 0; font-size: 13px; color: var(--text-main);">
-            <strong style="color: var(--accent-orange);">AI Citation:</strong> "${q.verbatim_citation}"<br>
-            <em style="color: var(--text-muted); display: block; margin-top: 6px;">Use Cmd+F / Ctrl+F in the PDF viewer to locate this text.</em>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 6px;">
+              <strong style="color: var(--accent-orange);">AI Citation${pageLabel}:</strong>
+              ${docBadge}
+            </div>
+            "${q.verbatim_citation}"<br>
+            <em style="color: var(--text-muted); display: block; margin-top: 6px;">${citeHint}</em>
           </div>
         ` : '';
 
-        const linkHtml = hasCitation ? `<a href="#" class="link-source" data-action="toggle-cite">${this.icons.link} View AI Citation</a>` : `<span style="color:var(--text-faint); font-size:13px;">No citation extracted</span>`;
+        const linkPageText = q.page_number ? ` (p. ${q.page_number})` : '';
+        const safePdf = (q.source_pdf || '').replace(/"/g, '&quot;');
+        const safePage = q.page_number || '';
+        const linkHtml = hasCitation ? `<a href="#" class="link-source" data-action="toggle-cite" data-pdf="${safePdf}" data-page="${safePage}">${this.icons.link} View AI Citation${linkPageText}</a>` : `<span style="color:var(--text-faint); font-size:13px;">No citation extracted</span>`;
 
         
         
