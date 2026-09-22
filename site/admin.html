@@ -6,18 +6,24 @@
   <link rel="stylesheet" href="style.css">
   <style>
     body { background-color: var(--surface-subdued); margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-    .admin-container { max-width: 1000px; margin: 40px auto; padding: 20px; }
+    .admin-container { max-width: 1440px; margin: 40px auto; padding: 20px 32px; }
     .card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: var(--shadow-sm); border: 1px solid var(--border); margin-bottom: 24px; }
     .btn { background: var(--accent-blue); color: white; border: none; padding: 10px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; }
     .btn:hover { background: #0056b3; }
     .form-group { margin-bottom: 16px; }
     .form-group label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px; }
     .form-group input { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; box-sizing: border-box; }
-    .grid { display: grid; grid-template-columns: 1fr 2fr; gap: 24px; }
-    @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
-    .company-list { max-height: 500px; overflow-y: auto; border: 1px solid var(--border); border-radius: 6px; padding: 10px; }
-    .company-item { padding: 8px; border-bottom: 1px solid var(--hairline); display: flex; align-items: center; gap: 10px; }
+    .grid { display: grid; grid-template-columns: minmax(300px, .85fr) minmax(0, 2.35fr); gap: 24px; }
+    .grid > * { min-width: 0; }
+    .company-list { max-height: 620px; overflow-y: auto; border: 1px solid var(--border); border-radius: 8px; }
+    .company-item { display: grid; grid-template-columns: auto minmax(180px, 1fr) auto; align-items: center; gap: 12px; padding: 12px 14px; border-bottom: 1px solid var(--hairline); }
     .company-item:last-child { border-bottom: none; }
+    .company-details { min-width: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; }
+    .company-name { font-size: 14px; font-weight: 600; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .assignment-meta { display: flex; flex-wrap: wrap; gap: 6px; width: 100%; }
+    .assignment-badge { white-space: nowrap; }
+    @media (max-width: 960px) { .admin-container { padding: 20px; } .grid { grid-template-columns: 1fr; } }
+    @media (max-width: 560px) { .company-item { grid-template-columns: auto minmax(0, 1fr); } .assignment-badge { grid-column: 2; justify-self: start; } }
   </style>
 </head>
 <body>
@@ -92,14 +98,6 @@
             </select>
           </div>
           
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; margin-top: 16px;">
-            <div style="display: flex; gap: 8px;">
-              <button id="filter-ready-btn" class="btn" style="padding: 6px 14px; font-size: 12px; background: #059669; color: white; border-radius: 20px;" onclick="AdminApp.setFilter('ready')">✓ Ready for Assignment</button>
-              <button id="filter-all-btn" class="btn" style="padding: 6px 14px; font-size: 12px; background: var(--surface-subdued); color: var(--text-muted); border: 1px solid var(--border); border-radius: 20px;" onclick="AdminApp.setFilter('all')">Show All</button>
-            </div>
-            <span id="ready-status-pill" style="font-size: 12px; font-weight: 600; color: #059669;"></span>
-          </div>
-          
           <div class="company-list" id="company-list-container">
             <div style="padding: 20px; text-align: center; color: var(--text-muted); font-size: 14px;">Please select a scorer first.</div>
           </div>
@@ -109,6 +107,6 @@
     </div>
   </div>
 
-  <script src="js/admin.js?v=3"></script>
+  <script src="js/admin.js?v=4"></script>
 </body>
 </html>
