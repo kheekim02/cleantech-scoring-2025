@@ -695,62 +695,68 @@ HTML_SCORER = f"""<!DOCTYPE html>
       <tr>
         <td><strong>BC</strong></td>
         <td>Business Canvas</td>
-        <td>5 Questions</td>
+        <td>5 Questions (BC_Q1–Q5)</td>
         <td>Business Model Canvas (EBD1) & Customer Discovery capture</td>
       </tr>
       <tr>
         <td><strong>ES</strong></td>
         <td>Environmental & Social</td>
-        <td>12 Questions</td>
+        <td>10 Questions (ES_Q1–Q10)</td>
         <td>Impact Statement (EBD2) & Sustainability module questions</td>
-      </tr>
-      <tr>
-        <td><strong>PMF</strong></td>
-        <td>Product Market Fit</td>
-        <td>24 Questions</td>
-        <td>Customer interviews, discovery log & target customer segments</td>
-      </tr>
-      <tr>
-        <td><strong>M</strong></td>
-        <td>Market & Customers</td>
-        <td>18 Questions</td>
-        <td>Customer Segmentation & Competitive Matrix (EBD3)</td>
-      </tr>
-      <tr>
-        <td><strong>TP</strong></td>
-        <td>Tech / Product</td>
-        <td>22 Questions</td>
-        <td>Technology Validation (EBD4) & Technical testimonials</td>
       </tr>
       <tr>
         <td><strong>F</strong></td>
         <td>Financials</td>
-        <td>31 Questions</td>
+        <td>29 Questions (F_Q1–Q29)</td>
         <td>3-Year Financial Projections (EBD5) & unit economics model</td>
-      </tr>
-      <tr>
-        <td><strong>T</strong></td>
-        <td>Team Targets</td>
-        <td>15 Questions</td>
-        <td>Team hiring plans, targets & milestones</td>
-      </tr>
-      <tr>
-        <td><strong>L</strong></td>
-        <td>Legal & Governance</td>
-        <td>42 Questions</td>
-        <td>IP filings, corporate formation, governance & legal review</td>
-      </tr>
-      <tr>
-        <td><strong>IS</strong></td>
-        <td>Executive Summary</td>
-        <td>20 Questions</td>
-        <td>1-Page Executive Summary (EBD6) & core company narrative</td>
       </tr>
       <tr>
         <td><strong>IP</strong></td>
         <td>Investor Pitch</td>
-        <td>58 Questions</td>
+        <td>58 Questions (IP_Q1–Q58)</td>
         <td>Investor Pitch Deck (EBD8) & full diligence slide presentation</td>
+      </tr>
+      <tr>
+        <td><strong>IS</strong></td>
+        <td>Executive Summary</td>
+        <td>34 Questions (IS_Q1–Q34)</td>
+        <td>1-Page Executive Summary (EBD6) & core company narrative</td>
+      </tr>
+      <tr>
+        <td><strong>L</strong></td>
+        <td>Legal & Governance</td>
+        <td>53 Questions (L_Q1–Q53)</td>
+        <td>IP filings, corporate formation, governance & legal review</td>
+      </tr>
+      <tr>
+        <td><strong>M</strong></td>
+        <td>Market & Customers</td>
+        <td>12 Questions (M_Q1–Q12)</td>
+        <td>Customer Segmentation & Competitive Matrix (EBD3)</td>
+      </tr>
+      <tr>
+        <td><strong>PMF</strong></td>
+        <td>Product Market Fit</td>
+        <td>34 Questions (PMF_Q1–Q34)</td>
+        <td>Customer interviews, discovery log & target customer segments</td>
+      </tr>
+      <tr>
+        <td><strong>T</strong></td>
+        <td>Team Targets</td>
+        <td>31 Questions (T_Q1–Q31)</td>
+        <td>Team hiring plans, targets & milestones</td>
+      </tr>
+      <tr>
+        <td><strong>TP</strong></td>
+        <td>Tech / Product</td>
+        <td>16 Questions (TP_Q1–Q16)</td>
+        <td>Technology Validation (EBD4) & Technical testimonials</td>
+      </tr>
+      <tr style="background: #f1f5f9; font-weight: 700;">
+        <td><strong>TOTAL</strong></td>
+        <td><strong>10 Evaluation Categories</strong></td>
+        <td><strong>282 Questions Total</strong></td>
+        <td><strong>Standardized CleanTech Open Diligence Rubric</strong></td>
       </tr>
     </tbody>
   </table>
