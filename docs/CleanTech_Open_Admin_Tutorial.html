@@ -133,6 +133,18 @@ li {
   font-size: 12.5px;
 }
 
+.callout-critical {
+  background: #fef2f2;
+  border-left: 4px solid #dc2626;
+  border: 1px solid #fecaca;
+  border-left-width: 5px;
+  border-left-color: #dc2626;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin: 16px 0;
+  font-size: 13px;
+}
+
 .callout-warning {
   background: #fffbeb;
   border-left: 4px solid #d97706;
@@ -202,6 +214,15 @@ tr:nth-child(even) td {
 .ui-mockup-body {
   padding: 14px;
   background: #f8fafc;
+}
+
+.screenshot-img {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  margin: 12px 0 16px 0;
+  display: block;
 }
 
 /* Badge Styles */
@@ -275,19 +296,18 @@ tr:nth-child(even) td {
       <span><strong>Target:</strong> Program Directors & Diligence Leads</span>
       <span><strong>Portal URL:</strong> <code>/admin.html</code></span>
       <span><strong>Version:</strong> 2.4 (Clean AI Release)</span>
-      <span><strong>Updated:</strong> September 2026</span>
     </div>
   </div>
 
   <!-- Section 1 -->
   <h2><span class="step-num">1</span> Overview & Diligence Architecture</h2>
-  <p>The CleanTech Open Diligence Platform coordinates the multi-judge evaluation of 92 cleantech startups across 10 evaluation categories (282 rigorous criteria). The platform features an AI Due Diligence Copilot and live PDF viewer with auto-citation indexing to accelerate judge reviews while enforcing strict accountability.</p>
+  <p>The CleanTech Open Diligence Platform coordinates the multi-judge evaluation of 92 cleantech startups across 10 evaluation categories (282 standardized criteria). The platform features an AI Due Diligence Copilot and live PDF viewer with auto-citation indexing to accelerate judge reviews while enforcing strict accountability.</p>
 
   <div class="card avoid-break">
     <h3 style="margin-top: 0;">Platform Key Components</h3>
     <ul style="margin-bottom: 0;">
       <li><strong>Admin Portal (<code>/admin.html</code>):</strong> Dedicated dashboard for operations leads to create judges, assign companies, and monitor completion rates in real time.</li>
-      <li><strong>Scorer Portal (<code>/index.html</code>):</strong> Focused 3-column evaluation workspace where judges examine company deliverables, view AI suggestions, and enter final scores.</li>
+      <li><strong>Scorer Portal (<code>/index.html</code>):</strong> Focused side-by-side workspace where judges examine company deliverables on the left and enter scores with AI guidance on the right.</li>
       <li><strong>PostgreSQL Database (Supabase):</strong> Stores judge rosters, encrypted passcodes, assignment mappings, and question reviews with instant transactional auto-saving.</li>
       <li><strong>Clean AI Copilot Engine:</strong> Advanced reasoning model (Qwen 35B) running on sanitized founder text with 0% competition scaffolding and 92.7% PDF page-indexed citations.</li>
     </ul>
@@ -467,7 +487,7 @@ tr:nth-child(even) td {
 
   <div class="avoid-break">
     <h3>Recommended Reviewer Workload</h3>
-    <p>We recommend assigning <strong>3 to 5 startups per judge</strong>. Each startup evaluation requires approximately 45 to 60 minutes. Overloading reviewers beyond 6 startups increases fatigue and decreases qualitative justification quality.</p>
+    <p>We recommend assigning <strong>3 to 5 startups per judge</strong>. Each startup evaluation requires careful diligence. Overloading reviewers beyond 6 startups increases fatigue and decreases qualitative justification quality.</p>
 
     <h3>What Happens if a Judge Drops Out?</h3>
     <p>If a judge cannot complete their assignments, simply select their name from the dropdown and uncheck the company. Any answers already submitted by that judge are safely preserved in the database (<code>human_reviews</code>) and can be audited later. You can immediately assign the company to a replacement judge.</p>
