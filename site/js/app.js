@@ -162,12 +162,6 @@ CTO.App = {
       }
 
       // Button answer logic
-      const collapsedCard = e.target.closest('.h-card.collapsed');
-      if (collapsedCard) {
-        CTO.Render.expandCard(collapsedCard.dataset.qid, collapsedCard.dataset.citation);
-        return;
-      }
-      
       const btn = e.target.closest('.h-btn');
       if (btn) {
         const qid = btn.dataset.qid;
@@ -241,23 +235,23 @@ CTO.App = {
         </thead>
         <tbody>
           <tr>
-            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #f1f5f9; color: #475569; padding: 3px 8px; border-radius: 4px; border: 1px solid #cbd5e1; font-size: 12px;">0 PTS</span></td>
+            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #f1f5f9; color: #475569; padding: 3px 8px; border-radius: 4px; border: 1px solid #cbd5e1; font-size: 12px;">0 pts</span></td>
             <td style="padding: 10px; border: 1px solid var(--border);">"Dirty water solution, we remove the waste just like other companies."</td>
           </tr>
           <tr>
-            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #fff7ed; color: #c2410c; padding: 3px 8px; border-radius: 4px; border: 1px solid #fed7aa; font-size: 12px;">0.25 PTS</span></td>
+            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #fff7ed; color: #c2410c; padding: 3px 8px; border-radius: 4px; border: 1px solid #fed7aa; font-size: 12px;">0.25 pts</span></td>
             <td style="padding: 10px; border: 1px solid var(--border);">"Municipalities, industrial facilities, and commercial establishments grappling with diverse wastewater treatment requirements."</td>
           </tr>
           <tr>
-            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #fef9c3; color: #854d0e; padding: 3px 8px; border-radius: 4px; border: 1px solid #fde047; font-size: 12px;">0.5 PTS</span></td>
+            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #fef9c3; color: #854d0e; padding: 3px 8px; border-radius: 4px; border: 1px solid #fde047; font-size: 12px;">0.5 pts</span></td>
             <td style="padding: 10px; border: 1px solid var(--border);">"Save customer money while reducing carbon footprint, help meet upcoming regulations and requirements set by industry."</td>
           </tr>
           <tr>
-            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #f0fdf4; color: #15803d; padding: 3px 8px; border-radius: 4px; border: 1px solid #bbf7d0; font-size: 12px;">0.75 PTS</span></td>
+            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #f0fdf4; color: #15803d; padding: 3px 8px; border-radius: 4px; border: 1px solid #bbf7d0; font-size: 12px;">0.75 pts</span></td>
             <td style="padding: 10px; border: 1px solid var(--border);">"Easy integratable filtration technology, save 60% on costs, creates a more eco friendly and efficient wastewater process, cost competitive price with reliable service."</td>
           </tr>
           <tr>
-            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #ecfdf5; color: #047857; padding: 3px 8px; border-radius: 4px; border: 1px solid #6ee7b7; font-size: 12px;">1 PT</span></td>
+            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #ecfdf5; color: #047857; padding: 3px 8px; border-radius: 4px; border: 1px solid #6ee7b7; font-size: 12px;">1 pt</span></td>
             <td style="padding: 10px; border: 1px solid var(--border);">"Advanced filtration membrane designed to effectively remove up to 95% of contaminants and pollutants from wastewater, help reduce WTTP energy costs of up to 60%... provide a more cost effective way to deal with your wastewater than market alternatives."</td>
           </tr>
         </tbody>
@@ -278,23 +272,23 @@ CTO.App = {
         </thead>
         <tbody>
           <tr>
-            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #f1f5f9; color: #475569; padding: 3px 8px; border-radius: 4px; border: 1px solid #cbd5e1; font-size: 12px;">0 PTS</span></td>
+            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #f1f5f9; color: #475569; padding: 3px 8px; border-radius: 4px; border: 1px solid #cbd5e1; font-size: 12px;">0 pts</span></td>
             <td style="padding: 10px; border: 1px solid var(--border);">"Businesses who need to deal with wastewater"</td>
           </tr>
           <tr>
-            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #fff7ed; color: #c2410c; padding: 3px 8px; border-radius: 4px; border: 1px solid #fed7aa; font-size: 12px;">0.25 PTS</span></td>
+            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #fff7ed; color: #c2410c; padding: 3px 8px; border-radius: 4px; border: 1px solid #fed7aa; font-size: 12px;">0.25 pts</span></td>
             <td style="padding: 10px; border: 1px solid var(--border);">"Industrial waste benefaction, chemical producers, power companies, manufacturing companies, and biochemical industries"</td>
           </tr>
           <tr>
-            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #fef9c3; color: #854d0e; padding: 3px 8px; border-radius: 4px; border: 1px solid #fde047; font-size: 12px;">0.5 PTS</span></td>
+            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #fef9c3; color: #854d0e; padding: 3px 8px; border-radius: 4px; border: 1px solid #fde047; font-size: 12px;">0.5 pts</span></td>
             <td style="padding: 10px; border: 1px solid var(--border);">"Industrial waste benefaction Chemical producers Power companies... Manufacturing companies Biochemical industries"</td>
           </tr>
           <tr>
-            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #f0fdf4; color: #15803d; padding: 3px 8px; border-radius: 4px; border: 1px solid #bbf7d0; font-size: 12px;">0.75 PTS</span></td>
+            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #f0fdf4; color: #15803d; padding: 3px 8px; border-radius: 4px; border: 1px solid #bbf7d0; font-size: 12px;">0.75 pts</span></td>
             <td style="padding: 10px; border: 1px solid var(--border);">"Domestic US Corporations: chief sustainability officer And health and safety. Communities: Waste management & economic Development"</td>
           </tr>
           <tr>
-            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #ecfdf5; color: #047857; padding: 3px 8px; border-radius: 4px; border: 1px solid #6ee7b7; font-size: 12px;">1 PT</span></td>
+            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #ecfdf5; color: #047857; padding: 3px 8px; border-radius: 4px; border: 1px solid #6ee7b7; font-size: 12px;">1 pt</span></td>
             <td style="padding: 10px; border: 1px solid var(--border);">"Oil and gas: Refinery wastewater Treatment Hydraulic fracturing... Commercial Properties: Hotels, Restaurants... Agriculture: Fertilizer production Livestock operations Irrigation water reuse"</td>
           </tr>
         </tbody>
@@ -315,23 +309,23 @@ CTO.App = {
         </thead>
         <tbody>
           <tr>
-            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #f1f5f9; color: #475569; padding: 3px 8px; border-radius: 4px; border: 1px solid #cbd5e1; font-size: 12px;">0 PTS</span></td>
+            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #f1f5f9; color: #475569; padding: 3px 8px; border-radius: 4px; border: 1px solid #cbd5e1; font-size: 12px;">0 pts</span></td>
             <td style="padding: 10px; border: 1px solid var(--border);">0 customer interviews documented; no customer discovery evidence found.</td>
           </tr>
           <tr>
-            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #fff7ed; color: #c2410c; padding: 3px 8px; border-radius: 4px; border: 1px solid #fed7aa; font-size: 12px;">0.25 PTS</span></td>
+            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #fff7ed; color: #c2410c; padding: 3px 8px; border-radius: 4px; border: 1px solid #fed7aa; font-size: 12px;">0.25 pts</span></td>
             <td style="padding: 10px; border: 1px solid var(--border);">1 customer interview conducted or vague anecdotal customer interactions mentioned.</td>
           </tr>
           <tr>
-            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #fef9c3; color: #854d0e; padding: 3px 8px; border-radius: 4px; border: 1px solid #fde047; font-size: 12px;">0.5 PTS</span></td>
+            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #fef9c3; color: #854d0e; padding: 3px 8px; border-radius: 4px; border: 1px solid #fde047; font-size: 12px;">0.5 pts</span></td>
             <td style="padding: 10px; border: 1px solid var(--border);">2–3 customer interviews documented with basic qualitative feedback.</td>
           </tr>
           <tr>
-            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #f0fdf4; color: #15803d; padding: 3px 8px; border-radius: 4px; border: 1px solid #bbf7d0; font-size: 12px;">0.75 PTS</span></td>
+            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #f0fdf4; color: #15803d; padding: 3px 8px; border-radius: 4px; border: 1px solid #bbf7d0; font-size: 12px;">0.75 pts</span></td>
             <td style="padding: 10px; border: 1px solid var(--border);">4 customer interviews documented with structured insights and segment context.</td>
           </tr>
           <tr>
-            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #ecfdf5; color: #047857; padding: 3px 8px; border-radius: 4px; border: 1px solid #6ee7b7; font-size: 12px;">1 PT</span></td>
+            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #ecfdf5; color: #047857; padding: 3px 8px; border-radius: 4px; border: 1px solid #6ee7b7; font-size: 12px;">1 pt</span></td>
             <td style="padding: 10px; border: 1px solid var(--border);">5 or more customer interviews documented with names/titles, learnings, and quotes.</td>
           </tr>
         </tbody>
@@ -353,15 +347,15 @@ CTO.App = {
         </thead>
         <tbody>
           <tr>
-            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #f1f5f9; color: #475569; padding: 3px 8px; border-radius: 4px; border: 1px solid #cbd5e1; font-size: 12px;">0 – 0.25 PTS</span></td>
+            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #f1f5f9; color: #475569; padding: 3px 8px; border-radius: 4px; border: 1px solid #cbd5e1; font-size: 12px;">0 – 0.25 pts</span></td>
             <td style="padding: 10px; border: 1px solid var(--border);"><strong>Vague generalities:</strong> Minimal detail or generic placeholders (e.g. "social media", "branding", "businesses") with no specific execution plan.</td>
           </tr>
           <tr>
-            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #fef9c3; color: #854d0e; padding: 3px 8px; border-radius: 4px; border: 1px solid #fde047; font-size: 12px;">0.5 PTS</span></td>
+            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #fef9c3; color: #854d0e; padding: 3px 8px; border-radius: 4px; border: 1px solid #fde047; font-size: 12px;">0.5 pts</span></td>
             <td style="padding: 10px; border: 1px solid var(--border);"><strong>Moderate detail:</strong> Includes specific mediums (e.g. "Trade show participation", direct sales outreach) but lacks granular segmentation, pricing, or relationship models.</td>
           </tr>
           <tr>
-            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #ecfdf5; color: #047857; padding: 3px 8px; border-radius: 4px; border: 1px solid #6ee7b7; font-size: 12px;">0.75 – 1 PT</span></td>
+            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #ecfdf5; color: #047857; padding: 3px 8px; border-radius: 4px; border: 1px solid #6ee7b7; font-size: 12px;">0.75 – 1 pt</span></td>
             <td style="padding: 10px; border: 1px solid var(--border);"><strong>Extremely detailed & articulate:</strong> Granular pricing ("Starter kit: $1,000", "Annual O&M service $2,000"), distinct relationships (short-term transactional vs long-term SLA contracts), and robust customer acquisition channels.</td>
           </tr>
         </tbody>
@@ -383,15 +377,15 @@ CTO.App = {
         </thead>
         <tbody>
           <tr>
-            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #f1f5f9; color: #475569; padding: 3px 8px; border-radius: 4px; border: 1px solid #cbd5e1; font-size: 12px;">0 PTS</span></td>
+            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #f1f5f9; color: #475569; padding: 3px 8px; border-radius: 4px; border: 1px solid #cbd5e1; font-size: 12px;">0 pts</span></td>
             <td style="padding: 10px; border: 1px solid var(--border);"><strong>Generic or placeholder:</strong> Superficial descriptions (e.g. "The cost to manufacture", "Money and employees") with no breakdown of cost drivers or core partners.</td>
           </tr>
           <tr>
-            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #fef9c3; color: #854d0e; padding: 3px 8px; border-radius: 4px; border: 1px solid #fde047; font-size: 12px;">0.5 PTS</span></td>
+            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #fef9c3; color: #854d0e; padding: 3px 8px; border-radius: 4px; border: 1px solid #fde047; font-size: 12px;">0.5 pts</span></td>
             <td style="padding: 10px; border: 1px solid var(--border);"><strong>Partially specified:</strong> Mentions some specific resources or partner entities (e.g. "Columbia university lab", fabrication partner) but lacks cost allocation or resource depth.</td>
           </tr>
           <tr>
-            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #ecfdf5; color: #047857; padding: 3px 8px; border-radius: 4px; border: 1px solid #6ee7b7; font-size: 12px;">1 PT</span></td>
+            <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold; white-space: nowrap;"><span style="background: #ecfdf5; color: #047857; padding: 3px 8px; border-radius: 4px; border: 1px solid #6ee7b7; font-size: 12px;">1 pt</span></td>
             <td style="padding: 10px; border: 1px solid var(--border);"><strong>Exhaustive & granular:</strong> Specific breakdowns across partners and activities ("M&E costs for prototype", "3rd party lab validation", "Local permitting requirements", "Unit Operations vs Ammonia Sales").</td>
           </tr>
         </tbody>
@@ -453,26 +447,6 @@ CTO.App = {
     const hqs = sData.human_questions.filter(q => q.cat_code === catCode);
     const answeredStep = hqs.filter(q => sEval.humanAnswers[q.new_q_id] !== undefined).length;
     CTO.Render.updateProgressText(answeredStep, hqs.length);
-
-    // Progressive Disclosure: auto-advance
-    setTimeout(() => {
-       const allCards = Array.from(document.querySelectorAll('.h-card'));
-       const currentIdx = allCards.findIndex(c => c.dataset.qid === qid);
-       if (currentIdx === -1) return;
-       
-       const currCard = allCards[currentIdx];
-       currCard.classList.add('collapsed');
-       const summary = currCard.querySelector('.h-summary-text');
-       if (summary) summary.textContent = `Answered: ${value} PTS`;
-
-       // Find next unanswered
-       for (let i = currentIdx + 1; i < allCards.length; i++) {
-           if (!allCards[i].querySelector('.h-btn.selected')) {
-               CTO.Render.expandCard(allCards[i].dataset.qid, allCards[i].dataset.citation);
-               break;
-           }
-       }
-    }, 350);
 
     // REC 5: Optimistic Sync
     this.saveState();

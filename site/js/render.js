@@ -121,9 +121,15 @@ window.CTO.Render = {
     document.getElementById('step-title').textContent = this.categoryNames[stepCat] || stepCat;
     
     const hqs = humanQuestions.filter(q => q.cat_code === stepCat);
-    const sortedHqs = (window.CTO.Scoring && window.CTO.Scoring.sortHumanQueue) 
-        ? window.CTO.Scoring.sortHumanQueue(hqs, answers) 
-        : hqs;
+    // Keep the rubric sequence stable. Review status and AI confidence must never
+    // move a question away from its numbered position in the scoring rubric.
+    const sortedHqs = [...hqs].sort((a, b) =>
+      (a.new_q_id || a.q_id || '').localeCompare(
+        b.new_q_id || b.q_id || '',
+        undefined,
+        { numeric: true, sensitivity: 'base' }
+      )
+    );
 
     const answeredCount = hqs.filter(q => answers[q.new_q_id] !== undefined).length;
     this.updateProgressText(answeredCount, hqs.length);
@@ -170,12 +176,16 @@ window.CTO.Render = {
         const showAiAssist = (isHighConfidence || hasCitation) && hasValidSuggestion;
 
         const aiSuggestHtml = showAiAssist ? `
-              <div class="h-ai-suggest ${tierClass}">
+              <div class="h-ai-suggest ${tierClass}" aria-label="AI suggestion: ${verdictText}; ${confText} confidence">
                 ${this.icons.spark}
-                <span class="verdict">${verdictText}</span>
+                <span class="ai-label">AI suggestion</span>
+                <span class="verdict">${this.formatPoints(verdictText)}</span>
                 <span class="divider"></span>
-                <span class="score">${confText}</span>
+                <span class="score">${confText} confidence</span>
               </div>
+        ` : '';
+        const aiAssistNote = showAiAssist ? `
+          <p class="ai-assist-note">AI is an aid, not a final score. This suggestion is shown because it has at least 80% AI confidence or an extracted source citation. Verify the source before scoring.</p>
         ` : '';
 
         // Prepare citation block
@@ -190,6 +200,7 @@ window.CTO.Render = {
               ${docBadge}
             </div>
             "${q.verbatim_citation}"<br>
+            <em class="ai-citation-disclaimer">AI-extracted citation — verify it against the source document before relying on it.</em>
             <em style="color: var(--text-muted); display: block; margin-top: 6px;">${citeHint}</em>
           </div>
         ` : '';
@@ -216,19 +227,33 @@ window.CTO.Render = {
                 Justification
                 ${rubricLink}
               </label>
-              <textarea class="justification-input" data-qid="${q.new_q_id}" placeholder="Provide justification based on the markdown rubrics..." style="width: 100%; min-height: 80px; padding: 12px; border: 1px solid var(--border); border-radius: 6px; font-family: inherit; font-size: 13px; resize: vertical; box-sizing: border-box; background: var(--surface-main);">${existingJustification}</textarea>
+              <textarea class="justification-input" data-qid="${q.new_q_id}" placeholder="${hasRubric ? 'Provide justification based on the markdown rubrics...' : 'Provide justification'}" style="width: 100%; min-height: 80px; padding: 12px; border: 1px solid var(--border); border-radius: 6px; font-family: inherit; font-size: 13px; resize: vertical; box-sizing: border-box; background: var(--surface-main);">${existingJustification}</textarea>
             </div>
           `;
         }
-        
-        const isAnswered = ans !== undefined && ans !== null;
 
-        const collapsedClass = isAnswered ? 'collapsed' : '';
-        const summaryText = isAnswered ? `Answered: ${ans} PTS` : '';
-        const safeCit = (q.verbatim_citation || '').replace(/"/g, '&quot;');
+        const actionHtml = q.options && q.options.length > 0 ? q.options
+          .slice()
+          .sort((a, b) => Number(a.val) - Number(b.val))
+          .map(opt => {
+            const isSel = ans === opt.val ? 'selected' : '';
+            const cls = opt.val > 0 ? 'yes' : 'no';
+            return `
+              <button class="h-btn ${cls} ${isSel}" data-qid="${q.new_q_id || q.q_id}" data-val="${opt.val}">
+                ${this.formatPoints(opt.val)}
+              </button>
+            `;
+          }).join('') : `
+            <button class="h-btn no ${isNoSelected}" data-qid="${q.new_q_id || q.q_id}" data-val="0">
+              ${this.icons.cross} 0 pts
+            </button>
+            <button class="h-btn yes ${isYesSelected}" data-qid="${q.new_q_id || q.q_id}" data-val="1">
+              ${this.icons.check} 1 pt
+            </button>
+          `;
         
         hHtml += `
-          <div class="h-card ${collapsedClass}" id="card-${q.new_q_id}" data-qid="${q.new_q_id}" data-citation="${safeCit}" style="animation-delay: ${(idx * 40) + 100}ms;">
+          <div class="h-card" id="card-${q.new_q_id}" data-qid="${q.new_q_id}" style="animation-delay: ${(idx * 40) + 100}ms;">
             <div class="h-card-header">
               <div>
                 <span class="h-tag">${q.cat_code}</span>
@@ -239,29 +264,16 @@ window.CTO.Render = {
             <div class="h-card-body">
               ${q.text}
             </div>
+            <div class="h-card-actions">
+              <div class="h-actions">
+                ${actionHtml}
+              </div>
+            </div>
+            ${aiAssistNote}
             ${citeHtml}
             ${justHtml}
             <div class="h-card-footer">
               ${linkHtml}
-              <div class="h-actions">
-                ${q.options && q.options.length > 0 ? q.options.map(opt => {
-                    const isSel = ans === opt.val ? 'selected' : '';
-                    const cls = opt.val > 0 ? 'yes' : 'no';
-                    const style = '';
-                    return `
-                      <button class="h-btn ${cls} ${isSel}" data-qid="${q.new_q_id || q.q_id}" data-val="${opt.val}" style="${style}">
-                        ${opt.label}
-                      </button>
-                    `;
-                }).join('') : `
-                  <button class="h-btn yes ${ans === 1 ? 'selected' : ''}" data-qid="${q.new_q_id || q.q_id}" data-val="1">
-                    ${this.icons.check} YES
-                  </button>
-                  <button class="h-btn no ${ans === 0 ? 'selected' : ''}" data-qid="${q.new_q_id || q.q_id}" data-val="0">
-                    ${this.icons.cross} NO
-                  </button>
-                `}
-              </div>
             </div>
           </div>
         `;
@@ -270,16 +282,12 @@ window.CTO.Render = {
     
     hContainer.innerHTML = hHtml;
     
-    // Progressive Disclosure Init: Collapse all unanswered except the first one
-    setTimeout(() => {
-       const allUnanswered = Array.from(document.querySelectorAll('.h-card:not(.collapsed)'));
-       allUnanswered.forEach((c, index) => {
-           if (index > 0) c.classList.add('collapsed');
-       });
-       if (allUnanswered.length > 0) {
-           allUnanswered[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
-       }
-    }, 100);
+  },
+
+  formatPoints(value) {
+    const score = Number(value);
+    if (!Number.isFinite(score)) return String(value);
+    return `${score} ${score === 1 ? 'pt' : 'pts'}`;
   },
 
   renderFooter(stepIndex, totalSteps) {
@@ -288,36 +296,12 @@ window.CTO.Render = {
 
     btnPrev.disabled = stepIndex === 0;
     btnPrev.innerHTML = `${this.icons.arrowLeft} Previous`;
+    btnNext.classList.toggle('btn-submit', stepIndex === totalSteps - 1);
     
     if (stepIndex === totalSteps - 1) {
        btnNext.innerHTML = `Submit Evaluation ${this.icons.arrowRight}`;
     } else {
        btnNext.innerHTML = `Next Section ${this.icons.arrowRight}`;
-    }
-  },
-
-  expandCard(qid, citation) {
-    document.querySelectorAll('.h-card').forEach(c => {
-       if (c.querySelector('.h-btn.selected') && c.dataset.qid !== qid) {
-           c.classList.add('collapsed');
-       }
-    });
-    const target = document.querySelector(`.h-card[data-qid="${qid}"]`);
-    if (target) {
-        target.classList.remove('collapsed');
-        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-    
-    // PDF Auto-Scrolling (Context Anchoring)
-    if (citation && citation.length > 5) {
-        const words = citation.replace(/[^a-zA-Z0-9 ]/g, '').split(' ').filter(w => w.length > 3).slice(0, 5).join(' ');
-        if (words) {
-            const searchStr = encodeURIComponent(words);
-            document.querySelectorAll('.pdf-wrapper iframe').forEach(iframe => {
-                const baseSrc = iframe.src.split('#')[0];
-                iframe.src = `${baseSrc}#search=${searchStr}&navpanes=0`;
-            });
-        }
     }
   },
 

@@ -333,6 +333,13 @@ body {
 .h-ai-suggest .divider { width: 1px; height: 12px; background: currentColor; opacity: 0.2; }
 
 .h-card-body { padding: 24px; font-size: 16px; font-weight: 500; color: var(--text-main); line-height: 1.6; }
+.h-card-actions { padding: 0 24px 16px; }
+.ai-assist-note {
+  margin: -8px 24px 16px; color: var(--text-muted); font-size: 12px; line-height: 1.5;
+}
+.ai-citation-disclaimer {
+  color: var(--accent-orange); display: block; margin-top: 8px; font-weight: 600;
+}
 
 .h-card-footer {
   padding: 16px 24px; border-top: 1px solid var(--hairline); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
@@ -343,7 +350,7 @@ body {
 }
 
 /* Premium Buttons */
-.h-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+.h-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-start; }
 .h-btn {
   background: linear-gradient(180deg, #ffffff 0%, #f7f7f8 100%);
   border: 1px solid var(--border-strong);
@@ -389,6 +396,11 @@ body {
   background: linear-gradient(180deg, var(--accent-blue) 0%, #094d43 100%);
   border-color: #094d43; color: #fff; box-shadow: 0 2px 8px rgba(12,107,93,0.3), var(--inset-top);
 }
+.nav-btn.btn-submit.ready,
+.nav-btn.submit-confirm {
+  background: linear-gradient(180deg, var(--accent-green) 0%, #0f5942 100%);
+  border-color: #0f5942; color: #fff; box-shadow: 0 2px 8px rgba(21,121,90,0.3), var(--inset-top);
+}
 
 
 /* MODAL */
@@ -412,44 +424,4 @@ body {
   border-bottom: 2px solid #e69500;
   box-shadow: 0 0 0 4px #ffdb4d;
   color: #000;
-}
-
-
-/* Progressive Disclosure UX */
-.h-card {
-  transition: all 0.3s ease;
-}
-.h-card.collapsed {
-  cursor: pointer;
-  padding: 12px 16px;
-  opacity: 0.6;
-  background: var(--surface-sunk);
-}
-.h-card.collapsed:hover {
-  opacity: 1;
-  background: var(--surface-hover);
-}
-.h-card.collapsed .h-ai-suggest,
-.h-card.collapsed .h-actions,
-.h-card.collapsed .h-card-citation,
-.h-card.collapsed .link-source {
-  display: none !important;
-}
-.h-collapsed-summary {
-  display: none;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--accent-green);
-  margin-top: 6px;
-}
-.h-card.collapsed .h-collapsed-summary {
-  display: block;
-}
-.h-card.collapsed .h-card-title {
-  font-size: 14px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-top: 4px;
-  color: var(--text-muted);
 }
