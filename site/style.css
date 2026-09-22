@@ -403,7 +403,7 @@ body {
   background: linear-gradient(180deg, var(--accent-blue) 0%, #094d43 100%);
   border-color: #094d43; color: #fff; box-shadow: 0 2px 8px rgba(12,107,93,0.3), var(--inset-top);
 }
-.nav-btn.btn-submit.ready,
+.nav-btn.btn-submit,
 .nav-btn.submit-confirm {
   background: linear-gradient(180deg, var(--accent-green) 0%, #0f5942 100%);
   border-color: #0f5942; color: #fff; box-shadow: 0 2px 8px rgba(21,121,90,0.3), var(--inset-top);
