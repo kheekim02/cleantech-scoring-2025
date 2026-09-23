@@ -342,12 +342,15 @@ CTO.App = {
       </table>
       `;
     } else if (qid === 'BC_Q4') {
-      title.textContent = 'Big Sections Scoring (BC_Q4)';
+      title.textContent = 'Large Brackets Scoring (BC_Q4)';
       rubricContent = `
       <div style="margin-bottom: 12px; font-size: 13px; color: var(--text-muted);">
         Official scoring criteria mapped to the <strong>0 – 1 Scale</strong>:
       </div>
-      <p style="margin-top: 8px; margin-bottom: 10px; font-size: 13px;"><strong>Key BMC Sections:</strong> Value Propositions, Customer Segments, Channels, Customer Relationships, Revenue Streams</p>
+      <div style="margin-top: 8px; margin-bottom: 12px; padding: 8px 12px; background: #f0f9ff; border-left: 4px solid #0284c7; border-radius: 4px; font-size: 13px;">
+        <strong>Large / Big Brackets (🔵 Blue in Strategyzer Template):</strong><br>
+        <span style="font-size: 12px; color: #0369a1; font-weight: 600;">1. Key Partners &nbsp;·&nbsp; 2. Value Propositions &nbsp;·&nbsp; 3. Customer Segments &nbsp;·&nbsp; 4. Cost Structure &nbsp;·&nbsp; 5. Revenue Streams</span>
+      </div>
       <table style="width: 100%; border-collapse: collapse; text-align: left;">
         <thead>
           <tr style="background: var(--surface-sunk);">
@@ -372,12 +375,15 @@ CTO.App = {
       </table>
       `;
     } else if (qid === 'BC_Q5') {
-      title.textContent = 'Small Sections Scoring (BC_Q5)';
+      title.textContent = 'Small Brackets Scoring (BC_Q5)';
       rubricContent = `
       <div style="margin-bottom: 12px; font-size: 13px; color: var(--text-muted);">
         Official scoring criteria mapped to the <strong>0 – 1 Scale</strong>:
       </div>
-      <p style="margin-top: 8px; margin-bottom: 10px; font-size: 13px;"><strong>Key BMC Sections:</strong> Key Partners, Key Activities, Key Resources, Cost Structure</p>
+      <div style="margin-top: 8px; margin-bottom: 12px; padding: 8px 12px; background: #fefce8; border-left: 4px solid #ca8a04; border-radius: 4px; font-size: 13px;">
+        <strong>Small / Connecting Brackets (🟡 Yellow in Strategyzer Template):</strong><br>
+        <span style="font-size: 12px; color: #854d0e; font-weight: 600;">1. Key Activities &nbsp;·&nbsp; 2. Key Resources &nbsp;·&nbsp; 3. Customer Relationships &nbsp;·&nbsp; 4. Channels</span>
+      </div>
       <table style="width: 100%; border-collapse: collapse; text-align: left;">
         <thead>
           <tr style="background: var(--surface-sunk);">
@@ -682,6 +688,16 @@ CTO.App = {
     this.currentUser = null;
     document.getElementById('login-modal').style.display = 'flex';
     this.setSaveStatus('Signed out');
+  },
+
+  openFaqModal() {
+    const modal = document.getElementById('faq-modal');
+    if (modal) modal.style.display = 'flex';
+  },
+
+  closeFaqModal() {
+    const modal = document.getElementById('faq-modal');
+    if (modal) modal.style.display = 'none';
   },
 
   openPasswordModal() {

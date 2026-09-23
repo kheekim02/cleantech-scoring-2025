@@ -55,6 +55,18 @@ All diligence evaluation is standardized against **`master_282_rubric.json`**, c
   - `0 PTS` (0.0)
 - **Binary vs. Fractional**: Objective criteria default to binary (`0 PTS` / `1 PT`), while subjective/calibrated criteria support fractional tiers (`0.25`, `0.5`, `0.75`).
 - **Business Canvas Rubric Examples**: The `📄 View Examples` modal for `BC_Q1` through `BC_Q5` provides real-world grading thresholds calibrated to this 0–1 point scale.
+- **Business Model Canvas Brackets Standard (Strategyzer 9-Block Mapping)**:
+  - **`BC_Q4` Large / Big Brackets (5 Core Structural Pillars — 🔵 Blue Blocks)**:
+    1. Key Partners
+    2. Value Propositions
+    3. Customer Segments
+    4. Cost Structure
+    5. Revenue Streams
+  - **`BC_Q5` Small Brackets (4 Operational Connectors — 🟡 Yellow Blocks)**:
+    1. Key Activities
+    2. Key Resources
+    3. Customer Relationships
+    4. Channels
 
 ---
 

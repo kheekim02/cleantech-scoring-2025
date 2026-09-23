@@ -813,23 +813,92 @@ HTML_SCORER = f"""<!DOCTYPE html>
     </tbody>
   </table>
 
-  <!-- Section 6: Scorer FAQ (Duration removed) -->
-  <h2><span class="step-num">6</span> Scorer FAQs & Pro-Tips</h2>
+  <div class="page-break"></div>
+
+  <!-- Section 6: Comprehensive Scorer FAQ & Knowledge Base -->
+  <h2><span class="step-num">6</span> Comprehensive Scorer FAQs & Diligence Knowledge Base</h2>
 
   <div class="card avoid-break">
-    <h3 style="margin-top: 0;">Frequently Asked Questions</h3>
+    <h3 style="margin-top: 0; color: #0c6b5d;">Business Model Canvas: Large vs. Small Brackets (BC_Q4 vs. BC_Q5)</h3>
+    <p>A frequent question from evaluators is distinguishing between <strong>"Large Brackets"</strong> and <strong>"Small Brackets"</strong> on the Business Model Canvas (Strategyzer 9-block framework):</p>
+    
+    <table style="margin-top: 8px; margin-bottom: 12px; width: 100%;">
+      <thead>
+        <tr style="background: #f1f5f9;">
+          <th style="width: 18%;">Rubric ID</th>
+          <th style="width: 25%;">Bracket Classification</th>
+          <th style="width: 20%;">Strategyzer Color</th>
+          <th>Included Business Model Components</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>BC_Q4</strong></td>
+          <td><strong>Large / Big Brackets</strong><br><span style="font-size: 11px; color: #64748b;">(Core Structural Pillars)</span></td>
+          <td><span style="background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 11px; border: 1px solid #bae6fd;">🔵 Blue Blocks</span></td>
+          <td><strong>1. Key Partners<br>2. Value Propositions<br>3. Customer Segments<br>4. Cost Structure<br>5. Revenue Streams</strong></td>
+        </tr>
+        <tr>
+          <td><strong>BC_Q5</strong></td>
+          <td><strong>Small / Connecting Brackets</strong><br><span style="font-size: 11px; color: #64748b;">(Operational Connectors)</span></td>
+          <td><span style="background: #fef9c3; color: #854d0e; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 11px; border: 1px solid #fde047;">🟡 Yellow Blocks</span></td>
+          <td><strong>1. Key Activities<br>2. Key Resources<br>3. Customer Relationships<br>4. Channels</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size: 12px; color: #475569; margin-bottom: 0;">
+      <em>Pro-Tip:</em> The 4 corner boxes + center value proposition form the <strong>Large Brackets (5)</strong>. The operational connecting boxes form the <strong>Small Brackets (4)</strong>. Both combined encompass all 9 blocks of the canonical Business Model Canvas.
+    </p>
+  </div>
+
+  <div class="card avoid-break">
+    <h3 style="margin-top: 0; color: #0c6b5d;">Deliverables, Sourcing & External Research</h3>
+
+    <p><strong>Q: Can I Google search if I cannot find information in the startup's submitted files?</strong><br>
+    <strong>A:</strong> <strong>Yes.</strong> You are explicitly authorized and encouraged to Google search the company, visit their website, inspect founder LinkedIn profiles, and review public press releases or patent filings if a question cannot be answered from their submitted files.</p>
+
+    <p><strong>Q: What if a company has files but no dedicated Business Model Canvas (BMC) document?</strong><br>
+    <strong>A:</strong> Review their other submitted deliverables (e.g. Investor Pitch Deck, Executive Summary, Customer Discovery log) and web search to evaluate their business model as best as possible. Award 0 PTS only if no business model information exists across all materials.</p>
+
+    <p><strong>Q: What if a company has missing files or access is blocked?</strong><br>
+    <strong>A:</strong> If all materials for a company are completely missing, notify the administrator. If an application survey text exists, evaluate based on that text. For any question where no evidence exists anywhere, award <strong>0 PTS</strong>.</p>
+
+    <p><strong>Q: Which should I score if both Application Phase and EBD Phase versions exist?</strong><br>
+    <strong>A:</strong> Always evaluate the <strong>Essential Business Deliverables (EBD) Phase</strong> files. EBD represents the finalized, post-program deliverables (e.g. validated financial models, customer interview sheets). Only reference early Application Phase survey answers if an EBD document is absent.</p>
+  </div>
+
+  <div class="card avoid-break">
+    <h3 style="margin-top: 0; color: #0c6b5d;">Module Scoping, Jargon & Scoring Scale</h3>
+
+    <p><strong>Q: Are question categories strictly scoped to specific deliverables, or can I cross-reference?</strong><br>
+    <strong>A:</strong>
+      <ul>
+        <li><strong>Strict Scoping:</strong> <em>Business Canvas (BC)</em>, <em>Executive Summary (IS)</em>, and <em>Investor Pitch (IP)</em> must be evaluated primarily on their respective deliverables (EBD1, EBD6, EBD8).</li>
+        <li><strong>Flexible Scoping:</strong> For all other categories (Financials, Tech Validation, Market, Product-Market Fit, Team, Legal, Environmental Impact), you are free to cross-reference any submitted file or online source to verify founder assertions.</li>
+      </ul>
+    </p>
+
+    <p><strong>Q: How should I score technical buzzwords or industry jargon?</strong><br>
+    <strong>A:</strong> 1–2 technical or domain-specific terms used to explain their core innovation are acceptable. However, if the submission relies on excessive, unexplained buzzwords that obscure their real business model or technology, penalize their clarity score.</p>
+
+    <p><strong>Q: Do I need to calculate weights, averages, or formula scores?</strong><br>
+    <strong>A:</strong> <strong>No.</strong> In historical spreadsheets, reviewers had to deal with complex decimal weights. The modern Diligence Engine standardizes all 282 criteria onto a clean <strong>0 to 1 point scale</strong> (<code>0</code>, <code>0.25</code>, <code>0.5</code>, <code>0.75</code>, <code>1.0 PTS</code>). The platform handles all aggregation, category rollups, and cohort scoring automatically.</p>
+
+    <p><strong>Q: Why do some questions show legacy numbers like (1-5) or (0.44) in the prompt?</strong><br>
+    <strong>A:</strong> These numbers are preserved from the original rubric questions for provenance. Simply select the appropriate score button on the standardized 0 – 1 point scale based on the criteria thresholds.</p>
+
+    <p><strong>Q: Should I recalibrate my scores after finishing?</strong><br>
+    <strong>A:</strong> <strong>Yes.</strong> Once you complete scoring all assigned startups, take 5 minutes to review your score distribution across your cohort to ensure your evaluation rigor remained consistent from your first company to your last.</p>
+  </div>
+
+  <div class="card avoid-break">
+    <h3 style="margin-top: 0; color: #0c6b5d;">Platform Capabilities & Persistence</h3>
     
     <p><strong>Q: What if the AI Citation says "No direct evidence exists"?</strong><br>
-    <strong>A:</strong> This means the startup's submitted deliverables did not address this specific criterion. If you independently search the document and cannot locate evidence, award <strong>0 PTS</strong>.</p>
+    <strong>A:</strong> This means the AI did not locate explicit text matching this criterion. If you independently search the document and cannot locate evidence, award <strong>0 PTS</strong>.</p>
 
     <p><strong>Q: Can I view the official rubric scoring guidelines?</strong><br>
-    <strong>A:</strong> Yes! On questions with official rubric guidelines (e.g. Business Canvas), click the <strong>"📄 View Examples"</strong> link in the question card to view rubric thresholds and real-world grading examples calibrated directly to the <strong>0 – 1 point scale</strong> (0, 0.25, 0.5, 0.75, 1.0 PTS).</p>
-
-    <p><strong>Q: How do I zoom or download a startup PDF?</strong><br>
-    <strong>A:</strong> The live PDF viewer on the left includes full browser controls in the top toolbar: zoom in/out (<code>+</code>/<code>-</code>), page jump, and a direct download icon to inspect the file in your preferred PDF reader.</p>
-
-    <p><strong>Q: What if I notice a document misclassification?</strong><br>
-    <strong>A:</strong> The deliverable dropdown above the PDF viewer allows you to switch between all documents attached to that category. If you need to view a deliverable from another category, navigate to that category section.</p>
+    <strong>A:</strong> Yes! On questions with official rubric guidelines (e.g. Business Canvas), click the <strong>"📄 View Examples"</strong> link in the question card to view rubric thresholds and real-world grading examples calibrated directly to the <strong>0 – 1 point scale</strong>.</p>
 
     <p><strong>Q: What happens if I close my browser before clicking Submit?</strong><br>
     <strong>A:</strong> All scores and justifications are continuously saved to the Supabase database in real time. When you reopen the portal, all your answers will automatically reload from the database.</p>

@@ -35,7 +35,8 @@
         <span id="hdr-startup-name">SolarPure Inc.</span>
         
       </div>
-      <button class="nav-btn" style="padding: 7px 10px; margin-left: 10px; font-size: 12px;" onclick="window.CTO.App.openPasswordModal()">Change password</button>
+      <button class="nav-btn" style="padding: 7px 11px; margin-left: 10px; font-size: 12px; background: #0284c7; color: white; display: inline-flex; align-items: center; gap: 4px; font-weight: 600;" onclick="window.CTO.App.openFaqModal()">❓ Scorer FAQ</button>
+      <button class="nav-btn" style="padding: 7px 10px; margin-left: 8px; font-size: 12px;" onclick="window.CTO.App.openPasswordModal()">Change password</button>
       <button class="nav-btn" style="padding: 7px 10px; margin-left: 8px; font-size: 12px;" onclick="window.CTO.App.logout()">Log out</button>
       
     </div>
@@ -178,5 +179,136 @@
     </div>
   </div>
 
+  <!-- Evaluator FAQ & Rules Modal -->
+  <div class="modal-overlay" id="faq-modal" style="display:none; z-index: 999; backdrop-filter: blur(4px);">
+    <div class="modal-content" style="max-width: 720px; max-height: 85vh; overflow-y: auto; padding: 32px; border-radius: 12px; background: #fff; box-shadow: var(--shadow-lg);">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 12px;">
+        <div>
+          <h2 style="font-size: 20px; font-weight: 700; color: var(--text-main); margin: 0;">CleanTech Open Evaluator FAQs & Guidelines</h2>
+          <p style="font-size: 13px; color: var(--text-muted); margin: 4px 0 0 0;">Official diligence rules, grading thresholds, and scoring standards.</p>
+        </div>
+        <button onclick="window.CTO.App.closeFaqModal()" style="background: none; border: none; font-size: 26px; cursor: pointer; color: var(--text-muted); line-height: 1;" title="Close">&times;</button>
+      </div>
+
+      <div style="font-size: 13.5px; color: var(--text-main); line-height: 1.6; display: flex; flex-direction: column; gap: 20px;">
+
+        <!-- FAQ 1: Large vs Small Brackets -->
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
+          <h3 style="margin-top: 0; font-size: 15px; color: #0284c7; display: flex; align-items: center; gap: 6px;">
+            <span>📐</span> What are the "Large" vs "Small" Brackets in the Business Model Canvas?
+          </h3>
+          <p style="margin-bottom: 10px;">
+            The CleanTech Open rubric evaluates the 9 standard Strategyzer Business Model Canvas blocks divided into <strong>Large Brackets</strong> (evaluated in <code>BC_Q4</code>) and <strong>Small Brackets</strong> (evaluated in <code>BC_Q5</code>):
+          </p>
+          <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 13px; background: #fff; border: 1px solid #cbd5e1; border-radius: 6px; overflow: hidden;">
+            <thead>
+              <tr style="background: #f1f5f9;">
+                <th style="padding: 8px 10px; border-bottom: 1px solid #cbd5e1; width: 18%;">Rubric ID</th>
+                <th style="padding: 8px 10px; border-bottom: 1px solid #cbd5e1; width: 22%;">Classification</th>
+                <th style="padding: 8px 10px; border-bottom: 1px solid #cbd5e1; width: 20%;">Strategyzer Color</th>
+                <th style="padding: 8px 10px; border-bottom: 1px solid #cbd5e1;">Included Canvas Blocks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 8px 10px; border-bottom: 1px solid #e2e8f0; font-weight: 700;">BC_Q4</td>
+                <td style="padding: 8px 10px; border-bottom: 1px solid #e2e8f0;"><strong>Large / Big Brackets</strong><br><span style="font-size: 11px; color: var(--text-muted);">(Core Pillars)</span></td>
+                <td style="padding: 8px 10px; border-bottom: 1px solid #e2e8f0;"><span style="background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 11px;">🔵 Blue Blocks</span></td>
+                <td style="padding: 8px 10px; border-bottom: 1px solid #e2e8f0;"><strong>1. Key Partners<br>2. Value Propositions<br>3. Customer Segments<br>4. Cost Structure<br>5. Revenue Streams</strong></td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 10px; font-weight: 700;">BC_Q5</td>
+                <td style="padding: 8px 10px;"><strong>Small Brackets</strong><br><span style="font-size: 11px; color: var(--text-muted);">(Connectors)</span></td>
+                <td style="padding: 8px 10px;"><span style="background: #fef9c3; color: #854d0e; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 11px;">🟡 Yellow Blocks</span></td>
+                <td style="padding: 8px 10px;"><strong>1. Key Activities<br>2. Key Resources<br>3. Customer Relationships<br>4. Channels</strong></td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 12px; color: var(--text-muted); margin: 8px 0 0 0;">
+            <em>Visual Rule:</em> The 4 corner foundation blocks + center value proposition form the <strong>Large Brackets (5)</strong>. The operational connecting blocks form the <strong>Small Brackets (4)</strong>.
+          </p>
+        </div>
+
+        <!-- FAQ 2: Google Searching -->
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
+          <h3 style="margin-top: 0; font-size: 15px; color: #0284c7; display: flex; align-items: center; gap: 6px;">
+            <span>🔍</span> Can I Google search if information is not found in the documents?
+          </h3>
+          <p style="margin: 0;">
+            <strong>Yes.</strong> You are explicitly authorized and encouraged to Google search the company, verify founder claims, check their live website, inspect patent databases, and research customer validations if the submitted PDFs lack specific details.
+          </p>
+        </div>
+
+        <!-- FAQ 3: Missing Files or BMC -->
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
+          <h3 style="margin-top: 0; font-size: 15px; color: #0284c7; display: flex; align-items: center; gap: 6px;">
+            <span>📁</span> What if a startup has files but no dedicated BMC document?
+          </h3>
+          <p style="margin: 0;">
+            If no standalone Business Model Canvas PDF was submitted, use the dropdown above the PDF viewer to inspect other founder deliverables (especially their <strong>Investor Pitch Deck</strong> and <strong>Executive Summary</strong>) or web research. Score the BMC questions based on that evidence. Only award <code>0 PTS</code> if no business model details exist anywhere.
+          </p>
+        </div>
+
+        <!-- FAQ 4: Module Scoping Rules -->
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
+          <h3 style="margin-top: 0; font-size: 15px; color: #0284c7; display: flex; align-items: center; gap: 6px;">
+            <span>🎯</span> Strict Scoping vs Flexible Cross-Referencing
+          </h3>
+          <ul style="margin: 6px 0 0 16px; padding: 0;">
+            <li style="margin-bottom: 6px;"><strong>Strict Scoping:</strong> <em>Business Canvas (BC)</em>, <em>Executive Summary (IS)</em>, and <em>Investor Pitch (IP)</em> must be evaluated primarily on their dedicated deliverables (EBD1, EBD6, EBD8).</li>
+            <li><strong>Flexible Cross-Referencing:</strong> For all other modules (Financials, Tech Validation, Product-Market Fit, Team, Legal, Environmental Impact), you may freely cross-reference any submitted file or online source to verify founder assertions.</li>
+          </ul>
+        </div>
+
+        <!-- FAQ 5: Technical Jargon -->
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
+          <h3 style="margin-top: 0; font-size: 15px; color: #0284c7; display: flex; align-items: center; gap: 6px;">
+            <span>💬</span> How should technical jargon or buzzwords be scored?
+          </h3>
+          <p style="margin: 0;">
+            In the Value Proposition, Branding, Marketing, and Pitch modules: using 1–2 technical terms to explain a scientific process is fine. However, if a founder relies on dense, unexplained buzzwords that obscure their real business model or technology, deduct points for lack of clarity.
+          </p>
+        </div>
+
+        <!-- FAQ 6: Scoring Scale & Weights -->
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
+          <h3 style="margin-top: 0; font-size: 15px; color: #0284c7; display: flex; align-items: center; gap: 6px;">
+            <span>⚖️</span> Do I need to calculate weights, averages, or decimals?
+          </h3>
+          <p style="margin: 0;">
+            <strong>No.</strong> In historical spreadsheets, reviewers had to deal with manual formulas and decimal weights. The modern Diligence Engine standardizes all 282 criteria onto a clean <strong>0 to 1 point scale</strong> (<code>0</code>, <code>0.25</code>, <code>0.5</code>, <code>0.75</code>, <code>1.0 PTS</code>). Any parenthetical numbers in the prompt (e.g. <code>(1-5)</code> or <code>(0.44)</code>) are legacy references preserved for historical record.
+          </p>
+        </div>
+
+        <!-- FAQ 7: EBD Phase vs Application Phase -->
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
+          <h3 style="margin-top: 0; font-size: 15px; color: #0284c7; display: flex; align-items: center; gap: 6px;">
+            <span>⚡</span> Deliverable Priority: Application Phase vs EBD Phase
+          </h3>
+          <p style="margin: 0;">
+            Always prioritize the <strong>Essential Business Deliverables (EBD) Phase</strong> files. EBD represents the finalized post-program materials (e.g. validated 3-year pro-forma financial models, customer interview sheets). Only refer to early Application Phase survey text if an EBD document was not submitted.
+          </p>
+        </div>
+
+        <!-- FAQ 8: Batch Consistency -->
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
+          <h3 style="margin-top: 0; font-size: 15px; color: #0284c7; display: flex; align-items: center; gap: 6px;">
+            <span>🔄</span> Consistency & Calibration Review
+          </h3>
+          <p style="margin: 0;">
+            Once you have scored all startups assigned to you, review your score distributions across the cohort to confirm that your evaluation standards were applied uniformly from your first startup to your last.
+          </p>
+        </div>
+
+      </div>
+
+      <div style="margin-top: 24px; text-align: right; border-top: 1px solid var(--border); padding-top: 16px;">
+        <button class="nav-btn btn-next ready" onclick="window.CTO.App.closeFaqModal()">Got it, Close FAQ</button>
+      </div>
+
+    </div>
+  </div>
+
 </body>
 </html>
+
