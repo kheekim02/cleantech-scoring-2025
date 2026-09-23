@@ -103,7 +103,10 @@ window.AdminApp = {
             <strong style="color: var(--accent-blue); font-size: 13px;">${j.judge_id}</strong>
             <span style="font-size: 11px; color: var(--text-muted); display: block;">Password protected</span>
           </div>
-          <button class="btn btn-delete-scorer" onclick="AdminApp.deleteScorer('${safeId}')" style="background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background 0.15s ease;" onmouseover="this.style.background='#fecaca'" onmouseout="this.style.background='#fee2e2'">Delete</button>
+          <div style="display: flex; gap: 6px; align-items: center;">
+            <button class="btn btn-reset-pass" onclick="AdminApp.resetPassword('${safeId}')" style="background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background 0.15s ease;" onmouseover="this.style.background='#bae6fd'" onmouseout="this.style.background='#e0f2fe'">Reset Pass</button>
+            <button class="btn btn-delete-scorer" onclick="AdminApp.deleteScorer('${safeId}')" style="background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background 0.15s ease;" onmouseover="this.style.background='#fecaca'" onmouseout="this.style.background='#fee2e2'">Delete</button>
+          </div>
         </div>
       `;
     });
@@ -393,6 +396,43 @@ window.AdminApp = {
       alert("Network error deleting scorer: " + e.message);
     }
     if (msg) setTimeout(() => { msg.textContent = ''; }, 3500);
+  },
+
+  async resetPassword(judge_id) {
+    const new_password = prompt(`Enter new password for scorer "${judge_id}":`);
+    if (new_password === null) return; // user cancelled
+    if (!new_password.trim()) {
+      alert("Password cannot be empty.");
+      return;
+    }
+    const msg = document.getElementById('create-msg');
+    try {
+      const res = await fetch('/api/admin-actions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          action: 'RESET_JUDGE_PASSWORD',
+          data: { judge_id, new_password: new_password.trim() }
+        })
+      });
+      if (res.ok) {
+        if (msg) {
+          msg.textContent = `Password reset successfully for "${judge_id}".`;
+          msg.style.color = 'var(--accent-green)';
+        }
+        alert(`Password for scorer "${judge_id}" has been reset successfully.`);
+      } else {
+        const err = await res.json();
+        alert("Error resetting password: " + (err.error || "Failed to reset password"));
+      }
+    } catch (e) {
+      alert("Network error resetting password: " + e.message);
+    }
+    if (msg) setTimeout(() => { msg.textContent = ''; }, 3500);
+  },
+
+  exportScores() {
+    window.location.href = '/api/export-scores';
   }
 };
 

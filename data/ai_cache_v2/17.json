@@ -6,7 +6,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of customer interviews is provided in the applicant_prose."
   },
   {
@@ -16,7 +15,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of the company describing its culture and how it plans to use profits."
   },
   {
@@ -26,7 +24,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of SDGs mapping across the company's value chain was found in the provided documents."
   },
   {
@@ -36,7 +33,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a quantifiable number explaining how the startup is better than conventional companies in its sector."
   },
   {
@@ -46,7 +42,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The Business Model Canvas (BMC) is not provided in the applicant_prose, so it is not possible to assess the clarity and articulation of the small sections of the BMC."
   },
   {
@@ -56,7 +51,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The applicant has filled in most of the sections of the Business Model Canvas, but some sections are incomplete or lack specific details."
   },
   {
@@ -66,13 +60,6 @@
     "citation": "Grid connected utility scale solar / wind projects (typically under 10MW in the USA) - this includes owners of projects that are already operating as well as developers in the grid interconnection queue.",
     "source_pdf": "06_17Inc_EBD3CustomerSegmentationCompetitiveMatrix.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 95.25,
-      "t": 241.82,
-      "r": 683.5,
-      "b": 217.42,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company identifies two customer segments: grid connected utility scale solar / wind projects and large gigascale projects, but the description is brief and lacks detailed customer attributes."
   },
   {
@@ -82,13 +69,6 @@
     "citation": "For solar energy producers who seek to store, distribute and monetize their surplus peak time energy production, 17 offers a scalable intermittent ammonia production solution. Unlike battery packs, ammonia can be transported, used for energy production and as a fertilizer.",
     "source_pdf": "02_17_Inc_-_Biz_Model_Canvas.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 9.57,
-      "t": 472.6,
-      "r": 707.12,
-      "b": 48.13,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The value proposition is clearly understood, but the language is somewhat generic and could be more specific about the benefits of the solution."
   },
   {
@@ -98,13 +78,6 @@
     "citation": "Each of our units produces 90 tonnes of ammonia annually (with 30% capacity factor included) which saves 200 tonnes CO2 compared to fossil fuel ammonia. At scaled production we will be able to abate ~500M tonnes of carbon dioxide emissions annually.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 317.45,
-      "r": 545.26,
-      "b": 285.7,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant explicitly states that their technology will abate 500M tonnes of CO2 emissions annually, indicating a strong focus on climate mitigation."
   },
   {
@@ -114,13 +87,6 @@
     "citation": "Our technology and units can improve the economics of clean energy projects in low socio-economic areas, giving better access to low emissions energy. In addition, clean ammonia (from just water, clean energy and air) reduces the local and global emissions associated with fossil fuel ammonia (2.5 tonnes CO2 per tonne ammonia and 2% of global CO2 emissions).",
     "source_pdf": "03_17Inc_M2ImpactSustainaiblityQuestions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 88.96,
-      "t": 721.08,
-      "r": 532.81,
-      "b": 453.43,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company purpose directly addresses two SDGs: SDG 7 (Affordable and Clean Energy) and SDG 13 (Climate Action), by improving the economics of clean energy projects and reducing global emissions."
   },
   {
@@ -130,7 +96,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of customer archetypes/personas created based on research."
   },
   {
@@ -140,7 +105,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of certification by any environmental organizations was found in the provided documents."
   },
   {
@@ -150,7 +114,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of the startup updating or changing its user experience based on research."
   },
   {
@@ -160,7 +123,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a change in strategy or product experience due to new learning."
   },
   {
@@ -170,7 +132,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of customer segments based on psychological factors was found in the applicant_prose."
   },
   {
@@ -180,7 +141,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of live research-focused discussions with at least 4 members of its target audience."
   },
   {
@@ -190,7 +150,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of multiple customer segments based on demographic factors was found in the applicant_prose."
   },
   {
@@ -200,7 +159,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of live research-focused discussions with at least 6 members of its target audience."
   },
   {
@@ -210,7 +168,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of live research-focused discussions with 10 or more members of the target audience."
   },
   {
@@ -220,13 +177,6 @@
     "citation": "For ammonia production, regulations related to equipment safety and ammonia storage methods are likely to play a role in unit installation & operation. See regulations listed below.",
     "source_pdf": "03_17Inc_M2ImpactSustainaiblityQuestions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.07,
-      "t": 440.48,
-      "r": 532.74,
-      "b": 76.06,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company mentions existing regulations that have a direct impact on their license to operate, specifically for ammonia production."
   },
   {
@@ -236,13 +186,6 @@
     "citation": "Our process uses clean energy by design; we can improve our production with a full lifecycle assessment (including cradle to cradle) once the full tech selection is known",
     "source_pdf": "03_17Inc_M2ImpactSustainaiblityQuestions.pdf",
     "page_number": 4,
-    "bbox": {
-      "l": 89.31,
-      "t": 509.66,
-      "r": 532.34,
-      "b": 134.4,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has identified its largest source of energy use as the hydrogen electrolysers, which consume ~90% of their energy use."
   },
   {
@@ -252,13 +195,6 @@
     "citation": "Grid connected utility scale solar / wind projects (typically under 10MW in the USA) - this includes owners of projects that are already operating as well as developers in the grid interconnection queue.",
     "source_pdf": "06_17Inc_EBD3CustomerSegmentationCompetitiveMatrix.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 95.25,
-      "t": 241.82,
-      "r": 683.5,
-      "b": 217.42,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has clearly defined customer segments based on research, specifically mentioning grid-connected utility scale solar/wind projects."
   },
   {
@@ -268,13 +204,6 @@
     "citation": "Hazardous - 0% Recyclable - 0% Reusable - 0% Landfill - 0% We haven't completed a full LCA on our units (technical specification isn't complete).",
     "source_pdf": "03_17Inc_M2ImpactSustainaiblityQuestions.pdf",
     "page_number": 5,
-    "bbox": {
-      "l": 89.22,
-      "t": 276.66,
-      "r": 532.46,
-      "b": 98.47,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has not categorized its waste stream by percentage, and instead states that it hasn't completed a full LCA on its units."
   },
   {
@@ -284,7 +213,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of implemented feedback mechanisms into their service or product experience."
   },
   {
@@ -294,13 +222,6 @@
     "citation": "Poor project economics; solar is a race to the bottom wrt energy curtailment, and limited transmission line capacity. Clean energy projects can't sell their full production and their economics suffers.",
     "source_pdf": "05_17Inc_M3AssignmentQuestion.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 83.43,
-      "t": 502.57,
-      "r": 528.24,
-      "b": 80.69,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has identified a need in the target market, specifically the issue of poor project economics due to curtailment and limited transmission line capacity, which their product aims to address."
   },
   {
@@ -310,7 +231,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of identified purchasing decision-makers in the system."
   },
   {
@@ -320,7 +240,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of psychographic attributes associated with the target audience was found in the applicant_prose."
   },
   {
@@ -330,7 +249,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of someone dedicated to tech tools and ops in the provided applicant prose."
   },
   {
@@ -340,7 +258,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of research-validated range potential customers would be willing to pay for their product or service."
   },
   {
@@ -350,7 +267,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of statistically significant quantitative methodology to validate the size and representativeness of the target market psychographic segmentation."
   },
   {
@@ -360,13 +276,6 @@
     "citation": "Segment 1 - clean energy project developer / owner suffering from curtailment and poor project economics Segment 2 - clean energy project investor suffering from long interconnection queues. Segment 3 - bioenergy project owner suffering transmission line curtailment (wants a unit now)",
     "source_pdf": "05_17Inc_M3AssignmentQuestion.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 83.43,
-      "t": 502.57,
-      "r": 528.24,
-      "b": 80.69,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has identified three specific target markets, each with unique pain points, and has articulated why they are a better option than other segments."
   },
   {
@@ -376,7 +285,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of embedded Net Promoter Score (NPS) into ongoing feedback was found in the applicant_prose."
   },
   {
@@ -386,13 +294,6 @@
     "citation": "Our product (a modular chemical production unit installed onsite wind/solar plants) produces clean (green) ammonia. Ammonia is toxic in high concentrations but all animals (including humans) have a natural mechanism to process and expel ammonia; fish do not. Ammonia is an essential chemical, used to produce 50% of the world's food.",
     "source_pdf": "03_17Inc_M2ImpactSustainaiblityQuestions.pdf",
     "page_number": 3,
-    "bbox": {
-      "l": 89.31,
-      "t": 341.65,
-      "r": 532.52,
-      "b": 94.35,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has identified the potential toxicity of ammonia in high concentrations, but notes that it is an essential chemical and that humans and animals have a natural mechanism to process and expel it."
   },
   {
@@ -402,7 +303,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of dedicated resources or individual on the team for user experience."
   },
   {
@@ -412,7 +312,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No logo is mentioned in the provided documents."
   },
   {
@@ -422,7 +321,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of working with a user/customer research professional was found in the applicant_prose."
   },
   {
@@ -432,7 +330,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No logo is mentioned in the provided documents."
   },
   {
@@ -442,7 +339,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No logo is provided in the applicant_prose"
   },
   {
@@ -452,7 +348,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No visual design system or assets were provided to assess consistency."
   },
   {
@@ -462,13 +357,6 @@
     "citation": "We have letters of support from tribal communities (access to large land areas without significant transmission line congestion and overload, expensive and slow to install) and Seneca Environmental has provided us with a letter of support.",
     "source_pdf": "03_17Inc_M2ImpactSustainaiblityQuestions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.07,
-      "t": 440.48,
-      "r": 532.74,
-      "b": 76.06,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has identified some key stakeholders, but it is unclear if they have addressed the needs of all key stakeholders, particularly those indirectly impacted by their business."
   },
   {
@@ -478,7 +366,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a branding professional or working with one was found in the applicant_prose."
   },
   {
@@ -488,7 +375,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of analysis on why customers use the competition."
   },
   {
@@ -498,7 +384,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a competitive analysis was found in the provided documents."
   },
   {
@@ -508,7 +393,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a brand strategy based in customer insights was found in the provided documents."
   },
   {
@@ -518,7 +402,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of customer experience pain-points in at least 1 major competitor's product was found in the applicant_prose."
   },
   {
@@ -528,7 +411,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of customer experience pain-points in at least 3 major competitor's product identified in the applicant_prose."
   },
   {
@@ -538,13 +420,6 @@
     "citation": "Key stakeholders are clean energy project investors, owners and operators; we are actively contacting them to understand their pain points and willingness to use novel tech to improve project economics. Other stakeholders include state ISOs, transmission company owners and grid operators (since we will be converting excess clean energy into chemicals onsite).",
     "source_pdf": "03_17Inc_M2ImpactSustainaiblityQuestions.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.54,
-      "t": 470.33,
-      "r": 532.08,
-      "b": 85.05,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has articulated multiple stakeholders in the market they are addressing, including clean energy project investors, owners and operators, state ISOs, transmission company owners, and grid operators."
   },
   {
@@ -554,7 +429,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of channels that key customers frequently consume media, products, and services via was found in the applicant_prose."
   },
   {
@@ -564,7 +438,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a viral marketing campaign designed for a specific audience was found in the provided documents."
   },
   {
@@ -574,7 +447,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No clear strategy to on-board new users is evident in the provided documents."
   },
   {
@@ -584,7 +456,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of engagement mechanisms to allow for different levels of user participation was found in the provided documents."
   },
   {
@@ -594,7 +465,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of sales tactics to address key purchasing barriers was found in the provided documents."
   },
   {
@@ -604,7 +474,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a customer feedback channel within the sales process was found in the provided documents."
   },
   {
@@ -614,7 +483,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No product or service roadmap is provided in the applicant_prose."
   },
   {
@@ -624,7 +492,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No peer-reviewed articles were cited about the core technology."
   },
   {
@@ -634,13 +501,6 @@
     "citation": "Our business model is to install our units onsite for 'free', pay for producers' excess power, produce ammonia and sell to agricultural, industry and fuel/power generation users.",
     "source_pdf": "05_17Inc_M3AssignmentQuestion.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 83.08,
-      "t": 712.07,
-      "r": 528.37,
-      "b": 73.74,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup's business model does not clearly outline a plan for distributing its product or service via distribution channels that customers frequently use."
   },
   {
@@ -650,13 +510,6 @@
     "citation": "For solar energy producers who seek to store, distribute and monetize their surplus peak time energy production, 17 offers a scalable intermittent ammonia production solution. Unlike battery packs, ammonia can be transported, used for energy production and as a fertilizer.",
     "source_pdf": "02_17_Inc_-_Biz_Model_Canvas.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 9.57,
-      "t": 472.6,
-      "r": 707.12,
-      "b": 48.13,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has identified a unique value proposition that addresses the pain point of solar energy producers, offering a scalable intermittent ammonia production solution that can be transported and used for energy production and as a fertilizer."
   },
   {
@@ -666,7 +519,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of internal testing of the technology was found in the provided documents."
   },
   {
@@ -676,13 +528,6 @@
     "citation": "Poor project economics; solar is a race to the bottom wrt energy curtailment, and limited transmission line capacity. Clean energy projects can't sell their full production and their economics suffers.",
     "source_pdf": "05_17Inc_M3AssignmentQuestion.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 83.43,
-      "t": 502.57,
-      "r": 528.24,
-      "b": 80.69,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has validated customer experience pain-points through user research, specifically citing poor project economics and limited transmission line capacity as issues faced by clean energy projects."
   },
   {
@@ -692,7 +537,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "There is no evidence in the provided applicant_prose that the startup has anticipated the need to gather feedback and pivot in the future."
   },
   {
@@ -702,13 +546,6 @@
     "citation": "Poor project economics; solar is a race to the bottom wrt energy curtailment, and limited transmission line capacity. Clean energy projects can't sell their full production and their economics suffers.",
     "source_pdf": "05_17Inc_M3AssignmentQuestion.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 83.43,
-      "t": 502.57,
-      "r": 528.24,
-      "b": 80.69,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has identified poor project economics and limited transmission line capacity as key barriers to customer purchases."
   },
   {
@@ -718,7 +555,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of granted patents in the provided documents."
   },
   {
@@ -728,7 +564,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of other companies using the same or similar core technology was found in the applicant_prose."
   },
   {
@@ -738,13 +573,6 @@
     "citation": "We have LOS from at least two utility scale clean energy producers and have signed an NDA to share 17's tech with a giga-scale ($100B+ project pipeline) clean energy ammonia producer.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 465.63,
-      "r": 549.56,
-      "b": 447.33,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has identified ways to leverage their advocates, customers or community to spread their product or service, as evidenced by the letters of support and non-disclosure agreements with utility scale clean energy producers and a giga-scale project pipeline."
   },
   {
@@ -754,13 +582,6 @@
     "citation": "We have written testimonials but these are confidential at this stage (both from our side and the authors).",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 72.0,
-      "t": 132.86,
-      "r": 538.0,
-      "b": 108.6,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has third-party validation, but the details are confidential."
   },
   {
@@ -770,13 +591,6 @@
     "citation": "2. No 3. No 5. No",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 71.84,
-      "t": 539.8,
-      "r": 514.1,
-      "b": 169.77,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company does not have an initial prototype."
   },
   {
@@ -786,7 +600,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a full-scale prototype or software beta version was found in the applicant_prose."
   },
   {
@@ -796,13 +609,6 @@
     "citation": "Describe the minimum feature set that your customer has clearly indicated in interviews they want more than other features. What will they pay for this Minimum Viable Product as the first release?",
     "source_pdf": "05_17Inc_M3AssignmentQuestion.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 83.43,
-      "t": 502.57,
-      "r": 528.24,
-      "b": 80.69,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has not explicitly identified and prioritized the most important features to customers for GTM rollout, as the provided text only mentions that customers want to sell their extra power at profitable prices, but does not specify the minimum feature set required."
   },
   {
@@ -812,7 +618,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of third-party validation cost documentation was found in the provided applicant prose."
   },
   {
@@ -822,7 +627,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of paid field installations was found in the provided documents."
   },
   {
@@ -832,13 +636,6 @@
     "citation": "We have filed PCT patents, covering physical equipment systems and methods for two distinct (but related) ammonia production methods.",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 71.84,
-      "t": 539.8,
-      "r": 514.1,
-      "b": 169.77,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has filed PCT patents, but the exact number is not specified, so the score is 0.5."
   },
   {
@@ -848,7 +645,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of certification needs or plans in the provided documents."
   },
   {
@@ -858,13 +654,6 @@
     "citation": "We have a partnership with LBL to complete the lab work and funding from CALSeed / CEC to complete the tests.",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 71.69,
-      "t": 719.53,
-      "r": 513.03,
-      "b": 229.72,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has identified LBL as a third-party validation entity for their lab work."
   },
   {
@@ -874,7 +663,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No operating budget information is provided in the applicant_prose."
   },
   {
@@ -884,13 +672,6 @@
     "citation": "We are currently working with LBNL under a California Energy Commission CalSEED grant to validate the performance of our systems.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 374.49,
-      "r": 549.77,
-      "b": 342.74,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has a pending validation with LBNL, indicating that the validation is in the pending stage."
   },
   {
@@ -900,7 +681,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No operating budget is provided in the applicant_prose."
   },
   {
@@ -910,7 +690,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of budget comparison or financial analysis is provided in the applicant_prose."
   },
   {
@@ -920,13 +699,6 @@
     "citation": "Our technology is currently at TRL 2 - we have completed conceptual engineering, chemical/thermal modelling. We are just getting into the lab at LBNL to complete experimental validation of key components of our tech (ie get us to TRL3).",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 71.84,
-      "t": 539.8,
-      "r": 514.1,
-      "b": 169.77,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant's technology is at TRL 2, which falls into the 4-6 range, thus scoring 0.5 points."
   },
   {
@@ -936,7 +708,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a capital budget in the provided documents."
   },
   {
@@ -946,7 +717,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of revenue, expense, and market projections for the next 3, 5, or 10 years in the provided documents."
   },
   {
@@ -956,7 +726,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of revenue and expenses by project being identified by source or line item in the provided documents."
   },
   {
@@ -966,7 +735,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a capital budget that includes revenue and expenses by project was found in the provided documents."
   },
   {
@@ -976,13 +744,6 @@
     "citation": "We have LOS from at least two utility scale clean energy producers and have signed an NDA to share 17's tech with a giga-scale ($100B+ project pipeline) clean energy ammonia producer.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 465.63,
-      "r": 549.56,
-      "b": 447.33,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has mentioned having Letters of Support (LOS) from at least two utility scale clean energy producers and a non-disclosure agreement (NDA) with a giga-scale project pipeline, indicating potential field installations with customers."
   },
   {
@@ -992,13 +753,6 @@
     "citation": "We have written testimonials but these are confidential at this stage (both from our side and the authors).",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 72.0,
-      "t": 132.86,
-      "r": 538.0,
-      "b": 108.6,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant_prose does not provide any evidence of the revenue, expense, and market assumptions upon which the operating budget is based."
   },
   {
@@ -1008,13 +762,6 @@
     "citation": "We have a partnership with LBL to complete the lab work and funding from CALSeed / CEC to complete the tests. We're just waiting on final contract validation (on LBL side) to start this work.",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 71.69,
-      "t": 719.53,
-      "r": 513.03,
-      "b": 229.72,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has not yet completed the lab work and is waiting on final contract validation, indicating that the product is not yet ready for manufacture or deployment."
   },
   {
@@ -1024,7 +771,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of budget comparison or financial analysis is provided in the applicant_prose."
   },
   {
@@ -1034,13 +780,6 @@
     "citation": "We have written testimonials but these are confidential at this stage (both from our side and the authors).",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 72.0,
-      "t": 132.86,
-      "r": 538.0,
-      "b": 108.6,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant_prose does not provide any information about the revenue, expense, and market assumptions upon which the operating budget projections are based."
   },
   {
@@ -1050,7 +789,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No financial statements were provided in the applicant_prose."
   },
   {
@@ -1060,7 +798,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of financial statements or bank statements provided in the applicant_prose."
   },
   {
@@ -1070,13 +807,6 @@
     "citation": "We have an at scale unit cost of $200k based on our conceptual engineering and our unit TEA (based on NREL cost curves of our the most expensive component - electrolysers) we have an at scale unit cost of $200k",
     "source_pdf": "08_17Inc_M6Questions.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.38,
-      "t": 468.58,
-      "r": 533.53,
-      "b": 93.81,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant_prose does not explicitly identify revenue and expense projections as fixed, variable, or marginal."
   },
   {
@@ -1086,13 +816,6 @@
     "citation": "We have written testimonials but these are confidential at this stage (both from our side and the authors).",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 72.0,
-      "t": 132.86,
-      "r": 538.0,
-      "b": 108.6,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant_prose does not provide explicit revenue, expense, and market assumptions upon which the capital budget is based."
   },
   {
@@ -1102,7 +825,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of revenue, expense, and market projections for the next 3, 5, or 10 years, or for the life of each project in the provided documents."
   },
   {
@@ -1112,7 +834,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of reconciled financial statements was found in the provided documents."
   },
   {
@@ -1122,7 +843,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of return on equity and return on assets calculation in the provided documents."
   },
   {
@@ -1132,13 +852,6 @@
     "citation": "We have written testimonials but these are confidential at this stage (both from our side and the authors).",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 72.0,
-      "t": 132.86,
-      "r": 538.0,
-      "b": 108.6,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant_prose does not provide evidence of the revenue, expense, and market assumptions upon which the capital budget projections are based."
   },
   {
@@ -1148,7 +861,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No prior-year audited financial statements are provided in the applicant_prose."
   },
   {
@@ -1158,7 +870,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No prior-year income tax returns were provided in the applicant_prose."
   },
   {
@@ -1168,13 +879,6 @@
     "citation": "The financial projection model, you will use information from above and from previous assignment sheets: Use your work in Module 3 (Product/Market Fit) to project first-year revenues for your validated targeted subsegment. Subsequent years might reflect second and third target subsegment revenues, if you have sufficiently penetrated the first subsegment by then. Make sure your assumptions are credibly based on your validation interviews.",
     "source_pdf": "08_17Inc_M6Questions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 90.0,
-      "t": 689.74,
-      "r": 515.54,
-      "b": 665.34,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant's financial projection model does not explicitly identify revenue and expenses by source or line item, instead providing a high-level overview of projected revenues and expenses for each year."
   },
   {
@@ -1184,7 +888,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of return on equity and return on assets projections or repayment of investor equity and return on investor equity in the provided applicant_prose."
   },
   {
@@ -1194,7 +897,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No actual sales or revenue data is provided in the applicant_prose."
   },
   {
@@ -1204,7 +906,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No 3-, 5-, or 10-year projections for return on equity and return on assets are provided in the applicant_prose."
   },
   {
@@ -1214,7 +915,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of market share calculation based on actual sales or revenue data compared to industry total sales."
   },
   {
@@ -1224,7 +924,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of market share calculation based on industry projected total sales is found in the applicant_prose."
   },
   {
@@ -1234,7 +933,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of the founder's experience managing intellectual property was found in the provided documents."
   },
   {
@@ -1244,7 +942,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a person tasked with managing intellectual property was found in the applicant_prose."
   },
   {
@@ -1254,7 +951,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a trademark/service mark strategy was found in the provided documents."
   },
   {
@@ -1264,13 +960,6 @@
     "citation": "We estimate that in the first year (or low run scaled production) we'll be able to produce between 10 and 30 units (say 20 units) which equates to ~$1.5M revenue.",
     "source_pdf": "05_17Inc_M3AssignmentQuestion.pdf",
     "page_number": 3,
-    "bbox": {
-      "l": 83.42,
-      "t": 711.8,
-      "r": 528.53,
-      "b": 85.68,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant does not explicitly identify the market assumptions upon which their return on equity and return on assets projections are based."
   },
   {
@@ -1280,7 +969,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of trademark registration applications was found in the provided documents."
   },
   {
@@ -1290,7 +978,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of trade or service mark clearance search was found in the provided documents."
   },
   {
@@ -1300,13 +987,6 @@
     "citation": "We have filed PCT patents, covering physical equipment systems and methods for two distinct (but related) ammonia production methods.",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 71.84,
-      "t": 539.8,
-      "r": 514.1,
-      "b": 169.77,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has filed PCT patents, indicating an intellectual property strategy."
   },
   {
@@ -1316,7 +996,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of international sales or trademark registrations in foreign countries."
   },
   {
@@ -1326,7 +1005,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of trademark or service mark registration was found in the provided documents."
   },
   {
@@ -1336,13 +1014,6 @@
     "citation": "We have filed PCT patents, covering physical equipment systems and methods for two distinct (but related) ammonia production methods.",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 71.84,
-      "t": 539.8,
-      "r": 514.1,
-      "b": 169.77,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has filed PCT patents, indicating that they are actively developing and implementing an intellectual property strategy."
   },
   {
@@ -1352,7 +1023,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a clearance search to determine whether or not it is okay to use the trade or service mark it wants."
   },
   {
@@ -1362,7 +1032,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a copyright strategy was found in the provided documents."
   },
   {
@@ -1372,13 +1041,6 @@
     "citation": "Key metrics that matter are: - reaction kinetics (speed) - determines unit sizing and throughput - equilibrium conversion - start-up speed - determines how broadly our units fit into the energy generation and grid ecosystem",
     "source_pdf": "08_17Inc_M6Questions.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.38,
-      "t": 468.58,
-      "r": 533.53,
-      "b": 93.81,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant does not explicitly mention assumptions upon which projected sales or revenue data are based, but rather lists key metrics that matter for their financial model."
   },
   {
@@ -1388,7 +1050,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of source code or software development was found in the provided documents."
   },
   {
@@ -1398,13 +1059,6 @@
     "citation": "| 3-Year Financial Projection | | Best Guess | Best Guess | | Sales (Revenue) | 2029 | 2030 | 2031 | Total Income | $707,370 | $4,244,220 | $11,317,920 |",
     "source_pdf": "09_17Inc_FinancialProjection.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 49.15,
-      "t": 733.79,
-      "r": 547.67,
-      "b": 341.51,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant provided a 3-year financial projection in 09_17Inc_FinancialProjection.pdf showing sales revenues for 2029 ($707k), 2030 ($4.24M), and 2031 ($11.3M)."
   },
   {
@@ -1414,7 +1068,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of testing for open-source code in the product."
   },
   {
@@ -1424,7 +1077,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of open-source code in the product."
   },
   {
@@ -1434,7 +1086,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of copyright registrations was found in the provided documents."
   },
   {
@@ -1444,13 +1095,6 @@
     "citation": "www.17.eco",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 324.0,
-      "t": 715.3,
-      "r": 372.52,
-      "b": 707.35,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has registered its website as per the one-page executive summary."
   },
   {
@@ -1460,13 +1104,6 @@
     "citation": "17 solves the problem of overloaded transmission lines and wasted clean energy by converting energy, air and water into green ammonia; modular technology is designed for intermittent, remote operation onsite solar/wind projects.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 279.0,
-      "t": 672.63,
-      "r": 555.98,
-      "b": 628.98,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company name '17' is a strong, unique name that sets the brand apart and has no relationship to what the company is selling."
   },
   {
@@ -1476,7 +1113,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of archival information or website history was found in the provided documents."
   },
   {
@@ -1486,7 +1122,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of competitors filing patent applications was found in the provided documents."
   },
   {
@@ -1496,7 +1131,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of patent protection plans in specific countries was found in the provided documents."
   },
   {
@@ -1506,13 +1140,6 @@
     "citation": "We have filed PCT patents, covering physical equipment systems and methods for two distinct (but related) ammonia production methods.",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 71.84,
-      "t": 539.8,
-      "r": 514.1,
-      "b": 169.77,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has filed PCT patents for their ammonia production methods."
   },
   {
@@ -1522,13 +1149,6 @@
     "citation": "We have filed PCT patents, covering physical equipment systems and methods for two distinct (but related) ammonia production methods.",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 71.84,
-      "t": 539.8,
-      "r": 514.1,
-      "b": 169.77,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has a patent strategy in place, as evidenced by the filing of PCT patents."
   },
   {
@@ -1538,13 +1158,6 @@
     "citation": "We have filed PCT patents, covering physical equipment systems and methods for two distinct (but related) ammonia production methods.",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 71.84,
-      "t": 539.8,
-      "r": 514.1,
-      "b": 169.77,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has evaluated their patent portfolios by filing PCT patents for their ammonia production methods."
   },
   {
@@ -1554,7 +1167,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a trade secret strategy was found in the provided documents."
   },
   {
@@ -1564,13 +1176,6 @@
     "citation": "We have written testimonials but these are confidential at this stage (both from our side and the authors).",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 72.0,
-      "t": 132.86,
-      "r": 538.0,
-      "b": 108.6,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has evaluated their products through written testimonials, indicating a thorough assessment of their technology."
   },
   {
@@ -1580,7 +1185,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of non-disclosure and invention assignment agreements in the provided documents."
   },
   {
@@ -1590,13 +1194,6 @@
     "citation": "Our system has higher rate and yield than electrochemical, chemical looping or plasma ammonia synthesis.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 207.34,
-      "r": 525.06,
-      "b": 163.68,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company explicitly states that its product has higher rate and yield than other competing technologies."
   },
   {
@@ -1606,7 +1203,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of hiring people who worked for competitors."
   },
   {
@@ -1616,7 +1212,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of filed documents establishing a legal entity or related documents was found in the provided applicant_prose."
   },
   {
@@ -1626,13 +1221,6 @@
     "citation": "We have written testimonials but these are confidential at this stage (both from our side and the authors).",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 72.0,
-      "t": 132.86,
-      "r": 538.0,
-      "b": 108.6,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has explicitly stated that their testimonials are confidential, indicating that they are taking reasonable steps to protect their trade secrets."
   },
   {
@@ -1642,7 +1230,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of loan agreements, financing arrangements, or lines of credit in the provided documents."
   },
   {
@@ -1652,7 +1239,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of nondisclosure or noncompete agreements provided in the applicant_prose."
   },
   {
@@ -1662,13 +1248,6 @@
     "citation": "We have LOS from at least two utility scale clean energy producers and have signed an NDA to share 17's tech with a giga-scale ($100B+ project pipeline) clean energy ammonia producer.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 465.63,
-      "r": 549.56,
-      "b": 447.33,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant does not provide evidence that customers buy its products based on any particular technical feature that it invented."
   },
   {
@@ -1678,7 +1257,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of company filing documents establishing a legal entity (e.g. C Corp, S Corp, LLC) was found in the provided applicant_prose."
   },
   {
@@ -1688,13 +1266,6 @@
     "citation": "We have filed PCT patents, covering physical equipment systems and methods for two distinct (but related) ammonia production methods.",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 71.84,
-      "t": 539.8,
-      "r": 514.1,
-      "b": 169.77,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has identified business information (patents) that is not generally known or readily accessible to competitors, and derives value from not being generally known or readily accessible."
   },
   {
@@ -1704,7 +1275,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of signed sales, distribution, franchise, or licensing agreements was found in the provided documents."
   },
   {
@@ -1714,7 +1284,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of past or pending litigation was found in the provided documents."
   },
   {
@@ -1724,13 +1293,6 @@
     "citation": "We have filed PCT patents, covering physical equipment systems and methods for two distinct (but related) ammonia production methods.",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 71.84,
-      "t": 539.8,
-      "r": 514.1,
-      "b": 169.77,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has filed patents, which is a form of technical information that is known to the company, is not generally known or readily accessible to competitors, and derives value from not being generally known or readily accessible."
   },
   {
@@ -1740,7 +1302,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of employee handbook or guidelines for employees, contractors, and other affiliated workers."
   },
   {
@@ -1750,7 +1311,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of insurance or liability agreements was found in the provided documents."
   },
   {
@@ -1760,7 +1320,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of the company owning or planning to acquire real or material personal property."
   },
   {
@@ -1770,7 +1329,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of agreements with officers, advisors, employees, consultants, or third-party service providers was found in the provided documents."
   },
   {
@@ -1780,7 +1338,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of acquisition, partnership, or joint venture agreements was found in the provided documents."
   },
   {
@@ -1790,7 +1347,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of marketing, promotional, or public relations activities was found in the provided documents."
   },
   {
@@ -1800,7 +1356,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a comprehensive information and data privacy policy provided by the Company."
   },
   {
@@ -1810,7 +1365,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a comprehensive information and data privacy policy was found in the provided documents."
   },
   {
@@ -1820,7 +1374,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of securities applications, issuances, or transfers, or contracts, arrangements, documents, or commitments relating to the Company's stock."
   },
   {
@@ -1830,13 +1383,6 @@
     "citation": "500 lbs or more (EPA EPCRA): Triggers annual hazardous chemical inventory reporting (Tier II). This isn't a 'permit' but a mandatory reporting requirement.",
     "source_pdf": "03_17Inc_M2ImpactSustainaiblityQuestions.pdf",
     "page_number": 6,
-    "bbox": {
-      "l": 108.0,
-      "t": 381.89,
-      "r": 519.86,
-      "b": 343.69,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company is subject to environmental regulations, specifically the EPA EPCRA, which requires annual hazardous chemical inventory reporting for quantities above 500 lbs."
   },
   {
@@ -1846,7 +1392,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of team members being involved in previous startups."
   },
   {
@@ -1856,7 +1401,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of the company's data collection and usage practices was found in the provided documents."
   },
   {
@@ -1866,7 +1410,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a data safety policy or summary of applicable laws and regulations was found in the provided documents."
   },
   {
@@ -1876,7 +1419,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of signed agreements or established relationships involving subsidiaries, partnerships, or joint ventures was found in the provided documents."
   },
   {
@@ -1886,7 +1428,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No information about team members' successful exits is provided in the applicant_prose."
   },
   {
@@ -1896,7 +1437,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No information about the team members' previous involvement with startups is provided in the applicant_prose."
   },
   {
@@ -1906,13 +1446,6 @@
     "citation": "We have a partnership with LBL to complete the lab work and funding from CALSeed / CEC to complete the tests.",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 71.69,
-      "t": 719.53,
-      "r": 513.03,
-      "b": 229.72,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant mentions a partnership with LBL and funding from CALSeed/CEC, indicating a clear plan for addressing potential structural issues."
   },
   {
@@ -1922,7 +1455,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of team experience in the company's industry was found in the applicant_prose."
   },
   {
@@ -1932,13 +1464,6 @@
     "citation": "500 lbs or more (EPA EPCRA): Triggers annual hazardous chemical inventory reporting (Tier II). This isn't a 'permit' but a mandatory reporting requirement.",
     "source_pdf": "03_17Inc_M2ImpactSustainaiblityQuestions.pdf",
     "page_number": 6,
-    "bbox": {
-      "l": 108.0,
-      "t": 381.89,
-      "r": 519.86,
-      "b": 343.69,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company requires special permits and licenses to operate, specifically for hazardous chemical inventory reporting, but these are not considered permits in the classical sense."
   },
   {
@@ -1948,13 +1473,6 @@
     "citation": "Garth Edwards Founder/CEO Seventeen, Inc.",
     "source_pdf": "01_Seneca_17_letter_for_CalSEED_05282024.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.03,
-      "t": 631.45,
-      "r": 273.33,
-      "b": 573.32,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "Garth Edwards is listed as the CEO of Seventeen, Inc."
   },
   {
@@ -1964,7 +1482,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of team members with finance capabilities was found in the provided documents."
   },
   {
@@ -1974,13 +1491,6 @@
     "citation": "Garth Edwards is an engineer and entrepreneur with deep experience in complex systems. He was previously a lead chemical (process) engineer for major energy corporations on multi-billion dollar projects.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 427.57,
-      "r": 557.22,
-      "b": 395.81,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The team has technical capabilities, but there is no evidence of engineering operations, sales, marketing, or finance expertise."
   },
   {
@@ -1990,7 +1500,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No information about the education level of scientific advisors is provided in the applicant_prose."
   },
   {
@@ -2000,13 +1509,6 @@
     "citation": "We have a partnership with LBL to complete the lab work and funding from CALSeed / CEC to complete the tests.",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 71.69,
-      "t": 719.53,
-      "r": 513.03,
-      "b": 229.72,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The team has technical capabilities, but there is no evidence of capabilities in engineering operations, sales + marketing, or finance."
   },
   {
@@ -2016,7 +1518,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No information about the education level of the technical/engineering executives is provided in the applicant_prose."
   },
   {
@@ -2026,7 +1527,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No information about board members' education levels is provided in the applicant_prose."
   },
   {
@@ -2036,7 +1536,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No information about the education level of management executives is provided in the applicant_prose."
   },
   {
@@ -2046,7 +1545,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No information is provided about the percentage of team time spent on the startup."
   },
   {
@@ -2056,7 +1554,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No information about the team's work history together is provided in the applicant_prose."
   },
   {
@@ -2066,7 +1563,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of personal capital being directly invested was found in the provided documents."
   },
   {
@@ -2076,13 +1572,6 @@
     "citation": "Garth Edwards is an engineer and entrepreneur with deep experience in complex systems. He was previously a lead chemical (process) engineer for major energy corporations on multi-billion dollar projects.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 427.57,
-      "r": 557.22,
-      "b": 395.81,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The team has technical capabilities, but there is no evidence of engineering operations, sales, marketing, or finance expertise."
   },
   {
@@ -2092,13 +1581,6 @@
     "citation": "Garth Edwards is an engineer and entrepreneur with deep experience in complex systems. He was previously a lead chemical (process) engineer for major energy corporations on multi-billion dollar projects.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 427.57,
-      "r": 557.22,
-      "b": 395.81,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The team has technical capabilities, but there is no evidence of capabilities in engineering operations, sales + marketing, or finance."
   },
   {
@@ -2108,13 +1590,6 @@
     "citation": "Management: 17 founder Garth Edwards is an engineer and entrepreneur with deep experience in complex systems. He was previously a lead chemical (process) engineer for major energy corporations on multi-billion dollar projects.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 427.57,
-      "r": 557.22,
-      "b": 395.81,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The team has technical capabilities, but there is no evidence of sales, marketing, or finance expertise."
   },
   {
@@ -2124,13 +1599,6 @@
     "citation": "Garth Edwards is an engineer and entrepreneur with deep experience in complex systems. He was previously a lead chemical (process) engineer for major energy corporations on multi-billion dollar projects.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 427.57,
-      "r": 557.22,
-      "b": 395.81,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The team has technical capabilities, but there is no evidence of general management or sales and marketing expertise."
   },
   {
@@ -2140,13 +1608,6 @@
     "citation": "Garth Edwards is an engineer and entrepreneur with deep experience in complex systems. He was previously a lead chemical (process) engineer for major energy corporations on multi-billion dollar projects.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 427.57,
-      "r": 557.22,
-      "b": 395.81,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The team has technical capabilities, but there is no evidence of capabilities in systems/IT, sales + marketing, or finance."
   },
   {
@@ -2156,7 +1617,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a formal assessment of team building dynamics was found in the provided documents."
   },
   {
@@ -2166,13 +1626,6 @@
     "citation": "Garth Edwards is an engineer and entrepreneur with deep experience in complex systems. He was previously a lead chemical (process) engineer for major energy corporations on multi-billion dollar projects.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 427.57,
-      "r": 557.22,
-      "b": 395.81,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The team has technical experience, but the applicant_prose does not provide information about the breadth of the team's functional experience beyond engineering operations."
   },
   {
@@ -2182,7 +1635,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of the team actively improving the team dynamics of the founding team."
   },
   {
@@ -2192,7 +1644,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of Family Offices involvement in the applicant_prose."
   },
   {
@@ -2202,7 +1653,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No information about the number of advisors or their level of engagement is provided in the applicant_prose."
   },
   {
@@ -2212,7 +1662,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of hiring from, raising money from, or completing deals with Angel Investors."
   },
   {
@@ -2222,13 +1671,6 @@
     "citation": null,
     "source_pdf": "02_17_Inc_-_Biz_Model_Canvas.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 402.52,
-      "t": 518.39,
-      "r": 455.39,
-      "b": 502.39,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company name '17, Inc.' is explicitly stated in the Business Model Canvas document."
   },
   {
@@ -2238,7 +1680,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of hiring from, raising money, or completing deals with Strategic Investors is found in the applicant_prose."
   },
   {
@@ -2248,7 +1689,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a formal company logo in the provided documents."
   },
   {
@@ -2258,7 +1698,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No company business history is provided in the applicant prose."
   },
   {
@@ -2268,7 +1707,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No information is provided about current senior management skills or skill gaps."
   },
   {
@@ -2278,7 +1716,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "Contact information is provided in the one-page executive summary."
   },
   {
@@ -2288,13 +1725,6 @@
     "citation": "We have a partnership with LBL to complete the lab work and funding from CALSeed / CEC to complete the tests.",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 71.69,
-      "t": 719.53,
-      "r": 513.03,
-      "b": 229.72,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has received funding from CALSeed, a grant/NGO, which falls into the $250k to $2m category."
   },
   {
@@ -2304,13 +1734,6 @@
     "citation": "Key stakeholders are clean energy project investors, owners and operators; we are actively contacting them to understand their pain points and willingness to use novel tech to improve project economics.",
     "source_pdf": "03_17Inc_M2ImpactSustainaiblityQuestions.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.54,
-      "t": 470.33,
-      "r": 532.08,
-      "b": 85.05,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has a structured approach to engaging the advisory team by actively contacting key stakeholders to understand their pain points and willingness to use novel tech."
   },
   {
@@ -2320,7 +1743,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of an initial commercial offering(s) was found in the provided documents."
   },
   {
@@ -2330,13 +1752,6 @@
     "citation": "17 founder Garth Edwards is an engineer and entrepreneur with deep experience in complex systems. He was previously a lead chemical (process) engineer for major energy corporations on multi-billion dollar projects.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 427.57,
-      "r": 557.22,
-      "b": 395.81,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The team has hired or supervised at least one senior subject matter/functional expert, Garth Edwards, who has experience as a lead chemical engineer for major energy corporations."
   },
   {
@@ -2346,13 +1761,6 @@
     "citation": "We're just waiting on final contract validation (on LBL side) to start this work. We have a partnership with LBL to complete the lab work and funding from CALSeed / CEC to complete the tests.",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 71.69,
-      "t": 719.53,
-      "r": 513.03,
-      "b": 229.72,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has received funding from CALSeed and CEC, which is a combination of non-dilutive funding, indicating that they have raised money from a source other than VCs, but the exact amount is not specified."
   },
   {
@@ -2362,7 +1770,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No key milestone accomplishments are presented in the provided documents."
   },
   {
@@ -2372,13 +1779,6 @@
     "citation": "17 solves the problem of overloaded transmission lines and wasted clean energy by converting energy, air and water into green ammonia; modular technology is designed for intermittent, remote operation onsite solar/wind projects.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 279.0,
-      "t": 672.63,
-      "r": 555.98,
-      "b": 628.98,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company provided a clear and concise overview of its vision and value proposition in the Business Description section of the One-Page Executive Summary."
   },
   {
@@ -2388,13 +1788,6 @@
     "citation": "We have written testimonials but these are confidential at this stage (both from our side and the authors).",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 72.0,
-      "t": 132.86,
-      "r": 538.0,
-      "b": 108.6,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant provides evidence of product technology validation from credible sources, including LBL scientists and DOE, which supports the claim of product development stage."
   },
   {
@@ -2404,7 +1797,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of target market share presented with assumptions."
   },
   {
@@ -2414,7 +1806,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of TAM evaluation or assumptions provided in the applicant_prose."
   },
   {
@@ -2424,7 +1815,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of SAM evaluation or assumptions provided in the applicant_prose."
   },
   {
@@ -2434,13 +1824,6 @@
     "citation": "The curtailed or wasted clean energy market is ~$50B in 2024 (based on ~10% global curtailment) growing to ~$900B at net zero. The ammonia market is ~$200B growing to $700B (IRENA modelling) due to new uses in power generation & shipping.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 264.38,
-      "r": 553.03,
-      "b": 232.63,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has identified the market category of 'curtailed or wasted clean energy' and 'ammonia' as growing markets."
   },
   {
@@ -2450,13 +1833,6 @@
     "citation": "We have LOS from at least two utility scale clean energy producers and have signed an NDA to share 17's tech with a giga-scale ($100B+ project pipeline) clean energy ammonia producer.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 465.63,
-      "r": 549.56,
-      "b": 447.33,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has identified customers with Letters of Support and a Non-Disclosure Agreement with a potential customer."
   },
   {
@@ -2466,13 +1842,6 @@
     "citation": "We have filed PCT patents, covering physical equipment systems and methods for two distinct (but related) ammonia production methods.",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 71.84,
-      "t": 539.8,
-      "r": 514.1,
-      "b": 169.77,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has filed PCT patents, but it is unclear if this constitutes a comprehensive IP strategy."
   },
   {
@@ -2482,13 +1851,6 @@
     "citation": "We have filed PCT patents, covering physical equipment systems and methods for two distinct (but related) ammonia production methods.",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 71.84,
-      "t": 539.8,
-      "r": 514.1,
-      "b": 169.77,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has filed patents that support their value proposition of ammonia production."
   },
   {
@@ -2498,13 +1860,6 @@
     "citation": "Our units improve the economics of clean energy projects (by reducing energy waste) which helps enable the rollout of solar/wind projects and prevents the 'race to the bottom' wrt energy pricing,",
     "source_pdf": "03_17Inc_M2ImpactSustainaiblityQuestions.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.54,
-      "t": 470.33,
-      "r": 532.08,
-      "b": 85.05,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant provides a clear description of the value chain, identifying the role of clean energy project investors, owners, and operators, as well as state ISOs, transmission company owners, and grid operators."
   },
   {
@@ -2514,7 +1869,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No direct or indirect competition is mentioned in the provided documents."
   },
   {
@@ -2524,7 +1878,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of discussion on key costs/challenges of entering additional markets."
   },
   {
@@ -2534,13 +1887,6 @@
     "citation": "The target market size is heavily dependent on our manufacturing capability (rather than the supply of excess clean energy or clean ammonia demand). This means we're manufacturing constrained rather than marketing constrained for the first years of operation.",
     "source_pdf": "05_17Inc_M3AssignmentQuestion.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 83.08,
-      "t": 712.07,
-      "r": 528.37,
-      "b": 73.74,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant describes the target market size as dependent on manufacturing capability, indicating a clear understanding of the target market."
   },
   {
@@ -2550,13 +1896,6 @@
     "citation": "We have filed PCT patents, covering physical equipment systems and methods for two distinct (but related) ammonia production methods. We are currently working with LBNL under a California Energy Commission CalSEED grant to validate the performance of our systems.",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 71.84,
-      "t": 539.8,
-      "r": 514.1,
-      "b": 169.77,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company describes its technology status as having filed PCT patents and being at TRL 2-3, with ongoing validation work at LBNL."
   },
   {
@@ -2566,13 +1905,6 @@
     "citation": "17, Inc. reduces greenhouse gas emissions by converting excess solar/wind energy into zero-carbon ammonia; this saves 2.5 tonnes of carbon dioxide per tonne of ammonia produced (relative to average fossil fuel ammonia emissions).",
     "source_pdf": "04_17Inc_EBD2ImpactStatement.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 90.0,
-      "t": 474.35,
-      "r": 518.88,
-      "b": 436.16,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "A clear impact statement is presented that covers environmental impact, specifically the reduction of greenhouse gas emissions and carbon dioxide savings."
   },
   {
@@ -2582,7 +1914,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of the use of defined funds being discussed in the provided documents."
   },
   {
@@ -2592,13 +1923,6 @@
     "citation": "Funding to Date: $200k grants",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 77.33,
-      "t": 553.0,
-      "r": 220.0,
-      "b": 540.33,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has presented its funding history, indicating that it has received $200k in grants."
   },
   {
@@ -2608,7 +1932,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a publicly available video was found in the applicant_prose."
   },
   {
@@ -2618,7 +1941,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No revenue history or projection is presented in the provided documents."
   },
   {
@@ -2628,13 +1950,6 @@
     "citation": "17 Inc - CTO National - Intro Video",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 319.84,
-      "t": 703.4,
-      "r": 465.58,
-      "b": 695.45,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant provided a link to a video titled '17 Inc - CTO National - Intro Video' in their One-Page Executive Summary."
   },
   {
@@ -2644,7 +1959,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No elevator pitch was found in the provided documents."
   },
   {
@@ -2654,13 +1968,6 @@
     "citation": "Compared to biofuels, e-fuels or hydrogen, 17's ammonia is market competitive (no green premium) and easier to transport using existing infrastructure.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 207.34,
-      "r": 525.06,
-      "b": 163.68,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant describes the benefits of their ammonia technology over competitors, highlighting its market competitiveness and ease of transportation."
   },
   {
@@ -2670,7 +1977,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a projection consistent with SAM and target market share was found in the applicant_prose."
   },
   {
@@ -2680,13 +1986,6 @@
     "citation": "We have letters of support from tribal communities (access to large land areas without significant transmission line congestion and overload, expensive and slow to install) and are also working with Phoenix Energy (a bio-energy producer) who have told us 'we want to buy one of your units tomorrow'.",
     "source_pdf": "03_17Inc_M2ImpactSustainaiblityQuestions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.07,
-      "t": 440.48,
-      "r": 532.74,
-      "b": 76.06,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has identified additional markets, including tribal communities and bio-energy producers, which indicates a positive response to this question."
   },
   {
@@ -2696,7 +1995,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of constant revenue growth rate or explanation of this assumption in the provided documents."
   },
   {
@@ -2706,7 +2004,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No high-level succinct bullets were found in the overview."
   },
   {
@@ -2716,7 +2013,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The applicant provided a formal location, specifically the headquarters address in Mountain View, CA, USA."
   },
   {
@@ -2726,7 +2022,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "There is no visual 'model' built upon in the 'problem' and 'solution' slides."
   },
   {
@@ -2736,13 +2031,6 @@
     "citation": "17 founder Garth Edwards is an engineer and entrepreneur with deep experience in complex systems. He was previously a lead chemical (process) engineer for major energy corporations on multi-billion dollar projects.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 427.57,
-      "r": 557.22,
-      "b": 395.81,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant_prose provides a description of the management team, specifically the CEO and founder, Garth Edwards."
   },
   {
@@ -2752,7 +2040,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No historical evolution is depicted in the provided documents."
   },
   {
@@ -2762,7 +2049,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The applicant has mentioned a combination of funding sources, but the plans are not forward-looking, as they are based on past or current funding sources rather than future fundraising plans."
   },
   {
@@ -2772,7 +2058,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No visual 'model' depicting the problem is provided in the applicant_prose."
   },
   {
@@ -2782,7 +2067,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No visual model is provided in the applicant_prose."
   },
   {
@@ -2792,13 +2076,6 @@
     "citation": "17 solves the problem of overloaded transmission lines and wasted clean energy by converting energy, air and water into green ammonia; modular technology is designed for intermittent, remote operation onsite solar/wind projects.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 279.0,
-      "t": 672.63,
-      "r": 555.98,
-      "b": 628.98,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The presentation clearly defines the business and reason for existence by stating the problem it solves and the technology it uses."
   },
   {
@@ -2808,7 +2085,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of TAM/SAM/SOM/CAGR in the provided applicant_prose."
   },
   {
@@ -2818,13 +2094,6 @@
     "citation": "Poor project economics; solar is a race to the bottom wrt energy curtailment, and limited transmission line capacity. Clean energy projects can't sell their full production and their economics suffers.",
     "source_pdf": "05_17Inc_M3AssignmentQuestion.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 83.43,
-      "t": 502.57,
-      "r": 528.24,
-      "b": 80.69,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant identified a compelling pain point for clean energy project developers/owners, which is poor project economics due to curtailment and limited transmission line capacity."
   },
   {
@@ -2834,7 +2103,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No historical trends are projected into the future in the provided documents."
   },
   {
@@ -2844,13 +2112,6 @@
     "citation": "Curtailment & congestion are expected to cause 20 to 50% clean energy waste by 2050, massive overbuild, increased energy costs for users and slowed investment cycles \u2026we already have a ~2TW interconnect backlog.",
     "source_pdf": "02_17_Inc_-_Biz_Model_Canvas.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 9.57,
-      "t": 472.6,
-      "r": 707.12,
-      "b": 48.13,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The problem of clean energy waste due to curtailment and congestion is a significant issue that will worsen by 2050, making it a 'must-solve' problem."
   },
   {
@@ -2860,13 +2121,6 @@
     "citation": "17's ammonia tech: daily ON/OFF, remote operation & cheap scaled manufacture",
     "source_pdf": "11_17Inc_InvestorPitchDeck.pdf",
     "page_number": 5,
-    "bbox": {
-      "l": 192.1,
-      "t": 387.08,
-      "r": 710.92,
-      "b": 351.2,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The presentation effectively showcases the technical elegance and differentiation of 17's ammonia technology, highlighting its ability to operate intermittently, remotely, and at a lower cost, without delving into excessive technical details."
   },
   {
@@ -2876,13 +2130,6 @@
     "citation": "Utility scale solar/wind power producers can rapidly install our modules onsite to convert excess energy into an easily transportable high value chemical.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 279.0,
-      "t": 608.69,
-      "r": 549.63,
-      "b": 559.34,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant's solution is designed to fit within the customer's ecosystem, specifically utility scale solar/wind power producers, and is intended to be easily installed onsite."
   },
   {
@@ -2892,13 +2139,6 @@
     "citation": "The curtailed or wasted clean energy market is ~$50B in 2024 (based on ~10% global curtailment) growing to ~$900B at net zero.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 264.38,
-      "r": 553.03,
-      "b": 232.63,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant_prose mentions a large market size of $50B in 2024 growing to $900B at net zero, indicating a significant market opportunity."
   },
   {
@@ -2908,13 +2148,6 @@
     "citation": "Grid connected utility scale solar / wind projects (typically under 10MW in the USA) - this includes owners of projects that are already operating as well as developers in the grid interconnection queue.",
     "source_pdf": "06_17Inc_EBD3CustomerSegmentationCompetitiveMatrix.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 95.25,
-      "t": 241.82,
-      "r": 683.5,
-      "b": 217.42,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has identified a specific target vertical, namely grid connected utility scale solar / wind projects."
   },
   {
@@ -2924,13 +2157,6 @@
     "citation": "We have written testimonials but these are confidential at this stage (both from our side and the authors).",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 72.0,
-      "t": 132.86,
-      "r": 538.0,
-      "b": 108.6,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant does not provide any evidence of combining quantitative rigor with qualitative sensitivity in their methodology."
   },
   {
@@ -2940,13 +2166,6 @@
     "citation": "Our units improve the economics of clean energy projects (by reducing energy waste) which helps enable the rollout of solar/wind projects and prevents the 'race to the bottom' wrt energy pricing,",
     "source_pdf": "03_17Inc_M2ImpactSustainaiblityQuestions.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.54,
-      "t": 470.33,
-      "r": 532.08,
-      "b": 85.05,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "Meaningful validating quotes are included, such as the one from the letter of support from Seneca Environmental, highlighting the potential of 17's technology to improve the economics of clean energy projects."
   },
   {
@@ -2956,7 +2175,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No framework to demonstrate differentiation (BCG grid and/or benefits matrix) is provided in the presentation."
   },
   {
@@ -2966,7 +2184,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of knowledge of past failures in the landscape was found in the provided documents."
   },
   {
@@ -2976,13 +2193,6 @@
     "citation": "For solar energy producers who seek to store, distribute and monetize their surplus peak time energy production, 17 offers a scalable intermittent ammonia production solution. Unlike battery packs, ammonia can be transported, used for energy production and as a fertilizer.",
     "source_pdf": "02_17_Inc_-_Biz_Model_Canvas.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 9.57,
-      "t": 472.6,
-      "r": 707.12,
-      "b": 48.13,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The solution is a compelling value proposition that benefits the customer's business by providing a scalable intermittent ammonia production solution, which can be transported, used for energy production, and as a fertilizer, addressing the customer's pain points of storing, distributing, and monetizing surplus peak time energy production."
   },
   {
@@ -2992,13 +2202,6 @@
     "citation": "The target market size is heavily dependent on our manufacturing capability (rather than the supply of excess clean energy or clean ammonia demand). This means we're manufacturing constrained rather than marketing constrained for the first years of operation.",
     "source_pdf": "05_17Inc_M3AssignmentQuestion.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 83.08,
-      "t": 712.07,
-      "r": 528.37,
-      "b": 73.74,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant's statement suggests that their success is heavily dependent on manufacturing capability, which may indicate a high risk of failure."
   },
   {
@@ -3008,13 +2211,6 @@
     "citation": "The curtailed or wasted clean energy market is ~$50B in 2024 (based on ~10% global curtailment) growing to ~$900B at net zero. The ammonia market is ~$200B growing to $700B (IRENA modelling) due to new uses in power generation & shipping.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 264.38,
-      "r": 553.03,
-      "b": 232.63,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The presentation clearly defines the market by providing specific numbers and growth projections for both the curtailed clean energy market and the ammonia market."
   },
   {
@@ -3024,13 +2220,6 @@
     "citation": "The curtailed or wasted clean energy market is ~$50B in 2024 (based on ~10% global curtailment) growing to ~$900B at net zero. The ammonia market is ~$200B growing to $700B (IRENA modelling) due to new uses in power generation & shipping.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 264.38,
-      "r": 553.03,
-      "b": 232.63,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "Market size and growth are presented in the applicant's prose, specifically for the curtailed or wasted clean energy market and the ammonia market."
   },
   {
@@ -3040,13 +2229,6 @@
     "citation": "Compared to biofuels, e-fuels or hydrogen, 17's ammonia is market competitive (no green premium) and easier to transport using existing infrastructure.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 207.34,
-      "r": 525.06,
-      "b": 163.68,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant discusses current and potential competitors, including Haber-Bosch, mini Haber-Bosch, electrochemical, and their own technology."
   },
   {
@@ -3056,7 +2238,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No secret sauce, competitive advantages, or barriers to entry are highlighted in the presentation."
   },
   {
@@ -3066,13 +2247,6 @@
     "citation": "Customer interviews have shown enthusiasm for a way to commoditise energy without relying on overloaded transmission lines or RECS and -ve pricing.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 279.0,
-      "t": 608.69,
-      "r": 549.63,
-      "b": 559.34,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant's presentation highlights customer-centric attributes and dimensions, such as customer interviews and enthusiasm for a solution to commoditise energy."
   },
   {
@@ -3082,7 +2256,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of addressing 'invent vs. integrate' issues in the provided applicant_prose."
   },
   {
@@ -3092,13 +2265,6 @@
     "citation": "Our system has higher rate and yield than electrochemical, chemical looping or plasma ammonia synthesis.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 207.34,
-      "r": 525.06,
-      "b": 163.68,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant clearly translates key points between business and technical domains by comparing their technology to other methods in the ammonia synthesis field."
   },
   {
@@ -3108,13 +2274,6 @@
     "citation": "Compared to biofuels, e-fuels or hydrogen, 17's ammonia is market competitive (no green premium) and easier to transport using existing infrastructure.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 207.34,
-      "r": 525.06,
-      "b": 163.68,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant acknowledges that their technology is not superior to all competitors, but rather has its own strengths and is competitive in the market."
   },
   {
@@ -3124,13 +2283,6 @@
     "citation": "We have written testimonials but these are confidential at this stage (both from our side and the authors).",
     "source_pdf": "07_17Inc_EBD4TechnologyValidation.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 72.0,
-      "t": 132.86,
-      "r": 538.0,
-      "b": 108.6,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant does not provide any evidence of discussing important but peripheral issues and details without clutter."
   },
   {
@@ -3140,13 +2292,6 @@
     "citation": "Our system has higher rate and yield than electrochemical, chemical looping or plasma ammonia synthesis.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 207.34,
-      "r": 525.06,
-      "b": 163.68,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company claims its ammonia production method has higher rate and yield than other methods, but it does not provide evidence that these elements are uniquely competitive."
   },
   {
@@ -3156,13 +2301,6 @@
     "citation": "We have LOS from at least two utility scale clean energy producers and have signed an NDA to share 17's tech with a giga-scale ($100B+ project pipeline) clean energy ammonia producer.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 465.63,
-      "r": 549.56,
-      "b": 447.33,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has demonstrated how customers and partners fit in, specifically mentioning two utility scale clean energy producers and a giga-scale project pipeline."
   },
   {
@@ -3172,7 +2310,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a value chain and sales cycle in the provided documents."
   },
   {
@@ -3182,7 +2319,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a marketing and sales plan is provided in the applicant_prose."
   },
   {
@@ -3192,13 +2328,6 @@
     "citation": "We are currently working with LBNL under a California Energy Commission CalSEED grant to validate the performance of our systems.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 374.49,
-      "r": 549.77,
-      "b": 342.74,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant does not show an incremental development path that reduces risk, as they are still in the early stages of technology validation and have not demonstrated a clear path to reducing risk."
   },
   {
@@ -3208,13 +2337,6 @@
     "citation": "For solar energy producers who seek to store, distribute and monetize their surplus peak time energy production, 17 offers a scalable intermittent ammonia production solution. Unlike battery packs, ammonia can be transported, used for energy production and as a fertilizer.",
     "source_pdf": "02_17_Inc_-_Biz_Model_Canvas.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 9.57,
-      "t": 472.6,
-      "r": 707.12,
-      "b": 48.13,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant remains focused on the essential value proposition of providing a scalable intermittent ammonia production solution for solar energy producers."
   },
   {
@@ -3224,13 +2346,6 @@
     "citation": "We have letters of support from tribal communities (access to large land areas without significant transmission line",
     "source_pdf": "03_17Inc_M2ImpactSustainaiblityQuestions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.07,
-      "t": 440.48,
-      "r": 532.74,
-      "b": 76.06,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "No critical partner relationships are profiled in the provided documents."
   },
   {
@@ -3240,7 +2355,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of what's missing or that nothing is missing in the presentation."
   },
   {
@@ -3250,13 +2364,6 @@
     "citation": "Utility scale solar/wind power producers can rapidly install our modules onsite to convert excess energy into an easily transportable high value chemical. Customer interviews have shown enthusiasm for a way to commoditise energy without relying on overloaded transmission lines or RECS and -ve pricing.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 279.0,
-      "t": 608.69,
-      "r": 549.63,
-      "b": 559.34,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant clearly profiles the customer as utility scale solar/wind power producers, highlighting their needs and pain points."
   },
   {
@@ -3266,13 +2373,6 @@
     "citation": "The perfect combination of expertise in energy, tech & chemistry",
     "source_pdf": "11_17Inc_InvestorPitchDeck.pdf",
     "page_number": 10,
-    "bbox": {
-      "l": 192.1,
-      "t": 377.48,
-      "r": 668.8,
-      "b": 360.8,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant's team has a diverse set of skills and experience, including a chem eng lead, a catalytic expert, and a data expert, which suggests credibility and strategic orchestration."
   },
   {
@@ -3282,13 +2382,6 @@
     "citation": "Our product is modular ammonia production units that can be installed onsite and allow excess energy to be converted into zero-carbon (Scope 3 emissions free) ammonia. The ammonia from the units is collected onsite, temporarily collected by trucks for sale to local users (ag co-ops and/or local farms).",
     "source_pdf": "05_17Inc_M3AssignmentQuestion.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 83.43,
-      "t": 502.57,
-      "r": 528.24,
-      "b": 80.69,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant clearly describes how customers buy and use their product, specifically mentioning the collection and sale of ammonia to local users."
   },
   {
@@ -3298,7 +2391,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a Board of Directors is provided in the applicant_prose."
   },
   {
@@ -3308,7 +2400,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No previous companies and titles (industry recognition where meaningful) are shown in the applicant_prose."
   },
   {
@@ -3318,13 +2409,6 @@
     "citation": "Our product is modular ammonia production units that can be installed onsite and allow excess energy to be converted into zero-carbon (Scope 3 emissions free) ammonia. The ammonia from the units is collected onsite, temporarily collected by trucks for sale to local users (ag co-ops and/or local farms).",
     "source_pdf": "05_17Inc_M3AssignmentQuestion.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 83.43,
-      "t": 502.57,
-      "r": 528.24,
-      "b": 80.69,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant describes what the customer will get today (zero-carbon ammonia) and beyond (excess energy converted into a valuable commodity)."
   },
   {
@@ -3334,7 +2418,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No thorough and thoughtful financials are presented in the applicant_prose."
   },
   {
@@ -3344,13 +2427,6 @@
     "citation": "Compared to biofuels, e-fuels or hydrogen, 17's ammonia is market competitive (no green premium) and easier to transport using existing infrastructure.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 207.34,
-      "r": 525.06,
-      "b": 163.68,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant does not provide a direct comparison to industry comparables, but rather mentions that their ammonia is market competitive with other alternatives."
   },
   {
@@ -3360,7 +2436,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of financials breaking out revenues and expenses by major category."
   },
   {
@@ -3370,7 +2445,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of high-level 3- or 5-year projections in the provided documents."
   },
   {
@@ -3380,7 +2454,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No P&L, income statement, or balance sheet was provided in the applicant_prose."
   },
   {
@@ -3390,13 +2463,6 @@
     "citation": "We pay for clean energy and sell ammonia so we are connecting two markets that need pricing. Clean Energy - Ammonia - we have to price this competitively on the anhydrous ammonia market. 5 year average cost is around ~$800/t Our TEA shows est. $780/t which includes R&D, manufacturing, WACC, installation, OPEX and other associated costs.",
     "source_pdf": "05_17Inc_M3AssignmentQuestion.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 83.08,
-      "t": 712.07,
-      "r": 528.37,
-      "b": 73.74,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant discusses pricing in the context of their business model, but does not explicitly discuss high-level pricing such as annuity or one fee."
   },
   {
@@ -3406,13 +2472,6 @@
     "citation": "17 founder Garth Edwards is an engineer and entrepreneur with deep experience in complex systems. He was previously a lead chemical (process) engineer for major energy corporations on multi-billion dollar projects.",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 72.0,
-      "t": 427.57,
-      "r": 557.22,
-      "b": 395.81,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The CEO has experience in complex systems and has worked on multi-billion dollar projects, indicating that he hires people with skills better than his own."
   },
   {
@@ -3422,13 +2481,6 @@
     "citation": "Net Cash Flow Before Financing | -$1,946,777 | -$9,040,664  | -$15,308,438",
     "source_pdf": "09_17Inc_FinancialProjection.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 49.15,
-      "t": 733.79,
-      "r": 547.67,
-      "b": 341.51,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The financials do not include pre-tax profit (loss), cash flow, capital requirements, and headcount."
   },
   {
@@ -3438,7 +2490,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of when the Company expects its first revenues in the provided financial projections."
   },
   {
@@ -3448,7 +2499,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of when the Company expects to become cash-flow positive is found in the provided documents."
   },
   {
@@ -3458,7 +2508,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of tangible competitive barriers, such as customers or IP, was found in the provided documents."
   },
   {
@@ -3468,13 +2517,6 @@
     "citation": "Vinod is the Director of Engineering & Innovation for downstream at Intercontinental Energy and has a portfolio of huge projects that depend on his ability to turn intermittent clean energy (wind/solar) into ammonia. He's proposing to start the projects using Haber-Bosch systems (which need to be run 24/7 requiring complex hydrogen / energy buffering equipment) - simply because there is other no alternative currently.",
     "source_pdf": "06_17Inc_EBD3CustomerSegmentationCompetitiveMatrix.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 95.25,
-      "t": 356.81,
-      "r": 698.72,
-      "b": 263.42,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The team shows domain expertise and unique customer insight through their understanding of the needs and pain points of a specific customer, Vinod, who is a Director of Engineering & Innovation at Intercontinental Energy."
   },
   {
@@ -3484,13 +2526,6 @@
     "citation": "Funding Needs | $100M    | -        | -        | -        | -        |",
     "source_pdf": "10_17Inc_OnePageExecutiveSummary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 75.29,
-      "t": 120.84,
-      "r": 569.99,
-      "b": 63.02,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The financial projections do not show a $100M/yr run rate by year 5, as the funding needs are listed as $100M for year 1, but then blank for years 2-5."
   },
   {
@@ -3500,13 +2535,6 @@
     "citation": "Over the next 18 months we need to complete - reaction kinetics testing (pre-seed ongoing) which will get us to TRL3 - benchtop prototype (seed stage) which will get us to TRL 4 While our pre-seed has funding, the Seed stage will require $5M in funding.",
     "source_pdf": "08_17Inc_M6Questions.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.38,
-      "t": 468.58,
-      "r": 533.53,
-      "b": 93.81,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has not explicitly defined milestone targets, but rather listed the milestones they need to hit in the next 18 months."
   }
 ]

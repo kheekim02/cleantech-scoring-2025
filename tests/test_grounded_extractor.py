@@ -15,7 +15,6 @@ class TestGroundedExtractor(unittest.TestCase):
             citation="17 offers a modular power-to-ammonia system.",
             source_pdf="02_17_Inc_-_Biz_Model_Canvas.pdf",
             page_number=2,
-            bbox={"l": 72.0, "t": 500.0, "r": 300.0, "b": 450.0}
         )
         self.assertEqual(valid.predicted_val, 0.75)
         self.assertEqual(valid.page_number, 2)
@@ -57,7 +56,6 @@ class TestGroundedExtractor(unittest.TestCase):
         self.assertIsNotNone(matched)
         self.assertEqual(matched["page_number"], 1)
         self.assertEqual(matched["source_pdf"], "04_17Inc_EBD2ImpactStatement.pdf")
-        self.assertEqual(matched["bbox"]["l"], 100.0)
 
         # Hallucinated citation
         hallucinated = match_citation_to_chunks("This company was founded in 1999 by Elon Musk", chunks)

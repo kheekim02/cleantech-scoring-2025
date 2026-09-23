@@ -15,10 +15,10 @@ class TestAuditMetrics(unittest.TestCase):
         ]
 
         v2_records = [
-            {"q_id": "BC_Q1", "predicted_val": 1.0, "confidence": 0.95, "citation": "Quote A", "page_number": 1, "bbox": {"l": 10}},
-            {"q_id": "BC_Q2", "predicted_val": 0.5, "confidence": 0.85, "citation": "Quote B", "page_number": 2, "bbox": {"l": 20}},
-            {"q_id": "BC_Q3", "predicted_val": 0.25, "confidence": 0.75, "citation": None, "page_number": None, "bbox": None},
-            {"q_id": "BC_Q4", "predicted_val": 0.75, "confidence": 0.9, "citation": "Quote C", "page_number": 3, "bbox": {"l": 30}},
+            {"q_id": "BC_Q1", "predicted_val": 1.0, "confidence": 0.95, "citation": "Quote A", "page_number": 1},
+            {"q_id": "BC_Q2", "predicted_val": 0.5, "confidence": 0.85, "citation": "Quote B", "page_number": 2},
+            {"q_id": "BC_Q3", "predicted_val": 0.25, "confidence": 0.75, "citation": None, "page_number": None},
+            {"q_id": "BC_Q4", "predicted_val": 0.75, "confidence": 0.9, "citation": "Quote C", "page_number": 3},
         ]
 
         res = calculate_metrics(v1_records, v2_records)
@@ -43,11 +43,11 @@ class TestAuditMetrics(unittest.TestCase):
 
         v2_records = [
             # Startup A
-            {"startup_id": "startup_A", "q_id": "BC_Q1", "predicted_val": 1.0, "confidence": 0.95, "citation": "Quote A1", "page_number": 1, "bbox": {"l": 10}},
-            {"startup_id": "startup_A", "q_id": "BC_Q2", "predicted_val": 0.5, "confidence": 0.85, "citation": "Quote A2", "page_number": 2, "bbox": {"l": 20}},
+            {"startup_id": "startup_A", "q_id": "BC_Q1", "predicted_val": 1.0, "confidence": 0.95, "citation": "Quote A1", "page_number": 1},
+            {"startup_id": "startup_A", "q_id": "BC_Q2", "predicted_val": 0.5, "confidence": 0.85, "citation": "Quote A2", "page_number": 2},
             # Startup B
-            {"startup_id": "startup_B", "q_id": "BC_Q1", "predicted_val": 1.0, "confidence": 0.9, "citation": "Quote B1", "page_number": 1, "bbox": {"l": 15}},  # mismatch vs v1 (0.0 vs 1.0)
-            {"startup_id": "startup_B", "q_id": "BC_Q2", "predicted_val": 0.5, "confidence": 0.85, "citation": "Quote B2", "page_number": 3, "bbox": {"l": 25}},
+            {"startup_id": "startup_B", "q_id": "BC_Q1", "predicted_val": 1.0, "confidence": 0.9, "citation": "Quote B1", "page_number": 1},  # mismatch vs v1 (0.0 vs 1.0)
+            {"startup_id": "startup_B", "q_id": "BC_Q2", "predicted_val": 0.5, "confidence": 0.85, "citation": "Quote B2", "page_number": 3},
         ]
 
         res = calculate_metrics(v1_records, v2_records)

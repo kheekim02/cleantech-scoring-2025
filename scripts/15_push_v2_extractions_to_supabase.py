@@ -58,14 +58,13 @@ def sync_v2_to_supabase(
     print(f"Loaded {len(ready_cache)} v2 cache files to sync.")
     if not ready_cache:
         print("No matching v2 cache files found to sync.")
-        return {"updated": 0, "citations": 0, "bboxes": 0}
+        return {"updated": 0, "citations": 0}
 
     cur.execute("SELECT startup_id, company_name, payload FROM startup_extractions ORDER BY company_name ASC;")
     rows = cur.fetchall()
 
     updated_count = 0
     total_citations = 0
-    total_bboxes = 0
 
     for sid, cname, payload in rows:
         if sid not in ready_cache:
@@ -74,7 +73,6 @@ def sync_v2_to_supabase(
         v2_q_map = ready_cache[sid]
         qs = payload.get("human_questions", [])
         startup_cits = 0
-        startup_bboxes = 0
 
         for q in qs:
             qid = q.get("new_q_id", q.get("q_id"))
@@ -88,16 +86,13 @@ def sync_v2_to_supabase(
             q["verbatim_citation"] = cit
             q["source_pdf"] = v2_item.get("source_pdf")
             q["page_number"] = v2_item.get("page_number")
-            q["bbox"] = v2_item.get("bbox")
+            q.pop("bbox", None)
             q["ai_rationale"] = v2_item.get("rationale")
 
             if cit:
                 startup_cits += 1
-            if v2_item.get("bbox"):
-                startup_bboxes += 1
 
         total_citations += startup_cits
-        total_bboxes += startup_bboxes
 
         if "meta" not in payload:
             payload["meta"] = {}
@@ -113,7 +108,7 @@ def sync_v2_to_supabase(
 
         updated_count += 1
         status_mode = "COMMITTED" if commit else "DRY-RUN"
-        print(f"[{status_mode}] [{updated_count}/{len(ready_cache)}] {cname} ({sid}): {startup_cits} citations, {startup_bboxes} bboxes staged")
+        print(f"[{status_mode}] [{updated_count}/{len(ready_cache)}] {cname} ({sid}): {startup_cits} citations staged")
 
     elapsed = time.time() - start_time
     print("\n" + "=" * 50)
@@ -121,12 +116,11 @@ def sync_v2_to_supabase(
     print(f"Time Elapsed:         {elapsed:.2f}s")
     print(f"Startups Synced:      {updated_count}")
     print(f"Total Citations:      {total_citations}")
-    print(f"Bounding Boxes:       {total_bboxes}")
     print("=" * 50)
 
     cur.close()
     conn.close()
-    return {"updated": updated_count, "citations": total_citations, "bboxes": total_bboxes}
+    return {"updated": updated_count, "citations": total_citations}
 
 
 if __name__ == "__main__":

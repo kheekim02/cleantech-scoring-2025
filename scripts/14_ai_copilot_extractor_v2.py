@@ -291,11 +291,9 @@ def evaluate_startup(
             if matched_provenance:
                 source_pdf = matched_provenance.get("source_pdf")
                 page_number = matched_provenance.get("page_number")
-                bbox = matched_provenance.get("bbox")
             else:
                 source_pdf = None
                 page_number = None
-                bbox = None
                 # If citation failed grounding check, invalidate it
                 citation = None
 
@@ -307,7 +305,6 @@ def evaluate_startup(
                 citation=citation,
                 source_pdf=source_pdf,
                 page_number=page_number,
-                bbox=bbox,
                 rationale=raw_res.get("rationale"),
             ).model_dump()
 

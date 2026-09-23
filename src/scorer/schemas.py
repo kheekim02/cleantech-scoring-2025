@@ -74,7 +74,7 @@ def match_citation_to_chunks(
 ) -> dict[str, Any] | None:
     """Multi-tier exact/prefix matching of a citation against Docling element chunks.
 
-    Returns the matching chunk metadata (source_pdf, page_number, bbox) or None if ungrounded.
+    Returns the matching chunk metadata (source_pdf, page_number) or None if ungrounded.
     """
     if not citation or len(citation.strip()) < 8:
         return None
@@ -99,7 +99,6 @@ def match_citation_to_chunks(
             return {
                 "source_pdf": chunk.get("source_pdf"),
                 "page_number": chunk.get("page_no"),
-                "bbox": chunk.get("bbox"),
                 "chunk_id": chunk.get("chunk_id"),
                 "match_tier": 1,
             }
@@ -111,7 +110,6 @@ def match_citation_to_chunks(
                 return {
                     "source_pdf": chunk.get("source_pdf"),
                     "page_number": chunk.get("page_no"),
-                    "bbox": chunk.get("bbox"),
                     "chunk_id": chunk.get("chunk_id"),
                     "match_tier": 2,
                 }
@@ -123,7 +121,6 @@ def match_citation_to_chunks(
                 return {
                     "source_pdf": chunk.get("source_pdf"),
                     "page_number": chunk.get("page_no"),
-                    "bbox": chunk.get("bbox"),
                     "chunk_id": chunk.get("chunk_id"),
                     "match_tier": 3,
                 }
@@ -138,20 +135,11 @@ def match_citation_to_chunks(
                     return {
                         "source_pdf": chunk.get("source_pdf"),
                         "page_number": chunk.get("page_no"),
-                        "bbox": chunk.get("bbox"),
                         "chunk_id": chunk.get("chunk_id"),
                         "match_tier": 4,
                     }
 
     return None
-
-
-class BoundingBox(BaseModel):
-    l: float
-    t: float
-    r: float
-    b: float
-    coord_origin: str = "BOTTOMLEFT"
 
 
 class QuestionEvaluation(BaseModel):
@@ -162,7 +150,6 @@ class QuestionEvaluation(BaseModel):
     citation: str | None = None
     source_pdf: str | None = None
     page_number: int | None = None
-    bbox: dict[str, Any] | None = None
     rationale: str | None = None
 
     @field_validator("citation")

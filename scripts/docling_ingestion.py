@@ -211,20 +211,6 @@ def extract_pdf_chunks(
     for item, level in doc.iterate_items():
         prov = getattr(item, 'prov', [])
         p_no = prov[0].page_no if prov else 1
-        bbox = getattr(prov[0], 'bbox', None) if prov else None
-
-        bbox_dict = None
-        if bbox and hasattr(bbox, 'l') and bbox.l is not None:
-            try:
-                bbox_dict = {
-                    'l': round(float(bbox.l), 2),
-                    't': round(float(bbox.t), 2),
-                    'r': round(float(bbox.r), 2),
-                    'b': round(float(bbox.b), 2),
-                    'coord_origin': str(getattr(bbox, 'coord_origin', 'BOTTOMLEFT')),
-                }
-            except (ValueError, TypeError):
-                bbox_dict = None
 
         # Check element type and extract text / table markdown
         item_type = type(item).__name__.lower().replace('item', '')
@@ -249,7 +235,6 @@ def extract_pdf_chunks(
             'source_pdf': filename,
             'doc_type': doc_type,
             'page_no': p_no,
-            'bbox': bbox_dict,
             'type': item_type,
             'text': text.strip(),
         })

@@ -57,7 +57,10 @@
   <div class="admin-container" id="admin-dashboard" style="display:none;">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
       <h1 style="font-size: 24px; margin: 0;">CleanTech Open - Admin Portal</h1>
-      <button class="btn" style="background: var(--surface-sunk); color: var(--text-main); border: 1px solid var(--border);" onclick="AdminApp.logout()">Log Out</button>
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <button class="btn" style="background: #166534; color: #fff;" onclick="AdminApp.exportScores()">📥 Export Scored Data (CSV)</button>
+        <button class="btn" style="background: var(--surface-sunk); color: var(--text-main); border: 1px solid var(--border);" onclick="AdminApp.logout()">Log Out</button>
+      </div>
     </div>
     
     <div class="grid">

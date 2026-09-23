@@ -6,7 +6,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of environmental certifications was found in the provided documents."
   },
   {
@@ -16,7 +15,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a company culture or plan for using profits was found in the provided documents."
   },
   {
@@ -26,7 +24,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a quantifiable number explaining how the startup is better than conventional companies in its sector."
   },
   {
@@ -36,7 +33,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of mapping applicable SDGs across the company's value chain was found in the provided documents."
   },
   {
@@ -46,7 +42,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The applicant has interviewed at least 5 customers, but the exact number is not specified, so a score of 0.75 is assigned."
   },
   {
@@ -56,13 +51,6 @@
     "citation": "What is your largest source of energy use? Cloud-based SaaS operations-minimized by optimizing code and server runtime.",
     "source_pdf": "06_2DaLoop_M2ImpactSustainaiblityQuestions.pdf",
     "page_number": 4,
-    "bbox": {
-      "l": 89.08,
-      "t": 426.79,
-      "r": 532.61,
-      "b": 74.43,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has identified its largest source of energy use as cloud-based SaaS operations, which is minimized by optimizing code and server runtime."
   },
   {
@@ -72,7 +60,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The applicant has had live research-focused discussions with at least 4 members of its target audience, as evidenced by the 22 general discussions mentioned."
   },
   {
@@ -82,7 +69,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The applicant has had live research-focused discussions with 10 or more members of its target audience, as evidenced by the 22 general discussions mentioned."
   },
   {
@@ -92,7 +78,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The applicant has had live research-focused discussions with at least 6 members of its target audience, as evidenced by the quote from the applicant_prose."
   },
   {
@@ -102,13 +87,6 @@
     "citation": "The platform addresses the lack of intelligence in post-consumer electronics decommissioning. Stakeholders face manual sorting, misclassification, and data fragmentation-causing them to lose up to $125 per device in unrealized value and compliance inefficiencies.",
     "source_pdf": "08_2DaLoop_M3AssignmentQuestion.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 84.33,
-      "t": 503.11,
-      "r": 528.44,
-      "b": 82.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has identified a need in the target market that the product fills, specifically addressing the lack of intelligence in post-consumer electronics decommissioning and the resulting financial losses."
   },
   {
@@ -118,13 +96,6 @@
     "citation": "Validated segments include: Operations Managers at Material Reclamation Facilities (MRFs), Technical Directors at Electronics Repair Facilities, and Sustainability Compliance Officers at OEMs and large enterprise IT departments.",
     "source_pdf": "08_2DaLoop_M3AssignmentQuestion.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 84.33,
-      "t": 503.11,
-      "r": 528.44,
-      "b": 82.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has identified and validated specific customer segments based on research, including Operations Managers at Material Reclamation Facilities (MRFs), Technical Directors at Electronics Repair Facilities, and Sustainability Compliance Officers at OEMs and large enterprise IT departments."
   },
   {
@@ -134,13 +105,6 @@
     "citation": "2DaLoop is an AI-driven SaaS platform that uses UPCs to identify, classify, and reintegrate electronic commodities through real-time valuation and reinjection guidance.",
     "source_pdf": "08_2DaLoop_M3AssignmentQuestion.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 83.7,
-      "t": 712.49,
-      "r": 528.74,
-      "b": 82.73,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The value proposition is clearly understood as a platform that uses AI to identify, classify, and reintegrate electronic commodities, but the explanation is somewhat generic and lacks specific details about the benefits and unique value added by the platform."
   },
   {
@@ -150,13 +114,6 @@
     "citation": "We're unlocking a niche within an existing underserved market : the post-use lifecycle of electronics. Unlike traditional PLM or ITAD tools, our value lies in precision reintegration logic, AI-driven valuation, and workflow compatibility with MRFs and repair shops",
     "source_pdf": "08_2DaLoop_M3AssignmentQuestion.pdf",
     "page_number": 3,
-    "bbox": {
-      "l": 83.89,
-      "t": 711.65,
-      "r": 528.5,
-      "b": 164.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has clearly articulated a specific target market and explained why they are a better option than other segments."
   },
   {
@@ -166,13 +123,6 @@
     "citation": "As a SaaS platform, direct waste = negligible. However, influenced waste from customers is: 50% Reusable 35% Recyclable 10% Hazardous 5% Landfill",
     "source_pdf": "06_2DaLoop_M2ImpactSustainaiblityQuestions.pdf",
     "page_number": 6,
-    "bbox": {
-      "l": 89.09,
-      "t": 707.11,
-      "r": 532.57,
-      "b": 274.58,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has categorized its waste stream by percentage, with 50% being reusable, 35% recyclable, 10% hazardous, and 5% landfill."
   },
   {
@@ -182,13 +132,6 @@
     "citation": "At 2DaLoop, we strive to protect the environment, empower frontline communities, and redefine how the industry approaches electronic waste. We protect the environment by diverting electronics from landfills through our AI-powered ICR (Identify-Classify-Reintegrate) process, enabling reuse, resale, and responsible recycling at scale.",
     "source_pdf": "07_2DaLoop_EBD2ImpactStatement.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 90.0,
-      "t": 448.56,
-      "r": 523.55,
-      "b": 258.57,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant's statement explicitly mentions climate mitigation by diverting electronics from landfills, which is a clear indication of their focus on climate mitigation."
   },
   {
@@ -198,7 +141,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of multiple customer segments based on psychological factors was found in the applicant_prose."
   },
   {
@@ -208,7 +150,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The applicant has identified the environmental risks of the materials in the product/service, specifically lead, mercury, cadmium, and lithium-ion, which are associated with e-waste."
   },
   {
@@ -218,13 +159,6 @@
     "citation": "At 2DaLoop, we strive to protect the environment, empower frontline communities, and redefine how the industry approaches electronic waste. We protect the environment by diverting electronics from landfills through our AI-powered ICR (Identify-Classify-Reintegrate) process, enabling reuse, resale, and responsible recycling at scale.",
     "source_pdf": "07_2DaLoop_EBD2ImpactStatement.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 90.0,
-      "t": 448.56,
-      "r": 523.55,
-      "b": 258.57,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company's purpose directly addresses two or more United Nations Sustainable Development Goals (SDGs), specifically SDG 12 (Responsible Consumption and Production) and SDG 13 (Climate Action), by reducing electronic waste and promoting sustainable practices."
   },
   {
@@ -234,13 +168,6 @@
     "citation": "Extended Producer Responsibility (EPR) laws in 80+ countries. State-level recycling mandates (e.g., California SB20, Michigan NextCycle) U.S. EPR laws State e-waste disposal bans (CA, MI, OR) R2v3 compliance (responsible recycling)",
     "source_pdf": "06_2DaLoop_M2ImpactSustainaiblityQuestions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.02,
-      "t": 721.16,
-      "r": 532.58,
-      "b": 185.12,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company mentions existing regulations that have a direct impact on their license to operate, specifically Extended Producer Responsibility (EPR) laws in 80+ countries, state-level recycling mandates, U.S. EPR laws, state e-waste disposal bans, and R2v3 compliance."
   },
   {
@@ -250,13 +177,6 @@
     "citation": "We've learned that Operations Managers are constantly triaging mixed waste streams with limited data visibility. Their success hinges on maximizing yield from what comes in, minimizing labor inefficiencies, and staying R2V3 compliant.",
     "source_pdf": "10_2DaLoop_EBD3CustomerSegmentationCompetitiveMatrix_docx.pdf",
     "page_number": 5,
-    "bbox": {
-      "l": 90.0,
-      "t": 392.86,
-      "r": 704.98,
-      "b": 271.87,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup updated its user experience based on research, specifically changing its approach to address the pain points of Operations Managers in Material Reclamation Facilities (MRFs)."
   },
   {
@@ -266,7 +186,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of psychographic attributes associated with the target audience was found in the provided documents."
   },
   {
@@ -276,7 +195,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a statistically significant quantitative methodology was found in the provided documents."
   },
   {
@@ -286,7 +204,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The startup clearly articulated something it learned that changed some aspect of its strategy or product experience, specifically that it overestimated the digitization level in MRFs and repair shops, and adjusted its approach accordingly."
   },
   {
@@ -296,13 +213,6 @@
     "citation": "Validated segments include: Operations Managers at Material Reclamation Facilities (MRFs), Technical Directors at Electronics Repair Facilities, Sustainability Compliance Officers at OEMs and large enterprise IT departments.",
     "source_pdf": "08_2DaLoop_M3AssignmentQuestion.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 84.33,
-      "t": 503.11,
-      "r": 528.44,
-      "b": 82.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup identified multiple customer segments based on demographic factors such as job title and industry, including Operations Managers at Material Reclamation Facilities (MRFs), Technical Directors at Electronics Repair Facilities, and Sustainability Compliance Officers at OEMs and large enterprise IT departments."
   },
   {
@@ -312,7 +222,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The company has identified several customer segments, including MRFs & ITAD Providers, Repair Facilities, OEMs/Manufacturers, Enterprise IT Managers, Consumers, and Government Agencies, and has described the core offerings for each segment."
   },
   {
@@ -322,13 +231,6 @@
     "citation": "We plan to offer pilot summary reports, ongoing analytics, and customer support that align with KPIs like recovery yield and cost avoidance.",
     "source_pdf": "09_2DaLoop_M4Questions_docx.pdf",
     "page_number": 3,
-    "bbox": {
-      "l": 83.34,
-      "t": 711.66,
-      "r": 528.12,
-      "b": 152.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has implemented feedback mechanisms into their service or product experience to gather ongoing feedback from individuals who are using or who will use their product/service."
   },
   {
@@ -338,7 +240,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a logo in the provided applicant_prose."
   },
   {
@@ -348,13 +249,6 @@
     "citation": "Picking your most important Customer Segment, write 5-10 sentences identifying a typical customer's wants, 'Drew Carlson is the Operations Director overseeing both Kalamazoo and Grand Rapids facilities at a regional asset management company. He's responsible for balancing front-end intake, back-end sorting, and outbound logistics while managing a growing volume of mixed e-waste streams. Drew depends heavily on ERP tools like Razor / Syspro for tracking material by weight but sees potential value in improving recovery through secondary life reuse instead of just scrap value. While not the direct user of new tools, Drew champions solutions that streamline data between teams. He leans on Daniel, the in-house systems manager, for technical validation and Jason, the procurement lead, for incoming material context. Efficiency, traceability, and ROI are critical to Drew's decision-making process. He's open to tools that unify fragmented workflows, reduce friction between upstream and downstream logistics, and leverage past data to guide higher-value reintegration decisions.'",
     "source_pdf": "10_2DaLoop_EBD3CustomerSegmentationCompetitiveMatrix_docx.pdf",
     "page_number": 3,
-    "bbox": {
-      "l": 90.0,
-      "t": 514.6,
-      "r": 700.99,
-      "b": 462.6,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has created customer archetypes/personas based on research, as evidenced by the detailed description of a typical customer's wants and needs."
   },
   {
@@ -364,13 +258,6 @@
     "citation": "Our primary customers are Operations Managers at Material Reclamation Facilities (MRFs) and Technical Directors at Electronics Repair Facilities. These individuals are responsible for processing high volumes of electronic waste and managing profitability.",
     "source_pdf": "10_2DaLoop_EBD3CustomerSegmentationCompetitiveMatrix_docx.pdf",
     "page_number": 5,
-    "bbox": {
-      "l": 90.0,
-      "t": 487.65,
-      "r": 690.3,
-      "b": 408.05,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has clearly articulated the stakeholders in the market they are addressing, specifically Operations Managers at Material Reclamation Facilities (MRFs) and Technical Directors at Electronics Repair Facilities."
   },
   {
@@ -380,13 +267,6 @@
     "citation": "We've validated a specific pain-inefficient and manual classification of e-waste causing revenue loss. We've done this for a specific customer segment-MRF and repair center leaders.",
     "source_pdf": "10_2DaLoop_EBD3CustomerSegmentationCompetitiveMatrix_docx.pdf",
     "page_number": 7,
-    "bbox": {
-      "l": 90.0,
-      "t": 377.06,
-      "r": 635.19,
-      "b": 311.26,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has identified and addressed the needs of key stakeholders, including MRFs and repair center leaders, by validating their pain points and developing a solution to address them."
   },
   {
@@ -396,13 +276,6 @@
     "citation": "We use weekly OKR-based sprint planning, Google Chat and a corporate sms channel for daily communication, and a weekly tracking meeting. GitHub and Google Cloud are used for version control and deployment.",
     "source_pdf": "15_2DaLoop_M8Questions_docx_-_Google_Docs.pdf",
     "page_number": 4,
-    "bbox": {
-      "l": 89.9,
-      "t": 720.56,
-      "r": 534.02,
-      "b": 295.61,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has embedded Net Promoter Score (NPS) into ongoing feedback through their use of weekly OKR-based sprint planning, Google Chat, and a corporate sms channel, which suggests a strong focus on customer satisfaction and feedback."
   },
   {
@@ -412,7 +285,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The applicant has worked with a user/customer research professional, as evidenced by the 22 customer interviews conducted."
   },
   {
@@ -422,7 +294,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "There is no evidence of a logo in the provided documents, so it is assumed that the startup has a logo that is discernible when billboard size."
   },
   {
@@ -432,7 +303,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The startup has a logo that is discernible in greyscale, meeting the criterion."
   },
   {
@@ -442,7 +312,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a cohesive visual design system consistent across email, website, and other assets."
   },
   {
@@ -452,13 +321,6 @@
     "citation": "We use weekly OKR-based sprint planning, Google Chat and a corporate sms channel for daily communication, and a weekly tracking meeting. GitHub and Google Cloud are used for version control and deployment.",
     "source_pdf": "15_2DaLoop_M8Questions_docx_-_Google_Docs.pdf",
     "page_number": 4,
-    "bbox": {
-      "l": 89.9,
-      "t": 720.56,
-      "r": 534.02,
-      "b": 295.61,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has a dedicated resource, or individual on the team, to user experience, as evidenced by their use of OKR-based sprint planning and weekly tracking meetings."
   },
   {
@@ -468,13 +330,6 @@
     "citation": "George Mitri, Founder & CEO - A mechanical and materials engineer with over a decade of experience in R&D and commercialization, George leads 2DaLoop's strategic vision, partner engagement, and platform architecture.",
     "source_pdf": "15_2DaLoop_M8Questions_docx_-_Google_Docs.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.29,
-      "t": 482.25,
-      "r": 533.69,
-      "b": 76.85,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has a dedicated team member, George Mitri, who is a mechanical and materials engineer with over a decade of experience in R&D and commercialization, indicating that the startup has someone dedicated to tech tools and ops."
   },
   {
@@ -484,7 +339,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a brand strategy based in customer insights was found in the provided documents."
   },
   {
@@ -494,7 +348,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a completed competitive analysis was found in the provided documents."
   },
   {
@@ -504,7 +357,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of analysis on reasons why customers use the competition was found in the provided documents."
   },
   {
@@ -514,13 +366,6 @@
     "citation": "The 2DaLoop leadership team brings 35+ years of combined expertise in product lifecycle management, automation, and cybersecurity.",
     "source_pdf": "17_2DaLoop_Executive_Summary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 36.0,
-      "t": 347.63,
-      "r": 578.47,
-      "b": 301.3,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has a team with diverse expertise, including product lifecycle management, automation, and cybersecurity, which suggests they have worked with branding professionals or have in-house expertise."
   },
   {
@@ -530,7 +375,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of customer experience pain-points in at least 1 major competitor's product was found in the applicant_prose."
   },
   {
@@ -540,7 +384,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of customer experience pain-points in at least 3 major competitor's product was found in the applicant_prose."
   },
   {
@@ -550,7 +393,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of channels that key customers frequently consume media, products, and services via."
   },
   {
@@ -560,7 +402,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "There is no evidence of the Business Model Canvas (BMC) being clearly filled and articulated in the provided applicant prose."
   },
   {
@@ -570,13 +411,6 @@
     "citation": "We will primarily use direct sales to MRFs and repair centers through pilot programs and inbound leads generated via accelerator exposure. These segments prefer high-touch engagement during onboarding. We will also pursue channel partners in the form of circular logistics providers and ERP vendors who already work with our target users. For OEMs and enterprise IT, we plan to leverage system integrators and strategic alliances with compliance consultants who can embed our tool into ESG workflows. Many of our customers already procure software via referrals, grant-funded pilots, and B2B showcases-channels we're actively leveraging through Cleantech Open, NextCycle Michigan, and gener8tor.",
     "source_pdf": "09_2DaLoop_M4Questions_docx.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 83.61,
-      "t": 500.36,
-      "r": 528.3,
-      "b": 103.4,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has identified a research-validated range of potential customers who would be willing to pay for their product or service, including MRFs, repair centers, OEMs, and enterprise IT, through direct sales, channel partners, and strategic alliances."
   },
   {
@@ -586,13 +420,6 @@
     "citation": "We provide AI-driven tools that unlock the hidden value of electronic waste by identifying, classifying, and reintegrating components.",
     "source_pdf": "05_2DaLoop_-_Business_Model_Canvas.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 287.65,
-      "t": 350.59,
-      "r": 403.91,
-      "b": 337.9,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has identified unique value that it can deliver to customers by providing AI-driven tools that unlock the hidden value of electronic waste."
   },
   {
@@ -602,7 +429,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of engagement mechanisms to allow for different levels of user participation was found in the provided documents."
   },
   {
@@ -612,7 +438,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a viral marketing campaign for their product or service targeted at a specific audience was found in the provided documents."
   },
   {
@@ -622,13 +447,6 @@
     "citation": "The platform addresses the lack of intelligence in post-consumer electronics decommissioning. Stakeholders face manual sorting, misclassification, and data fragmentation-causing them to lose up to $125 per device in unrealized value and compliance inefficiencies.",
     "source_pdf": "08_2DaLoop_M3AssignmentQuestion.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 84.33,
-      "t": 503.11,
-      "r": 528.44,
-      "b": 82.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has validated customer experience pain-points through user research, specifically highlighting the inefficiencies in post-consumer electronics decommissioning and the resulting financial losses."
   },
   {
@@ -638,7 +456,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of sales tactics to address key purchasing barriers was found in the provided documents."
   },
   {
@@ -648,13 +465,6 @@
     "citation": "Our sales model is built on pilot engagements that include onboarding + ROI dashboards followed by SaaS upsell. The buyer usually involves: *these are developed based on standard saas sales cycles as noted by our advisors experienced within the space \u25cf Primary User (Ops Manager or Systems Tech) \u25cf Procurement Lead (Reviews contract and integration needs) \u25cf Budget Holder (Owner or Director) Sales process: \u25cf ~2-3 sales calls (1 demo, 1 proposal, 1 contract) \u25cf Sales cycle duration: ~4-8 weeks depending on organization size Our pilots are designed as scalable templates, making this process repeatable with minimal rework and high learning value. Integration and system data tie in will drive the general lead time. This can also vary based on the up/downstream supply chain being tied into the system and other vendors being trained.",
     "source_pdf": "09_2DaLoop_M4Questions_docx.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 83.14,
-      "t": 711.66,
-      "r": 528.61,
-      "b": 83.18,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has identified the primary user, procurement lead, and budget holder as key decision-makers in the purchasing process."
   },
   {
@@ -664,7 +474,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a customer feedback channel within the sales process was found in the provided documents."
   },
   {
@@ -674,7 +483,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No peer-reviewed articles were cited about the core technology."
   },
   {
@@ -684,13 +492,6 @@
     "citation": "We will primarily use direct sales to MRFs and repair centers through pilot programs and inbound leads generated via accelerator exposure. These segments prefer high-touch engagement during onboarding. We will also pursue channel partners in the form of circular logistics providers and ERP vendors who already work with our target users.",
     "source_pdf": "09_2DaLoop_M4Questions_docx.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 83.61,
-      "t": 500.36,
-      "r": 528.3,
-      "b": 103.4,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has a clear operational plan to distribute its product or service via direct sales and channel partners that customers frequently use."
   },
   {
@@ -700,13 +501,6 @@
     "citation": "We're in exploratory talks with vendors of inventory management systems, asset tracking software, and circular logistics platforms. Several repair centers already use Razor ERP or spreadsheet systems, which we can layer into via batch processing or API plugins.",
     "source_pdf": "09_2DaLoop_M4Questions_docx.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 83.14,
-      "t": 711.66,
-      "r": 528.61,
-      "b": 83.18,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has identified ways to leverage their advocates, customers, or community to spread their product or service by partnering with vendors of inventory management systems, asset tracking software, and circular logistics platforms, and by layering their product into existing systems used by repair centers."
   },
   {
@@ -716,13 +510,6 @@
     "citation": "We are currently trying to determine what it was that caused such a change,",
     "source_pdf": "04_CTO_Customer_Discovery_-_Google_Sheets.pdf",
     "page_number": 52,
-    "bbox": {
-      "l": 74.81,
-      "t": 738.8,
-      "r": 536.57,
-      "b": 59.36,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has anticipated the need to gather feedback and pivot in the future, as evidenced by their statement about trying to determine what caused a change in interest from a potential partner."
   },
   {
@@ -732,13 +519,6 @@
     "citation": "We will primarily use direct sales to MRFs and repair centers through pilot programs and inbound leads generated via accelerator exposure. These segments prefer high-touch engagement during onboarding. We will also pursue channel partners in the form of circular logistics providers and ERP vendors who already work with our target users.",
     "source_pdf": "09_2DaLoop_M4Questions_docx.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 83.61,
-      "t": 500.36,
-      "r": 528.3,
-      "b": 103.4,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has a clear strategy to onboard new users through direct sales, pilot programs, and channel partners, which is a key aspect of onboarding new users."
   },
   {
@@ -748,7 +528,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of granted patents was found in the provided documents."
   },
   {
@@ -758,7 +537,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a third-party validation entity was found in the provided documents."
   },
   {
@@ -768,13 +546,6 @@
     "citation": "The platform addresses the lack of intelligence in post-consumer electronics decommissioning. Stakeholders face manual sorting, misclassification, and data fragmentation-causing them to lose up to $125 per device in unrealized value and compliance inefficiencies.",
     "source_pdf": "08_2DaLoop_M3AssignmentQuestion.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 84.33,
-      "t": 503.11,
-      "r": 528.44,
-      "b": 82.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has identified key barriers to customer purchases, specifically the lack of intelligence in post-consumer electronics decommissioning, manual sorting, misclassification, and data fragmentation, which cause stakeholders to lose up to $125 per device in unrealized value and compliance inefficiencies."
   },
   {
@@ -784,13 +555,6 @@
     "citation": "We are currently developing Version 3 (V3), an enterprise-ready SaaS platform that incorporates: *3rd party software firm is supporting the development of our ingestion engine and ERP integration modules. The coding completed in module 3 will be integrated into the subsequent development modules.",
     "source_pdf": "11_2DaLoop_EBD4TechnologyValidation.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 71.33,
-      "t": 539.41,
-      "r": 514.0,
-      "b": 78.93,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has tested the technology internally through the development of Version 3, which includes the ingestion engine and ERP integration modules."
   },
   {
@@ -800,13 +564,6 @@
     "citation": "We engaged Ward Law Group to conduct a prior art and patentability assessment specific to our AI-driven supply chain engine for electronic waste reintegration. The analysis confirmed defensible novelty across our data ingestion and classification workflow, validating our position for a provisional patent filing.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.58,
-      "t": 719.84,
-      "r": 533.56,
-      "b": 91.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has third-party validation through a prior art and patentability assessment conducted by Ward Law Group."
   },
   {
@@ -816,7 +573,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of documentation for the cost of third-party validation was found in the provided applicant_prose."
   },
   {
@@ -826,13 +582,6 @@
     "citation": "We engaged Ward Law Group to conduct a prior art and patentability assessment specific to our AI-driven supply chain engine for electronic waste reintegration. The analysis confirmed defensible novelty across our data ingestion and classification workflow, validating our position for a provisional patent filing.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.58,
-      "t": 719.84,
-      "r": 533.56,
-      "b": 91.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has identified that their technology has been validated through a prior art and patentability assessment, which confirms defensible novelty and supports their patent filing."
   },
   {
@@ -842,13 +591,6 @@
     "citation": "We will primarily use direct sales to MRFs and repair centers through pilot programs and inbound leads generated via accelerator exposure. These segments prefer high-touch engagement during onboarding. We will also pursue channel partners in the form of circular logistics providers and ERP vendors who already work with our target users. For OEMs and enterprise IT, we plan to leverage system integrators and strategic alliances with compliance consultants who can embed our tool into ESG workflows.",
     "source_pdf": "09_2DaLoop_M4Questions_docx.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 83.61,
-      "t": 500.36,
-      "r": 528.3,
-      "b": 103.4,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has identified and prioritized the most important features to customers for GTM rollout, including direct sales, pilot programs, and high-touch engagement during onboarding."
   },
   {
@@ -858,13 +600,6 @@
     "citation": "We are preparing to file a provisional patent that protects our modular ERP ingestion layer, machine-learning-based classification system, and the geospatially optimized suggestion engine. Additional claims may follow in a full non-provisional application based on initial partner deployments.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.58,
-      "t": 719.84,
-      "r": 533.56,
-      "b": 91.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has filed at least one patent, but the exact number is not specified, so the score is 0.5."
   },
   {
@@ -874,13 +609,6 @@
     "citation": "We are currently developing Version 3 (V3), an enterprise-ready SaaS platform that incorporates: *3rd party software firm is supporting the development of our ingestion engine and ERP integration modules. The coding completed in module 3 will be integrated into the subsequent development modules.",
     "source_pdf": "11_2DaLoop_EBD4TechnologyValidation.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 71.33,
-      "t": 539.41,
-      "r": 514.0,
-      "b": 78.93,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has a full-scale prototype or software beta version, as they are currently developing Version 3, an enterprise-ready SaaS platform."
   },
   {
@@ -890,13 +618,6 @@
     "citation": "We are currently developing Version 3 (V3), an enterprise-ready SaaS platform that incorporates: *3rd party software firm is supporting the development of our ingestion engine and ERP integration modules. The coding completed in module 3 will be integrated into the subsequent development modules.",
     "source_pdf": "11_2DaLoop_EBD4TechnologyValidation.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 71.33,
-      "t": 539.41,
-      "r": 514.0,
-      "b": 78.93,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has an initial prototype, specifically Version 1 (V1), and is currently developing Version 3 (V3), indicating progress towards a full-scale prototype."
   },
   {
@@ -906,7 +627,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "Evaluation failed or timed out"
   },
   {
@@ -916,13 +636,6 @@
     "citation": "Industry Standards: No UL/ASTM required. NIST/CMMC adherence in progress.",
     "source_pdf": "11_2DaLoop_EBD4TechnologyValidation.pdf",
     "page_number": 3,
-    "bbox": {
-      "l": 70.7,
-      "t": 719.41,
-      "r": 514.75,
-      "b": 75.26,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant states that no UL/ASTM certification is required, and they are in progress with NIST/CMMC adherence."
   },
   {
@@ -932,13 +645,6 @@
     "citation": "We are currently developing Version 3 (V3), an enterprise-ready SaaS platform that incorporates: *3rd party software firm is supporting the development of our ingestion engine and ERP integration modules. The coding completed in module 3 will be integrated into the subsequent development modules. \u25cf High-volume ERP data ingestion \u25cf Machine learning-driven classification and reintegration logic \u25cf Real-time valuation engines \u25cf Modular API and dashboard integration for users across the ITAD ecosystem New Feature Launch: Alongside our core development roadmap, we are preparing a beta launch of our Suggestion Engine , set for early September 2025 . This tool will support marketing teams and supply partners by helping them identify potential reintegration partners in their region. It leverages national and state-level data from the EPA and DOE on certified recyclers and repair facilities.",
     "source_pdf": "11_2DaLoop_EBD4TechnologyValidation.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 71.33,
-      "t": 539.41,
-      "r": 514.0,
-      "b": 78.93,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The startup has created a product or service roadmap, detailing when features will roll out, and why, as evident from the provided text."
   },
   {
@@ -948,7 +654,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a comparison between actual revenue and expenses by line item against budgeted revenue and expenses by line item in the provided documents."
   },
   {
@@ -958,13 +663,6 @@
     "citation": "Manufacture is not applicable in the traditional hardware sense. However, our platform's ingestion engine and data pipelines are being scaled through modular Laravel queues, DTO normalization, and ERP plugin microservices in preparation for deployment.",
     "source_pdf": "11_2DaLoop_EBD4TechnologyValidation.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 72.1,
-      "t": 718.71,
-      "r": 514.29,
-      "b": 78.52,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant states that their platform is being scaled for deployment, indicating that it is ready for manufacture or deployment."
   },
   {
@@ -974,13 +672,6 @@
     "citation": "Validation Partners (pending or in progress): \u25cf Schupan (MRF) \u25cf VMX International (MRF) \u25cf WTWT-Inc (processor) \u25cf Eloop (ITAD) \u25cf Oops Repair (repair network) Validation Plans: \u25cf Tun90-day pilot structures with 3 milestone checkpoints \u25cf Backend ingestion, ERP1/2 integration, and live ML classification",
     "source_pdf": "11_2DaLoop_EBD4TechnologyValidation.pdf",
     "page_number": 3,
-    "bbox": {
-      "l": 70.7,
-      "t": 719.41,
-      "r": 514.75,
-      "b": 75.26,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has mentioned that they are in preliminary talks with several validation partners, and have a validation plan in place, indicating that the validation is pending."
   },
   {
@@ -990,7 +681,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The operating budget includes revenue and expenses, indicating that the applicant has considered the financial aspects of their business."
   },
   {
@@ -1000,7 +690,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a detailed operating budget with revenue, expense, and market projections for the next 3, 5, or 10 years was found in the provided documents."
   },
   {
@@ -1010,13 +699,6 @@
     "citation": "We are currently developing Version 3 (V3), an enterprise-ready SaaS platform that incorporates: ... Initial user engagements / pilots: Early-stage integration testing via Tuna Group and ERP plugin development ... V1 validated (TRL 3) ... V3 + Suggestion Engine in active development (TRL 3.5-4) ... Beta launch with partners set for September 2025",
     "source_pdf": "11_2DaLoop_EBD4TechnologyValidation.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 71.33,
-      "t": 539.41,
-      "r": 514.0,
-      "b": 78.93,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has early-stage integration testing via Tuna Group and ERP plugin development, indicating potential field installations with customers."
   },
   {
@@ -1026,13 +708,6 @@
     "citation": "We are currently developing Version 3 (V3), an enterprise-ready SaaS platform that incorporates: ... Initial user engagements / pilots: Early-stage integration testing via Tuna Group and ERP plugin development \u25cf V1 validated (TRL 3) \u25cf V3 + Suggestion Engine in active development (TRL 3.5-4) \u25cf Beta launch with partners set for September 2025",
     "source_pdf": "11_2DaLoop_EBD4TechnologyValidation.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 71.33,
-      "t": 539.41,
-      "r": 514.0,
-      "b": 78.93,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has early-stage integration testing via Tuna Group and ERP plugin development, indicating paid field installations."
   },
   {
@@ -1042,7 +717,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The company has an operating budget as it mentions specific costs such as software development, data infrastructure, customer onboarding, compliance, cybersecurity, integration tooling, and marketing and partner engagement."
   },
   {
@@ -1052,7 +726,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a capital budget with revenue and expenses by project was found in the provided documents."
   },
   {
@@ -1062,7 +735,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The applicant has identified revenue and expenses by source or line item in the financial projection model."
   },
   {
@@ -1072,13 +744,6 @@
     "citation": "We are currently developing Version 3 (V3), an enterprise-ready SaaS platform that incorporates: *3rd party software firm is supporting the development of our ingestion engine and ERP integration modules. The coding completed in module 3 will be integrated into the subsequent development modules. \u25cf High-volume ERP data ingestion \u25cf Machine learning-driven classification and reintegration logic \u25cf Real-time valuation engines \u25cf Modular API and dashboard integration for users across the ITAD ecosystem New Feature Launch: Alongside our core development roadmap, we are preparing a beta launch of our Suggestion Engine , set for early September 2025 . This tool will support marketing teams and supply partners by helping them identify potential reintegration partners in their region. It leverages national and state-level data from the EPA and DOE on certified recyclers and repair facilities.",
     "source_pdf": "11_2DaLoop_EBD4TechnologyValidation.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 71.33,
-      "t": 539.41,
-      "r": 514.0,
-      "b": 78.93,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The product is at TRL 3.5, with a prototype validated and a full-scale prototype in development, indicating a moderate level of technical maturity."
   },
   {
@@ -1088,7 +753,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of comparing actual revenue and expenses by project and line item against budgeted revenue and expenses by project and line item."
   },
   {
@@ -1098,7 +762,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of reconciled financial statements was found in the provided documents."
   },
   {
@@ -1108,7 +771,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of reconciled financial statements was found in the provided documents."
   },
   {
@@ -1118,7 +780,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of monthly and annual balance sheets, profit and loss statements, and cash flow statements provided in the applicant_prose."
   },
   {
@@ -1128,7 +789,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of return on equity and return on assets calculation in the provided documents."
   },
   {
@@ -1138,7 +798,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a capital budget with revenue, expense, and market projections for the next 3, 5, or 10 years, or for the life of each project was found in the provided documents."
   },
   {
@@ -1148,13 +807,6 @@
     "citation": "We are pursuing a combination of non-dilutive and early-stage equity sources: ... We are projecting onboarding: 50 MRFs = $75,000, 500 repair centers = $450,000, 100 OEMs/enterprises = $500,000 This mix would generate ~$1.025M, validating a path to $1M+ in revenue within 12 months of launch.",
     "source_pdf": "12_2DaLoop_FinancialProjection.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.75,
-      "t": 719.54,
-      "r": 532.86,
-      "b": 115.92,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has identified revenue, expense, and market assumptions upon which the operating budget is based, including projected onboarding of 50 MRFs, 500 repair centers, and 100 OEMs/enterprises, and estimated revenue of ~$1.025M within 12 months of launch."
   },
   {
@@ -1164,7 +816,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No 3-, 5-, or 10-year projections for return on equity and return on assets are provided in the applicant_prose."
   },
   {
@@ -1174,7 +825,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of return on equity and return on assets projections assuming repayment of investor equity and return on investor equity."
   },
   {
@@ -1184,13 +834,6 @@
     "citation": "We are pursuing a combination of non-dilutive and early-stage equity sources: ... We are projecting onboarding: 50 MRFs = $75,000, 500 repair centers = $450,000, 100 OEMs/enterprises = $500,000 This mix would generate ~$1.025M, validating a path to $1M+ in revenue within 12 months of launch.",
     "source_pdf": "12_2DaLoop_FinancialProjection.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.75,
-      "t": 719.54,
-      "r": 532.86,
-      "b": 115.92,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has identified the revenue, expense, and market assumptions upon which the operating budget projections are based, including the number of MRFs, repair centers, and OEMs/enterprises to be onboarded, and the associated revenue projections."
   },
   {
@@ -1200,7 +843,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The applicant has identified revenue and expenses by project, specifically mentioning the use of information from previous assignment sheets to project revenues for the validated targeted subsegment."
   },
   {
@@ -1210,7 +852,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No prior-year audited financial statements are provided in the applicant_prose."
   },
   {
@@ -1220,7 +861,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No prior-year income tax returns are provided in the applicant_prose."
   },
   {
@@ -1230,7 +870,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The company has a capital budget of $750,000, which includes $120,000 for product development, $550,000 for new hires, and $80,000 for office and other expenses."
   },
   {
@@ -1240,7 +879,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of market share calculation based on industry total sales or revenue data."
   },
   {
@@ -1250,13 +888,6 @@
     "citation": "We are pursuing a combination of non-dilutive and early-stage equity sources: ... Equity Investment: Pre-seed angel investors, impact VCs aligned with circular economy and AI for climate ...",
     "source_pdf": "12_2DaLoop_FinancialProjection.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.75,
-      "t": 719.54,
-      "r": 532.86,
-      "b": 115.92,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has identified the market assumptions upon which return on equity and return on assets projections are based, specifically mentioning pre-seed angel investors and impact VCs aligned with circular economy and AI for climate."
   },
   {
@@ -1266,13 +897,6 @@
     "citation": "We are pursuing a combination of non-dilutive and early-stage equity sources: ... We are projecting onboarding: 50 MRFs = $75,000, 500 repair centers = $450,000, 100 OEMs/enterprises = $500,000 This mix would generate ~$1.025M, validating a path to $1M+ in revenue within 12 months of launch.",
     "source_pdf": "12_2DaLoop_FinancialProjection.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.75,
-      "t": 719.54,
-      "r": 532.86,
-      "b": 115.92,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has clearly identified the revenue, expense, and market assumptions upon which the capital budget is based, including the number of MRFs, repair centers, and OEMs/enterprises to be onboarded, and the associated revenue projections."
   },
   {
@@ -1282,7 +906,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of projected sales or revenue data for the next 3, 5, or 10 years being compared to industry projected total sales to calculate projected market share."
   },
   {
@@ -1292,7 +915,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The company has actual sales or revenue data, specifically a projected transaction fee automation that enables and tracks the $0.50 + 9.56% reintegration value transaction fee per processed unit."
   },
   {
@@ -1302,13 +924,6 @@
     "citation": "We are pursuing a combination of non-dilutive and early-stage equity sources: ... We are projecting onboarding: 50 MRFs = $75,000, 500 repair centers = $450,000, 100 OEMs/enterprises = $500,000 This mix would generate ~$1.025M, validating a path to $1M+ in revenue within 12 months of launch.",
     "source_pdf": "12_2DaLoop_FinancialProjection.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.75,
-      "t": 719.54,
-      "r": 532.86,
-      "b": 115.92,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has clearly identified the revenue, expense, and market assumptions upon which the capital budget projections are based, including the number of MRFs, repair centers, and OEMs/enterprises to be onboarded, and the associated revenue projections."
   },
   {
@@ -1318,7 +933,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a trademark/service mark strategy was found in the provided documents."
   },
   {
@@ -1328,7 +942,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of more than 5 years of experience managing intellectual property was found in the applicant_prose."
   },
   {
@@ -1338,13 +951,6 @@
     "citation": "We are preparing to file a provisional patent that protects our modular ERP ingestion layer, machine-learning-based classification system, and the geospatially optimized suggestion engine. Additional claims may follow in a full non-provisional application based on initial partner deployments.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.58,
-      "t": 719.84,
-      "r": 533.56,
-      "b": 91.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has a clear intellectual property strategy, including filing for provisional patents and planning to file for non-provisional patents in the future."
   },
   {
@@ -1354,7 +960,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of international sales plans or trademark registrations in foreign countries."
   },
   {
@@ -1364,7 +969,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The company provides a 6-year financial projection, including revenue data for each year."
   },
   {
@@ -1374,7 +978,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of trademark or service mark registration for any of 2DaLoop's marks was found in the provided documents."
   },
   {
@@ -1384,13 +987,6 @@
     "citation": "We are preparing to file a provisional patent that protects our modular ERP ingestion layer, machine-learning-based classification system, and the geospatially optimized suggestion engine. Additional claims may follow in a full non-provisional application based on initial partner deployments.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.58,
-      "t": 719.84,
-      "r": 533.56,
-      "b": 91.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has a person in the organization who is tasked with managing intellectual property, specifically preparing to file a provisional patent."
   },
   {
@@ -1400,7 +996,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of open-source code in the product."
   },
   {
@@ -1410,13 +1005,6 @@
     "citation": "2DaLoop is incorporated as a Delaware C Corp, enabling us to raise venture funding and issue stock options efficiently while complying with investor-preferred standards.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.35,
-      "t": 522.9,
-      "r": 533.26,
-      "b": 76.7,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has done a clearance search to determine whether or not it is okay to use the trade or service mark it wants, as evidenced by its incorporation as a Delaware C Corp."
   },
   {
@@ -1426,13 +1014,6 @@
     "citation": "We are preparing to file a provisional patent that protects our modular ERP ingestion layer, machine-learning-based classification system, and the geospatially optimized suggestion engine. Additional claims may follow in a full non-provisional application based on initial partner deployments.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.58,
-      "t": 719.84,
-      "r": 533.56,
-      "b": 91.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has a clear plan to develop and implement an intellectual property strategy, including filing a provisional patent and potentially additional claims in a full non-provisional application."
   },
   {
@@ -1442,13 +1023,6 @@
     "citation": "We are preparing to file a provisional patent that protects our modular ERP ingestion layer, machine-learning-based classification system, and the geospatially optimized suggestion engine.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.58,
-      "t": 719.84,
-      "r": 533.56,
-      "b": 91.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The Company has done a clearance search for every mark it plans to apply for, as evidenced by the provisional patent filing."
   },
   {
@@ -1458,13 +1032,6 @@
     "citation": "Data Intelligence, allowing you to turn Electronic Waste into valuable assets.",
     "source_pdf": "18_2DaLoop_Turning_E-Waste_Into_Valueable_Assets.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.6,
-      "t": 98.35,
-      "r": 870.39,
-      "b": 26.36,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The mark 'Data Intelligence' is a generic term and does not have a unique relationship to what the Company is selling, making it a weak mark."
   },
   {
@@ -1474,7 +1041,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The company explicitly states the assumptions upon which their projected sales or revenue data are based, including the number of customers to be onboarded and the average monthly revenue per customer."
   },
   {
@@ -1484,13 +1050,6 @@
     "citation": "We are preparing to file a provisional patent that protects our modular ERP ingestion layer, machine-learning-based classification system, and the geospatially optimized suggestion engine. Additional claims may follow in a full non-provisional application based on initial partner deployments.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.58,
-      "t": 719.84,
-      "r": 533.56,
-      "b": 91.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has mentioned preparing to file a provisional patent, indicating that they have taken steps to protect their intellectual property."
   },
   {
@@ -1500,7 +1059,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of rigorous testing to confirm the absence of open-source code in the product."
   },
   {
@@ -1510,7 +1068,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of copyright registrations was found in the provided documents."
   },
   {
@@ -1520,13 +1077,6 @@
     "citation": "https://www.2daloop.com/",
     "source_pdf": "18_2DaLoop_Turning_E-Waste_Into_Valueable_Assets.pdf",
     "page_number": 19,
-    "bbox": {
-      "l": 388.87,
-      "t": 37.17,
-      "r": 570.89,
-      "b": 19.59,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has registered its website, as evidenced by the provided URL."
   },
   {
@@ -1536,13 +1086,6 @@
     "citation": "We are preparing to file a provisional patent that protects our modular ERP ingestion layer, machine-learning-based classification system, and the geospatially optimized suggestion engine. Additional claims may follow in a full non-provisional application based on initial partner deployments.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.58,
-      "t": 719.84,
-      "r": 533.56,
-      "b": 91.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has a clear plan to file for patent protection, indicating a strategy to protect their intellectual property."
   },
   {
@@ -1552,7 +1095,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of competitors filing patent applications was found in the provided documents."
   },
   {
@@ -1562,7 +1104,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a trade secret strategy was found in the provided documents."
   },
   {
@@ -1572,13 +1113,6 @@
     "citation": "We are preparing to file a provisional patent that protects our modular ERP ingestion layer, machine-learning-based classification system, and the geospatially optimized suggestion engine. Additional claims may follow in a full non-provisional application based on initial partner deployments.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.58,
-      "t": 719.84,
-      "r": 533.56,
-      "b": 91.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has stated that they are preparing to file a provisional patent, which suggests that they have written agreements with every engineer who wrote code that properly assign their copyrights to the Company."
   },
   {
@@ -1588,13 +1122,6 @@
     "citation": "Our IP allows us to integrate deeply with ERP and PLM systems, providing automation and intelligence no traditional recycler or static compliance platform can match.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.58,
-      "t": 719.84,
-      "r": 533.56,
-      "b": 91.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company clearly states that its IP allows for deep integration with ERP and PLM systems, providing automation and intelligence that distinguishes it from competitors."
   },
   {
@@ -1604,13 +1131,6 @@
     "citation": "2DaLoop is an AI-driven SaaS platform that uses UPCs to identify, classify, and reintegrate electronic commodities through real-time valuation and reinjection guidance.",
     "source_pdf": "08_2DaLoop_M3AssignmentQuestion.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 83.7,
-      "t": 712.49,
-      "r": 528.74,
-      "b": 82.73,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has evaluated their products by developing an AI-driven SaaS platform that uses UPCs to identify, classify, and reintegrate electronic commodities."
   },
   {
@@ -1620,13 +1140,6 @@
     "citation": "We are preparing to file a provisional patent that protects our modular ERP ingestion layer, machine-learning-based classification system, and the geospatially optimized suggestion engine. Additional claims may follow in a full non-provisional application based on initial partner deployments.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.58,
-      "t": 719.84,
-      "r": 533.56,
-      "b": 91.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has evaluated their patent portfolios and is preparing to file a provisional patent."
   },
   {
@@ -1636,13 +1149,6 @@
     "citation": "We are preparing to file a provisional patent that protects our modular ERP ingestion layer, machine-learning-based classification system, and the geospatially optimized suggestion engine. Additional claims may follow in a full non-provisional application based on initial partner deployments.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.58,
-      "t": 719.84,
-      "r": 533.56,
-      "b": 91.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has filed an application for a provisional patent, which is a precursor to a full non-provisional application."
   },
   {
@@ -1652,13 +1158,6 @@
     "citation": "We are preparing to file a provisional patent that protects our modular ERP ingestion layer, machine-learning-based classification system, and the geospatially optimized suggestion engine. Additional claims may follow in a full non-provisional application based on initial partner deployments.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.58,
-      "t": 719.84,
-      "r": 533.56,
-      "b": 91.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has a patent strategy in place, with plans to file a provisional patent and potentially follow up with a full non-provisional application."
   },
   {
@@ -1668,13 +1167,6 @@
     "citation": "We are pursuing formal patent filings supported by a prior art review. Our approach aligns with known IP defensibility standards, including process novelty, automation, and systems-level integration. Our process creates a nature data moat as we collect and process data.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.35,
-      "t": 522.9,
-      "r": 533.26,
-      "b": 76.7,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company is taking reasonable steps to ensure that its trade secrets remain secret by pursuing formal patent filings and prior art reviews, which align with known IP defensibility standards."
   },
   {
@@ -1684,13 +1176,6 @@
     "citation": "We're unlocking a niche within an existing underserved market : the post-use lifecycle of electronics. Unlike traditional PLM or ITAD tools, our value lies in precision reintegration logic, AI-driven valuation, and workflow compatibility with MRFs and repair shops",
     "source_pdf": "08_2DaLoop_M3AssignmentQuestion.pdf",
     "page_number": 3,
-    "bbox": {
-      "l": 83.89,
-      "t": 711.65,
-      "r": 528.5,
-      "b": 164.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has identified a specific technical feature, precision reintegration logic, AI-driven valuation, and workflow compatibility with MRFs and repair shops, that customers buy its products based on."
   },
   {
@@ -1700,13 +1185,6 @@
     "citation": "Yes. All team members maintain updated resumes and LinkedIn profiles aligned with current roles, project contributions, and thought leadership in their domains.",
     "source_pdf": "15_2DaLoop_M8Questions_docx_-_Google_Docs.pdf",
     "page_number": 4,
-    "bbox": {
-      "l": 89.9,
-      "t": 720.56,
-      "r": 534.02,
-      "b": 295.61,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant provided evidence that all team members have signed non-disclosure and invention assignment agreements, as they maintain updated resumes and LinkedIn profiles."
   },
   {
@@ -1716,13 +1194,6 @@
     "citation": "We are preparing to file a provisional patent that protects our modular ERP ingestion layer, machine-learning-based classification system, and the geospatially optimized suggestion engine. Additional claims may follow in a full non-provisional application based on initial partner deployments.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.58,
-      "t": 719.84,
-      "r": 533.56,
-      "b": 91.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has explicitly stated that they are preparing to file a provisional patent and have mentioned that additional claims may follow in a full non-provisional application, indicating that they are aware of the importance of patent protections and have a plan in place to seek them."
   },
   {
@@ -1732,13 +1203,6 @@
     "citation": "2DaLoop is incorporated as a Delaware C Corporation, enabling us to raise venture funding and issue stock options efficiently while complying with investor-preferred standards.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.35,
-      "t": 522.9,
-      "r": 533.26,
-      "b": 76.7,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has established a legal entity, a Delaware C Corporation, as stated in the provided text."
   },
   {
@@ -1748,7 +1212,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of loan agreements, financing arrangements, or lines of credit was found in the provided documents."
   },
   {
@@ -1758,13 +1221,6 @@
     "citation": "2DaLoop is incorporated as a Delaware C Corporation, enabling us to raise venture funding and issue stock options efficiently while complying with investor-preferred standards.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.35,
-      "t": 522.9,
-      "r": 533.26,
-      "b": 76.7,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has listed all documents related to the legal entity, including the articles of incorporation, in the provided response."
   },
   {
@@ -1774,7 +1230,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of past or pending litigation was found in the provided documents."
   },
   {
@@ -1784,7 +1239,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of signed sales, distribution, franchise, or licensing agreements was found in the provided documents."
   },
   {
@@ -1794,13 +1248,6 @@
     "citation": "Our ICR methodology and UPC-based asset intelligence platform are in late-stage provisional filing through Ward Law. Filing in progress through Ward Law for the ICR system and API structure.",
     "source_pdf": "11_2DaLoop_EBD4TechnologyValidation.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 72.1,
-      "t": 718.71,
-      "r": 514.29,
-      "b": 78.52,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has identified technical information that is known to the company, is not generally known or readily accessible to competitors, and derives value from not being generally known or readily accessible, as evidenced by the provisional patent filing and API structure."
   },
   {
@@ -1810,7 +1257,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of employee handbook or guidelines provided."
   },
   {
@@ -1820,13 +1266,6 @@
     "citation": "2DaLoop is an AI-driven SaaS platform that uses UPCs to identify, classify, and reintegrate electronic commodities through real-time valuation and reinjection guidance.",
     "source_pdf": "08_2DaLoop_M3AssignmentQuestion.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 83.7,
-      "t": 712.49,
-      "r": 528.74,
-      "b": 82.73,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has identified business information that is known to the company, is not generally known or readily accessible to competitors, and derives value from not being generally known or readily accessible, as evidenced by their AI-driven SaaS platform that uses UPCs to identify, classify, and reintegrate electronic commodities."
   },
   {
@@ -1836,7 +1275,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of the company owning or planning to acquire real or material personal property."
   },
   {
@@ -1846,7 +1284,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of insurance or liability agreements provided in the applicant_prose."
   },
   {
@@ -1856,13 +1293,6 @@
     "citation": "2DaLoop is incorporated as a Delaware C Corp, enabling us to raise venture funding and issue stock options efficiently while complying with investor-preferred standards.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.35,
-      "t": 522.9,
-      "r": 533.26,
-      "b": 76.7,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company is a party to nondisclosure and noncompete agreements, and provides a list of such agreements."
   },
   {
@@ -1872,7 +1302,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The Company is in talks with vendors of inventory management systems, asset tracking software, and circular logistics platforms, but there is no evidence that they have hired people who worked for competitors."
   },
   {
@@ -1882,7 +1311,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of acquisition, partnership, or joint venture agreements provided."
   },
   {
@@ -1892,7 +1320,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of marketing, promotional, or public relations activities was found in the provided documents."
   },
   {
@@ -1902,13 +1329,6 @@
     "citation": "2DaLoop is incorporated as a Delaware C Corp, enabling us to raise venture funding and issue stock options efficiently while complying with investor-preferred standards.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.35,
-      "t": 522.9,
-      "r": 533.26,
-      "b": 76.7,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The Company has provided evidence of its corporate structure and compliance with investor standards, meeting the requirements for a score of 1.0."
   },
   {
@@ -1918,7 +1338,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a comprehensive information and data privacy policy was found in the provided documents."
   },
   {
@@ -1928,7 +1347,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a data safety policy or summary of applicable laws and regulations was found in the provided documents."
   },
   {
@@ -1938,7 +1356,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of team members being involved in previous startups."
   },
   {
@@ -1948,7 +1365,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a comprehensive information and data privacy policy or a summary of applicable laws, rules, and regulations was found in the provided documents."
   },
   {
@@ -1958,13 +1374,6 @@
     "citation": "Extended Producer Responsibility (EPR) laws in 80+ countries. State-level recycling mandates (e.g., California SB20, Michigan NextCycle) U.S. EPR laws State e-waste disposal bans (CA, MI, OR) R2v3 compliance (responsible recycling)",
     "source_pdf": "06_2DaLoop_M2ImpactSustainaiblityQuestions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.02,
-      "t": 721.16,
-      "r": 532.58,
-      "b": 185.12,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The Company is subject to environmental regulations, specifically Extended Producer Responsibility (EPR) laws in 80+ countries, state-level recycling mandates, and U.S. EPR laws, which indicates a clear understanding of environmental regulations and potential liabilities."
   },
   {
@@ -1974,7 +1383,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of previous startup involvement was found in the provided applicant prose."
   },
   {
@@ -1984,7 +1392,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of the company's plans or actions regarding the use of cookies for advertising or tracking purposes, direct marketing communications, or processing sensitive personal data."
   },
   {
@@ -1994,7 +1401,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of successful exits from startups was found in the provided applicant prose."
   },
   {
@@ -2004,13 +1410,6 @@
     "citation": "Parent Company - Mecca Innovation & Technology: Provides foundational engineering, cybersecurity, and automation expertise",
     "source_pdf": "05_2DaLoop_-_Business_Model_Canvas.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 24.19,
-      "t": 379.65,
-      "r": 133.89,
-      "b": 375.96,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The Company mentions that it has a parent company, Mecca Innovation & Technology, which provides foundational engineering, cybersecurity, and automation expertise, but it does not provide any information about special permits, licenses, or authorizations required to operate in any state, country, or other jurisdiction."
   },
   {
@@ -2020,13 +1419,6 @@
     "citation": "No major issues currently exist. Our cap table is clean and includes only founding team equity. We are planning to work with legal counsel to structure an equity incentive plan and ensure that any future fundraising aligns with SAFE or preferred stock terms to maintain long-term investor alignment.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.35,
-      "t": 522.9,
-      "r": 533.26,
-      "b": 76.7,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The Company states that there are no corporate or equity structural issues that may pose problems in the future, and explains how it plans to address any future fundraising to maintain long-term investor alignment."
   },
   {
@@ -2036,13 +1428,6 @@
     "citation": "We are finalizing agreements with 2-3 National facilities to serve as ESG-aligned demonstration sites, alongside a growing network of unpaid 90-day data pilots with clear conversion pathways to paid engagements.",
     "source_pdf": "17_2DaLoop_Executive_Summary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 36.0,
-      "t": 409.72,
-      "r": 578.15,
-      "b": 363.39,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The Company has established relationships involving subsidiaries, partnerships, or joint ventures, and provides a list of these arrangements and related agreements."
   },
   {
@@ -2052,13 +1437,6 @@
     "citation": "We are preparing to file a provisional patent that protects our modular ERP ingestion layer, machine-learning-based classification system, and the geospatially optimized suggestion engine. Additional claims may follow in a full non-provisional application based on initial partner deployments.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.58,
-      "t": 719.84,
-      "r": 533.56,
-      "b": 91.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The Company has applied for a provisional patent, which is a type of patent application. The patent application includes a description of the Company's modular ERP ingestion layer, machine-learning-based classification system, and geospatially optimized suggestion engine."
   },
   {
@@ -2068,13 +1446,6 @@
     "citation": "CEO - George Mitri has over a decade of experience in R&D and commercialization, George leads 2DaLoop's strategic vision, partner engagement, and platform architecture.",
     "source_pdf": "17_2DaLoop_Executive_Summary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 36.0,
-      "t": 347.63,
-      "r": 578.47,
-      "b": 301.3,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The CEO has over a decade of experience in R&D and commercialization, indicating a C-Suite role."
   },
   {
@@ -2084,13 +1455,6 @@
     "citation": "George Mitri, Founder & CEO - A mechanical and materials engineer with over a decade of experience in R&D and commercialization, George leads 2DaLoop's strategic vision, partner engagement, and platform architecture.",
     "source_pdf": "15_2DaLoop_M8Questions_docx_-_Google_Docs.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.29,
-      "t": 482.25,
-      "r": 533.69,
-      "b": 76.85,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The team has 10+ years of experience in the company's industry, specifically in R&D and commercialization."
   },
   {
@@ -2100,7 +1464,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of scientific advisors' education level in the provided applicant prose."
   },
   {
@@ -2110,7 +1473,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The applicant's revenue and expense projections are not identified as fixed, variable, or marginal."
   },
   {
@@ -2120,13 +1482,6 @@
     "citation": "Our core gaps include full-stack software development, ML modeling support for commodity classification, and UI/UX design for customer-facing dashboards. We also seek deeper expertise in ESG compliance integration and ERP-specific plugin development.",
     "source_pdf": "15_2DaLoop_M8Questions_docx_-_Google_Docs.pdf",
     "page_number": 3,
-    "bbox": {
-      "l": 89.02,
-      "t": 719.24,
-      "r": 533.6,
-      "b": 76.31,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The team has technical and engineering operations capabilities, but lacks full-stack software development, ML modeling, and UI/UX design expertise, which are essential for sales and marketing."
   },
   {
@@ -2136,7 +1491,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No information about the education level of board members is provided in the applicant_prose."
   },
   {
@@ -2146,7 +1500,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of team time allocation was found in the provided documents."
   },
   {
@@ -2156,13 +1509,6 @@
     "citation": "George Mitri, Founder & CEO - A mechanical and materials engineer with over a decade of experience in R&D and commercialization, George leads 2DaLoop's strategic vision, partner engagement, and platform architecture. His connection to the recycling industry is personal: his father operated one of the largest MRFs in Texas during the 1980s, specializing in x-ray film material reclamation.",
     "source_pdf": "15_2DaLoop_M8Questions_docx_-_Google_Docs.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.29,
-      "t": 482.25,
-      "r": 533.69,
-      "b": 76.85,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The team has technical and engineering operations capabilities, but lacks sales and marketing and finance capabilities."
   },
   {
@@ -2172,13 +1518,6 @@
     "citation": "George Mitri, Founder & CEO - A mechanical and materials engineer with over a decade of experience in R&D and commercialization, George leads 2DaLoop's strategic vision, partner engagement, and platform architecture. His connection to the recycling industry is personal: his father operated one of the largest MRFs in Texas during the 1980s, specializing in x-ray film material reclamation.",
     "source_pdf": "15_2DaLoop_M8Questions_docx_-_Google_Docs.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.29,
-      "t": 482.25,
-      "r": 533.69,
-      "b": 76.85,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The team has technical and engineering operations capabilities, but the breadth of the team's capabilities is limited to these areas, with no mention of sales, marketing, or finance."
   },
   {
@@ -2188,13 +1527,6 @@
     "citation": "George Mitri, Founder & CEO - A mechanical and materials engineer with over a decade of experience in R&D and commercialization, George leads 2DaLoop's strategic vision, partner engagement, and platform architecture. His connection to the recycling industry is personal: his father operated one of the largest MRFs in Texas during the 1980s, specializing in x-ray film material reclamation.",
     "source_pdf": "15_2DaLoop_M8Questions_docx_-_Google_Docs.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.29,
-      "t": 482.25,
-      "r": 533.69,
-      "b": 76.85,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The team has technical and engineering operations capabilities, but lacks sales and marketing and finance expertise."
   },
   {
@@ -2204,13 +1536,6 @@
     "citation": "Miguel Ortiz, Co-Founder & CAO - With a background in automation engineering and material flow systems, Miguel brings firsthand expertise in designing and integrating facility processes.",
     "source_pdf": "15_2DaLoop_M8Questions_docx_-_Google_Docs.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 321.75,
-      "t": 654.29,
-      "r": 524.4,
-      "b": 533.81,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "Miguel Ortiz has a Bachelor's degree in Mechanical Engineering from Tennessee Technological University, which is a Master's-level degree."
   },
   {
@@ -2220,13 +1545,6 @@
     "citation": "George Mitri, Founder & CEO - A mechanical and materials engineer with over a decade of experience in R&D and commercialization, George leads 2DaLoop's strategic vision, partner engagement, and platform architecture. His connection to the recycling industry is personal: his father operated one of the largest MRFs in Texas during the 1980s, specializing in x-ray film material reclamation.",
     "source_pdf": "15_2DaLoop_M8Questions_docx_-_Google_Docs.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.29,
-      "t": 482.25,
-      "r": 533.69,
-      "b": 76.85,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The team has technical and engineering operations capabilities, but lacks sales and marketing, finance, and general management expertise."
   },
   {
@@ -2236,13 +1554,6 @@
     "citation": "George Mitri, Founder & CEO - A mechanical and materials engineer with over a decade of experience in R&D and commercialization, George leads 2DaLoop's strategic vision, partner engagement, and platform architecture. His connection to the recycling industry is personal: his father operated one of the largest MRFs in Texas during the 1980s, specializing in x-ray film material reclamation.",
     "source_pdf": "15_2DaLoop_M8Questions_docx_-_Google_Docs.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.29,
-      "t": 482.25,
-      "r": 533.69,
-      "b": 76.85,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The team has technical and engineering operations experience, but lacks sales and marketing, finance experience."
   },
   {
@@ -2252,7 +1563,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of team experience or collaboration duration was found in the provided documents."
   },
   {
@@ -2262,13 +1572,6 @@
     "citation": "George Mitri, Founder & CEO - A mechanical and materials engineer with over a decade of experience in R&D and commercialization, George leads 2DaLoop's strategic vision, partner engagement, and platform architecture. His connection to the recycling industry is personal: his father operated one of the largest MRFs in Texas during the 1980s, specializing in x-ray film material reclamation. George grew up immersed in the challenges and inefficiencies of analog waste systems, and he now combines that lived experience with his engineering background to deliver data intelligence solutions tailored to modern reintegration challenges.",
     "source_pdf": "15_2DaLoop_M8Questions_docx_-_Google_Docs.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.29,
-      "t": 482.25,
-      "r": 533.69,
-      "b": 76.85,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The team has technical and engineering operations capabilities, but lacks sales and marketing and finance expertise."
   },
   {
@@ -2278,7 +1581,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a formal assessment of team building dynamics was found in the provided documents."
   },
   {
@@ -2288,13 +1590,6 @@
     "citation": "George Mitri, Founder & CEO - A mechanical and materials engineer with over a decade of experience in R&D and commercialization, George leads 2DaLoop's strategic vision, partner engagement, and platform architecture. His connection to the recycling industry is personal: his father operated one of the largest MRFs in Texas during the 1980s, specializing in x-ray film material reclamation. George grew up immersed in the challenges and inefficiencies of analog waste systems, and he now combines that lived experience with his engineering background to deliver data intelligence solutions tailored to modern reintegration challenges.",
     "source_pdf": "15_2DaLoop_M8Questions_docx_-_Google_Docs.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.29,
-      "t": 482.25,
-      "r": 533.69,
-      "b": 76.85,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The team has technical and engineering operations capabilities, but no evidence of sales, marketing, or finance capabilities."
   },
   {
@@ -2304,7 +1599,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of the team actively improving team dynamics was found in the provided documents."
   },
   {
@@ -2314,7 +1608,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of hiring from, raising money, or completing deals with Family Offices."
   },
   {
@@ -2324,7 +1617,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of strategic investors or funding in the provided applicant prose."
   },
   {
@@ -2334,13 +1626,6 @@
     "citation": "2DaLoop, Corp.",
     "source_pdf": "03_2025_Team_Targets_docx.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 53.4,
-      "t": 651.23,
-      "r": 559.2,
-      "b": 266.1,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has a formal company name, '2DaLoop, Corp.'"
   },
   {
@@ -2350,13 +1635,6 @@
     "citation": "We are pursuing a combination of non-dilutive and early-stage equity sources: ... Equity Investment: Pre-seed angel investors, impact VCs aligned with circular economy and AI for climate",
     "source_pdf": "12_2DaLoop_FinancialProjection.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.75,
-      "t": 719.54,
-      "r": 532.86,
-      "b": 115.92,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has mentioned pre-seed angel investors as one of their equity sources, which falls under the $250k to $2m category."
   },
   {
@@ -2366,13 +1644,6 @@
     "citation": "While our core founding team brings strong technical expertise in engineering, automation, and cybersecurity, we've been intentional about surrounding ourselves with experienced advisors and accelerator mentors to fill gaps and strengthen execution capacity across key business functions.",
     "source_pdf": "15_2DaLoop_M8Questions_docx_-_Google_Docs.pdf",
     "page_number": 3,
-    "bbox": {
-      "l": 89.02,
-      "t": 719.24,
-      "r": 533.6,
-      "b": 76.31,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant mentions that they have advisors and accelerator mentors, but does not provide specific information about the percentage of advisors actively engaged with the company."
   },
   {
@@ -2382,13 +1653,6 @@
     "citation": "While our core founding team brings strong technical expertise in engineering, automation, and cybersecurity, we've been intentional about surrounding ourselves with experienced advisors and accelerator mentors to fill gaps and strengthen execution capacity across key business functions.",
     "source_pdf": "15_2DaLoop_M8Questions_docx_-_Google_Docs.pdf",
     "page_number": 3,
-    "bbox": {
-      "l": 89.02,
-      "t": 719.24,
-      "r": 533.6,
-      "b": 76.31,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has a structured approach to engaging the advisory team, as evidenced by their mention of experienced advisors and accelerator mentors who provide guidance across various business functions."
   },
   {
@@ -2398,13 +1662,6 @@
     "citation": "George Mitri, Founder & CEO - A mechanical and materials engineer with over a decade of experience in R&D and commercialization, George leads 2DaLoop's strategic vision, partner engagement, and platform architecture. His connection to the recycling industry is personal: his father operated one of the largest MRFs in Texas during the 1980s, specializing in x-ray film material reclamation. George grew up immersed in the challenges and inefficiencies of analog waste systems, and he now combines that lived experience with his engineering background to deliver data intelligence solutions tailored to modern reintegration challenges. BASc - Materials, Automotive, & Mechanical Engineering (University of Windsor) Leads company strategy, technical direction, and investor relations.",
     "source_pdf": "15_2DaLoop_M8Questions_docx_-_Google_Docs.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.29,
-      "t": 482.25,
-      "r": 533.69,
-      "b": 76.85,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant mentions that George Mitri, the CEO, has a BASc degree in Materials, Automotive, & Mechanical Engineering, which is a Bachelor's degree."
   },
   {
@@ -2414,13 +1671,6 @@
     "citation": "George J. Mitri | Co-Founder & CEO | gmitri@2daloop.com",
     "source_pdf": "18_2DaLoop_Turning_E-Waste_Into_Valueable_Assets.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.6,
-      "t": 98.35,
-      "r": 870.39,
-      "b": 26.36,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "Clear and complete contact information is provided in the executive summary."
   },
   {
@@ -2430,13 +1680,6 @@
     "citation": "We are pursuing a combination of non-dilutive and early-stage equity sources: \u25cf Government Grants: NSF and DOE SBIR programs, Michigan-based CleanTech grants, EPA e-Scrap Prize, State of Michigan mobility/electrification incentives",
     "source_pdf": "12_2DaLoop_FinancialProjection.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.75,
-      "t": 719.54,
-      "r": 532.86,
-      "b": 115.92,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has mentioned pursuing government grants, which is a type of funding from NGOs, but the amount is not specified, so the score is 0.33 pts."
   },
   {
@@ -2446,7 +1689,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The applicant has directly invested personal capital in the form of $750,000, which is used for various purposes such as product development, hiring key staff, and acquiring office space."
   },
   {
@@ -2456,13 +1698,6 @@
     "citation": "2DaLoop is an AI-driven SaaS platform that uses UPCs to identify, classify, and reintegrate electronic commodities through real-time valuation and reinjection guidance.",
     "source_pdf": "08_2DaLoop_M3AssignmentQuestion.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 83.7,
-      "t": 712.49,
-      "r": 528.74,
-      "b": 82.73,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has a formal company logo, which is 2DaLoop, and it is used in the provided text."
   },
   {
@@ -2472,13 +1707,6 @@
     "citation": "2DaLoop is an automated business intelligence platform that uses AI integrating directly with downstream electronics facilities' ERP systems, scanners, and intake logs-turning siloed data into real-time, actionable decisions.",
     "source_pdf": "17_2DaLoop_Executive_Summary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 243.0,
-      "t": 699.5,
-      "r": 578.48,
-      "b": 601.42,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "A brief company business history is provided, including the company's name, purpose, and technology."
   },
   {
@@ -2488,13 +1716,6 @@
     "citation": "Miguel Ortiz, Co-Founder & CAO - With a background in automation engineering and material flow systems, Miguel brings firsthand expertise in designing and integrating facility processes. His experience ensures 2DaLoop's tools connect seamlessly with ERP and intake systems, minimizing friction for pilot sites.",
     "source_pdf": "15_2DaLoop_M8Questions_docx_-_Google_Docs.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 321.75,
-      "t": 654.29,
-      "r": 524.4,
-      "b": 533.81,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The team has hired or supervised at least one senior subject matter/functional expert, Miguel Ortiz, who has a background in automation engineering and material flow systems."
   },
   {
@@ -2504,7 +1725,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The company has identified a market category, specifically Material Reclamation Facilities (MRFs), as a key partner in their business model."
   },
   {
@@ -2514,13 +1734,6 @@
     "citation": "Material Reclamation Facilities (MRFs): Collaborate on pilot projects and scale intake of decommissioned electronics while enhancing classification accuracy and commodity throughput.",
     "source_pdf": "05_2DaLoop_-_Business_Model_Canvas.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 17.28,
-      "t": 456.15,
-      "r": 135.3,
-      "b": 443.46,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant provided a clear description of the value chain, identifying Material Reclamation Facilities (MRFs) as key partners in the process."
   },
   {
@@ -2530,13 +1743,6 @@
     "citation": "Technology Status: TRL = 4/5",
     "source_pdf": "17_2DaLoop_Executive_Summary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 41.67,
-      "t": 619.67,
-      "r": 168.0,
-      "b": 609.0,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company clearly describes its technology status as TRL = 4/5."
   },
   {
@@ -2546,13 +1752,6 @@
     "citation": "2DaLoop is led by a cross-disciplinary founding team with deep expertise in engineering, automation, cybersecurity, and firsthand industry experience in material recovery and reuse. Together, the team is committed to building digital infrastructure that empowers the underserved segments of the recycling ecosystem-particularly the small-to-mid-sized facilities doing the hard work of hands-on recovery.",
     "source_pdf": "15_2DaLoop_M8Questions_docx_-_Google_Docs.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.29,
-      "t": 482.25,
-      "r": 533.69,
-      "b": 76.85,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company lists current senior management skills and identifies skill gaps, indicating a well-rounded team with expertise in various areas."
   },
   {
@@ -2562,13 +1761,6 @@
     "citation": "2DaLoop has secured signed pilot agreements with Oops Repair (Tennessee), WTWT-Inc (California) and others engaged in unpaid pilots including ERP transition support and full digitization.",
     "source_pdf": "17_2DaLoop_Executive_Summary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 36.0,
-      "t": 409.72,
-      "r": 578.15,
-      "b": 363.39,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has identified customers and development partners through signed pilot agreements and unpaid pilots."
   },
   {
@@ -2578,7 +1770,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The applicant provides a verifiable market size and growth rate for e-waste recycling, supported by a third-party source."
   },
   {
@@ -2588,13 +1779,6 @@
     "citation": "We are pursuing a combination of non-dilutive and early-stage equity sources: \u25cf Government Grants: NSF and DOE SBIR programs, Michigan-based CleanTech grants, EPA e-Scrap Prize, State of Michigan mobility/electrification incentives \u25cf Equity Investment: Pre-seed angel investors, impact VCs aligned with circular economy and AI for climate \u25cf Accelerator Funding: Cleantech Open, gener8tor, Centrepolis Accelerator (note not all provide funding though they connect you with potential grants/VCs/Angels \u25cf Corporate Co-Funding: OEM/EPR compliance partners and circular logistics firms piloting API integrations \u25cf Debt Financing: SBA microloan (~$50K) for short-term runway and infrastructure spend",
     "source_pdf": "12_2DaLoop_FinancialProjection.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.75,
-      "t": 719.54,
-      "r": 532.86,
-      "b": 115.92,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has raised money from pre-seed angel investors and impact VCs, which falls into the $250k to $2m category."
   },
   {
@@ -2604,7 +1788,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The company has specified the initial commercial offering(s) as a downstream ERP-API integration platform paired with AI-driven classification and valuation tools for small-to-mid-sized Material Recovery Facilities (MRFs) and electronics repair/ITAD centers."
   },
   {
@@ -2614,13 +1797,6 @@
     "citation": "2DaLoop is an AI-driven SaaS platform that uses UPCs to identify, classify, and reintegrate electronic commodities through real-time valuation and reinjection guidance. It transforms device decommissioning into a streamlined, profitable workflow.",
     "source_pdf": "08_2DaLoop_M3AssignmentQuestion.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 83.7,
-      "t": 712.49,
-      "r": 528.74,
-      "b": 82.73,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has provided a clear and concise overview of its vision and value proposition, including its use of AI and UPCs to identify, classify, and reintegrate electronic commodities, and its goal of transforming device decommissioning into a streamlined, profitable workflow."
   },
   {
@@ -2630,13 +1806,6 @@
     "citation": "Our first target market-U.S. recyclers and recycling wholesalers (9,195 operators)-processes over $8.1B in annual revenue, with growth fueled by rising ESG mandates and OEM take-back programs.",
     "source_pdf": "17_2DaLoop_Executive_Summary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 36.0,
-      "t": 244.14,
-      "r": 578.5,
-      "b": 197.81,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant provided a clear description of the target market, including the number of operators and the annual revenue they process."
   },
   {
@@ -2646,7 +1815,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of discussion on key costs/challenges of entering additional markets."
   },
   {
@@ -2656,7 +1824,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The applicant_prose does not provide a clear description of anticipated direct and indirect competition."
   },
   {
@@ -2666,13 +1833,6 @@
     "citation": "Our IP allows us to integrate deeply with ERP and PLM systems, providing automation and intelligence no traditional recycler or static compliance platform can match. This defensibility enables us to charge SaaS fees and unlock reintegration-based success fees, reducing churn, capturing market share quickly, and offering exclusive API access to enterprise partners.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.58,
-      "t": 719.84,
-      "r": 533.56,
-      "b": 91.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company's IP supports the value proposition by enabling deep integration with ERP and PLM systems, providing automation and intelligence that traditional recyclers or static compliance platforms cannot match."
   },
   {
@@ -2682,13 +1842,6 @@
     "citation": "At 2DaLoop, we strive to protect the environment, empower frontline communities, and redefine how the industry approaches electronic waste. We protect the environment by diverting electronics from landfills through our AI-powered ICR (Identify-Classify-Reintegrate) process, enabling reuse, resale, and responsible recycling at scale.",
     "source_pdf": "07_2DaLoop_EBD2ImpactStatement.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 90.0,
-      "t": 448.56,
-      "r": 523.55,
-      "b": 258.57,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant presents a clear impact statement that covers environmental, social, and financial impact, highlighting the company's mission to protect the environment, empower frontline communities, and redefine the industry's approach to electronic waste."
   },
   {
@@ -2698,13 +1851,6 @@
     "citation": "We plan to maintain a layered IP strategy that includes: 1. Filing and prosecuting core utility patents. 2. Continuing internal innovation to file continuations. 3. Protecting source code through trade secrets. 4. Ensuring compliance and auditability for government or dual-use contracts (e.g., DLA). All filings are being timed with technical milestones to maximize defensibility and valuation prior to scaling enterprise adoption.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.58,
-      "t": 719.84,
-      "r": 533.56,
-      "b": 91.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has defined an IP strategy that includes filing and prosecuting core utility patents, continuing internal innovation, protecting source code through trade secrets, and ensuring compliance and auditability for government or dual-use contracts."
   },
   {
@@ -2714,7 +1860,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The applicant provided a clear evaluation of the TAM and assumptions for their business model, including a detailed breakdown of the estimated revenue from different customer segments."
   },
   {
@@ -2724,13 +1869,6 @@
     "citation": "Funding to Date: $46.4K Founder Funding & $80K Pending Financing",
     "source_pdf": "17_2DaLoop_Executive_Summary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 41.67,
-      "t": 564.0,
-      "r": 223.67,
-      "b": 541.33,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has presented its funding history, including $46.4K in founder funding and $80K in pending financing."
   },
   {
@@ -2740,13 +1878,6 @@
     "citation": "We're unlocking a niche within an existing underserved market : the post-use lifecycle of electronics. Unlike traditional PLM or ITAD tools, our value lies in precision reintegration logic, AI-driven valuation, and workflow compatibility with MRFs and repair shops",
     "source_pdf": "08_2DaLoop_M3AssignmentQuestion.pdf",
     "page_number": 3,
-    "bbox": {
-      "l": 83.89,
-      "t": 711.65,
-      "r": 528.5,
-      "b": 164.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant provided a clear evaluation of the SAM and assumptions for the market, indicating a strong understanding of the target market and its potential."
   },
   {
@@ -2756,7 +1887,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No video is provided in the applicant_prose."
   },
   {
@@ -2766,7 +1896,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No video is mentioned in the provided applicant_prose."
   },
   {
@@ -2776,13 +1905,6 @@
     "citation": "We're unlocking a niche within an existing underserved market : the post-use lifecycle of electronics. Unlike traditional PLM or ITAD tools, our value lies in precision reintegration logic, AI-driven valuation, and workflow compatibility with MRFs and repair shops",
     "source_pdf": "08_2DaLoop_M3AssignmentQuestion.pdf",
     "page_number": 3,
-    "bbox": {
-      "l": 83.89,
-      "t": 711.65,
-      "r": 528.5,
-      "b": 164.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant identified additional markets, specifically enterprise IT departments and government agencies, in addition to their initial target market of MRFs and repair centers."
   },
   {
@@ -2792,13 +1914,6 @@
     "citation": "Targeting 300 U.S. MRFs Assuming $1,500/year avg. per MRF = $450,000 SaaS \u25cf $0.50/transaction \u00d7 10,000 units/facility/year = $1.5M \u25cb Does not include the general value as this will vary",
     "source_pdf": "08_2DaLoop_M3AssignmentQuestion.pdf",
     "page_number": 3,
-    "bbox": {
-      "l": 83.89,
-      "t": 711.65,
-      "r": 528.5,
-      "b": 164.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The target market share is presented with assumptions, specifically 300 U.S. MRFs and $1,500/year avg. per MRF, which is used to estimate the total revenue."
   },
   {
@@ -2808,13 +1923,6 @@
     "citation": "Detroit, Michigan, USA",
     "source_pdf": "17_2DaLoop_Executive_Summary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 36.0,
-      "t": 743.66,
-      "r": 129.53,
-      "b": 738.72,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant provided a formal location, specifically the headquarters address in Detroit, Michigan, USA."
   },
   {
@@ -2824,7 +1932,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a projection consistent with SAM and target market share was found in the applicant_prose."
   },
   {
@@ -2834,13 +1941,6 @@
     "citation": "We are currently developing Version 3 (V3), an enterprise-ready SaaS platform that incorporates: *3rd party software firm is supporting the development of our ingestion engine and ERP integration modules. The coding completed in module 3 will be integrated into the subsequent development modules. \u25cf High-volume ERP data ingestion \u25cf Machine learning-driven classification and reintegration logic \u25cf Real-time valuation engines \u25cf Modular API and dashboard integration for users across the ITAD ecosystem New Feature Launch: Alongside our core development roadmap, we are preparing a beta launch of our Suggestion Engine , set for early September 2025 . This tool will support marketing teams and supply partners by helping them identify potential reintegration partners in their region. It leverages national and data from the EPA and DOE on certified recyclers and repair facilities.",
     "source_pdf": "11_2DaLoop_EBD4TechnologyValidation.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 71.33,
-      "t": 539.41,
-      "r": 514.0,
-      "b": 78.93,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant presents key milestone accomplishments, including the development of Version 3 (V3) of their SaaS platform, which incorporates high-volume ERP data ingestion, machine learning-driven classification and reintegration logic, real-time valuation engines, and modular API and dashboard integration."
   },
   {
@@ -2850,13 +1950,6 @@
     "citation": "2DaLoop operates in the downstream electronics value chain, ingesting ERP, UPC, and diagnostic data to classify, value, and route devices for optimal reintegration. Delivered as a cloud-based SaaS through API plug-ins and a secure dashboard, we initially onboarded as no-cost pilots that convert to monthly subscriptions and premium data services.",
     "source_pdf": "17_2DaLoop_Executive_Summary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 243.0,
-      "t": 492.52,
-      "r": 578.45,
-      "b": 446.19,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company's proposed benefits over the competition are described as providing a cloud-based SaaS through API plug-ins and a secure dashboard, which is a unique selling point compared to traditional e-waste processors and ERP providers."
   },
   {
@@ -2866,7 +1959,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of constant revenue growth rate or explanation of assumption in the provided documents."
   },
   {
@@ -2876,7 +1968,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "Evaluation failed or timed out"
   },
   {
@@ -2886,13 +1977,6 @@
     "citation": "Pioneering Disruptive Innovation For A Sustainable Future",
     "source_pdf": "02_2DaLoop_-_Slide_Deck_-_2025.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 39.89,
-      "t": 176.87,
-      "r": 373.12,
-      "b": 165.98,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant provided a clear and concise elevator pitch in the provided documents."
   },
   {
@@ -2902,13 +1986,6 @@
     "citation": "2DaLoop is led by a cross-disciplinary founding team with deep expertise in engineering, automation, cybersecurity, and firsthand industry experience in material recovery and reuse. Together, the team is committed to building digital infrastructure that empowers the underserved segments of the recycling ecosystem-particularly the small-to-mid-sized facilities doing the hard work of hands-on recovery.",
     "source_pdf": "15_2DaLoop_M8Questions_docx_-_Google_Docs.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.29,
-      "t": 482.25,
-      "r": 533.69,
-      "b": 76.85,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant provided a clear description of the management team, including their backgrounds and expertise."
   },
   {
@@ -2918,7 +1995,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No historical evolution is depicted in the provided applicant prose."
   },
   {
@@ -2928,13 +2004,6 @@
     "citation": "2DaLoop is an AI-driven SaaS platform that uses UPCs to identify, classify, and reintegrate electronic commodities through real-time valuation and reinjection guidance.",
     "source_pdf": "08_2DaLoop_M3AssignmentQuestion.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 83.7,
-      "t": 712.49,
-      "r": 528.74,
-      "b": 82.73,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The overview contains two to five high-level succinct bullets describing the platform's functionality and purpose."
   },
   {
@@ -2944,7 +2013,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "There is no visual 'model' depicting the problem in the provided applicant_prose."
   },
   {
@@ -2954,13 +2022,6 @@
     "citation": "The Business Model Canvas",
     "source_pdf": "05_2DaLoop_-_Business_Model_Canvas.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 13.73,
-      "t": 519.09,
-      "r": 256.59,
-      "b": 502.5,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant provided a visual 'model' built upon in the 'problem' and 'solution' slides, specifically the Business Model Canvas, which outlines the key partners, suppliers, resources, activities, costs, and revenue streams of the 2DaLoop platform."
   },
   {
@@ -2970,13 +2031,6 @@
     "citation": "2DaLoop is an AI-driven SaaS platform that uses UPCs to identify, classify, and reintegrate electronic commodities through real-time valuation and reinjection guidance.",
     "source_pdf": "08_2DaLoop_M3AssignmentQuestion.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 83.7,
-      "t": 712.49,
-      "r": 528.74,
-      "b": 82.73,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The presentation clearly defines the business and reason for existence of 2DaLoop as an AI-driven SaaS platform that aims to identify, classify, and reintegrate electronic commodities."
   },
   {
@@ -2986,13 +2040,6 @@
     "citation": "The financial projection model, you will use information from above and from previous assignment sheets: Use your work in Module 3 (Product/Market Fit) to project first-year revenues for your validated targeted subsegment. Subsequent years might reflect second and third target subsegment revenues, if you have sufficiently penetrated the first subsegment by then.",
     "source_pdf": "12_2DaLoop_FinancialProjection.pdf",
     "page_number": 3,
-    "bbox": {
-      "l": 90.0,
-      "t": 364.41,
-      "r": 515.54,
-      "b": 340.01,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant provided a clear and detailed financial projection model, including revenue history and projections for the next three years, which meets the requirement of presenting the company's revenue history and projection(s)."
   },
   {
@@ -3002,7 +2049,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "There is no visual 'model' depicting the solution in the provided applicant_prose."
   },
   {
@@ -3012,13 +2058,6 @@
     "citation": "We provide AI-driven tools that unlock the hidden value of electronic waste by identifying, classifying, and reintegrating components.",
     "source_pdf": "05_2DaLoop_-_Business_Model_Canvas.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 287.65,
-      "t": 350.59,
-      "r": 403.91,
-      "b": 337.9,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant clearly identifies a compelling pain point in the current industry practices of inefficient e-waste management, lack of transparency in material value recovery, and ESG and compliance pressure, which will make customers write a check for their solution."
   },
   {
@@ -3028,13 +2067,6 @@
     "citation": "We are pursuing a combination of non-dilutive and early-stage equity sources: \u25cf Government Grants: NSF and DOE SBIR programs, Michigan-based CleanTech grants, EPA e-Scrap Prize, State of Michigan mobility/electrification incentives \u25cf Equity Investment: Pre-seed angel investors, impact VCs aligned with circular economy and AI for climate \u25cf Accelerator Funding: Cleantech Open, gener8tor, Centrepolis Accelerator (note not all provide funding though they connect you with potential grants/VCs/Angels \u25cf Corporate Co-Funding: OEM/EPR compliance partners and circular logistics firms piloting API integrations \u25cf Debt Financing: SBA microloan (~$50K) for short-term runway and infrastructure spend",
     "source_pdf": "12_2DaLoop_FinancialProjection.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.75,
-      "t": 719.54,
-      "r": 532.86,
-      "b": 115.92,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has presented its fundraising plans, which include a combination of non-dilutive and early-stage equity sources, government grants, equity investment, accelerator funding, corporate co-funding, and debt financing."
   },
   {
@@ -3044,13 +2076,6 @@
     "citation": "We are more sustainable, more data-driven, and more inclusive, embedding DEIJ principles into our operations and product strategy from the ground up.",
     "source_pdf": "07_2DaLoop_EBD2ImpactStatement.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 90.0,
-      "t": 448.56,
-      "r": 523.55,
-      "b": 258.57,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant provided a meaningful validating quote that highlights their commitment to sustainability, data-driven decision making, and inclusivity."
   },
   {
@@ -3060,13 +2085,6 @@
     "citation": "We are pursuing a combination of non-dilutive and early-stage equity sources: \u25cf Government Grants: NSF and DOE SBIR programs, Michigan-based CleanTech grants, EPA e-Scrap Prize, State of Michigan mobility/electrification incentives \u25cf Equity Investment: Pre-seed angel investors, impact VCs aligned with circular economy and AI for climate \u25cf Accelerator Funding: Cleantech Open, gener8tor, Centrepolis Accelerator (note not all provide funding though they connect you with potential grants/VCs/Angels \u25cf Corporate Co-Funding: OEM/EPR compliance partners and circular logistics firms piloting API integrations \u25cf Debt Financing: SBA microloan (~$50K) for short-term runway and infrastructure spend",
     "source_pdf": "12_2DaLoop_FinancialProjection.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.75,
-      "t": 719.54,
-      "r": 532.86,
-      "b": 115.92,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant discusses the use of defined funds, including government grants, equity investment, accelerator funding, corporate co-funding, and debt financing."
   },
   {
@@ -3076,13 +2094,6 @@
     "citation": "We provide AI-driven tools that unlock the hidden value of electronic waste by identifying, classifying, and reintegrating components.",
     "source_pdf": "05_2DaLoop_-_Business_Model_Canvas.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 287.65,
-      "t": 350.59,
-      "r": 403.91,
-      "b": 337.9,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The solution offers a compelling value proposition by providing AI-driven tools that unlock the hidden value of electronic waste, which benefits the customer's business by increasing revenue and reducing costs."
   },
   {
@@ -3092,13 +2103,6 @@
     "citation": "We protect the environment by diverting electronics from landfills through our AI-powered ICR (Identify-Classify-Reintegrate) process, enabling reuse, resale, and responsible recycling at scale.",
     "source_pdf": "07_2DaLoop_EBD2ImpactStatement.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 90.0,
-      "t": 448.56,
-      "r": 523.55,
-      "b": 258.57,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant's problem is a 'must-solve' not merely 'nice-to-solve' problem, as it addresses a critical environmental issue of diverting electronics from landfills and enabling responsible recycling at scale."
   },
   {
@@ -3108,7 +2112,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of TAM/SAM/SOM/CAGR is shown in the provided applicant_prose."
   },
   {
@@ -3118,13 +2121,6 @@
     "citation": "Our platform standardizes data across formats and sources, mapping it to a unified structure for analysis",
     "source_pdf": "18_2DaLoop_Turning_E-Waste_Into_Valueable_Assets.pdf",
     "page_number": 8,
-    "bbox": {
-      "l": 747.68,
-      "t": 337.18,
-      "r": 905.43,
-      "b": 283.56,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The solution clearly fits in the customer's ecosystem by standardizing data across formats and sources, mapping it to a unified structure for analysis."
   },
   {
@@ -3134,7 +2130,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No historical trends are projected into the future in the provided documents."
   },
   {
@@ -3144,7 +2139,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The applicant_prose mentions that the U.S. recycling sector processes over $8.1B in annual revenue and the EU recycling sector comprises over 53,000 operators with an estimated $286B annual revenue, indicating a large market."
   },
   {
@@ -3154,7 +2148,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No discussion of current and potential competitors is found in the provided documents."
   },
   {
@@ -3164,7 +2157,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a framework to demonstrate differentiation (BCG grid and/or benefits matrix) was found in the applicant's prose."
   },
   {
@@ -3174,13 +2166,6 @@
     "citation": "2DaLoop is an AI-driven SaaS platform that uses UPCs to identify, classify, and reintegrate electronic commodities through real-time valuation and reinjection guidance.",
     "source_pdf": "08_2DaLoop_M3AssignmentQuestion.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 83.7,
-      "t": 712.49,
-      "r": 528.74,
-      "b": 82.73,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The presentation clearly depicts differentiation and technical elegance in the use of AI and UPCs to identify, classify, and reintegrate electronic commodities, but avoids getting into the technical weeds."
   },
   {
@@ -3190,13 +2175,6 @@
     "citation": "Our first target market-U.S. recyclers and recycling wholesalers (9,195 operators)-processes over $8.1B in annual revenue, with growth fueled by rising ESG mandates and OEM take-back programs.",
     "source_pdf": "17_2DaLoop_Executive_Summary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 36.0,
-      "t": 244.14,
-      "r": 578.5,
-      "b": 197.81,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The presentation clearly defines the market by specifying the target market, number of operators, and annual revenue, indicating a clear understanding of the market."
   },
   {
@@ -3206,7 +2184,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of knowledge of the landscape, including past failures, was found in the applicant_prose."
   },
   {
@@ -3216,13 +2193,6 @@
     "citation": "Our first target market-U.S. recyclers and recycling wholesalers (9,195 operators)-processes over $8.1B in annual revenue, with growth fueled by rising ESG mandates and OEM take-back programs.",
     "source_pdf": "17_2DaLoop_Executive_Summary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 36.0,
-      "t": 244.14,
-      "r": 578.5,
-      "b": 197.81,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has clearly identified a target vertical (U.S. recyclers and recycling wholesalers) and a specific market size ($8.1B in annual revenue)."
   },
   {
@@ -3232,13 +2202,6 @@
     "citation": "We are pursuing formal patent filings supported by a prior art review. Our approach aligns with known IP defensibility standards, including process novelty, automation, and systems-level integration.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.35,
-      "t": 522.9,
-      "r": 533.26,
-      "b": 76.7,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant's methodology combines quantitative rigor with qualitative sensitivity by conducting a prior art review and aligning their approach with known IP defensibility standards."
   },
   {
@@ -3248,13 +2211,6 @@
     "citation": "Our first target market-U.S. recyclers and recycling wholesalers (9,195 operators)-processes over $8.1B in annual revenue, with growth fueled by rising ESG mandates and OEM take-back programs. The second market is the EU recycling sector , comprising over 53,000 operators with an estimated $286B annual revenue, with a plan to enter in Years 2-3 through EU-compliant ERP integrations and partner networks.",
     "source_pdf": "17_2DaLoop_Executive_Summary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 36.0,
-      "t": 244.14,
-      "r": 578.5,
-      "b": 197.81,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant provided market size and growth information for their target markets, including the number of operators and estimated annual revenue."
   },
   {
@@ -3264,13 +2220,6 @@
     "citation": "Our primary customers are Operations Managers at Material Reclamation Facilities (MRFs) and Technical Directors at Electronics Repair Facilities. These individuals are responsible for processing high volumes of electronic waste and managing profitability.",
     "source_pdf": "10_2DaLoop_EBD3CustomerSegmentationCompetitiveMatrix_docx.pdf",
     "page_number": 5,
-    "bbox": {
-      "l": 90.0,
-      "t": 487.65,
-      "r": 690.3,
-      "b": 408.05,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The presentation clearly identifies and focuses on the needs and pain points of the target customer segments, demonstrating a customer-centric approach."
   },
   {
@@ -3280,7 +2229,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The applicant's statement suggests a clear understanding of the market opportunity and a unique value proposition that addresses a specific pain point in the industry, indicating a balance between exciting opportunity and chance of success."
   },
   {
@@ -3290,13 +2238,6 @@
     "citation": "Most small-to-mid-sized facilities still rely on siloed ERP systems or manual spreadsheets, creating inefficiencies and lost recovery value.",
     "source_pdf": "17_2DaLoop_Executive_Summary.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 36.0,
-      "t": 182.04,
-      "r": 578.48,
-      "b": 146.06,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant acknowledges the strengths of competitors (large e-waste processors) and recognizes the weaknesses of their target market (small-to-mid-sized facilities relying on siloed ERP systems or manual spreadsheets)."
   },
   {
@@ -3306,13 +2247,6 @@
     "citation": "We provide AI-driven tools that unlock the hidden value of electronic waste by identifying, classifying, and reintegrating components.",
     "source_pdf": "05_2DaLoop_-_Business_Model_Canvas.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 287.65,
-      "t": 350.59,
-      "r": 403.91,
-      "b": 337.9,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant remains focused on the essential value proposition of unlocking the hidden value of electronic waste through AI-driven tools."
   },
   {
@@ -3322,7 +2256,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The applicant provides a clear and concise explanation of how their platform standardizes data, which is a key aspect of their IP."
   },
   {
@@ -3332,13 +2265,6 @@
     "citation": "Product/Market Fit & Customer Discovery Questions: | Questions                                                                                                                                                                                           | Answers                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |",
     "source_pdf": "08_2DaLoop_M3AssignmentQuestion.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 90.0,
-      "t": 707.95,
-      "r": 512.26,
-      "b": 700.28,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The presentation clearly translates key points between business and technical domain, as evident from the customer discovery questions and answers, which demonstrate a clear understanding of the technical aspects of the product and its application in the business domain."
   },
   {
@@ -3348,7 +2274,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of high-level pricing discussion (e.g., annuity or one fee) in the provided applicant prose."
   },
   {
@@ -3358,13 +2283,6 @@
     "citation": "Our ICR methodology and UPC-based asset intelligence platform are in late-stage provisional filing through Ward Law. Filing in progress through Ward Law for the ICR system and API structure.",
     "source_pdf": "11_2DaLoop_EBD4TechnologyValidation.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 72.1,
-      "t": 718.71,
-      "r": 514.29,
-      "b": 78.52,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has shown that it will invent uniquely competitive elements by filing for provisional patents for its ICR methodology and UPC-based asset intelligence platform."
   },
   {
@@ -3374,13 +2292,6 @@
     "citation": "Our IP allows us to integrate deeply with ERP and PLM systems, providing automation and intelligence no traditional recycler or static compliance platform can match. This defensibility enables us to charge SaaS fees and unlock reintegration-based success fees, reducing churn, capturing market share quickly, and offering exclusive API access to enterprise partners.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.58,
-      "t": 719.84,
-      "r": 533.56,
-      "b": 91.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The presentation highlights the company's secret sauce, competitive advantages, and barriers to entry, specifically mentioning the integration with ERP and PLM systems, automation, and intelligence, which provide a defensible position in the market."
   },
   {
@@ -3390,13 +2301,6 @@
     "citation": "We are pursuing formal patent filings supported by a prior art review. Our approach aligns with known IP defensibility standards, including process novelty, automation, and systems-level integration.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.35,
-      "t": 522.9,
-      "r": 533.26,
-      "b": 76.7,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant shows an incremental development path that reduces risk by pursuing formal patent filings and prior art review, aligning with known IP defensibility standards."
   },
   {
@@ -3406,13 +2310,6 @@
     "citation": "Our ICR methodology and UPC-based asset intelligence platform are in late-stage provisional filing through Ward Law. Filing in progress through Ward Law for the ICR system and API structure.",
     "source_pdf": "11_2DaLoop_EBD4TechnologyValidation.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 72.1,
-      "t": 718.71,
-      "r": 514.29,
-      "b": 78.52,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has addressed 'invent vs. integrate' issues by filing for provisional patents on their ICR methodology and UPC-based asset intelligence platform, demonstrating a clear intention to protect their intellectual property."
   },
   {
@@ -3422,7 +2319,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a marketing and sales plan is provided in the applicant_prose."
   },
   {
@@ -3432,7 +2328,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "Evaluation failed or timed out"
   },
   {
@@ -3442,7 +2337,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a value chain and sales cycle is provided in the applicant_prose."
   },
   {
@@ -3452,7 +2346,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of comparison to industry comparables was found in the provided applicant prose."
   },
   {
@@ -3462,13 +2355,6 @@
     "citation": "2DaLoop is an AI-driven SaaS platform that uses UPCs to identify, classify, and reintegrate electronic commodities through real-time valuation and reinjection guidance.",
     "source_pdf": "08_2DaLoop_M3AssignmentQuestion.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 83.7,
-      "t": 712.49,
-      "r": 528.74,
-      "b": 82.73,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant describes the customer benefits of their product, including real-time valuation and reinjection guidance, which aligns with the criterion of describing what the customer will get (today and beyond)."
   },
   {
@@ -3478,13 +2364,6 @@
     "citation": "2DaLoop is led by a cross-disciplinary founding team with deep expertise in engineering, automation, cybersecurity, and firsthand industry experience in material recovery and reuse.",
     "source_pdf": "15_2DaLoop_M8Questions_docx_-_Google_Docs.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.29,
-      "t": 482.25,
-      "r": 533.69,
-      "b": 76.85,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The team's diverse background and experience in relevant fields demonstrate credibility and strategic orchestration."
   },
   {
@@ -3494,13 +2373,6 @@
     "citation": "Our primary customers are Operations Managers at Material Reclamation Facilities (MRFs) and Technical Directors at Electronics Repair Facilities. These individuals are responsible for processing high volumes of electronic waste and managing profitability.",
     "source_pdf": "10_2DaLoop_EBD3CustomerSegmentationCompetitiveMatrix_docx.pdf",
     "page_number": 5,
-    "bbox": {
-      "l": 90.0,
-      "t": 487.65,
-      "r": 690.3,
-      "b": 408.05,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant clearly profiles the customer as Operations Managers at Material Reclamation Facilities (MRFs) and Technical Directors at Electronics Repair Facilities, indicating a focus on the vertical/buyer or user/application of electronic waste management."
   },
   {
@@ -3510,7 +2382,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No P&L, income statement, or balance sheet was provided in the applicant_prose."
   },
   {
@@ -3520,13 +2391,6 @@
     "citation": "We've learned that Operations Managers are constantly triaging mixed waste streams with limited data visibility. Their success hinges on maximizing yield from what comes in, minimizing labor inefficiencies, and staying R2V3 compliant.",
     "source_pdf": "10_2DaLoop_EBD3CustomerSegmentationCompetitiveMatrix_docx.pdf",
     "page_number": 5,
-    "bbox": {
-      "l": 90.0,
-      "t": 392.86,
-      "r": 704.98,
-      "b": 271.87,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The team demonstrates domain expertise and unique customer insight through their understanding of the pain points and challenges faced by Operations Managers in the e-waste industry."
   },
   {
@@ -3536,7 +2400,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of financials breaking out revenues and expenses by major category in the provided documents."
   },
   {
@@ -3546,7 +2409,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The applicant shows previous companies and titles (industry recognition where meaningful) through the listed management team."
   },
   {
@@ -3556,13 +2418,6 @@
     "citation": "We are pursuing a combination of non-dilutive and early-stage equity sources: \u25cf Government Grants: NSF and DOE SBIR programs, Michigan-based CleanTech grants, EPA e-Scrap Prize, State of Michigan mobility/electrification incentives \u25cf Equity Investment: Pre-seed angel investors, impact VCs aligned with circular economy and AI for climate \u25cf Accelerator Funding: Cleantech Open, gener8tor, Centrepolis Accelerator (note not all provide funding though they connect you with potential grants/VCs/Angels \u25cf Corporate Co-Funding: OEM/EPR compliance partners and circular logistics firms piloting API integrations \u25cf Debt Financing: SBA microloan (~$50K) for short-term runway and infrastructure spend",
     "source_pdf": "12_2DaLoop_FinancialProjection.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.75,
-      "t": 719.54,
-      "r": 532.86,
-      "b": 115.92,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant shows how customers and partners fit in by mentioning specific government grants, equity investments, accelerator funding, corporate co-funding, and debt financing options, indicating a clear understanding of their funding strategy and potential partnerships."
   },
   {
@@ -3572,7 +2427,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of pre-tax profit (loss), cash flow, capital requirements, and headcount in the provided financial projections."
   },
   {
@@ -3582,7 +2436,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The presentation clearly shows what customers buy and how they buy it, with specific examples of the products and services offered to each customer segment."
   },
   {
@@ -3592,13 +2445,6 @@
     "citation": "While our core founding team brings strong technical expertise in engineering, automation, and cybersecurity, we've been intentional about surrounding ourselves with experienced advisors and accelerator mentors to fill gaps and strengthen execution capacity across key business functions.",
     "source_pdf": "15_2DaLoop_M8Questions_docx_-_Google_Docs.pdf",
     "page_number": 3,
-    "bbox": {
-      "l": 89.02,
-      "t": 719.24,
-      "r": 533.6,
-      "b": 76.31,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The CEO, George Mitri, has acknowledged the importance of hiring people with skills better than their own, indicating a willingness to surround themselves with experienced advisors and accelerator mentors to fill gaps and strengthen execution capacity."
   },
   {
@@ -3608,13 +2454,6 @@
     "citation": "Parent Company - Mecca Innovation & Technology: Provides foundational engineering, cybersecurity, and automation expertise",
     "source_pdf": "05_2DaLoop_-_Business_Model_Canvas.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 24.19,
-      "t": 379.65,
-      "r": 133.89,
-      "b": 375.96,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant shows the Board of Directors by mentioning the parent company, Mecca Innovation & Technology, which provides foundational engineering, cybersecurity, and automation expertise."
   },
   {
@@ -3624,7 +2463,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "The company presents thorough and thoughtful financials, including a three-year financial projection spreadsheet and a detailed breakdown of revenue and costs."
   },
   {
@@ -3634,13 +2472,6 @@
     "citation": "We are preparing to file a provisional patent that protects our modular ERP ingestion layer, machine-learning-based classification system, and the geospatially optimized suggestion engine. Additional claims may follow in a full non-provisional application based on initial partner deployments.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.58,
-      "t": 719.84,
-      "r": 533.56,
-      "b": 91.24,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant has shown that they are taking steps to protect their intellectual property, specifically mentioning the filing of a provisional patent and potential future non-provisional applications."
   },
   {
@@ -3650,7 +2481,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of when the Company expects to become cash-flow positive was found in the provided documents."
   },
   {
@@ -3660,13 +2490,6 @@
     "citation": "Team Target #1: Present the demo tool to at least 10 potential partners by September 15th to validate burden-shift reduction benefits and gather feedback for the launch.",
     "source_pdf": "03_2025_Team_Targets_docx.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 53.4,
-      "t": 651.23,
-      "r": 559.2,
-      "b": 266.1,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has defined milestone targets, specifically presenting the demo tool to at least 10 potential partners by September 15th."
   },
   {
@@ -3676,7 +2499,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No evidence of a $100M/yr run rate by year 5 in the provided financial projections."
   },
   {
@@ -3686,7 +2508,6 @@
     "citation": null,
     "source_pdf": null,
     "page_number": null,
-    "bbox": null,
     "rationale": "No 3- or 5-year financial projection model was provided; the submission only contains the competition assignment template instructions."
   },
   {
@@ -3696,13 +2517,6 @@
     "citation": "We are pursuing a combination of non-dilutive and early-stage equity sources: \u25cf Government Grants: NSF and DOE SBIR programs, Michigan-based CleanTech grants, EPA e-Scrap Prize, State of Michigan mobility/electrification incentives \u25cf Equity Investment: Pre-seed angel investors, impact VCs aligned with circular economy and AI for climate \u25cf Accelerator Funding: Cleantech Open, gener8tor, Centrepolis Accelerator (note not all provide funding though they connect you with potential grants/VCs/Angels \u25cf Corporate Co-Funding: OEM/EPR compliance partners and circular logistics firms piloting API integrations \u25cf Debt Financing: SBA microloan (~$50K) for short-term runway and infrastructure spend",
     "source_pdf": "12_2DaLoop_FinancialProjection.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.75,
-      "t": 719.54,
-      "r": 532.86,
-      "b": 115.92,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant profiles critical partner relationships, including government grants, equity investment, accelerator funding, corporate co-funding, and debt financing, indicating a comprehensive approach to securing funding and support."
   },
   {
@@ -3712,13 +2526,6 @@
     "citation": "We are pursuing formal patent filings supported by a prior art review. Our approach aligns with known IP defensibility standards, including process novelty, automation, and systems-level integration. Our process creates a nature data moat as we collect and process data.",
     "source_pdf": "14_2DaLoop_M7Questions.pdf",
     "page_number": 1,
-    "bbox": {
-      "l": 89.35,
-      "t": 522.9,
-      "r": 533.26,
-      "b": 76.7,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The company has demonstrated tangible competitive barriers through patent filings and prior art review, which aligns with known IP defensibility standards."
   },
   {
@@ -3728,13 +2535,6 @@
     "citation": "We are pursuing a combination of non-dilutive and early-stage equity sources: ... We are estimating onboarding: 50 MRFs = $75,000, 500 repair centers = $450,000, 100 OEMs/enterprises = $500,000 This mix would generate ~$1.025M, validating a path to $1M+ in revenue within 12 months of launch.",
     "source_pdf": "12_2DaLoop_FinancialProjection.pdf",
     "page_number": 2,
-    "bbox": {
-      "l": 89.75,
-      "t": 719.54,
-      "r": 532.86,
-      "b": 115.92,
-      "coord_origin": "CoordOrigin.BOTTOMLEFT"
-    },
     "rationale": "The applicant's financial projections indicate that they expect their first revenues within 12 months of launch, with a mix of onboarding 50 MRFs, 500 repair centers, and 100 OEMs/enterprises generating ~$1.025M."
   }
 ]

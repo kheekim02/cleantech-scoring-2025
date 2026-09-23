@@ -103,7 +103,6 @@ class TestDoclingIngestion(unittest.TestCase):
         first = chunks[0]
         self.assertIn("chunk_id", first)
         self.assertIn("page_no", first)
-        self.assertIn("bbox", first)
         self.assertIn("text", first)
         self.assertIn("type", first)
         self.assertIsInstance(first["page_no"], int)

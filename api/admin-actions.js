@@ -78,6 +78,29 @@ module.exports = async (req, res) => {
 
       await client.end();
       return res.status(200).json({ success: true, deleted: judge_id });
+    } else if (action === 'RESET_JUDGE_PASSWORD') {
+      const { judge_id, new_password } = data || {};
+      if (!judge_id || !new_password) throw new Error("Missing scorer ID or new password");
+
+      const passwordError = validateNewPassword(new_password);
+      if (passwordError) {
+        await client.end();
+        return res.status(400).json({ error: passwordError });
+      }
+
+      const passwordHash = await hashPassword(new_password);
+      const updateRes = await client.query('UPDATE judges SET password_hash = $1 WHERE judge_id = $2', [passwordHash, judge_id]);
+      if (updateRes.rowCount === 0) {
+        await client.end();
+        return res.status(404).json({ error: "Scorer not found" });
+      }
+
+      // Revoke any active sessions for this judge to force re-login with the new password
+      await client.query("UPDATE auth_sessions SET revoked_at = NOW() WHERE role = 'scorer' AND principal_id = $1 AND revoked_at IS NULL", [judge_id]);
+      await client.query("INSERT INTO auth_audit_log (role, principal_id, action) VALUES ('admin', $1, 'SCORER_PASSWORD_RESET')", [session.principalId]);
+
+      await client.end();
+      return res.status(200).json({ success: true, message: `Password reset successfully for ${judge_id}` });
     } else {
       await client.end();
       return res.status(400).json({ error: "Unknown action" });
