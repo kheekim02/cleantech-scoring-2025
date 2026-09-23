@@ -109,6 +109,39 @@ class TestDoclingIngestion(unittest.TestCase):
         self.assertIsInstance(first["page_no"], int)
         self.assertGreaterEqual(first["page_no"], 1)
 
+    def test_05_financial_scaffolding_filtered(self):
+        """Verify M6/Financial template prompt questions and instructions are filtered out."""
+        from scripts.docling_ingestion import clean_scaffolding_from_chunks
+
+        raw_chunks = [
+            {
+                "chunk_id": "m6_1",
+                "page_no": 2,
+                "bbox": {"l": 90.0, "t": 689.74, "r": 515.54, "b": 665.34, "coord_origin": "BOTTOMLEFT"},
+                "type": "paragraph",
+                "text": (
+                    "For the financial projection model, you will use information from above and from previous "
+                    "assignment sheets: Use your work in Module 3 (Product/Market Fit) to project first-year revenues "
+                    "for your validated targeted subsegment. Subsequent years might reflect second and third target "
+                    "subsegment revenues, if you have sufficiently penetrated the first subsegment by then."
+                ),
+            },
+            {
+                "chunk_id": "m6_2",
+                "page_no": 1,
+                "bbox": {"l": 49.15, "t": 733.79, "r": 547.67, "b": 341.51, "coord_origin": "BOTTOMLEFT"},
+                "type": "table",
+                "text": "| 3-Year Financial Projection | 2029: $707k | 2030: $4.24M | 2031: $11.3M |",
+            },
+        ]
+
+        cleaned = clean_scaffolding_from_chunks(raw_chunks, doc_type="M6", catalog_path=self.catalog_path)
+        texts = [c["text"] for c in cleaned]
+        self.assertEqual(len(texts), 1)
+        self.assertIn("3-Year Financial Projection", texts[0])
+        self.assertNotIn("For the financial projection model", texts[0])
+
 
 if __name__ == "__main__":
     unittest.main()
+

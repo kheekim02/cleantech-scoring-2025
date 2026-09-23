@@ -96,10 +96,14 @@ window.AdminApp = {
       select.appendChild(opt);
       
       // List item
+      const safeId = j.judge_id.replace(/'/g, "\\'");
       listHtml += `
-        <div style="display: flex; justify-content: space-between; padding: 10px; border-bottom: 1px solid var(--border);">
-          <strong style="color: var(--accent-blue);">${j.judge_id}</strong>
-          <span style="font-size: 11px; color: var(--text-muted);">Password protected</span>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; border-bottom: 1px solid var(--border);">
+          <div>
+            <strong style="color: var(--accent-blue); font-size: 13px;">${j.judge_id}</strong>
+            <span style="font-size: 11px; color: var(--text-muted); display: block;">Password protected</span>
+          </div>
+          <button class="btn btn-delete-scorer" onclick="AdminApp.deleteScorer('${safeId}')" style="background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background 0.15s ease;" onmouseover="this.style.background='#fecaca'" onmouseout="this.style.background='#fee2e2'">Delete</button>
         </div>
       `;
     });
@@ -355,6 +359,40 @@ window.AdminApp = {
       alert("Network error updating assignment");
       this.loadData();
     }
+  },
+
+  async deleteScorer(judge_id) {
+    if (!confirm(`Are you sure you want to permanently delete scorer "${judge_id}"?\n\nThis will remove the account and all their assigned companies.`)) {
+      return;
+    }
+    const msg = document.getElementById('create-msg');
+    try {
+      const res = await fetch('/api/admin-actions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          action: 'DELETE_JUDGE',
+          data: { judge_id }
+        })
+      });
+      if (res.ok) {
+        if (msg) {
+          msg.textContent = `Scorer "${judge_id}" deleted successfully.`;
+          msg.style.color = 'var(--accent-green)';
+        }
+        if (this.selectedJudgeId === judge_id) {
+          this.selectedJudgeId = '';
+          sessionStorage.removeItem('cto_admin_selected_judge');
+        }
+        this.loadData();
+      } else {
+        const err = await res.json();
+        alert("Error: " + (err.error || "Failed to delete scorer"));
+      }
+    } catch (e) {
+      alert("Network error deleting scorer: " + e.message);
+    }
+    if (msg) setTimeout(() => { msg.textContent = ''; }, 3500);
   }
 };
 

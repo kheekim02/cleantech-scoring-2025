@@ -18,6 +18,28 @@ NEGATIVE_CITATION_PATTERNS = [
     r'no direct evidence',
 ]
 
+SCAFFOLDING_CITATION_PATTERNS = [
+    r'(?i)for\s+the\s+financial\s+projection\s+model',
+    r'(?i)use\s+your\s+work\s+in\s+module\s*\d+',
+    r'(?i)use\s+your\s+customer\s+acquisition\s+cost',
+    r'(?i)three\s+year\s+financial\s+projection:',
+    r'(?i)previous\s+assignment\s+sheets',
+    r'(?i)validated\s+targeted\s+subsegment',
+    r'(?i)loose\s+example',
+    r'(?i)blair\s+smith',
+    r'(?i)cleantech\s+open',
+    r'(?i)character\s+limit',
+    r'(?i)do\s+not\s+duplicate',
+    r'(?i)answer\s+the\s+questions\s+below',
+    r'(?i)upload\s+this\s+document',
+    r'(?i)module\s*\d+:\s*[^\n]+assignment',
+    r'(?i)building\s+and\s+exporting\s+your\s+model',
+    r'(?i)to\s+create\s+a\s+single\s+pdf',
+    r'(?i)mac:\s*[\u2018\']print[\u2019\']',
+    r'(?i)essential\s+business\s+deliverable',
+    r'(?i)make\s+sure\s+your\s+assumptions\s+are\s+credibly\s+based',
+]
+
 
 def normalize_text(s: str | None) -> str:
     """Normalize text for invariant fuzzy matching (lowercase, stripped punctuation, normalized whitespace)."""
@@ -38,6 +60,14 @@ def is_negative_citation(text: str | None) -> bool:
     return any(re.search(pat, text_lower) for pat in NEGATIVE_CITATION_PATTERNS)
 
 
+def is_scaffolding_citation(text: str | None) -> bool:
+    """Check if the citation text contains competition template instructions or guide prompts."""
+    if not text:
+        return False
+    text_lower = text.lower()
+    return any(re.search(pat, text_lower) for pat in SCAFFOLDING_CITATION_PATTERNS)
+
+
 def match_citation_to_chunks(
     citation: str | None,
     chunks: list[dict[str, Any]],
@@ -49,7 +79,7 @@ def match_citation_to_chunks(
     if not citation or len(citation.strip()) < 8:
         return None
 
-    if is_negative_citation(citation):
+    if is_negative_citation(citation) or is_scaffolding_citation(citation):
         return None
 
     clean_cit = normalize_text(citation)
@@ -141,7 +171,7 @@ class QuestionEvaluation(BaseModel):
         if not v or not v.strip():
             return None
         v_clean = v.strip()
-        if len(v_clean) < 10 or is_negative_citation(v_clean):
+        if len(v_clean) < 10 or is_negative_citation(v_clean) or is_scaffolding_citation(v_clean):
             return None
         return v_clean
 
@@ -176,7 +206,7 @@ class RawModelExtraction(BaseModel):
         if not v or not v.strip():
             return None
         v_clean = v.strip()
-        if len(v_clean) < 10 or is_negative_citation(v_clean):
+        if len(v_clean) < 10 or is_negative_citation(v_clean) or is_scaffolding_citation(v_clean):
             return None
         return v_clean
 

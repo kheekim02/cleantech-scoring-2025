@@ -66,6 +66,18 @@ module.exports = async (req, res) => {
       
       await client.end();
       return res.status(200).json({ success: true });
+    } else if (action === 'DELETE_JUDGE') {
+      const { judge_id } = data || {};
+      if (!judge_id) throw new Error("Missing scorer ID to delete");
+
+      await client.query('DELETE FROM judge_assignments WHERE judge_id = $1', [judge_id]);
+      await client.query("DELETE FROM auth_sessions WHERE role = 'scorer' AND principal_id = $1", [judge_id]);
+      await client.query('DELETE FROM human_reviews WHERE judge_id = $1', [judge_id]);
+      await client.query('DELETE FROM judges WHERE judge_id = $1', [judge_id]);
+      await client.query("INSERT INTO auth_audit_log (role, principal_id, action) VALUES ('admin', $1, 'SCORER_DELETED')", [session.principalId]);
+
+      await client.end();
+      return res.status(200).json({ success: true, deleted: judge_id });
     } else {
       await client.end();
       return res.status(400).json({ error: "Unknown action" });

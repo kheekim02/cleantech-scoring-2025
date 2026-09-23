@@ -13,13 +13,6 @@ from typing import Any
 logger = logging.getLogger(__name__)
 
 DOC_TYPE_PATTERNS = {
-    'EBD1': [r'Canvas', r'Biz.*Model', r'EBD1', r'M3'],
-    'EBD2': [r'EBD2', r'Impact.*Statement', r'M2'],
-    'EBD3': [r'EBD3', r'Customer.*Segment', r'Competitive.*Matrix', r'M4'],
-    'EBD4': [r'EBD4', r'TechnologyValidation', r'Tech.*Val', r'Patent'],
-    'EBD5': [r'EBD5', r'FinancialProjection', r'Financial', r'M6'],
-    'EBD6': [r'EBD6', r'Executive.*Summary', r'OnePage'],
-    'EBD8': [r'EBD8', r'Pitch', r'Deck', r'Investor.*Pitch'],
     'M1': [r'M1\b', r'Module.*1'],
     'M2': [r'M2\b', r'Module.*2', r'GHG'],
     'M3': [r'M3\b', r'Module.*3'],
@@ -28,6 +21,32 @@ DOC_TYPE_PATTERNS = {
     'M6': [r'M6\b', r'Module.*6'],
     'M7': [r'M7\b', r'Module.*7', r'Legal'],
     'M8': [r'M8\b', r'Module.*8', r'Team'],
+    'EBD1': [r'Canvas', r'Biz.*Model', r'EBD1'],
+    'EBD2': [r'EBD2', r'Impact.*Statement'],
+    'EBD3': [r'EBD3', r'Customer.*Segment', r'Competitive.*Matrix'],
+    'EBD4': [r'EBD4', r'TechnologyValidation', r'Tech.*Val', r'Patent'],
+    'EBD5': [r'EBD5', r'FinancialProjection', r'Financial'],
+    'EBD6': [r'EBD6', r'Executive.*Summary', r'OnePage'],
+    'EBD8': [r'EBD8', r'Pitch', r'Deck', r'Investor.*Pitch'],
+}
+
+DOC_TYPE_CATALOG_MAP = {
+    'EBD1': ['BMC', 'EBD1'],
+    'EBD2': ['EBD2', 'M2', 'GHG', 'Inclusion'],
+    'EBD3': ['EBD3', 'M4'],
+    'EBD4': ['EBD4'],
+    'EBD5': ['FinancialProjection', 'M6', 'EBD5'],
+    'EBD6': ['EBD1_ExecSummary', 'EBD6'],
+    'EBD8': ['EBD8'],
+    'M1': ['M1'],
+    'M2': ['M2', 'GHG', 'Inclusion'],
+    'M3': ['M3'],
+    'M4': ['M4', 'EBD3'],
+    'M5': ['M5'],
+    'M6': ['M6', 'FinancialProjection', 'EBD5'],
+    'M7': ['M7'],
+    'M8': ['M8'],
+    'BMC': ['BMC', 'EBD1'],
 }
 
 UNIVERSAL_SCAFFOLDING_PATTERNS = [
@@ -43,6 +62,14 @@ UNIVERSAL_SCAFFOLDING_PATTERNS = [
     r"(?is)loose\s+example:\s*[\u201c\"'].*?[\u201d\"']\s*",
     r"(?is)example:\s*[\u201c\"']blair\s+smith.*?\(source\s+with\s+more\s+examples\)\s*",
     r'(?i)e\.g\.,\s*(?:add\s+multilingual|partner\s+with\s+hbcus|partner\s+with\s+local|reach\s+500|30%\s+increase|50%\s+increase)[^\n]*',
+    r'(?is)for\s+the\s+financial\s+projection\s+model.*?(?:validation\s+interviews\.?|$)',
+    r'(?is)use\s+your\s+work\s+in\s+module\s*3.*?(?:validation\s+interviews\.?|$)',
+    r'(?is)use\s+your\s+customer\s+acquisition\s+cost\s+in\s+module\s*4[^\n]*',
+    r'(?is)three\s+year\s+financial\s+projection:.*?(?:validation\s+interviews\.?|$)',
+    r'(?is)building\s+and\s+exporting\s+your\s+model:.*?(?:previous\s+one\.?|$)',
+    r'(?is)to\s+create\s+a\s+single\s+pdf.*?(?:print\s+to\s+pdf\.?|$)',
+    r'(?is)module\s*\d+:\s*[^\n]+assignment\s+questions',
+    r'(?is)interview\s+professionals\s+familiar\s+with\s+the[^\n]*',
 ]
 
 _CONVERTER_CACHE = None
@@ -112,7 +139,20 @@ def clean_scaffolding_from_chunks(
 ) -> list[dict[str, Any]]:
     """Filter competition template scaffolding boilerplate out of extracted chunks."""
     catalog = load_scaffolding_catalog(catalog_path)
-    cat_items = catalog.get(doc_type, {}).get('items', []) if doc_type in catalog else []
+    
+    # Collect items from mapped categories as well as global catalog
+    cat_keys = DOC_TYPE_CATALOG_MAP.get(doc_type, [doc_type])
+    cat_items = []
+    for k in cat_keys:
+        if k in catalog:
+            cat_items.extend(catalog[k].get('items', []))
+
+    # Also collect high-confidence multi-word items across all categories
+    for cat_data in catalog.values():
+        for item in cat_data.get('items', []):
+            raw_t = item.get('text', '').strip()
+            if len(raw_t.split()) >= 4:
+                cat_items.append(item)
 
     cleaned_chunks = []
     for chunk in chunks:
@@ -139,8 +179,8 @@ def clean_scaffolding_from_chunks(
         text = re.sub(r'(?m)^\s*[-*•\d\.]+\s*$', '', text)
         text = re.sub(r'\n{3,}', '\n\n', text).strip()
 
-        # If after cleaning the text is empty or meaningless (<3 chars), drop it
-        if len(text) >= 3:
+        # If after cleaning the text is empty or meaningless (<8 chars with no digits/letters), drop it
+        if len(text) >= 8 and re.search(r'[a-zA-Z0-9]', text):
             cleaned_chunk = dict(chunk)
             cleaned_chunk['text'] = text
             cleaned_chunks.append(cleaned_chunk)

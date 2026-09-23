@@ -101,6 +101,23 @@ class TestGroundedExtractor(unittest.TestCase):
         )
         self.assertIsNone(neg_ext.citation, "Negative statements must be sanitized to None")
 
+    def test_05_scaffolding_citation_sanitized(self):
+        """Verify competition instructions like financial projection guide are sanitized to None."""
+        from src.scorer.schemas import RawModelExtraction
+
+        scaff_citation = (
+            "For the financial projection model, you will use information from above and from previous "
+            "assignment sheets: Use your work in Module 3 (Product/Market Fit) to project first-year revenues."
+        )
+        ext = RawModelExtraction(
+            q_id="F_Q27",
+            predicted_val=1.0,
+            confidence=0.9,
+            citation=scaff_citation,
+            rationale="Template text"
+        )
+        self.assertIsNone(ext.citation, "Competition guidance instructions must be sanitized to None")
+
 
 if __name__ == "__main__":
     unittest.main()
