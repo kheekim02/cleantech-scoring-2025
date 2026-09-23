@@ -66,8 +66,10 @@ def query_sglang_question(
         "Do NOT quote instructions or template boilerplate."
     )
 
+    # Cap prefix context to 300,000 chars (~75k tokens) to ensure rapid prefill within 131k window
+    safe_context = prefix_context[:300000] if len(prefix_context) > 300000 else prefix_context
     user_prompt = (
-        f"<applicant_prose>\n{prefix_context}\n</applicant_prose>\n\n"
+        f"<applicant_prose>\n{safe_context}\n</applicant_prose>\n\n"
         f"<rubric_criterion>\n"
         f"ID: {qid}\n"
         f"Category: {question.get('cat_code', 'GENERAL')}\n"
