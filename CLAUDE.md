@@ -1,39 +1,113 @@
-# Startup Scorer AI Workspace Rules & Protocol
+# CleanTech Open 2025 Diligence Engine — AI Workspace Rules & Knowledge Base
 
-This file defines the engineering protocols, prompting standards, and hallucination-reduction safeguards for all AI models working within this repository.
+This file defines the architecture, engineering protocols, prompting standards, data integrity safeguards, and operational knowledge for all AI models working within this repository.
 
 ---
 
-## 1. Core Operating Principles
+## 1. Core System Overview
 
-1. **Zero Hallucination Tolerance on Data:**
+The **CleanTech Open 2025 Diligence Engine** is an end-to-end AI-assisted scoring, diligence, and triage platform for clean technology startups. It enables expert human judges and administrators to evaluate founder submissions across 10 standardized categories using AI-extracted citations, auto-jumping PDF deliverables, and real-time database synchronization.
+
+### Key Architecture Components
+- **Frontend Scoring Portal (`site/index.html`)**: Side-by-side split workspace featuring an embedded PDF viewer (left) with dynamic document switching and auto-jump citation navigation, paired with interactive 282-criteria scoring cards (right).
+- **Admin Dashboard (`site/admin.html`)**: Cohort-level progress tracking, reviewer/judge assignment workflow, filter for clean AI-ready startups (`✓ Ready for Assignment`), and audit CSV exports.
+- **Client Architecture (`site/js/`)**: Vanilla JS modular application:
+  - `app.js`: State management, event delegation, Supabase API communication, rubric modal handlers.
+  - `render.js`: High-velocity DOM rendering for cards, AI suggestion badges, PDF embedder, and document switchers.
+  - `scoring.js`: Dynamic progress calculation, score aggregation, and completion tracking.
+  - `admin.js`: Administrative metrics, bulk judge assignments, and cohort progress filters.
+  - `export.js`: Diligence audit logs and submission exports.
+- **Database & Persistence**: Supabase PostgreSQL with real-time saving on every keystroke/selection:
+  - `startup_extractions`: Master table storing parsed startup payloads (JSONB), reverse-indexed citations, and `clean_ready` metadata.
+  - `human_reviews`: Stores judge scores (`numeric` allowing `0.0`, `0.25`, `0.5`, `0.75`, `1.0`), textual justifications, and reviewer IDs.
+  - `judge_assignments`: Manages evaluator-to-startup allocations and completion statuses.
+- **Serverless API Layer (`api/`)**: Netlify / Supabase edge functions:
+  - `get-startup.js`: Fetches startup payload and hydrates existing judge reviews.
+  - `save-score.js`: Debounced real-time persistence for scores and justifications.
+  - `list-startups.js`: Supplies startup lists and metadata to dashboards.
+
+---
+
+## 2. Master Rubric Standard (282 Criteria)
+
+All diligence evaluation is standardized against **`master_282_rubric.json`**, consisting of exactly **282 questions** across 10 evaluation categories:
+
+| Code | Evaluation Category | Question Count | Question ID Range | Source Deliverable |
+| :--- | :--- | :---: | :--- | :--- |
+| **BC** | Business Canvas | 5 | `BC_Q1` – `BC_Q5` | Business Model Canvas (EBD1) |
+| **ES** | Environmental & Social | 10 | `ES_Q1` – `ES_Q10` | Impact Statement (EBD2) & Sustainability Questions |
+| **F** | Financials | 29 | `F_Q1` – `F_Q29` | 3-Year Financial Projections (EBD5) & Unit Economics |
+| **IP** | Investor Pitch | 58 | `IP_Q1` – `IP_Q58` | Investor Pitch Deck (EBD8) |
+| **IS** | Executive Summary / Impact | 34 | `IS_Q1` – `IS_Q34` | 1-Page Executive Summary (EBD6) & Impact Strategy |
+| **L** | Legal & Governance | 53 | `L_Q1` – `L_Q53` | IP Filings, Corporate Formation, Governance |
+| **M** | Market & Customers | 12 | `M_Q1` – `M_Q12` | Customer Segments & Competitive Matrix (EBD3) |
+| **PMF** | Product Market Fit | 34 | `PMF_Q1` – `PMF_Q34` | Customer Discovery Interviews Log |
+| **T** | Team Targets | 31 | `T_Q1` – `T_Q31` | Hiring Plans, Targets & Milestone Tracking |
+| **TP** | Tech / Product | 16 | `TP_Q1` – `TP_Q16` | Technology Validation (EBD4) |
+| **TOTAL** | **10 Categories** | **282** | | **Standardized CleanTech Open Rubric** |
+
+### Scoring Scale Calibration
+- **Point Scale**: Standardized **0 to 1 point scale**:
+  - `1 PT` (1.0)
+  - `0.75 PTS` (0.75)
+  - `0.5 PTS` (0.5)
+  - `0.25 PTS` (0.25)
+  - `0 PTS` (0.0)
+- **Binary vs. Fractional**: Objective criteria default to binary (`0 PTS` / `1 PT`), while subjective/calibrated criteria support fractional tiers (`0.25`, `0.5`, `0.75`).
+- **Business Canvas Rubric Examples**: The `📄 View Examples` modal for `BC_Q1` through `BC_Q5` provides real-world grading thresholds calibrated to this 0–1 point scale.
+
+---
+
+## 3. Scaffolding Elimination & Clean AI Extraction Pipeline
+
+Founders in CleanTech Open submit standardized templates containing extensive instructions, prompt text, and placeholder examples (scaffolding). If left uncleaned, LLMs hallucinate positive matches by citing the competition's own template instructions.
+
+### Deletion Catalog & Frequency Thresholds
+- All documents are filtered against the **Master Scaffolding Catalog** (`data/MASTER_SCAFFOLDING_CATALOG.md` / `scaffolding_attribution_catalog.txt`).
+- Threshold: Any text string appearing in **> 20% of cohort files** within a deliverable type is flagged as scaffolding and stripped prior to extraction.
+- Covers 15 deliverable types (`EBD2`, `EBD3`, `EBD4`, `M1`–`M8`, `BMC`, `GHG`, `Inclusion`, etc.).
+
+### Extraction Daemon & Remote Execution
+- Extraction daemon: `08_ai_copilot_extractor_clean.py` executed on Spark remote server (`136.24.130.250`).
+- Local cache mirror: `data/ai_cache_clean/` (93 files, 92 active startups).
+- Expanded Citation Capture: Citations capture full multi-sentence context rather than truncated fragments.
+- **Current Status**: **100% of 92 active startups** in Supabase are fully extracted and stamped with `payload.meta.clean_ready = true`.
+
+---
+
+## 4. Reverse-Indexing & Citation Page Mapping
+
+Extracted citations are mapped back to their original PDF deliverables so judges can verify evidence with a single click.
+
+### Multi-Tier Normalized Fuzzy Matcher (`13_push_clean_extractions_to_supabase.py`)
+1. **Tier 1 (Exact Match)**: Normalized character sequence matching against full PDF text.
+2. **Tier 2 (8-Word Prefix)**: First 8 normalized words matched against page text corpus.
+3. **Tier 3 (5-Word Prefix)**: 5-word prefix match for specific terminology (>15 chars).
+4. **Tier 4 (Quoted Substrings)**: Regex-extracted quote fragments (>10 chars).
+- **Match Rate**: **16,006 of 17,278 citations (92.6%)** matched to exact PDF filename and page number.
+- In the scoring UI, clicking `🔗 View AI Citation (p. X)` auto-switches the viewer to the correct PDF and jumps directly to page `X`.
+
+---
+
+## 5. Engineering Protocols & Grounding Standards
+
+1. **Zero Hallucination Tolerance:**
    - Never invent financial numbers, valuation multiples, patent counts, or founder pedigree.
-   - If an artifact (PDF, spreadsheet, transcript) lacks information for a rubric question, explicitly output `"STATUS: INSUFFICIENT_DATA"`. Never guess.
-
-2. **Grounded Extraction (Verbatim Citation Requirement):**
-   - Every score or qualitative claim extracted from a startup document MUST be backed by a verbatim text snippet (`<source_quote>`) and document name/page number.
-
-3. **Deterministic Structure (XML + JSON):**
-   - Use XML tags (`<context>`, `<rubric>`, `<thinking>`, `<output>`) to strictly separate instructions from raw startup documents.
-   - Machine-readable outputs must be strict, valid JSON conforming to defined Pydantic schemas.
-
-4. **Token Efficiency & Prompt Caching:**
-   - Keep static system prompts, 10-category rubrics, and few-shot calibration examples at the TOP of the prompt context to maximize KV-cache reuse.
-   - Place variable startup documents at the BOTTOM.
+   - If an artifact lacks evidence for a question, output `"STATUS: INSUFFICIENT_DATA"` or award `0 PTS`.
+2. **Mandatory Human Review:**
+   - AI suggestions (`⚡ 1.0 PT | 95% Conf`) solely measure whether explicit text was found in founder documents.
+   - Judges must click the citation, inspect context in the PDF viewer, and verify credibility. Judges have full authority to override AI scores.
+3. **Deterministic Output & Schema Conformance:**
+   - All machine-readable outputs must be strict, valid JSON conforming to the 282-question schema.
+4. **Git Hygiene & Commit Discipline:**
+   - Atomic commits following Conventional Commits (`feat:`, `fix:`, `refactor:`, `docs:`, `chore:`).
+   - Pre-commit verification: verify scripts, tests, and builds cleanly before committing.
 
 ---
 
-## 2. Directory Architecture
-- `data/raw/`: Read-only ground-truth files (Cleaned scores, outcomes CSV, question rubrics).
-- `data/processed/`: Standardized, entity-resolved datasets.
-- `src/ingestion/`: Multi-format parsers (PDF, Excel, Video markdown).
-- `src/models/`: Scoring algorithms and survival classifiers.
-- `src/pipeline/`: End-to-end deal intake and memo generators.
+## 6. Operational Documentation & Sync
 
----
-
-## 3. Evaluation Standards
-- **High-Conviction Weights:** Prioritize Tech & Product (25%), Business Canvas (20%), Pitch (15%), and Financials (15%).
-- **Objective vs Subjective:**
-  - Objective (1): Deterministic extraction (patent filings, revenue timelines, 3rd-party lab validation).
-  - Subjective (0): Scored with few-shot calibration and confidence scores (0.0 - 1.0). If confidence < 0.70, flag for Human-in-the-Loop review.
+Tutorial manuals are generated via Chrome headless and kept synchronized on the user's Desktop:
+- **Scorer Tutorial**: `/Users/geoffrey/Desktop/CleanTech_Open_Scorer_Tutorial.pdf` (5 pages)
+- **Admin Tutorial**: `/Users/geoffrey/Desktop/CleanTech_Open_Admin_Tutorial.pdf` (6 pages)
+- Generator script: `venv/bin/python3 scripts/generate_tutorials.py`
