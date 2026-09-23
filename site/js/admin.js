@@ -104,7 +104,7 @@ window.AdminApp = {
             <span style="font-size: 11px; color: var(--text-muted); display: block;">Password protected</span>
           </div>
           <div style="display: flex; gap: 6px; align-items: center;">
-            <button class="btn btn-reset-pass" onclick="AdminApp.resetPassword('${safeId}')" style="background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background 0.15s ease;" onmouseover="this.style.background='#bae6fd'" onmouseout="this.style.background='#e0f2fe'">Reset Pass</button>
+            <button class="btn btn-reset-pass" onclick="AdminApp.resetPassword('${safeId}')" style="background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background 0.15s ease;" onmouseover="this.style.background='#bae6fd'" onmouseout="this.style.background='#e0f2fe'">Reset</button>
             <button class="btn btn-delete-scorer" onclick="AdminApp.deleteScorer('${safeId}')" style="background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background 0.15s ease;" onmouseover="this.style.background='#fecaca'" onmouseout="this.style.background='#fee2e2'">Delete</button>
           </div>
         </div>

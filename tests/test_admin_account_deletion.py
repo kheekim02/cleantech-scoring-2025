@@ -43,11 +43,12 @@ class TestAdminAccountDeletion(unittest.TestCase):
         self.assertIn("SCORER_PASSWORD_RESET", content)
 
     def test_05_frontend_reset_password_method_and_button_exists(self):
-        """Verify site/js/admin.js implements resetPassword and renders Reset Pass button."""
+        """Verify site/js/admin.js implements resetPassword and renders Reset button."""
         content = self.admin_js.read_text(encoding="utf-8")
         self.assertIn("resetPassword(", content)
         self.assertIn("RESET_JUDGE_PASSWORD", content)
         self.assertIn("btn-reset-pass", content)
+        self.assertIn(">Reset</button>", content)
         self.assertIn("AdminApp.resetPassword", content)
 
     def test_06_backend_export_scores_endpoint_exists(self):
