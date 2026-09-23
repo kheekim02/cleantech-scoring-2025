@@ -7,11 +7,12 @@
   <style>
     @page { size: letter; margin: 14mm; }
     * { box-sizing: border-box; }
-    body { margin: 0; color: #1d2532; font: 11pt/1.5 Arial, sans-serif; }
-    header { color: white; background: linear-gradient(135deg,#192235,#087566); border-radius: 12px; padding: 28px; }
-    header .eyebrow { font: bold 10pt monospace; letter-spacing: .08em; color: #a7f3d0; text-transform: uppercase; }
-    h1 { margin: 5px 0 8px; font-size: 26pt; line-height: 1.1; }
-    h2 { margin: 28px 0 12px; padding-bottom: 6px; color: #087566; border-bottom: 2px solid #dce8e5; font-size: 18pt; }
+    body { margin: 0; color: #172033; font: 11pt/1.5 Arial, sans-serif; }
+    header { padding: 0; margin: 0 0 20px; }
+    header .eyebrow { font: bold 10pt monospace; letter-spacing: .08em; color: #075e54; text-transform: uppercase; }
+    h1 { margin: 5px 0 8px; color: #075e54; font-size: 26pt; font-weight: 700; line-height: 1.1; }
+    header p { color: #172033; }
+    h2 { margin: 28px 0 12px; padding-bottom: 5px; color: #075e54; border-bottom: 2px solid #d9e5e2; font-size: 18pt; }
     h3 { margin: 20px 0 7px; font-size: 13pt; }
     p, li { margin: 0 0 9px; }
     ol, ul { margin: 8px 0 14px; padding-left: 25px; }
@@ -19,8 +20,8 @@
     .notice, .tip { margin: 14px 0; padding: 13px 16px; border-radius: 7px; }
     .notice { background: #fff8e8; border-left: 4px solid #ba7a10; }
     .tip { background: #edf9f6; border-left: 4px solid #087566; }
-    .shot { margin: 14px 0 20px; border: 1px solid #d8dfdf; border-radius: 9px; overflow: hidden; page-break-inside: avoid; }
-    .shot img { display: block; width: 100%; height: auto; }
+    .shot { margin: 14px 0 20px; border: 1px solid #d8dfdf; border-radius: 9px; overflow: hidden; break-inside: avoid; page-break-inside: avoid; }
+    .shot img { display: block; width: auto; max-width: 100%; max-height: 4.75in; height: auto; margin: 0 auto; object-fit: contain; object-position: top; }
     .caption { padding: 8px 12px; background: #f6f8f8; color: #53616b; font-size: 9.5pt; }
     .step { margin: 13px 0; padding: 13px 15px; border: 1px solid #dce4e4; border-radius: 8px; background: #fbfdfd; }
     .num { display: inline-grid; place-items: center; width: 25px; height: 25px; margin-right: 7px; border-radius: 50%; color: white; background: #087566; font-weight: bold; }
@@ -76,8 +77,8 @@
   <table>
     <thead><tr><th>Text field type</th><th>Questions</th><th>Submission effect</th></tr></thead>
     <tbody>
-      <tr><td class="required">Justification required</td><td>BC_Q1, BC_Q2, BC_Q4, BC_Q5, TP_Q15</td><td>A score and non-empty justification are required before final submission.</td></tr>
-      <tr><td class="optional">Optional note</td><td>BC_Q3, IS_Q7, IS_Q16, PMF_Q15, PMF_Q17, TP_Q13, TP_Q14, F_Q22, F_Q23, F_Q24, IP_Q22, IP_Q50</td><td>The score alone is sufficient. Add context only when it would help explain your judgment.</td></tr>
+      <tr><td class="required">Justification required</td><td>BC_Q1, BC_Q2, BC_Q4, BC_Q5</td><td>A score and non-empty justification are required before final submission.</td></tr>
+      <tr><td class="optional">Optional note</td><td>BC_Q3, IS_Q7, IS_Q16, PMF_Q15, PMF_Q17, TP_Q13, TP_Q14, TP_Q15, F_Q22, F_Q23, F_Q24, IP_Q22, IP_Q50</td><td>The score alone is sufficient. Add context only when it would help explain your judgment.</td></tr>
     </tbody>
   </table>
   <p>For Business Canvas questions, select <strong>View Examples</strong> when you need the rubric examples. For all required justifications, state the relevant evidence and why it supports the score.</p>
@@ -87,7 +88,7 @@
   <div class="shot"><img src="tutorial_assets/scorer_workflow_2026-09-22/07-section-complete.png" alt="Completed section with Next Section button"><div class="caption">A completed section shows its answered count. Select Next Section to continue through all ten sections.</div></div>
   <ol>
     <li>Complete every score in all ten sections.</li>
-    <li>Complete the five required justifications listed above.</li>
+    <li>Complete the four required justifications listed above.</li>
     <li>Confirm the active company name and wait until the header says <strong>Saved</strong>.</li>
     <li>Review scores for consistency, especially where source evidence was limited or jargon obscured the claim.</li>
     <li>Select the green <strong>Submit Evaluation</strong> button, resolve any audit items, and select <strong>Confirm and Submit</strong> only when ready to finalize.</li>

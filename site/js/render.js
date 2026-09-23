@@ -211,7 +211,7 @@ window.CTO.Render = {
         
         
         const noteQuestionIds = new Set(['BC_Q1', 'BC_Q2', 'BC_Q3', 'BC_Q4', 'BC_Q5', 'IS_Q7', 'IS_Q16', 'PMF_Q15', 'PMF_Q17', 'TP_Q13', 'TP_Q14', 'TP_Q15', 'F_Q22', 'F_Q23', 'F_Q24', 'IP_Q22', 'IP_Q50']);
-        const requiredJustificationIds = new Set(['BC_Q1', 'BC_Q2', 'BC_Q4', 'BC_Q5', 'TP_Q15']);
+        const requiredJustificationIds = new Set(['BC_Q1', 'BC_Q2', 'BC_Q4', 'BC_Q5']);
         const showsNote = noteQuestionIds.has(q.new_q_id);
         const requiresJustification = requiredJustificationIds.has(q.new_q_id);
         const existingJustification = humanJustifications[q.new_q_id] || '';

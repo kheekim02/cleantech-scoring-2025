@@ -518,7 +518,7 @@ CTO.App = {
     const sEval = this.state.evaluations[sId];
     
     
-    const requiredJustificationIds = new Set(['BC_Q1', 'BC_Q2', 'BC_Q4', 'BC_Q5', 'TP_Q15']);
+    const requiredJustificationIds = new Set(['BC_Q1', 'BC_Q2', 'BC_Q4', 'BC_Q5']);
     const missingQs = sData.human_questions.filter(q => {
       const hasAnswer = sEval.humanAnswers[q.new_q_id] !== undefined && sEval.humanAnswers[q.new_q_id] !== null;
       const justification = sEval.humanJustifications?.[q.new_q_id] || '';
