@@ -75,6 +75,23 @@ class TestAdminAccountDeletion(unittest.TestCase):
         content = export_script.read_text(encoding="utf-8")
         self.assertIn("def export_scores(", content)
 
+    def test_09_password_visibility_toggle_implemented(self):
+        """Verify site/admin.html and site/js/admin.js implement password visibility toggle."""
+        admin_html = (self.root / "site" / "admin.html").read_text(encoding="utf-8")
+        self.assertIn("AdminApp.togglePassVisibility('new-judge-pass'", admin_html)
+        self.assertIn("AdminApp.togglePassVisibility('auth-admin-pass'", admin_html)
+        content = self.admin_js.read_text(encoding="utf-8")
+        self.assertIn("togglePassVisibility(inputId, btn)", content)
+        self.assertIn("input.type = isPassword ? 'text' : 'password'", content)
+
+    def test_10_create_scorer_displays_temporary_password(self):
+        """Verify createScorer displays created credentials in success banner and resets password field."""
+        content = self.admin_js.read_text(encoding="utf-8")
+        self.assertIn("Temporary password:", content)
+        self.assertIn("escapeHtml(new_password)", content)
+        self.assertIn("escapeHtml(str)", content)
+
 
 if __name__ == "__main__":
     unittest.main()
+

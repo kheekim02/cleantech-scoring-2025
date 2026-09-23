@@ -288,6 +288,29 @@ window.AdminApp = {
     return `<span style="color: #0369a1; font-size: 11px; font-weight: 600; margin-left: 10px; border: 1px solid #7dd3fc; padding: 2px 6px; border-radius: 4px; background: #f0f9ff;">Assigned ${dateText} · ${elapsedText}</span>`;
   },
 
+  escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  },
+
+  togglePassVisibility(inputId, btn) {
+    const input = document.getElementById(inputId);
+    if (!input) return;
+    const isPassword = input.type === 'password';
+    input.type = isPassword ? 'text' : 'password';
+    if (btn) {
+      btn.innerHTML = isPassword
+        ? '🙈 <span class="pass-toggle-label">Hide</span>'
+        : '👁️ <span class="pass-toggle-label">Show</span>';
+      btn.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
+    }
+  },
+
   async createScorer() {
     const idInput = document.getElementById('new-judge-id');
     const passInput = document.getElementById('new-judge-pass');
@@ -313,10 +336,16 @@ window.AdminApp = {
       });
       
       if (res.ok) {
-        msg.textContent = "Scorer created successfully!";
+        msg.innerHTML = `✓ Scorer <strong>${this.escapeHtml(new_judge_id)}</strong> created!<br><span style="font-size:12px; color:var(--text-muted);">Temporary password:</span> <code style="background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:4px; font-weight:700;">${this.escapeHtml(new_password)}</code>`;
         msg.style.color = 'var(--accent-green)';
         idInput.value = '';
         passInput.value = '';
+        passInput.type = 'password';
+        const toggleBtn = document.getElementById('toggle-new-pass-btn');
+        if (toggleBtn) {
+          toggleBtn.innerHTML = '👁️ <span class="pass-toggle-label">Show</span>';
+          toggleBtn.setAttribute('aria-label', 'Toggle password visibility');
+        }
         this.loadData(); // refresh list
       } else {
         const err = await res.json();
@@ -328,7 +357,7 @@ window.AdminApp = {
       msg.style.color = 'var(--accent-red)';
     }
     
-    setTimeout(() => { msg.textContent = ''; }, 3000);
+    setTimeout(() => { msg.textContent = ''; }, 12000);
   },
 
   async toggleAssignment(judge_id, startup_id, assigned) {
