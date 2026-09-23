@@ -95,7 +95,7 @@ window.CTO.Render = {
     }
   },
 
-  jumpToCitation(pdfFilename, pageNumber) {
+  jumpToCitation(pdfFilename, pageNumber, bbox = null) {
     if (!pdfFilename) return;
     const selector = document.getElementById('universal-pdf-selector');
     if (!selector) return;
@@ -189,13 +189,17 @@ window.CTO.Render = {
         // Prepare citation block
         const pageLabel = q.page_number ? ` (Page ${q.page_number})` : '';
         const docBadge = q.source_pdf ? `<span style="font-family: monospace; font-size: 11px; background: rgba(0,0,0,0.06); padding: 2px 6px; border-radius: 4px; color: var(--text-main); font-weight: 500;">📄 ${this.escapeHtml(q.source_pdf)}</span>` : '';
+        const bboxBadge = q.bbox ? `<span style="font-family: monospace; font-size: 11px; background: rgba(37,99,235,0.08); color: #1d4ed8; padding: 2px 6px; border-radius: 4px; font-weight: 500;" title="Bounding box: left=${q.bbox.l}, top=${q.bbox.t}">🎯 [${Math.round(q.bbox.l)}, ${Math.round(q.bbox.t)}]</span>` : '';
         const citeHint = q.page_number ? `Switched viewer to Page ${q.page_number}. Use Cmd+F / Ctrl+F in the document to locate exact text.` : `Use Cmd+F / Ctrl+F in the PDF viewer to locate this text.`;
 
         const citeHtml = hasCitation ? `
           <div class="h-card-citation" style="display: none; padding: 12px; background: #fff8e1; border-left: 3px solid var(--accent-yellow); margin: 0 0 16px 0; font-size: 13px; color: var(--text-main);">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 6px;">
               <strong style="color: var(--accent-orange);">AI Citation${pageLabel}:</strong>
-              ${docBadge}
+              <div style="display: flex; gap: 6px; align-items: center;">
+                ${docBadge}
+                ${bboxBadge}
+              </div>
             </div>
             "${this.escapeHtml(q.verbatim_citation)}"<br>
             <em class="ai-citation-disclaimer">AI-extracted citation — verify it against the source document before relying on it.</em>
@@ -206,7 +210,8 @@ window.CTO.Render = {
         const linkPageText = q.page_number ? ` (p. ${q.page_number})` : '';
         const safePdf = (q.source_pdf || '').replace(/"/g, '&quot;');
         const safePage = q.page_number || '';
-        const linkHtml = hasCitation ? `<a href="#" class="link-source" data-action="toggle-cite" data-pdf="${safePdf}" data-page="${safePage}">${this.icons.link} View AI Citation${linkPageText}</a>` : `<span style="color:var(--text-faint); font-size:13px;">No citation extracted</span>`;
+        const safeBbox = q.bbox ? this.escapeHtml(JSON.stringify(q.bbox)) : '';
+        const linkHtml = hasCitation ? `<a href="#" class="link-source" data-action="toggle-cite" data-pdf="${safePdf}" data-page="${safePage}" data-bbox="${safeBbox}">${this.icons.link} View AI Citation${linkPageText}</a>` : `<span style="color:var(--text-faint); font-size:13px;">No citation extracted</span>`;
 
         
         

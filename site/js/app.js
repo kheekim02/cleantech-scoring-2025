@@ -159,7 +159,11 @@ CTO.App = {
             
             // Auto-jump viewer to document & page when opening citation
             if (isHidden && link.dataset.pdf) {
-              CTO.Render.jumpToCitation(link.dataset.pdf, link.dataset.page);
+              let parsedBbox = null;
+              if (link.dataset.bbox) {
+                try { parsedBbox = JSON.parse(link.dataset.bbox); } catch (err) {}
+              }
+              CTO.Render.jumpToCitation(link.dataset.pdf, link.dataset.page, parsedBbox);
             }
           }
         }
