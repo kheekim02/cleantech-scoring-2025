@@ -55,18 +55,19 @@ Evaluation is standardized across 10 categories in [`master_282_rubric.json`](./
 │   ├── get-startup.js          # Hydrates startup payload and judge reviews
 │   ├── save-score.js           # Debounced persistence for score & justification
 │   └── list-startups.js        # Supplies queue listings to dashboards
-├── scripts/                    # Automation & pipeline utilities
+├── src/                        # Python scoring core and pipeline modules
+├── scripts/                    # Automation, ingestion & pipeline utilities
+│   ├── 08_ai_copilot_extractor_clean.py # Clean extraction daemon
+│   ├── 13_push_clean_extractions_to_supabase.py # Reverse-indexing & database sync
 │   ├── generate_tutorials.py   # Headless Chrome generator for PDF manuals
-│   └── extract_scaffolding_catalog.py # Cross-corpus scaffolding frequency analyzer
-├── docs/                       # Documentation & generated guides
+│   ├── extract_scaffolding_catalog.py # Cross-corpus scaffolding frequency analyzer
+│   └── archive/                # Archived one-off utilities, DB ops, and legacy scripts
+├── tests/                      # Automated test suite (pytest)
+├── docs/                       # Documentation, generated guides, and samples
 │   ├── CleanTech_Open_Scorer_Tutorial.pdf # Judge guidance manual (5 pages)
 │   └── CleanTech_Open_Admin_Tutorial.pdf  # Admin operations manual (6 pages)
-├── data/
-│   ├── raw/                    # Raw founder deliverables and ground-truth CSVs
-│   ├── ai_cache_clean/         # Local mirror of 93 clean extraction JSONs
-│   └── MASTER_SCAFFOLDING_CATALOG.md # Documented competition template text
-├── master_282_rubric.json      # Ground-truth 282-question diligence rubric
-└── 13_push_clean_extractions_to_supabase.py # Reverse-indexing & database sync
+├── data/                       # Ground-truth datasets and scaffolding catalogs
+└── master_282_rubric.json      # Ground-truth 282-question diligence rubric
 ```
 
 ---
@@ -79,23 +80,42 @@ Evaluation is standardized across 10 categories in [`master_282_rubric.json`](./
 - Google Chrome (for headless PDF generation)
 
 ### 2. Environment Setup
-Create a `.env` file in the project root:
+Copy the template and fill in your credentials:
+```bash
+cp .env.example .env
+```
+Key variables:
 ```env
 DATABASE_URL=postgresql://postgres:[PASSWORD]@[HOST]:6543/postgres
 SUPABASE_URL=https://[PROJECT_ID].supabase.co
 SUPABASE_ANON_KEY=[ANON_KEY]
 ```
 
-### 3. Running the Web Application
+### 3. Installing Dependencies
+```bash
+# Python dependencies
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+# Node dependencies
+npm install
+```
+
+### 4. Running the Web Application
 ```bash
 # Serve the site directory locally
-npx serve site
+npx serve site -p 3000
 # Scorer portal: http://localhost:3000/index.html
 # Admin dashboard: http://localhost:3000/admin.html
 ```
 
-### 4. Compiling & Syncing PDF Manuals
+### 5. Running Tests
 ```bash
-python3 scripts/generate_tutorials.py
-# Generates and syncs updated PDF manuals directly to your Desktop.
+# Run automated regression tests
+pytest
 ```
+
+### 6. Contributing
+Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for branch strategy, commit conventions, and development guidelines.
+

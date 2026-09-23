@@ -1,0 +1,6128 @@
+{
+  "meta": {
+    "total_documents": 1483,
+    "ai_classified": 1483,
+    "regex_fallback": 0,
+    "duration_seconds": 2996.9465453624725
+  },
+  "mappings": {
+    "17": {
+      "11_17Inc_InvestorPitchDeck.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_17Inc_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_Seneca_17_letter_for_CalSEED_05282024.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_17Inc_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "02_17_Inc_-_Biz_Model_Canvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_17Inc_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_17Inc_OnePageExecutiveSummary.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "06_17Inc_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_17Inc_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_17Inc_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_17Inc_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "2DaLoop": {
+      "15_2DaLoop_M8Questions_docx_-_Google_Docs.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_2DaLoop_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_2DaLoop_M7Questions.pdf.pdf": {
+        "cat_code": "IP",
+        "source": "AI"
+      },
+      "09_2DaLoop_M4Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_2DaLoop_Revenue_Projections_-_SBIR.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_2DaLoop_2025_FinancialProjectionTemplate.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "18_2DaLoop_Turning_E-Waste_Into_Valueable_Assets.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_2DaLoop_2025_Inclusion_Assignment_-_Google_Docs.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_2DaLoop_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "03_2025_Team_Targets_docx.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "05_2DaLoop_-_Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_2DaLoop_Executive_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_2DaLoop_EBD3CustomerSegmentationCompetitiveMatrix_docx.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "08_2DaLoop_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_2DaLoop_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_2DaLoop_-_Slide_Deck_-_2025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_2DaLoop_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_CTO_Customer_Discovery_-_Google_Sheets.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "AmpTrans": {
+      "10_AmpTrans_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_AmpTrans_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_AmpTrans_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "09_AmpTrans_EBD3CustomerSegmentationCompetitiveMatrix_v2pdf.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "02_AmpTrans_2025TeamTargets_v2_docx.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "05_AmpTrans_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_AmpTrans_FinancialProjection_V3.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_AmpTrans_EBD1BusinessModelCanvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_AmpTrans_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_AmpTrans_M7Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_AmpTrans_M9ExecutiveSummary_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_AmpTrans_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_AmpTrans_Fleet_Planning_Tool_Screenshots.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "14_AmpTrans_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_AmpTrans_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_AmpTrans_Investor_Pitch_Deck-V3.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      }
+    },
+    "Apex_Engineering_AI": {
+      "04_APEX_EAI_M1CustomerInterviewCaptureSheet.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_APEX_EAI_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Conference_and_Workshop_Talks.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_APEX_EAI_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_APEX_EAI_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "T",
+        "source": "AI"
+      },
+      "10_APEX_EAI_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "17_APEX_EAI_EBD8PitchDeck_ReducedSize.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "13_APEX_EAI_EBD5FinancialProjections.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_APEX_EAI_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_APEX_EAI_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_APEX_EAI_EBD1BMC.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "16_APEX_EAI_EBD6ExecutiveSummary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_APEX_EAI_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_APEX_EAI_M3AssignmentQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_APEX_EAI_M7Questions.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "01_Extracted_Financial_Projections_from_Business_Plan.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "03_APEX_EAI_EBD1TeamTargets.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      }
+    },
+    "Aris_Hydronics": {
+      "03_ArisHydronics_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_Aris_Hydronics_M8Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_ArisHydronics_BusinessModelCanvas.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "06_ArisHydronics_EBD2ImpactStatement_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_ArisHydronics_EBD10PitchDeck.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_ArisHydronics_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_ArisHydronics_EBD9ExecutiveSummary_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_ArisHydronics_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_2025_Module_7_Assignment_Questions_docx.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "09_ArisHydronics_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_ArisHydronics_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_Aris_Hydronics_EBD5TechnologyValidation.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "02_2025_Team_Targets_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_ArisHydronics_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_ArisHydronics_M2ImpactSustainaiblityQuestions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_Copy_of_Pro_Forma_-_Evolved_-_2031_SNAPSHOT.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "11_ArisHydronics_TechnologyTestimonials.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      }
+    },
+    "Averra": {
+      "09_Averra_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "10_Averra_EBD4_Technology_Validation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_Averra_Investor_Pitch.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "12_Averra_EBD5ThreeYearFinancialProjection.pdf.pdf": {
+        "cat_code": "T",
+        "source": "AI"
+      },
+      "15_Averra_InclusionAssignment-1.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "14_Averra_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_Averra_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "03_Averra_Business_Model_Canvas_-1.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "16_Averra_One_Page_Executive_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_Averra_TeamTargets.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_Averra_GHGERP_Self-Assessment_Workbook.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_Averra_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_Averra_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_Averra_M7Questions.pdf.pdf": {
+        "cat_code": "IP",
+        "source": "AI"
+      },
+      "02_Averra_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_Averra_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Averra_M2ImpactSustainabilityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Biomific": {
+      "14_BIOMIFIC_M8Questions_Vfinal_SUBMITTED_08252025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_BIOMIFIC_M7Questions_Vfinal_SUBMITTED_08252025.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "11_BIOMIFIC_M6_Assignment_Questions_vfinal_Submitted_08262025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_BIOMIFIC_M3AssignmentQuestion_Vfinal_SUBMITTED_08252025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_BIOMIFIC_M4Questions_Vfinal_SUBMITTED_08252025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_BIOMIFIC_EBD3CustomerSegmentationCompetitiveMatrix_Vfinal_SUBMITTED_08252025.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "16_Biomific_2025_CTO_Exec_Summary_vfinal_Submitted_08252025.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "05_BIOMIFIC_NYS_GHG_Emission_Reduction_Potential_-_ERP_Vfinal_Submitted_08262025_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_BIOMIFIC_2025_Team_Targets_submitted_06092025.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "10_BIOMIFIC_EBD4TechnologyValidation_Vfinal_SUBMITTED_08252025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_BIOMIFIC_M2ImpactSustainablityQuestions_Vfinal_SUBMITTED_08252025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_BIOMIFIC_2026-2028_FinancialProjection_Vfinal_submitted_08262025_-_Compiled_scenarios.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_BIOMIFIC_M1CustomerDiscoveryInterviews_Submitted_06082025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_BIOMIFIC_M1Business_Model_Canvas_Final_Submitted_08252025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_BIOMIFIC_EBD8_Pitch_deck_-_Investor_Pitch_working_copy_Submitted_08262025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_BIOMIFIC_EBD2ImpactStatement_Vfinal_SUBMITTED_08252025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_BIOMIFIC_M8Inclusion_as_a_Go-To-Market_Strategy_Vfinal_SUBMITTED_08252025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Biospheric_AI": {
+      "01_supporting_materials.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "08_Biospheric_AI_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_Biospheric_AI_EBD6_Exec_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_Biospheric_AI_EBD3_CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Biospheric_AI_M2ImpactSustainabilityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_Biospheric_AI_EBD2_ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_Biospheric_AI_EBD9_GHG_ERP_Workbook.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "10_Biospheric_AI_EBD4_TechnologyValidation.pdf.pdf": {
+        "cat_code": "T",
+        "source": "AI"
+      },
+      "11_Biospheric_AI_EBD5_ProfitAndLoss.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "13_Biospheric_AI_EBD8_InvestorPitchDeck.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_Biospheric_AI_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_Biospheric_AI_EBD1_Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Biospheric_AI_EBD10_Team_Targets.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Bluesonde_Technologies": {
+      "08_Bluesonde_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "12_Bluesonde_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Bluesonde_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_Bluesonde_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "18_Bluesonde_1Pager.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_Bluesonde_Financial_Projections.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "17_Bluesonde_InclusionMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_Bluesonde_M8Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_Bluesonde_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_Bluesonde_M7Questions_docx.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "02_Bluesonde_Buoy_Prelim_Product_Sheet_3_19_25.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "19_Bluesonde_Pitch_Deck_2025-08-26_CTO.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_Bluesonde_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_2025_Team_Targets_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_Bluesonde_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_Bluesonde_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_Bluesonde_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_Bluesonde_EBD1BusinessModelCanvas.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "07_Bluesonde_GHG_ERP_docx.pdf.pdf": {
+        "cat_code": "F",
+        "source": "AI"
+      }
+    },
+    "Bonhomme_&_Associates": {
+      "02_Bonhomme_amp_Associates_BMC_v0002.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_Business_Model_Canvas_Iteration_Builder.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_2025_Essential_Business_Deliverable_2_Impact_Statement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_2025_Essential_Business_Deliverable_4_Technology_Validation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_Wildfire_Prevention_Application_FINAL_3-2027.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_Bonhomme_amp_Associates_2025_Cleantech_Open_One_Page_Executive_Summary_Template_08202025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_Loco-motion_Revenue_Strategy_Deck.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "CH4_Microbial_Solutions": {
+      "05_CH4MicrobialSolutions_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "04_CH4MS_Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_CH4MicrobialSolutions_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_CH4MicrobialSolutionExecutiveSummaryEBD6.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_CH4MicrobialSolutions_M7Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_CH4MicrobialSolutions_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_CH4MicrobialSolutionsPitchDeckEBD8.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_CH4MicrobialSolutions_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "12_CH4MicrobialSolutions_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_CH4MicrobialSolutions_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_CH4MicrobialSolutions_TechnologyTestimonials.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_CH4MicrobialSolutions_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_Financial_Projection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_CH4MicrobialSolutions3YearFinancialProjections.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_CH4MicrobialSolutions_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_CH4_Microbial_Solutions_Team_Target_CTO_2025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_CH4MicrobialSolutions_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      }
+    },
+    "CIRQ+": {
+      "01_CIRQ_2025_5_yr_EBITDA_Forecast.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_CIRQ_2025_Module_4_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_CIRQ_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "07_CIRQ_2025_Module_3_Product_Market_Fit_Customer_Discovery_Assignment_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_CIRQ_Executive_Summary_2025_CTO.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_CIRQ_2025_Team_Targets_06052025_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_CIRQ_W1_Business_Model_Canvas_V1_06052025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_CIRQ_M7Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "05_CIRQ_2025_Module_2_Assignment_Impact_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_CIRQ_CTO_2025_Financial_Projection.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "12_CIRQ_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_CIRQ_2025_Essential_Business_Deliverable_2_Impact_Statement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_CIRQ_Energy_Pilot_Case_Study-_Clarendon.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_CIRQ_Pilot_Energy_Savings_Data.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_CIRQ_Cleantech_Open_Deck_2025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Calectra": {
+      "13_Calectra_M7Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_Calectra_FinancialProjection_xlsx.pdf.pdf": {
+        "cat_code": "F",
+        "source": "AI"
+      },
+      "09_Calectra_EBD3CustomerSegmentationCompetitiveMatrix_docx.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "03_Calectra_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_Calectra_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_Calectra_M3AssignmentQuestion_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Business_Model_Canvas_-_Strategyzer.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_Calectra_EBD4TechnologyValidation_docx.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "05_Calectra_M2ImpactSustainabilityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_Calectra_deck.pdf.pdf": {
+        "cat_code": "F",
+        "source": "AI"
+      },
+      "08_Calectra_M4Questions_docx_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_Calectra_presentation_03122025.pdf.pdf": {
+        "cat_code": "F",
+        "source": "AI"
+      },
+      "15_Calectra_executive_summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_2025_Team_Targets.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_Calectra_M8Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_Calectra_M6Questions_docx.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      }
+    },
+    "California_Perovskite_Technology": {
+      "04_business_model_canvas_poster_V2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_CPTI_Deck_08-2025_SO.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "07_CPTI_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_CPTI_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_CPTI_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_CPTI_Executive_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_CPTI-CTO-Financial-Model.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "11_CPTI_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_CPTI_M7Questions_d.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_CPTI_M4_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_CPTI_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_Supporting_Materials.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "10_CPTI_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "14_CPTI_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_CPTI_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_2025_Team_Targets.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Candela_IoT": {
+      "11_Candela_FinancialProjection.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "08_Candela_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_Candela_M1BusinessModelCanvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_Candela_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_Candela_M10InvestorPitch.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_Candela_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Candela_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_Candela_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_Candela_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_Candela_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "04_Candela_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "10_Candela_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_Candela_M7Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "14_Candela_M9Executive_Summary.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      }
+    },
+    "CarbonDots": {
+      "17_CarbonDots_CTO_PitchDeck.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_CarbonDots_2025FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_Polypropylene_Turned_into_Luminescent_Carbon_Dots_-_ChemistryViews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_CarbonDots-BMC-8June.pdf.pdf": {
+        "cat_code": "IP",
+        "source": "AI"
+      },
+      "04_CarbonDots_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_CarbonDots_GHGWorkbook.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_CarbonDots_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_CarbonDots_M4_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_CarbonDots_2025_Cleantech_Open_One_Page_Executive_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_CarbonDots-2025_Team_Targets.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "11_CarbonDots_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_CarbonDots_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_CarbonDots_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_CarbonDots_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_CarbonDots_M7Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_CarbonDots_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_CarbonDots_InclusionAssignment.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      }
+    },
+    "Cero_Global_Holdings": {
+      "07_CeroGlobal_GHG_ERP.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_CeroGlobal_2025_Inclusion_Assignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_CeroGlobal_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_CeroGlobal_M3AssignmentQuestion_docx_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_CeroGlobal_2025FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_CeroGlobal_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_CeroGlobal_EBD2ImpactStatement_docx_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_CeroGlobal_M2ImpactSustainaiblityQuestions_docx_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Test_Report_Mongol_Innovaion_2024.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_1Q25_Cero_Pro_Forma_Financial_Plan_Rev_1_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_Cero_business-model-canvas_Rev0_0.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_CeroGlobal_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "19_Cero_Global_-_Investor_Deck_v2_release_-_CTO.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "13_CeroGlobal_M6Question.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_Cero_2025_Team_Targets_Rev0_0.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "15_CeroGlobal_M7Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Cero_M1CustomerCustomerDiscoveryInterview_Rev0_0.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "18_CeroGlobal_2025_Cleantech_Open_One_Page_Executive_Summary.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "10_CeroGlobal_M4Questions_docx_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "CleanQuity": {
+      "19_CleanQuity_EBD8InvestorPitch.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "13_CleanQuity_M6Questions.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "15_CleanQuity_M7Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_CleanQuity_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_CleanQuity_GHGERPworkbook.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_CleanQuity_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_CleanQuity_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_CleanQuity_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_CleanQuity_BusinessModelCanvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_CleanQuity_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "02_Achievements.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_CleanQuity_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "17_CleanQuity_InclusionAssignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_CleanQuity_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "03_CleanQuity_TeamTargets.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_CleanQuity_M8Questions.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "18_CleanQuity_ExecutiveSummary.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "11_CleanQuity_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Compocity": {
+      "15_Compocity_M7Questions.pdf.pdf": {
+        "cat_code": "IP",
+        "source": "AI"
+      },
+      "18_Compocity_2025_Cleantech_Open_One_Page_Executive_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_Compocity_EBD6FinancialPlan_workbook.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "17_Compocity_Inclusion_Assignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_Compocity_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_Compocity_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_Compocity_EBD5TechnologyValidation.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "06_Compocity_GHG_ERP_Self_Assesments.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_Compocity_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_Compocity_M1_Customer_InterviewT_Capture_Sheet25.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Compocity_EBD1Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Compocity-Team_Targets.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "11_Compocity_EBD5TechnologyValidation.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "08_Compocity_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_Compocity_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_Compocity_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "19_Compocity_WhatCompostCanDoForYourCommunity_PD.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "13_Compocity_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Condor_Calibration_Services": {
+      "09_Condor_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_Condor_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_Condor_Team_Targets_060725.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "08_Condor_M3AssignmentQuestion_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_Condor_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_Condor_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_Condor_Business_Modle_Canvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Condor_one_pager.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_Condor_EBD5_Financial_Projection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_Condor_EBD3CustomerSegmentationCompetitiveMatrix_docx.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "16_Condor_EBD7_2025_Cleantech_Open_One_Page_Executive_Summary.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "11_Condor_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "15_Condor_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_Condor_EBD8_Pitch_Deck.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_Condor_M7Questions_docx_or.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "01_Business_Model_Sharable_0401325.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "04_Condor_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "F",
+        "source": "AI"
+      }
+    },
+    "ContainerGrid_GmbH": {
+      "13_ContainerGrid_M7Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "06_ContainerGrid_EBD2ImpactStatement_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_ContainerGrid_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_ContainerGrid_M3AssignmentQuestion_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_2025_Team_Targets.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_GHG_ERP_Workbook_ContainerGrid.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_ContainerGrid_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_ContainerGrid_M1_CustomerDiscoveryInterviews_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_ContainerGrid_M1_BusinessModelCanvas_pptx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_ContainerGrid_FinancialProjection.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "09_ContainerGrid_EBD3CustomerSegmentationCompetitiveMatrix_docx.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "10_ContainerGrid_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "11_ContainerGrid_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_ContainerGrid_One_Page_Executive_Summary.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "04_ContainerGrid_M2ImpactSustainabilityQuestions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_ContainerGrid_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_ContainerGrid_Inclusion_Assignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Core_Envision": {
+      "05_Core_EnvisionM1_-_Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_Core_Envision_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_Core_EnvisionM1TeamTargets.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "18_Core_Envision_Pitch_Deck.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_Core_EnvisionFinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_Core_Envision_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "09_Core_Envision_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_Core_Envision_EBD4TechnologyValidationTestimonials.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "06_Core_Envision_M2ImpactSustainabilityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Core_Envision_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_Core_Envision_M7Questions.pdf.pdf": {
+        "cat_code": "IP",
+        "source": "AI"
+      },
+      "01_Core_Envision_finincial_proj_summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_Core_Envision_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Supporting_Material.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_Core_Envision_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_Core_Envision_Executive_Summary.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "13_Core_Envision_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_Core_Envision_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      }
+    },
+    "Crucible_Energy": {
+      "13_Crucible_Energy_Inclusion_as_a_Go-To-Market_Strategy_Purpose.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_2bafe1ed-594a-41e8-a69e-6ccea54b09ac_Module_3.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_2025_Module_1_Customer_Interview_Capture_Sheet_2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_Crucible_Energy_ExecutiveSummary.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "08_CrucibleEnergy_TechnologyTestimonials_v6_07232025.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "03_CrucibleEnergy_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_CrucibleEnergy_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Crucible_Energy_-_Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_CrucibleEnergy_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_Module_6_Finances_and_Funding.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_CrucibleEnergy_M7Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_Crucible_Pitch_Deck_v2-opt.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_CrucibleEnergy_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_crucible-energy-5-year.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_2bafe1ed-594a-41e8-a69e-6ccea54b09ac_Module_3.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Cryodrives": {
+      "05_Cryodrives_Module_3_Customer_Segmentation_Competitive_Matrix_and_Market_Ecosystem.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_Cryodrives_ExecutiveSummary.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "13_CryodrivesPitchDeck.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_Cryodrives_Inclusion_Assignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_Cryodrives_Module_6_Financial_Model.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Cryodrives_BusinessModelCanvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_Cryodrives_Module7_Legal.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "03_Cryodrives_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_Cryodrives_2025_M1_customer_interview_capture_sheet.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_Cryodrives_Module_4_Product_Technology_Validation.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "08_Cryodrives_2025_FinancialProjectionThreeYear.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Cryodrives_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_Cryodrives_Module8_ManagementTeam.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Curve_Control": {
+      "05_Curve_Control_NYS_PPI_-_GHG_ERP_Self_Assessment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_Curve_Control_Executive_Summary_26AUG25.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_Curve_Control_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_CurveControl_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_CurveControl_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Curve_Control_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_Curve_Control_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_Curve_Control_BMC_v1_Original_-_Demand_Response_Aggregator_Model.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_CurveControl_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_CurveControl_M1CustomerInterviewSheet.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_Curve_Control_Pitch_Deck_26AUG25.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_CurveControl_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_Curve_Control_2025_Inclusion_Assignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_CurveControl_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_CurveControl_M3AssignmentQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_CurveControl_M7Questions.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "01_2025_Team_Targets_Curve_Control.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "ECORECYCLETECH": {
+      "11_ERT_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_ERT_EBD4TechnologyValidation1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_ERT_M1CustomerDiscoveryInterviews2.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "08_ERT_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_ERT_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_ERT_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_ERT_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_ERT_InclusionAssignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_ERT_M7Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_ERT_EBD6ExecSummary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_ERT_EBD8pitchdeck.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_ERT_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_Support_Letter_LLNL_Honda_CalSEED.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_2025_Team_Targets_EcoRecycleTech.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_ERT_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_ERT_M8_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_ERT_BusinessModelCanvas-3.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "EV_Innovations": {
+      "13_EV_Innovations_CTO_Executive_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_EV_Innovations_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Strategyzer_Business_Model_Canvas_Template_6_4_25.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "03_EV_Innovations_M2ImpactSustainaiblityQuestions_7_10_25.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_EV_Innovations_M7Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_2025_CTO_Module_4_EV_Innovations_Ecosystem_Mapping_6_24_25.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "10_EV_Innovations_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_EV_Innovations_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_EV_Innovations_CTO_Investor_Pitch_Deck.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_EV_Innovations_M1CustomerDiscoveryInterviews_6_10_25.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_EV_Innovations_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_EV_Innovations_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_EV_Innovations_2025_CTO_Module_4_Questions_6_22_23.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Ecosphere_Organics": {
+      "10_EcosphereOrganics_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_EcosphereOrganics_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_EcosphereOrganics_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_EcosphereOrganics_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "05_EcosphereOrganics_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_EcosphereOrganics_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_Ecosphere_Organics_M7Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "02_2025_Team_Targets_Ecosphere_Organics.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_EcosphereOrganics_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_EcosphereOrganics_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_Ecosphere_Organics_Executive_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_Ecosphere_Organics_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_EcosphereOrganics_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Ecosphere_Organics_-_Business_Model_Canvas_v3.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_Ecosphere_Organics_Pitch_Deck.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "01_Ecosphere_Organics_on_Advancing_Sustainable_Biorefining_-_SBN_Detro_-_sbn-detroit_org.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      }
+    },
+    "EvoNatura": {
+      "06_EvoNatura_GHG_ERP_docx_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_EvoNatura_M8Questions_docx_or_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_Supporting_Document.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_2025_Cleantech_Open_One_Page_Executive_Summary_Template_docx.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "08_EvoNatura_M3AssignmentQuestion_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_EvoNatura_2025_Team_Targets_docx.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "10_EvoNatura_Customer_Segmentation_Competitive_Matrix_and_Market_Ecosystem_docx.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "12_EvoNatura_M6Questions_docx_or_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_EvoNatura_M1CustomerDiscoveryInterviews_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_EvoNatura_M4Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_EvoNatura_M7Questions_docx_or_docx.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "13_EvoNatura_FinancialProjectionTemplate_xlsx_-_Optimistic.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_EvoNatura_2025_Inclusion_Assignment_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "18_CleanTech_Open_EvoNatura_Pitch_Deck_2025_pptx_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_EvoNatura_Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "BC",
+        "source": "AI"
+      },
+      "05_EvoNatura_M2ImpactSustainaiblityQuestions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_EvoNautra_EBD2ImpactStatement_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_EvoNatura_EBD4TechnologyValidation_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "FLOAT_Modern_Houseboat": {
+      "10_FLOAT_INVESTOR_PITCH_DECK_OPTIMIZED_FILE_SIZE.pdf.pdf": {
+        "cat_code": "F",
+        "source": "AI"
+      },
+      "08_FLOAT_Financial_Projections_2025_07_20.pdf.pdf": {
+        "cat_code": "PMF",
+        "source": "AI"
+      },
+      "02_FLOAT_Modern_Houseboat_Company_Concept_and_Potential_Market.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_FLOAT_2025_Essential_Business_Deliverable_4_Technology_Validation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_FLOAT_2025_Cleantech_Open_One_Page_Executive_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_FLOAT_Modern_Houseboat_Company_Business_Model_Canvas_2025_07_01.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_2025_Team_Targets_FLOAT_Modern_Houseboat_Company.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "05_FLOAT_Impact_Statement_2025_08_25.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Foregger_Energy_Solutions": {
+      "04_GHG_ERP_Workbook_FES_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_FinancialProjectionCTODeliverable6_Revised_3.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_FES_Executive_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_FES_CTO_Slide_Deck.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "03_Foregger_Energy_Solutions_EBD_1_Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_Foregger_Energy_Solutions_EBD_4_TechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_Module_4_Markets_and_Getting_to_Assignment_Sheet.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Foregger_Energy_Solutions_-_2025_Team_Targets_updated_docx.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "05_Foregger_Energy_Solutions_EBD_2_Impact_Sustainability_Statement.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "07_Foregger_Energy_Solutions_EBD_3_Customer_Segmentation_Competitve_Matrix_and_Market_Ecosystem.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Fortifyy_PBC": {
+      "13_Fortifyy_2025_FinancialProjectionTemplate_xlsx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_Fortifyy_2025_Inclusion_Assignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_Fortifyy_2025_Essential_Business_Deliverable_N4_Technology_Validation_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_CG_copy_fortifyy_trifold.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_Fortifyy_PBC_2025_Module_2_Assignment_Impact_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_Fortifyy_2025_Module_4_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_2025_Cleantech_Open_One_Page_Executive_Summary_Template_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_Fortifyy_2025_Module_6_Assignment_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_Fortifyy_Assignment_8_Management_Team_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "18_Fortifyy_EBD_8_Investor_Pitch_Deck_8_24.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_Fortifyy_2025_Module_3_Product_Market_Fit_0_Customer_Discovery_Assignment_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_Fortifyy_2025_Essential_Business_Deliverable_2_Impact_Statement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Fortifyy_2025_Module_1_Customer_Interview_Capture_Sheet.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "14_Fortifyy_Legal_Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "01_Fortifyy_revenue_cost_model_-_Sheet1.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "03_Fortifyy_PBC_2025_Team_Targets_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_Fortifyy_-_Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Gamotech": {
+      "16_Gamotech_EDB6ExecutiveSummary.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "17_Gamotech_EBD10PitchDeck.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_2025_Module_3_Product_Market_Fit_amp_Customer_Discovery_Assignment_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_Gamotech_Financial_Model_2025_mar_updated_Apr_07.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_Gamotech_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "10_Gamotech_2025_Module_4_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_GAmotech_2025_Module_2_Assignment_Impact_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_Gamotech_EBD1BMC.pdf.pdf": {
+        "cat_code": "PMF",
+        "source": "AI"
+      },
+      "13_Gamotech_EBD5FinancialProjectionModel.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Gamotech_McMAsterville_pilot_project_report.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_Gamotech_Inclusion_Assigmnent.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_Gamotech_M7Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "12_Gamotech_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_Gamotech_GHG_ERP.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_Gamotech_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_Gamotech_2025_Team_Targets_updated.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_gamotech_M1CustomerInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "GreenSight_Technologies": {
+      "05_GreenSightTechnologiesBMC.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_GreenSightTechnologies_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "18_GreenSightTechnologiesPDeck.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_GreenSightTechnologies_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_GS_2025_Team_Targets.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "12_GreenSightTechnologiesModule6Assignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_GreenSightTechnologiesM3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_GreenSightTechnologiesM7Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_GreenSightTechnologiesInclusionAssignment.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "17_GreenSight_Executive_Summary8_11_25.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "06_GreenSightTechnologies_M2ImpactSustainabilityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_GSFinancialModel.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_TechDefendersGreenSightTechLOI_docx_2_1.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "07_GreenSightTechnologiesEBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_GreenSightTechnologiesEBD3.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_GreenSightTechnologiesEBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_GreenSightTechnologies_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Gridwave": {
+      "10_Gridwave_M5_TechnologyValidation_v2.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "03_Gridwave_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_Gridwave_M8Questions.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "15_Gridwave_M8_InclusionAssignment_v1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_Gridwave_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_Gridwave_M2ImpactStatement_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_Gridwave_M9_ExecSummary_v2.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "13_Gridwave_M7Questions.pdf.pdf": {
+        "cat_code": "PMF",
+        "source": "AI"
+      },
+      "11_Gridwave_M6Questions_v2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Gridwave_Business_Model_Canvas_v30_2025_08_21.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_Gridwave_Wave_45_0325-1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_Gridwave_M2ImpactSustainabilityQuestions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_Gridwave_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "08_Gridwave_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Gridwave_2025_Team_Targets_v1_2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_Gridwave_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_Gridwave_Deck_v5_0_2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "H2O_Now": {
+      "10_2025_FinancialProjectionTemplate.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_cleantech_assignmenent_4.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_2025_Cleantech_Open_One_Page_Executive_Summary_Template.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "12_module_8.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_2025_Module_1_Customer_Interview_H20Now.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_module_6.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_cleantech_assignment_3.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_H20_Now_Pitch_deck_8_26.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "03_Assignment_2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_H2ONow_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_Adobe_20Scan_20Jun_2027_2C_202025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_H2ONow_M7Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "04_assignment_2_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_H20_Now_Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "H2_Everywhere": {
+      "08_H2Everywhere_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_H2Everywhere_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "18_H2_Everywhere_Pitch_Deck_-_CTO.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_H2Everywhere_M8Questions.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "17_H2_Everywhere_Cleantech_Open_One_Page_Executive_Summary.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "10_H2Everywhere_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_Catalytic_formic_acid_and_hydrogen_production-WO2022266653A1_1_2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_H2Everywhere_M7Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_H2Everywhere_2025_Inclusion_Assignment.docx.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_CTO_H2E_Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_H2Everywhere_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_H2Everywhere_M2ImpactSustainabilityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_H2Everywhere_Financial_Projection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_2025_Team_Targets_docx.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "09_H2Everywhere_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_H2Everywhere_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "11_H2_Everywhere_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "06_H2E_GHGWorkbook_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "HYDGEN": {
+      "16_HYDGEN_M8Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_HYDGEN_GHG_Emission_Reduction_Potential.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_HYDGEN_M3AssignmentQuestion_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "18_HYDGEN_ExecutiveSummary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_HYDGEN_EBD3CustomerSegmentationCompetitiveMatrix_docx.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "15_HYDGEN_M7Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_HYDGEN_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_HYDGEN_M6Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_HYDGEN_EBD2ImpactStatement_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_HYDGEN_EBD4TechnologyValidation_docx.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "01_Financial_Model_-_Sheet1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_HYDGEN_FinancialProjection_xlsx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_HYDGEN_M1CustomerDiscoveryInterviews_docx.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "03_HYDGEN_2025TeamTargets.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_HYDGEN_M4Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "19_HYDGEN_PitchDeck.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_HYDGEN_M8InclusionAssignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_HYDGEN_M1BMC.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Product_Brochure.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "HYG-Motors_USA": {
+      "12_HYG_Motors_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "18_HYG-Motors.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "04_HYG_Motors_-_Business_Model_Canvas_V3.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_HYG-Motors_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "03_HYG_Motors_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "13_HYG_Motors_-_3_Year_Financial_Projections.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_HYG_Motors_-_Market_Ecosystem_Diagram.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_2025_Module_2_Assignment_Impact_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_HYG_Motors_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_HYG_Motors_Executive_Summary.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "06_HYG_Motors_GHG_ERP_Calculation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_HYG_Motors_Markets_and_Getting_to_Them.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_HYG-Motors.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "15_HYG_Motors_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_HYG_Motors_Team_targets.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "16_HYG_Motors_Inclusion_Assignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_HYG_Motors_M7Questions.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "11_HYG_Motors_Essential_Business_Deliverable_4_Technology_Validation.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      }
+    },
+    "Hidrogenics_Technologies": {
+      "05_HidrogeniCs_Inc_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "09_HidrogeniCs_Inc_Pitch_Deck_V8_0_Cleantech_Open_2025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_HidrogeniCs_Inc_5-year_Financial_Projection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_HidrogeniCs_Inc_Team_Targets_2025.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "04_HidrogeniCs_Inc_EBD2_ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_2_LOI_Signed.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_HidrogeniCs_Inc_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_HidrogeniCs_Inc_Executive_Summary_2025_V5_2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_HidrogeniCs_Inc_BMC.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "HomeWise_AI": {
+      "15_HomeWise_AI_-_2025_Cleantech_Open_One_Page_Executive_Summary_826v3.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_HomeWise_AI_EBD4TechnologyValidation_1.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "04_HomeWise_AI_M1_Customer_Discovery_Interviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_HomeWise_REVENUE_FORECAST_xlsx_-_RevenueModelExamples.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "12_Re_Letter_of_Support_for_HomeWise_AI_Homeowner_Engagement_Solution.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_HomeWise_M4Questions.pdf.pdf": {
+        "cat_code": "PMF",
+        "source": "AI"
+      },
+      "13_3-Year_Projection_HomeWise_AI_8_26v3.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Homewise_AI_Deck_Yuna.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_HomeWise_EBD3Customer_Segmentation_Competitive_Matrix_and_Market_Ecosystem_-_Lark_Docs.pdf.pdf": {
+        "cat_code": "PMF",
+        "source": "AI"
+      },
+      "08_HomeWise_AI_M3_Assignment_Questions.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "07_HomeWise_EBD2_Impact_Statement_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_BMC_6_9_25_v1.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "06_HomeWise_AI_Greenhouse_Gas_Emission_Reduction_Potential_GHG_ERP_Self-Assessment_Workbook.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_HomeWise_AI_Team_Targets.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_Print_-_HomeWise_AI_Deck_5.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "14_Inclusion_as_a_Go-ToTo-Market_Strategy_HomeWise_AI.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Hubbletek": {
+      "03_2025_Team_Targets-Hubbletek.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_Hubbletek_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_Hubbletek_3_Year_Financial_Projection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_Hubbletek_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_Hubbletek_Inclusion_Assignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_Hubbletek_M7Questions.pdf.pdf": {
+        "cat_code": "IP",
+        "source": "AI"
+      },
+      "04_Hubbletek_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_Hubbletek_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "17_Hubbletek_Executive_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_Hubbletek_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_Hubbletek_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "18_Hubbletek-Carbon-Credits-Made-Simple.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "02_Hubbletek_Pitch_Deck.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_Hubbletek_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_Business_Model_Canvas_-_Hubbletek.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_Hubbletek_TechnologyTestimonials.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "01_Hubbletek_Pitch_Deck.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_Hubbletek_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "KVA_Technologies": {
+      "10_KVA_Tech_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "07_KVA_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_KVA_2025_Module_1_Customer_Interview_Capture_Sheet.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_KVA_Tech_EBD_5_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_KVA_2025_Module_4_Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_KVA_2025_Team_Targets.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "18_KVA_Tech_EBD6_One_Page_Executive_Summary-final_docx_-_Google_Docs.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "13_KVA_Tech_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_KVA_-_2025_Module_2_Assignment_Impact_Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_KVA_EBD4TechnologyValidation_docx.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "08_KVAv1_-_2025_Module_3_Product_Market_Fit_amp_Customer_Discovery_Assignment_Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_CTO_LOS_papers.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_KVA_Tech_2025_Inclusion_Assignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_KVA_M7Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "19_KVA_Tech_EBD8_Pitch_Deck.pdf.pdf": {
+        "cat_code": "PMF",
+        "source": "AI"
+      },
+      "12_KVA_Tech_TechnologyTestimonials.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "16_KVA_Tech_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_KVA_EBD_1-_BMC.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      }
+    },
+    "Karbn": {
+      "03_Karbn_Team_Target.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_KarbnLLC_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_KarbnLLC_EBD6_Executive_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Customer_Survey.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_KarbnLLC_M8_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_KarbnLLC_EBD10_Pitch.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_KarbnLLC_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_KarbnLLC_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_KarbnLLC_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_KarbnLLC_M6Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "05_business_model_canvas_poster.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_KarbnLLC_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_KarbnLLC_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_CTO_Letter-Plett.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_KarbnLLC_M7_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_KarbnLLC_EBD4_Product_Technology_Validation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "LIFE3": {
+      "18_LIFE3_CTO_Pitch_Deck.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "14_2025_Module_7_-_Legal_Assignment_Questions_v2_0.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_2025_Essential_Business_Deliverable_4_Technology_Validation_v2_1.pdf.pdf": {
+        "cat_code": "T",
+        "source": "AI"
+      },
+      "12_LIFE3_Module_6_Financing_and_Funding_Questions_v2_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_LIFE3_GHG_Calculations.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_LIFE3_Inclusion_Assignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_LIFE3_Product_Market_Fit_Customer_Discovery_Questions_v1_2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_LIFE3_Organizational_Values_v1_1.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "15_LIFE3_Module_8_Questions_v1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_LIFE3_Module_4_-_Markets_and_Getting_to_Them_Questions_v2_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_LIFE3_About-Us-Clients.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "07_LIFE3_Impact_Statement_v1_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_LIFE3_FinancialProjectionTemplate_v2_2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_LIFE3_Customer_Interview_Capture_Sheet_v1_0.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_LIFE3_Business_Model_Canvas_v1_4.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_LIFE3_Customer_Segmentation_Competitive_Matrix_Market_Ecosystem_v1_3.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_LIFE3_Cleantech_Open_One_Page_Executive_Summary_v1_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_LIFE3_Team_Targets_v1_2.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      }
+    },
+    "LeRTechX_Renewable_Energy": {
+      "03_LeRTechX-Business_Model_Canvas_-_Strategyzer_V2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_LeRTechX_2025_CTO_Exec_Summary.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "07_LeRTechX-2025_Module_4_Questions_V1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_LeRTechX_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_LeRTechX-2025_Essential_Business_Deliverable_2_Impact_Statement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_LeRTechX-2025_Module_2_Assignment_Impact_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_LeRTechX-2025_Module_1_Customer_Interview_Capture_Sheet.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_LeRTechX_2025_M_7_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_LeRTechX_-now_Sollar_Well-Essential_Business_Deliverable_8.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_LeRTechX-2025-2027_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_LeRTechX-2025_EBD_4T_Technology_Validation.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "06_LeRTechX-2025_Module_3_Product_Market_Fit_0_Customer_Discovery_Assignment_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_LeRTechX-2025_Team_Targets.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_Lertechx_2025_M8_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "LeverageTech_Innovations": {
+      "10_LeverageTech_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_LeverageTech_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_Leveragetech_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_Leveragetech_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Leveragetech_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "08_Leveragetech_EBD4_Matrix_and_architype.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_leveragetech_pitchdeckEBD8.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "12_LeverageTech_M7Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "14_Leveragetech_EBD6.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "05_Leveragetech_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_Business_Model_Canvas_LeverageTech_Innovations_Module_1.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "09_Leveragetech_EBD4_Matrix_and_architype.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "04_leveragetech_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_LeverageTech_EBD5.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_Leveragetech_EBD_1_Team_Targets_CTO_Accelerator_2025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Lumiaq": {
+      "15_Lumiaq_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_Lumiaq_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_Lumiaq_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Lumiaq_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "19_Lumiaq_ExecutiveSummary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_Lumiaq_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_Lumiaq_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "18_Lumiaq_InclusionAssignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "20_Lumiaq_PitchDeck.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "11_Lumiaq_EBD3CustomerSegmentation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_Itemized_budget_amp_revenue_projection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_Lumiaq_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_Lumiaq_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_Lumiaq_TechnologyTestimonials.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Light_attenuation_data_amp_award_press_clipping.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_Lumiaq_M1BusinessModelCanvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_Lumiaq_GHG-ERP-Workbook.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_Lumiaq_M7Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_Lumiaq_2025_Team_Targets.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_Lumiaq_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Lute_&_Ether": {
+      "12_2025_Essential_Business_Deliverable_4_Technology_Validation.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "01_L_amp_EFinancialPRojections.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "14_2025_FinancialProjectionTemplateL_amp_E_v2_BestGuess-merged.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_2025_Module_6_Assignment_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_2025_Module_3_Product_Market_Fit_amp_Customer_Discovery_Assignment_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_L_amp_EGHG_ERPworkbook.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_Lute_amp_Ether_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_2025_Module_2_Assignment_Impact_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_Lute_amp_Ether_TargetGoals_June9_2025.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "18_Lute_amp_Ether2025CTOOnePageExecutive_Summary.pdf.pdf": {
+        "cat_code": "L",
+        "source": "AI"
+      },
+      "19_Lute_amp_EtherPitchDeckAug26_2025.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "08_2025_Essential_Business_Deliverable_2_Impact_Statement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_Lute_amp_Ether_BusinessModelCanvas_June9_2025.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "15_2025_Module_7_Assignment_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Project_Acorn_Summary_Report_-_July_24.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Lute_amp_EtherCustomerDiscovery_June9_2025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_LuteEther_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_Lute_amp_Ether_InclusionMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Manara_Materials": {
+      "07_ManaraMaterials_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_ManaraMaterials_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_2025_Team_Targets_-_Manara_Materials.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "06_Manara_Materials_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_ManaraMaterials_FinancialProjection.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "16_EBD_10_-_ManaraMaterials.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "13_ManaraMaterials_M7Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "08_ManaraMaterials_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_ManaraMaterials_TechnologyTestimonials.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_EBD_1_Manara_Materials_-_Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_Manara_Materials_Business_Ecosystem.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "14_ManaraMaterials_M8Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "01_Letter-Saad.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_ManaraMaterials_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_ManaraMaterials_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_ManaraMaterials_Executive_Summary_Template.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Materium_Technologies": {
+      "17_MateriumTechnologies_Inclusion_Assignment_-_Module_8.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "10_Materium_M4_ecosystem_HW.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_MateriumTechnologies_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "19_CTO_presentation_-_Materium_Technologies.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_NYSP2I-GHG-ERP-Self-Assessment-Workbook-6-14-22_docx.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "08_Materium_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "15_Materium_M7Questions.pdf.pdf": {
+        "cat_code": "IP",
+        "source": "AI"
+      },
+      "14_Materium_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "18_Materium_M9Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_Materium_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_Materium_M4Questions.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "11_Materium_EBD5TechnologyValidation.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "02_2025_Team_Targets_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_Materium_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_Materium_Technologies_M1_CustomerDiscoveryInterviews_docx.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "04_Materium_Technologies_CTO_M1_BMC_-_06_08_2025_pptx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_MateriumTechnologies_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Modulium": {
+      "11_Modulium_JULY_InitialPitch.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_2025_Cleantech_Open_One_Page_Executive_Summary_Template_Repaired.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_2025_Module_2_Assignment_Impact_Questions_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_PDFF.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_M3.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_2025_Essential_Business_Deliverable_4_Technology_Validation_Modulium.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "02_Business_Model_Canvas_-_Strategyzer.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_2025_FinancialProjectionTemplate.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_Modulium_M4_2025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_2025_Essential_Business_Deliverable_2_Impact_Statement_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Navia_Energy": {
+      "09_2025_Module_4_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_2025_Module_6_Assignment_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_2025_Module_2_Assignment_Impact_Questions_RM061625.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_2025_Module_3_Product_Market_Fit_0_Customer_Discovery_Assignment_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_2025_Team_Targets_Rm060525-BJ.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_Navia_inclusion_statement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_Navia_business_model_convass.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_2025_Essential_Business_Deliverable_N2_Impact_Statement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_2025_Module_8_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Navia_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "19_Navia_Energy_CTO_Deck.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_2025_Essential_Business_Deliverable_M5_testimonials.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_2025_Essential_Business_Deliverable_N4_Technology_Validation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_2025_Module_7_Assignment_Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "14_Navia_Energy_3Y_projecttion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Cleantech_Open_2025_Navia_Energy.pdf.pdf": {
+        "cat_code": "F",
+        "source": "AI"
+      },
+      "18_Navia_Executive_Summary_CTO_2025_v1.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      }
+    },
+    "Novagrid": {
+      "12_Novagrid_EBD4TechnologyValidation_docx_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_Team_Targets_Novagrid.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "13_Novagrid_M6Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_Novagrid_EBD3CustomerSegmentationCompetitiveMatrix_Template_docx_2.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "19_pitchDeckDraft1.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "07_Novagrid_GHG_ERP_docx.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "18_Novagrid_2025_Cleantech_Open_One_Page_Executive_Summary_docx_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Novagrid_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_financialProjectionsAndClearerFormattedResponses.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_Novagrid_M7Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_2025_Module_2_Assignment_Impact_Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_2025_Inclusion_Assignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_2025_Module_8_Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_Business_Model_Canvas_-_Novagrid_Aug26.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_letter_of_intent_energyflow_early_access_program_ciel_power_2acfb59fbb0c8f23.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_Novagrid_EBD2ImpactStatement_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_Novagrid_M3AssignmentQuestion_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_Novagrid_M4Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_Novagrid_FinancialProjection_xlsx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "OpenRoad_Technologies": {
+      "01_OpenRoad_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_openroad-pitch-deck_3.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "06_OpenRoad_5Yr_FinancialProjection_3_scenario.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_openroad-executive-summary.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "04_OpenRoad_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "03_OpenRoad_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "02_OpenRoad_EBD1BusinessModelCanvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_OpenGrid_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      }
+    },
+    "PFASolve": {
+      "17_PFASolve_Inc_2025_Cleantech_Open_One_Page_Executive_Summary.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "02_PFASolve_Inc_2025_Team_Targets.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_PFASolve_Inc_GHGERP.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "10_PFASolve_Inc_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_financial_model.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_PFASolve_Inc_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_PFASolve_M1_Customer_Interview_Capture_Sheet.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_PFASolve_Inc_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "16_PFASolve_Inc_Inclusion_Assignment_2025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_PFASolve_M2ImpactSustainabilityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_PFASolve_Inc_Business_Model_Canvas_Version_2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_PFASolve_Inc_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_PFASolve_Inc_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_PFASolve_Inc_M7Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_PFASolve_Inc_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "18_PFASolve_CTO_pitchdeck.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_PFASolve_Inc_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_PFASolve_Inc_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Photometrics_AI": {
+      "13_3yrFinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_PhotometricsAI_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_Inclusive_GTM_Pillar.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "18_20250811_PhotometricsAI_PitchDeck.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "08_2025_Module_4_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_TAM.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "07_2025_Module_3_Product_Market_Fit_amp_Customer_Discovery_Assignment_Questions.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "17_PhotometricsAI_1Pager.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_2025_Module_2_Assignment_Impact_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_2025_Module_8_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_PhotometricsAI.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_2025_Team_Targets.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_2025_Essential_Business_Deliverable_2_Impact_Statement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_2025_Module_6_Assignment_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_PhotometricsAI_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_2025_Module_7_Assignment_Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      }
+    },
+    "Pinpoint_Irrigation": {
+      "05_Module_2_Assignment_Pinpoint_Irrigation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_Pinpint_Irrigation_2025_Module_4_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_Pinpoint_Pro_Forma_v5.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_Pinpoint_Irrigation_M7Questions_docx.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "03_Team_Targets_Pinpoint_vF.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "06_EBD_2_Impact_Statement_Pinpoint_Irrigation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_Pinpoint_Irrigation_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_Pinpoint_Irrigation_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_Pinpoint_Irrigation_M8Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_Pinpint_Irrigation_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "02_Pinpoint_Irrigation_-_USUL.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "04_Business_Model_Canvas_Pinpoint_v1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_Pinpoint_Irrigation_M6Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_Pinpoint_Irrigation_CTO.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_Pinpoint_Irrigation_Executive_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Pipeline_Pilot": {
+      "18_PipelinePilot_10MinutePitch_withnotes.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_PipelinePilot_M2_ImpactSustainabilityStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_PipelinePilot_M9One_Page_Executive_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_PipelinePilot_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_PipelinePilot_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "05_PipelinePilot-GHG_ERP_Workbook.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_PipelinePilot_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_PipelinePilot_Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "13_PipelinePilot_2025_FinancialProjection_xlsx-4.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "11_Fujii.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_PipelinePilot_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_PipelinePilot_TeamTargets.pdf.pdf": {
+        "cat_code": "IP",
+        "source": "AI"
+      },
+      "14_PipelinePilot_M7Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "15_PipelinePilot_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_PIpelinePilot_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_PipelinePilot_M6Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "04_PipelinePilot_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_PipelinePilot_M8_Inclusion_Assignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "PolyGone_Systems": {
+      "11_PolyGone_EBD4CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_PolyGone_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_PolyGone_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_PolyGone_Inclusion_Assignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Media_Coverage.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_PolyGone_M3_assignment_questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_PolyGone_Systems_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_PolyGone_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_PolyGone_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "12_PolyGone_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_PolyGone_Systems_-_Business_Model_Canvas_V2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_PolyGone_M7Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_PolyGone_GHG_ERP_report.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "18_PolyGone_One_Page_Executive_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "19_PolyGone_Deck_Cleantech_Open.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "10_PolyGone_M4Questions_docx_or.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_PolyGone_M6_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_2025_Team_Targets_PolyGone_Systems.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "R7_Instruments": {
+      "02_Team_targets.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "06_R7Instruments_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_R7Instruments_M2ImpactSustainabilityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_business_model_canvas_R7_first_draft.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "11_2025_Module_6_Assignment_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_2025_Module_8_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_Financial_Projections_R7Instruments.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_R7Instruments_M4AssignmentQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_GHG_ERP_Worksheet_R7Instruments.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "16_Pitch_Deck_R7_Instruments.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "07_R7Instruments_M3AssignmentQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_2025_Module_7_Assignment_Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "10_2025_Essential_Business_Deliverable_5_Technology_Validation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_2025_Cleantech_Open_One_Page_Executive_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_R7_dataSlide.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      }
+    },
+    "Renovigo_Chemicals": {
+      "08_Renovigo_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_Renovigo_TechnologyTestimonials.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "12_Renovigo_EBD6ExecutiveSummary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_Renovigo_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Renovigo_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_Renovigo_EBD5FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_Renovigo_M7Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "03_Business_Model_Canvas_Renovigo.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_2025_Team_Targets-_Renovigo_Chemicals.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_Renovigo_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "BC",
+        "source": "AI"
+      },
+      "13_Renovigo_Investor_Pitch.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "02_Renovigo_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_Renovigo_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Restora_Homes": {
+      "15_Restora_Homes_M7Questions.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "04_RestoraHomes_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_RestoraHomes_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_RestoraHomes_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_2025_Module_3_Product_Market_Fit_amp_Customer_Discovery_Assignment_Questions_RestoraHomes_v2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_RestoraHomes_M2ImpactSustainaiblityQuestions_-_v2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_RestoraHomes_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "10_RestoraHomes_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "18_RestoraHomes_One_Page_Executive_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_RestoraHomes_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "19_RestoraHomes_-_Investor_Pitch.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_Module_2_-_GHG_ERP_-_v2.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "03_2025_Team_Targets_Restora_Homes.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "02_Technical_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_RestoraHomes_InclusionAssignment.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "14_RestoraHomes_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_RestoraHomes_EBD2ImpactStatement_v2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_Business_Model_Canvas_-_Restora_Homes_-_v2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "SBD_Technologies": {
+      "12_SBDTechnologies_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "19_SBD_Technologies_EBD8_Investor_Pitch_Deck.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_SBDTechnologies_M2ImpactSustainabilityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_SBDTechnologies_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_SBDTechs_2025_Team_Targets.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_SBDTechnologies_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "13_SBD_Technologies_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_SBD_Technologies_Inclusion_Assignment.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "09_SBDTechnologies_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_SBD_Technologiese_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_SBD_Technologies_GHG_ERP.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_SBDTechnologies_M1BusinessModelCanvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_SBD_Technologies_EBD5FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_SBD_Technologies_amp_Emobi_Announce_Strategic_Partnership_to_Accelerate_EV_Fleet_Adoption.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "18_SBD_Technologies_EBD6_Executive_Summary.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "10_SBDTechnologies_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_SBD_Technologies_M7Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "08_SBDTechnologies_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "SMPnet": {
+      "01_SMPnet_Solutions_offered.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "13_SMPnet_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_SMPnet_TechnologyTestimonials.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "12_Testimonials.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_SMPnet_Three-Year_Financial_Projection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_SMPnet_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_SMPnet_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_SMPnet_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_SMPnet_GHG_ERP_workbook.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_SMPnet_business_model_canvas.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "18_SMPnet_2025_Cleantech_Open_One_Page_Executive_Summary_Template.pdf.pdf": {
+        "cat_code": "PMF",
+        "source": "AI"
+      },
+      "16_SMPnet_M8Questions_d.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "03_SMPnet_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_SMPnet_2025_Team_Targets.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "05_SMPnet_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_SMpnet_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "19_SMPnet_Investor_Pitch.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_SMPnet_M7Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "17_SMPnet_2025_Inclusion_Assignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "SOLARSYSTEMS": {
+      "05_SOLARSYSTEMS_M3Questions.pdf.pdf": {
+        "cat_code": "PMF",
+        "source": "AI"
+      },
+      "01_2025_Team_Targets_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_SOLARSYSTEMS_M6_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_SOLARSYSTEMS_M2Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_CTO-InvestorDeck_Final-SOLARYSTEMS-compressed.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "04_2_SOLARSYSTEMS_LACI_Report.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_SOLARSYSTEMS_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_ExecutiveSummary-SOLARSYSTEMS.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "02_1_SOLARSYSTEMS_BusinessModelCanvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_SOLARSYSTEMS_M7_Questions.pdf.pdf": {
+        "cat_code": "IP",
+        "source": "AI"
+      },
+      "10_CTO-FinancialModel-FINAL_SOLARSYSTEMS.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_ProductTechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_3_Customer_Segmentation_Competitive_Matrix_Market_Ecosystem2.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "12_SOLARSYSTEMS_M8_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "SPARK": {
+      "02_SPARK_M1_Customer_Interview_Capture.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "07_SPARK_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_SPARK_EBD6_Executive_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_SPARK_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_SPARK_M7Questions.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "01_SPARK_Team_Targets.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_SPARK_Financial_Projection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_SPARK_EBD4TechnologyValidation_docx.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "05_SPARK_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_SPARK_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_SPARK_EBD1_Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_SPARK_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_SPARK_InclusionAssigment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_SPARK_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_SPARK_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_SPARK_Making_Energy_Intelligent.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      }
+    },
+    "SPCTA_Industrial": {
+      "06_SPCTA_GHG_ERP_Self_Assessment_docx-2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_SPCTA_M7Questions_docx_docx-2.pdf.pdf": {
+        "cat_code": "IP",
+        "source": "AI"
+      },
+      "11_SPCTA_EBD4TechnologyValidation_docx_docx-2.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "15_SPCTA_M8Questions_docx_docx.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "12_SPCTA_M6Questions_docx_docx-3.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "05_SPCTA_M2ImpactSustainaiblityQuestions_docx-3.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_2025_Team_Targets_SPCTA_Industrial_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_SPCTA_One_Page_Executive_Summary_v5_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_SPCTA_M2ImpactSustainaiblityQuestions_docx-3.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "13_SPCTA_2025_FinancialProjection_xlsx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_SPCTA_EBD3CustomerSegmentationCompetitiveMatrix_docx_docx-2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_SPCTA_M1CustomerDiscoveryInterviews_docx-2.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "18_SPCTA_Investor_Pitch_Deck_CTO_2025_v3.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "08_SPCTA_M3AssignmentQuestion_docx-4.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_SPCTA_Industrial_-_Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_SPCTA_MB8_Inclusion_as_a_Go-To-Market_Strategy.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_SPCTA_M4Questions_docx-2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "SSG_Environmental": {
+      "01_Final_SSG_Case_Study_Kuwait_-_KOC_-_ETC_full_Scale_Trial_-_14-05-2024_-_CWG.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_SSG_Environmental_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_SSGEnvironmental_M7Legal.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "05_SSG_Environmental_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_SSG_Case_Study_Former_Gas_Station.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_SSG_Environmental_-_Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "16_SSGEnvironmental_ExecSummary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_SSGEnvironmental_M8Team.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "02_2025_Team_Targets_-_CTO_-_SSG_Environmental.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_SSGEnvironmental_PitchDeck.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_SSGEnvironmental_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "10_SSG_Environmental_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_SSG_Environmental_M4AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_SSG_Environmental_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_SSGEnvironmental_3YearFinancialModel.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_2025_Module_6_Assignment_Questions.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "03_CTO_NOLA_Customer_Research_Plan.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Scaled_Carbon,_PBC": {
+      "08_ScaledCarbon_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_ScaledCarbon_One_Page_Executive_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_ScaledCarbon_FinancialProjection.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "10_Scaled_Carbon_2025_EBD_3_v1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_ScaledCarbon_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_ScaledCarbon_Inclusion_Assignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "18_Scaled_Carbon_CTO_Deck_v1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Scaled_Carbon_-_Business_Model_Canvas_v2.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "02_Scaled_Carbon_Team_Targets_v2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_Scaled_Carbon_2025_EBD_4_Technology_Validation_v1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_ScaledCarbon_Module_6_Assignment_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_ScaledCarbon_GHGERPWorkbook.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "07_Scaled_Carbon_Essential_Business_Deliverable_2_Impact_Statement_v1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_ScaledCarbon_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_Scaled_Carbon_Module_2_Assignment_Impact_Questions_v1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_ScaledCarbon_Module_8_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_ScaledCarbon_Module_7_Assignment_Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      }
+    },
+    "Seyrab": {
+      "08_Seyrab_M3AssignmentQuestion_docx.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "09_Seyrab_M4Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_Seyrab_M1_Business_Model_Canvas_2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_Seyrab_EBD4TechnologyValidation_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_Seyrab_Executive_Summary_docx.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "03_Seyrab_TeamTargets_1.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "13_Seyrab_FinancialProjections_xlsx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Seyrab_M1_CustomerDiscoveryInterviews_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_Seyrab_M8Questions_docx_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_Seyrab_EBD3CustomerSegmentationCompetitiveMatrix_docx.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "02_CDA_TAF_Letters.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "17_SEYRAB_M10_PitchDeck.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "12_Seyrab_M6Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_Seyrab_M2ImpactSustainaiblityQuestions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_Seyrab_EBD2ImpactStatement_docx.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "14_Seyrab_M7Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "SolGrapH": {
+      "06_SolGrapH_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_SolGrapH_M7Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "07_SolGrapH_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "BC",
+        "source": "AI"
+      },
+      "12_SolGrapH_M8Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "14_SolGrapH_EBD8InvestorPitchDeck.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_SolGrapH_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_SolGrapH_M2ImpactSustainaiblityQuestions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_SolGrapH_2025_Team_Targets.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_SolGrapH_EBD5FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_SolGrapH_EBD6Executive_Summary.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "04_SolGrapH_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_SolGrapH_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "02_SolGrapH_EBD1BMC.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "05_SolGrapH_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Sol_Robotics": {
+      "14_Inclusion_Assignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_SolRobotics_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_SolRobotics_M2ImpactSustainabilityQuestions_Completed.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_2025_Module_3_Product_Market_Fit_amp_Customer_Discovery_Assignment_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_SolRobotics_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_SolRobotics_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_CleanTech_Open_Pitchdeck_Update_08252025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_SolRobotics_M7Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "03_Business_Model_Canvas_Sol_Robotics.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "02_2025_Module_1_Customer_Interview_Capture_Sheet_Sol_Robotics.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_SolRobotics_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_2025_CTO_-_Sol_Robotics_Executive_Summary.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "13_SolRobotics_M8Questions.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "01_2025_Team_Targets_Sol_Robotics.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      }
+    },
+    "Solar_Intelligence": {
+      "14_Solar_Intelligence_Executive_Summary.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "08_SolarIntelligence_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_SolarIntelligence_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_SolarIntelligence_Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "12_SolarIntelligence_M7Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_SolarIntelligence_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_SolarIntelligence_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_Solar_Intelligence_Pitch_Deck.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "07_SolarIntelligence_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_SolarIntelligence_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_SolarIntelligence_2025_Team_Targets.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_SolarIntelligence_TechnologyTestimonials.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "13_SolarIntelligence_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_SolarIntelligence_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_SolarIntelligence_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      }
+    },
+    "SolenSphere": {
+      "05_SolenSphere_EBD2Impact_Statement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_SolenSphere-Inclusive_GTM_Pillar.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "01_2025_Team_Targets.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_SolenSphere_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_2025_FinancialProjectionTemplate_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_SolenSphere_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_SolenSphere_M2ImpactSustainabilityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_Science-Inflatable-Stationary-CSP-new.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_SolenSphere_-_Business_Model_Canvas_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_SolenSphere_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_Ecosystem_digram.pdf.pdf": {
+        "cat_code": "L",
+        "source": "AI"
+      },
+      "16_SolenSphere_Executive_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_SolenSphere_EBD4Technology_Validation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_SolenSphere_M8_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_Pitch-Deck-Exposition.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_SolenSphere_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_SolenSphere_Customer_Interview_Capture_Sheet.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Spear_the_Air": {
+      "17_SpeartheAir_2025_ExecutiveSummary_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_SpeartheAir_M7Questions_docx.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "04_Spear_the_Air_Inc_-_Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_SpeartheAir_M6Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_SpeartheAir_EBD5FinancialProjection_xlsx_-_Best_Guess.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "18_SpeartheAir_PitchDeck.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "03_SpeartheAir_Questionaire.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_SpeartheAir_M4Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_SpeartheAir_M3AssignmentQuestion_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_SpeartheAir_GHG_ERP_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_SpeartheAir_EBD2ImpactStatement_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_SpeartheAir_EBD4TechnologyValidation_docx.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "16_SpeartheAir_2025InclusionAssignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_2025_Team_Targets_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_Spear_the_Air_M2ImpactSustainabilityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_SpeartheAir_M8Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_SpeartheAir_EBD3CustomerSegmentationCompetitiveMatrix_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Sterrett_Levin": {
+      "05_Sterrett_Levin_Inc_M2ImpactSustainabilityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_Sterrett_Levin_2025_Team_Targets.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "06_Sterrett_Levin_Inc_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Watermaven_by_Sterrett_Levin_Inc_References_amp_Source_Data.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "07_Sterret_Levin_Inc_M3AssignmentQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Sterrett_Levin_Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_Sterrett_Levin_Inc_EBD3CustomerSegmentCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "08_Sterrett_Levin_Inc_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_Watermaven_by_Sterrett_Levin_Inc_Pitch_Deck_EBD8.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_Sterrett_Levin_Inc_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "11_Sterrett_Levin_Inc_EBD5ThreeYearFianncialProjection_Combined.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_Sterrett_Levin_Inc_EBD6_Executive_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Structural_BioComposites": {
+      "07_2025_Module_2_Assignment_Impact_Questions_REV_1_-_SUBMITTED.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_StructualBiocomposites_-_M6Questions_Rev_1_Submitted.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Structural_BioComposites_-_Business_Model_Canvas_Rev_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_2025_CleanTech_Open_Application_Supporting_Materials.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_StructuralBioComposites_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_StructuralBioComposites_M7Questions.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "16_StructuralBioComposites_Inclusion_Assignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Structural_BioComposites_-_2025_Team_Targets.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_StructuralBioComposites_M2ImpactSustainaiblityQuestions_Rev2_submitted.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_StructuralBioComposites_EBD3CustomerSegmentationCompetitiveMatrix_Rev1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_StructuralBioComposites_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "IP",
+        "source": "AI"
+      },
+      "03_Structural_BioComposites_-_M2CustomerDiscoveryInterviews_Rev1.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "09_StructuralBioComposites_M4Questions_Rev2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_StructuralBioComposites_M3AssignmentQuestion_Rev1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "18_Structural_BioComposites_Pitch_deck_Draft.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_Structural_BioComposites_M9_Executive_Summary_Rev-1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_Structural_BioComposites_GHG_ERP_Rev_1.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "13_StructualBiocomposites_-_FinancialProjection_combined_Rev_Orig.pdf.pdf": {
+        "cat_code": "F",
+        "source": "AI"
+      }
+    },
+    "Sustainable_Chemicals": {
+      "08_Sustainable_Chemicals_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_Proforma_2025-2032.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "02_CTO_Supporting_Material.pdf.pdf": {
+        "cat_code": "BC",
+        "source": "AI"
+      },
+      "05_Business_Model_Canvas_-_Sust-Chem_CTO_v2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_Sust-Chem_Technology_Validation_for_CTO.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_2025_Module_8_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_Sust-Chem_Proforma_2025-2032_vCTO.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_2025_Module_2_Assignment_Impact_Questions_vDO.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Customer_Discover_Interviews_-_Sust-Chem_for_CTO.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_2025_Module_7_Assignment_Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "07_TEA_LCA_and_GHG_emissions_reduction.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_2025_Module_4_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_Sust_Chem_PMF_for_CTO.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "18_Sust-Chem_Pitch_Deck_August_5_2025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_1_-_One_Pager_Summary.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "13_2025_Module_6_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_Sust-Chem_2025_Team_Targets.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_SustChem_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Symbiotic_Agriculture": {
+      "06_SymbioticAgriculture_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_SymbioticAgriculture_M2AssignmentImpact_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_SymbioticAgriculture_M6questions_doc.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_SymbioticAgriculture_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_SymbioticAgriculture_M1CustomerInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_SymbioticAgriculture_CTOTestimonials.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "09_SymbioticAgriculture_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "01_SAI_Summary_of_Field_Trials_2024.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_SymbioticAgriculture_M1Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "08_SymbioticAgriculture_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_SymbioticAgriculture_TeamTargets.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "16_SymbioticAgriculture_EBD6ExecutiveOverview.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_SymbioticAgriculture_M7Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_SymbioticAgriculture_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_SymbioticAgriculture_EBD8InvestorPitchDeck.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_SymbioticAgriculture_EBD5ThreeYearFInancialProjection.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "10_SymbioticAgriculture_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      }
+    },
+    "Tensor_Planet": {
+      "04_TensorPlanet_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_TensorPlanet_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_EBD5_Three-Year_Financial_Projection.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "11_TensorPlanet_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "07_Tensor-Planet_GHG_ERP.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "02_Tensor_Planet_Investor_Deck_-_CleanTech_Open.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "09_TensorPlanet_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_Tensor-Planet_Inclusion_Assignment.docx.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_TensorPlanet_EBD1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_Team_targets.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_TensorPlanet_M8Questions.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "06_TensorPlanet_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_TensorPlanet_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_TensorPlanet_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_TensorPlanet_M7Questions.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "19_Tensor-Planet_Pitch-Deck.pdf.pdf": {
+        "cat_code": "F",
+        "source": "AI"
+      },
+      "12_TensorPlanet_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "18_Tensor-Planet_Executive_Summary.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      }
+    },
+    "Teragen_Energy": {
+      "02_TeagenEnergy_Team_Targets.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "17_TeragenEnergy_Executive_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_TeragenEnergy_M7Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_Combined_Letter_of_Intents.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "11_TeragenEnergy_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "18_TeragenEnergy_Cleantech_Open_Pitch.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_TeragenEnergy_Inclusive_GTM_Strategy.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_TeragenEnergy_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "15_TeragenEnergy_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_TeragenEnergy_BMC-Speed_to_Power.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_TeragenEnergy_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_TeragenEnergy_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_TeragenEnergy_GHG_ERP.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_TeragenEnergy_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_TeragenEnergy_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "09_TeragenEnergy_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_TeragenEnergy_2025_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_TerragenEnergy_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Three_Rivers_Power_Limited_Liability": {
+      "07_2025_Essential_Business_Deliverable_4_Technology_Validation_TRP.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_TRP_Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_Essential_Business_Deliverable_8_Investor_Pitch_Deck_Three_Rivers_Power.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_2025_Module_2_Assignment_Impact_Questions_TRP.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_2025_Essential_Business_Deliverable_6_Executive_Summary_TRP.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "08_2025_Essential_Business_Deliverable_Three_Year_Financial_Projection_TRP.pdf.pdf": {
+        "cat_code": "T",
+        "source": "AI"
+      },
+      "05_2025_Essential_Business_Deliverable_2_Impact_Statement_TRP.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_2025_Team_Targets_Three_Rivers_Power_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_TRP_M1CustomerDiscoveryInterview_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "TiltingSolar": {
+      "12_TiltingSolar_FinancialProjectionTemplateNewAll2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_TiltingSolar_M3CustomerSegmentationFinal.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_TiltingSolar_CustomerDiscoveryAssignmentQuestionsNew.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_TiltingSolar_EBD4_TechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_TiltingSolar_GHG_ERP_Workbook.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "02_TiltingSolar_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_TiltingSolar_ExecSummary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_CTO_Pitch_Deck_-_Birnie_-_new_10.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_TiltingSolar_M2ImpactSustainaiblityQuestionsFinal.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_TiltingSolar_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_TiltingSolar_M8TeamQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_TiltingSolar_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_TiltingSolar_InclusionDoc2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_business-model-canvas_-_Tilting_Solar_4.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_TiltingSolar_TeamTargets.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_TiltingSolar_M7LegalQuestions.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "08_TiltingSolar_4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Upstream_Carbon": {
+      "12_Upstream_Carbon_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_Upstream_Carbon_M7Questions.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "18_Upstream_Carbon_EBD6ExecutiveSummary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_Upstream_Carbon_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_Upstream_Carbon_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_Upstream_Carbon_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "16_Upstream_Carbon_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_2025_Team_Targets_CTONE.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_Upstream_Carbon_-_3-year_projections_-_Best_Guess.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_Upstream_Carbon_M8InclusionAssignment.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "10_Upstream_Carbon_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_Upstream_Carbon_EBD1BusinessModelCanvas.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "08_Upstream_Carbon_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_Upstream_Carbon_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_FLS_TREE_Letters_Combined.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "07_GHG_ERP_Workbook-Uptream_Carbon-FINAL.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "19_Upstream_Carbon_EBDPitchDeck.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Upstream_Carbon_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Vaanelai": {
+      "10_2025_Module_5-Essential_Business_Deliverable_4_Technology_Validation-v2.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "08_KlimateIQ_M4Questions_docx.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "11_Vaanelai-Financial_Projection-08262025-CTO_version.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "13_2025_Module_8_Questions-filled-VS-07302025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_KlimateIQ_M7Questions-_2025_Module_7_Assignment_Questions-VS.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "15_KlimateIQ_EBD9ExecutiveSummaryt.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_VaanelAI_overview_deck-v3-08262025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_Business_Model_Canvas-KLIMATE_IQ-Submitted-2025Jun9.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_Vaanelai-CTO-2025_Team_Targets-VS.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "14_2025_Module_8-Inclusion_Assignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_2025_Module_3_Product_Market_Fit_amp_Customer_Discovery_Assignment_Questions_v3.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_2025_Module_1_Customer_Interview_Capture_Sheet-wip-v1-06092025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_KlimateIQ_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_CTO-EBD-NYSP2I-GHG-ERP-Self-Assessment_Workbook.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "06_KlimateIQ_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Volt_Harbor": {
+      "09_Volt_Harbor_M4Questions_0820.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_Volt_Harbor_M7Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_VoltHarbor_EBD3CustomerSegmentationCompetitiveMatrix_0822.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Letters_of_Support_Consolidated.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "12_Volt_Harbor_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_VoltHarbor_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_VoltHarbor_M3AssignmentQuestions_0825.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "03_2025_Team_Targets.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "05_Volt_Harbor_Business_Model_Canvas_08052025.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "17_Volt_Harbor_Full_Pitch_Deck_June2025v4.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_VoltHarbor_EBD5FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_2025_Volt_Harbor_Executive_Summary_08262025v2.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_Volt_Harbor_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "06_VoltHarbor_M2ImpactSustainabilityQuestions_v08262025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_Volt_Harbor_M8_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_2025_Module_1_Customer_Interview_Capture_Sheet.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Wavon_Ceramics_\u2014_Accelerating_Manufacturing": {
+      "05_WavonCeramics_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_WavonCeramics_InclusionAssignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_WavonCeramics_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_WavonCeramics_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "17_WavonCeramics_ExecutiveSummary.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "04_WavonCeramics_BusinessModelCanvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_WavonCeramics_GHGERP.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_WavonCeramics_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "13_WavonCeramics_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_WavonCeramics_M1CustomerDiscoveryInterviews.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_WavonCeramics_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_WavonCeramics_TeamTargets.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "01_Supplementary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_WavonCeramics_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_WavonCeramics_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_WavonCeramics_M7Questions.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "09_WavonCeramics_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "18_WavonCeramics_InvestorPitch.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Wayside": {
+      "09_Wayside_EBD4TechnologyValidation_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_Wayside_M1CustomerDiscoveryInterviews_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_Wayside_EBD2ImpactStatement_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_Wayside_CTO_Investor_Deck_2025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_Wayside_FinancialProjection_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_Wayside_M3AssignmentQuestion_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_Wayside_2025_FinancialProjectionTemplate.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_Wayside_M4Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Wayside_M1CustomerDiscoveryInterviews_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_Wayside_M2ImpactSustainaiblityQuestions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_Wayside_M7Questions_docx.pdf.pdf": {
+        "cat_code": "IP",
+        "source": "AI"
+      },
+      "13_Wayside_M8Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_Wayside_EBD3CustomerSegmentationCompetitiveMatrix_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_Wayside_2025_Cleantech_Open_One_Page_Executive_Summary.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "14_Wayside_Inclusion_Assignment.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "01_Wayside_Whitney_Spec_Sheet_3-25.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "We_Think_Global": {
+      "14_WTG_One_Page_Executive_Summary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_WTG_TechnologyTestimonials.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "01_WTG_Module_One_Five_Interview_Captures_Final_July_11.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_WTG_M7Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "06_WTG_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_WTG_FinancialProjection.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_WTG_Module_4_Ecosystem_Diagram.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "10_WTG_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_WTG_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_WTG_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_WTG_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_WTG_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_Module_10_CTO_Investor_Pitch_Deck_August_26_2025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_WTG_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_WTG_Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "Wind_Pulse_Energy": {
+      "07_WindPulseEnergy_EBD3ProductMarketFitDiscovery_Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_WindPulseEnergy_Module6FinanceandFunding.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_WindPulseEnergy_ExecutiveSummary.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_WindPulseEnergy_Module7Legal.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "05_WindPulseEnergy_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_WindPulseEnergy_BusinessModelCanvas.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "14_WindPulseEnergy_Module8ManagemetTeam.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_WindPulseEnergy_EBD4ProductTechnologyValidation.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "06_WindPulseEnergy_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "03_WindPulseEnergy_EBD1CustomerInterviewCaptures.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_Technical_Deck_03-04-25b.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "16_WindPulseEnergy_PitchDeck.pdf.pdf": {
+        "cat_code": "PMF",
+        "source": "AI"
+      },
+      "12_WindPulseEnergy_FinancialProjections.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_WindPulseEnergy_EBD4MarketsAndGettingtoThem.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_WindPulseEnergy_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      }
+    },
+    "Yggdrasil_Trees": {
+      "06_YggdrasilTrees_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "16_YggdrasilTrees_M8InclusionAssignment.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_YggdrasilTrees_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "05_YggdrasilTrees_BusinessModelCanvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_YggdrasilTrees_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_YggdrasilTrees_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "13_Yggdrasil_Trees_Financial_Projections_5Year_v2_0.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "04_2025_Module_1_Customer_Interview_Capture_Sheet_YT_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_YggdrasilTrees_M7Questions.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "17_YggdrasilTrees_Executive_Summary.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "15_YggdrasilTrees_M8Questions_docx.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_YggdrasilTrees_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "18_YggdrasilTrees_PitchDeck.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "03_2025_Team_Targets_Yggdrasil_Trees_docx_1.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "01_Yggdrasil_Trees_Financial_Projections_v1_0_workingfile.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "02_Yggdrasil_Trees_Technical_Updates_042025.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "08_YggdrasilTrees_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_YggdrasilTrees_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      }
+    },
+    "iGridSim": {
+      "04_iGridSim_M2ImpactSustainaiblityQuestions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "14_2025_Cleantech_Open_One_Page_Executive_Summary_Template.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "06_iGridSim_M3AssignmentQuestion.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "10_iGridSim_M6Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "15_iGridSim.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "11_iGridSim_FinancialProjection.pdf.pdf": {
+        "cat_code": "TP",
+        "source": "AI"
+      },
+      "05_iGridSim_EBD2ImpactStatement.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "09_iGridSim_EBD4TechnologyValidation.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      },
+      "03_Final-_Business_Model_Canvas.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "02_2025_Module_1_Customer_Interview_Capture_Sheet.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "07_iGridSim_M4Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "13_iGridSim_M8Questions.pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI"
+      },
+      "12_iGridSim_M7Questions.pdf.pdf": {
+        "cat_code": "IS",
+        "source": "AI"
+      },
+      "08_iGridSim_EBD3CustomerSegmentationCompetitiveMatrix.pdf.pdf": {
+        "cat_code": "ES",
+        "source": "AI"
+      }
+    }
+  }
+}

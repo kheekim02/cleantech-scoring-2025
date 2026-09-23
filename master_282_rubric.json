@@ -1,0 +1,4504 @@
+[
+  {
+    "cat_code": "BC",
+    "text": "How clearly is the value proposition understood?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.75 PTS",
+        "val": 0.75
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0.25 PTS",
+        "val": 0.25
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "BC_Q1"
+  },
+  {
+    "cat_code": "BC",
+    "text": "Does the company clearly identify its customer segments and customer attributes?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.75 PTS",
+        "val": 0.75
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0.25 PTS",
+        "val": 0.25
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "BC_Q2"
+  },
+  {
+    "cat_code": "BC",
+    "text": "Has the company interviewed at least 5 customers?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.75 PTS",
+        "val": 0.75
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0.25 PTS",
+        "val": 0.25
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "BC_Q3"
+  },
+  {
+    "cat_code": "BC",
+    "text": "Are the large sections of the BMC clearly filled and articulated?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.75 PTS",
+        "val": 0.75
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0.25 PTS",
+        "val": 0.25
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "BC_Q4"
+  },
+  {
+    "cat_code": "BC",
+    "text": "Are the small sections of the BMC clearly filled and articulated?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "BC_Q5"
+  },
+  {
+    "cat_code": "ES",
+    "text": "Company purpose directly addresses two or more United Nations Sustainable Development Goals (SDGs), maximizing environmental, economic, and social value (Two or more: 1, One only: 0.5, None: 0).",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "ES_Q1"
+  },
+  {
+    "cat_code": "ES",
+    "text": "Clearly maps applicable SDGs across the company\u2019s value chain (Two or more: 1, One only: 0.5, None: 0).",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "ES_Q2"
+  },
+  {
+    "cat_code": "ES",
+    "text": "Addresses whether the impact priority is climate mitigation, climate resilience + adaptation, or both.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "ES_Q3"
+  },
+  {
+    "cat_code": "ES",
+    "text": "Clearly explains how the startup is better than conventional companies in its sector using a quantifiable number.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "ES_Q4"
+  },
+  {
+    "cat_code": "ES",
+    "text": "Does the company describe its culture and how it plans to use profits?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "ES_Q5"
+  },
+  {
+    "cat_code": "ES",
+    "text": "Is the company certified by any environmental organizations?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "ES_Q6"
+  },
+  {
+    "cat_code": "ES",
+    "text": "If applicable, does the company mention the existing regulations (local, state, federal, international) that have a direct impact on the company\u2019s license to operate? (If no applicable regulations exist, give one point for this question)",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "ES_Q7"
+  },
+  {
+    "cat_code": "ES",
+    "text": "Has the company identified the environmental or social risks of the materials in the product/service? (e.g. toxicity, availability, recyclability, etc.) (If not applicable, give one point for this question because it is not a business risk)",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "ES_Q8"
+  },
+  {
+    "cat_code": "ES",
+    "text": "Has the company identified its largest sources of energy use and land use? (If not applicable, give one point for this question because there are no large sources necessary)",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "ES_Q9"
+  },
+  {
+    "cat_code": "ES",
+    "text": "Has the company categorized its waste stream by percentage? (If not applicable, give one point for this question because there is no waste stream necessary)",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "ES_Q10"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Startup has determined a specific target market and has articulated why they are a better option than other segments",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q1"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Startup has identified a need the target market has that the product fills.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q2"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Startup has had live research-focused discussions with at least 4 members of its target audience.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q3"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Startup has had live research-focused discussions with at least 6 members of its target audience.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q4"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Startup has had live research-focused discussions with 10 or more members of its target audience.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q5"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Startup updated or created customer segments based on research.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q6"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Startup updated or created customer archetypes/personas based on research.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q7"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Startup updated or changed its user experience based on research.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q8"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Based on research, did the startup clearly articulate something it learned that changed some aspect of its strategy or product experience?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q9"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Did the startup create multiple customer segments based on demographic factors (ex: age, income, etc)",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q10"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Did the startup create multiple customer segments based on psychological factors (ex: comfort with technology, attitudes towards cost)",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q11"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Did the startup identify important psychographic attributes associated with their target audience? (ex. Our target audience tends to be skeptical about tech companies)",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q12"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Has the startup validated the size and representativeness of their target market psychographic segmentation through a statistically significant quantitative methodology?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q13"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Startup has a research-validated range potential customers would be willing to pay for their product or service.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q14"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Start up has implemented feedback mechanisms into their service or product experience to gather ongoing feedback from individuals who are using or who will use their product/service.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q15"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Startups has embedded Net Promoter Score (NPS) into ongoing feedback.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q16"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Has the startup articulated all of the stakeholders in the market they are addressing?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q17"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Has the start up identified and addressed the needs of all key stakeholders?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q18"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Have they identified who the purchasing decision-makers in the system are?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q19"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Startup has someone dedicated to tech tools and ops.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q20"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Startup has dedicated resources, or individual on team, to user experience.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q21"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Startup has worked with a user/customer research professional.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q22"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Startup has a logo that is discernible when smaller than \u00bd an inch.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q23"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Startup has a logo that is discernible when billboard size.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q24"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Startup has a logo that is discernible in greyscale",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q25"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Startup has a cohesive visual design system that is consistent across, e.g., email, website, and other assets.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q26"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Startup has a branding professional, or has worked with one.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q27"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Startup has a brand strategy based in customer insights.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q28"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Has the startup completed a competitive analysis?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q29"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Has the startup analyzed the reasons why customers use the competition?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q30"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Has the startup identified unique value that it can deliver to customers?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q31"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Has the startup identified customer experience pain-points in at least 1 major competitor's product?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q32"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Has the startup identified customer experience pain-points in at least 3 major competitor's product?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q33"
+  },
+  {
+    "cat_code": "PMF",
+    "text": "Has the startup validated customer experience pain-points through user research?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "PMF_Q34"
+  },
+  {
+    "cat_code": "M",
+    "text": "Has the startup identified the channels that its key customers frequently consume media, products, and services via? (eg. Facebook marketplace, Best Buy physical locations, word of mouth)",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "M_Q1"
+  },
+  {
+    "cat_code": "M",
+    "text": "Does the startup have a clear operational plan to distribute its product or service via distribution channels that customers frequently use?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "M_Q2"
+  },
+  {
+    "cat_code": "M",
+    "text": "Has the startup identified ways to leverage their advocates, customers or community to spread their product or service?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "M_Q3"
+  },
+  {
+    "cat_code": "M",
+    "text": "Has the startup designed a viral marketing campaign for their product or service targeted at a specific audience?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "M_Q4"
+  },
+  {
+    "cat_code": "M",
+    "text": "Has the startup created engagement mechanisms to allow for different levels of user participation?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "M_Q5"
+  },
+  {
+    "cat_code": "M",
+    "text": "Has the startup generated a clear strategy to on-board new users?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "M_Q6"
+  },
+  {
+    "cat_code": "M",
+    "text": "Has startup identified key barriers to customer purchases?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "M_Q7"
+  },
+  {
+    "cat_code": "M",
+    "text": "Has the startup identified sales tactics to address key purchasing barriers?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "M_Q8"
+  },
+  {
+    "cat_code": "M",
+    "text": "Has the startup created a customer feedback channel within the sales process?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "M_Q9"
+  },
+  {
+    "cat_code": "M",
+    "text": "Has the startup identified and prioritized the most important features to customers for GTM rollout?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "M_Q10"
+  },
+  {
+    "cat_code": "M",
+    "text": "Has the startup created a product or service roadmap, detailing when features will roll out, and why?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "M_Q11"
+  },
+  {
+    "cat_code": "M",
+    "text": "Has the startup anticipated the need to gather feedback and pivot in the future?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "M_Q12"
+  },
+  {
+    "cat_code": "TP",
+    "text": "Did the company cite peer-reviewed articles about its core technology?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "TP_Q1"
+  },
+  {
+    "cat_code": "TP",
+    "text": "Has the company tested the technology internally?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "TP_Q2"
+  },
+  {
+    "cat_code": "TP",
+    "text": "Does the company have third-party validation?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "TP_Q3"
+  },
+  {
+    "cat_code": "TP",
+    "text": "Has the company identified whether or not there are other companies using the same or similar core technology?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "TP_Q4"
+  },
+  {
+    "cat_code": "TP",
+    "text": "How many patents has the company filed, including subsequently granted patents? (If only 1 patent: 0 pts, If only 1-2 patents: 0.5 pts, If 3+ patents: 1 pt)",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "TP_Q5"
+  },
+  {
+    "cat_code": "TP",
+    "text": "How many granted patents does the company have? (If only 1 patent: 0 pts, If only 1-2 patents: 0.5 pts, If 3+ patents: 1 pt)",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "TP_Q6"
+  },
+  {
+    "cat_code": "TP",
+    "text": "What is the product\u2019s DOD/DOE/Isles Utilities Technology Readiness Level?  (If Levels 1-3: 0 pts, If Levels 4-6: 0.5 pts, If Levels 7-9: 1 pt)",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "TP_Q7"
+  },
+  {
+    "cat_code": "TP",
+    "text": "Does the company have an initial prototype?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "TP_Q8"
+  },
+  {
+    "cat_code": "TP",
+    "text": "Does the company have a full-scale prototype or software beta version?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "TP_Q9"
+  },
+  {
+    "cat_code": "TP",
+    "text": "Has the company identified its third-party validation entity (university, national lab, independent test organization, etc.)?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "TP_Q10"
+  },
+  {
+    "cat_code": "TP",
+    "text": "Does the company have documentation for the cost of third-party validation (anticipated or paid)?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "TP_Q11"
+  },
+  {
+    "cat_code": "TP",
+    "text": "(0: not started, 0.33: preliminary talks, 0.67: pending, 1: completed) What stage is the validation in?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.67 PTS",
+        "val": 0.67
+      },
+      {
+        "label": "0.33 PTS",
+        "val": 0.33
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "TP_Q12"
+  },
+  {
+    "cat_code": "TP",
+    "text": "Does the company have any field installations with potential customers?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "TP_Q13"
+  },
+  {
+    "cat_code": "TP",
+    "text": "Does the company have any paid field installations?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "TP_Q14"
+  },
+  {
+    "cat_code": "TP",
+    "text": "Does the product need certification (UL, ASTM, etc.)? Score +1 if certification is not needed or already obtained, +0.5 if there is at least a written plan to complete it, and zero if certification is needed but there is no written plan.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "TP_Q15"
+  },
+  {
+    "cat_code": "TP",
+    "text": "Is the product ready for manufacture or deployment?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "TP_Q16"
+  },
+  {
+    "cat_code": "F",
+    "text": "Does the company have an operating budget?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q1"
+  },
+  {
+    "cat_code": "F",
+    "text": "Does the operating budget include revenue and expenses?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q2"
+  },
+  {
+    "cat_code": "F",
+    "text": "Are revenue and expenses identified by source or line item?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q3"
+  },
+  {
+    "cat_code": "F",
+    "text": "Are the revenue, expense, and market assumptions upon which the operating budget is based identified?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q4"
+  },
+  {
+    "cat_code": "F",
+    "text": "If the operating budget has been in place for more than the current year, does it compare actual revenue and expenses by line item against budgeted revenue and expenses by line item?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q5"
+  },
+  {
+    "cat_code": "F",
+    "text": "Does the operating budget include revenue, expense, and market projections for the next 3, 5, or 10 years?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q6"
+  },
+  {
+    "cat_code": "F",
+    "text": "Are revenue and expense projections identified as fixed, variable, or marginal?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q7"
+  },
+  {
+    "cat_code": "F",
+    "text": "Are the revenue, expense, and market assumptions upon which the operating budget projections are based identified?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q8"
+  },
+  {
+    "cat_code": "F",
+    "text": "Does the company have a capital budget?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q9"
+  },
+  {
+    "cat_code": "F",
+    "text": "Does the capital budget include revenue and expenses by project?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q10"
+  },
+  {
+    "cat_code": "F",
+    "text": "Are revenue and expenses by project identified by source or line item?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q11"
+  },
+  {
+    "cat_code": "F",
+    "text": "Are the revenue, expense, and market assumptions upon which the capital budget is based identified by project?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q12"
+  },
+  {
+    "cat_code": "F",
+    "text": "If the capital budget has been in place for more than the current year, does it compare actual revenue and expenses by project and line item against budgeted revenue and expenses by project and line item?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q13"
+  },
+  {
+    "cat_code": "F",
+    "text": "Does the capital budget include revenue, expense, and market projections for the next 3, 5, or 10 years, or for the life of each project?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q14"
+  },
+  {
+    "cat_code": "F",
+    "text": "Are the revenue, expense, and market assumptions upon which the capital budget projections are based identified by project?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q15"
+  },
+  {
+    "cat_code": "F",
+    "text": "Does the company have monthly and annual balance sheets, profit and loss statements, and cash flow statements?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q16"
+  },
+  {
+    "cat_code": "F",
+    "text": "Are the balance sheet, profit and loss statement, and cash flow statement reconciled monthly and annually to the company\u2019s bank statement?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q17"
+  },
+  {
+    "cat_code": "F",
+    "text": "Are the balance sheet, profit and loss statement, and cash flow statement reconciled monthly and annually to the budget?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q18"
+  },
+  {
+    "cat_code": "F",
+    "text": "Are return on equity and return on assets calculated?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q19"
+  },
+  {
+    "cat_code": "F",
+    "text": "Are 3-, 5-, or 10-year projections for return on equity and return on assets calculated?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q20"
+  },
+  {
+    "cat_code": "F",
+    "text": "Are the market assumptions upon which return on equity and return on assets projections are based identified?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q21"
+  },
+  {
+    "cat_code": "F",
+    "text": "Do return on equity and return on assets projections assume repayment of investor equity and return on investor equity?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q22"
+  },
+  {
+    "cat_code": "F",
+    "text": "Does the company have prior-year audited financial statements?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q23"
+  },
+  {
+    "cat_code": "F",
+    "text": "Does the company have prior-year income tax returns?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q24"
+  },
+  {
+    "cat_code": "F",
+    "text": "(5) Does the company have actual sales or revenue data?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q25"
+  },
+  {
+    "cat_code": "F",
+    "text": "(5) Does the company compare actual sales or revenue data to industry total sales to calculate market share based on similar companies in the same industry?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q26"
+  },
+  {
+    "cat_code": "F",
+    "text": "(5) Does the company project sales or revenue data for the next 3, 5, or 10 years?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q27"
+  },
+  {
+    "cat_code": "F",
+    "text": "(5) Does the company compare projected sales or revenue data for the next 3, 5, or 10 years to industry projected total sales to calculate projected market share based on similar companies in the same industry?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q28"
+  },
+  {
+    "cat_code": "F",
+    "text": "(5) Does the company identify assumptions upon which projected sales or revenue data are based?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "F_Q29"
+  },
+  {
+    "cat_code": "L",
+    "text": "Does the company have an intellectual property strategy?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q1"
+  },
+  {
+    "cat_code": "L",
+    "text": "Does this company spend time on developing and implementing an intellectual property strategy?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q2"
+  },
+  {
+    "cat_code": "L",
+    "text": "Is there a person in the organization who is tasked with managing intellectual property?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q3"
+  },
+  {
+    "cat_code": "L",
+    "text": "If yes, does that person have more than 5 years of experience managing intellectual property?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q4"
+  },
+  {
+    "cat_code": "L",
+    "text": "Does the company have a trademark/service mark strategy?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q5"
+  },
+  {
+    "cat_code": "L",
+    "text": "Has the company filed any applications for trademark registration?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q6"
+  },
+  {
+    "cat_code": "L",
+    "text": "Has the company done a clearance search to determine whether or not it is okay to use the trade or service mark it wants?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q7"
+  },
+  {
+    "cat_code": "L",
+    "text": "If the Company plans to apply for more than one trade or service mark, has it done a clearance search for every mark it plans to apply for?\n- Not applicable (the Company plans to apply for no marks): award 1 pt.\n- Yes (a clearance search was done for every mark): award 1 pt.\n- No (one or more marks lack a clearance search): award 0 pts.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q8"
+  },
+  {
+    "cat_code": "L",
+    "text": "According to the USPTO, strong, highly registerable marks are creative or unique names that set a brand apart. These include fanciful marks (made-up words like Pepsi), arbitrary marks (unrelated real words like Apple for computers), and suggestive marks (words hinting at a quality without stating it outright like Coppertone). Conversely, weak or unacceptable marks are hard to protect and usually cannot be federally registered. These include descriptive marks (merely detailing a feature or quality, like Creamy for yogurt) and generic terms (the common, everyday product name, like Bagel shop).\nOn average across every mark the Company plans to apply for, how descriptive are they on a scale of 1\u20135? Please rate them with 1 being a weak mark that concisely describes a feature or quality of the goods or services, and 5 being a strong mark that has no relationship to what the Company is selling.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.75 PTS",
+        "val": 0.75
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0.25 PTS",
+        "val": 0.25
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q9"
+  },
+  {
+    "cat_code": "L",
+    "text": "Has the Company successfully obtained a trademark or service mark registration for any of its marks?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q10"
+  },
+  {
+    "cat_code": "L",
+    "text": "Does the Company plan to sell its products or services internationally?\n- If no: award 1 pt.\n- If yes: award 1 pt only if the Company provides evidence that it has applied for trademark registrations in any foreign countries. Otherwise, award 0 pts.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q11"
+  },
+  {
+    "cat_code": "L",
+    "text": "Does the company have a copyright strategy?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q12"
+  },
+  {
+    "cat_code": "L",
+    "text": "Does the product involve source code?\n- If no: award 1 pt.\n- If yes: award 1 pt only if the Company has written agreements with every engineer who wrote code that properly assign their copyrights to the Company. Otherwise, award 0 pts.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q13"
+  },
+  {
+    "cat_code": "L",
+    "text": "Is there any open-source code in the product?\n- If no: award 1 pt.\n- If yes: award 1 pt only if the Company has copies of the open-source license for the code. Otherwise, award 0 pts.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q14"
+  },
+  {
+    "cat_code": "L",
+    "text": "If the company does not think it has open-source code, has it conducted rigorous testing to confirm that there is no open-source code in the product?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q15"
+  },
+  {
+    "cat_code": "L",
+    "text": "Has the company filed any copyright registrations?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q16"
+  },
+  {
+    "cat_code": "L",
+    "text": "Has the company registered its website?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q17"
+  },
+  {
+    "cat_code": "L",
+    "text": "Does the company have good archival information so that it can prove exactly what was on its website on any specific day in the past?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q18"
+  },
+  {
+    "cat_code": "L",
+    "text": "Does the company have a patent strategy?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q19"
+  },
+  {
+    "cat_code": "L",
+    "text": "Has the company filed any applications for patents?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q20"
+  },
+  {
+    "cat_code": "L",
+    "text": "Does the company know in which countries it plans to seek patent protections?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q21"
+  },
+  {
+    "cat_code": "L",
+    "text": "Does the company know which of its competitors is filing patent applications?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q22"
+  },
+  {
+    "cat_code": "L",
+    "text": "Has the company evaluated their patent portfolios?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q23"
+  },
+  {
+    "cat_code": "L",
+    "text": "Has the company evaluated their products?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q24"
+  },
+  {
+    "cat_code": "L",
+    "text": "Does the company know what technical features distinguish its product from those of its competitors?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q25"
+  },
+  {
+    "cat_code": "L",
+    "text": "Does the company know whether customers buy its products based on any particular technical feature that it invented?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q26"
+  },
+  {
+    "cat_code": "L",
+    "text": "Does the company have a trade secret strategy?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q27"
+  },
+  {
+    "cat_code": "L",
+    "text": "Is the company taking reasonable steps to ensure that its trade secrets remain secret?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q28"
+  },
+  {
+    "cat_code": "L",
+    "text": "Have all employees signed non-disclosure and invention assignment agreements?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q29"
+  },
+  {
+    "cat_code": "L",
+    "text": "Has the company identified technical information that is known to the company, is not generally known or readily accessible to competitors, and derives value from not being generally known or readily accessible?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q30"
+  },
+  {
+    "cat_code": "L",
+    "text": "Has the company identified business information that is known to the company, is not generally known or readily accessible to competitors, and derives value from not being generally known or readily accessible?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q31"
+  },
+  {
+    "cat_code": "L",
+    "text": "Has the Company hired any people who worked for competitors?\n- If no: award 1 pt.\n- If yes: award 1 pt only if the Company took steps to ensure that it does not learn or use the competitor's trade secret information. Otherwise, award 0 pts.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q32"
+  },
+  {
+    "cat_code": "L",
+    "text": "Has the company already filed documents establishing a legal entity (e.g. C Corp, S Corp, LLC)?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q33"
+  },
+  {
+    "cat_code": "L",
+    "text": "If the Company has already filed documents establishing a legal entity, has it listed all documents related to the legal entity (e.g., articles of incorporation, bylaws, amendments; minutes of board of directors, committee and shareholders' meetings; consents)?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q34"
+  },
+  {
+    "cat_code": "L",
+    "text": "Has the Company signed any loan agreements, including promissory notes, financing arrangements, or lines of credit?\n- If no: award 1 pt.\n- If yes: award 1 pt only if the Company provides a complete list of banks or other lenders with whom it has a financial relationship, together with copies of all related credit agreements, debt instruments, security agreements, mortgages, collateral pledges, indentures, financial or performance guaranties, indemnifications, liens, equipment leases, or other agreements evidencing outstanding loans to which the Company is or was a party within the past two years. Otherwise, award 0 pts.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q35"
+  },
+  {
+    "cat_code": "L",
+    "text": "Is the Company a party to any nondisclosure or noncompete agreements?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company provides a list of such agreements. Otherwise, 0 pts.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q36"
+  },
+  {
+    "cat_code": "L",
+    "text": "Has the Company signed any sales, distribution, franchise, or licensing agreements?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company provides a list of such agreements, including but not limited to distribution, sales, marketing, and supply agreements; price quote, invoice, purchase, or warranty forms; contracts, transcripts, or letters of divestiture from any merger or acquisition within the past five years; powers of attorney; exclusivity agreements; franchise agreements; and indemnification agreements. Otherwise, 0 pts.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q37"
+  },
+  {
+    "cat_code": "L",
+    "text": "Has the Company been involved in any past litigation, or does it face any pending litigation?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company provides: copies of pleadings or correspondence for past or pending lawsuits involving the Company or Founders; a summary of any disputes with suppliers, competitors, or customers; a history of any issues with regulatory bodies such as the SEC or IRS; any harassment, wrongful termination, or discrimination disputes within the past three years; correspondence with auditors or accountants regarding threatened or pending litigation, assessments, or claims; and lists of any decrees, injunctions, settlements, orders, or judgments of courts or governmental agencies, settlement documentation, and unsatisfied judgments. Otherwise, 0 pts.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q38"
+  },
+  {
+    "cat_code": "L",
+    "text": "Is the Company subject to any environmental regulations?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company provides: descriptions of any environmental hazards, liabilities, or contingencies; a list of any materials or processes that may negatively impact the environment; copies of notices and filings with the Environmental Protection Agency (EPA); and environmental audits, if any, for each Company property. Otherwise, 0 pts.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q39"
+  },
+  {
+    "cat_code": "L",
+    "text": "Has the Company or its Founders signed any agreements with officers, advisors, employees, consultants, or third-party service providers?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company provides: all employment and consulting agreements, loan agreements, and documents relating to other transactions with officers, directors, key employees, and related parties; a schedule of all compensation paid to officers, directors, and key employees for the most recent fiscal year, showing salary separately; a summary of employee benefits, including pension, profit-sharing, compensation, and retirement plans; a summary of management incentive or bonus plans and other non-cash compensation; confidentiality agreements with employees; and a description of all related-party transactions during the last three years and any currently proposed transactions. Otherwise, 0 pts.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q40"
+  },
+  {
+    "cat_code": "L",
+    "text": "Has the Company drafted guidelines for employees, contractors, and other affiliated workers?\n - Award 1 pt only if the Company provides a copy of the employee handbook, including policies on vacation, sick days, benefits, holidays, and paid leave; documents on pension plan funding and distributions; and copies of all Occupational Safety and Health Administration (OSHA) examinations. Otherwise, 0 pts.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q41"
+  },
+  {
+    "cat_code": "L",
+    "text": "Does the Company own, or plan to acquire, real or material personal property?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company provides: a list of real and material personal property owned by the Company; documents of title, mortgages, deeds of trust, and security agreements pertaining to those properties; and all outstanding leases with an original term greater than one year for real and personal property to which the Company is either lessor or lessee. Otherwise, 0 pts.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q42"
+  },
+  {
+    "cat_code": "L",
+    "text": "Is the Company a party to any insurance or liability agreements?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company provides: a schedule or copies of all material insurance policies covering property, liabilities, and operations, including product liability; a schedule of any other policies in force, such as key-man or director indemnification policies; and all other relevant documents pertaining to the Company's insurance and liability exposure. Otherwise, 0 pts.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q43"
+  },
+  {
+    "cat_code": "L",
+    "text": "Is the Company a party to any acquisition, partnership, or joint venture agreements?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company provides: copies of all acquisition, partnership, or joint venture agreements; documents pertaining to potential acquisitions or alliances; and any agreements regarding divestiture of assets. Otherwise, 0 pts.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q44"
+  },
+  {
+    "cat_code": "L",
+    "text": "Has the Company engaged in any marketing, promotional, or public relations activities?\n - Award 1 pt only if the Company provides: copies of any press releases from the last two years; articles and other pertinent marketing studies or reports relating to the Company or its industry; information regarding competitors; customer satisfaction surveys, if any; and current brochures and sales materials describing the Company's products or services. Otherwise, 0 pts.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q45"
+  },
+  {
+    "cat_code": "L",
+    "text": "Does the Company require any special permits, licenses, or authorizations to operate in any state, country, or other jurisdiction?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company provides: recently obtained good-standing certificates for all states and jurisdictions where the Company does or plans to do business; copies of all permits and licenses necessary for operations; a summary of any inquiry during the past three years involving federal, state, or other governmental agencies; and a summary of all federal, state, and local laws, rules, and regulations applicable to the Company's main business. Otherwise, 0 pts.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q46"
+  },
+  {
+    "cat_code": "L",
+    "text": "Are there any corporate or equity structural issues that may pose problems in the future, particularly for investors or partners?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company explains how it will address them. Otherwise, 0 pts.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q47"
+  },
+  {
+    "cat_code": "L",
+    "text": "Has the Company ever applied for, issued, or transferred securities, or signed any contracts, arrangements, documents, or commitments relating to the Company's stock?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company provides documents relating to its equity structure, including: stock certificates, warrants, and options; stockholder information with number of shares held, dates of issuance, and consideration paid; employee stock benefit plans and equity agreements; any voting trust, buy/sell, stockholder, warrant, proxy, or right-of-first-refusal agreements; any registration rights or pre-emptive rights agreements; powers of attorney on any matter; convertible debt instruments; and any debt arrangements, guarantees, or indemnifications between officers, directors, or shareholders and the Company. Otherwise, 0 pts.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q48"
+  },
+  {
+    "cat_code": "L",
+    "text": "Has the Company created a comprehensive information and data privacy policy?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q49"
+  },
+  {
+    "cat_code": "L",
+    "text": "If the Company has created a comprehensive information and data privacy policy, has it provided a copy of this policy, as well as a summary of all federal, state, local and international laws, rules and regulations applicable to the Company's data collecting and data processing activities?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q50"
+  },
+  {
+    "cat_code": "L",
+    "text": "Has the Company crafted a policy to keep its customers' personal data safe?\n - Award 1 pt only if the Company provides a copy of this policy, together with a summary of all federal, state, local, and international laws, rules, and regulations applicable to its data collection and processing activities. Otherwise, 0 pts.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q51"
+  },
+  {
+    "cat_code": "L",
+    "text": "Will the Company use cookies for advertising or tracking purposes, send direct marketing communications to people with whom it has no pre-existing business relationship, or process sensitive personal data of any kind?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company has, or plans to hire, an Information and Privacy Officer familiar with applicable privacy law, including the GDPR, the California Online Privacy Protection Act, and the California Consumer Privacy Act (CCPA). Otherwise, 0 pts.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q52"
+  },
+  {
+    "cat_code": "L",
+    "text": "Has the Company signed any agreements with, or established relationships involving, any subsidiaries, partnerships, or joint ventures?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company provides a list of these arrangements and any related agreements. Otherwise, 0 pts.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "L_Q53"
+  },
+  {
+    "cat_code": "T",
+    "text": "Have any team members been involved in previous startups, and in what role?\n- Founder or co-founder: award 1 pt.\n- Around the 10th employee: award 0.67 pts.\n- After the 10th employee: award 0.33 pts.\n- No startup experience: award 0 pts.",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.67 PTS",
+        "val": 0.67
+      },
+      {
+        "label": "0.33 PTS",
+        "val": 0.33
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q1"
+  },
+  {
+    "cat_code": "T",
+    "text": "How many startups have the team members previously been involved with?\n - 3 or more startups: award 1 pt\n - 1\u20132 startups: award 0.5 pts\n - None: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q2"
+  },
+  {
+    "cat_code": "T",
+    "text": "How many successful exits have team members been involved in?\n - 2 or more startups: award 1 pt\n - 1 startup: award 0.5 pts\n - None: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q3"
+  },
+  {
+    "cat_code": "T",
+    "text": "How many years of experience does the team have in the company's industry?\n - 15+ years: award 1 pt\n - 5 to 14 years: award 0.5 pts\n - Fewer than 5 years: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q4"
+  },
+  {
+    "cat_code": "T",
+    "text": "What was the team member's role/seniority in the company's industry?\n - CEO, C-Suite: award 1 pt\n - Middle management: award 0.5 pts\n - Team member: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q5"
+  },
+  {
+    "cat_code": "T",
+    "text": "What is the breadth of the team's capabilities in technical/engineering?\n - Technical, engineering operations, sales + marketing, finance: award 1 pt\n - Technical, engineering operations: award 0.67 pts\n - Technical only: award 0.33 pts\n - None: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.67 PTS",
+        "val": 0.67
+      },
+      {
+        "label": "0.33 PTS",
+        "val": 0.33
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q6"
+  },
+  {
+    "cat_code": "T",
+    "text": "What is the breadth of the team's capabilities in supply chain?\n - Technical, engineering operations, sales + marketing, finance: award 1 pt\n - Technical, engineering operations: award 0.67 pts\n - Technical only: award 0.33 pts\n - None: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.67 PTS",
+        "val": 0.67
+      },
+      {
+        "label": "0.33 PTS",
+        "val": 0.33
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q7"
+  },
+  {
+    "cat_code": "T",
+    "text": "What is the breadth of the team's capabilities in operations?\n - Technical, engineering operations, sales + marketing, finance: award 1 pt\n - Technical, engineering operations: award 0.67 pts\n - Technical only: award 0.33 pts\n - None: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.67 PTS",
+        "val": 0.67
+      },
+      {
+        "label": "0.33 PTS",
+        "val": 0.33
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q8"
+  },
+  {
+    "cat_code": "T",
+    "text": "What is the breadth of the team's capabilities in finance?\n - Technical, engineering operations, sales + marketing, finance: award 1 pt\n - Technical, engineering operations: award 0.67 pts\n - Technical only: award 0.33 pts\n - None: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.67 PTS",
+        "val": 0.67
+      },
+      {
+        "label": "0.33 PTS",
+        "val": 0.33
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q9"
+  },
+  {
+    "cat_code": "T",
+    "text": "\"What is the breadth of the team's capabilities in human resources?\n - Technical, engineering operations, sales + marketing, finance: award 1 pt\n - Technical, engineering operations: award 0.67 pts\n - Technical only: award 0.33 pts\n - None: award 0 pts\"",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.67 PTS",
+        "val": 0.67
+      },
+      {
+        "label": "0.33 PTS",
+        "val": 0.33
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q10"
+  },
+  {
+    "cat_code": "T",
+    "text": "What is the breadth of the team's capabilities in sales/marketing?\n - Technical, engineering operations, sales + marketing, finance: award 1 pt\n - Technical, engineering operations: award 0.67 pts\n - Technical only: award 0.33 pts\n - None: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.67 PTS",
+        "val": 0.67
+      },
+      {
+        "label": "0.33 PTS",
+        "val": 0.33
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q11"
+  },
+  {
+    "cat_code": "T",
+    "text": "What is the breadth of the team's capabilities in general management?\n - Technical, engineering operations, sales + marketing, finance: award 1 pt\n - Technical, engineering operations: award 0.67 pts\n - Technical only: award 0.33 pts\n - None: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.67 PTS",
+        "val": 0.67
+      },
+      {
+        "label": "0.33 PTS",
+        "val": 0.33
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q12"
+  },
+  {
+    "cat_code": "T",
+    "text": "What is the breadth of the team's capabilities in systems/IT?\n - Technical, engineering operations, sales + marketing, finance: award 1 pt\n - Technical, engineering operations: award 0.67 pts\n - Technical only: award 0.33 pts\n - None: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.67 PTS",
+        "val": 0.67
+      },
+      {
+        "label": "0.33 PTS",
+        "val": 0.33
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q13"
+  },
+  {
+    "cat_code": "T",
+    "text": "What is the breadth of the team's functional experience?\n - Technical, engineering operations, sales + marketing, finance: award 1 pt\n - Technical, engineering operations: award 0.67 pts\n - Technical only: award 0.33 pts\n - None: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.67 PTS",
+        "val": 0.67
+      },
+      {
+        "label": "0.33 PTS",
+        "val": 0.33
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q14"
+  },
+  {
+    "cat_code": "T",
+    "text": "What is the education level of the technical/engineering executives?\n - Ph.D: award 1 pt\n - Master's: award 0.5 pts\n - Bachelor's or below: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q15"
+  },
+  {
+    "cat_code": "T",
+    "text": "What is the education level of management executives?\n - MBA, JD, or other Master's degree: award 1 pt\n - Bachelor's degree: award 0.5 pts\n - Below bachelor's: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q16"
+  },
+  {
+    "cat_code": "T",
+    "text": "What is the education level of scientific advisors?\n - Ph.D: award 1 pt\n - Master's: award 0.5 pts\n - Bachelor's or below: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q17"
+  },
+  {
+    "cat_code": "T",
+    "text": "What is the education level of board members?\n - Ph.D, JD, MBA: award 1 pt\n - Master's: award 0.5 pts\n - Bachelor's or below: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q18"
+  },
+  {
+    "cat_code": "T",
+    "text": "What percentage of team time is spent on the startup?\n - More than 90%: award 1 pt\n - 50% to 90%: award 0.5 pts\n - Less than 50%: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q19"
+  },
+  {
+    "cat_code": "T",
+    "text": "Has any personal capital been directly invested?\n - Yes\n - No",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q20"
+  },
+  {
+    "cat_code": "T",
+    "text": "How long has the team worked together?\n - More than 3 years: award 1 pt\n - 1 to 3 years: award 0.5 pts\n - Less than 1 year: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q21"
+  },
+  {
+    "cat_code": "T",
+    "text": "Has the management team taken a formal assessment of team building dynamics?\n - Yes\n - No",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q22"
+  },
+  {
+    "cat_code": "T",
+    "text": "Is the team using the insight to actively improve the team dynamics of the founding team?\n - Very: award 1 pt\n - Somewhat: award 0.5 pts\n - Not much or N/A: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q23"
+  },
+  {
+    "cat_code": "T",
+    "text": "Is there a structured approach to engaging the advisory team?\n - Yes\n - No",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q24"
+  },
+  {
+    "cat_code": "T",
+    "text": "What percent of advisors are actively engaged with the company?\n - More than 90%: award 1 pt\n - 50% to 90%: award 0.5 pts\n - Less than 50% or no information: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.5 PTS",
+        "val": 0.5
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q25"
+  },
+  {
+    "cat_code": "T",
+    "text": "From which ecosystem has the company hired from, raised money, or completed deals \u2014 Angel Investors?\n - $10m+: award 1 pt\n - $2m to $10m: award 0.67 pts\n - $250k to $2m: award 0.33 pts\n - None: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.67 PTS",
+        "val": 0.67
+      },
+      {
+        "label": "0.33 PTS",
+        "val": 0.33
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q26"
+  },
+  {
+    "cat_code": "T",
+    "text": "From which ecosystem has the company hired from, raised money, or completed deals \u2014 Family Offices?\n - $10m+: award 1 pt\n - $2m to $10m: award 0.67 pts\n - $250k to $2m: award 0.33 pts\n - None: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.67 PTS",
+        "val": 0.67
+      },
+      {
+        "label": "0.33 PTS",
+        "val": 0.33
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q27"
+  },
+  {
+    "cat_code": "T",
+    "text": "From which ecosystem has the company hired from, raised money, or completed deals \u2014 VCs?\n - $10m+: award 1 pt\n - $2m to $10m: award 0.67 pts\n - $250k to $2m: award 0.33 pts\n - None: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.67 PTS",
+        "val": 0.67
+      },
+      {
+        "label": "0.33 PTS",
+        "val": 0.33
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q28"
+  },
+  {
+    "cat_code": "T",
+    "text": "From which ecosystem has the company hired from, raised money, or completed deals \u2014 Grants/NGOs?\n - $10m+: award 1 pt\n - $2m to $10m: award 0.67 pts\n - $250k to $2m: award 0.33 pts\n - None: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.67 PTS",
+        "val": 0.67
+      },
+      {
+        "label": "0.33 PTS",
+        "val": 0.33
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q29"
+  },
+  {
+    "cat_code": "T",
+    "text": "From which ecosystem has the company hired from, raised money, or completed deals \u2014 Strategic Investors?\n - $10m+: award 1 pt\n - $2m to $10m: award 0.67 pts\n - $250k to $2m: award 0.33 pts\n - None: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.67 PTS",
+        "val": 0.67
+      },
+      {
+        "label": "0.33 PTS",
+        "val": 0.33
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q30"
+  },
+  {
+    "cat_code": "T",
+    "text": "To what extent has the team hired or supervised senior subject matter/functional experts?\n - More than 10 people: award 1 pt\n - 2 to 10 people: award 0.67 pts\n - 1 to 2 people: award 0.33 pts\n - None: award 0 pts",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0.67 PTS",
+        "val": 0.67
+      },
+      {
+        "label": "0.33 PTS",
+        "val": 0.33
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "T_Q31"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Does the company have a formal company name?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q1"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Is clear and complete contact information provided?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q2"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Does the company have a formal company logo?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q3"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Has the company identified a market category (or CleanTech Category)?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q4"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Is a brief company business history provided? (EG employees, years operational, etc.)",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q5"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Does the company list current senior management skills and identify skill gaps?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q6"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Business Description: Has the company provided an easily understood, concise overview of its vision and value proposition to defined market(s) and routes to those market(s) that is clear to a non-expert?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q7"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Has the company specified the initial commercial offering(s)?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q8"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Is factual / third-party / verifiable information supporting this provided?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q9"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Is a clear description of the value chain provided that identifies associated, involved, or required existing industry entities?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q10"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Does the company identify customers (IE have bought), development partners (IE beta product test program), or LOIs with potential customers?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q11"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Are key milestone accomplishments presented?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q12"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Does the company describe its technology status (TRL or otherwise)?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q13"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Is an IP strategy defined?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q14"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Is how the company's IP supports the value proposition described?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q15"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Is a clear impact statement presented that covers environmental, social, and financial impact?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q16"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Is there a description of the target market?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q17"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Is the TAM (total addressable market) evaluated and are assumptions provided?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q18"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Is the SAM (serviceable available market) evaluated and are assumptions provided?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q19"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Is the target market share presented, with assumptions?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q20"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Are additional markets identified?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q21"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Are the key costs/challenges of entering these additional markets discussed?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q22"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Has the company described anticipated direct and indirect competition?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q23"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Are the company's proposed benefits over the competition described?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q24"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Has the company presented its funding history?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q25"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Has the company presented its fundraising plans (forward looking)?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q26"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Is the use of defined funds discussed?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q27"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Does the company have a video that is current and consistent with the overview?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q28"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Is the video available to the public?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q29"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Is there a description of the management team?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q30"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Is there a formal location? (E.G. HQ address)",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q31"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Is the company's revenue history and projection(s) presented?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q32"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Is the projection consistent with SAM and target market share? (IE SAM x Market Share % = projected revenue)",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q33"
+  },
+  {
+    "cat_code": "IS",
+    "text": "Is revenue for year N divided by revenue for year N-1 a constant? If yes, is that assumption explained?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IS_Q34"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Is there an elevator pitch?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q1"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does the presentation define the business and reason for existence?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q2"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Is there a visual \"model\" built upon in the \"problem\" and \"solution\" slides?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q3"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does the overview contain two to five high-level succinct bullets?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q4"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Is there a compelling pain point that will make a customer write a check (revenues, costs, time, productivity, market reach, etc.)?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q5"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Is it a \"must-solve\" not merely \"nice-to-solve\" problem?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q6"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Is there a visual \"model\" depicting the problem?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q7"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Is a historical evolution depicted?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q8"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Are meaningful validating quotes included?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q9"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does the problem suggest a large market?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q10"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Is the solution a compelling value proposition clearly benefitting the customer's business (revenues, costs, time, productivity, market, etc.)?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q11"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Is there a visual \"model\" depicting the solution?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q12"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does the solution clearly fit in the customer's ecosystem?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q13"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does the presentation depict differentiation and technical elegance but avoid the weeds?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q14"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does the presentation clearly define the market?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q15"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Is there a target vertical, buyer/user, or application?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q16"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Are market size/growth presented?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q17"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Are any of the following shown: TAM/SAM/SOM/CAGR?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q18"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Are historical trends projected into the future?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q19"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does the methodology combine quantitative rigor with qualitative sensitivity?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q20"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Is there a balance between exciting opportunity vs. chance of success?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q21"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does the presentation discuss current and potential competitors (Incumbents, Startups, In-House, Substitutes)?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q22"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does the presentation provide a framework to demonstrate differentiation (BCG grid and/or benefits matrix)?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q23"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does the presentation use customer-centric attributes and dimensions?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q24"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does the presentation demonstrate knowledge of the landscape, including past failures?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q25"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does the presentation embrace competitor strengths + know its own weaknesses (self-awareness)?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q26"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does the presentation highlight secret sauce, competitive advantages, barriers to entry?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q27"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does the presentation translate key points between business and technical domain?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q28"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does it show how customers and partners fit in, if possible?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q29"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does it remain focused on the essential value proposition?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q30"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does it talk to important but peripheral issues and details while avoiding clutter?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q31"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does it address \"invent vs. integrate\" issues?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q32"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does it show that the company will invent only uniquely competitive elements?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q33"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does it show an incremental development path that reduces risk, if possible?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q34"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does the presentation show what customers buy and how they buy it?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q35"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does it discuss high level pricing (e.g., annuity or one fee)?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q36"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does it describe what the customer will get (today and beyond)?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q37"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does it profile the customer (vertical/buyer or user/application)?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q38"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does it profile critical partner relationships (current and future)?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q39"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does it show a marketing and sales plan?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q40"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does it show a value chain and sales cycle?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q41"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does it compare and contrast to industry comparables?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q42"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does the presentation show credibility and strategic orchestration of team members?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q43"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does the team show domain expertise and unique customer insight?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q44"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does the CEO hire people with skills better than their own?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q45"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does the presentation show what's missing, if applicable, or show that nothing is missing?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q46"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does it show previous companies and titles (industry recognition where meaningful)?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q47"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does it show the Board of Directors?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q48"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Does the Company present thorough and thoughtful financials?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q49"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Has the Company provided a P&L, income statement, and balance sheet?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q50"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Has the Company provided high-level 3- or 5-year projections?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q51"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Do the financials break out revenues and expenses by major category?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q52"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Do the financials include pre-tax profit (loss), cash flow, capital requirements, and headcount?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q53"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Has the Company defined milestone targets?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q54"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Do the financials identify when the Company expects its first revenues?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q55"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Do the financials identify when the Company expects to become cash-flow positive?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q56"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Has the Company demonstrated tangible competitive barriers (e.g., customers, IP)?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q57"
+  },
+  {
+    "cat_code": "IP",
+    "text": "Do the projections show a $100M/yr run rate by year 5?",
+    "options": [
+      {
+        "label": "1 PT",
+        "val": 1.0
+      },
+      {
+        "label": "0 PTS",
+        "val": 0.0
+      }
+    ],
+    "new_q_id": "IP_Q58"
+  }
+]

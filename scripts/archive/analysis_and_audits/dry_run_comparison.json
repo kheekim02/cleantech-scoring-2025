@@ -1,0 +1,1023 @@
+{
+  "meta": {
+    "total_documents": 76,
+    "ai_classified": 74,
+    "regex_count": 2,
+    "matches_count": 38,
+    "cat_counts": {
+      "BC": 5,
+      "ES": 13,
+      "F": 13,
+      "IP": 0,
+      "IS": 12,
+      "L": 4,
+      "M": 18,
+      "PMF": 2,
+      "T": 4,
+      "TP": 5
+    },
+    "dry_run": true
+  },
+  "rows": [
+    {
+      "company": "AmpTrans",
+      "filename": "01_AmpTrans_Fleet_Planning_Tool_Screenshots.pdf",
+      "regex": "IS",
+      "ai": "IS",
+      "source": "REGEX_EMPTY_FILE",
+      "match": true
+    },
+    {
+      "company": "AmpTrans",
+      "filename": "02_AmpTrans_2025TeamTargets_v2_docx.pdf",
+      "regex": "T",
+      "ai": "T",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "AmpTrans",
+      "filename": "03_AmpTrans_M1CustomerDiscoveryInterviews.pdf",
+      "regex": "PMF",
+      "ai": "BC",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "AmpTrans",
+      "filename": "04_AmpTrans_EBD1BusinessModelCanvas.pdf",
+      "regex": "BC",
+      "ai": "BC",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "AmpTrans",
+      "filename": "05_AmpTrans_M2ImpactSustainaiblityQuestions.pdf",
+      "regex": "ES",
+      "ai": "ES",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "AmpTrans",
+      "filename": "06_AmpTrans_EBD2ImpactStatement.pdf",
+      "regex": "IS",
+      "ai": "ES",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "AmpTrans",
+      "filename": "07_AmpTrans_M3AssignmentQuestion.pdf",
+      "regex": "PMF",
+      "ai": "IS",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "AmpTrans",
+      "filename": "08_AmpTrans_M4Questions.pdf",
+      "regex": "TP",
+      "ai": "M",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "AmpTrans",
+      "filename": "09_AmpTrans_EBD3CustomerSegmentationCompetitiveMatrix_v2pdf.pdf",
+      "regex": "M",
+      "ai": "M",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "AmpTrans",
+      "filename": "10_AmpTrans_EBD4TechnologyValidation.pdf",
+      "regex": "TP",
+      "ai": "TP",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "AmpTrans",
+      "filename": "11_AmpTrans_M6Questions.pdf",
+      "regex": "F",
+      "ai": "F",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "AmpTrans",
+      "filename": "12_AmpTrans_FinancialProjection_V3.pdf",
+      "regex": "F",
+      "ai": "F",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "AmpTrans",
+      "filename": "13_AmpTrans_M7Questions.pdf",
+      "regex": "L",
+      "ai": "L",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "AmpTrans",
+      "filename": "14_AmpTrans_M8Questions.pdf",
+      "regex": "T",
+      "ai": "IS",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "AmpTrans",
+      "filename": "15_AmpTrans_M9ExecutiveSummary_docx.pdf",
+      "regex": "IS",
+      "ai": "F",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "AmpTrans",
+      "filename": "16_AmpTrans_Investor_Pitch_Deck-V3.pdf",
+      "regex": "IP",
+      "ai": "M",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Averra",
+      "filename": "01_Averra_TeamTargets.pdf",
+      "regex": "T",
+      "ai": "PMF",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Averra",
+      "filename": "02_Averra_M1CustomerDiscoveryInterviews.pdf",
+      "regex": "PMF",
+      "ai": "M",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Averra",
+      "filename": "03_Averra_Business_Model_Canvas_-1.pdf",
+      "regex": "BC",
+      "ai": "BC",
+      "source": "REGEX_EMPTY_FILE",
+      "match": true
+    },
+    {
+      "company": "Averra",
+      "filename": "04_Averra_M2ImpactSustainabilityQuestions.pdf",
+      "regex": "ES",
+      "ai": "ES",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Averra",
+      "filename": "05_Averra_GHGERP_Self-Assessment_Workbook.pdf",
+      "regex": "ES",
+      "ai": "ES",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Averra",
+      "filename": "06_Averra_EBD2ImpactStatement.pdf",
+      "regex": "IS",
+      "ai": "ES",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Averra",
+      "filename": "07_Averra_M3AssignmentQuestion.pdf",
+      "regex": "PMF",
+      "ai": "IS",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Averra",
+      "filename": "08_Averra_M4Questions.pdf",
+      "regex": "TP",
+      "ai": "M",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Averra",
+      "filename": "09_Averra_EBD3CustomerSegmentationCompetitiveMatrix.pdf",
+      "regex": "M",
+      "ai": "M",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Averra",
+      "filename": "10_Averra_EBD4_Technology_Validation.pdf",
+      "regex": "TP",
+      "ai": "TP",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Averra",
+      "filename": "11_Averra_M6Questions.pdf",
+      "regex": "F",
+      "ai": "F",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Averra",
+      "filename": "12_Averra_EBD5ThreeYearFinancialProjection.pdf",
+      "regex": "F",
+      "ai": "F",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Averra",
+      "filename": "13_Averra_M7Questions.pdf",
+      "regex": "L",
+      "ai": "L",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Averra",
+      "filename": "14_Averra_M8Questions.pdf",
+      "regex": "T",
+      "ai": "IS",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Averra",
+      "filename": "15_Averra_InclusionAssignment-1.pdf",
+      "regex": "L",
+      "ai": "M",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Averra",
+      "filename": "16_Averra_One_Page_Executive_Summary.pdf",
+      "regex": "IS",
+      "ai": "M",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Averra",
+      "filename": "17_Averra_Investor_Pitch.pdf",
+      "regex": "IP",
+      "ai": "M",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Bonhomme_&_Associates",
+      "filename": "01_Business_Model_Canvas_Iteration_Builder.pdf",
+      "regex": "BC",
+      "ai": "ES",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Bonhomme_&_Associates",
+      "filename": "02_Bonhomme_amp_Associates_BMC_v0002.pdf",
+      "regex": "BC",
+      "ai": "BC",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Bonhomme_&_Associates",
+      "filename": "03_2025_Essential_Business_Deliverable_2_Impact_Statement.pdf",
+      "regex": "IS",
+      "ai": "ES",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Bonhomme_&_Associates",
+      "filename": "06_2025_Essential_Business_Deliverable_4_Technology_Validation.pdf",
+      "regex": "TP",
+      "ai": "TP",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Bonhomme_&_Associates",
+      "filename": "07_Loco-motion_Revenue_Strategy_Deck.pdf",
+      "regex": "IP",
+      "ai": "F",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Bonhomme_&_Associates",
+      "filename": "08_Bonhomme_amp_Associates_2025_Cleantech_Open_One_Page_Executive_Summary_Template_08202025.pdf",
+      "regex": "IS",
+      "ai": "M",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Bonhomme_&_Associates",
+      "filename": "09_Wildfire_Prevention_Application_FINAL_3-2027.pdf",
+      "regex": "IS",
+      "ai": "M",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Condor_Calibration_Services",
+      "filename": "01_Business_Model_Sharable_0401325.pdf",
+      "regex": "IS",
+      "ai": "M",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Condor_Calibration_Services",
+      "filename": "02_Condor_one_pager.pdf",
+      "regex": "IS",
+      "ai": "M",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Condor_Calibration_Services",
+      "filename": "03_Condor_Team_Targets_060725.pdf",
+      "regex": "T",
+      "ai": "T",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Condor_Calibration_Services",
+      "filename": "04_Condor_M1CustomerDiscoveryInterviews.pdf",
+      "regex": "PMF",
+      "ai": "IS",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Condor_Calibration_Services",
+      "filename": "05_Condor_Business_Modle_Canvas.pdf",
+      "regex": "BC",
+      "ai": "M",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Condor_Calibration_Services",
+      "filename": "06_Condor_M2ImpactSustainaiblityQuestions.pdf",
+      "regex": "ES",
+      "ai": "ES",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Condor_Calibration_Services",
+      "filename": "07_Condor_EBD2ImpactStatement.pdf",
+      "regex": "IS",
+      "ai": "ES",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Condor_Calibration_Services",
+      "filename": "08_Condor_M3AssignmentQuestion_docx.pdf",
+      "regex": "PMF",
+      "ai": "IS",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Condor_Calibration_Services",
+      "filename": "09_Condor_M4Questions.pdf",
+      "regex": "TP",
+      "ai": "M",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Condor_Calibration_Services",
+      "filename": "10_Condor_EBD3CustomerSegmentationCompetitiveMatrix_docx.pdf",
+      "regex": "M",
+      "ai": "M",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Condor_Calibration_Services",
+      "filename": "11_Condor_EBD4TechnologyValidation.pdf",
+      "regex": "TP",
+      "ai": "TP",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Condor_Calibration_Services",
+      "filename": "12_Condor_M6Questions.pdf",
+      "regex": "F",
+      "ai": "F",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Condor_Calibration_Services",
+      "filename": "13_Condor_EBD5_Financial_Projection.pdf",
+      "regex": "F",
+      "ai": "F",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Condor_Calibration_Services",
+      "filename": "14_Condor_M7Questions_docx_or.pdf",
+      "regex": "L",
+      "ai": "L",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Condor_Calibration_Services",
+      "filename": "15_Condor_M8Questions.pdf",
+      "regex": "T",
+      "ai": "IS",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Condor_Calibration_Services",
+      "filename": "16_Condor_EBD7_2025_Cleantech_Open_One_Page_Executive_Summary.pdf",
+      "regex": "IS",
+      "ai": "F",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Condor_Calibration_Services",
+      "filename": "17_Condor_EBD8_Pitch_Deck.pdf",
+      "regex": "IP",
+      "ai": "IS",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Novagrid",
+      "filename": "01_financialProjectionsAndClearerFormattedResponses.pdf",
+      "regex": "F",
+      "ai": "F",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Novagrid",
+      "filename": "02_letter_of_intent_energyflow_early_access_program_ciel_power_2acfb59fbb0c8f23.pdf",
+      "regex": "IS",
+      "ai": "IS",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Novagrid",
+      "filename": "03_Team_Targets_Novagrid.pdf",
+      "regex": "T",
+      "ai": "T",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Novagrid",
+      "filename": "04_Novagrid_M1CustomerDiscoveryInterviews.pdf",
+      "regex": "PMF",
+      "ai": "IS",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Novagrid",
+      "filename": "05_Business_Model_Canvas_-_Novagrid_Aug26.pdf",
+      "regex": "BC",
+      "ai": "BC",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Novagrid",
+      "filename": "06_2025_Module_2_Assignment_Impact_Questions_docx.pdf",
+      "regex": "ES",
+      "ai": "ES",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Novagrid",
+      "filename": "07_Novagrid_GHG_ERP_docx.pdf",
+      "regex": "ES",
+      "ai": "ES",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Novagrid",
+      "filename": "08_Novagrid_EBD2ImpactStatement_docx.pdf",
+      "regex": "IS",
+      "ai": "ES",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Novagrid",
+      "filename": "09_Novagrid_M3AssignmentQuestion_1.pdf",
+      "regex": "PMF",
+      "ai": "PMF",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Novagrid",
+      "filename": "10_Novagrid_M4Questions_docx.pdf",
+      "regex": "TP",
+      "ai": "M",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Novagrid",
+      "filename": "11_Novagrid_EBD3CustomerSegmentationCompetitiveMatrix_Template_docx_2.pdf",
+      "regex": "M",
+      "ai": "M",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Novagrid",
+      "filename": "12_Novagrid_EBD4TechnologyValidation_docx_1.pdf",
+      "regex": "TP",
+      "ai": "TP",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Novagrid",
+      "filename": "13_Novagrid_M6Questions_docx.pdf",
+      "regex": "F",
+      "ai": "F",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Novagrid",
+      "filename": "14_Novagrid_FinancialProjection_xlsx.pdf",
+      "regex": "F",
+      "ai": "F",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Novagrid",
+      "filename": "15_Novagrid_M7Questions_docx.pdf",
+      "regex": "L",
+      "ai": "L",
+      "source": "AI",
+      "match": true
+    },
+    {
+      "company": "Novagrid",
+      "filename": "16_2025_Module_8_Questions_docx.pdf",
+      "regex": "IS",
+      "ai": "T",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Novagrid",
+      "filename": "17_2025_Inclusion_Assignment.pdf",
+      "regex": "L",
+      "ai": "IS",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Novagrid",
+      "filename": "18_Novagrid_2025_Cleantech_Open_One_Page_Executive_Summary_docx_1.pdf",
+      "regex": "IS",
+      "ai": "F",
+      "source": "AI",
+      "match": false
+    },
+    {
+      "company": "Novagrid",
+      "filename": "19_pitchDeckDraft1.pdf",
+      "regex": "IP",
+      "ai": "ES",
+      "source": "AI",
+      "match": false
+    }
+  ],
+  "mappings": {
+    "AmpTrans": {
+      "01_AmpTrans_Fleet_Planning_Tool_Screenshots.pdf": {
+        "cat_code": "IS",
+        "source": "REGEX_EMPTY_FILE",
+        "regex_code": "IS"
+      },
+      "02_AmpTrans_2025TeamTargets_v2_docx.pdf": {
+        "cat_code": "T",
+        "source": "AI",
+        "regex_code": "T"
+      },
+      "03_AmpTrans_M1CustomerDiscoveryInterviews.pdf": {
+        "cat_code": "BC",
+        "source": "AI",
+        "regex_code": "PMF"
+      },
+      "04_AmpTrans_EBD1BusinessModelCanvas.pdf": {
+        "cat_code": "BC",
+        "source": "AI",
+        "regex_code": "BC"
+      },
+      "05_AmpTrans_M2ImpactSustainaiblityQuestions.pdf": {
+        "cat_code": "ES",
+        "source": "AI",
+        "regex_code": "ES"
+      },
+      "06_AmpTrans_EBD2ImpactStatement.pdf": {
+        "cat_code": "ES",
+        "source": "AI",
+        "regex_code": "IS"
+      },
+      "07_AmpTrans_M3AssignmentQuestion.pdf": {
+        "cat_code": "IS",
+        "source": "AI",
+        "regex_code": "PMF"
+      },
+      "08_AmpTrans_M4Questions.pdf": {
+        "cat_code": "M",
+        "source": "AI",
+        "regex_code": "TP"
+      },
+      "09_AmpTrans_EBD3CustomerSegmentationCompetitiveMatrix_v2pdf.pdf": {
+        "cat_code": "M",
+        "source": "AI",
+        "regex_code": "M"
+      },
+      "10_AmpTrans_EBD4TechnologyValidation.pdf": {
+        "cat_code": "TP",
+        "source": "AI",
+        "regex_code": "TP"
+      },
+      "11_AmpTrans_M6Questions.pdf": {
+        "cat_code": "F",
+        "source": "AI",
+        "regex_code": "F"
+      },
+      "12_AmpTrans_FinancialProjection_V3.pdf": {
+        "cat_code": "F",
+        "source": "AI",
+        "regex_code": "F"
+      },
+      "13_AmpTrans_M7Questions.pdf": {
+        "cat_code": "L",
+        "source": "AI",
+        "regex_code": "L"
+      },
+      "14_AmpTrans_M8Questions.pdf": {
+        "cat_code": "IS",
+        "source": "AI",
+        "regex_code": "T"
+      },
+      "15_AmpTrans_M9ExecutiveSummary_docx.pdf": {
+        "cat_code": "F",
+        "source": "AI",
+        "regex_code": "IS"
+      },
+      "16_AmpTrans_Investor_Pitch_Deck-V3.pdf": {
+        "cat_code": "M",
+        "source": "AI",
+        "regex_code": "IP"
+      }
+    },
+    "Averra": {
+      "01_Averra_TeamTargets.pdf": {
+        "cat_code": "PMF",
+        "source": "AI",
+        "regex_code": "T"
+      },
+      "02_Averra_M1CustomerDiscoveryInterviews.pdf": {
+        "cat_code": "M",
+        "source": "AI",
+        "regex_code": "PMF"
+      },
+      "03_Averra_Business_Model_Canvas_-1.pdf": {
+        "cat_code": "BC",
+        "source": "REGEX_EMPTY_FILE",
+        "regex_code": "BC"
+      },
+      "04_Averra_M2ImpactSustainabilityQuestions.pdf": {
+        "cat_code": "ES",
+        "source": "AI",
+        "regex_code": "ES"
+      },
+      "05_Averra_GHGERP_Self-Assessment_Workbook.pdf": {
+        "cat_code": "ES",
+        "source": "AI",
+        "regex_code": "ES"
+      },
+      "06_Averra_EBD2ImpactStatement.pdf": {
+        "cat_code": "ES",
+        "source": "AI",
+        "regex_code": "IS"
+      },
+      "07_Averra_M3AssignmentQuestion.pdf": {
+        "cat_code": "IS",
+        "source": "AI",
+        "regex_code": "PMF"
+      },
+      "08_Averra_M4Questions.pdf": {
+        "cat_code": "M",
+        "source": "AI",
+        "regex_code": "TP"
+      },
+      "09_Averra_EBD3CustomerSegmentationCompetitiveMatrix.pdf": {
+        "cat_code": "M",
+        "source": "AI",
+        "regex_code": "M"
+      },
+      "10_Averra_EBD4_Technology_Validation.pdf": {
+        "cat_code": "TP",
+        "source": "AI",
+        "regex_code": "TP"
+      },
+      "11_Averra_M6Questions.pdf": {
+        "cat_code": "F",
+        "source": "AI",
+        "regex_code": "F"
+      },
+      "12_Averra_EBD5ThreeYearFinancialProjection.pdf": {
+        "cat_code": "F",
+        "source": "AI",
+        "regex_code": "F"
+      },
+      "13_Averra_M7Questions.pdf": {
+        "cat_code": "L",
+        "source": "AI",
+        "regex_code": "L"
+      },
+      "14_Averra_M8Questions.pdf": {
+        "cat_code": "IS",
+        "source": "AI",
+        "regex_code": "T"
+      },
+      "15_Averra_InclusionAssignment-1.pdf": {
+        "cat_code": "M",
+        "source": "AI",
+        "regex_code": "L"
+      },
+      "16_Averra_One_Page_Executive_Summary.pdf": {
+        "cat_code": "M",
+        "source": "AI",
+        "regex_code": "IS"
+      },
+      "17_Averra_Investor_Pitch.pdf": {
+        "cat_code": "M",
+        "source": "AI",
+        "regex_code": "IP"
+      }
+    },
+    "Bonhomme_&_Associates": {
+      "01_Business_Model_Canvas_Iteration_Builder.pdf": {
+        "cat_code": "ES",
+        "source": "AI",
+        "regex_code": "BC"
+      },
+      "02_Bonhomme_amp_Associates_BMC_v0002.pdf": {
+        "cat_code": "BC",
+        "source": "AI",
+        "regex_code": "BC"
+      },
+      "03_2025_Essential_Business_Deliverable_2_Impact_Statement.pdf": {
+        "cat_code": "ES",
+        "source": "AI",
+        "regex_code": "IS"
+      },
+      "06_2025_Essential_Business_Deliverable_4_Technology_Validation.pdf": {
+        "cat_code": "TP",
+        "source": "AI",
+        "regex_code": "TP"
+      },
+      "07_Loco-motion_Revenue_Strategy_Deck.pdf": {
+        "cat_code": "F",
+        "source": "AI",
+        "regex_code": "IP"
+      },
+      "08_Bonhomme_amp_Associates_2025_Cleantech_Open_One_Page_Executive_Summary_Template_08202025.pdf": {
+        "cat_code": "M",
+        "source": "AI",
+        "regex_code": "IS"
+      },
+      "09_Wildfire_Prevention_Application_FINAL_3-2027.pdf": {
+        "cat_code": "M",
+        "source": "AI",
+        "regex_code": "IS"
+      }
+    },
+    "Condor_Calibration_Services": {
+      "01_Business_Model_Sharable_0401325.pdf": {
+        "cat_code": "M",
+        "source": "AI",
+        "regex_code": "IS"
+      },
+      "02_Condor_one_pager.pdf": {
+        "cat_code": "M",
+        "source": "AI",
+        "regex_code": "IS"
+      },
+      "03_Condor_Team_Targets_060725.pdf": {
+        "cat_code": "T",
+        "source": "AI",
+        "regex_code": "T"
+      },
+      "04_Condor_M1CustomerDiscoveryInterviews.pdf": {
+        "cat_code": "IS",
+        "source": "AI",
+        "regex_code": "PMF"
+      },
+      "05_Condor_Business_Modle_Canvas.pdf": {
+        "cat_code": "M",
+        "source": "AI",
+        "regex_code": "BC"
+      },
+      "06_Condor_M2ImpactSustainaiblityQuestions.pdf": {
+        "cat_code": "ES",
+        "source": "AI",
+        "regex_code": "ES"
+      },
+      "07_Condor_EBD2ImpactStatement.pdf": {
+        "cat_code": "ES",
+        "source": "AI",
+        "regex_code": "IS"
+      },
+      "08_Condor_M3AssignmentQuestion_docx.pdf": {
+        "cat_code": "IS",
+        "source": "AI",
+        "regex_code": "PMF"
+      },
+      "09_Condor_M4Questions.pdf": {
+        "cat_code": "M",
+        "source": "AI",
+        "regex_code": "TP"
+      },
+      "10_Condor_EBD3CustomerSegmentationCompetitiveMatrix_docx.pdf": {
+        "cat_code": "M",
+        "source": "AI",
+        "regex_code": "M"
+      },
+      "11_Condor_EBD4TechnologyValidation.pdf": {
+        "cat_code": "TP",
+        "source": "AI",
+        "regex_code": "TP"
+      },
+      "12_Condor_M6Questions.pdf": {
+        "cat_code": "F",
+        "source": "AI",
+        "regex_code": "F"
+      },
+      "13_Condor_EBD5_Financial_Projection.pdf": {
+        "cat_code": "F",
+        "source": "AI",
+        "regex_code": "F"
+      },
+      "14_Condor_M7Questions_docx_or.pdf": {
+        "cat_code": "L",
+        "source": "AI",
+        "regex_code": "L"
+      },
+      "15_Condor_M8Questions.pdf": {
+        "cat_code": "IS",
+        "source": "AI",
+        "regex_code": "T"
+      },
+      "16_Condor_EBD7_2025_Cleantech_Open_One_Page_Executive_Summary.pdf": {
+        "cat_code": "F",
+        "source": "AI",
+        "regex_code": "IS"
+      },
+      "17_Condor_EBD8_Pitch_Deck.pdf": {
+        "cat_code": "IS",
+        "source": "AI",
+        "regex_code": "IP"
+      }
+    },
+    "Novagrid": {
+      "01_financialProjectionsAndClearerFormattedResponses.pdf": {
+        "cat_code": "F",
+        "source": "AI",
+        "regex_code": "F"
+      },
+      "02_letter_of_intent_energyflow_early_access_program_ciel_power_2acfb59fbb0c8f23.pdf": {
+        "cat_code": "IS",
+        "source": "AI",
+        "regex_code": "IS"
+      },
+      "03_Team_Targets_Novagrid.pdf": {
+        "cat_code": "T",
+        "source": "AI",
+        "regex_code": "T"
+      },
+      "04_Novagrid_M1CustomerDiscoveryInterviews.pdf": {
+        "cat_code": "IS",
+        "source": "AI",
+        "regex_code": "PMF"
+      },
+      "05_Business_Model_Canvas_-_Novagrid_Aug26.pdf": {
+        "cat_code": "BC",
+        "source": "AI",
+        "regex_code": "BC"
+      },
+      "06_2025_Module_2_Assignment_Impact_Questions_docx.pdf": {
+        "cat_code": "ES",
+        "source": "AI",
+        "regex_code": "ES"
+      },
+      "07_Novagrid_GHG_ERP_docx.pdf": {
+        "cat_code": "ES",
+        "source": "AI",
+        "regex_code": "ES"
+      },
+      "08_Novagrid_EBD2ImpactStatement_docx.pdf": {
+        "cat_code": "ES",
+        "source": "AI",
+        "regex_code": "IS"
+      },
+      "09_Novagrid_M3AssignmentQuestion_1.pdf": {
+        "cat_code": "PMF",
+        "source": "AI",
+        "regex_code": "PMF"
+      },
+      "10_Novagrid_M4Questions_docx.pdf": {
+        "cat_code": "M",
+        "source": "AI",
+        "regex_code": "TP"
+      },
+      "11_Novagrid_EBD3CustomerSegmentationCompetitiveMatrix_Template_docx_2.pdf": {
+        "cat_code": "M",
+        "source": "AI",
+        "regex_code": "M"
+      },
+      "12_Novagrid_EBD4TechnologyValidation_docx_1.pdf": {
+        "cat_code": "TP",
+        "source": "AI",
+        "regex_code": "TP"
+      },
+      "13_Novagrid_M6Questions_docx.pdf": {
+        "cat_code": "F",
+        "source": "AI",
+        "regex_code": "F"
+      },
+      "14_Novagrid_FinancialProjection_xlsx.pdf": {
+        "cat_code": "F",
+        "source": "AI",
+        "regex_code": "F"
+      },
+      "15_Novagrid_M7Questions_docx.pdf": {
+        "cat_code": "L",
+        "source": "AI",
+        "regex_code": "L"
+      },
+      "16_2025_Module_8_Questions_docx.pdf": {
+        "cat_code": "T",
+        "source": "AI",
+        "regex_code": "IS"
+      },
+      "17_2025_Inclusion_Assignment.pdf": {
+        "cat_code": "IS",
+        "source": "AI",
+        "regex_code": "L"
+      },
+      "18_Novagrid_2025_Cleantech_Open_One_Page_Executive_Summary_docx_1.pdf": {
+        "cat_code": "F",
+        "source": "AI",
+        "regex_code": "IS"
+      },
+      "19_pitchDeckDraft1.pdf": {
+        "cat_code": "ES",
+        "source": "AI",
+        "regex_code": "IP"
+      }
+    }
+  }
+}

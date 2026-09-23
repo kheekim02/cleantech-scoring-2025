@@ -1,0 +1,207 @@
+{
+  "total_startups_analyzed": 74,
+  "total_evaluations": 26659,
+  "total_yes_rate": 0.34761243857609064,
+  "total_citations_analyzed": 7878,
+  "in_section_citations": 1179,
+  "cross_section_citations": 6698,
+  "cross_section_pct": 0.8503237273073505,
+  "leakage_matrix": {
+    "BC": {
+      "ES": 99,
+      "TP": 82,
+      "IP": 35,
+      "T": 28,
+      "PMF": 81,
+      "M": 74,
+      "F": 29,
+      "BC": 14,
+      "IS": 75,
+      "L": 14
+    },
+    "IS": {
+      "ES": 242,
+      "TP": 118,
+      "T": 23,
+      "PMF": 92,
+      "IP": 83,
+      "M": 106,
+      "L": 48,
+      "F": 59,
+      "IS": 146,
+      "BC": 22
+    },
+    "PMF": {
+      "IP": 76,
+      "ES": 194,
+      "T": 58,
+      "TP": 181,
+      "PMF": 137,
+      "M": 137,
+      "IS": 173,
+      "BC": 20,
+      "L": 46,
+      "F": 49
+    },
+    "M": {
+      "ES": 57,
+      "IP": 41,
+      "T": 14,
+      "TP": 105,
+      "PMF": 52,
+      "M": 69,
+      "L": 33,
+      "BC": 16,
+      "F": 30,
+      "IS": 66
+    },
+    "TP": {
+      "TP": 171,
+      "T": 14,
+      "PMF": 27,
+      "IP": 43,
+      "IS": 84,
+      "BC": 9,
+      "ES": 58,
+      "M": 34,
+      "L": 45,
+      "F": 20
+    },
+    "F": {
+      "TP": 47,
+      "ES": 63,
+      "IP": 31,
+      "M": 50,
+      "F": 129,
+      "T": 15,
+      "BC": 3,
+      "L": 28,
+      "IS": 58,
+      "PMF": 48
+    },
+    "L": {
+      "TP": 179,
+      "IP": 95,
+      "T": 48,
+      "ES": 120,
+      "PMF": 57,
+      "M": 75,
+      "L": 125,
+      "IS": 119,
+      "BC": 29,
+      "F": 29
+    },
+    "T": {
+      "IP": 96,
+      "T": 115,
+      "ES": 102,
+      "TP": 107,
+      "PMF": 34,
+      "M": 66,
+      "L": 55,
+      "IS": 57,
+      "BC": 5,
+      "F": 38
+    },
+    "ES": {
+      "IP": 51,
+      "ES": 96,
+      "T": 44,
+      "TP": 100,
+      "PMF": 50,
+      "M": 52,
+      "L": 40,
+      "IS": 82,
+      "BC": 9,
+      "F": 38
+    },
+    "IP": {
+      "IP": 177,
+      "TP": 262,
+      "ES": 347,
+      "T": 96,
+      "PMF": 188,
+      "M": 180,
+      "L": 143,
+      "IS": 220,
+      "BC": 27,
+      "F": 123
+    }
+  },
+  "hub_doc_citations": {
+    "ES": 1378,
+    "TP": 1352,
+    "IP": 728,
+    "T": 455,
+    "PMF": 766,
+    "M": 843,
+    "F": 544,
+    "L": 577,
+    "IS": 1080,
+    "BC": 154
+  },
+  "category_stats": {
+    "BC": {
+      "total": 1108,
+      "yes": 625,
+      "citations": 531
+    },
+    "IS": {
+      "total": 2568,
+      "yes": 1044,
+      "citations": 939
+    },
+    "PMF": {
+      "total": 2658,
+      "yes": 1119,
+      "citations": 1071
+    },
+    "M": {
+      "total": 1036,
+      "yes": 507,
+      "citations": 483
+    },
+    "TP": {
+      "total": 1923,
+      "yes": 491,
+      "citations": 505
+    },
+    "F": {
+      "total": 3100,
+      "yes": 638,
+      "citations": 472
+    },
+    "L": {
+      "total": 3900,
+      "yes": 917,
+      "citations": 876
+    },
+    "T": {
+      "total": 3942,
+      "yes": 874,
+      "citations": 675
+    },
+    "ES": {
+      "total": 1825,
+      "yes": 646,
+      "citations": 562
+    },
+    "IP": {
+      "total": 4599,
+      "yes": 2406,
+      "citations": 1764
+    }
+  },
+  "strict_vs_clean": {
+    "strict_clusters": {
+      "total": 2575,
+      "yes_rate": 0.4733980582524272,
+      "citation_rate": 0.4077669902912621
+    },
+    "clean_clusters": {
+      "total": 24084,
+      "yes_rate": 0.3341637601727288,
+      "citation_rate": 0.2842966284670321
+    }
+  }
+}

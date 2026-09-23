@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Startup Score Admin Operations Guide</title>
+  <style>
+    @page { size: letter; margin: 15mm; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #172033; font: 11pt/1.5 Arial, sans-serif; }
+    h1 { margin: 0 0 8px; color: #075e54; font-size: 26pt; font-weight: 700; }
+    h2 { margin: 26px 0 12px; padding-bottom: 5px; color: #075e54; border-bottom: 2px solid #d9e5e2; font-size: 18pt; }
+    h3 { margin: 18px 0 7px; font-size: 13pt; }
+    p, li { margin: 0 0 8px; }
+    ol, ul { margin: 8px 0 14px; padding-left: 25px; }
+    .box { margin: 12px 0; padding: 14px; border: 1px solid #d8e0e8; border-radius: 8px; background: #fbfcfd; }
+    .warn { margin: 12px 0; padding: 10px 14px; border-left: 4px solid #d97706; background: #fffbeb; }
+    .local-only { margin: 12px 0; padding: 13px 15px; border: 1px solid #f0c36b; border-radius: 8px; background: #fff8e8; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 10pt; }
+    th, td { padding: 9px; border: 1px solid #d8e0e8; text-align: left; vertical-align: top; }
+    th { background: #edf5f4; color: #075e54; }
+    code { padding: 1px 4px; border-radius: 3px; background: #eef1f3; }
+  </style>
+</head>
+<body>
+  <h1>Startup Score Admin Operations Guide</h1>
+  <p>Use the Admin Portal to create scorer accounts, manage company assignments, monitor assignment progress, and keep the scoring operation healthy.</p>
+
+  <div class="local-only">
+    <strong>Desktop-only administrator credentials</strong><br>
+    Username: <code>ADMIN_USERNAME_PLACEHOLDER</code><br>
+    Password: <code>ADMIN_PASSWORD_PLACEHOLDER</code><br>
+    <em>This credential block is intentionally replaced only in the Desktop copy. Do not commit a password to the repository or send it through unapproved channels.</em>
+  </div>
+
+  <h2>Access and dashboard orientation</h2>
+  <div class="box">
+    <ol>
+      <li>Open the current Admin Portal link and sign in with the administrator credentials.</li>
+      <li>The left panel is for creating scorers, reviewing existing scorer IDs, and viewing assignment distribution.</li>
+      <li>The right panel is for assigning companies to a selected scorer and monitoring their assignment status.</li>
+      <li>Use <strong>Log Out</strong> when you are finished, especially on a shared device.</li>
+    </ol>
+  </div>
+
+  <h2>Create and manage scorer accounts</h2>
+  <div class="box">
+    <h3>Create a scorer</h3>
+    <ol>
+      <li>Enter a unique Scorer ID and a temporary password.</li>
+      <li>Select <strong>Create Scorer</strong>.</li>
+      <li>Give the scorer their ID, temporary password, and the current scorer portal link through an approved private channel.</li>
+      <li>Ask the scorer to use <strong>Change password</strong> after signing in.</li>
+    </ol>
+    <p><strong>Important:</strong> the portal does not display stored scorer passwords. Passwords are protected, and an existing password cannot be retrieved from the Admin Portal.</p>
+  </div>
+
+  <h2>Assign and unassign companies</h2>
+  <div class="box">
+    <ol>
+      <li>Select a scorer from <strong>Select Scorer to Assign Companies</strong>.</li>
+      <li>Use the search field to find a company by name.</li>
+      <li>Use <strong>All</strong>, <strong>Assigned</strong>, and <strong>Unassigned</strong> to narrow the company list.</li>
+      <li>Check a company box to assign it; clear the box to remove that scorer's assignment.</li>
+      <li>Confirm the assignment date and elapsed time shown beneath assigned companies when available.</li>
+    </ol>
+  </div>
+  <table>
+    <thead><tr><th>Portal indicator</th><th>Meaning</th><th>How to use it</th></tr></thead>
+    <tbody>
+      <tr><td>0 / 1 / 2+ Assigned</td><td>How many scorers are assigned to the company overall.</td><td>Use it to balance coverage and identify companies needing another reviewer.</td></tr>
+      <tr><td>Not Started</td><td>The selected scorer has no saved answers for that assigned company.</td><td>Use it as a follow-up signal, not as proof the scorer has not reviewed materials offline.</td></tr>
+      <tr><td>N Answers</td><td>The selected scorer has saved that many scored questions.</td><td>Use it to monitor progress. It is an answer count, not a final-submission indicator.</td></tr>
+      <tr><td>Assigned date / days ago</td><td>When the assignment was created and its age.</td><td>Use it to prioritize follow-up on older, incomplete assignments.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Assignment distribution</h2>
+  <div class="box">
+    <p>The chart groups companies by the number of scorers assigned:</p>
+    <ul>
+      <li><strong>Unassigned:</strong> no scorer is assigned.</li>
+      <li><strong>Assigned (1):</strong> one scorer is assigned.</li>
+      <li><strong>Fully Assigned (2+):</strong> two or more scorers are assigned.</li>
+    </ul>
+    <p>Review the chart before adding assignments so work is distributed evenly and companies receive the intended review coverage.</p>
+  </div>
+
+  <h2>Operational limits and good practice</h2>
+  <div class="warn">
+    <strong>Do not treat the portal as a credential vault.</strong> It can create scorer accounts and show scorer IDs, but it does not reveal existing passwords or provide a general-purpose password-recovery screen.
+  </div>
+  <ul>
+    <li>Do not enter passwords in spreadsheets, task notes, or version-controlled files.</li>
+    <li>Before removing an assignment, confirm whether the scorer needs continued access. Existing saved reviews remain in the database unless separately removed.</li>
+    <li>Use the answer count for triage, then communicate with scorers when a company remains incomplete.</li>
+    <li>After any interface release, test administrator sign-in, scorer creation, assignment changes, scorer sign-in, saving, and submission.</li>
+  </ul>
+
+  <h2>Supabase backup and inactivity routine</h2>
+  <div class="warn"><strong>Why this matters:</strong> a free-tier Supabase service may pause after 90 days of inactivity. Maintain recoverable exports and perform a read-only health check at least once every 30 days.</div>
+  <div class="box">
+    <ol>
+      <li>Once each month, export the production database and store the encrypted export in the team-controlled backup location.</li>
+      <li>Retain at least 12 monthly backups and one annual archive.</li>
+      <li>Record the export date, owner, database project, and restore-test result in the operations log.</li>
+      <li>Each quarter, restore a backup into a non-production project and verify that assignments and reviews are present.</li>
+    </ol>
+  </div>
+</body>
+</html>

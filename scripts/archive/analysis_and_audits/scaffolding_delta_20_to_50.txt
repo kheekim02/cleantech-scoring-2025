@@ -1,0 +1,184 @@
+
+==========================================================================================
+DOCUMENT DELIVERABLE: EBD #1 / Executive Summary
+Files Analyzed: 78 | Frequency Range: 20% - 50% (16 to 39 files)
+New Scaffolding Blocks Discovered: 2
+==========================================================================================
+[31/78 files (39.7%)] Financial Projections (at least three years; if you have prior operations, show up to two years prior)
+[23/78 files (29.5%)] Funding Stage: early stage
+
+==========================================================================================
+DOCUMENT DELIVERABLE: Module 3: Product-Market Fit Questions
+Files Analyzed: 66 | Frequency Range: 20% - 50% (14 to 33 files)
+New Scaffolding Blocks Discovered: 10
+==========================================================================================
+[31/66 files (47.0%)] 2. Upload this document as TeamName_M3AssignmentQuestion.docx
+[21/66 files (31.8%)] 2. Upload this document as TeamName_M3AssignmentQuestion.docx or
+[21/66 files (31.8%)] In your value proposition, describe your product
+[20/66 files (30.3%)] briefly and how it addresses that pain or
+[20/66 files (30.3%)] problem, excites the customer, taps an urgent
+[20/66 files (30.3%)] need, and/or will have a big impact on their
+[20/66 files (30.3%)] business. Quantify the impact, if possible. (This
+[20/66 files (30.3%)] value proposition should get prospective
+[20/66 files (30.3%)] Estimate the size of your target customer
+[20/66 files (30.3%)] sub-segment (NOT THE TAM OR SAM) and
+
+==========================================================================================
+DOCUMENT DELIVERABLE: Module 4: Markets & Getting to Them
+Files Analyzed: 70 | Frequency Range: 20% - 50% (15 to 35 files)
+New Scaffolding Blocks Discovered: 5
+==========================================================================================
+[24/70 files (34.3%)] many. Who are all the players in each company
+[24/70 files (34.3%)] involved in the purchase decision? Who holds
+[24/70 files (34.3%)] the purse strings? How many sales calls/visits
+[24/70 files (34.3%)] are needed to make one sale? How long does
+[24/70 files (34.3%)] an average sale take from beginning to end?
+
+==========================================================================================
+DOCUMENT DELIVERABLE: Module 6: Finances & Funding
+Files Analyzed: 65 | Frequency Range: 20% - 50% (14 to 32 files)
+New Scaffolding Blocks Discovered: 2
+==========================================================================================
+[20/65 files (30.8%)] your best guess scenario, with assumptions.
+[19/65 files (29.2%)] finances and funding session in your Business Clinics. You should develop
+
+==========================================================================================
+DOCUMENT DELIVERABLE: Module 7: IP Strategy & Legal
+Files Analyzed: 69 | Frequency Range: 20% - 50% (14 to 34 files)
+New Scaffolding Blocks Discovered: 4
+==========================================================================================
+[21/69 files (30.4%)] sustainable competitive advantage? (examples
+[21/69 files (30.4%)] could be to charge higher prices, ability to
+[21/69 files (30.4%)] capture market share rapidly, lower costs,
+[21/69 files (30.4%)] exclusivity, fewer competitors, etc)
+
+==========================================================================================
+DOCUMENT DELIVERABLE: Inclusion Assignment
+Files Analyzed: 47 | Frequency Range: 20% - 50% (10 to 23 files)
+New Scaffolding Blocks Discovered: 48
+==========================================================================================
+[22/47 files (46.8%)] Cleantech Open Assignment: Inclusion as a Go-To-Market Strategy
+[22/47 files (46.8%)] numbers or % improvement
+[18/47 files (38.3%)] Instructions: How to Complete This Matrix
+[16/47 files (34.0%)] real business results.
+[15/47 files (31.9%)] To help founders translate inclusion into concrete, measurable improvements in growth, distribution, and
+[15/47 files (31.9%)] impact. This tool is designed to align your go-to-market (GTM) model with inclusive practices that drive
+[15/47 files (31.9%)] 1. Duplicate the matrix below.
+[15/47 files (31.9%)] 2. For each row (Inclusive Design, Inclusive Hiring, etc.), do the following:
+[15/47 files (31.9%)] expanded geographic/market reach, or team diversity.
+[15/47 files (31.9%)] 3. Use this as a live document to track progress, inform pitch decks, or engage with partners and
+[15/47 files (31.9%)] Deliverables & Timeline
+[15/47 files (31.9%)] Due Date for All Parts: August 26
+[15/47 files (31.9%)] Total Estimated Time: 2–3 hours
+[15/47 files (31.9%)] Submission Format: PDF or Slide Deck (uploaded to CTO portal - this is a REQUIREMENT
+[14/47 files (29.8%)] In the “Strategy & Change” column, write 1–2 changes you plan to implement. Think of
+[14/47 files (29.8%)] systems, processes, or practices that will help you embed inclusion into your GTM
+[14/47 files (29.8%)] Inclusion is not a check-the-box initiative—it’s your go-to-market multiplier.
+[14/47 files (29.8%)] Startups that bake inclusion into their product design, hiring practices, and distribution strategies gain
+[14/47 files (29.8%)] trust, unlock new markets, and scale faster.
+[13/47 files (27.7%)] e.g., Add multilingual
+[13/47 files (27.7%)] interface and accessibility
+[13/47 files (27.7%)] co-design for underserved
+[13/47 files (27.7%)] e.g., Partner with local
+[13/47 files (27.7%)] Generate 30% of early
+[12/47 files (25.5%)] In the “Results” column, describe the measurable outcomes you expect. Use metrics such
+[12/47 files (25.5%)] as % increase in engagement, # of new customers, improvement in retention rates,
+[12/47 files (25.5%)] non-English speakers. 20%
+[12/47 files (25.5%)] descriptions to remove
+[11/47 files (23.4%)] underserved zip codes.
+[10/47 files (21.3%)] features (e.g., alt text, screen
+[10/47 files (21.3%)] e.g., 30% increase in product
+[10/47 files (21.3%)] usability ratings among
+[10/47 files (21.3%)] increase in conversion rate in
+[10/47 files (21.3%)] e.g., Partner with HBCUs,
+[10/47 files (21.3%)] tribal colleges, and
+[10/47 files (21.3%)] community-based orgs for
+[10/47 files (21.3%)] internships. Revise job
+[10/47 files (21.3%)] e.g., 50% increase in BIPOC
+[10/47 files (21.3%)] applicants 25% improvement
+[10/47 files (21.3%)] in user engagement due to
+[10/47 files (21.3%)] hires who reflect target
+[10/47 files (21.3%)] environmental justice orgs to
+[10/47 files (21.3%)] events. Create a referral
+[10/47 files (21.3%)] program with CBOs that
+[10/47 files (21.3%)] e.g., Reach 500 new users
+[10/47 files (21.3%)] from priority zip codes.
+[10/47 files (21.3%)] customers through referrals
+[10/47 files (21.3%)] from trusted community
+
+==========================================================================================
+DOCUMENT DELIVERABLE: GHG / Emissions Reduction Potential
+Files Analyzed: 40 | Frequency Range: 20% - 50% (9 to 20 files)
+New Scaffolding Blocks Discovered: 24
+==========================================================================================
+[18/40 files (45.0%)] Follow Steps 3.1 through 3.6 below to calculate the new technology GHG ERP. The below list of
+[17/40 files (42.5%)] Environmental Conservation. Any opinions, findings, and/or interpretations of data contained herein are the responsibility of Rochester Institute of Technology and
+[17/40 files (42.5%)] do not necessarily represent the opinions, interpretations or policy of the State.
+[17/40 files (42.5%)] E. Describe the total available market, or market demand for the new
+[17/40 files (42.5%)] vehicle travel and transport, heat, steam, etc.), fossil fuel use, and fluorinated gases used for
+[17/40 files (42.5%)] refrigerants, blowing agents for foams, solvents, fire extinguishers, and aerosols. Consider these sources
+[17/40 files (42.5%)] when evaluating each phase.
+[17/40 files (42.5%)] resources is a good place to start for data and information commonly used in these analysis. IT is not a
+[17/40 files (42.5%)] complete set of data sources. If additional data or information is needed, use publicly available data
+[17/40 files (42.5%)] sources whenever possible. Be sure to site assumptions and sources throughout your analysis as
+[17/40 files (42.5%)] applicable, and include source links where possible.
+[17/40 files (42.5%)] GHG impact of the new technology, based on energy impact in 3.4.A (e.g., MT CO2e /
+[14/40 files (35.0%)] E. Describe the total available market, or market demand for the new technology.
+[14/40 files (35.0%)] vehicle travel and transport, heat, steam, etc.), fossil fuel use, and fluorinated gases used for refrigerants,
+[14/40 files (35.0%)] blowing agents for foams, solvents, fire extinguishers, and aerosols. Consider these sources when
+[14/40 files (35.0%)] evaluating each phase.
+[13/40 files (32.5%)] Follow Steps 3.1 through 3.6 below to calculate the new technology GHG ERP. The below list of resources
+[13/40 files (32.5%)] is a good place to start for data and information commonly used in these analysis. IT is not a complete
+[13/40 files (32.5%)] set of data sources. If additional data or information is needed, use publicly available data sources
+[13/40 files (32.5%)] include source links where possible.
+[12/40 files (30.0%)] Environmental Conservation. Any opinions, findings, and/or interpretations of data contained herein are the responsibility of Rochester Institute of Technology and do
+[12/40 files (30.0%)] not necessarily represent the opinions, interpretations or policy of the State.
+[12/40 files (30.0%)] whenever possible. Be sure to site assumptions and sources throughout your analysis as applicable, and
+[12/40 files (30.0%)] GHG impact of the new technology, based on energy impact in 3.4.A (e.g., MT CO2e / square
+
+==========================================================================================
+DOCUMENT DELIVERABLE: Financial Projections
+Files Analyzed: 70 | Frequency Range: 20% - 50% (15 to 35 files)
+New Scaffolding Blocks Discovered: 1
+==========================================================================================
+[31/70 files (44.3%)] Assumptions: (explain the variance; explain how would you avoid the issues that create this variance)
+
+==========================================================================================
+DOCUMENT DELIVERABLE: Business Model Canvas
+Files Analyzed: 57 | Frequency Range: 20% - 50% (12 to 28 files)
+New Scaffolding Blocks Discovered: 34
+==========================================================================================
+[20/57 files (35.1%)] For whom are we creating value?
+[20/57 files (35.1%)] Who are our most important customers?
+[19/57 files (33.3%)] Who are our Key Partners?
+[19/57 files (33.3%)] Who are our key suppliers?
+[19/57 files (33.3%)] Which Key Activities do partners perform?
+[19/57 files (33.3%)] What value do we deliver to the customer?
+[19/57 files (33.3%)] How costly are they?
+[18/57 files (31.6%)] Which customer needs are we satisfying?
+[18/57 files (31.6%)] What type of relationship does each of our Customer
+[18/57 files (31.6%)] Which ones have we established?
+[18/57 files (31.6%)] How are we reaching them now?
+[18/57 files (31.6%)] How are our Channels integrated?
+[18/57 files (31.6%)] For what do they currently pay?
+[18/57 files (31.6%)] How are they currently paying?
+[18/57 files (31.6%)] How would they prefer to pay?
+[17/57 files (29.8%)] What Key Resources do our Value Propositions
+[17/57 files (29.8%)] Which Key Resources are we acquiring
+[17/57 files (29.8%)] What Key Activities do our Value
+[17/57 files (29.8%)] Our Distribution Channels?
+[17/57 files (29.8%)] Which one of our customer’s problems are we
+[17/57 files (29.8%)] What bundles of products and services are we
+[17/57 files (29.8%)] offering to each Customer Segment?
+[17/57 files (29.8%)] Segments expect us to establish and maintain with
+[17/57 files (29.8%)] How are they integrated with the rest of our business
+[17/57 files (29.8%)] Through which Channels do our Customer Segments
+[17/57 files (29.8%)] Which ones work best?
+[17/57 files (29.8%)] Which ones are most cost-efficient?
+[17/57 files (29.8%)] How are we integrating them with customer routines?
+[17/57 files (29.8%)] Which Key Activities are most expensive?
+[16/57 files (28.1%)] Our Distribution Channels? Customer
+[16/57 files (28.1%)] Which Key Resources are most expensive?
+[15/57 files (26.3%)] What are the most important costs inherent in our business model?
+[15/57 files (26.3%)] For what value are our customers really willing to pay?
+[15/57 files (26.3%)] How much does each Revenue Stream contribute to overall revenues?

@@ -1,7 +1,67 @@
-node_modules/
-.DS_Store
+# Byte-compiled / optimized / C-extension artifacts
 __pycache__/
-*.pyc
-.env
-.netlify/
+*.py[cod]
+*$py.class
+*.so
+
+# Python virtual environments
 venv/
+.venv/
+env/
+ENV/
+scripts/.venv/
+*/.venv/
+
+# Testing & quality caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Node & package manager artifacts
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+deno.lock
+.netlify/
+
+# Environment files and credentials
+.env
+.env.local
+.env.*.local
+!*.example
+*.pem
+*.key
+
+# Operating System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE & Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# AI agent & Graphify local caches
+graphify-out/
+.agents/
+
+# Pipeline & batch logs
+*.log
+batch_log.txt
+
+# Local large data cache mirrors
+data/ai_cache_clean/
+data/ai_cache_v2/
+
+# Scratch work artifacts
+scripts/archive/scratch_work/

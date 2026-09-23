@@ -68,7 +68,7 @@ Founders in CleanTech Open submit standardized templates containing extensive in
 - Covers 15 deliverable types (`EBD2`, `EBD3`, `EBD4`, `M1`–`M8`, `BMC`, `GHG`, `Inclusion`, etc.).
 
 ### Extraction Daemon & Remote Execution
-- Extraction daemon: `08_ai_copilot_extractor_clean.py` executed on Spark remote server (`136.24.130.250`).
+- Extraction daemon: `scripts/08_ai_copilot_extractor_clean.py` executed on Spark remote server (`136.24.130.250`).
 - Local cache mirror: `data/ai_cache_clean/` (93 files, 92 active startups).
 - Expanded Citation Capture: Citations capture full multi-sentence context rather than truncated fragments.
 - **Current Status**: **100% of 92 active startups** in Supabase are fully extracted and stamped with `payload.meta.clean_ready = true`.
@@ -79,7 +79,7 @@ Founders in CleanTech Open submit standardized templates containing extensive in
 
 Extracted citations are mapped back to their original PDF deliverables so judges can verify evidence with a single click.
 
-### Multi-Tier Normalized Fuzzy Matcher (`13_push_clean_extractions_to_supabase.py`)
+### Multi-Tier Normalized Fuzzy Matcher (`scripts/13_push_clean_extractions_to_supabase.py`)
 1. **Tier 1 (Exact Match)**: Normalized character sequence matching against full PDF text.
 2. **Tier 2 (8-Word Prefix)**: First 8 normalized words matched against page text corpus.
 3. **Tier 3 (5-Word Prefix)**: 5-word prefix match for specific terminology (>15 chars).

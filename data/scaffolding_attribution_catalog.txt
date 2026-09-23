@@ -1,0 +1,492 @@
+
+================================================================================
+DOCUMENT TYPE: EBD #2: Impact/Sustainability Statement
+Files Evaluated: 74 | Threshold: > 50% (min 38/74 files)
+Scaffolding Blocks Found: 2
+================================================================================
+
+--- Item 1 [Appears in 71/74 files (95.9%)] ---
+Cleantech Open Confidential – Do not duplicate or distribute without written permission.
+
+--- Item 2 [Appears in 60/74 files (81.1%)] ---
+Essential Business Deliverable #2: Impact/Sustainability Statement Instructions:
+
+================================================================================
+DOCUMENT TYPE: EBD #3: Customer Segmentation & Competitive Matrix
+Files Evaluated: 65 | Threshold: > 50% (min 33/65 files)
+Scaffolding Blocks Found: 7
+================================================================================
+
+--- Item 1 [Appears in 61/65 files (93.8%)] ---
+© Cleantech Open 2025. The information presented above is confidential.
+
+--- Item 2 [Appears in 61/65 files (93.8%)] ---
+Do not duplicate or distribute without written permission.
+
+--- Item 3 [Appears in 52/65 files (80.0%)] ---
+Essential Business Deliverable #3: Customer Segmentation, Competitive Matrix, and Market Ecosystem Instructions:
+
+--- Item 4 [Appears in 52/65 files (80.0%)] ---
+Customer Archetype: Picking your most important Customer Segment, write 5-10 sentences identifying a typical customer’s wants, needs, and perspective of the world. Give them a name, a title, even a company name, as if you are creating an imaginary friend. Your customer must be a person, not an entity like a corporation. Explain how they make decisions, who influences them, what resources they have available, how their job success relates to your product. Example: “Blair Smith is a senior psychology major at UMass with a full course load working to maintain her B average while working 20 hours a week as a waitress, and frantically looking for a “real” job for when she graduates in a few months. She has what feels like a mountain of student debt to worry about, as well as a dorm room overflowing with four years of acquired junk. She has no storage space close by and couldn’t afford to pay for it even if it were available.” (source with more examples)
+
+--- Item 5 [Appears in 52/65 files (80.0%)] ---
+Competitive Matrix: You should add to or modify the factors in the chart to reflect the most important characteristics of your product / service / technology.
+
+--- Item 6 [Appears in 49/65 files (75.4%)] ---
+1. Essential Business Deliverable: Write your Customer Segmentation in the box provided after you have answered all the questions. 2. Upload this document as TeamName_EBD3CustomerSegmentationCompetitiveMatrix.docx or .pdf Customer Segmentation: Identify the 1, 2, or 3 most important Customer Segments for your product, based on your interviews. Customer Segments are titles of people, who share the same buying behaviors and are relevant to the same value propositions. If you have several kinds of customers, prioritize the one that will be your initial focus. Identify the size of each customer segment (number of customers and potential revenue, within a given geographic scope and time period.) Note: Part of Deliverable #3 includes a Market Ecosystem chart, which you will do in Module 4.
+
+--- Item 7 [Appears in 44/65 files (67.7%)] ---
+Market Ecosystem: Copy/paste your Market Ecosystem diagram below:
+
+================================================================================
+DOCUMENT TYPE: EBD #4: Product Technology Validation
+Files Evaluated: 72 | Threshold: > 50% (min 37/72 files)
+Scaffolding Blocks Found: 9
+================================================================================
+
+--- Item 1 [Appears in 69/72 files (95.8%)] ---
+© Cleantech Open 2025. The information presented above is confidential.
+
+--- Item 2 [Appears in 69/72 files (95.8%)] ---
+Do not duplicate or distribute without written permission.
+
+--- Item 3 [Appears in 61/72 files (84.7%)] ---
+State clearly where in the development cycle your product is. 1. Use DOD/DOE TRLs/MRLs to designate the stage of development. 2. Tell us whether an initial prototype or full- scale prototype has been successfully developed. 3. Do you have any initial users/field installations? 4. Is the product ready for manufacture?
+
+--- Item 4 [Appears in 61/72 files (84.7%)] ---
+How has the underlying technology in your product been validated? Here are some examples you can cite: 1. Published research articles 2. Internal / pending research that is not yet public - if so, can that be confirmed by third parties? What vetting processes has that research gone through? 3. Patents: have any been published yet, if not, at what stage of application are they? 4. Other products (from your company or other companies) using the same underlying technology?
+
+--- Item 5 [Appears in 58/72 files (80.6%)] ---
+What is your strategy to do further technical validation of your technology and product? Who can do such validation and what will it cost?
+
+--- Item 6 [Appears in 55/72 files (76.4%)] ---
+1. Essential Business Deliverable: Write your evidence of product technology validation and plans in the boxes provided below. This document will be visible to the judges. 2. Upload this document as TeamName_EBD4TechnologyValidation.docx or .pdf 3. You may choose to upload a 1-3 page technology testimonial PDF if you have technology-related testimonials to share. Upload as TeamName_TechnologyTestimonials.pdf
+
+--- Item 7 [Appears in 55/72 files (76.4%)] ---
+Has your product (as distinct from the technology) been validated by any third parties (e.g. national labs, universities, research institutions, certification organizations, pilot customers)? If so, what stage are these validations in (preliminary talks, pending, completed)? Are there any safety or industry standards testing (e.g. UL, ASTM, etc.) that are required for you to get to market? If so, what is your plan to complete it? If your product is software-based, how has it been tested to know that it performs as expected and/or creates the intended results?
+
+--- Item 8 [Appears in 54/72 files (75.0%)] ---
+Essential Business Deliverable #4: Product Technology Validation Instructions:
+
+--- Item 9 [Appears in 52/72 files (72.2%)] ---
+If available, and relevant, provide written technology-related testimonials and concise evidence from credible sources that your product design can work. If you’re ready, or nearly ready, for manufacture at scale, provide clear evidence or an industry third-party testimonial that there are no residual technical issues to be resolved and that you have credibly cost the manufacture. Please upload these as a PDF (one to three pages maximum).
+
+================================================================================
+DOCUMENT TYPE: Module 1: Customer Discovery Interviews
+Files Evaluated: 74 | Threshold: > 50% (min 38/74 files)
+Scaffolding Blocks Found: 2
+================================================================================
+
+--- Item 1 [Appears in 54/74 files (73.0%)] ---
+Cleantech Open Confidential – Do not duplicate or distribute without written permission.
+
+--- Item 2 [Appears in 44/74 files (59.5%)] ---
+Module 1: Business Model Canvas Customer Interview Capture Sheet Instructions:
+
+================================================================================
+DOCUMENT TYPE: Module 2: Impact Questions
+Files Evaluated: 74 | Threshold: > 50% (min 38/74 files)
+Scaffolding Blocks Found: 31
+================================================================================
+
+--- Item 1 [Appears in 64/74 files (86.5%)] ---
+Cleantech Open Confidential – Do not duplicate or distribute without written permission.
+
+--- Item 2 [Appears in 60/74 files (81.1%)] ---
+Section 1: Organizational Values Questions Answers Current Industry Practices What are your core values and the organizational culture you aspire to create?
+
+--- Item 3 [Appears in 59/74 files (79.7%)] ---
+Develop a Supplier Diversity Plan.
+
+--- Item 4 [Appears in 59/74 files (79.7%)] ---
+Becoming Minority Certified (if relevant, for your own company).
+
+--- Item 5 [Appears in 59/74 files (79.7%)] ---
+What is the primary component of your waste stream?
+
+--- Item 6 [Appears in 58/74 files (78.4%)] ---
+What alliances could you possibly form to improve positioning? e.g. Greenpeace, World Wildlife Fund, etc.
+
+--- Item 7 [Appears in 57/74 files (77.0%)] ---
+Section 3: Social License to Operate Questions Answers Current Industry Practices Who are your stakeholders DIRECTLY impacted by your business? How are they impacted?
+
+--- Item 8 [Appears in 57/74 files (77.0%)] ---
+Section 6: Supplier Networks Questions Answers Current Industry Practices What are your UPSTREAM suppliers? (Existing or anticipated)
+
+--- Item 9 [Appears in 56/74 files (75.7%)] ---
+Which communities or regions are supportive of your idea? Which are not?
+
+--- Item 10 [Appears in 56/74 files (75.7%)] ---
+Section 4: Product/Service Design, Material/Chemical Use, and Public Health Questions Answers Current Industry Practices What design framework are you using? (C2C, Biomimicry, DfE, LCA, Green Chemistry, other)
+
+--- Item 11 [Appears in 56/74 files (75.7%)] ---
+What are ways to create a source of new materials through a take-back program at the end of your product’s life?
+
+--- Item 12 [Appears in 56/74 files (75.7%)] ---
+LACI Just Impact Report Question Answer Which metrics described in the Just Impact report would be applicable to your business?
+
+--- Item 13 [Appears in 55/74 files (74.3%)] ---
+Who are your stakeholders INDIRECTLY impacted by your business? How are they impacted?
+
+--- Item 14 [Appears in 55/74 files (74.3%)] ---
+What are existing regulations that have an INDIRECT impact on your license to operate?
+
+--- Item 15 [Appears in 55/74 files (74.3%)] ---
+Who are your key stakeholders, and how do you plan to engage them?
+
+--- Item 16 [Appears in 54/74 files (73.0%)] ---
+Module 2 Assignment: Impact/Sustainability Questions Instructions:
+
+--- Item 17 [Appears in 54/74 files (73.0%)] ---
+What are your DOWNSTREAM suppliers? (Existing or anticipated)
+
+--- Item 18 [Appears in 54/74 files (73.0%)] ---
+Section 7: Post Use: Reuse, Repurpose, Return to Raw Materials Questions Answers Current Industry Practices Categorize your waste stream by percentage: Hazardous, Recyclable, Reusable, Landfill.
+
+--- Item 19 [Appears in 53/74 files (71.6%)] ---
+What materials/chemicals are in your product/service, and what are their risks? e.g. toxicity, availability, intensity, price elasticity, recyclability, handling, volatility, etc.
+
+--- Item 20 [Appears in 53/74 files (71.6%)] ---
+Section 5: Clean Production: Energy, Land, Air, and Water Use Questions Answers Current Industry Practices What is your largest source of energy use?
+
+--- Item 21 [Appears in 53/74 files (71.6%)] ---
+Do any of your suppliers consider environmental or human impacts in their operations? If yes, how so?
+
+--- Item 22 [Appears in 53/74 files (71.6%)] ---
+Are there any less harmful material substitutes you could use? Explain.
+
+--- Item 23 [Appears in 52/74 files (70.3%)] ---
+Are there any pending new or changing regulations that could impact your business?
+
+--- Item 24 [Appears in 51/74 files (68.9%)] ---
+Define the overarching purpose for DEIJBA and selected focus.
+
+--- Item 25 [Appears in 49/74 files (66.2%)] ---
+What kind of impact beyond the bottom line do you want to make? (e.g. social, environmental)
+
+--- Item 26 [Appears in 49/74 files (66.2%)] ---
+How can you design with the end in mind? e.g. less/lighter material, less toxicity, recyclable & recycled, etc.
+
+--- Item 27 [Appears in 46/74 files (62.2%)] ---
+1. Read the provided Sustainability Guidebook, and the LACI Just Impact Report, and then answer the questions found in the charts below. The questions are split up into 7 sections, corresponding to the sections in the Guidebook. Record your answers next to the questions. The “Current Industry Practices” column is for noting down any industry practices you know of. 2. Key Deliverable: Write your Impact Statement as part of your Essential Business Deliverable #2. This will be turned in separately. 3. Upload this document as TeamName_M2ImpactSustainaiblityQuestions.docx or .pdf Sustainability Questions:
+
+--- Item 28 [Appears in 46/74 files (62.2%)] ---
+Do you have air pollutants? If yes, what are they?
+
+--- Item 29 [Appears in 44/74 files (59.5%)] ---
+Section 2: Public Policy Risks and Opportunities Questions Answers Current Industry Practices What are existing local/state/federal/international regulations that have a DIRECT impact (positive or negative) on your license to operate?
+
+--- Item 30 [Appears in 41/74 files (55.4%)] ---
+What is your largest source of land use?
+
+--- Item 31 [Appears in 41/74 files (55.4%)] ---
+Where in your process can you practice clean production? (e.g. use renewable energy, recycled materials, etc.)
+
+================================================================================
+DOCUMENT TYPE: Module 3: Product-Market Fit Questions
+Files Evaluated: 66 | Threshold: > 50% (min 34/66 files)
+Scaffolding Blocks Found: 6
+================================================================================
+
+--- Item 1 [Appears in 60/66 files (90.9%)] ---
+Do not duplicate or distribute without written permission.
+
+--- Item 2 [Appears in 59/66 files (89.4%)] ---
+© Cleantech Open 2025. The information presented above is confidential.
+
+--- Item 3 [Appears in 58/66 files (87.9%)] ---
+Questions Answers How many customer interviews have you done since the beginning of the CTO Accelerator?
+
+--- Item 4 [Appears in 53/66 files (80.3%)] ---
+1. After testing your hypotheses through customer interviews, answer the questions in the chart below about your validated segments concisely and completely within the character limits (5,000 characters MAX).
+
+--- Item 5 [Appears in 52/66 files (78.8%)] ---
+Module 3: Product/Market Fit & Customer Discovery Questions Instructions:
+
+--- Item 6 [Appears in 50/66 files (75.8%)] ---
+2. Upload this document as TeamName_M3AssignmentQuestion.docx or .pdf Product/Market Fit & Customer Discovery Questions: (5,000 character limit total)
+
+================================================================================
+DOCUMENT TYPE: Module 4: Markets & Getting to Them
+Files Evaluated: 70 | Threshold: > 50% (min 36/70 files)
+Scaffolding Blocks Found: 4
+================================================================================
+
+--- Item 1 [Appears in 66/70 files (94.3%)] ---
+© 2025 Cleantech Open Confidential – Do not duplicate or distribute without written permission.
+
+--- Item 2 [Appears in 63/70 files (90.0%)] ---
+Questions Answers After launch, describe which channels you will use to reach other customers in the subsegment. Through direct sales? Independent sales reps? Systems Integrators? Wholesalers or distributors? Dealers or resellers? Original Equipment Manufacturers (OEMs)? Does your customer segment already buy other products through channels you could leverage?
+
+--- Item 3 [Appears in 55/70 files (78.6%)] ---
+Module 4: Markets and Getting to Them Assignment Sheet Instructions:
+
+--- Item 4 [Appears in 52/70 files (74.3%)] ---
+1. Develop your initial answers to the questions below, then test them with your validated subsegment. Don’t get too deeply into this process until you have a validated subsegment. After testing your hypotheses, revise your answers to the questions in the chart below concisely and completely within the character limits (4,000 characters TOTAL). 2. Upload this document as TeamName_M4Questions.docx or .pdf Questions: (4,000 total character limit)
+
+================================================================================
+DOCUMENT TYPE: Module 6: Finances & Funding
+Files Evaluated: 65 | Threshold: > 50% (min 33/65 files)
+Scaffolding Blocks Found: 8
+================================================================================
+
+--- Item 1 [Appears in 62/65 files (95.4%)] ---
+© 2025 Cleantech Open Confidential – Do not duplicate or distribute without written permission.
+
+--- Item 2 [Appears in 61/65 files (93.8%)] ---
+Questions Answers What is your COGS (Cost of Goods Sold) at production volume (as necessary)? Interview professionals familiar with the manufactured or final cost of the product/technology, or products similar to yours to record a validated COGS number. Make sure you capture all hidden costs in your selected channel.
+
+--- Item 3 [Appears in 55/65 files (84.6%)] ---
+Module 6: Finances and Funding Assignment Questions Instructions:
+
+--- Item 4 [Appears in 55/65 files (84.6%)] ---
+1. Answer the questions below concisely and completely within the character limit (5,000 characters Maximum). Start your first draft projections early, but don’t get too deeply into this process until you have a validated subsegment. 2. Upload this document as TeamName_M6Questions.docx or .pdf 3. Upload your three year financial projection spreadsheet as a PDF named TeamName_FinancialProjection.pdf Questions: (5,000 total character limit for answers column) If any question does not directly apply, please answer as best as you can or leave a brief note explaining why.
+
+--- Item 5 [Appears in 53/65 files (81.5%)] ---
+Three Year Financial Projection: For the financial projection model, you will use information from above and from previous assignment sheets:
+
+--- Item 6 [Appears in 53/65 files (81.5%)] ---
+To create a single pdf (even if you have multiple tabs) in Excel: Windows: ‘Save As …’, select ‘Format’ PDF, select ‘Options’, then select ‘Entire Workbook’ – this will create a PDF for all your tabs. Mac: ‘Print’, then select ‘Entire Workbook’ and print to PDF.
+
+--- Item 7 [Appears in 52/65 files (80.0%)] ---
+Use your work in Module 3 (Product/Market Fit) to project first-year revenues for your validated targeted subsegment. Subsequent years might reflect second and third target subsegment revenues, if you have sufficiently penetrated the first subsegment by then. Make sure your assumptions are credibly based on your validation interviews. Use your customer acquisition cost in Module 4 (Markets and Getting to Them) to project marketing and sales costs in the P&L. Make sure your assumptions reflect industry benchmarks and/or your own actual testing – if they don’t, explain why not. Building and Exporting Your Model:
+
+--- Item 8 [Appears in 51/65 files (78.5%)] ---
+Create a three-year financial projection based on this model or a similar one of your own (with formulae, not fixed values) that you bring to the finances and funding session in your Business Clinics. You should develop your best guess scenario, with assumptions. At least a week before the final submission deadline, export a version of your spreadsheet, convert to PDF, and upload through your Dashboard. You can upload as many subsequent versions as you like up to the deadline; a new upload will overwrite the previous one. Additional Notes:
+
+================================================================================
+DOCUMENT TYPE: Module 7: IP Strategy & Legal
+Files Evaluated: 69 | Threshold: > 50% (min 35/69 files)
+Scaffolding Blocks Found: 7
+================================================================================
+
+--- Item 1 [Appears in 66/69 files (95.7%)] ---
+© Cleantech Open 2025. The information presented above is confidential
+
+--- Item 2 [Appears in 66/69 files (95.7%)] ---
+Do not duplicate or distribute without written permission.
+
+--- Item 3 [Appears in 64/69 files (92.8%)] ---
+Questions Answers What is your legal (corporate) structure (e.g. C Corp, S Corp, LLC)?
+
+--- Item 4 [Appears in 58/69 files (84.1%)] ---
+Are you aware of any corporate or equity structural issues that could be a problem down the road, in particular to investors or partners? How will you address them?
+
+--- Item 5 [Appears in 55/69 files (79.7%)] ---
+Module 7: Legal Questions Instructions:
+
+--- Item 6 [Appears in 54/69 files (78.3%)] ---
+1. Answer the questions below concisely and completely within the character limit (2,000 characters TOTAL). 2. Upload this document as TeamName_M7Questions.docx or .pdf Questions: (2,000 total character limit) If any question does not directly apply, please answer as best as you can or leave a brief note explaining why.
+
+--- Item 7 [Appears in 45/69 files (65.2%)] ---
+Do you own your IP? If not, do you have an exclusive license for your IP?
+
+================================================================================
+DOCUMENT TYPE: Module 8: Team & Operations
+Files Evaluated: 74 | Threshold: > 50% (min 38/74 files)
+Scaffolding Blocks Found: 5
+================================================================================
+
+--- Item 1 [Appears in 65/74 files (87.8%)] ---
+© Cleantech Open 2025 Confidential – Do not duplicate or distribute without written permission.
+
+--- Item 2 [Appears in 62/74 files (83.8%)] ---
+Questions Answers Briefly describe the background and skill sets of each team member and why those skills are critical to the company’s success in the next 18 months.
+
+--- Item 3 [Appears in 53/74 files (71.6%)] ---
+Module 8: Management Team Assignment Questions Instructions:
+
+--- Item 4 [Appears in 53/74 files (71.6%)] ---
+1. Answer the questions below (2,500 characters TOTAL). Although there are few questions, they require that you consider carefully what you need to accomplish in the near future in every company function, what skills you will need to accomplish those tasks, and how you will find them. 2. Upload this document as TeamName_M8Questions.docx or .pdf Questions: (2,500 total character limit) If any question does not directly apply, please answer as best as you can or leave a brief note explaining why.
+
+--- Item 5 [Appears in 51/74 files (68.9%)] ---
+What processes or activities do you have, or plan to implement, in your company to improve the effectiveness of your team? (e.g. how do you assign tasks, know that things get done, keep everyone updated, etc?)
+
+================================================================================
+DOCUMENT TYPE: GHG / Emissions Reduction Potential
+Files Evaluated: 40 | Threshold: > 50% (min 21/40 files)
+Scaffolding Blocks Found: 61
+================================================================================
+
+--- Item 1 [Appears in 32/40 files (80.0%)] ---
+Step 1. Understanding your product and market.
+
+--- Item 2 [Appears in 32/40 files (80.0%)] ---
+Step 2. Identify carbon value proposition life cycle phase using a basic ERP matrix
+
+--- Item 3 [Appears in 32/40 files (80.0%)] ---
+Table 1: Basic ERP Matrix Definitions
+
+--- Item 4 [Appears in 32/40 files (80.0%)] ---
+++ Significantly less impact than baseline
+
+--- Item 5 [Appears in 32/40 files (80.0%)] ---
++ Less impact—probably less impact than baseline
+
+--- Item 6 [Appears in 32/40 files (80.0%)] ---
+- Greater impact—probably more impact than baseline
+
+--- Item 7 [Appears in 32/40 files (80.0%)] ---
+Life Cycle Phase Aspects to Consider GHG Impact Rating
+
+--- Item 8 [Appears in 31/40 files (77.5%)] ---
+Greenhouse Gas Emission Reduction Potential (GHG ERP) Self-Assessment Workbook
+
+--- Item 9 [Appears in 31/40 files (77.5%)] ---
+There are three steps outlined in the workbook:
+
+--- Item 10 [Appears in 31/40 files (77.5%)] ---
+Step 1. Understand the product and market
+
+--- Item 11 [Appears in 31/40 files (77.5%)] ---
+Step 2. Identify carbon value proposition using a basic ERP matrix
+
+--- Item 12 [Appears in 31/40 files (77.5%)] ---
+A. Describe the new technology function.
+
+--- Item 13 [Appears in 31/40 files (77.5%)] ---
+B. Describe the product, system or process that you will compare your new
+
+--- Item 14 [Appears in 31/40 files (77.5%)] ---
+C. Describe the environmental value that the new technology provides over the
+
+--- Item 15 [Appears in 31/40 files (77.5%)] ---
+D. Describe the target market.
+
+--- Item 16 [Appears in 31/40 files (77.5%)] ---
+0 Equivalent impact—no significant difference between new technology and baseline
+
+--- Item 17 [Appears in 31/40 files (77.5%)] ---
+Remember, this is a qualitative assessment to identify high and low GHG impact activities. If there is not enough information to rate a phase, leave it blank. The life cycle phase with the highest rating is the carbon value proposition life cycle phase and will be the focus for Step 3, Calculating the GHG ERP.
+
+--- Item 18 [Appears in 31/40 files (77.5%)] ---
+Data Sources Type of data available
+
+--- Item 19 [Appears in 31/40 files (77.5%)] ---
+Peer reviewed journal articles (research) Mass & type of material
+
+--- Item 20 [Appears in 31/40 files (77.5%)] ---
+Waste management and end of life
+
+--- Item 21 [Appears in 31/40 files (77.5%)] ---
+Step 3.1: Define the functional unit (e.g., square foot, ton, case, etc.)
+
+--- Item 22 [Appears in 31/40 files (77.5%)] ---
+Step 3.3 Quantify energy and GHG impacts of the baseline
+
+--- Item 23 [Appears in 31/40 files (77.5%)] ---
+Step 3.4 Quantify energy and GHG impacts of new technology
+
+--- Item 24 [Appears in 31/40 files (77.5%)] ---
+Step 3.5 Perform comparative GHG impact analysis
+
+--- Item 25 [Appears in 31/40 files (77.5%)] ---
+Step 3.6 Quantify annual GHG ERP at market volume
+
+--- Item 26 [Appears in 30/40 files (75.0%)] ---
+F. Quantify the market share of the new technology in number of units.
+
+--- Item 27 [Appears in 30/40 files (75.0%)] ---
+The goal of this step is to identify the product life cycle phase that has the highest potential to reduce GHGs, or the carbon value proposition life cycle phase. This is done by using a basic ERP matrix, which is used to compare GHGs emitted by the new technology and the baseline at each life cycle phase.
+
+--- Item 28 [Appears in 30/40 files (75.0%)] ---
+The goal of this step is to calculate a GHG ERP for the new technology. The GHG ERP is a numerical value representing an order of magnitude estimate of ERP and should only consider one product life cycle phase or the carbon value proposition life cycle phase determined in Step 2.
+
+--- Item 29 [Appears in 30/40 files (75.0%)] ---
+Step 3.2: Identify energy sources for the new technology and baseline.
+
+--- Item 30 [Appears in 30/40 files (75.0%)] ---
+B. Consider listing any additional significant non-quantifiable sustainability or environmental
+
+--- Item 31 [Appears in 29/40 files (72.5%)] ---
+© 2022 Rochester Institute of Technology. Funding provided by the Environmental Protection Fund as administered by the New York State Department of
+
+--- Item 32 [Appears in 29/40 files (72.5%)] ---
+EPA Emissions Factors for GHG Inventories,
+
+--- Item 33 [Appears in 29/40 files (72.5%)] ---
+refrigerants, electricity, steam & heat
+
+--- Item 34 [Appears in 29/40 files (72.5%)] ---
+EIA Residential Energy Consumption Survey (RECS),
+
+--- Item 35 [Appears in 29/40 files (72.5%)] ---
+EIA Commercial Energy Consumption Survey (CBECS),
+
+--- Item 36 [Appears in 29/40 files (72.5%)] ---
+EPA Waste Reduction Model (WARM),
+
+--- Item 37 [Appears in 29/40 files (72.5%)] ---
+A. If necessary, quantify the per-unit, annual energy impact of the baseline technology (e.g.
+
+--- Item 38 [Appears in 29/40 files (72.5%)] ---
+B. Using publicly available resources for GHG emissions factors, quantify the per-unit, annual
+
+--- Item 39 [Appears in 29/40 files (72.5%)] ---
+GHG impact of the baseline, based on energy impact in 3.3.A. (e.g., MT CO2e / square foot /
+
+--- Item 40 [Appears in 29/40 files (72.5%)] ---
+A. If necessary, quantify the per-unit, annual energy impact of the new technology (e.g., kWh /
+
+--- Item 41 [Appears in 29/40 files (72.5%)] ---
+A. Calculate the per-unit, annual GHG ERP of the new technology as compared to the baseline,
+
+--- Item 42 [Appears in 29/40 files (72.5%)] ---
+or 3.3.B. – 3.4.B. This should be expressed in MT CO2e / functional unit / year).
+
+--- Item 43 [Appears in 29/40 files (72.5%)] ---
+A. Estimate the annual market volume of the new technology at maturity and multiply the per
+
+--- Item 44 [Appears in 29/40 files (72.5%)] ---
+unit annual GHG reduction in 3.5.A. by the annual market volume. Answer should be
+
+--- Item 45 [Appears in 28/40 files (70.0%)] ---
+The New York State Pollution Prevention Institute (NYSP2I) has developed this workbook to guide a
+
+--- Item 46 [Appears in 28/40 files (70.0%)] ---
+company through a self-assessment to determine a GHG ERP for a new product or technology.
+
+--- Item 47 [Appears in 28/40 files (70.0%)] ---
+The goal of this step is to articulate the function served by the new technology, identify the correct
+
+--- Item 48 [Appears in 28/40 files (70.0%)] ---
+baseline for comparison, and to define your target market and market share.
+
+--- Item 49 [Appears in 28/40 files (70.0%)] ---
+Fill-in each GHG Impact Rating with a rating based on the definitions in Table 1 below, as well as a
+
+--- Item 50 [Appears in 28/40 files (70.0%)] ---
+rationale for each rating. Include notes, references, assumptions, and any questions for each phase.
+
+--- Item 51 [Appears in 28/40 files (70.0%)] ---
+Raw materials Mass Material type (plastic, metal, glass, etc.) Reused or recycled content
+
+--- Item 52 [Appears in 28/40 files (70.0%)] ---
+Emission rates by state and subregion,
+
+--- Item 53 [Appears in 27/40 files (67.5%)] ---
+The workbook is designed to be completed in sequence as each step builds on the previous step. Please
+
+--- Item 54 [Appears in 27/40 files (67.5%)] ---
+enter your responses in the fields that follow each question. For more information or for technical
+
+--- Item 55 [Appears in 27/40 files (67.5%)] ---
+assistance in completing the workbook, contact NYSP2I at nysp2i@rit.edu.
+
+--- Item 56 [Appears in 27/40 files (67.5%)] ---
+Manufacturing Amount of energy used Type of energy used (grid, wind, hydro, etc.) High energy use processes (heat, compressed air, etc.)
+
+--- Item 57 [Appears in 27/40 files (67.5%)] ---
+Follow Steps 3.1 through 3.6 below to calculate the new technology GHG ERP. The below list of resources is a good place to start for data and information commonly used in these analysis. IT is not a complete set of data sources. If additional data or information is needed, use publicly available data sources whenever possible. Be sure to site assumptions and sources throughout your analysis as applicable, and include source links where possible.
+
+--- Item 58 [Appears in 26/40 files (65.0%)] ---
+Use Amount of energy used Type of energy used (grid, wind, hydro, battery, etc.)
+
+--- Item 59 [Appears in 26/40 files (65.0%)] ---
+End of Life Recyclability Reusability Waste requiring special handling (electronics, hazardous waste, etc.)
+
+--- Item 60 [Appears in 24/40 files (60.0%)] ---
+Distribution Distance traveled (global vs hyper local) Transport methods used (shipping from overseas, air, rail, road)
+
+--- Item 61 [Appears in 22/40 files (55.0%)] ---
+-- Significantly more impact than baseline
