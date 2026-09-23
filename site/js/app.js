@@ -30,9 +30,6 @@ CTO.App = {
     if (banner) {
       banner.style.display = this.currentUser?.is_test ? 'flex' : 'none';
     }
-    if (this.currentUser?.is_test) {
-      this.setSaveStatus('🧪 Test Mode (No DB Save)');
-    }
   },
 
   async handleLogin() {
@@ -635,12 +632,7 @@ CTO.App = {
           throw new Error("401_UNAUTHORIZED");
         }
         if (!res.ok) throw new Error("NETWORK_ERROR");
-        const syncData = await res.json().catch(() => ({}));
-        if (syncData.test_mode || this.currentUser?.is_test) {
-          this.setSaveStatus('🧪 Test Mode (No DB Save)');
-        } else {
-          this.setSaveStatus('Saved');
-        }
+        this.setSaveStatus('Saved');
 
       } catch (error) {
         this.state.syncQueue.unshift(...batch);
@@ -703,13 +695,7 @@ CTO.App = {
 
   setSaveStatus(message) {
     const status = document.getElementById('save-status');
-    if (status) {
-      if (this.currentUser?.is_test && (message === 'Saved' || message === '🧪 Test Mode (No DB Save)')) {
-        status.innerHTML = '<span style="color: #d97706; font-weight: 600;">🧪 Test Mode (No DB Save)</span>';
-      } else {
-        status.textContent = message;
-      }
-    }
+    if (status) status.textContent = message;
   },
 
   async logout() {

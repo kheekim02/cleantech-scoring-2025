@@ -94,11 +94,11 @@ class TestScorerTestMode(unittest.TestCase):
         self.assertIn("Test & Admin Preview Mode", content)
 
     def test_11_app_js_handles_test_mode_ui(self):
-        """Verify site/js/app.js handles test mode UI and save status."""
+        """Verify site/js/app.js handles test mode banner without disruptive navbar label."""
         content = self.app_js.read_text(encoding="utf-8")
         self.assertIn("applyUserRoleUI", content)
         self.assertIn("test-mode-banner", content)
-        self.assertIn("Test Mode (No DB Save)", content)
+        self.assertNotIn("Test Mode (No DB Save)", content, "Disruptive navbar label must not be injected")
 
     def test_12_admin_ui_has_test_mode_checkbox_and_badges(self):
         """Verify site/admin.html and site/js/admin.js allow creating and viewing test accounts."""
