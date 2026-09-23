@@ -1,109 +1,586 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CleanTech Open 2025 - Scorer Walkthrough</title>
+  <meta charset="UTF-8">
+  <title>CleanTech Open 2025 - Judge & Scorer Manual</title>
   <style>
-    @page { size: letter; margin: 14mm; }
-    * { box-sizing: border-box; }
-    body { margin: 0; color: #172033; font: 11pt/1.5 Arial, sans-serif; }
-    header { padding: 0; margin: 0 0 20px; }
-    header .eyebrow { font: bold 10pt monospace; letter-spacing: .08em; color: #075e54; text-transform: uppercase; }
-    h1 { margin: 5px 0 8px; color: #075e54; font-size: 26pt; font-weight: 700; line-height: 1.1; }
-    header p { color: #172033; }
-    h2 { margin: 28px 0 12px; padding-bottom: 5px; color: #075e54; border-bottom: 2px solid #d9e5e2; font-size: 18pt; }
-    h3 { margin: 20px 0 7px; font-size: 13pt; }
-    p, li { margin: 0 0 9px; }
-    ol, ul { margin: 8px 0 14px; padding-left: 25px; }
-    li { padding-left: 3px; }
-    .notice, .tip { margin: 14px 0; padding: 13px 16px; border-radius: 7px; }
-    .notice { background: #fff8e8; border-left: 4px solid #ba7a10; }
-    .tip { background: #edf9f6; border-left: 4px solid #087566; }
-    .shot { margin: 14px 0 20px; border: 1px solid #d8dfdf; border-radius: 9px; overflow: hidden; break-inside: avoid; page-break-inside: avoid; }
-    .shot img { display: block; width: auto; max-width: 100%; max-height: 4.75in; height: auto; margin: 0 auto; object-fit: contain; object-position: top; }
-    .caption { padding: 8px 12px; background: #f6f8f8; color: #53616b; font-size: 9.5pt; }
-    .step { margin: 13px 0; padding: 13px 15px; border: 1px solid #dce4e4; border-radius: 8px; background: #fbfdfd; }
-    .num { display: inline-grid; place-items: center; width: 25px; height: 25px; margin-right: 7px; border-radius: 50%; color: white; background: #087566; font-weight: bold; }
-    table { width: 100%; margin: 12px 0; border-collapse: collapse; font-size: 10pt; }
-    th, td { padding: 9px; border: 1px solid #d7e0e0; text-align: left; vertical-align: top; }
-    th { background: #edf5f4; color: #174c45; }
-    .required { color: #af3b31; font-weight: bold; }
-    .optional { color: #52636a; font-weight: bold; }
-    .page-break { page-break-before: always; }
-    @media print { .page-break { page-break-before: always; } }
+    
+@page {
+  size: letter;
+  margin: 14mm 14mm 16mm 14mm;
+  @bottom-right {
+    content: counter(page);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #1b2028;
+  background: #ffffff;
+  line-height: 1.55;
+  font-size: 13px;
+}
+
+/* Page Break Controls */
+.page-break {
+  page-break-before: always;
+}
+
+.avoid-break {
+  page-break-inside: avoid;
+}
+
+/* Header Banner */
+.doc-header {
+  background: linear-gradient(135deg, #181f2e 0%, #0c6b5d 100%);
+  color: #ffffff;
+  padding: 24px 28px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.doc-header .badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #a7f3d0;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.doc-header h1 {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+.doc-header p {
+  color: #e2e8f0;
+  font-size: 13.5px;
+  max-width: 650px;
+}
+
+.meta-bar {
+  display: flex;
+  gap: 20px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 11.5px;
+  color: #cbd5e1;
+}
+
+/* Section Headings */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0c6b5d;
+  margin: 24px 0 12px 0;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+h3 {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 16px 0 8px 0;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+ul, ol {
+  margin-left: 20px;
+  margin-bottom: 12px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+/* Cards & Callouts */
+.card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+
+.callout-info {
+  background: #ecfdf5;
+  border-left: 4px solid #059669;
+  border-radius: 0 6px 6px 0;
+  padding: 12px 16px;
+  margin: 14px 0;
+  font-size: 12.5px;
+}
+
+.callout-critical {
+  background: #fef2f2;
+  border-left: 4px solid #dc2626;
+  border: 1px solid #fecaca;
+  border-left-width: 5px;
+  border-left-color: #dc2626;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin: 16px 0;
+  font-size: 13px;
+}
+
+.callout-warning {
+  background: #fffbeb;
+  border-left: 4px solid #d97706;
+  border-radius: 0 6px 6px 0;
+  padding: 12px 16px;
+  margin: 14px 0;
+  font-size: 12.5px;
+}
+
+.callout-tip {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  border-radius: 0 6px 6px 0;
+  padding: 12px 16px;
+  margin: 14px 0;
+  font-size: 12.5px;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0;
+  font-size: 12px;
+}
+
+th {
+  background: #f1f5f9;
+  color: #334155;
+  font-weight: 700;
+  text-align: left;
+  padding: 9px 12px;
+  border: 1px solid #cbd5e1;
+}
+
+td {
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  vertical-align: top;
+}
+
+tr:nth-child(even) td {
+  background: #f8fafc;
+}
+
+/* UI Mockup Blocks */
+.ui-mockup {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin: 14px 0;
+  overflow: hidden;
+}
+
+.ui-mockup-header {
+  background: #1e293b;
+  color: #f8fafc;
+  padding: 8px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ui-mockup-body {
+  padding: 14px;
+  background: #f8fafc;
+}
+
+.screenshot-img {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  margin: 12px 0 16px 0;
+  display: block;
+}
+
+/* Badge Styles */
+.pill {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+.pill-green {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+
+.pill-orange {
+  background: #ffedd5;
+  color: #c2410c;
+  border: 1px solid #fdba74;
+}
+
+.pill-yellow {
+  background: #fef9c3;
+  color: #854d0e;
+  border: 1px solid #fde047;
+}
+
+.pill-blue {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #7dd3fc;
+}
+
+.step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: #0c6b5d;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+/* Footer note */
+.doc-footer {
+  margin-top: 30px;
+  padding-top: 14px;
+  border-top: 1px solid #cbd5e1;
+  font-size: 11px;
+  color: #64748b;
+  display: flex;
+  justify-content: space-between;
+}
+
   </style>
 </head>
 <body>
-  <header>
-    <div class="eyebrow">CleanTech Open 2025</div>
-    <h1>Scorer Walkthrough</h1>
-    <p>Use this guide from sign-in through final submission. Your judgment and the source documents control the score; AI suggestions are a cross-check only.</p>
-  </header>
 
-  <h2>1. Sign in and select the right company</h2>
-  <p>Open the current Startup Score link supplied by the program. Sign in with your Scorer ID and passcode. If you receive invalid-credential feedback, confirm the ID and password with the program lead.</p>
-  <div class="shot"><img src="tutorial_assets/scorer_workflow_2026-09-22/01-login.png" alt="Scorer login screen"><div class="caption">Sign in with your assigned Scorer ID and passcode.</div></div>
-  <p>After signing in, use the company menu in the top navigation to select an assigned company. Confirm the company name before beginning. Change companies only after the header says <strong>Saved</strong>.</p>
-  <div class="shot"><img src="tutorial_assets/scorer_workflow_2026-09-22/02-company-selector.png" alt="Open company selector"><div class="caption">The company selector contains the companies assigned to you.</div></div>
-  <div class="tip"><strong>Header controls:</strong> <em>Saved</em> confirms your last update reached the system. Use <em>Change password</em> if needed. Use <em>Log out</em> only when you are finished for the session.</div>
+  <!-- Header Banner -->
+  <div class="doc-header">
+    <span class="badge">Judge & Reviewer Guide</span>
+    <h1>CleanTech Open 2025: Scorer & Evaluation Manual</h1>
+    <p>Step-by-step instructions for evaluating startup applications, utilizing the AI Due Diligence Copilot, and navigating founder deliverables with auto-citation jumping.</p>
+    <div class="meta-bar">
+      <span><strong>Target:</strong> Expert Judges, Mentors & Investors</span>
+      <span><strong>Portal URL:</strong> <code>/index.html</code></span>
+      <span><strong>Evaluation Framework:</strong> 10 Categories (282 Criteria)</span>
+    </div>
+  </div>
 
-  <h2>2. Read the source material first</h2>
-  <p>The left panel is the source viewer. The document selector lists the materials attached to the current company and organizes them by section. Select the file most relevant to the question, read it carefully, and use the PDF viewer's search, zoom, and page controls as needed.</p>
-  <div class="shot"><img src="tutorial_assets/scorer_workflow_2026-09-22/03-document-selector.png" alt="Document selector grouped by section"><div class="caption">Choose the relevant source document before interpreting the question on the right.</div></div>
-  <div class="notice"><strong>Evidence rule:</strong> The submitted PDFs are the primary evidence. If they are incomplete, credible public research is allowed. Do not invent missing facts. If you cannot make a defensible assessment, notify the program lead.</div>
+  <!-- Section 1 -->
+  <h2><span class="step-num">1</span> Getting Started & Logging In</h2>
+  <p>As a CleanTech Open judge, you have been assigned specific cleantech startups to evaluate. Your evaluations determine accelerator cohort admissions, awards, and investment readiness.</p>
 
-  <h2>3. Score every question in order</h2>
-  <p>Each section is shown as <strong>Step X of 10</strong>. The section's answered count is separate from the overall assessment progress. Follow this same sequence for every question:</p>
-  <div class="step"><span class="num">1</span><strong>Read the source PDF.</strong> Identify the text, data, or absence of evidence that bears on the question.</div>
-  <div class="step"><span class="num">2</span><strong>Read the question in full.</strong> Determine exactly what the score buttons measure before making a selection.</div>
-  <div class="step"><span class="num">3</span><strong>Review the AI suggestion.</strong> The score and confidence are informational; they are not a recommended verdict to copy.</div>
-  <div class="step"><span class="num">4</span><strong>Open the AI citation when one is available.</strong> Compare the extracted text with the underlying PDF.</div>
-  <div class="step"><span class="num">5</span><strong>Select one score.</strong> Then add a note where it is useful or required, wait for <em>Saved</em>, and continue.</div>
-
-  <div class="shot"><img src="tutorial_assets/scorer_workflow_2026-09-22/04-question-ai-justification.png" alt="Question card with AI suggestion, score controls, and justification"><div class="caption">Score controls appear under the question. The AI badge is neutral: a high confidence percentage does not mean a higher point value is correct.</div></div>
-  <h3>How AI suggestions and citations work</h3>
-  <ul>
-    <li>An AI suggestion appears only when the system has at least 80% AI confidence or extracted a direct source citation.</li>
-    <li>The percentage expresses the system's confidence in its extraction or suggestion; it is not a quality rating for the startup and does not determine the score.</li>
-    <li>Click <strong>View AI Citation</strong> to reveal the AI-extracted passage. When a page is available, the source viewer moves to that PDF and page.</li>
-    <li>Verify the passage against the PDF before relying on it. The AI may be incomplete or wrong.</li>
-  </ul>
-  <div class="shot"><img src="tutorial_assets/scorer_workflow_2026-09-22/05-open-ai-citation.png" alt="Opened AI citation"><div class="caption">An opened citation shows the source document, page, and extracted text. Check it against the PDF.</div></div>
-  <div class="shot"><img src="tutorial_assets/scorer_workflow_2026-09-22/06-no-ai-citation.png" alt="No citation extracted"><div class="caption">“No citation extracted” is normal. Score from the source material and your own judgment.</div></div>
-
-  <h2 class="page-break">4. Notes and required justifications</h2>
-  <p>Notes explain your reasoning; they are not a place to paste AI output. Keep them brief, specific, and grounded in the source material.</p>
-  <table>
-    <thead><tr><th>Text field type</th><th>Questions</th><th>Submission effect</th></tr></thead>
-    <tbody>
-      <tr><td class="required">Justification required</td><td>BC_Q1, BC_Q2, BC_Q4, BC_Q5</td><td>A score and non-empty justification are required before final submission.</td></tr>
-      <tr><td class="optional">Optional note</td><td>BC_Q3, IS_Q7, IS_Q16, PMF_Q15, PMF_Q17, TP_Q13, TP_Q14, TP_Q15, F_Q22, F_Q23, F_Q24, IP_Q22, IP_Q50</td><td>The score alone is sufficient. Add context only when it would help explain your judgment.</td></tr>
-    </tbody>
-  </table>
-  <p>For Business Canvas questions, select <strong>View Examples</strong> when you need the rubric examples. For all required justifications, state the relevant evidence and why it supports the score.</p>
-
-  <h2>5. Move through sections and submit</h2>
-  <p>Once every question in the current section is answered, select <strong>Next Section</strong>. Use <strong>Previous</strong> to return and correct an earlier section. The current section's answered count should be complete before moving on.</p>
-  <div class="shot"><img src="tutorial_assets/scorer_workflow_2026-09-22/07-section-complete.png" alt="Completed section with Next Section button"><div class="caption">A completed section shows its answered count. Select Next Section to continue through all ten sections.</div></div>
   <ol>
-    <li>Complete every score in all ten sections.</li>
-    <li>Complete the four required justifications listed above.</li>
-    <li>Confirm the active company name and wait until the header says <strong>Saved</strong>.</li>
-    <li>Review scores for consistency, especially where source evidence was limited or jargon obscured the claim.</li>
-    <li>Select the green <strong>Submit Evaluation</strong> button, resolve any audit items, and select <strong>Confirm and Submit</strong> only when ready to finalize.</li>
+    <li>Navigate to the scoring portal at <strong><code>/index.html</code></strong>.</li>
+    <li>In the <strong>Judge Authentication</strong> modal, enter:
+      <ul>
+        <li><strong>Scorer ID:</strong> Your assigned username (e.g., <code>judge_smith</code> or <code>J-001</code>).</li>
+        <li><strong>Passcode:</strong> Your individual access passcode provided by the administrator.</li>
+      </ul>
+    </li>
+    <li>Click <strong>Sign In</strong>.</li>
+    <li>In the top dark navigation bar, click the <strong>Company Dropdown</strong> to view the startups assigned to you. Select the startup you wish to evaluate to load its application workspace.</li>
   </ol>
 
-  <h2>6. Scoring guidance and FAQs</h2>
-  <h3>Can I Google a company?</h3>
-  <p>Yes. When submitted evidence is incomplete, use credible public information to understand the company and answer the rubric. Public research does not replace verification of any AI citation.</p>
-  <h3>What if no files are accessible?</h3>
-  <p>Do not invent evidence. Use credible public research where appropriate. If the result still cannot be scored defensibly, notify the program lead. Do not use retired red/orange marking workflows.</p>
-  <h3>What if there is no Business Model Canvas?</h3>
-  <p>Score from accessible materials and permitted research. Explain your reasoning in the required Business Canvas justification fields.</p>
-  <h3>How should I handle jargon?</h3>
-  <p>One or two necessary technical terms are normal. If jargon makes the value proposition, branding, marketing, or investor pitch unclear, reflect that lack of clarity in the score.</p>
+  <div class="callout-tip avoid-break">
+    <strong>Cloud Auto-Save:</strong> Every score selection and justification note is <strong>automatically saved to the Supabase database</strong> the moment you click a score or pause typing. You can safely reload the page or return on another device without losing work.
+  </div>
 
-  <div class="tip"><strong>Final principle:</strong> The AI can help locate evidence, but it never replaces your judgment. Read the source, verify the citation, apply the rubric, and then score.</div>
+  <!-- Section 2: Updated 2-Panel Side-by-Side Workspace -->
+  <h2><span class="step-num">2</span> The Split-Screen Evaluation Workspace</h2>
+  <p>The CleanTech Open scoring interface features a high-velocity <strong>Side-by-Side Split Workspace</strong> designed to eliminate window tab flipping. The left panel is dedicated to original founder deliverables, while the right panel displays your active scoring rubric and AI guidance.</p>
+
+  <!-- Real Screenshot Insertion -->
+  <img class="screenshot-img avoid-break" src="file:///Users/geoffrey/.gemini/antigravity/scratch/startup_scorer/docs/scoring_interface_screenshot.png" alt="CleanTech Open Scoring Interface">
+
+  <div class="card avoid-break">
+    <h3 style="margin-top: 0;">Workspace Layout Overview</h3>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 10px;">
+      <div>
+        <h4 style="color: #0c6b5d; font-size: 13px; margin-bottom: 6px;">LEFT PANEL: Source vs. AI Extraction Viewer</h4>
+        <ul style="margin-left: 16px; font-size: 12px;">
+          <li><strong>Deliverable Selector Dropdown:</strong> Switch between any uploaded PDF for the active evaluation module (e.g., <em>05 2DaLoop - Business Model Canvas</em>).</li>
+          <li><strong>Module Tag:</strong> Displays current category context (e.g. <code>Business Canvas</code>).</li>
+          <li><strong>Integrated PDF Viewer:</strong> Complete in-browser document reader with zoom (<code>+</code>/<code>-</code>), page jump, rotation, pan, print, and local download.</li>
+          <li><strong>Auto-Jumping Canvas:</strong> Automatically snaps to the exact page when an AI citation is clicked on the right!</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="color: #0c6b5d; font-size: 13px; margin-bottom: 6px;">RIGHT PANEL: Step-by-Step Scoring & Rubric</h4>
+        <ul style="margin-left: 16px; font-size: 12px;">
+          <li><strong>Module Step Indicator:</strong> Shows current section (e.g., <code>STEP 1 OF 10</code>) and live progress (e.g., <code>0 / 5 answered</code>).</li>
+          <li><strong>Overall Assessment Progress Bar:</strong> Visual progress tracking completion across all 282 criteria.</li>
+          <li><strong>Evaluation Cards:</strong> Scrollable criteria cards containing rubric text, AI suggestion pills, and point selectors.</li>
+          <li><strong>Section Footer:</strong> <em>← Previous</em> and <em>Next Section →</em> buttons to transition between modules.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- Section 3: Strongly Emphasized Human Review -->
+  <h2><span class="step-num">3</span> The AI Copilot & The Mandatory Human Review Rule</h2>
+
+  <!-- CRITICAL PROTOCOL BOX -->
+  <div class="callout-critical avoid-break">
+    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+      <span style="font-size: 18px;">⚠️</span>
+      <strong style="font-size: 14px; color: #991b1b; text-transform: uppercase; letter-spacing: 0.5px;">CRITICAL PROTOCOL: Human Review is Mandatory Regardless of AI Confidence</strong>
+    </div>
+    <p style="color: #7f1d1d; font-size: 12.5px; margin-bottom: 8px; line-height: 1.5;">
+      <strong>Never rubber-stamp high-confidence AI suggestions.</strong> An AI confidence rating of <code>90%</code>, <code>95%</code>, or <code>100%</code> does <strong>NOT</strong> mean the startup's claim is commercially viable, technically sound, or factually true in the real world.
+    </p>
+    <ul style="color: #991b1b; font-size: 12px; margin-left: 18px; margin-bottom: 0;">
+      <li><strong>What AI Confidence Actually Measures:</strong> The AI confidence score solely reflects <em>how clearly an explicit textual statement was found</em> in the founder's uploaded text. If a founder writes <em>"Our technology has zero competitors and 100% customer retention"</em>, the AI will extract a high-confidence match (<code>1.0 PT | 95% Conf</code>).</li>
+      <li><strong>What the AI Cannot Do:</strong> The AI cannot verify whether the founder's claim is realistic, whether lab data supports it, whether customer interviews were genuine, or whether the competitive analysis is superficial.</li>
+      <li><strong>Your Role as an Expert Judge:</strong> You <strong>must click the citation link</strong>, review the cited passage in the PDF viewer on the left, inspect the surrounding context, and determine whether the startup genuinely satisfied the standard. <strong>You have full authority to override the AI whenever founder evidence lacks depth or credibility.</strong></li>
+    </ul>
+  </div>
+
+  <h3>Anatomy of an Interactive Evaluation Card</h3>
+  <p>Each evaluation card in the right panel is structured for rapid diligence and transparent accountability:</p>
+
+  <div class="ui-mockup avoid-break">
+    <div class="ui-mockup-header">
+      <span>EVALUATION CARD BREAKDOWN</span>
+      <span>MODULE: BUSINESS CANVAS (BC)</span>
+    </div>
+    <div class="ui-mockup-body">
+      
+      <!-- Top Tag Row -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <span style="font-size: 11px; font-weight: 700; color: #64748b; letter-spacing: 0.5px;">👤 HUMAN REVIEW REQUIRED</span>
+        <span style="background: #fef9c3; color: #854d0e; border: 1px solid #fde047; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700;">⚡ 0.5 PTS | 60% Conf</span>
+      </div>
+
+      <div style="font-size: 11px; color: #64748b; font-weight: 600; margin-bottom: 4px;">BC &nbsp; BC_Q3</div>
+      <div style="font-size: 14px; font-weight: 700; color: #1e293b; margin-bottom: 10px;">
+        Has the company interviewed at least 5 customers?
+      </div>
+
+      <!-- Justification Box -->
+      <div style="margin-bottom: 12px;">
+        <label style="display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; font-weight: 600; color: #475569; margin-bottom: 4px;">
+          <span>Justification</span>
+          <span style="color: #0284c7; font-weight: 600; font-size: 11px;">📄 View Examples</span>
+        </label>
+        <div style="background: #fff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 8px 10px; font-size: 12px; color: #94a3b8; font-style: italic;">
+          Provide justification based on the markdown rubrics...
+        </div>
+      </div>
+
+      <!-- Citation Block -->
+      <div style="background: #fff8e1; border-left: 4px solid #b0761c; padding: 10px 12px; border-radius: 4px; margin-bottom: 12px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+          <a href="#" style="color: #0c6b5d; font-weight: 700; font-size: 12px; text-decoration: none;">🔗 View AI Citation (p. 1)</a>
+          <span style="font-family: monospace; font-size: 10.5px; background: rgba(0,0,0,0.06); padding: 1px 5px; border-radius: 3px;">05_2DaLoop_Business_Model_Canvas.pdf</span>
+        </div>
+        <p style="font-size: 11.5px; font-style: italic; color: #334155; margin-bottom: 4px;">
+          "Interviews we've completed before (NSF I-Corps) indicates that enterprise IT managers require standardized SLA guarantees..."
+        </p>
+        <span style="font-size: 10.5px; color: #64748b;">Switched viewer to Page 1. Use <strong>Cmd+F</strong> / <strong>Ctrl+F</strong> in the viewer to locate exact text.</span>
+      </div>
+
+      <!-- Point Options Row -->
+      <div style="display: flex; gap: 8px;">
+        <span style="flex: 1; text-align: center; border: 1px solid #cbd5e1; padding: 7px; border-radius: 4px; font-weight: 600; background: #fff;">1 PT</span>
+        <span style="flex: 1; text-align: center; border: 1px solid #cbd5e1; padding: 7px; border-radius: 4px; font-weight: 600; background: #fff;">0.75 PTS</span>
+        <span style="flex: 1; text-align: center; border: 1px solid #0c6b5d; padding: 7px; border-radius: 4px; font-weight: 700; background: #0c6b5d; color: #fff;">0.5 PTS</span>
+        <span style="flex: 1; text-align: center; border: 1px solid #cbd5e1; padding: 7px; border-radius: 4px; font-weight: 600; background: #fff;">0.25 PTS</span>
+        <span style="flex: 1; text-align: center; border: 1px solid #cbd5e1; padding: 7px; border-radius: 4px; font-weight: 600; background: #fff;">0 PTS</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- Section 4 -->
+  <h2><span class="step-num">4</span> The 10 Evaluation Categories</h2>
+  <p>Judges evaluate startups across 10 standardized modules. Use the <em>Next Section →</em> and <em>← Previous</em> buttons at the bottom of the right panel to move sequentially through each section:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 10%;">Code</th>
+        <th style="width: 25%;">Module Title</th>
+        <th style="width: 15%;">Questions</th>
+        <th>Primary Deliverable(s) Reviewed in Left Panel</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>BC</strong></td>
+        <td>Business Canvas</td>
+        <td>5 Questions (BC_Q1–Q5)</td>
+        <td>Business Model Canvas (EBD1) & Customer Discovery capture</td>
+      </tr>
+      <tr>
+        <td><strong>ES</strong></td>
+        <td>Environmental & Social</td>
+        <td>10 Questions (ES_Q1–Q10)</td>
+        <td>Impact Statement (EBD2) & Sustainability module questions</td>
+      </tr>
+      <tr>
+        <td><strong>F</strong></td>
+        <td>Financials</td>
+        <td>29 Questions (F_Q1–Q29)</td>
+        <td>3-Year Financial Projections (EBD5) & unit economics model</td>
+      </tr>
+      <tr>
+        <td><strong>IP</strong></td>
+        <td>Investor Pitch</td>
+        <td>58 Questions (IP_Q1–Q58)</td>
+        <td>Investor Pitch Deck (EBD8) & full diligence slide presentation</td>
+      </tr>
+      <tr>
+        <td><strong>IS</strong></td>
+        <td>Executive Summary</td>
+        <td>34 Questions (IS_Q1–Q34)</td>
+        <td>1-Page Executive Summary (EBD6) & core company narrative</td>
+      </tr>
+      <tr>
+        <td><strong>L</strong></td>
+        <td>Legal & Governance</td>
+        <td>53 Questions (L_Q1–Q53)</td>
+        <td>IP filings, corporate formation, governance & legal review</td>
+      </tr>
+      <tr>
+        <td><strong>M</strong></td>
+        <td>Market & Customers</td>
+        <td>12 Questions (M_Q1–Q12)</td>
+        <td>Customer Segmentation & Competitive Matrix (EBD3)</td>
+      </tr>
+      <tr>
+        <td><strong>PMF</strong></td>
+        <td>Product Market Fit</td>
+        <td>34 Questions (PMF_Q1–Q34)</td>
+        <td>Customer interviews, discovery log & target customer segments</td>
+      </tr>
+      <tr>
+        <td><strong>T</strong></td>
+        <td>Team Targets</td>
+        <td>31 Questions (T_Q1–Q31)</td>
+        <td>Team hiring plans, targets & milestones</td>
+      </tr>
+      <tr>
+        <td><strong>TP</strong></td>
+        <td>Tech / Product</td>
+        <td>16 Questions (TP_Q1–Q16)</td>
+        <td>Technology Validation (EBD4) & Technical testimonials</td>
+      </tr>
+      <tr style="background: #f1f5f9; font-weight: 700;">
+        <td><strong>TOTAL</strong></td>
+        <td><strong>10 Evaluation Categories</strong></td>
+        <td><strong>282 Questions Total</strong></td>
+        <td><strong>Standardized CleanTech Open Diligence Rubric</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Section 5 -->
+  <h2><span class="step-num">5</span> Step-by-Step Diligence Checklist</h2>
+  <p>Follow this standardized 5-step workflow for every startup assigned to you:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 15%;">Step</th>
+        <th style="width: 25%;">Action</th>
+        <th>Description & Best Practice</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Step 1</strong></td>
+        <td>Executive Summary</td>
+        <td>Start in the <strong>Executive Summary (IS)</strong> category to read the founder's 1-page overview and understand the core thesis.</td>
+      </tr>
+      <tr>
+        <td><strong>Step 2</strong></td>
+        <td>Category Progression</td>
+        <td>Progress systematically through the 10 categories using the bottom navigation buttons. Watch the overall progress bar fill.</td>
+      </tr>
+      <tr>
+        <td><strong>Step 3</strong></td>
+        <td>Inspect Citations</td>
+        <td>On each question, click <strong>"View AI Citation"</strong> to verify the founder's claim against the embedded PDF deliverable on the left.</td>
+      </tr>
+      <tr>
+        <td><strong>Step 4</strong></td>
+        <td>Record Score & Notes</td>
+        <td>Select your point verdict. If the question requires justification or if you disagree with the AI, type your brief explanation.</td>
+      </tr>
+      <tr>
+        <td><strong>Step 5</strong></td>
+        <td>Final Verification</td>
+        <td>Click <strong>"Confirm & Submit"</strong> when prompted to finalize and flush all scores to the database.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Section 6: Scorer FAQ (Duration removed) -->
+  <h2><span class="step-num">6</span> Scorer FAQs & Pro-Tips</h2>
+
+  <div class="card avoid-break">
+    <h3 style="margin-top: 0;">Frequently Asked Questions</h3>
+    
+    <p><strong>Q: What if the AI Citation says "No direct evidence exists"?</strong><br>
+    <strong>A:</strong> This means the startup's submitted deliverables did not address this specific criterion. If you independently search the document and cannot locate evidence, award <strong>0 PTS</strong>.</p>
+
+    <p><strong>Q: Can I view the official rubric scoring guidelines?</strong><br>
+    <strong>A:</strong> Yes! On questions with official rubric guidelines (e.g. Business Canvas), click the <strong>"📄 View Examples"</strong> link in the question card to view rubric thresholds and real-world grading examples calibrated directly to the <strong>0 – 1 point scale</strong> (0, 0.25, 0.5, 0.75, 1.0 PTS).</p>
+
+    <p><strong>Q: How do I zoom or download a startup PDF?</strong><br>
+    <strong>A:</strong> The live PDF viewer on the left includes full browser controls in the top toolbar: zoom in/out (<code>+</code>/<code>-</code>), page jump, and a direct download icon to inspect the file in your preferred PDF reader.</p>
+
+    <p><strong>Q: What if I notice a document misclassification?</strong><br>
+    <strong>A:</strong> The deliverable dropdown above the PDF viewer allows you to switch between all documents attached to that category. If you need to view a deliverable from another category, navigate to that category section.</p>
+
+    <p><strong>Q: What happens if I close my browser before clicking Submit?</strong><br>
+    <strong>A:</strong> All scores and justifications are continuously saved to the Supabase database in real time. When you reopen the portal, all your answers will automatically reload from the database.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span>CleanTech Open 2025 Diligence Engine</span>
+    <span>Scorer & Judge Guidance Manual</span>
+  </div>
+
 </body>
 </html>

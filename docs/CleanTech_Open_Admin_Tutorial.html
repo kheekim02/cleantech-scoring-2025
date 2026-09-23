@@ -489,8 +489,16 @@ tr:nth-child(even) td {
     <h3>Recommended Reviewer Workload</h3>
     <p>We recommend assigning <strong>3 to 5 startups per judge</strong>. Each startup evaluation requires careful diligence. Overloading reviewers beyond 6 startups increases fatigue and decreases qualitative justification quality.</p>
 
-    <h3>What Happens if a Judge Drops Out?</h3>
-    <p>If a judge cannot complete their assignments, simply select their name from the dropdown and uncheck the company. Any answers already submitted by that judge are safely preserved in the database (<code>human_reviews</code>) and can be audited later. You can immediately assign the company to a replacement judge.</p>
+    <h3>How Do I Reset a Scorer's Password or Delete an Account?</h3>
+    <p>In the <em>Existing Scorers</em> panel, each reviewer has two administrative actions:
+      <ul>
+        <li><strong>Reset:</strong> Click <strong>Reset</strong> to set a new password for the judge. This immediately invalidates active sessions and requires the judge to log in with the new credential.</li>
+        <li><strong>Delete:</strong> Click <strong>Delete</strong> to permanently remove a test or decommissioned reviewer. Deleting a scorer cleanly removes their assignments and review sessions.</li>
+      </ul>
+    </p>
+
+    <h3>How Do I Export Scored Cohort Data?</h3>
+    <p>Click the green <strong>📥 Export Scored Data (CSV)</strong> button in the top navigation header of the Admin Portal. Your browser will download a complete CSV containing applicant names, judge IDs, rubric categories, question prompts, human scores, qualitative justifications, AI suggestions, confidence ratings, concordance flags, and citation source files.</p>
 
     <h3>Can Judges See Other Judges' Scores?</h3>
     <p><strong>No.</strong> The scoring portal is strictly double-blind. Judges only see the AI suggestions, founder deliverables, and their own scoring answers. They cannot view who else is reviewing the startup or what other judges have scored.</p>
