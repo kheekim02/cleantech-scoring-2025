@@ -1,108 +1,109 @@
 {
-  "startups_audited": 1,
+  "startups_audited": 2,
   "startups": [
-    "17"
+    "17",
+    "2DaLoop"
   ],
   "overall": {
     "total_compared": 282,
-    "exact_matches": 170,
-    "concordance_pct": 60.28,
-    "close_concordance_pct": 60.28,
-    "v1_citations": 189,
-    "v2_citations": 114,
-    "v2_grounded_citations": 114,
+    "exact_matches": 162,
+    "concordance_pct": 57.45,
+    "close_concordance_pct": 58.51,
+    "v1_citations": 226,
+    "v2_citations": 154,
+    "v2_grounded_citations": 154,
     "v2_grounding_rate_pct": 100.0,
-    "v1_avg_score": 0.427,
-    "v2_avg_score": 0.303,
+    "v1_avg_score": 0.501,
+    "v2_avg_score": 0.632,
     "by_category": {
       "BC": {
         "questions": 5,
-        "exact_matches": 1,
-        "concordance_pct": 20.0,
-        "v1_citations": 3,
-        "v2_citations": 2,
-        "v2_grounded": 2,
+        "exact_matches": 0,
+        "concordance_pct": 0.0,
+        "v1_citations": 5,
+        "v2_citations": 1,
+        "v2_grounded": 1,
         "grounding_rate_pct": 100.0
       },
       "ES": {
         "questions": 10,
-        "exact_matches": 5,
-        "concordance_pct": 50.0,
+        "exact_matches": 9,
+        "concordance_pct": 90.0,
         "v1_citations": 8,
-        "v2_citations": 6,
-        "v2_grounded": 6,
+        "v2_citations": 5,
+        "v2_grounded": 5,
         "grounding_rate_pct": 100.0
       },
       "F": {
         "questions": 29,
-        "exact_matches": 9,
-        "concordance_pct": 31.0,
+        "exact_matches": 22,
+        "concordance_pct": 75.9,
         "v1_citations": 21,
-        "v2_citations": 9,
-        "v2_grounded": 9,
+        "v2_citations": 5,
+        "v2_grounded": 5,
         "grounding_rate_pct": 100.0
       },
       "IP": {
         "questions": 58,
-        "exact_matches": 39,
-        "concordance_pct": 67.2,
-        "v1_citations": 48,
-        "v2_citations": 34,
-        "v2_grounded": 34,
+        "exact_matches": 40,
+        "concordance_pct": 69.0,
+        "v1_citations": 55,
+        "v2_citations": 35,
+        "v2_grounded": 35,
         "grounding_rate_pct": 100.0
       },
       "IS": {
         "questions": 34,
-        "exact_matches": 22,
-        "concordance_pct": 64.7,
-        "v1_citations": 15,
-        "v2_citations": 15,
-        "v2_grounded": 15,
+        "exact_matches": 15,
+        "concordance_pct": 44.1,
+        "v1_citations": 17,
+        "v2_citations": 24,
+        "v2_grounded": 24,
         "grounding_rate_pct": 100.0
       },
       "L": {
         "questions": 53,
-        "exact_matches": 34,
-        "concordance_pct": 64.2,
-        "v1_citations": 30,
-        "v2_citations": 16,
-        "v2_grounded": 16,
+        "exact_matches": 30,
+        "concordance_pct": 56.6,
+        "v1_citations": 46,
+        "v2_citations": 30,
+        "v2_grounded": 30,
         "grounding_rate_pct": 100.0
       },
       "M": {
         "questions": 12,
         "exact_matches": 8,
         "concordance_pct": 66.7,
-        "v1_citations": 12,
-        "v2_citations": 4,
-        "v2_grounded": 4,
-        "grounding_rate_pct": 100.0
-      },
-      "PMF": {
-        "questions": 34,
-        "exact_matches": 26,
-        "concordance_pct": 76.5,
-        "v1_citations": 28,
+        "v1_citations": 11,
         "v2_citations": 7,
         "v2_grounded": 7,
         "grounding_rate_pct": 100.0
       },
+      "PMF": {
+        "questions": 34,
+        "exact_matches": 16,
+        "concordance_pct": 47.1,
+        "v1_citations": 16,
+        "v2_citations": 17,
+        "v2_grounded": 17,
+        "grounding_rate_pct": 100.0
+      },
       "T": {
         "questions": 31,
-        "exact_matches": 16,
-        "concordance_pct": 51.6,
-        "v1_citations": 9,
-        "v2_citations": 13,
-        "v2_grounded": 13,
+        "exact_matches": 13,
+        "concordance_pct": 41.9,
+        "v1_citations": 31,
+        "v2_citations": 18,
+        "v2_grounded": 18,
         "grounding_rate_pct": 100.0
       },
       "TP": {
         "questions": 16,
-        "exact_matches": 10,
-        "concordance_pct": 62.5,
-        "v1_citations": 15,
-        "v2_citations": 8,
-        "v2_grounded": 8,
+        "exact_matches": 9,
+        "concordance_pct": 56.2,
+        "v1_citations": 16,
+        "v2_citations": 12,
+        "v2_grounded": 12,
         "grounding_rate_pct": 100.0
       }
     }
@@ -208,6 +209,110 @@
           "v1_citations": 15,
           "v2_citations": 8,
           "v2_grounded": 8,
+          "grounding_rate_pct": 100.0
+        }
+      }
+    },
+    "2DaLoop": {
+      "total_compared": 282,
+      "exact_matches": 162,
+      "concordance_pct": 57.45,
+      "close_concordance_pct": 58.51,
+      "v1_citations": 226,
+      "v2_citations": 154,
+      "v2_grounded_citations": 154,
+      "v2_grounding_rate_pct": 100.0,
+      "v1_avg_score": 0.501,
+      "v2_avg_score": 0.632,
+      "by_category": {
+        "BC": {
+          "questions": 5,
+          "exact_matches": 0,
+          "concordance_pct": 0.0,
+          "v1_citations": 5,
+          "v2_citations": 1,
+          "v2_grounded": 1,
+          "grounding_rate_pct": 100.0
+        },
+        "ES": {
+          "questions": 10,
+          "exact_matches": 9,
+          "concordance_pct": 90.0,
+          "v1_citations": 8,
+          "v2_citations": 5,
+          "v2_grounded": 5,
+          "grounding_rate_pct": 100.0
+        },
+        "F": {
+          "questions": 29,
+          "exact_matches": 22,
+          "concordance_pct": 75.9,
+          "v1_citations": 21,
+          "v2_citations": 5,
+          "v2_grounded": 5,
+          "grounding_rate_pct": 100.0
+        },
+        "IP": {
+          "questions": 58,
+          "exact_matches": 40,
+          "concordance_pct": 69.0,
+          "v1_citations": 55,
+          "v2_citations": 35,
+          "v2_grounded": 35,
+          "grounding_rate_pct": 100.0
+        },
+        "IS": {
+          "questions": 34,
+          "exact_matches": 15,
+          "concordance_pct": 44.1,
+          "v1_citations": 17,
+          "v2_citations": 24,
+          "v2_grounded": 24,
+          "grounding_rate_pct": 100.0
+        },
+        "L": {
+          "questions": 53,
+          "exact_matches": 30,
+          "concordance_pct": 56.6,
+          "v1_citations": 46,
+          "v2_citations": 30,
+          "v2_grounded": 30,
+          "grounding_rate_pct": 100.0
+        },
+        "M": {
+          "questions": 12,
+          "exact_matches": 8,
+          "concordance_pct": 66.7,
+          "v1_citations": 11,
+          "v2_citations": 7,
+          "v2_grounded": 7,
+          "grounding_rate_pct": 100.0
+        },
+        "PMF": {
+          "questions": 34,
+          "exact_matches": 16,
+          "concordance_pct": 47.1,
+          "v1_citations": 16,
+          "v2_citations": 17,
+          "v2_grounded": 17,
+          "grounding_rate_pct": 100.0
+        },
+        "T": {
+          "questions": 31,
+          "exact_matches": 13,
+          "concordance_pct": 41.9,
+          "v1_citations": 31,
+          "v2_citations": 18,
+          "v2_grounded": 18,
+          "grounding_rate_pct": 100.0
+        },
+        "TP": {
+          "questions": 16,
+          "exact_matches": 9,
+          "concordance_pct": 56.2,
+          "v1_citations": 16,
+          "v2_citations": 12,
+          "v2_grounded": 12,
           "grounding_rate_pct": 100.0
         }
       }
