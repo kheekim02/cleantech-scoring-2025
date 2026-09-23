@@ -518,18 +518,11 @@ CTO.App = {
     const sEval = this.state.evaluations[sId];
     
     
-    const subjectiveQids = new Set(['BC_Q1', 'BC_Q2', 'BC_Q3', 'BC_Q4', 'BC_Q5', 'IS_Q7', 'IS_Q16', 'PMF_Q15', 'PMF_Q17', 'TP_Q13', 'TP_Q14', 'TP_Q15', 'F_Q22', 'F_Q23', 'F_Q24', 'IP_Q22', 'IP_Q50']);
-    const needsJustification = (q) => q.cat_code === 'BC' || subjectiveQids.has(q.new_q_id);
-    
+    const requiredJustificationIds = new Set(['BC_Q1', 'BC_Q2', 'BC_Q4', 'BC_Q5', 'TP_Q15']);
     const missingQs = sData.human_questions.filter(q => {
       const hasAnswer = sEval.humanAnswers[q.new_q_id] !== undefined && sEval.humanAnswers[q.new_q_id] !== null;
-      const justText = sEval.humanJustifications ? (sEval.humanJustifications[q.new_q_id] || '') : '';
-      const hasJustification = justText.trim().length > 0;
-      
-      if (needsJustification(q)) {
-          return !hasAnswer || !hasJustification;
-      }
-      return !hasAnswer;
+      const justification = sEval.humanJustifications?.[q.new_q_id] || '';
+      return !hasAnswer || (requiredJustificationIds.has(q.new_q_id) && !justification.trim());
     });
 
     
@@ -544,7 +537,7 @@ CTO.App = {
     if (missingQs.length > 0) {
       title.textContent = 'Incomplete Evaluation';
       title.style.color = 'var(--accent-red)';
-      desc.textContent = `You are missing ${missingQs.length} question(s). Please complete them before submitting.`;
+      desc.textContent = `You are missing ${missingQs.length} required response(s). Please complete them before submitting.`;
       
       auditList.innerHTML = missingQs.map(q => 
         `<li><a href="#" data-cat="${q.cat_code}" data-qid="${q.new_q_id}" style="color: var(--accent-blue); text-decoration: none; font-weight: 600;">[${q.cat_code}] ${q.new_q_id}</a> <span style="color: var(--text-muted);">- ${CTO.Render.categoryNames[q.cat_code]}</span></li>`

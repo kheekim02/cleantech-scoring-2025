@@ -36,11 +36,8 @@ async function verifyPassword(password, passwordHash) {
 }
 
 function validateNewPassword(password) {
-  if (typeof password !== 'string' || password.length < 12) {
-    return 'Password must contain at least 12 characters.';
-  }
-  if (!/[A-Z]/.test(password) || !/[a-z]/.test(password) || !/\d/.test(password)) {
-    return 'Password must include uppercase, lowercase, and numeric characters.';
+  if (typeof password !== 'string' || password.length === 0) {
+    return 'Password cannot be empty.';
   }
   return null;
 }

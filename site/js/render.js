@@ -167,9 +167,6 @@ window.CTO.Render = {
                 verdictText = q.ai_suggestion === 1 ? 'YES' : 'NO';
             }
         }
-        let tierClass = 'conf-amber';
-        if (confNum >= 0.85) tierClass = 'conf-green';
-        if (confNum < 0.60) tierClass = 'conf-red';
         // Only show AI-assisted scores when confidence is high (>=80%) OR there is a direct extracted citation
         const hasCitation = !!(q.verbatim_citation && q.verbatim_citation.trim().length > 5);
         const isHighConfidence = confNum >= 0.80;
@@ -177,7 +174,7 @@ window.CTO.Render = {
         const showAiAssist = (isHighConfidence || hasCitation) && hasValidSuggestion;
 
         const aiSuggestHtml = showAiAssist ? `
-              <div class="h-ai-suggest ${tierClass}" aria-label="AI suggestion: ${verdictText}; ${confText} confidence">
+              <div class="h-ai-suggest" aria-label="AI suggestion: ${verdictText}; ${confText} confidence">
                 ${this.icons.spark}
                 <span class="ai-label">AI suggestion</span>
                 <span class="verdict">${this.formatPoints(verdictText)}</span>
@@ -213,22 +210,28 @@ window.CTO.Render = {
 
         
         
-        const subjectiveQids = new Set(['BC_Q1', 'BC_Q2', 'BC_Q3', 'BC_Q4', 'BC_Q5', 'IS_Q7', 'IS_Q16', 'PMF_Q15', 'PMF_Q17', 'TP_Q13', 'TP_Q14', 'TP_Q15', 'F_Q22', 'F_Q23', 'F_Q24', 'IP_Q22', 'IP_Q50']);
-        const requiresJustification = q.cat_code === 'BC' || subjectiveQids.has(q.new_q_id);
+        const noteQuestionIds = new Set(['BC_Q1', 'BC_Q2', 'BC_Q3', 'BC_Q4', 'BC_Q5', 'IS_Q7', 'IS_Q16', 'PMF_Q15', 'PMF_Q17', 'TP_Q13', 'TP_Q14', 'TP_Q15', 'F_Q22', 'F_Q23', 'F_Q24', 'IP_Q22', 'IP_Q50']);
+        const requiredJustificationIds = new Set(['BC_Q1', 'BC_Q2', 'BC_Q4', 'BC_Q5', 'TP_Q15']);
+        const showsNote = noteQuestionIds.has(q.new_q_id);
+        const requiresJustification = requiredJustificationIds.has(q.new_q_id);
         const existingJustification = humanJustifications[q.new_q_id] || '';
         
                 let justHtml = '';
-        if (requiresJustification) {
+        if (showsNote) {
           const hasRubric = ['BC_Q1', 'BC_Q2', 'BC_Q3', 'BC_Q4', 'BC_Q5'].includes(q.new_q_id);
           const rubricLink = hasRubric ? `<a href="#" class="view-rubric" data-qid="${q.new_q_id}" style="float: right; color: var(--accent-blue); text-decoration: none; font-weight: 500;">${window.CTO.Render.icons.doc || '📄'} View Examples</a>` : '';
+          const noteLabel = requiresJustification ? 'Justification <span style="color: var(--accent-red);">required</span>' : 'Optional note';
+          const notePlaceholder = requiresJustification
+            ? (hasRubric ? 'Provide justification based on the markdown rubrics...' : 'Provide justification')
+            : 'Add context if it would help explain your score';
           
           justHtml = `
             <div class="h-card-justification" style="padding: 0 24px 16px 24px;">
               <label style="display: block; font-size: 13px; font-weight: 600; color: var(--text-main); margin-bottom: 8px;">
-                Justification
+                ${noteLabel}
                 ${rubricLink}
               </label>
-              <textarea class="justification-input" data-qid="${q.new_q_id}" placeholder="${hasRubric ? 'Provide justification based on the markdown rubrics...' : 'Provide justification'}" style="width: 100%; min-height: 80px; padding: 12px; border: 1px solid var(--border); border-radius: 6px; font-family: inherit; font-size: 13px; resize: vertical; box-sizing: border-box; background: var(--surface-main);">${existingJustification}</textarea>
+              <textarea class="justification-input" data-qid="${q.new_q_id}" placeholder="${notePlaceholder}" style="width: 100%; min-height: 80px; padding: 12px; border: 1px solid var(--border); border-radius: 6px; font-family: inherit; font-size: 13px; resize: vertical; box-sizing: border-box; background: var(--surface-main);">${existingJustification}</textarea>
             </div>
           `;
         }

@@ -1,12 +1,6 @@
 const { Client } = require('pg');
 const { requireSession } = require('./_auth');
 
-const JUSTIFICATION_QUESTION_IDS = new Set(['BC_Q1', 'BC_Q2', 'BC_Q3', 'BC_Q4', 'BC_Q5', 'IS_Q7', 'IS_Q16', 'PMF_Q15', 'PMF_Q17', 'TP_Q13', 'TP_Q14', 'TP_Q15', 'F_Q22', 'F_Q23', 'F_Q24', 'IP_Q22', 'IP_Q50']);
-
-function requiresJustification(question) {
-  return question.cat_code === 'BC' || JUSTIFICATION_QUESTION_IDS.has(question.new_q_id || question.q_id);
-}
-
 module.exports = async (req, res) => {
   if (req.method !== 'POST') {
     return res.status(405).send("Method Not Allowed");
@@ -73,11 +67,6 @@ module.exports = async (req, res) => {
         await client.end();
         return res.status(400).json({ error: `Invalid score for ${item.qid}` });
       }
-      if (requiresJustification(question) && scoreVal !== null && !justVal) {
-        await client.end();
-        return res.status(400).json({ error: `A justification is required for ${item.qid}` });
-      }
-
       await client.query(`
         INSERT INTO human_reviews (startup_id, question_id, judge_id, score_value, justification)
         VALUES ($1, $2, $3, $4, $5)

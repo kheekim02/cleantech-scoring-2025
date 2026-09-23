@@ -334,9 +334,6 @@ body {
   font-family: var(--mono); font-size: 11px; font-weight: 600; border: 1px solid var(--border);
   background: var(--surface); color: var(--text-muted);
 }
-.h-ai-suggest.conf-green { border-color: #a7f3d0; background: #ecfdf5; color: var(--accent-green); }
-.h-ai-suggest.conf-amber { border-color: #fde68a; background: #fffbeb; color: var(--accent-yellow); }
-.h-ai-suggest.conf-red { border-color: #fecaca; background: #fef2f2; color: var(--accent-red); }
 .h-ai-suggest .divider { width: 1px; height: 12px; background: currentColor; opacity: 0.2; }
 
 .h-card-body { padding: 24px; font-size: 16px; font-weight: 500; color: var(--text-main); line-height: 1.6; }
