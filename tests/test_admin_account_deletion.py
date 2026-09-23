@@ -91,7 +91,22 @@ class TestAdminAccountDeletion(unittest.TestCase):
         self.assertIn("escapeHtml(new_password)", content)
         self.assertIn("escapeHtml(str)", content)
 
+    def test_11_create_scorer_message_timeout_one_minute(self):
+        """Verify createScorer message display timeout is 1 minute (60000ms)."""
+        content = self.admin_js.read_text(encoding="utf-8")
+        self.assertIn("60000", content, "Message display timer must be 60000ms (1 minute)")
+        self.assertIn("clearTimeout(this.createMsgTimer)", content)
+
+    def test_12_scorer_item_layout_prevents_overlap(self):
+        """Verify scorer-item renders buttons on top row and password protected below to prevent overlap."""
+        content = self.admin_js.read_text(encoding="utf-8")
+        self.assertIn("scorer-item", content)
+        self.assertIn("Password protected", content)
+        admin_html = (self.root / "site" / "admin.html").read_text(encoding="utf-8")
+        self.assertIn("grid-template-columns: minmax(340px", admin_html)
+
 
 if __name__ == "__main__":
     unittest.main()
+
 

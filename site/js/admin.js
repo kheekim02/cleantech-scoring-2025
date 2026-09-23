@@ -97,15 +97,19 @@ window.AdminApp = {
       
       // List item
       const safeId = j.judge_id.replace(/'/g, "\\'");
+      const escapedId = this.escapeHtml(j.judge_id);
       listHtml += `
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; border-bottom: 1px solid var(--border);">
-          <div>
-            <strong style="color: var(--accent-blue); font-size: 13px;">${j.judge_id}</strong>
-            <span style="font-size: 11px; color: var(--text-muted); display: block;">Password protected</span>
+        <div class="scorer-item" style="padding: 10px 12px; border-bottom: 1px solid var(--border);">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+            <strong style="color: var(--accent-blue); font-size: 13px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${escapedId}">${escapedId}</strong>
+            <div style="display: flex; gap: 6px; align-items: center; flex-shrink: 0;">
+              <button class="btn btn-reset-pass" onclick="AdminApp.resetPassword('${safeId}')" style="background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background 0.15s ease;" onmouseover="this.style.background='#bae6fd'" onmouseout="this.style.background='#e0f2fe'">Reset</button>
+              <button class="btn btn-delete-scorer" onclick="AdminApp.deleteScorer('${safeId}')" style="background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background 0.15s ease;" onmouseover="this.style.background='#fecaca'" onmouseout="this.style.background='#fee2e2'">Delete</button>
+            </div>
           </div>
-          <div style="display: flex; gap: 6px; align-items: center;">
-            <button class="btn btn-reset-pass" onclick="AdminApp.resetPassword('${safeId}')" style="background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background 0.15s ease;" onmouseover="this.style.background='#bae6fd'" onmouseout="this.style.background='#e0f2fe'">Reset</button>
-            <button class="btn btn-delete-scorer" onclick="AdminApp.deleteScorer('${safeId}')" style="background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background 0.15s ease;" onmouseover="this.style.background='#fecaca'" onmouseout="this.style.background='#fee2e2'">Delete</button>
+          <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px; display: flex; align-items: center; gap: 4px;">
+            <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #10b981;"></span>
+            <span>Password protected</span>
           </div>
         </div>
       `;
@@ -336,8 +340,23 @@ window.AdminApp = {
       });
       
       if (res.ok) {
-        msg.innerHTML = `✓ Scorer <strong>${this.escapeHtml(new_judge_id)}</strong> created!<br><span style="font-size:12px; color:var(--text-muted);">Temporary password:</span> <code style="background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:4px; font-weight:700;">${this.escapeHtml(new_password)}</code>`;
-        msg.style.color = 'var(--accent-green)';
+        msg.innerHTML = `
+          <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 10px 12px; margin-top: 12px; position: relative;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;">
+              <div style="font-size: 13px; color: #166534; font-weight: 700;">
+                ✓ Scorer <strong>${this.escapeHtml(new_judge_id)}</strong> created!
+              </div>
+              <button type="button" onclick="document.getElementById('create-msg').innerHTML=''" style="background: none; border: none; font-size: 14px; color: #15803d; cursor: pointer; padding: 0 4px; line-height: 1;" title="Dismiss notification">✕</button>
+            </div>
+            <div style="margin-top: 6px; font-size: 12px; color: var(--text-muted);">
+              Temporary password: <code style="background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 4px; font-weight: 700; user-select: all;">${this.escapeHtml(new_password)}</code>
+            </div>
+            <div style="margin-top: 4px; font-size: 10px; color: #15803d;">
+              Notice will remain visible for 1 minute for easy copying.
+            </div>
+          </div>
+        `;
+        msg.style.color = 'inherit';
         idInput.value = '';
         passInput.value = '';
         passInput.type = 'password';
@@ -357,7 +376,8 @@ window.AdminApp = {
       msg.style.color = 'var(--accent-red)';
     }
     
-    setTimeout(() => { msg.textContent = ''; }, 12000);
+    if (this.createMsgTimer) clearTimeout(this.createMsgTimer);
+    this.createMsgTimer = setTimeout(() => { msg.innerHTML = ''; }, 60000);
   },
 
   async toggleAssignment(judge_id, startup_id, assigned) {
