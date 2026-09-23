@@ -5,7 +5,19 @@
   <title>Admin Portal | CleanTech Open 2025</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    body { background-color: var(--surface-subdued); margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    html, body {
+      height: auto !important;
+      min-height: 100% !important;
+      overflow-y: auto !important;
+      overflow-x: hidden;
+    }
+    body {
+      display: block !important;
+      background-color: var(--surface-subdued);
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
     .admin-container { max-width: 1440px; margin: 40px auto; padding: 20px 32px; }
     .card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: var(--shadow-sm); border: 1px solid var(--border); margin-bottom: 24px; }
     .btn { background: var(--accent-blue); color: white; border: none; padding: 10px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; }

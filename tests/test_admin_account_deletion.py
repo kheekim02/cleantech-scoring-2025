@@ -105,8 +105,16 @@ class TestAdminAccountDeletion(unittest.TestCase):
         admin_html = (self.root / "site" / "admin.html").read_text(encoding="utf-8")
         self.assertIn("grid-template-columns: minmax(340px", admin_html)
 
+    def test_13_admin_page_scrolling_enabled(self):
+        """Verify site/admin.html enables vertical scrolling by overriding style.css overflow:hidden."""
+        admin_html = (self.root / "site" / "admin.html").read_text(encoding="utf-8")
+        self.assertIn("overflow-y: auto !important;", admin_html)
+        self.assertIn("height: auto !important;", admin_html)
+        self.assertIn("display: block !important;", admin_html)
+
 
 if __name__ == "__main__":
     unittest.main()
+
 
 
