@@ -53,7 +53,10 @@ def get_docling_converter():
     global _CONVERTER_CACHE
     if _CONVERTER_CACHE is None:
         import sys
-        import torch
+        try:
+            import torch
+        except ImportError:
+            torch = None
         from docling.document_converter import DocumentConverter, PdfFormatOption
         from docling.datamodel.base_models import InputFormat
         from docling.datamodel.pipeline_options import PdfPipelineOptions, AcceleratorOptions, AcceleratorDevice
@@ -62,8 +65,10 @@ def get_docling_converter():
         # On macOS Darwin MPS lacks float64 for RT-DETR sinusoidal embeddings; use CPU
         if sys.platform == 'darwin':
             pipeline_options.accelerator_options = AcceleratorOptions(device=AcceleratorDevice.CPU)
-        elif torch.cuda.is_available():
+        elif torch and torch.cuda.is_available():
             pipeline_options.accelerator_options = AcceleratorOptions(device=AcceleratorDevice.CUDA)
+        else:
+            pipeline_options.accelerator_options = AcceleratorOptions(device=AcceleratorDevice.CPU)
 
         _CONVERTER_CACHE = DocumentConverter(
             format_options={
@@ -169,14 +174,17 @@ def extract_pdf_chunks(
         bbox = getattr(prov[0], 'bbox', None) if prov else None
 
         bbox_dict = None
-        if bbox:
-            bbox_dict = {
-                'l': round(float(bbox.l), 2),
-                't': round(float(bbox.t), 2),
-                'r': round(float(bbox.r), 2),
-                'b': round(float(bbox.b), 2),
-                'coord_origin': str(getattr(bbox, 'coord_origin', 'BOTTOMLEFT')),
-            }
+        if bbox and hasattr(bbox, 'l') and bbox.l is not None:
+            try:
+                bbox_dict = {
+                    'l': round(float(bbox.l), 2),
+                    't': round(float(bbox.t), 2),
+                    'r': round(float(bbox.r), 2),
+                    'b': round(float(bbox.b), 2),
+                    'coord_origin': str(getattr(bbox, 'coord_origin', 'BOTTOMLEFT')),
+                }
+            except (ValueError, TypeError):
+                bbox_dict = None
 
         # Check element type and extract text / table markdown
         item_type = type(item).__name__.lower().replace('item', '')

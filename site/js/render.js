@@ -110,8 +110,14 @@ window.CTO.Render = {
       selector.value = targetOption.value;
       const iframe = document.getElementById('primary-pdf-viewer');
       if (iframe) {
-        const pageHash = pageNumber ? `#page=${pageNumber}&navpanes=0&pagemode=none` : `#navpanes=0&pagemode=none`;
-        iframe.src = targetOption.value.split('#')[0] + pageHash;
+        let hash = pageNumber ? `#page=${pageNumber}` : '';
+        if (bbox && typeof bbox === 'object' && typeof bbox.l === 'number' && typeof bbox.t === 'number') {
+          const w = typeof bbox.r === 'number' ? Math.round(Math.abs(bbox.r - bbox.l)) : 100;
+          const h = typeof bbox.b === 'number' ? Math.round(Math.abs(bbox.b - bbox.t)) : 50;
+          hash += `${hash ? '&' : '#'}viewrect=${Math.round(bbox.l)},${Math.round(bbox.t)},${w},${h}`;
+        }
+        hash += `${hash ? '&' : '#'}navpanes=0&pagemode=none`;
+        iframe.src = targetOption.value.split('#')[0] + hash;
       }
     }
   },
@@ -189,7 +195,8 @@ window.CTO.Render = {
         // Prepare citation block
         const pageLabel = q.page_number ? ` (Page ${q.page_number})` : '';
         const docBadge = q.source_pdf ? `<span style="font-family: monospace; font-size: 11px; background: rgba(0,0,0,0.06); padding: 2px 6px; border-radius: 4px; color: var(--text-main); font-weight: 500;">📄 ${this.escapeHtml(q.source_pdf)}</span>` : '';
-        const bboxBadge = q.bbox ? `<span style="font-family: monospace; font-size: 11px; background: rgba(37,99,235,0.08); color: #1d4ed8; padding: 2px 6px; border-radius: 4px; font-weight: 500;" title="Bounding box: left=${q.bbox.l}, top=${q.bbox.t}">🎯 [${Math.round(q.bbox.l)}, ${Math.round(q.bbox.t)}]</span>` : '';
+        const hasBboxCoords = q.bbox && typeof q.bbox === 'object' && typeof q.bbox.l === 'number' && typeof q.bbox.t === 'number';
+        const bboxBadge = hasBboxCoords ? `<span style="font-family: monospace; font-size: 11px; background: rgba(37,99,235,0.08); color: #1d4ed8; padding: 2px 6px; border-radius: 4px; font-weight: 500;" title="Bounding box: left=${q.bbox.l}, top=${q.bbox.t}">🎯 [${Math.round(q.bbox.l)}, ${Math.round(q.bbox.t)}]</span>` : '';
         const citeHint = q.page_number ? `Switched viewer to Page ${q.page_number}. Use Cmd+F / Ctrl+F in the document to locate exact text.` : `Use Cmd+F / Ctrl+F in the PDF viewer to locate this text.`;
 
         const citeHtml = hasCitation ? `

@@ -27,16 +27,22 @@ class TestFrontendCitationJump(unittest.TestCase):
         )
 
     def test_03_jump_to_citation_signature(self):
-        """Verify jumpToCitation accepts bbox argument gracefully."""
+        """Verify jumpToCitation accepts bbox argument and sets viewrect parameter."""
         self.assertTrue(
             re.search(r"jumpToCitation\s*\([^)]*bbox[^)]*\)", self.render_js) is not None,
             "jumpToCitation should accept a bbox parameter"
         )
+        self.assertIn("viewrect=", self.render_js, "jumpToCitation should append viewrect parameter to iframe hash")
 
     def test_04_app_js_passes_bbox(self):
         """Verify app.js extracts and forwards bbox to jumpToCitation."""
         self.assertIn("link.dataset.bbox", self.app_js)
 
+    def test_05_bbox_coords_defensive_guard(self):
+        """Verify render.js has defensive guards against missing or non-numeric bbox coordinates."""
+        self.assertIn("hasBboxCoords", self.render_js, "render.js should check for valid numeric bbox coords")
+
 
 if __name__ == "__main__":
     unittest.main()
+

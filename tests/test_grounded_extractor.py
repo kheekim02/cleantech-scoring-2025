@@ -67,6 +67,41 @@ class TestGroundedExtractor(unittest.TestCase):
         negative = match_citation_to_chunks("The document does not mention any financial projections", chunks)
         self.assertIsNone(negative)
 
+    def test_04_raw_model_extraction_schema(self):
+        """Verify Instructor-compatible RawModelExtraction schema validation."""
+        from src.scorer.schemas import RawModelExtraction
+        from pydantic import ValidationError
+
+        # Valid extraction
+        ext = RawModelExtraction(
+            q_id="BC_Q1",
+            predicted_val=1.0,
+            confidence=0.9,
+            citation="17 offers a scalable intermittent ammonia production solution.",
+            rationale="Clear evidence found."
+        )
+        self.assertEqual(ext.predicted_val, 1.0)
+        self.assertEqual(ext.confidence, 0.9)
+
+        # Rejects score > 1.0
+        with self.assertRaises(ValidationError):
+            RawModelExtraction(q_id="BC_Q1", predicted_val=1.5)
+
+        # Rejects score < 0.0
+        with self.assertRaises(ValidationError):
+            RawModelExtraction(q_id="BC_Q1", predicted_val=-0.25)
+
+        # Automatically sanitizes negative citation to None
+        neg_ext = RawModelExtraction(
+            q_id="BC_Q1",
+            predicted_val=0.0,
+            confidence=0.8,
+            citation="The applicant does not mention any customer discovery.",
+            rationale="No proof"
+        )
+        self.assertIsNone(neg_ext.citation, "Negative statements must be sanitized to None")
+
 
 if __name__ == "__main__":
     unittest.main()
+

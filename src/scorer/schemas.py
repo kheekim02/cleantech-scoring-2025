@@ -151,6 +151,8 @@ class RawModelExtraction(BaseModel):
     q_id: str = Field(description="Rubric Question ID, e.g. BC_Q1, ES_Q3")
     predicted_val: float | None = Field(
         default=None,
+        ge=0.0,
+        le=1.0,
         description="Assigned score on standardized scale (0.0, 0.25, 0.5, 0.75, 1.0) or null if unanswerable"
     )
     confidence: float = Field(
@@ -167,3 +169,14 @@ class RawModelExtraction(BaseModel):
         default=None,
         description="Brief 1-sentence justification of the verdict"
     )
+
+    @field_validator("citation")
+    @classmethod
+    def sanitize_citation(cls, v: str | None) -> str | None:
+        if not v or not v.strip():
+            return None
+        v_clean = v.strip()
+        if len(v_clean) < 10 or is_negative_citation(v_clean):
+            return None
+        return v_clean
+

@@ -14,14 +14,20 @@ from pathlib import Path
 
 
 def load_db_url(env_file: str = ".env") -> str:
-    """Read DATABASE_URL from .env file."""
-    if not os.path.exists(env_file):
-        raise FileNotFoundError(f"{env_file} not found")
-    with open(env_file, "r") as f:
-        for line in f:
-            if line.startswith("DATABASE_URL="):
-                return line.split("=", 1)[1].strip().strip("'").strip('"').replace("?pgbouncer=true", "")
-    raise ValueError("DATABASE_URL not found in .env")
+    """Read DATABASE_URL from environment or .env file."""
+    if os.environ.get("DATABASE_URL"):
+        return os.environ["DATABASE_URL"].replace("?pgbouncer=true", "")
+    candidates = [
+        env_file,
+        os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env"),
+    ]
+    for p in candidates:
+        if os.path.exists(p):
+            with open(p, "r") as f:
+                for line in f:
+                    if line.startswith("DATABASE_URL="):
+                        return line.split("=", 1)[1].strip().strip("'").strip('"').replace("?pgbouncer=true", "")
+    raise ValueError("DATABASE_URL not found in environment or .env")
 
 
 def sync_v2_to_supabase(

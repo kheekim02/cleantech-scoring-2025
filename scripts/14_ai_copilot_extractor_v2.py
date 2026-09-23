@@ -21,6 +21,9 @@ import urllib.error
 # Add repository root to path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+import instructor
+from openai import OpenAI
+
 from src.scorer.schemas import (
     QuestionEvaluation,
     RawModelExtraction,
@@ -48,14 +51,26 @@ def get_active_model_id(sglang_url: str) -> str:
         return data["data"][0]["id"]
 
 
+def create_instructor_client(sglang_url: str, timeout: int = 60) -> Any:
+    """Create Instructor client wrapping OpenAI client pointing to SGLang."""
+    openai_client = OpenAI(
+        base_url=f"{sglang_url}/v1",
+        api_key="EMPTY",
+        timeout=timeout,
+    )
+    client = instructor.from_openai(openai_client, mode=instructor.Mode.JSON)
+    client._base_url_str = sglang_url
+    return client
+
+
 def query_sglang_question(
-    sglang_url: str,
+    client: Any,
     model_id: str,
     prefix_context: str,
     question: dict[str, Any],
     timeout: int = 60,
 ) -> dict[str, Any]:
-    """Execute evaluation for a single rubric question against the cached prefix context."""
+    """Execute evaluation for a single rubric question against the cached prefix context using Instructor."""
     qid = question.get("new_q_id", question.get("q_id"))
     options = [o.get("val") for o in question.get("options", [])]
     options_desc = ", ".join(str(o) for o in options) if options else "0.0, 1.0"
@@ -86,6 +101,33 @@ def query_sglang_question(
         f"}}"
     )
 
+    t0 = time.perf_counter()
+    if client is not None:
+        try:
+            extraction: RawModelExtraction = client.chat.completions.create(
+                model=model_id,
+                response_model=RawModelExtraction,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt}
+                ],
+                temperature=0.0,
+                max_tokens=350,
+                max_retries=2,
+            )
+            return {
+                "q_id": qid,
+                "predicted_val": extraction.predicted_val,
+                "confidence": extraction.confidence,
+                "citation": extraction.citation,
+                "rationale": extraction.rationale,
+                "duration_sec": round(time.perf_counter() - t0, 3),
+            }
+        except Exception as e:
+            logger.warning(f"Instructor extraction warning on {qid}: {e}; trying fallback")
+
+    # Fallback via direct HTTP request if client was None or failed
+    sglang_url = getattr(client, "_base_url_str", DEFAULT_SGLANG_URL) if client else DEFAULT_SGLANG_URL
     payload = json.dumps({
         "model": model_id,
         "messages": [
@@ -104,7 +146,6 @@ def query_sglang_question(
         method="POST"
     )
 
-    t0 = time.perf_counter()
     for attempt in range(3):
         try:
             with urllib.request.urlopen(req, timeout=timeout) as resp:
@@ -122,7 +163,7 @@ def query_sglang_question(
                 return parsed
         except Exception as e:
             if attempt == 2:
-                logger.warning(f"Failed question {qid} after 3 attempts: {e}")
+                logger.warning(f"Failed question {qid} after fallback attempts: {e}")
             time.sleep(0.5)
 
     return {
@@ -133,6 +174,7 @@ def query_sglang_question(
         "rationale": "Evaluation failed or timed out",
         "duration_sec": round(time.perf_counter() - t0, 3),
     }
+
 
 
 def evaluate_startup(
@@ -171,8 +213,18 @@ def evaluate_startup(
     logger.info(f"Loaded {len(chunks)} chunks, full text size: {len(prefix_context):,} chars")
 
     # 2. Load Rubric
-    with open(rubric_path, "r", encoding="utf-8") as f:
+    rubric_candidates = [
+        rubric_path,
+        "master_282_rubric.json",
+        "/data/scraping/master_282_rubric.json",
+        os.path.join(os.path.dirname(os.path.dirname(__file__)), "master_282_rubric.json"),
+    ]
+    resolved_rubric_path = next((p for p in rubric_candidates if p and os.path.exists(p)), None)
+    if not resolved_rubric_path:
+        raise FileNotFoundError(f"Rubric file not found at any candidate: {rubric_candidates}")
+    with open(resolved_rubric_path, "r", encoding="utf-8") as f:
         rubric = json.load(f)
+
 
     if limit:
         rubric = rubric[:limit]
@@ -199,9 +251,14 @@ def evaluate_startup(
 
     logger.info(f"Processing {len(remaining_questions)} remaining questions with concurrency={concurrency}...")
 
-    # 4. Connect to SGLang
+    # 4. Connect to SGLang and initialize Instructor
     model_id = get_active_model_id(sglang_url)
     logger.info(f"Connected to SGLang serving: {model_id}")
+    try:
+        inst_client = create_instructor_client(sglang_url, timeout=60)
+    except Exception as e:
+        logger.warning(f"Could not initialize Instructor client: {e}; falling back to direct mode")
+        inst_client = None
 
     # 5. Concurrent Question Batch Execution
     completed_count = 0
@@ -211,7 +268,7 @@ def evaluate_startup(
         future_to_q = {
             executor.submit(
                 query_sglang_question,
-                sglang_url,
+                inst_client,
                 model_id,
                 prefix_context,
                 q

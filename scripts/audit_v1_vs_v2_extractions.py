@@ -11,13 +11,19 @@ from pathlib import Path
 from typing import Any
 
 
+def _record_key(r: dict[str, Any], idx: int) -> str:
+    sid = r.get("startup_id")
+    qid = r.get("new_q_id", r.get("q_id", f"idx_{idx}"))
+    return f"{sid}::{qid}" if sid else str(qid)
+
+
 def calculate_metrics(
     v1_records: list[dict[str, Any]],
     v2_records: list[dict[str, Any]],
 ) -> dict[str, Any]:
     """Calculate detailed comparison metrics between v1 and v2 extraction sets."""
-    v1_map = {r.get("new_q_id", r.get("q_id")): r for r in v1_records}
-    v2_map = {r.get("new_q_id", r.get("q_id")): r for r in v2_records}
+    v1_map = {_record_key(r, i): r for i, r in enumerate(v1_records)}
+    v2_map = {_record_key(r, i): r for i, r in enumerate(v2_records)}
 
     common_qids = sorted(set(v1_map.keys()) & set(v2_map.keys()))
     if not common_qids:
@@ -53,11 +59,13 @@ def calculate_metrics(
         cit2 = r2.get("citation") or r2.get("verbatim_citation")
         p2 = r2.get("page_number")
 
-        cat = qid.split("_")[0] if "_" in qid else "OTHER"
+        raw_qid = qid.split("::")[-1] if "::" in qid else qid
+        cat = raw_qid.split("_")[0] if "_" in raw_qid else "OTHER"
         if cat not in cat_stats:
             cat_stats[cat] = {
                 "count": 0,
                 "exact": 0,
+
                 "v1_cit": 0,
                 "v2_cit": 0,
                 "v2_grounded": 0,
@@ -149,8 +157,9 @@ def run_audit(v1_dir: str, v2_dir: str, output_report: str | None = None) -> dic
                 r2 = json.load(f2)
                 startup_metrics = calculate_metrics(r1, r2)
                 startup_reports[sid] = startup_metrics
-                all_v1_records.extend(r1)
-                all_v2_records.extend(r2)
+                # Tag records with startup_id for multi-startup aggregation
+                all_v1_records.extend([{**item, "startup_id": sid} for item in r1])
+                all_v2_records.extend([{**item, "startup_id": sid} for item in r2])
         except Exception as e:
             print(f"Error auditing {sid}: {e}")
 

@@ -12,7 +12,10 @@ import unittest
 
 class TestRemoteStack(unittest.TestCase):
     def test_01_cuda_and_torch(self):
-        import torch
+        try:
+            import torch
+        except ImportError as e:
+            self.skipTest(f"PyTorch not installed in this environment; runs on Spark GB10: {e}")
         if not torch.cuda.is_available():
             self.skipTest("CUDA not available locally; runs on Spark GB10")
         device_count = torch.cuda.device_count()
@@ -22,8 +25,11 @@ class TestRemoteStack(unittest.TestCase):
         self.assertTrue("GB10" in device_name or "NVIDIA" in device_name, f"Expected NVIDIA GPU, got {device_name}")
 
     def test_02_docling_import(self):
-        import docling
-        from docling.document_converter import DocumentConverter
+        try:
+            import docling
+            from docling.document_converter import DocumentConverter
+        except ImportError as e:
+            self.skipTest(f"Docling not installed in this environment; runs on Spark GB10: {e}")
         print(f"[TEST] Docling version: {docling.__version__}")
         converter = DocumentConverter()
         self.assertIsNotNone(converter, "DocumentConverter should initialize cleanly")
@@ -39,9 +45,12 @@ class TestRemoteStack(unittest.TestCase):
         self.assertTrue(hasattr(xgrammar, "GrammarCompiler"))
 
     def test_04_instructor_and_pydantic(self):
-        import instructor
-        import pydantic
-        from pydantic import BaseModel, Field
+        try:
+            import instructor
+            import pydantic
+            from pydantic import BaseModel, Field
+        except ImportError as e:
+            self.skipTest(f"Instructor/Pydantic not installed: {e}")
         print(f"[TEST] Instructor version: {instructor.__version__}, Pydantic version: {pydantic.__version__}")
 
         class DiligenceScore(BaseModel):

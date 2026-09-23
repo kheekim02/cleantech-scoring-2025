@@ -28,6 +28,38 @@ class TestAuditMetrics(unittest.TestCase):
         self.assertEqual(res["v2_grounded_citations"], 3)
         self.assertAlmostEqual(res["v2_grounding_rate_pct"], 100.0)
 
+    def test_02_multi_startup_aggregation(self):
+        """Verify calculate_metrics does not overwrite records when multiple startups share question IDs."""
+        from scripts.audit_v1_vs_v2_extractions import calculate_metrics
+
+        v1_records = [
+            # Startup A
+            {"startup_id": "startup_A", "q_id": "BC_Q1", "predicted_val": 1.0, "confidence": 0.9, "citation": "Quote A1"},
+            {"startup_id": "startup_A", "q_id": "BC_Q2", "predicted_val": 0.5, "confidence": 0.8, "citation": "Quote A2"},
+            # Startup B (same question IDs)
+            {"startup_id": "startup_B", "q_id": "BC_Q1", "predicted_val": 0.0, "confidence": 0.9, "citation": "Quote B1"},
+            {"startup_id": "startup_B", "q_id": "BC_Q2", "predicted_val": 0.5, "confidence": 0.8, "citation": "Quote B2"},
+        ]
+
+        v2_records = [
+            # Startup A
+            {"startup_id": "startup_A", "q_id": "BC_Q1", "predicted_val": 1.0, "confidence": 0.95, "citation": "Quote A1", "page_number": 1, "bbox": {"l": 10}},
+            {"startup_id": "startup_A", "q_id": "BC_Q2", "predicted_val": 0.5, "confidence": 0.85, "citation": "Quote A2", "page_number": 2, "bbox": {"l": 20}},
+            # Startup B
+            {"startup_id": "startup_B", "q_id": "BC_Q1", "predicted_val": 1.0, "confidence": 0.9, "citation": "Quote B1", "page_number": 1, "bbox": {"l": 15}},  # mismatch vs v1 (0.0 vs 1.0)
+            {"startup_id": "startup_B", "q_id": "BC_Q2", "predicted_val": 0.5, "confidence": 0.85, "citation": "Quote B2", "page_number": 3, "bbox": {"l": 25}},
+        ]
+
+        res = calculate_metrics(v1_records, v2_records)
+        # Total compared must be 4 (2 questions * 2 startups), NOT 2!
+        self.assertEqual(res["total_compared"], 4, "Must compare all questions across all startups without key collisions")
+        self.assertEqual(res["exact_matches"], 3)  # A:Q1, A:Q2, B:Q2 match; B:Q1 differs
+        self.assertAlmostEqual(res["concordance_pct"], 75.0)
+        self.assertEqual(res["v2_grounded_citations"], 4)
+        self.assertAlmostEqual(res["v2_grounding_rate_pct"], 100.0)
+        self.assertEqual(res["by_category"]["BC"]["questions"], 4)
+
 
 if __name__ == "__main__":
     unittest.main()
+
