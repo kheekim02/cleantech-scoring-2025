@@ -357,7 +357,7 @@ tr:nth-child(even) td {
     <p>Complete guide to managing judge accounts, overseeing startup assignments, and monitoring evaluation progress across the 2025 cohort.</p>
     <div class="meta-bar">
       <span><strong>Target:</strong> Program Directors & Diligence Leads</span>
-      <span><strong>Portal URL:</strong> <code>/admin.html</code></span>
+      <span><strong>Portal URL:</strong> <a href="https://cleantech-scoring-2025.vercel.app/admin.html" style="color: #a7f3d0; text-decoration: underline;">https://cleantech-scoring-2025.vercel.app/admin.html</a></span>
       <span><strong>Version:</strong> 2.4 (Clean AI Release)</span>
     </div>
   </div>
@@ -369,8 +369,8 @@ tr:nth-child(even) td {
   <div class="card avoid-break">
     <h3 style="margin-top: 0;">Platform Key Components</h3>
     <ul style="margin-bottom: 0;">
-      <li><strong>Admin Portal (<code>/admin.html</code>):</strong> Dedicated dashboard for operations leads to create judges, assign companies, and monitor completion rates in real time.</li>
-      <li><strong>Scorer Portal (<code>/index.html</code>):</strong> Focused side-by-side workspace where judges examine company deliverables on the left and enter scores with AI guidance on the right.</li>
+      <li><strong>Admin Portal (<a href="https://cleantech-scoring-2025.vercel.app/admin.html" style="color: #0c6b5d; font-weight: 600;">https://cleantech-scoring-2025.vercel.app/admin.html</a>):</strong> Dedicated dashboard for operations leads to create judges, assign companies, and monitor completion rates in real time.</li>
+      <li><strong>Scorer Portal (<a href="https://cleantech-scoring-2025.vercel.app/index.html" style="color: #0c6b5d; font-weight: 600;">https://cleantech-scoring-2025.vercel.app/index.html</a>):</strong> Focused side-by-side workspace where judges examine company deliverables on the left and enter scores with AI guidance on the right.</li>
       <li><strong>PostgreSQL Database (Supabase):</strong> Stores judge rosters, encrypted passcodes, assignment mappings, and question reviews with instant transactional auto-saving.</li>
       <li><strong>Clean AI Copilot Engine:</strong> Advanced reasoning model (Qwen 35B) running on sanitized founder text with 0% competition scaffolding and 92.7% PDF page-indexed citations.</li>
     </ul>
@@ -380,7 +380,7 @@ tr:nth-child(even) td {
   <h2><span class="step-num">2</span> Accessing the Admin Dashboard</h2>
   <p>To access the administrative tools:</p>
   <ol>
-    <li>Navigate to <code>/admin.html</code> in any modern desktop browser (Google Chrome, Safari, or Microsoft Edge recommended).</li>
+    <li>Navigate to <a href="https://cleantech-scoring-2025.vercel.app/admin.html" style="color: #0c6b5d; font-weight: 700;"><strong>https://cleantech-scoring-2025.vercel.app/admin.html</strong></a> in any modern desktop browser (Google Chrome, Safari, or Microsoft Edge recommended).</li>
     <li>When prompted by the modal overlay, enter the administrator credentials:
       <ul>
         <li><strong>Admin Username:</strong> <code>admin</code> (or designated admin handle)</li>
@@ -389,7 +389,7 @@ tr:nth-child(even) td {
     </li>
     <li>Click <strong>Log In</strong>. The session will persist automatically in local storage until you click <strong>Log Out</strong>.</li>
   </ol>
-
+  
   <div class="ui-mockup avoid-break">
     <div class="ui-mockup-header">
       <span>ADMIN PORTAL LOGIN</span>
@@ -426,7 +426,7 @@ tr:nth-child(even) td {
       </li>
       <li>Enter a secure <strong>Passcode</strong> (e.g., 4-digit code or memorable passphrase).</li>
       <li>Click <strong>Create Scorer</strong>. The judge is instantly registered in Supabase and appears in the <strong>Existing Scorers</strong> roster below.</li>
-      <li>Provide the judge with the portal URL (<code>/index.html</code>), their Scorer ID, and their passcode.</li>
+      <li>Provide the judge with the live scoring portal URL (<a href="https://cleantech-scoring-2025.vercel.app/index.html" style="color: #0c6b5d; font-weight: 600;">https://cleantech-scoring-2025.vercel.app/index.html</a>), their Scorer ID, and their passcode.</li>
     </ol>
   </div>
 

@@ -386,7 +386,7 @@ HTML_ADMIN = f"""<!DOCTYPE html>
     <p>Complete guide to managing judge accounts, overseeing startup assignments, and monitoring evaluation progress across the 2025 cohort.</p>
     <div class="meta-bar">
       <span><strong>Target:</strong> Program Directors & Diligence Leads</span>
-      <span><strong>Portal URL:</strong> <code>/admin.html</code></span>
+      <span><strong>Portal URL:</strong> <a href="https://cleantech-scoring-2025.vercel.app/admin.html" style="color: #a7f3d0; text-decoration: underline;">https://cleantech-scoring-2025.vercel.app/admin.html</a></span>
       <span><strong>Version:</strong> 2.4 (Clean AI Release)</span>
     </div>
   </div>
@@ -398,8 +398,8 @@ HTML_ADMIN = f"""<!DOCTYPE html>
   <div class="card avoid-break">
     <h3 style="margin-top: 0;">Platform Key Components</h3>
     <ul style="margin-bottom: 0;">
-      <li><strong>Admin Portal (<code>/admin.html</code>):</strong> Dedicated dashboard for operations leads to create judges, assign companies, and monitor completion rates in real time.</li>
-      <li><strong>Scorer Portal (<code>/index.html</code>):</strong> Focused side-by-side workspace where judges examine company deliverables on the left and enter scores with AI guidance on the right.</li>
+      <li><strong>Admin Portal (<a href="https://cleantech-scoring-2025.vercel.app/admin.html" style="color: #0c6b5d; font-weight: 600;">https://cleantech-scoring-2025.vercel.app/admin.html</a>):</strong> Dedicated dashboard for operations leads to create judges, assign companies, and monitor completion rates in real time.</li>
+      <li><strong>Scorer Portal (<a href="https://cleantech-scoring-2025.vercel.app/index.html" style="color: #0c6b5d; font-weight: 600;">https://cleantech-scoring-2025.vercel.app/index.html</a>):</strong> Focused side-by-side workspace where judges examine company deliverables on the left and enter scores with AI guidance on the right.</li>
       <li><strong>PostgreSQL Database (Supabase):</strong> Stores judge rosters, encrypted passcodes, assignment mappings, and question reviews with instant transactional auto-saving.</li>
       <li><strong>Clean AI Copilot Engine:</strong> Advanced reasoning model (Qwen 35B) running on sanitized founder text with 0% competition scaffolding and 92.7% PDF page-indexed citations.</li>
     </ul>
@@ -409,7 +409,7 @@ HTML_ADMIN = f"""<!DOCTYPE html>
   <h2><span class="step-num">2</span> Accessing the Admin Dashboard</h2>
   <p>To access the administrative tools:</p>
   <ol>
-    <li>Navigate to <code>/admin.html</code> in any modern desktop browser (Google Chrome, Safari, or Microsoft Edge recommended).</li>
+    <li>Navigate to <a href="https://cleantech-scoring-2025.vercel.app/admin.html" style="color: #0c6b5d; font-weight: 700;"><strong>https://cleantech-scoring-2025.vercel.app/admin.html</strong></a> in any modern desktop browser (Google Chrome, Safari, or Microsoft Edge recommended).</li>
     <li>When prompted by the modal overlay, enter the administrator credentials:
       <ul>
         <li><strong>Admin Username:</strong> <code>admin</code> (or designated admin handle)</li>
@@ -418,7 +418,7 @@ HTML_ADMIN = f"""<!DOCTYPE html>
     </li>
     <li>Click <strong>Log In</strong>. The session will persist automatically in local storage until you click <strong>Log Out</strong>.</li>
   </ol>
-
+  
   <div class="ui-mockup avoid-break">
     <div class="ui-mockup-header">
       <span>ADMIN PORTAL LOGIN</span>
@@ -455,7 +455,7 @@ HTML_ADMIN = f"""<!DOCTYPE html>
       </li>
       <li>Enter a secure <strong>Passcode</strong> (e.g., 4-digit code or memorable passphrase).</li>
       <li>Click <strong>Create Scorer</strong>. The judge is instantly registered in Supabase and appears in the <strong>Existing Scorers</strong> roster below.</li>
-      <li>Provide the judge with the portal URL (<code>/index.html</code>), their Scorer ID, and their passcode.</li>
+      <li>Provide the judge with the live scoring portal URL (<a href="https://cleantech-scoring-2025.vercel.app/index.html" style="color: #0c6b5d; font-weight: 600;">https://cleantech-scoring-2025.vercel.app/index.html</a>), their Scorer ID, and their passcode.</li>
     </ol>
   </div>
 
@@ -642,7 +642,7 @@ HTML_SCORER = f"""<!DOCTYPE html>
     <p>Step-by-step instructions for evaluating startup applications, utilizing the AI Due Diligence Copilot, and navigating founder deliverables with auto-citation jumping.</p>
     <div class="meta-bar">
       <span><strong>Target:</strong> Expert Judges, Mentors & Investors</span>
-      <span><strong>Portal URL:</strong> <code>/index.html</code></span>
+      <span><strong>Portal URL:</strong> <a href="https://cleantech-scoring-2025.vercel.app/index.html" style="color: #a7f3d0; text-decoration: underline;">https://cleantech-scoring-2025.vercel.app/index.html</a></span>
       <span><strong>Evaluation Framework:</strong> 10 Categories (282 Criteria)</span>
     </div>
   </div>
@@ -652,7 +652,7 @@ HTML_SCORER = f"""<!DOCTYPE html>
   <p>As a CleanTech Open judge, you have been assigned specific cleantech startups to evaluate. Your evaluations determine accelerator cohort admissions, awards, and investment readiness.</p>
 
   <ol>
-    <li>Navigate to the scoring portal at <strong><code>/index.html</code></strong>.</li>
+    <li>Navigate to the scoring portal at <a href="https://cleantech-scoring-2025.vercel.app/index.html" style="color: #0c6b5d; font-weight: 700;"><strong>https://cleantech-scoring-2025.vercel.app/index.html</strong></a>.</li>
     <li>In the <strong>Judge Authentication</strong> modal, enter:
       <ul>
         <li><strong>Scorer ID:</strong> Your assigned username (e.g., <code>judge_smith</code> or <code>J-001</code>).</li>
@@ -903,47 +903,45 @@ HTML_SCORER = f"""<!DOCTYPE html>
     </tbody>
   </table>
 
-  <div class="page-break"></div>
-
   <!-- Section 6: Comprehensive Scorer FAQ & Knowledge Base -->
   <h2><span class="step-num">6</span> Comprehensive Scorer FAQs & Diligence Knowledge Base</h2>
 
-  <div class="card avoid-break">
-    <h3 style="margin-top: 0; color: #0c6b5d;">Business Model Canvas: Large vs. Small Brackets (BC_Q4 vs. BC_Q5)</h3>
-    <p>A frequent question from evaluators is distinguishing between <strong>"Large Brackets"</strong> and <strong>"Small Brackets"</strong> on the Business Model Canvas (Strategyzer 9-block framework):</p>
+  <div class="card avoid-break" style="padding: 16px 20px; margin-bottom: 16px;">
+    <h3 style="margin-top: 0; color: #0c6b5d; font-size: 14.5px;">Business Model Canvas: Large vs. Small Brackets (BC_Q4 vs. BC_Q5)</h3>
+    <p style="margin-bottom: 8px; font-size: 12.5px;">A frequent question from evaluators is distinguishing between <strong>"Large Brackets"</strong> and <strong>"Small Brackets"</strong> on the Business Model Canvas (Strategyzer 9-block framework):</p>
     
-    <div style="text-align: center; margin: 12px 0;">
-      <img class="avoid-break" src="{BMC_DATA_URI or 'file://' + BMC_SCREENSHOT_PATH}" alt="Strategyzer Business Model Canvas Large vs Small Brackets Diagram" style="width: 100%; max-width: 580px; border-radius: 6px; border: 1px solid #cbd5e1; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-      <div style="font-size: 11px; color: #64748b; margin-top: 4px; font-style: italic;">
+    <div style="text-align: center; margin: 8px 0;">
+      <img src="{BMC_DATA_URI or 'file://' + BMC_SCREENSHOT_PATH}" alt="Strategyzer Business Model Canvas Large vs Small Brackets Diagram" style="max-height: 190px; width: auto; max-width: 100%; object-fit: contain; border-radius: 6px; border: 1px solid #cbd5e1; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+      <div style="font-size: 10.5px; color: #64748b; margin-top: 3px; font-style: italic;">
         Figure: Strategyzer Business Model Canvas — Blue Blocks = Large Brackets (BC_Q4), Yellow Blocks = Small Brackets (BC_Q5).
       </div>
     </div>
 
-    <table style="margin-top: 8px; margin-bottom: 12px; width: 100%;">
+    <table style="margin-top: 6px; margin-bottom: 8px; width: 100%; font-size: 12px;">
       <thead>
         <tr style="background: #f1f5f9;">
-          <th style="width: 18%;">Rubric ID</th>
-          <th style="width: 25%;">Bracket Classification</th>
-          <th style="width: 20%;">Strategyzer Color</th>
-          <th>Included Business Model Components</th>
+          <th style="width: 16%; padding: 6px 8px;">Rubric ID</th>
+          <th style="width: 25%; padding: 6px 8px;">Bracket Classification</th>
+          <th style="width: 20%; padding: 6px 8px;">Strategyzer Color</th>
+          <th style="padding: 6px 8px;">Included Business Model Components</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>BC_Q4</strong></td>
-          <td><strong>Large / Big Brackets</strong><br><span style="font-size: 11px; color: #64748b;">(Core Structural Pillars)</span></td>
-          <td><span style="background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 11px; border: 1px solid #bae6fd;">🔵 Blue Blocks</span></td>
-          <td><strong>1. Key Partners<br>2. Value Propositions<br>3. Customer Segments<br>4. Cost Structure<br>5. Revenue Streams</strong></td>
+          <td style="padding: 6px 8px;"><strong>BC_Q4</strong></td>
+          <td style="padding: 6px 8px;"><strong>Large / Big Brackets</strong><br><span style="font-size: 10.5px; color: #64748b;">(Core Structural Pillars)</span></td>
+          <td style="padding: 6px 8px;"><span style="background: #e0f2fe; color: #0369a1; padding: 2px 7px; border-radius: 4px; font-weight: 700; font-size: 10.5px; border: 1px solid #bae6fd;">🔵 Blue Blocks</span></td>
+          <td style="padding: 6px 8px; font-size: 11.5px;"><strong>1. Key Partners &nbsp;·&nbsp; 2. Value Propositions &nbsp;·&nbsp; 3. Customer Segments &nbsp;·&nbsp; 4. Cost Structure &nbsp;·&nbsp; 5. Revenue Streams</strong></td>
         </tr>
         <tr>
-          <td><strong>BC_Q5</strong></td>
-          <td><strong>Small / Connecting Brackets</strong><br><span style="font-size: 11px; color: #64748b;">(Operational Connectors)</span></td>
-          <td><span style="background: #fef9c3; color: #854d0e; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 11px; border: 1px solid #fde047;">🟡 Yellow Blocks</span></td>
-          <td><strong>1. Key Activities<br>2. Key Resources<br>3. Customer Relationships<br>4. Channels</strong></td>
+          <td style="padding: 6px 8px;"><strong>BC_Q5</strong></td>
+          <td style="padding: 6px 8px;"><strong>Small / Connecting Brackets</strong><br><span style="font-size: 10.5px; color: #64748b;">(Operational Connectors)</span></td>
+          <td style="padding: 6px 8px;"><span style="background: #fef9c3; color: #854d0e; padding: 2px 7px; border-radius: 4px; font-weight: 700; font-size: 10.5px; border: 1px solid #fde047;">🟡 Yellow Blocks</span></td>
+          <td style="padding: 6px 8px; font-size: 11.5px;"><strong>1. Key Activities &nbsp;·&nbsp; 2. Key Resources &nbsp;·&nbsp; 3. Customer Relationships &nbsp;·&nbsp; 4. Channels</strong></td>
         </tr>
       </tbody>
     </table>
-    <p style="font-size: 12px; color: #475569; margin-bottom: 0;">
+    <p style="font-size: 11.5px; color: #475569; margin-bottom: 0;">
       <em>Pro-Tip:</em> The 4 corner boxes + center value proposition form the <strong>Large Brackets (5)</strong>. The operational connecting boxes form the <strong>Small Brackets (4)</strong>. Both combined encompass all 9 blocks of the canonical Business Model Canvas.
     </p>
   </div>
