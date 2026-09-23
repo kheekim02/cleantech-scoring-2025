@@ -124,7 +124,28 @@ class TestFaqAndRubricBrackets(unittest.TestCase):
         self.assertNotIn("file://", scorer_html.read_text(encoding="utf-8"))
         self.assertNotIn("file://", admin_html.read_text(encoding="utf-8"))
 
+    def test_14_scorer_tutorial_isolated_from_admin(self):
+        """Verify site/scorer_tutorial.html does NOT link to admin_tutorial.html or walkthrough.html."""
+        scorer_html = self.root / "site" / "scorer_tutorial.html"
+        self.assertTrue(scorer_html.exists(), "site/scorer_tutorial.html must exist")
+        content = scorer_html.read_text(encoding="utf-8")
+        self.assertNotIn("admin_tutorial.html", content, "Scorer tutorial must not link to admin tutorial")
+        self.assertNotIn("Admin Walkthrough", content, "Scorer tutorial must not show Admin Walkthrough button")
+        self.assertNotIn("walkthrough.html", content, "Scorer tutorial must not link to walkthrough hub")
+
+    def test_15_admin_tutorial_has_assignments_screenshot(self):
+        """Verify admin tutorial references the live admin assignments screenshot."""
+        admin_html = self.root / "site" / "admin_tutorial.html"
+        self.assertTrue(admin_html.exists(), "site/admin_tutorial.html must exist")
+        content = admin_html.read_text(encoding="utf-8")
+        self.assertIn("Company Assignments dashboard", content)
+        asset_docs = self.root / "docs" / "tutorial_assets" / "admin_assignments_screenshot.png"
+        asset_site = self.root / "site" / "img" / "admin_assignments_screenshot.png"
+        self.assertTrue(asset_docs.exists(), "admin_assignments_screenshot.png must exist in docs/tutorial_assets")
+        self.assertTrue(asset_site.exists(), "admin_assignments_screenshot.png must exist in site/img")
+
 
 if __name__ == "__main__":
     unittest.main()
+
 

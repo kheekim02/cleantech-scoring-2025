@@ -11,6 +11,7 @@ os.makedirs(DOCS_DIR, exist_ok=True)
 CHROME_PATH = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 SCREENSHOT_PATH = os.path.join(DOCS_DIR, "scoring_interface_screenshot.png")
 BMC_SCREENSHOT_PATH = os.path.join(DOCS_DIR, "tutorial_assets", "bmc_brackets_strategyzer.png")
+ADMIN_SCREENSHOT_PATH = os.path.join(DOCS_DIR, "tutorial_assets", "admin_assignments_screenshot.png")
 
 def get_base64_image(path):
     if os.path.exists(path):
@@ -20,6 +21,7 @@ def get_base64_image(path):
 
 SCREENSHOT_DATA_URI = get_base64_image(SCREENSHOT_PATH)
 BMC_DATA_URI = get_base64_image(BMC_SCREENSHOT_PATH)
+ADMIN_SCREENSHOT_DATA_URI = get_base64_image(ADMIN_SCREENSHOT_PATH)
 
 # Common styling for both PDF manuals
 CSS_BASE = """
@@ -467,46 +469,10 @@ HTML_ADMIN = f"""<!DOCTYPE html>
   <h2><span class="step-num">4</span> Assigning Startups to Judges</h2>
   <p>The assignment workflow gives administrators full control over distribution, ensuring dual-reviewer consensus and preventing accidental assignment of incomplete applications.</p>
 
-  <div class="ui-mockup avoid-break">
-    <div class="ui-mockup-header">
-      <span>COMPANY ASSIGNMENTS DASHBOARD</span>
-      <span>REAL-TIME COHORT SYNC</span>
-    </div>
-    <div class="ui-mockup-body">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-        <span style="font-weight: 700; font-size: 13px;">Selected Judge: <span style="color:#0c6b5d;">judge_smith</span></span>
-        <span style="font-size: 11px; background:#dcfce7; color:#15803d; padding:2px 8px; border-radius:12px; font-weight:700;">74 / 92 Ready for Assignment</span>
-      </div>
-
-      <!-- Filters -->
-      <div style="display:flex; gap:8px; margin-bottom:12px;">
-        <span style="background:#059669; color:#fff; padding:4px 12px; border-radius:14px; font-size:11px; font-weight:600;">✓ Ready for Assignment</span>
-        <span style="background:#f1f5f9; color:#64748b; padding:4px 12px; border-radius:14px; font-size:11px; border:1px solid #cbd5e1;">Show All (92)</span>
-      </div>
-
-      <!-- Mock list items -->
-      <div style="background:#fff; border:1px solid #e2e8f0; border-radius:6px; font-size:12px;">
-        <div style="display:flex; align-items:center; gap:8px; padding:8px 12px; border-bottom:1px solid #f1f5f9; background:#f8fafc;">
-          <input type="checkbox" checked>
-          <span style="font-weight:600;">17</span>
-          <span class="pill pill-green">✓ Clean AI Ready</span>
-          <span class="pill pill-blue">142 Answers</span>
-          <span class="pill pill-orange" style="margin-left:auto;">1 Assigned</span>
-        </div>
-        <div style="display:flex; align-items:center; gap:8px; padding:8px 12px; border-bottom:1px solid #f1f5f9;">
-          <input type="checkbox">
-          <span style="font-weight:600;">Calectra</span>
-          <span class="pill pill-green">✓ Clean AI Ready</span>
-          <span class="pill pill-yellow" style="margin-left:auto;">0 Assigned</span>
-        </div>
-        <div style="display:flex; align-items:center; gap:8px; padding:8px 12px;">
-          <input type="checkbox" checked>
-          <span style="font-weight:600;">Novagrid</span>
-          <span class="pill pill-green">✓ Clean AI Ready</span>
-          <span style="color:#ef4444; font-size:11px; font-weight:600; border:1px solid #fca5a5; padding:1px 5px; border-radius:3px; background:#fef2f2;">Not Started</span>
-          <span class="pill pill-green" style="margin-left:auto;">2 Assigned</span>
-        </div>
-      </div>
+  <div class="avoid-break" style="margin: 14px 0 16px 0; text-align: center;">
+    <img src="{ADMIN_SCREENSHOT_DATA_URI or 'file://' + ADMIN_SCREENSHOT_PATH}" alt="CleanTech Open Admin Portal - Company Assignments Dashboard" style="width: 100%; max-width: 620px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: block; margin: 0 auto;">
+    <div style="font-size: 11px; color: #64748b; margin-top: 6px; font-style: italic;">
+      CleanTech Open Admin Portal — Company Assignments dashboard with reviewer selection, status filters, and real-time cohort tracking.
     </div>
   </div>
 
@@ -624,8 +590,6 @@ HTML_SCORER = f"""<!DOCTYPE html>
   <div class="web-nav-bar">
     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
       <a href="index.html" style="background: #0c6b5d; color: #fff; border: 1px solid #0c6b5d;">← Back to Scoring Interface</a>
-      <a href="admin_tutorial.html" style="background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1;">🛡️ Admin Walkthrough</a>
-      <a href="walkthrough.html" style="background: #f8fafc; color: #475569; border: 1px solid #cbd5e1;">📑 All Guides</a>
     </div>
     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
       <a href="CleanTech_Open_Scorer_Tutorial.pdf" download style="background: #166534; color: #fff; border: 1px solid #166534;">📥 Download PDF Guide</a>
