@@ -12,17 +12,39 @@ module.exports = async (req, res) => {
   const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
   try {
     await client.connect();
-    const table = role === 'admin' ? 'admins' : 'judges';
-    const idColumn = role === 'admin' ? 'username' : 'judge_id';
-    const result = await client.query(`SELECT password_hash FROM ${table} WHERE ${idColumn} = $1`, [principalId]);
-    if (result.rows.length !== 1 || !(await verifyPassword(password, result.rows[0].password_hash))) {
+    let isTest = false;
+    let verified = false;
+
+    if (role === 'admin') {
+      const result = await client.query('SELECT password_hash FROM admins WHERE username = $1', [principalId]);
+      if (result.rows.length === 1 && (await verifyPassword(password, result.rows[0].password_hash))) {
+        verified = true;
+      }
+    } else {
+      // role === 'scorer'
+      const judgeRes = await client.query('SELECT password_hash, is_test FROM judges WHERE judge_id = $1', [principalId]);
+      if (judgeRes.rows.length === 1 && (await verifyPassword(password, judgeRes.rows[0].password_hash))) {
+        verified = true;
+        isTest = !!judgeRes.rows[0].is_test;
+      } else {
+        // Allow admin credentials to log into scorer portal in test/preview mode
+        const adminRes = await client.query('SELECT password_hash FROM admins WHERE username = $1', [principalId]);
+        if (adminRes.rows.length === 1 && (await verifyPassword(password, adminRes.rows[0].password_hash))) {
+          verified = true;
+          isTest = true;
+        }
+      }
+    }
+
+    if (!verified) {
       await client.end();
       return res.status(401).json({ error: 'Invalid username or password.' });
     }
+
     const session = await createSession(client, role, principalId);
     setCookie(res, role === 'admin' ? 'cto_admin_session' : 'cto_scorer_session', session.token);
     await client.end();
-    return res.status(200).json({ success: true, user: { role, id: principalId } });
+    return res.status(200).json({ success: true, user: { role, id: principalId, is_test: isTest } });
   } catch (error) {
     console.error('Login error:', error);
     return res.status(500).json({ error: 'Unable to sign in.' });

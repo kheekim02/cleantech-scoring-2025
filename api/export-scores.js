@@ -44,6 +44,7 @@ module.exports = async (req, res) => {
       FROM human_reviews hr
       LEFT JOIN startup_extractions se ON hr.startup_id = se.startup_id
       WHERE hr.startup_id NOT ILIKE '%solarpure%'
+        AND hr.judge_id NOT IN (SELECT judge_id FROM judges WHERE is_test = true)
       ORDER BY se.company_name ASC, hr.judge_id ASC, hr.question_id ASC;
     `;
     const result = await client.query(query);

@@ -29,7 +29,7 @@ module.exports = async (req, res) => {
     }
 
     if (action === 'CREATE_JUDGE') {
-      const { new_judge_id, new_password } = data || {};
+      const { new_judge_id, new_password, is_test } = data || {};
       if (!new_judge_id || !new_password) throw new Error("Missing scorer credentials");
       const passwordError = validateNewPassword(new_password);
       if (passwordError) {
@@ -38,10 +38,16 @@ module.exports = async (req, res) => {
       }
       const passwordHash = await hashPassword(new_password);
       
-      await client.query('INSERT INTO judges (judge_id, password_hash) VALUES ($1, $2)', [new_judge_id, passwordHash]);
-      await client.query(`INSERT INTO auth_audit_log (role, principal_id, action) VALUES ('scorer', $1, 'SCORER_CREATED')`, [new_judge_id]);
+      await client.query(
+        'INSERT INTO judges (judge_id, passcode, password_hash, is_test) VALUES ($1, $2, $3, $4)',
+        [new_judge_id, new_password, passwordHash, !!is_test]
+      );
+      await client.query(
+        `INSERT INTO auth_audit_log (role, principal_id, action) VALUES ('scorer', $1, $2)`,
+        [new_judge_id, is_test ? 'TEST_SCORER_CREATED' : 'SCORER_CREATED']
+      );
       await client.end();
-      return res.status(200).json({ success: true });
+      return res.status(200).json({ success: true, is_test: !!is_test });
       
     } else if (action === 'TOGGLE_ASSIGNMENT') {
       const { judge_id, startup_id, assigned } = data || {};

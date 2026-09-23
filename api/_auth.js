@@ -88,11 +88,25 @@ async function revokeOtherSessions(client, role, principalId, currentToken) {
   );
 }
 
+async function isTestScorer(client, principalId) {
+  if (!principalId) return false;
+  try {
+    const judge = await client.query('SELECT is_test FROM judges WHERE judge_id = $1', [principalId]);
+    if (judge.rows.length > 0 && judge.rows[0].is_test) return true;
+    const admin = await client.query('SELECT 1 FROM admins WHERE username = $1', [principalId]);
+    if (admin.rows.length > 0) return true;
+  } catch (e) {
+    console.error('Error checking isTestScorer:', e);
+  }
+  return false;
+}
+
 module.exports = {
   cookieName,
   createSession,
   getSession,
   hashPassword,
+  isTestScorer,
   requireSession,
   revokeOtherSessions,
   revokeSession,

@@ -92,24 +92,29 @@ window.AdminApp = {
       // Dropdown option
       const opt = document.createElement('option');
       opt.value = j.judge_id;
-      opt.textContent = j.judge_id;
+      opt.textContent = j.is_test ? `${j.judge_id} (Test Mode)` : j.judge_id;
       select.appendChild(opt);
       
       // List item
       const safeId = j.judge_id.replace(/'/g, "\\'");
       const escapedId = this.escapeHtml(j.judge_id);
+      const testBadge = j.is_test ? `<span style="background: #fef3c7; color: #92400e; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; border: 1px solid #fcd34d;">🧪 Test Mode</span>` : '';
+      const statusLabel = j.is_test ? 'Test Account · Views all companies, no DB writes' : 'Password protected';
       listHtml += `
         <div class="scorer-item" style="padding: 10px 12px; border-bottom: 1px solid var(--border);">
           <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px;">
-            <strong style="color: var(--accent-blue); font-size: 13px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${escapedId}">${escapedId}</strong>
+            <div style="display: flex; align-items: center; gap: 6px; min-width: 0;">
+              <strong style="color: var(--accent-blue); font-size: 13px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${escapedId}">${escapedId}</strong>
+              ${testBadge}
+            </div>
             <div style="display: flex; gap: 6px; align-items: center; flex-shrink: 0;">
               <button class="btn btn-reset-pass" onclick="AdminApp.resetPassword('${safeId}')" style="background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background 0.15s ease;" onmouseover="this.style.background='#bae6fd'" onmouseout="this.style.background='#e0f2fe'">Reset</button>
               <button class="btn btn-delete-scorer" onclick="AdminApp.deleteScorer('${safeId}')" style="background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background 0.15s ease;" onmouseover="this.style.background='#fecaca'" onmouseout="this.style.background='#fee2e2'">Delete</button>
             </div>
           </div>
           <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px; display: flex; align-items: center; gap: 4px;">
-            <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #10b981;"></span>
-            <span>Password protected</span>
+            <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: ${j.is_test ? '#d97706' : '#10b981'};"></span>
+            <span>${statusLabel}</span>
           </div>
         </div>
       `;
@@ -225,7 +230,14 @@ window.AdminApp = {
       return matchesFilter && (!this.companySearch || s.name.toLowerCase().includes(this.companySearch));
     });
     const summary = document.getElementById('assignment-summary');
-    if (summary) summary.textContent = `${assignedSet.size} of ${this.data.startups.length} companies assigned to ${selectedJudge} · showing ${startupsToRender.length}`;
+    const isTestJudge = this.data.judges.find(j => j.judge_id === selectedJudge)?.is_test;
+    if (summary) {
+      if (isTestJudge) {
+        summary.innerHTML = `<span style="color: #92400e; font-weight: 600;">🧪 Test / Preview Account: Automatically has access to all ${this.data.startups.length} companies. Assignments are not needed and scores will not be logged.</span>`;
+      } else {
+        summary.textContent = `${assignedSet.size} of ${this.data.startups.length} companies assigned to ${selectedJudge} · showing ${startupsToRender.length}`;
+      }
+    }
 
     let html = '';
     if (startupsToRender.length === 0) {
@@ -318,10 +330,12 @@ window.AdminApp = {
   async createScorer() {
     const idInput = document.getElementById('new-judge-id');
     const passInput = document.getElementById('new-judge-pass');
+    const testInput = document.getElementById('new-judge-test');
     const msg = document.getElementById('create-msg');
     
     const new_judge_id = idInput.value.trim();
     const new_password = passInput.value.trim();
+    const is_test = testInput ? testInput.checked : false;
     
     if (!new_judge_id || !new_password) {
       msg.textContent = "Please fill out both fields.";
@@ -335,7 +349,7 @@ window.AdminApp = {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           action: 'CREATE_JUDGE',
-          data: { new_judge_id, new_password }
+          data: { new_judge_id, new_password, is_test }
         })
       });
       
@@ -344,13 +358,14 @@ window.AdminApp = {
           <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 10px 12px; margin-top: 12px; position: relative;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;">
               <div style="font-size: 13px; color: #166534; font-weight: 700;">
-                ✓ Scorer <strong>${this.escapeHtml(new_judge_id)}</strong> created!
+                ✓ ${is_test ? 'Test / Preview Scorer' : 'Scorer'} <strong>${this.escapeHtml(new_judge_id)}</strong> created!
               </div>
               <button type="button" onclick="document.getElementById('create-msg').innerHTML=''" style="background: none; border: none; font-size: 14px; color: #15803d; cursor: pointer; padding: 0 4px; line-height: 1;" title="Dismiss notification">✕</button>
             </div>
             <div style="margin-top: 6px; font-size: 12px; color: var(--text-muted);">
               Temporary password: <code style="background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 4px; font-weight: 700; user-select: all;">${this.escapeHtml(new_password)}</code>
             </div>
+            ${is_test ? '<div style="margin-top: 4px; font-size: 11px; color: #92400e; font-weight: 600;">🧪 Configured as Test Account: Views all companies, scores will NOT be logged to DB.</div>' : ''}
             <div style="margin-top: 4px; font-size: 10px; color: #15803d;">
               Notice will remain visible for 1 minute for easy copying.
             </div>
@@ -360,6 +375,7 @@ window.AdminApp = {
         idInput.value = '';
         passInput.value = '';
         passInput.type = 'password';
+        if (testInput) testInput.checked = false;
         const toggleBtn = document.getElementById('toggle-new-pass-btn');
         if (toggleBtn) {
           toggleBtn.innerHTML = '👁️ <span class="pass-toggle-label">Show</span>';

@@ -1,5 +1,5 @@
 const { Client } = require('pg');
-const { requireSession } = require('./_auth');
+const { requireSession, isTestScorer } = require('./_auth');
 
 module.exports = async (req, res) => {
   if (req.method !== 'POST') {
@@ -29,6 +29,18 @@ module.exports = async (req, res) => {
     if (!session) {
       await client.end();
       return;
+    }
+
+    const isTest = await isTestScorer(client, session.principalId);
+
+    // CRITICAL: If test/preview account, DO NOT touch human_reviews table!
+    if (isTest) {
+      await client.end();
+      return res.status(200).json({
+        success: true,
+        message: 'Test / Admin Preview Mode: Scores are not persisted to database.',
+        test_mode: true
+      });
     }
 
     if (!scores || scores.length === 0) {

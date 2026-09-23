@@ -64,6 +64,7 @@ def export_scores(
         FROM human_reviews hr
         LEFT JOIN startup_extractions se ON hr.startup_id = se.startup_id
         WHERE hr.startup_id NOT ILIKE '%%solarpure%%'
+          AND hr.judge_id NOT IN (SELECT judge_id FROM judges WHERE is_test = TRUE)
           AND (%s IS NULL OR hr.startup_id = %s)
           AND (%s IS NULL OR hr.judge_id = %s)
         ORDER BY company_name ASC, hr.judge_id ASC, hr.question_id ASC;

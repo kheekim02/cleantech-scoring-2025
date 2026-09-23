@@ -17,7 +17,7 @@ module.exports = async (req, res) => {
     }
 
     // Fetch data
-    const judgesRes = await client.query('SELECT judge_id FROM judges ORDER BY judge_id ASC');
+    const judgesRes = await client.query('SELECT judge_id, is_test FROM judges ORDER BY judge_id ASC');
     const startupsRes = await client.query('SELECT startup_id as id, company_name as name FROM startup_extractions ORDER BY company_name ASC');
     const assignmentsRes = await client.query('SELECT judge_id, startup_id, assigned_at FROM judge_assignments');
     const progressRes = await client.query('SELECT judge_id, startup_id, count(question_id) as answered_count FROM human_reviews GROUP BY judge_id, startup_id');

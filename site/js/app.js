@@ -16,12 +16,23 @@ CTO.App = {
       return res.json();
     }).then(data => {
       this.currentUser = data.user;
+      this.applyUserRoleUI();
       document.getElementById('login-modal').style.display = 'none';
       this.loadStartupsList().then(() => this.startApp());
     }).catch(() => {
       document.getElementById('login-modal').style.display = 'flex';
       this.setSaveStatus('Sign in required');
     });
+  },
+
+  applyUserRoleUI() {
+    const banner = document.getElementById('test-mode-banner');
+    if (banner) {
+      banner.style.display = this.currentUser?.is_test ? 'flex' : 'none';
+    }
+    if (this.currentUser?.is_test) {
+      this.setSaveStatus('🧪 Test Mode (No DB Save)');
+    }
   },
 
   async handleLogin() {
@@ -42,6 +53,7 @@ CTO.App = {
       if (res.ok) {
         const authData = await res.json();
         this.currentUser = authData.user;
+        this.applyUserRoleUI();
         document.getElementById('login-modal').style.display = 'none';
         this.loadStartupsList().then(() => this.startApp());
       } else {
@@ -623,7 +635,12 @@ CTO.App = {
           throw new Error("401_UNAUTHORIZED");
         }
         if (!res.ok) throw new Error("NETWORK_ERROR");
-        this.setSaveStatus('Saved');
+        const syncData = await res.json().catch(() => ({}));
+        if (syncData.test_mode || this.currentUser?.is_test) {
+          this.setSaveStatus('🧪 Test Mode (No DB Save)');
+        } else {
+          this.setSaveStatus('Saved');
+        }
 
       } catch (error) {
         this.state.syncQueue.unshift(...batch);
@@ -686,12 +703,19 @@ CTO.App = {
 
   setSaveStatus(message) {
     const status = document.getElementById('save-status');
-    if (status) status.textContent = message;
+    if (status) {
+      if (this.currentUser?.is_test && (message === 'Saved' || message === '🧪 Test Mode (No DB Save)')) {
+        status.innerHTML = '<span style="color: #d97706; font-weight: 600;">🧪 Test Mode (No DB Save)</span>';
+      } else {
+        status.textContent = message;
+      }
+    }
   },
 
   async logout() {
     await fetch('/api/auth-logout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ role: 'scorer' }) });
     this.currentUser = null;
+    this.applyUserRoleUI();
     document.getElementById('login-modal').style.display = 'flex';
     this.setSaveStatus('Signed out');
   },
