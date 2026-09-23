@@ -351,6 +351,9 @@ CTO.App = {
         <strong>Large / Big Brackets (🔵 Blue in Strategyzer Template):</strong><br>
         <span style="font-size: 12px; color: #0369a1; font-weight: 600;">1. Key Partners &nbsp;·&nbsp; 2. Value Propositions &nbsp;·&nbsp; 3. Customer Segments &nbsp;·&nbsp; 4. Cost Structure &nbsp;·&nbsp; 5. Revenue Streams</span>
       </div>
+      <div style="text-align: center; margin: 10px 0 14px 0;">
+        <img src="img/bmc_brackets_strategyzer.png" alt="Strategyzer BMC Brackets" style="width: 100%; max-height: 220px; object-fit: contain; border-radius: 6px; border: 1px solid #cbd5e1; box-shadow: 0 1px 2px rgba(0,0,0,0.08);">
+      </div>
       <table style="width: 100%; border-collapse: collapse; text-align: left;">
         <thead>
           <tr style="background: var(--surface-sunk);">
@@ -383,6 +386,9 @@ CTO.App = {
       <div style="margin-top: 8px; margin-bottom: 12px; padding: 8px 12px; background: #fefce8; border-left: 4px solid #ca8a04; border-radius: 4px; font-size: 13px;">
         <strong>Small / Connecting Brackets (🟡 Yellow in Strategyzer Template):</strong><br>
         <span style="font-size: 12px; color: #854d0e; font-weight: 600;">1. Key Activities &nbsp;·&nbsp; 2. Key Resources &nbsp;·&nbsp; 3. Customer Relationships &nbsp;·&nbsp; 4. Channels</span>
+      </div>
+      <div style="text-align: center; margin: 10px 0 14px 0;">
+        <img src="img/bmc_brackets_strategyzer.png" alt="Strategyzer BMC Brackets" style="width: 100%; max-height: 220px; object-fit: contain; border-radius: 6px; border: 1px solid #cbd5e1; box-shadow: 0 1px 2px rgba(0,0,0,0.08);">
       </div>
       <table style="width: 100%; border-collapse: collapse; text-align: left;">
         <thead>

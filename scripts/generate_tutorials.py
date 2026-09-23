@@ -9,6 +9,7 @@ os.makedirs(DOCS_DIR, exist_ok=True)
 
 CHROME_PATH = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 SCREENSHOT_PATH = os.path.join(DOCS_DIR, "scoring_interface_screenshot.png")
+BMC_SCREENSHOT_PATH = os.path.join(DOCS_DIR, "tutorial_assets", "bmc_brackets_strategyzer.png")
 
 # Common styling for both PDF manuals
 CSS_BASE = """
@@ -822,6 +823,13 @@ HTML_SCORER = f"""<!DOCTYPE html>
     <h3 style="margin-top: 0; color: #0c6b5d;">Business Model Canvas: Large vs. Small Brackets (BC_Q4 vs. BC_Q5)</h3>
     <p>A frequent question from evaluators is distinguishing between <strong>"Large Brackets"</strong> and <strong>"Small Brackets"</strong> on the Business Model Canvas (Strategyzer 9-block framework):</p>
     
+    <div style="text-align: center; margin: 12px 0;">
+      <img class="avoid-break" src="file://{BMC_SCREENSHOT_PATH}" alt="Strategyzer Business Model Canvas Large vs Small Brackets Diagram" style="width: 100%; max-width: 580px; border-radius: 6px; border: 1px solid #cbd5e1; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+      <div style="font-size: 11px; color: #64748b; margin-top: 4px; font-style: italic;">
+        Figure: Strategyzer Business Model Canvas — Blue Blocks = Large Brackets (BC_Q4), Yellow Blocks = Small Brackets (BC_Q5).
+      </div>
+    </div>
+
     <table style="margin-top: 8px; margin-bottom: 12px; width: 100%;">
       <thead>
         <tr style="background: #f1f5f9;">

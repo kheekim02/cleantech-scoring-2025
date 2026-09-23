@@ -76,6 +76,21 @@ class TestFaqAndRubricBrackets(unittest.TestCase):
         self.assertIn("BC_Q4` Large / Big Brackets", content)
         self.assertIn("BC_Q5` Small Brackets", content)
 
+    def test_08_bmc_brackets_screenshot_assets_exist(self):
+        """Verify Strategyzer screenshot files exist in docs and site assets."""
+        docs_img = self.root / "docs" / "tutorial_assets" / "bmc_brackets_strategyzer.png"
+        site_img = self.root / "site" / "img" / "bmc_brackets_strategyzer.png"
+        self.assertTrue(docs_img.exists(), "docs BMC screenshot must exist")
+        self.assertTrue(site_img.exists(), "site BMC screenshot must exist")
+        self.assertGreater(docs_img.stat().st_size, 50000, "Screenshot file must be valid PNG")
+
+    def test_09_bmc_brackets_image_referenced(self):
+        """Verify BMC screenshot is referenced in index.html, app.js, and generate_tutorials.py."""
+        self.assertIn("img/bmc_brackets_strategyzer.png", self.index_html.read_text(encoding="utf-8"))
+        self.assertIn("img/bmc_brackets_strategyzer.png", self.app_js.read_text(encoding="utf-8"))
+        self.assertIn("BMC_SCREENSHOT_PATH", self.gen_tutorials.read_text(encoding="utf-8"))
+
 
 if __name__ == "__main__":
     unittest.main()
+
