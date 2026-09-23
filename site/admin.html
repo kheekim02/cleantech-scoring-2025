@@ -53,6 +53,9 @@
       <div style="text-align: center; margin-bottom: 24px;">
         <h2 style="font-size: 24px; font-weight: 800;">Admin Portal</h2>
         <p style="color: var(--text-muted); font-size: 14px;">Enter administrator credentials.</p>
+        <p style="margin-top: 8px; font-size: 12.5px;">
+          <a href="admin_tutorial.html" target="_blank" rel="noopener noreferrer" style="color: var(--accent-blue); text-decoration: underline; font-weight: 600;">📖 View Administrator Operations Walkthrough</a>
+        </p>
       </div>
       <div class="form-group">
         <label>Admin Username</label>
@@ -75,7 +78,9 @@
   <div class="admin-container" id="admin-dashboard" style="display:none;">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
       <h1 style="font-size: 24px; margin: 0;">CleanTech Open - Admin Portal</h1>
-      <div style="display: flex; gap: 10px; align-items: center;">
+      <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+        <a href="admin_tutorial.html" target="_blank" rel="noopener noreferrer" class="btn" style="background: #0c6b5d; color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; padding: 10px 14px; font-size: 13px;" title="Open Administrator Operations Walkthrough">📖 Admin Walkthrough</a>
+        <a href="scorer_tutorial.html" target="_blank" rel="noopener noreferrer" class="btn" style="background: #0284c7; color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; padding: 10px 14px; font-size: 13px;" title="Open Judge & Scorer Walkthrough">📘 Scorer Guide</a>
         <button class="btn" style="background: #166534; color: #fff;" onclick="AdminApp.exportScores()">📥 Export Scored Data (CSV)</button>
         <button class="btn" style="background: var(--surface-sunk); color: var(--text-main); border: 1px solid var(--border);" onclick="AdminApp.logout()">Log Out</button>
       </div>

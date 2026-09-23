@@ -1,6 +1,7 @@
 import os
 import shutil
 import subprocess
+import base64
 import pymupdf
 
 DOCS_DIR = os.path.abspath("docs")
@@ -10,6 +11,15 @@ os.makedirs(DOCS_DIR, exist_ok=True)
 CHROME_PATH = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 SCREENSHOT_PATH = os.path.join(DOCS_DIR, "scoring_interface_screenshot.png")
 BMC_SCREENSHOT_PATH = os.path.join(DOCS_DIR, "tutorial_assets", "bmc_brackets_strategyzer.png")
+
+def get_base64_image(path):
+    if os.path.exists(path):
+        with open(path, "rb") as f:
+            return f"data:image/png;base64,{base64.b64encode(f.read()).decode('utf-8')}"
+    return ""
+
+SCREENSHOT_DATA_URI = get_base64_image(SCREENSHOT_PATH)
+BMC_DATA_URI = get_base64_image(BMC_SCREENSHOT_PATH)
 
 # Common styling for both PDF manuals
 CSS_BASE = """
@@ -290,6 +300,55 @@ tr:nth-child(even) td {
   display: flex;
   justify-content: space-between;
 }
+
+/* Web View & Interactive Browser Styles */
+@media print {
+  .web-nav-bar { display: none !important; }
+}
+
+@media screen {
+  body {
+    max-width: 920px;
+    margin: 20px auto 60px auto;
+    padding: 0 20px;
+    background: #f8fafc;
+  }
+  .doc-container {
+    background: #ffffff;
+    padding: 32px 36px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+  .web-nav-bar {
+    position: sticky;
+    top: 12px;
+    z-index: 100;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .web-nav-bar a, .web-nav-bar button {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 12px;
+    border-radius: 6px;
+    font-size: 12.5px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+  }
+}
 """
 
 # -------------------------------------------------------------
@@ -305,6 +364,20 @@ HTML_ADMIN = f"""<!DOCTYPE html>
   </style>
 </head>
 <body>
+
+  <div class="web-nav-bar">
+    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+      <a href="admin.html" style="background: #0c6b5d; color: #fff; border: 1px solid #0c6b5d;">← Back to Admin Portal</a>
+      <a href="scorer_tutorial.html" style="background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1;">📘 Scorer Walkthrough</a>
+      <a href="walkthrough.html" style="background: #f8fafc; color: #475569; border: 1px solid #cbd5e1;">📑 All Guides</a>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+      <a href="CleanTech_Open_Admin_Tutorial.pdf" download style="background: #166534; color: #fff; border: 1px solid #166534;">📥 Download PDF Guide</a>
+      <button onclick="window.print()" style="background: #fff; color: #334155; border: 1px solid #cbd5e1;">🖨️ Print / Save PDF</button>
+    </div>
+  </div>
+
+  <div class="doc-container">
 
   <!-- Header Banner -->
   <div class="doc-header">
@@ -528,6 +601,8 @@ HTML_ADMIN = f"""<!DOCTYPE html>
     <span>Confidential — For Internal Operations Use Only</span>
   </div>
 
+  </div> <!-- end doc-container -->
+
 </body>
 </html>
 """
@@ -545,6 +620,20 @@ HTML_SCORER = f"""<!DOCTYPE html>
   </style>
 </head>
 <body>
+
+  <div class="web-nav-bar">
+    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+      <a href="index.html" style="background: #0c6b5d; color: #fff; border: 1px solid #0c6b5d;">← Back to Scoring Interface</a>
+      <a href="admin_tutorial.html" style="background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1;">🛡️ Admin Walkthrough</a>
+      <a href="walkthrough.html" style="background: #f8fafc; color: #475569; border: 1px solid #cbd5e1;">📑 All Guides</a>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+      <a href="CleanTech_Open_Scorer_Tutorial.pdf" download style="background: #166534; color: #fff; border: 1px solid #166534;">📥 Download PDF Guide</a>
+      <button onclick="window.print()" style="background: #fff; color: #334155; border: 1px solid #cbd5e1;">🖨️ Print / Save PDF</button>
+    </div>
+  </div>
+
+  <div class="doc-container">
 
   <!-- Header Banner -->
   <div class="doc-header">
@@ -583,7 +672,7 @@ HTML_SCORER = f"""<!DOCTYPE html>
   <p>The CleanTech Open scoring interface features a high-velocity <strong>Side-by-Side Split Workspace</strong> designed to eliminate window tab flipping. The left panel is dedicated to original founder deliverables, while the right panel displays your active scoring rubric and AI guidance.</p>
 
   <!-- Real Screenshot Insertion -->
-  <img class="screenshot-img avoid-break" src="file://{SCREENSHOT_PATH}" alt="CleanTech Open Scoring Interface">
+  <img class="screenshot-img avoid-break" src="{SCREENSHOT_DATA_URI or 'file://' + SCREENSHOT_PATH}" alt="CleanTech Open Scoring Interface">
 
   <div class="card avoid-break">
     <h3 style="margin-top: 0;">Workspace Layout Overview</h3>
@@ -824,7 +913,7 @@ HTML_SCORER = f"""<!DOCTYPE html>
     <p>A frequent question from evaluators is distinguishing between <strong>"Large Brackets"</strong> and <strong>"Small Brackets"</strong> on the Business Model Canvas (Strategyzer 9-block framework):</p>
     
     <div style="text-align: center; margin: 12px 0;">
-      <img class="avoid-break" src="file://{BMC_SCREENSHOT_PATH}" alt="Strategyzer Business Model Canvas Large vs Small Brackets Diagram" style="width: 100%; max-width: 580px; border-radius: 6px; border: 1px solid #cbd5e1; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+      <img class="avoid-break" src="{BMC_DATA_URI or 'file://' + BMC_SCREENSHOT_PATH}" alt="Strategyzer Business Model Canvas Large vs Small Brackets Diagram" style="width: 100%; max-width: 580px; border-radius: 6px; border: 1px solid #cbd5e1; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
       <div style="font-size: 11px; color: #64748b; margin-top: 4px; font-style: italic;">
         Figure: Strategyzer Business Model Canvas — Blue Blocks = Large Brackets (BC_Q4), Yellow Blocks = Small Brackets (BC_Q5).
       </div>
@@ -917,6 +1006,8 @@ HTML_SCORER = f"""<!DOCTYPE html>
     <span>Scorer & Judge Guidance Manual</span>
   </div>
 
+  </div> <!-- end doc-container -->
+
 </body>
 </html>
 """
@@ -954,15 +1045,40 @@ def main():
     print("UPDATING CLEANTECH OPEN 2025 TUTORIAL MANUALS")
     print("==================================================")
 
-    # 1. Admin Tutorial
+    # 1. Admin Tutorial (local docs)
     admin_pdf_local = os.path.join(DOCS_DIR, "CleanTech_Open_Admin_Tutorial.pdf")
     compile_html_to_pdf(HTML_ADMIN, admin_pdf_local)
 
-    # 2. Scorer Tutorial
+    # 2. Scorer Tutorial (local docs)
     scorer_pdf_local = os.path.join(DOCS_DIR, "CleanTech_Open_Scorer_Tutorial.pdf")
     compile_html_to_pdf(HTML_SCORER, scorer_pdf_local)
 
-    # 3. Sync to Desktop
+    # 3. Web Deployment Sync to site/
+    SITE_DIR = os.path.abspath("site")
+    os.makedirs(SITE_DIR, exist_ok=True)
+    print("\nSyncing HTML and PDF manuals to web directory (site/)...")
+    
+    site_scorer_html = os.path.join(SITE_DIR, "scorer_tutorial.html")
+    site_admin_html = os.path.join(SITE_DIR, "admin_tutorial.html")
+    site_scorer_full_html = os.path.join(SITE_DIR, "CleanTech_Open_Scorer_Tutorial.html")
+    site_admin_full_html = os.path.join(SITE_DIR, "CleanTech_Open_Admin_Tutorial.html")
+
+    with open(site_scorer_html, "w", encoding="utf-8") as f:
+        f.write(HTML_SCORER)
+    with open(site_scorer_full_html, "w", encoding="utf-8") as f:
+        f.write(HTML_SCORER)
+    with open(site_admin_html, "w", encoding="utf-8") as f:
+        f.write(HTML_ADMIN)
+    with open(site_admin_full_html, "w", encoding="utf-8") as f:
+        f.write(HTML_ADMIN)
+
+    # Copy compiled PDFs to site/
+    shutil.copy2(scorer_pdf_local, os.path.join(SITE_DIR, "CleanTech_Open_Scorer_Tutorial.pdf"))
+    shutil.copy2(admin_pdf_local, os.path.join(SITE_DIR, "CleanTech_Open_Admin_Tutorial.pdf"))
+    print("  ✓ Synced site/scorer_tutorial.html & site/CleanTech_Open_Scorer_Tutorial.pdf")
+    print("  ✓ Synced site/admin_tutorial.html & site/CleanTech_Open_Admin_Tutorial.pdf")
+
+    # 4. Sync to Desktop
     print("\nSyncing updated PDF manuals to Desktop (/Users/geoffrey/Desktop)...")
     admin_pdf_desktop = os.path.join(DESKTOP_DIR, "CleanTech_Open_Admin_Tutorial.pdf")
     scorer_pdf_desktop = os.path.join(DESKTOP_DIR, "CleanTech_Open_Scorer_Tutorial.pdf")
@@ -972,7 +1088,7 @@ def main():
 
     print(f"  ✓ Synced: {admin_pdf_desktop} ({os.path.getsize(admin_pdf_desktop)/1024:.1f} KB)")
     print(f"  ✓ Synced: {scorer_pdf_desktop} ({os.path.getsize(scorer_pdf_desktop)/1024:.1f} KB)")
-    print("\nUpdated tutorial generation & desktop synchronization complete!")
+    print("\nUpdated tutorial generation, web sync, & desktop synchronization complete!")
 
 if __name__ == "__main__":
     main()

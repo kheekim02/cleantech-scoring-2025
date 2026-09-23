@@ -90,6 +90,40 @@ class TestFaqAndRubricBrackets(unittest.TestCase):
         self.assertIn("img/bmc_brackets_strategyzer.png", self.app_js.read_text(encoding="utf-8"))
         self.assertIn("BMC_SCREENSHOT_PATH", self.gen_tutorials.read_text(encoding="utf-8"))
 
+    def test_10_index_html_walkthrough_links(self):
+        """Verify site/index.html contains links to the Scorer Walkthrough."""
+        content = self.index_html.read_text(encoding="utf-8")
+        self.assertIn('href="scorer_tutorial.html"', content)
+        self.assertIn("Scorer Guide", content)
+        self.assertIn("View Scorer Walkthrough", content)
+
+    def test_11_admin_html_walkthrough_links(self):
+        """Verify site/admin.html contains links to Admin and Scorer Walkthroughs."""
+        admin_html = self.root / "site" / "admin.html"
+        content = admin_html.read_text(encoding="utf-8")
+        self.assertIn('href="admin_tutorial.html"', content)
+        self.assertIn('href="scorer_tutorial.html"', content)
+        self.assertIn("Admin Walkthrough", content)
+
+    def test_12_walkthrough_html_hub_exists(self):
+        """Verify site/walkthrough.html exists and links to both portals and tutorials."""
+        hub = self.root / "site" / "walkthrough.html"
+        self.assertTrue(hub.exists(), "site/walkthrough.html must exist")
+        content = hub.read_text(encoding="utf-8")
+        self.assertIn("scorer_tutorial.html", content)
+        self.assertIn("admin_tutorial.html", content)
+        self.assertIn("index.html", content)
+        self.assertIn("admin.html", content)
+
+    def test_13_web_tutorial_assets_no_broken_file_urls(self):
+        """Verify generated web tutorials exist in site/ and contain no file:// URLs."""
+        scorer_html = self.root / "site" / "scorer_tutorial.html"
+        admin_html = self.root / "site" / "admin_tutorial.html"
+        self.assertTrue(scorer_html.exists(), "site/scorer_tutorial.html must exist")
+        self.assertTrue(admin_html.exists(), "site/admin_tutorial.html must exist")
+        self.assertNotIn("file://", scorer_html.read_text(encoding="utf-8"))
+        self.assertNotIn("file://", admin_html.read_text(encoding="utf-8"))
+
 
 if __name__ == "__main__":
     unittest.main()
