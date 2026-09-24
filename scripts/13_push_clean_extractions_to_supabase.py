@@ -3,7 +3,7 @@ import glob
 import time
 import json
 import psycopg2
-import pymupdf
+
 import re
 from datetime import datetime, timezone
 
@@ -67,19 +67,28 @@ for sid, cname, payload in rows:
         continue
 
     clean_q_map = ready_cache[sid]
-    folder = os.path.join(raw_base, sid)
+    parsed_base = 'data/parsed_clean'
+    folder = os.path.join(parsed_base, sid, 'converted')
     
     # Pre-index all PDF pages for this startup
     corpus = []
     if os.path.exists(folder):
-        pdf_paths = glob.glob(os.path.join(folder, '**', '*.pdf'), recursive=True)
-        for p in pdf_paths:
-            fname = os.path.basename(p)
+        md_paths = glob.glob(os.path.join(folder, '*.md'))
+        for p in md_paths:
+            fname_pdf = os.path.basename(p).replace('.md', '')
             try:
-                doc = pymupdf.open(p)
-                for p_idx, page in enumerate(doc):
-                    txt = normalize(page.get_text())
-                    corpus.append((fname, p_idx + 1, txt))
+                with open(p, 'r', encoding='utf-8') as f:
+                    content = f.read()
+                
+                # Split by <!-- Page X -->
+                pages = re.split(r'<!--\s*Page\s*(\d+)\s*-->', content)
+                if len(pages) > 1:
+                    for i in range(1, len(pages), 2):
+                        p_num = int(pages[i])
+                        txt = normalize(pages[i+1])
+                        corpus.append((fname_pdf, p_num, txt))
+                else:
+                    corpus.append((fname_pdf, 1, normalize(content)))
             except Exception:
                 pass
 
