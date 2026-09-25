@@ -496,8 +496,63 @@ window.AdminApp = {
     if (msg) setTimeout(() => { msg.textContent = ''; }, 3500);
   },
 
-  exportScores() {
-    window.location.href = '/api/export-scores';
+  async exportScores() {
+    const btn = document.querySelector('button[onclick="AdminApp.exportScores()"]');
+    if (!btn) {
+      window.location.href = '/api/export-scores';
+      return;
+    }
+    
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '⏳ Compiling Export...';
+    btn.disabled = true;
+
+    try {
+      let offset = 0;
+      const limit = 2500;
+      let keepFetching = true;
+      let fullCsv = "";
+
+      while (keepFetching) {
+        btn.innerHTML = `⏳ Compiling Export... (${offset} rows)`;
+        const res = await fetch(`/api/export-scores?offset=${offset}&limit=${limit}&chunk=true`);
+        if (!res.ok) throw new Error("Export failed");
+        
+        const data = await res.json();
+        const { header, rows, hasMore } = data;
+        
+        if (offset === 0) {
+          fullCsv += header + '\r\n';
+        }
+        
+        if (rows && rows.length > 0) {
+          fullCsv += rows.join('\r\n') + '\r\n';
+        }
+
+        if (!hasMore) {
+          keepFetching = false;
+        } else {
+          offset += limit;
+        }
+      }
+
+      const blob = new Blob([fullCsv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `cleantech_open_scores_${new Date().toISOString().slice(0, 10)}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      alert("Export failed: " + err.message);
+      // Fallback for older browsers or fetch errors
+      window.location.href = '/api/export-scores';
+    } finally {
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+    }
   }
 };
 

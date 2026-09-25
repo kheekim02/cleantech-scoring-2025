@@ -31,6 +31,19 @@ module.exports = async (req, res) => {
       return;
     }
 
+    const isChunked = req.query.chunk === 'true';
+    let paginationSql = '';
+    const params = [];
+    let fetchLimit = 0;
+
+    if (isChunked) {
+      const limit = parseInt(req.query.limit, 10) || 2500;
+      const offset = parseInt(req.query.offset, 10) || 0;
+      fetchLimit = limit;
+      paginationSql = 'LIMIT $1 OFFSET $2';
+      params.push(limit + 1, offset);
+    }
+
     const query = `
       SELECT 
         hr.startup_id,
@@ -45,10 +58,14 @@ module.exports = async (req, res) => {
       LEFT JOIN startup_extractions se ON hr.startup_id = se.startup_id
       WHERE hr.startup_id NOT ILIKE '%solarpure%'
         AND hr.judge_id NOT IN (SELECT judge_id FROM judges WHERE is_test = true)
-      ORDER BY se.company_name ASC, hr.judge_id ASC, hr.question_id ASC;
+      ORDER BY se.company_name ASC, hr.judge_id ASC, hr.question_id ASC
+      ${paginationSql};
     `;
-    const result = await client.query(query);
+    const result = await client.query(query, params);
     await client.end();
+
+    const hasMore = isChunked && result.rows.length > fetchLimit;
+    const processRows = hasMore ? result.rows.slice(0, fetchLimit) : result.rows;
 
     const headers = [
       'Startup ID',
@@ -70,7 +87,7 @@ module.exports = async (req, res) => {
       'Scored At'
     ];
 
-    const rows = result.rows.map(r => {
+    const mappedRows = processRows.map(r => {
       let qs = [];
       try {
         qs = Array.isArray(r.human_questions) ? r.human_questions : JSON.parse(r.human_questions || '[]');
@@ -120,7 +137,15 @@ module.exports = async (req, res) => {
       ];
     });
 
-    const csvContent = [headers.join(','), ...rows.map(r => r.join(','))].join('\r\n');
+    if (isChunked) {
+      return res.status(200).json({
+        header: headers.join(','),
+        rows: mappedRows.map(r => r.join(',')),
+        hasMore
+      });
+    }
+
+    const csvContent = [headers.join(','), ...mappedRows.map(r => r.join(','))].join('\r\n');
 
     res.setHeader('Content-Type', 'text/csv; charset=utf-8');
     res.setHeader('Content-Disposition', `attachment; filename="cleantech_open_scores_${new Date().toISOString().slice(0, 10)}.csv"`);
