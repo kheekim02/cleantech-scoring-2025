@@ -1,0 +1,46 @@
+[
+  {
+    "startup": "Foregger_Energy_Solutions",
+    "q_id": "IP_Q23",
+    "min_score": 1.0,
+    "max_score": 1.0,
+    "citation_must_not_contain": [],
+    "rationale_must_not_contain": ["didn't provide a matrix", "no BCG grid"],
+    "rationale_must_contain": ["competitor"],
+    "citation_must_be_null": false,
+    "notes": "Framework Agnosticism: competitor comparison = valid differentiation"
+  },
+  {
+    "startup": "Lute_&_Ether",
+    "q_id": "T_Q10",
+    "min_score": 0.25,
+    "max_score": 1.0,
+    "citation_must_not_contain": [],
+    "rationale_must_not_contain": ["does not explicitly state the breadth"],
+    "rationale_must_contain": [],
+    "citation_must_be_null": false,
+    "notes": "Abstract Phrasing Agnosticism: listed departments = breadth"
+  },
+  {
+    "startup": "Lute_&_Ether",
+    "q_id": "BC_Q4",
+    "min_score": 0.0,
+    "max_score": 0.5,
+    "citation_must_not_contain": ["mid-sized municipal", "wastewater"],
+    "rationale_must_not_contain": ["rubric_examples"],
+    "rationale_must_contain": [],
+    "citation_must_be_null": false,
+    "notes": "Rubric Independence: rationale must be grounded in founder text only"
+  },
+  {
+    "startup": "Lute_&_Ether",
+    "q_id": "T_Q15",
+    "min_score": 0.0,
+    "max_score": 0.0,
+    "citation_must_not_contain": ["The document does not"],
+    "rationale_must_not_contain": [],
+    "rationale_must_contain": [],
+    "citation_must_be_null": true,
+    "notes": "Nullification: 0.0 score must have null citation"
+  }
+]

@@ -18,8 +18,10 @@ with open('.env') as f:
 conn = psycopg2.connect(db_url)
 cur = conn.cursor()
 
+import sys
+
 raw_base = '/Users/geoffrey/Global_Key_Advisors/Migrating_Automated_Startup_Scraper/data/raw'
-clean_cache_dir = 'data/ai_cache_clean'
+clean_cache_dir = sys.argv[1] if len(sys.argv) > 1 else 'data/ai_cache_v3_strict'
 
 def normalize(s):
     if not s: return ""
@@ -103,6 +105,7 @@ for sid, cname, payload in rows:
         if clean_item:
             q['ai_suggestion'] = clean_item.get('predicted_val')
             q['ai_confidence'] = clean_item.get('confidence')
+            q['ai_rationale'] = clean_item.get('rationale')
             cit = clean_item.get('citation')
             q['verbatim_citation'] = cit
         else:
@@ -172,6 +175,7 @@ for sid, cname, payload in rows:
         payload['meta'] = {}
     payload['meta']['clean_ready'] = True
     payload['meta']['clean_updated_at'] = datetime.now(timezone.utc).isoformat()
+    payload['meta']['model_version'] = 'v5_strict_grounded'
 
     # Save back to database
     cur.execute(
