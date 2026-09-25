@@ -96,5 +96,7 @@ module.exports = async (req, res) => {
   } catch (err) {
     console.error("Database Error:", err);
     return res.status(500).json({ error: "DB Error: " + err.message });
+  } finally {
+    try { await client.end(); } catch(e) {}
   }
 };

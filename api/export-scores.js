@@ -154,5 +154,7 @@ module.exports = async (req, res) => {
   } catch (err) {
     console.error("Export error:", err);
     return res.status(500).json({ error: "Failed to export scores: " + err.message });
+  } finally {
+    try { await client.end(); } catch(e) {}
   }
 };

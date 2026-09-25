@@ -39,5 +39,7 @@ module.exports = async (req, res) => {
   } catch (error) {
     console.error('Password change error:', error);
     return res.status(500).json({ error: 'Unable to change password.' });
+  } finally {
+    try { await client.end(); } catch(e) {}
   }
 };

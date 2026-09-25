@@ -48,5 +48,7 @@ module.exports = async (req, res) => {
   } catch (error) {
     console.error('Login error:', error);
     return res.status(500).json({ error: 'Unable to sign in.' });
+  } finally {
+    try { await client.end(); } catch(e) {}
   }
 };

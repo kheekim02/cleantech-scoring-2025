@@ -18,5 +18,7 @@ module.exports = async (req, res) => {
   } catch (error) {
     console.error('Session lookup error:', error);
     return res.status(500).json({ error: 'Unable to verify session.' });
+  } finally {
+    try { await client.end(); } catch(e) {}
   }
 };

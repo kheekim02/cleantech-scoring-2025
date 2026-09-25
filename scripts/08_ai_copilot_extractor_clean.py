@@ -9,7 +9,7 @@ OLLAMA_URL = 'http://localhost:11434/api/generate'
 MODEL = 'llama3.2:latest'
 RUBRIC_PATH = '/data/scraping/datasets/cto_accelerator/master_282_rubric.json'
 RAW_BASE_DIR = '/data/scraping/datasets/cto_accelerator/parsed_clean'
-CACHE_DIR = '/data/scraping/datasets/cto_accelerator/ai_cache_clean'
+CACHE_DIR = '/data/scraping/datasets/cto_accelerator/ai_cache_v3_strict'
 
 os.makedirs(CACHE_DIR, exist_ok=True)
 
@@ -129,7 +129,7 @@ STRICT CITATION RULES:
         'citation': None
     }
 
-def process_company(company, sample_limit=None):
+def process_company(company, target_q=None):
     cache_path = os.path.join(CACHE_DIR, f"{company}.json")
     tmp_path = f"{cache_path}.tmp"
     
@@ -147,8 +147,8 @@ def process_company(company, sample_limit=None):
         return
         
     qs_to_run = [q for q in rubric if q.get('new_q_id', q.get('q_id')) not in cache_results]
-    if sample_limit:
-        qs_to_run = qs_to_run[:sample_limit]
+    if target_q:
+        qs_to_run = [q for q in qs_to_run if q.get("new_q_id", q.get("q_id")) == target_q]
         
     if not qs_to_run:
         print(f"[{company}] Already complete ({len(cache_results)}/{len(rubric)}). Skipping.", flush=True)
@@ -186,16 +186,16 @@ def process_company(company, sample_limit=None):
                 
                 cit_preview = (res.get('citation') or '')[:70]
                 if cit_preview: cit_preview = f' | Cit: "{cit_preview}..."'
-                print(f"  -> {q_id} ({duration:.2f}s): Val={res.get('predicted_val')} Conf={res.get('confidence')}{cit_preview}", flush=True)
+                print(f"  -> {q_id} ({duration:.2f}s): Val={res.get('predicted_val')} Conf={res.get('confidence')}", flush=True)
             except Exception as e:
                 print(f"Error on {q_id}: {e}")
 
 if __name__ == '__main__':
     target = sys.argv[1] if len(sys.argv) > 1 else 'ALL'
-    limit = int(sys.argv[2]) if len(sys.argv) > 2 else None
+    target_q = sys.argv[2] if len(sys.argv) > 2 else None
     
     if target != 'ALL':
-        process_company(target, limit)
+        process_company(target, target_q)
     else:
         companies = sorted(os.listdir(RAW_BASE_DIR))
         companies = [c for c in companies if c != 'spark_inc' and not c.startswith('startup_test_')]

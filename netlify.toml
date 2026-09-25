@@ -1,4 +1,0 @@
-[build]
-  # Tell Netlify that the actual website files are inside the "site" folder
-  publish = "site"
-  command = "" # No build command is needed for a static HTML/JS site
