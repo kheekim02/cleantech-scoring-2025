@@ -63,6 +63,7 @@ module.exports = async (req, res) => {
       'AI Suggestion',
       'AI Confidence',
       'AI Concordance',
+      'AI Rationale',
       'Source Deliverable',
       'Citation Page',
       'Verbatim Citation',
@@ -91,6 +92,7 @@ module.exports = async (req, res) => {
         concordance = Math.abs(Number(r.score_value) - Number(aiSug)) < 0.001 ? 'AGREED' : 'OVERRULED';
       }
 
+      const aiRationale = matchedQ?.ai_rationale || '';
       const sourcePdf = matchedQ?.source_pdf || '';
       const pageNum = matchedQ?.page_number || '';
       const verbatimCitation = matchedQ?.verbatim_citation || '';
@@ -110,6 +112,7 @@ module.exports = async (req, res) => {
         aiSug,
         aiConf,
         escapeCsv(concordance),
+        escapeCsv(aiRationale),
         escapeCsv(sourcePdf),
         pageNum,
         escapeCsv(verbatimCitation),
