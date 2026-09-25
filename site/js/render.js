@@ -168,11 +168,12 @@ window.CTO.Render = {
                 verdictText = q.ai_suggestion === 1 ? 'YES' : 'NO';
             }
         }
-        // Only show AI-assisted scores when confidence is high (>=80%) OR there is a direct extracted citation
+        // Show AI-assisted scores when confidence is high (>=80%), there is a citation, or there is an AI rationale
         const hasCitation = !!(q.verbatim_citation && q.verbatim_citation.trim().length > 5);
+        const hasRationale = !!(q.ai_rationale && q.ai_rationale.trim().length > 5);
         const isHighConfidence = confNum >= 0.80;
         const hasValidSuggestion = q.ai_suggestion !== undefined && q.ai_suggestion !== null && verdictText !== 'N/A';
-        const showAiAssist = (isHighConfidence || hasCitation) && hasValidSuggestion;
+        const showAiAssist = (isHighConfidence || hasCitation || hasRationale) && hasValidSuggestion;
 
         const aiSuggestHtml = showAiAssist ? `
               <div class="h-ai-suggest" aria-label="AI suggestion: ${verdictText}; ${confText} confidence">
@@ -184,10 +185,20 @@ window.CTO.Render = {
               </div>
         ` : '';
         const aiAssistNote = showAiAssist ? `
-          <p class="ai-assist-note">AI is an aid, not a final score. This suggestion is shown because it has at least 80% AI confidence or an extracted source citation. Verify the source before scoring.</p>
+          <p class="ai-assist-note">AI is an aid, not a final score. Verify the deliverable in the document viewer before submitting.</p>
         ` : '';
 
-        // Prepare citation block
+        // Prepare AI diligence analysis block
+        const rationaleHtml = hasRationale ? `
+          <div class="h-card-rationale" style="margin: 0 24px 16px; padding: 12px 14px; background: rgba(59, 130, 246, 0.05); border-left: 3px solid var(--accent-blue); border-radius: 4px; font-size: 13px; line-height: 1.5; color: var(--text-main);">
+            <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+              <strong style="color: var(--accent-blue); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">AI Diligence Analysis:</strong>
+            </div>
+            <div>${this.escapeHtml(q.ai_rationale)}</div>
+          </div>
+        ` : '';
+
+        // Prepare citation block (defaulted to collapsed)
         const pageLabel = q.page_number ? ` (Page ${q.page_number})` : '';
         const docBadge = q.source_pdf ? `<span style="font-family: monospace; font-size: 11px; background: rgba(0,0,0,0.06); padding: 2px 6px; border-radius: 4px; color: var(--text-main); font-weight: 500;">📄 ${this.escapeHtml(q.source_pdf)}</span>` : '';
         const citeHint = q.page_number ? `Switched viewer to Page ${q.page_number}. Use Cmd+F / Ctrl+F in the document to locate exact text.` : `Use Cmd+F / Ctrl+F in the PDF viewer to locate this text.`;
@@ -271,6 +282,7 @@ window.CTO.Render = {
             <div class="h-card-body">
               ${safeQuestionText}
             </div>
+            ${rationaleHtml}
             <div class="h-card-actions">
               <div class="h-actions">
                 ${actionHtml}
