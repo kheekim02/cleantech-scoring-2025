@@ -152,7 +152,17 @@ CTO.App = {
         return;
       }
 
-      // Toggle citation logic for PDFs
+      // Direct jump link inside dossier
+      const jumpBtn = e.target.closest('[data-action="jump-pdf"]');
+      if (jumpBtn) {
+        e.preventDefault();
+        if (jumpBtn.dataset.pdf) {
+          CTO.Render.jumpToCitation(jumpBtn.dataset.pdf, jumpBtn.dataset.page);
+        }
+        return;
+      }
+
+      // Toggle AI Diligence Dossier logic
       let card = e.target.closest('.h-card');
       const link = e.target.closest('.link-source');
       if (link) {
@@ -162,9 +172,10 @@ CTO.App = {
           if (citeBlock) {
             const isHidden = citeBlock.style.display === 'none';
             citeBlock.style.display = isHidden ? 'block' : 'none';
-            const pageNum = link.dataset.page;
-            const pageText = pageNum ? ` (p. ${pageNum})` : '';
-            link.innerHTML = isHidden ? `${CTO.Render.icons.link} Hide Citation` : `${CTO.Render.icons.link} View AI Citation${pageText}`;
+            const dossierTitle = link.dataset.title || 'AI Diligence Dossier';
+            link.innerHTML = isHidden 
+              ? `${CTO.Render.icons.link} Collapse ${dossierTitle} ↑` 
+              : `${CTO.Render.icons.link} Expand ${dossierTitle} ↓`;
             
             // Auto-jump viewer to document & page when opening citation
             if (isHidden && link.dataset.pdf) {

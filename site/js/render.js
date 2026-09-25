@@ -188,39 +188,80 @@ window.CTO.Render = {
           <p class="ai-assist-note">AI is an aid, not a final score. Verify the deliverable in the document viewer before submitting.</p>
         ` : '';
 
-        // Prepare AI diligence analysis block
-        const rationaleHtml = hasRationale ? `
-          <div class="h-card-rationale" style="margin: 0 24px 16px; padding: 12px 14px; background: rgba(59, 130, 246, 0.05); border-left: 3px solid var(--accent-blue); border-radius: 4px; font-size: 13px; line-height: 1.5; color: var(--text-main);">
-            <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
-              <strong style="color: var(--accent-blue); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">AI Diligence Analysis:</strong>
-            </div>
-            <div>${this.escapeHtml(q.ai_rationale)}</div>
-          </div>
-        ` : '';
-
-        // Prepare citation block (defaulted to collapsed)
-        const pageLabel = q.page_number ? ` (Page ${q.page_number})` : '';
-        const docBadge = q.source_pdf ? `<span style="font-family: monospace; font-size: 11px; background: rgba(0,0,0,0.06); padding: 2px 6px; border-radius: 4px; color: var(--text-main); font-weight: 500;">📄 ${this.escapeHtml(q.source_pdf)}</span>` : '';
-        const citeHint = q.page_number ? `Switched viewer to Page ${q.page_number}. Use Cmd+F / Ctrl+F in the document to locate exact text.` : `Use Cmd+F / Ctrl+F in the PDF viewer to locate this text.`;
-
-        const citeHtml = hasCitation ? `
-          <div class="h-card-citation" style="display: none; padding: 12px; background: #fff8e1; border-left: 3px solid var(--accent-yellow); margin: 0 0 16px 0; font-size: 13px; color: var(--text-main);">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 6px;">
-              <strong style="color: var(--accent-orange);">AI Citation${pageLabel}:</strong>
-              <div style="display: flex; gap: 6px; align-items: center;">
-                ${docBadge}
-              </div>
-            </div>
-            "${this.escapeHtml(q.verbatim_citation)}"<br>
-            <em class="ai-citation-disclaimer">AI-extracted citation — verify it against the source document before relying on it.</em>
-            <em style="color: var(--text-muted); display: block; margin-top: 6px;">${citeHint}</em>
-          </div>
-        ` : '';
-
-        const linkPageText = q.page_number ? ` (p. ${q.page_number})` : '';
+        // Prepare AI Diligence Dossier (Concept 1: Dual-Tier Drawer, Collapsed by Default)
+        const hasDossier = hasRationale || hasCitation;
+        const pageLabel = q.page_number ? ` (p. ${q.page_number})` : '';
+        const docBadge = q.source_pdf ? `<span class="h-dossier-pdf-badge" title="${this.escapeHtml(q.source_pdf)}">📄 ${this.escapeHtml(q.source_pdf)}</span>` : '';
         const safePdf = (q.source_pdf || '').replace(/"/g, '&quot;');
         const safePage = q.page_number || '';
-        const linkHtml = hasCitation ? `<a href="#" class="link-source" data-action="toggle-cite" data-pdf="${safePdf}" data-page="${safePage}">${this.icons.link} View AI Citation${linkPageText}</a>` : `<span style="color:var(--text-faint); font-size:13px;">No citation extracted</span>`;
+
+        const jumpBtnHtml = q.source_pdf ? `
+          <a href="#" class="h-dossier-jump-btn" data-action="jump-pdf" data-pdf="${safePdf}" data-page="${safePage}">
+            Auto-Jump to Page ${q.page_number || 1} ↗
+          </a>
+        ` : '';
+
+        // Tier 1: Auditor Assessment & Deficit Breakdown
+        const auditRationale = hasRationale ? this.escapeHtml(q.ai_rationale) : 'No automated analysis recorded for this criterion.';
+        const tier1Html = `
+          <div class="h-dossier-tier1">
+            <div class="h-dossier-tier1-header">
+              <span class="h-dossier-tier1-title">
+                ${this.icons.spark || ''} Auditor Assessment & Deficit Breakdown
+              </span>
+              <span class="h-dossier-conf-badge">CONFIDENCE: ${confText}</span>
+            </div>
+            <div class="h-dossier-rationale-text">
+              ${auditRationale}
+            </div>
+          </div>
+        `;
+
+        // Tier 2: Verbatim Founder Citation
+        const tier2Html = hasCitation ? `
+          <div class="h-dossier-tier2">
+            <div class="h-dossier-tier2-header">
+              <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; min-width: 0; max-width: 100%;">
+                <strong style="color: var(--accent-yellow); font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">
+                  Verbatim Founder Citation${pageLabel}:
+                </strong>
+                ${docBadge}
+              </div>
+              ${jumpBtnHtml}
+            </div>
+            <blockquote class="h-dossier-citation-quote">
+              “${this.escapeHtml(q.verbatim_citation)}”
+            </blockquote>
+            <div style="margin-top: 8px; font-family: var(--mono); font-size: 10px; color: var(--text-muted);">
+              Verified verbatim against PDF character map &bull; OCR verified
+            </div>
+          </div>
+        ` : `
+          <div class="h-dossier-tier2-empty">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px;">
+              <span style="font-family: var(--mono); font-size: 11px; color: var(--text-muted); overflow-wrap: anywhere; word-break: break-word;">
+                ℹ️ No verbatim quote extracted — score awarded based on absent or insufficient deliverable documentation.
+              </span>
+              ${docBadge}
+            </div>
+          </div>
+        `;
+
+        // Combined Drawer HTML (default collapsed: style="display: none;")
+        const citeHtml = hasDossier ? `
+          <div class="h-card-citation" style="display: none;">
+            ${tier1Html}
+            ${tier2Html}
+          </div>
+        ` : '';
+
+        // Footer Toggle Link
+        const dossierTitle = hasCitation ? `AI Diligence Dossier & Citation${pageLabel}` : `AI Diligence Dossier`;
+        const linkHtml = hasDossier ? `
+          <a href="#" class="link-source" data-action="toggle-cite" data-title="${dossierTitle}" data-pdf="${safePdf}" data-page="${safePage}">
+            ${this.icons.link} Expand ${dossierTitle} ↓
+          </a>
+        ` : `<span style="font-family: var(--mono); color:var(--text-faint); font-size:12px;">No automated analysis available</span>`;
 
         
         
@@ -282,7 +323,6 @@ window.CTO.Render = {
             <div class="h-card-body">
               ${safeQuestionText}
             </div>
-            ${rationaleHtml}
             <div class="h-card-actions">
               <div class="h-actions">
                 ${actionHtml}
