@@ -56,7 +56,7 @@ class GoldenEntry:
         return True, "PASSED"
 
 class IndependentVerifier:
-    def __init__(self, golden_dataset_path: str, raw_base_dir: str = '/data/scraping/datasets/cto_accelerator/parsed_clean'):
+    def __init__(self, golden_dataset_path: str, raw_base_dir: str = '/data/scraping/datasets/cto_accelerator/parsed_clean_v4'):
         self.golden_path = golden_dataset_path
         self.raw_base_dir = raw_base_dir
         self.golden_dataset: List[GoldenEntry] = self.load_golden()

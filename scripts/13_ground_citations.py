@@ -21,22 +21,15 @@ import json
 import time
 from typing import Optional
 
-CACHE_DIR = '/data/scraping/datasets/cto_accelerator/ai_cache_v3_strict'
-RAW_BASE_DIR = '/data/scraping/datasets/cto_accelerator/parsed_clean'
-GROUNDING_LOG = '/data/scraping/datasets/cto_accelerator/grounding_report.md'
+import argparse
 
-CAT_DOC_PATTERNS = {
-    'BC': [r'Canvas', r'EBD3', r'M3'],
-    'ES': [r'Executive_Summary', r'EBD1', r'Summary'],
-    'IS': [r'EBD2', r'M2', r'GHG', r'Inclusion'],
-    'M': [r'M4', r'EBD3', r'Customer'],
-    'PMF': [r'M3', r'M1', r'CustomerDiscovery', r'Canvas'],
-    'TP': [r'EBD4', r'TechnologyValidation', r'Patent'],
-    'F': [r'M6', r'FinancialProjection', r'Financ'],
-    'T': [r'M8', r'Team', r'Targets'],
-    'IP': [r'Pitch', r'Deck', r'Investor', r'EBD8'],
-    'L': [r'M7', r'Inclusion', r'Legal', r'Patent']
-}
+# Ground the shadow generation against the cleaned v4 tree. These defaults
+# refuse the shipped cache and the previous cleaned tree.
+DEFAULT_CACHE_DIR = '/data/scraping/datasets/cto_accelerator/ai_cache_v4_shadow'
+DEFAULT_PARSED_DIR = '/data/scraping/datasets/cto_accelerator/parsed_clean_v4'
+DEFAULT_REPORT = '/data/scraping/datasets/cto_accelerator/grounding_report_v4.md'
+PRODUCTION_CACHE = 'ai_cache_v3_strict'
+PREVIOUS_PARSED = 'parsed_clean'
 
 # Patterns that indicate the LLM wrote analytical commentary, not a verbatim quote
 LLM_COMMENTARY_PREFIXES = [
@@ -136,7 +129,14 @@ def verify_citation_verbatim(citation: str, doc_text_normalized: str) -> bool:
 
     return False
 
-def ground_citations():
+def refuse_production_path(path: str, banned_name: str) -> None:
+    """Stop before a run can rewrite the shipped cache or the previous cleaned tree."""
+    norm = os.path.abspath(path).rstrip(os.sep)
+    if os.path.basename(norm) == banned_name:
+        raise SystemExit(f"Refusing production path {norm}")
+
+
+def ground_citations(cache_dir: str, parsed_dir: str, report_path: str) -> None:
     print("=" * 60)
     print("DETERMINISTIC VERBATIM GROUNDING FILTER")
     print("=" * 60)
@@ -151,12 +151,15 @@ def ground_citations():
 
     log_entries = []
 
-    for filename in sorted(os.listdir(CACHE_DIR)):
+    if not os.path.isdir(cache_dir):
+        raise SystemExit(f"Shadow cache is missing: {cache_dir}")
+
+    for filename in sorted(os.listdir(cache_dir)):
         if not filename.endswith('.json'):
             continue
 
         company = filename.replace('.json', '')
-        filepath = os.path.join(CACHE_DIR, filename)
+        filepath = os.path.join(cache_dir, filename)
 
         with open(filepath, 'r', encoding='utf-8') as f:
             try:
@@ -165,7 +168,7 @@ def ground_citations():
                 continue
 
         # Load ALL source documents for this company (not just category-specific)
-        cat_dir = os.path.join(RAW_BASE_DIR, company, 'converted')
+        cat_dir = os.path.join(parsed_dir, company, 'converted')
         full_doc_text = get_all_doc_text(cat_dir)
         doc_normalized = normalize(full_doc_text)
 
@@ -222,7 +225,7 @@ def ground_citations():
             print(f"  Processed {stats['files_processed']} files...", flush=True)
 
     # Write grounding report
-    with open(GROUNDING_LOG, 'w', encoding='utf-8') as f:
+    with open(report_path, 'w', encoding='utf-8') as f:
         f.write("# Deterministic Verbatim Grounding Report\n\n")
         f.write(f"- **Total Citations Evaluated:** {stats['total_citations']}\n")
         f.write(f"- **Kept (Verbatim Match):** {stats['kept_verbatim']}\n")
@@ -243,8 +246,20 @@ def ground_citations():
     print(f"  Kept (Verbatim):       {stats['kept_verbatim']}")
     print(f"  Nullified (Commentary):{stats['nullified_commentary']}")
     print(f"  Nullified (Fabricated):{stats['nullified_fabricated']}")
-    print(f"  Report: {GROUNDING_LOG}")
+    print(f"  Report: {report_path}")
     print("=" * 60)
 
+
+def main(argv=None) -> None:
+    parser = argparse.ArgumentParser(description="Ground shadow-cache citations against parsed_clean_v4.")
+    parser.add_argument("--cache-dir", default=DEFAULT_CACHE_DIR)
+    parser.add_argument("--parsed-dir", default=DEFAULT_PARSED_DIR)
+    parser.add_argument("--report", default=DEFAULT_REPORT)
+    args = parser.parse_args(argv)
+    refuse_production_path(args.cache_dir, PRODUCTION_CACHE)
+    refuse_production_path(args.parsed_dir, PREVIOUS_PARSED)
+    ground_citations(args.cache_dir, args.parsed_dir, args.report)
+
+
 if __name__ == '__main__':
-    ground_citations()
+    main()

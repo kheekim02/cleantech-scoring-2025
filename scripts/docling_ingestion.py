@@ -129,7 +129,7 @@ UNIVERSAL_SCAFFOLDING_PATTERNS = [
     r'(?i)\(?\s*\d+[,\d]*\s*(?:total\s*)?characters?\s*(?:limit|max|maximum)[^\)\n]*\)?',
     r'(?i)upload\s+this\s+document\s+as\s+teamname[^\n]*',
     r'(?i)^#*\s*(?:instructions?|directions?):?.*$',
-    r'(?i)^#*\s*essential\s+business\s+deliverable\s*#\d+.*$',
+    r'(?im)^.*essential\s+business\s+deliverable.*$',
     r'(?i)^#*\s*module\s*\d+.*instructions:?.*$',
     r"(?is)loose\s+example:\s*[\u201c\"'].*?[\u201d\"']\s*",
     r"(?is)example:\s*[\u201c\"']blair\s+smith.*?\(source\s+with\s+more\s+examples\)\s*",

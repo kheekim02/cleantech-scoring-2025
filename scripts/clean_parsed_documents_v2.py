@@ -65,7 +65,9 @@ def clean_markdown_text(text, doc_type_code, catalog):
         
         # New requirements:
         r'(?im)^.*(?:instructions?|directions?):.*$',
-        r'(?im)^[\s\d.]*essential\s+business\s+deliverable:?.*$',
+        # Any line that names the template deliverable, including headings and
+        # "Key Deliverable:" instructions that do not start the line with it.
+        r'(?im)^.*essential\s+business\s+deliverable.*$',
         r'(?im)^.*upload\s+(?:this\s+document\s+)?as.*$',
         r'(?im)^.*teamname_.*$',
         r'(?is)if available, and relevant, provide written technology-related testimonials.*?\(one to three pages maximum\)\.?'

@@ -38,17 +38,20 @@ logger = logging.getLogger("extractor_v2")
 DEFAULT_SGLANG_URL = os.environ.get("SGLANG_BASE_URL", "http://127.0.0.1:30000")
 DEFAULT_RUBRIC_PATH = "master_282_rubric.json"
 REMOTE_DATASET_ROOT = "/data/scraping/datasets/cto_accelerator"
-REMOTE_DOCLING_DIR = "/data/scraping/data/docling_clean"
+# v4 chunks are classified with the current resolver. docling_clean only has
+# 17 and 2DaLoop from before that resolver, so a rerun must not reuse it.
+REMOTE_DOCLING_DIR = "/data/scraping/data/docling_clean_v4"
 SHADOW_CACHE_NAME = "ai_cache_v4_shadow"
 ALLOWLIST_NAME = "active_startup_allowlist.json"
 DEFAULT_RAW_DIR = os.path.join(REMOTE_DATASET_ROOT, "raw")
 
 
 def default_docling_dir() -> str:
-    """Use the server chunk cache when this process is on the dataset host."""
-    if os.path.isdir(REMOTE_DOCLING_DIR):
+    """Use a fresh server chunk cache when this process is on the dataset host."""
+    if os.path.isdir(REMOTE_DATASET_ROOT):
+        os.makedirs(REMOTE_DOCLING_DIR, exist_ok=True)
         return REMOTE_DOCLING_DIR
-    return "data/docling_clean"
+    return "data/docling_clean_v4"
 
 
 def default_cache_dir() -> str:

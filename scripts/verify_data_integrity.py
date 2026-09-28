@@ -1,72 +1,102 @@
+import argparse
 import os
+import sys
 import glob
-from pathlib import Path
 
-def main():
-    parsed_clean_dir = "/data/scraping/datasets/cto_accelerator/parsed_clean/"
-    
-    # 1. Assert: Exactly 0 files in parsed_clean/ are < 50 bytes for any primary deliverable.
-    # Primary deliverables match EBD1-9, BMC, etc.
-    primary_markers = ["EBD", "Impact", "Customer", "Technology", "Executive", "BMC", "BusinessModel", "Strategyzer", "Financial", "ProForma", "Pitch", "InvestorDeck", "SlideDeck"]
-    
+DEFAULT_PARSED_DIR = "/data/scraping/datasets/cto_accelerator/parsed_clean_v4/"
+
+# Filename tokens for deliverables the scorer treats as primary sources.
+PRIMARY_MARKERS = [
+    "EBD",
+    "Impact",
+    "Customer",
+    "Technology",
+    "Executive",
+    "BMC",
+    "BusinessModel",
+    "Strategyzer",
+    "Financial",
+    "ProForma",
+    "Pitch",
+    "InvestorDeck",
+    "SlideDeck",
+]
+
+# Template phrases that must not survive in the cleaned tree.
+SCAFFOLD_INDICATORS = [
+    "instructions:",
+    "upload this document as",
+    "teamname_",
+    "do not duplicate",
+    "essential business deliverable",
+]
+
+FOREGGER_DECK = (
+    "Foregger_Energy_Solutions",
+    "converted",
+    "11_FES_CTO_Slide_Deck.pdf.md",
+)
+FOREGGER_MIN_CHARS = 3000
+PRIMARY_MIN_CHARS = 50
+
+
+def audit(parsed_dir: str) -> list[str]:
+    """Return one message per failed check. An empty list is a pass."""
+    failures = []
+    if not os.path.isdir(parsed_dir):
+        return [f"parsed directory is missing: {parsed_dir}"]
+
     empty_primary = []
-    scaffolded_files = []
-    
-    scaffold_indicators = [
-        "instructions:",
-        "upload this document as",
-        "teamname_",
-        "do not duplicate"
-    ]
-    
-    all_mds = glob.glob(os.path.join(parsed_clean_dir, "**/*.md"), recursive=True)
-    
-    for md in all_mds:
-        filename = os.path.basename(md)
-        is_primary = any(m.lower() in filename.lower() for m in primary_markers)
-        
-        with open(md, "r", encoding="utf-8") as f:
-            content = f.read()
-            
-        if is_primary:
-            if "Tensor_Planet" in md and "14_EBD5_Three-Year_Financial_Projection.pdf.md" in md:
-                pass
-            elif len(content.strip()) < 50:
-                empty_primary.append((md, len(content.strip())))
-                
-        content_lower = content.lower()
-        for ind in scaffold_indicators:
-            if ind in content_lower:
-                scaffolded_files.append((md, ind))
-                
-    # 3. Audit specific test cases
-    # Verify Foregger_Energy_Solutions/converted/11_FES_CTO_Slide_Deck.pdf.md has > 3,000 chars of OCR text.
-    fes_deck = os.path.join(parsed_clean_dir, "Foregger_Energy_Solutions", "converted", "11_FES_CTO_Slide_Deck.pdf.md")
-    
-    print("\n--- Integrity Audit ---")
+    scaffolded = []
+    markdowns = glob.glob(os.path.join(parsed_dir, "**/*.md"), recursive=True)
+    for path in markdowns:
+        filename = os.path.basename(path)
+        is_primary = any(marker.lower() in filename.lower() for marker in PRIMARY_MARKERS)
+        with open(path, "r", encoding="utf-8", errors="replace") as handle:
+            content = handle.read()
+        if is_primary and len(content.strip()) < PRIMARY_MIN_CHARS:
+            empty_primary.append((path, len(content.strip())))
+        lowered = content.lower()
+        for indicator in SCAFFOLD_INDICATORS:
+            if indicator in lowered:
+                scaffolded.append((path, indicator))
+
     if empty_primary:
-        print(f"FAIL: Found {len(empty_primary)} empty primary deliverables (< 50 bytes):")
-        for f, s in empty_primary[:5]:
-            print(f"  {f} ({s} bytes)")
+        preview = ", ".join(f"{path} ({size} chars)" for path, size in empty_primary[:5])
+        failures.append(
+            f"{len(empty_primary)} primary deliverables are under {PRIMARY_MIN_CHARS} characters: {preview}"
+        )
+    if scaffolded:
+        preview = ", ".join(f"{path} [{indicator}]" for path, indicator in scaffolded[:5])
+        failures.append(f"{len(scaffolded)} files still contain template scaffolding: {preview}")
+
+    deck = os.path.join(parsed_dir, *FOREGGER_DECK)
+    if not os.path.exists(deck):
+        failures.append(f"Foregger slide deck is missing: {deck}")
     else:
-        print("PASS: 0 primary deliverables are < 50 bytes.")
-        
-    if scaffolded_files:
-        print(f"FAIL: Found {len(scaffolded_files)} files with scaffolding leakage:")
-        for f, ind in scaffolded_files[:5]:
-            print(f"  {f} (found '{ind}')")
-    else:
-        print("PASS: 0 files contain specific scaffolding leakage instructions.")
-        
-    if os.path.exists(fes_deck):
-        with open(fes_deck, "r", encoding="utf-8") as f:
-            c = f.read()
-            if len(c) > 3000:
-                print(f"PASS: Foregger Energy Solutions slide deck OCR looks good ({len(c)} chars).")
-            else:
-                print(f"FAIL: Foregger Energy Solutions slide deck OCR is too small ({len(c)} chars).")
-    else:
-        print(f"FAIL: Foregger Energy Solutions slide deck is missing: {fes_deck}")
+        with open(deck, "r", encoding="utf-8", errors="replace") as handle:
+            size = len(handle.read())
+        if size <= FOREGGER_MIN_CHARS:
+            failures.append(
+                f"Foregger slide deck OCR is too small ({size} chars, need more than {FOREGGER_MIN_CHARS})"
+            )
+    return failures
+
+
+def main(argv=None) -> int:
+    parser = argparse.ArgumentParser(description="Fail when cleaned founder markdown is incomplete or still contains template text.")
+    parser.add_argument("--parsed-dir", default=DEFAULT_PARSED_DIR)
+    args = parser.parse_args(argv)
+
+    print("\n--- Integrity Audit ---")
+    failures = audit(args.parsed_dir)
+    if failures:
+        for message in failures:
+            print(f"FAIL: {message}")
+        return 1
+    print("PASS: primary deliverables have text, template lines are gone, and the Foregger deck is present.")
+    return 0
+
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

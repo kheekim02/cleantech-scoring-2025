@@ -66,28 +66,33 @@
     "updated_this_lock": [
       "scripts/14_ai_copilot_extractor_v2.py",
       "scripts/docling_ingestion.py",
-      "scripts/08_ai_copilot_extractor_clean.py"
+      "scripts/08_ai_copilot_extractor_clean.py",
+      "scripts/13_ground_citations.py",
+      "scripts/11_independent_verifier.py",
+      "scripts/clean_parsed_documents_v2.py",
+      "scripts/ocr_raster_deliverables.py",
+      "scripts/verify_data_integrity.py"
     ],
     "already_identical": [
       "scripts/15_push_v2_extractions_to_supabase.py",
       "src/scorer/schemas.py",
-      "scripts/13_ground_citations.py",
       "scripts/clean_parsed_documents.py",
-      "scripts/clean_parsed_documents_v2.py",
-      "scripts/ocr_raster_deliverables.py",
-      "scripts/verify_data_integrity.py",
       "scripts/prompt_strategies.py",
       "scripts/10_prompt_optimizer.py",
-      "scripts/11_independent_verifier.py",
       "scripts/12_optimization_loop.py"
     ],
     "v1_extractor": "Exits unless CTO_ALLOW_V1_EXTRACTOR=1. An opted-in rerun writes to ai_cache_v1_hold, not ai_cache_v3_strict and not a recreated ai_cache_clean.",
     "push_scripts": "Unchanged. scripts/13_push_clean_extractions_to_supabase.py still commits to startup_extractions and defaults to data/ai_cache_v3_strict. scripts/15_push_v2_extractions_to_supabase.py still requires --commit and defaults to data/ai_cache_v2. Neither is pointed at ai_cache_v4_shadow."
   },
   "sha256": {
-    "scripts/14_ai_copilot_extractor_v2.py": "fe8422140cc45f7643b2667c3d37f1d5d72184c22810ef6f06c8dcec55e63eb2",
-    "scripts/docling_ingestion.py": "20fa178c3adaa64f3e33855648257be78831a88f0f0b17abf1310be965c92bba",
+    "scripts/14_ai_copilot_extractor_v2.py": "9e8336f20a0dbd2805a2c311fb9a2a4a1c314a4b361714bd1fb83e69efe9f3fa",
+    "scripts/docling_ingestion.py": "0ac198863c420e2c8329f40bf6908c373c5500fbd7347f4f3e31ee49d2ccf5d7",
     "scripts/08_ai_copilot_extractor_clean.py": "835c494ce5f1522e9b53b764a51057c4827602b0c7659a7a97c7413510aaafc3",
+    "scripts/13_ground_citations.py": "18773f5f1ae5909fdc1a705c4a81704c232b289188d637571d49061d04f8109c",
+    "scripts/11_independent_verifier.py": "a44307407b3231eda7a5683c94131f3a355d090e748246880ffd002f56f580b1",
+    "scripts/clean_parsed_documents_v2.py": "192a008591011673d205b5e95118eb63abfb8e56d270b55db37b10b7029223a0",
+    "scripts/ocr_raster_deliverables.py": "5d70a89791f60736552d832d5ba755ac65870b9c4fa35c47c27b539988839bf6",
+    "scripts/verify_data_integrity.py": "f3d25890d667abf10aef8333c1e15bbafd7cff54cd53f49fd2ff92ec56bec005",
     "data/active_startup_allowlist.json": "e0cb3d63521b4b2f3524613d8d5b0c7ef87cf2d2ba7bd317c6233c331d4c12bc"
   },
   "phase2_routing": {
@@ -101,5 +106,15 @@
     "context": "Primary documents are placed first inside a 300000 character cap. A category with no classified primary file is scored null at confidence 0 and the model is not called.",
     "classifier": "Deliverable-name aliases outrank module numbers. Bare Canvas, Team, Legal, and Patent tokens are not classifiers. EBD9 is not folded into the executive summary. A generic filename is classified from the opening template title.",
     "text_verified": "tests/test_cohort_doc_mapping.py reads all 92 allowlisted companies in data/parsed_clean (1465 PDFs). A template title in the opening must land in the same interface group as the resolved type."
+  },
+  "phase3_clean_tree": {
+    "remote": "/data/scraping/datasets/cto_accelerator/parsed_clean_v4",
+    "source": "/data/scraping/datasets/cto_accelerator/parsed",
+    "previous_tree_left_in_place": "/data/scraping/datasets/cto_accelerator/parsed_clean",
+    "files": 1509,
+    "gate": "scripts/verify_data_integrity.py defaults to parsed_clean_v4 and exits 1 on failure. It passed there and fails on parsed_clean.",
+    "downstream": "Grounding defaults to ai_cache_v4_shadow plus parsed_clean_v4 and refuses ai_cache_v3_strict. The verifier reads parsed_clean_v4. New Docling chunks go to docling_clean_v4, not the two stale companies in docling_clean. Push scripts are unchanged.",
+    "tensor_planet_financials": "Embedded PDF text was written into parsed/ because the prior markdown was 22 bytes. The raw PDF was not deleted.",
+    "raster_pdfs": "33 image-only PDFs already had markdown. No second OCR pass was required."
   }
 }
