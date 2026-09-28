@@ -145,6 +145,11 @@ window.AdminApp = {
             }
         });
     }
+    // 1b. Calculate global assignment counts for the list badges
+    const globalCounts = {};
+    this.data.assignments.forEach(a => {
+        globalCounts[a.startup_id] = (globalCounts[a.startup_id] || 0) + 1;
+    });
 
     let countNotStarted = 0, countInProgress = 0, countFullyScored = 0;
     this.data.startups.forEach(s => {
