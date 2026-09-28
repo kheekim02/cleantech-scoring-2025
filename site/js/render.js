@@ -263,7 +263,7 @@ window.CTO.Render = {
           <a href="#" class="link-source" data-action="toggle-cite" data-title="${dossierTitle}" data-pdf="${safePdf}" data-page="${safePage}">
             ${this.icons.link} Expand ${dossierTitle} ↓
           </a>
-        ` : `<span style="font-family: var(--mono); color:var(--text-faint); font-size:12px;">No automated analysis available</span>`;
+        ` : '';
 
         
         
