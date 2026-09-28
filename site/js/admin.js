@@ -135,61 +135,66 @@ window.AdminApp = {
     const chartContainer = document.getElementById('assignment-chart');
     const selectedJudge = document.getElementById('judge-select').value;
     
-    // 1. Calculate global assignment counts for the Bar Chart
-    const globalCounts = {};
-    this.data.assignments.forEach(a => {
-        globalCounts[a.startup_id] = (globalCounts[a.startup_id] || 0) + 1;
-    });
+    // 1. Calculate scoring progress for the Bar Chart
+    const progressByStartup = {};
+    if (this.data.progress) {
+        this.data.progress.forEach(p => {
+            const count = parseInt(p.answered_count || 0, 10);
+            if (!progressByStartup[p.startup_id] || count > progressByStartup[p.startup_id]) {
+                progressByStartup[p.startup_id] = count;
+            }
+        });
+    }
 
-    let count0 = 0, count1 = 0, count2 = 0;
+    let countNotStarted = 0, countInProgress = 0, countFullyScored = 0;
     this.data.startups.forEach(s => {
-        const c = globalCounts[s.id] || 0;
-        if (c === 0) count0++;
-        else if (c === 1) count1++;
-        else count2++;
+        const maxScoreCount = progressByStartup[s.id] || 0;
+        if (maxScoreCount === 0) countNotStarted++;
+        else if (maxScoreCount < 282) countInProgress++;
+        else countFullyScored++;
     });
     
     // Render Bar Chart with fixed pixel heights and aligned baseline
-    const maxVal = Math.max(count0, count1, count2, 1);
+    const maxVal = Math.max(countNotStarted, countInProgress, countFullyScored, 1);
     const trackHeight = 90;
-    const bar0 = count0 > 0 ? Math.max(8, Math.round((count0 / maxVal) * trackHeight)) : 3;
-    const bar1 = count1 > 0 ? Math.max(8, Math.round((count1 / maxVal) * trackHeight)) : 3;
-    const bar2 = count2 > 0 ? Math.max(8, Math.round((count2 / maxVal) * trackHeight)) : 3;
+    const bar0 = countNotStarted > 0 ? Math.max(8, Math.round((countNotStarted / maxVal) * trackHeight)) : 3;
+    const bar1 = countInProgress > 0 ? Math.max(8, Math.round((countInProgress / maxVal) * trackHeight)) : 3;
+    const bar2 = countFullyScored > 0 ? Math.max(8, Math.round((countFullyScored / maxVal) * trackHeight)) : 3;
     
     if (chartContainer) {
         chartContainer.innerHTML = `
           <div style="display: flex; justify-content: space-around; gap: 8px; margin-top: 12px; padding: 0 4px;">
             
             <div style="display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 0;">
-               <span style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">${count0}</span>
+               <span style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">${countNotStarted}</span>
                <div style="height: ${trackHeight}px; width: 100%; display: flex; align-items: flex-end; justify-content: center;">
-                 <div style="width: 38px; height: ${bar0}px; background: #fde047; border-radius: 4px 4px 0 0; border: 1px solid #eab308; border-bottom: none; box-sizing: border-box;"></div>
+                 <div style="width: 38px; height: ${bar0}px; background: #e2e8f0; border-radius: 4px 4px 0 0; border: 1px solid #cbd5e1; border-bottom: none; box-sizing: border-box;"></div>
                </div>
                <div style="width: 100%; height: 1px; background: var(--border);"></div>
                <div style="min-height: 32px; display: flex; align-items: flex-start; justify-content: center; text-align: center; margin-top: 6px;">
-                 <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); line-height: 1.2;">Unassigned</span>
+                 <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); line-height: 1.2;">Not Started</span>
                </div>
             </div>
             
             <div style="display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 0;">
-               <span style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">${count1}</span>
+               <span style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">${countInProgress}</span>
                <div style="height: ${trackHeight}px; width: 100%; display: flex; align-items: flex-end; justify-content: center;">
-                 <div style="width: 38px; height: ${bar1}px; background: #fb923c; border-radius: 4px 4px 0 0; border: 1px solid #ea580c; border-bottom: none; box-sizing: border-box;"></div>
+                 <div style="width: 38px; height: ${bar1}px; background: #fef08a; border-radius: 4px 4px 0 0; border: 1px solid #eab308; border-bottom: none; box-sizing: border-box;"></div>
                </div>
                <div style="width: 100%; height: 1px; background: var(--border);"></div>
                <div style="min-height: 32px; display: flex; align-items: flex-start; justify-content: center; text-align: center; margin-top: 6px;">
-                 <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); line-height: 1.2;">Assigned (1)</span>
+                 <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); line-height: 1.2;">In Progress</span>
                </div>
             </div>
             
             <div style="display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 0;">
-               <span style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">${count2}</span>
+               <span style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">${countFullyScored}</span>
                <div style="height: ${trackHeight}px; width: 100%; display: flex; align-items: flex-end; justify-content: center;">
                  <div style="width: 38px; height: ${bar2}px; background: #4ade80; border-radius: 4px 4px 0 0; border: 1px solid #16a34a; border-bottom: none; box-sizing: border-box;"></div>
                </div>
                <div style="width: 100%; height: 1px; background: var(--border);"></div>
                <div style="min-height: 32px; display: flex; align-items: flex-start; justify-content: center; text-align: center; margin-top: 6px;">
-                 <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); line-height: 1.2;">Fully Assigned (2+)</span>
+                 <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); line-height: 1.2;">Fully Scored</span>
                </div>
             </div>
             
