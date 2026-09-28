@@ -63,22 +63,80 @@ def create_instructor_client(sglang_url: str, timeout: int = 60) -> Any:
     return client
 
 
+def build_doc_manifest(chunks: list[dict[str, Any]]) -> dict[str, list[str]]:
+    """Build a mapping from doc_type code to list of unique source_pdf filenames.
+
+    This gives the extractor the exact filenames present for each deliverable
+    category so the system prompt can reference them by name.
+    """
+    manifest: dict[str, list[str]] = {}
+    seen: set[tuple[str, str]] = set()
+    for chunk in chunks:
+        doc_type = chunk.get("doc_type", "OTHER")
+        source_pdf = chunk.get("source_pdf", "")
+        if not source_pdf or (doc_type, source_pdf) in seen:
+            continue
+        seen.add((doc_type, source_pdf))
+        manifest.setdefault(doc_type, []).append(source_pdf)
+    return manifest
+
 def query_sglang_question(
     client: Any,
     model_id: str,
     prefix_context: str,
     question: dict[str, Any],
     timeout: int = 60,
+    doc_manifest: dict[str, list[str]] | None = None,
 ) -> dict[str, Any]:
     """Execute evaluation for a single rubric question against the cached prefix context using Instructor."""
     qid = question.get("new_q_id", question.get("q_id"))
     options = [o.get("val") for o in question.get("options", [])]
     options_desc = ", ".join(str(o) for o in options) if options else "0.0, 1.0"
 
+    # --- Strict Document Sourcing ---
+    # Map each rubric category to the deliverable type codes that are its primary sources.
+    # The doc_manifest (built per-startup from actual filenames) resolves these codes to
+    # the real document names present in <applicant_prose>.
+    CAT_PRIMARY_SOURCES: dict[str, list[str]] = {
+        "BC": ["EBD1"],                      # Business Model Canvas
+        "ES": ["EBD6"],                      # Executive Summary
+        "F":  ["EBD5", "M6"],                # Financial Projections
+        "IP": ["EBD8"],                      # Investor Pitch Deck
+        "IS": ["EBD2", "M2"],                # Impact Statement / Sustainability
+        "L":  ["M7"],                        # Legal & Governance
+        "M":  ["EBD3", "M4"],                # Customer Segments / Competitive Matrix
+        "PMF":["M3", "M1"],                  # Customer Discovery
+        "T":  ["M8"],                        # Team & Targets
+        "TP": ["EBD4"],                      # Technology Validation
+    }
+
+    cat_code = question.get('cat_code', 'GENERAL')
+    sourcing_instruction = ""
+
+    if doc_manifest and cat_code in CAT_PRIMARY_SOURCES:
+        primary_type_codes = CAT_PRIMARY_SOURCES[cat_code]
+        primary_filenames = []
+        for tc in primary_type_codes:
+            primary_filenames.extend(doc_manifest.get(tc, []))
+
+        if primary_filenames:
+            file_list = ", ".join(f'"{f}"' for f in primary_filenames)
+            sourcing_instruction = (
+                f"For this {cat_code} criterion, your PRIMARY source document(s) are: {file_list}. "
+                f"Extract your citation ONLY from these primary documents. "
+                f"Use other documents ONLY if the primary source(s) contain absolutely no relevant evidence."
+            )
+        else:
+            sourcing_instruction = (
+                f"No primary source document was found for category {cat_code}. "
+                f"Search all available documents but note reduced confidence."
+            )
+
     system_prompt = (
         "You are an objective due diligence evaluator scoring cleantech startup applications. "
         "Strictly adhere to the provided rubric and only quote verbatim text written by founders. "
-        "Do NOT quote instructions or template boilerplate."
+        "Do NOT quote instructions or template boilerplate. "
+        f"{sourcing_instruction}"
     )
 
     # Cap prefix context to 300,000 chars (~75k tokens) to ensure rapid prefill within 131k window
@@ -210,7 +268,12 @@ def evaluate_startup(
     with open(full_text_file, "r", encoding="utf-8") as f:
         prefix_context = f.read()
 
-    logger.info(f"Loaded {len(chunks)} chunks, full text size: {len(prefix_context):,} chars")
+    # Build per-startup document manifest mapping doc_type -> actual filenames
+    doc_manifest = build_doc_manifest(chunks)
+    logger.info(
+        f"Loaded {len(chunks)} chunks, full text size: {len(prefix_context):,} chars | "
+        f"Document manifest: { {k: v for k, v in sorted(doc_manifest.items())} }"
+    )
 
     # 2. Load Rubric
     rubric_candidates = [
@@ -271,7 +334,9 @@ def evaluate_startup(
                 inst_client,
                 model_id,
                 prefix_context,
-                q
+                q,
+                60,
+                doc_manifest,
             ): q for q in remaining_questions
         }
 

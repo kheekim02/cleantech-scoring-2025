@@ -13,21 +13,23 @@ from typing import Any
 logger = logging.getLogger(__name__)
 
 DOC_TYPE_PATTERNS = {
-    'M1': [r'M1\b', r'Module.*1'],
-    'M2': [r'M2\b', r'Module.*2', r'GHG'],
-    'M3': [r'M3\b', r'Module.*3'],
-    'M4': [r'M4\b', r'Module.*4'],
-    'M5': [r'M5\b', r'Module.*5'],
-    'M6': [r'M6\b', r'Module.*6'],
-    'M7': [r'M7\b', r'Module.*7', r'Legal'],
-    'M8': [r'M8\b', r'Module.*8', r'Team'],
-    'EBD1': [r'Canvas', r'Biz.*Model', r'EBD1'],
-    'EBD2': [r'EBD2', r'Impact.*Statement'],
-    'EBD3': [r'EBD3', r'Customer.*Segment', r'Competitive.*Matrix'],
-    'EBD4': [r'EBD4', r'TechnologyValidation', r'Tech.*Val', r'Patent'],
-    'EBD5': [r'EBD5', r'FinancialProjection', r'Financial'],
-    'EBD6': [r'EBD6', r'Executive.*Summary', r'OnePage'],
-    'EBD8': [r'EBD8', r'Pitch', r'Deck', r'Investor.*Pitch'],
+    # Modules — match M1, Module_1, Module 1, etc.
+    'M1': [r'M1\b', r'Module[_\-\s]*1'],
+    'M2': [r'M2\b', r'Module[_\-\s]*2', r'GHG'],
+    'M3': [r'M3\b', r'Module[_\-\s]*3'],
+    'M4': [r'M4\b', r'Module[_\-\s]*4'],
+    'M5': [r'M5\b', r'Module[_\-\s]*5'],
+    'M6': [r'M6\b', r'Module[_\-\s]*6'],
+    'M7': [r'M7\b', r'Module[_\-\s]*7', r'Legal'],
+    'M8': [r'M8\b', r'Module[_\-\s]*8', r'Team'],
+    # EBDs — flexible separators: EBD1, EBD_1, EBD-1, EBD 1, Deliverable_1, etc.
+    'EBD1': [r'EBD[_\-\s]*1\b', r'Business[_\-\s]*Model[_\-\s]*Canvas', r'Biz.*Model', r'BMC', r'Strategyzer', r'Canvas'],
+    'EBD2': [r'EBD[_\-\s]*2\b', r'Impact[_\-\s]*Statement', r'Deliverable[_\-\s]*2'],
+    'EBD3': [r'EBD[_\-\s]*3\b', r'Customer[_\-\s]*Segment', r'Competitive[_\-\s]*Matrix', r'Deliverable[_\-\s]*3'],
+    'EBD4': [r'EBD[_\-\s]*4\b', r'Technology[_\-\s]*Validation', r'Tech.*Val', r'Patent', r'Deliverable[_\-\s]*4'],
+    'EBD5': [r'EBD[_\-\s]*5\b', r'Financial[_\-\s]*Projection', r'Pro[_\-\s]*Forma', r'Deliverable[_\-\s]*5'],
+    'EBD6': [r'EBD[_\-\s]*6\b', r'EBD[_\-\s]*9\b', r'Executive[_\-\s]*Summary', r'OnePage', r'Deliverable[_\-\s]*6'],
+    'EBD8': [r'EBD[_\-\s]*8\b', r'Pitch[_\-\s]*Deck', r'Slide[_\-\s]*Deck', r'Investor[_\-\s]*(?:Deck|Pitch)', r'Deliverable[_\-\s]*8'],
 }
 
 DOC_TYPE_CATALOG_MAP = {

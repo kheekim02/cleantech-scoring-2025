@@ -173,7 +173,7 @@ window.CTO.Render = {
         const hasRationale = !!(q.ai_rationale && q.ai_rationale.trim().length > 5);
         const isHighConfidence = confNum >= 0.80;
         const hasValidSuggestion = q.ai_suggestion !== undefined && q.ai_suggestion !== null && verdictText !== 'N/A';
-        const showAiAssist = (isHighConfidence || hasCitation || hasRationale) && hasValidSuggestion;
+        const showAiAssist = isHighConfidence && hasValidSuggestion;
 
         const aiSuggestHtml = showAiAssist ? `
               <div class="h-ai-suggest" aria-label="AI suggestion: ${verdictText}; ${confText} confidence">
@@ -269,7 +269,7 @@ window.CTO.Render = {
         const requiredJustificationIds = new Set(['BC_Q1', 'BC_Q2', 'BC_Q4', 'BC_Q5']);
         const showsNote = noteQuestionIds.has(q.new_q_id);
         const requiresJustification = requiredJustificationIds.has(q.new_q_id);
-        const existingJustification = humanJustifications[q.new_q_id] || '';
+        const existingJustification = this.escapeHtml(humanJustifications[q.new_q_id] || '');
         
                 let justHtml = '';
         if (showsNote) {
