@@ -169,11 +169,13 @@ window.CTO.Render = {
             }
         }
         // Show AI-assisted scores when confidence is high (>=80%), there is a citation, or there is an AI rationale
-        const hasCitation = !!(q.verbatim_citation && q.verbatim_citation.trim().length > 5);
-        const hasRationale = !!(q.ai_rationale && q.ai_rationale.trim().length > 5);
-        const isHighConfidence = confNum >= 0.80;
-        const hasValidSuggestion = q.ai_suggestion !== undefined && q.ai_suggestion !== null && verdictText !== 'N/A';
-        const showAiAssist = isHighConfidence && hasValidSuggestion;
+        // --- AI ASSISTANCE TEMPORARILY DISABLED ---
+        // To keep a clean interface without potential AI bias, we explicitly hide all AI badges and citations.
+        const hasCitation = false; 
+        const hasRationale = false;
+        const isHighConfidence = false;
+        const hasValidSuggestion = false;
+        const showAiAssist = false;
 
         const aiSuggestHtml = showAiAssist ? `
               <div class="h-ai-suggest" aria-label="AI suggestion: ${verdictText}; ${confText} confidence">

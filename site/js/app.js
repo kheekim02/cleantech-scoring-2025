@@ -73,7 +73,7 @@ CTO.App = {
       if (res.ok) {
         const startups = await res.json();
         const picker = document.getElementById('startup-picker');
-        picker.innerHTML = startups.map(s => `<option value="${s.id}">${s.name}</option>`).join('');
+        picker.innerHTML = startups.map(s => `<option value="${s.id}">${CTO.Render.escapeHtml(s.name)}</option>`).join('');
         picker.style.display = 'inline-block';
         
         // If the current activeStartupId is not in the list, default to first
