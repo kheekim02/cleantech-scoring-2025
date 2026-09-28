@@ -62,6 +62,9 @@ batch_log.txt
 # Local large data cache mirrors
 data/ai_cache_clean/
 data/ai_cache_v2/
+data/ai_cache_v3_strict/
+data/ai_cache_v4_shadow/
+data/parsed_clean/
 
 # Scratch work artifacts
 scripts/archive/scratch_work/

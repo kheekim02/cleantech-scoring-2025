@@ -9,7 +9,17 @@ OLLAMA_URL = 'http://localhost:11434/api/generate'
 MODEL = 'llama3.2:latest'
 RUBRIC_PATH = '/data/scraping/datasets/cto_accelerator/master_282_rubric.json'
 RAW_BASE_DIR = '/data/scraping/datasets/cto_accelerator/parsed_clean'
-CACHE_DIR = '/data/scraping/datasets/cto_accelerator/ai_cache_v3_strict'
+# v1 is retired. This path is created only when CTO_ALLOW_V1_EXTRACTOR=1.
+# It is not ai_cache_v3_strict and not the archived ai_cache_clean name.
+CACHE_DIR = '/data/scraping/datasets/cto_accelerator/ai_cache_v1_hold'
+
+if os.environ.get("CTO_ALLOW_V1_EXTRACTOR") != "1":
+    sys.stderr.write(
+        "v1 extractor is retired. The shipped generation is ai_cache_v3_strict and must not be rewritten.\n"
+        "Next extractions use scripts/14_ai_copilot_extractor_v2.py with cache ai_cache_v4_shadow.\n"
+        "Set CTO_ALLOW_V1_EXTRACTOR=1 only for a deliberate legacy rerun, which writes to ai_cache_v1_hold.\n"
+    )
+    sys.exit(2)
 
 os.makedirs(CACHE_DIR, exist_ok=True)
 

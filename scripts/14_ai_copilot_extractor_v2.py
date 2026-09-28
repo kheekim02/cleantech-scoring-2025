@@ -37,9 +37,65 @@ logger = logging.getLogger("extractor_v2")
 
 DEFAULT_SGLANG_URL = os.environ.get("SGLANG_BASE_URL", "http://127.0.0.1:30000")
 DEFAULT_RUBRIC_PATH = "master_282_rubric.json"
-DEFAULT_CACHE_DIR = "data/ai_cache_v2"
-DEFAULT_DOCLING_DIR = "data/docling_clean"
-DEFAULT_RAW_DIR = "/data/scraping/datasets/cto_accelerator/raw"
+REMOTE_DATASET_ROOT = "/data/scraping/datasets/cto_accelerator"
+REMOTE_DOCLING_DIR = "/data/scraping/data/docling_clean"
+SHADOW_CACHE_NAME = "ai_cache_v4_shadow"
+ALLOWLIST_NAME = "active_startup_allowlist.json"
+DEFAULT_RAW_DIR = os.path.join(REMOTE_DATASET_ROOT, "raw")
+
+
+def default_docling_dir() -> str:
+    """Use the server chunk cache when this process is on the dataset host."""
+    if os.path.isdir(REMOTE_DOCLING_DIR):
+        return REMOTE_DOCLING_DIR
+    return "data/docling_clean"
+
+
+def default_cache_dir() -> str:
+    """Write the next generation beside v3_strict, never into archived caches."""
+    if os.path.isdir(REMOTE_DATASET_ROOT):
+        return os.path.join(REMOTE_DATASET_ROOT, SHADOW_CACHE_NAME)
+    return os.path.join("data", SHADOW_CACHE_NAME)
+
+
+def load_active_allowlist(explicit: str | None = None) -> tuple[list[str], str]:
+    """Load the live cohort. Missing file fails closed so raw/ is not scanned."""
+    repo_data = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+        "data",
+        ALLOWLIST_NAME,
+    )
+    candidates: list[str] = []
+    if explicit:
+        candidates.append(explicit)
+    candidates.extend([
+        os.path.join("data", ALLOWLIST_NAME),
+        repo_data,
+        os.path.join(REMOTE_DATASET_ROOT, ALLOWLIST_NAME),
+    ])
+    seen: set[str] = set()
+    for path in candidates:
+        if not path or path in seen:
+            continue
+        seen.add(path)
+        if not os.path.isfile(path):
+            continue
+        with open(path, "r", encoding="utf-8") as handle:
+            payload = json.load(handle)
+        ids = [row["startup_id"] for row in payload["startups"]]
+        if len(ids) != payload.get("count"):
+            raise ValueError(
+                f"Allowlist count mismatch in {path}: {len(ids)} != {payload.get('count')}"
+            )
+        return ids, path
+    raise FileNotFoundError(
+        "Active startup allowlist not found. Refusing to scan raw/. Looked in: "
+        + ", ".join(candidates)
+    )
+
+
+DEFAULT_CACHE_DIR = default_cache_dir()
+DEFAULT_DOCLING_DIR = default_docling_dir()
 
 
 def get_active_model_id(sglang_url: str) -> str:
@@ -415,13 +471,23 @@ if __name__ == "__main__":
     parser.add_argument("--raw-dir", default=DEFAULT_RAW_DIR, help="Raw PDF base directory")
     parser.add_argument("--rubric", default=DEFAULT_RUBRIC_PATH, help="Rubric JSON file path")
     parser.add_argument("--catalog", default="data/scaffolding_master_catalog.json", help="Scaffolding catalog JSON")
+    parser.add_argument("--allowlist", default=None, help="Active startup allowlist JSON")
     args = parser.parse_args()
+
+    allow_ids, allow_path = load_active_allowlist(args.allowlist)
+    allow_set = set(allow_ids)
+    logger.info("Allowlist %s: %d startups", allow_path, len(allow_ids))
+    os.makedirs(args.cache_dir, exist_ok=True)
 
     if args.startup == "ALL":
         raw_p = Path(args.raw_dir)
-        startups = [d.name for d in raw_p.iterdir() if d.is_dir() and not d.name.startswith(".")]
-        logger.info(f"Running v2 extraction on {len(startups)} startups...")
-        for s in sorted(startups):
+        missing = [s for s in allow_ids if not (raw_p / s).is_dir()]
+        if missing:
+            raise SystemExit(
+                f"{len(missing)} allowlisted startups have no raw directory under {raw_p}: {missing}"
+            )
+        logger.info(f"Running v2 extraction on {len(allow_ids)} allowlisted startups...")
+        for s in allow_ids:
             try:
                 evaluate_startup(
                     startup_id=s,
@@ -437,6 +503,11 @@ if __name__ == "__main__":
             except Exception as e:
                 logger.error(f"Error processing {s}: {e}")
     else:
+        if args.startup not in allow_set:
+            raise SystemExit(
+                f"{args.startup} is not on the active allowlist ({allow_path}). "
+                "Disk-only folders such as SPARK and tmp_pages are excluded."
+            )
         evaluate_startup(
             startup_id=args.startup,
             sglang_url=args.sglang_url,

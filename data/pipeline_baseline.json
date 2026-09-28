@@ -1,0 +1,93 @@
+{
+  "locked_at": "2026-09-28T17:30:41+00:00",
+  "production_cache": {
+    "remote": "/data/scraping/datasets/cto_accelerator/ai_cache_v3_strict",
+    "local_mirror": "data/ai_cache_v3_strict",
+    "role": "Last shipped generation. Do not write new extractions here.",
+    "model_version": "v5_strict_grounded",
+    "rows_in_supabase": 92
+  },
+  "archive": {
+    "remote": "/data/scraping/datasets/cto_accelerator/legacy_2025",
+    "contents": [
+      "ai_cache",
+      "ai_cache_clean",
+      "ai_cache_clean_bak",
+      "ai_cache_v2",
+      "ai_cache_363"
+    ],
+    "policy": "Read-only. Do not recreate these directory names at the dataset root."
+  },
+  "shadow_cache": {
+    "name": "ai_cache_v4_shadow",
+    "remote": "/data/scraping/datasets/cto_accelerator/ai_cache_v4_shadow",
+    "local": "data/ai_cache_v4_shadow",
+    "policy": "Empty directory for the next extraction generation. Push scripts are not pointed here."
+  },
+  "docling_chunks": {
+    "remote": "/data/scraping/data/docling_clean",
+    "populated_startup_ids": [
+      "17",
+      "2DaLoop"
+    ],
+    "note": "The other 90 allowlisted startups are ingested from raw/ on their first v2 extraction."
+  },
+  "allowlist": {
+    "repo": "data/active_startup_allowlist.json",
+    "remote": "/data/scraping/datasets/cto_accelerator/active_startup_allowlist.json",
+    "count": 92,
+    "source": "startup_extractions",
+    "excluded_disk_entries": [
+      "SPARK",
+      "tmp_pages",
+      "company_registry.json",
+      "force_cut_pages.json"
+    ]
+  },
+  "canonical_scripts": {
+    "authoritative": "repository scripts/",
+    "note": "/data/scraping/scripts/ also holds unrelated non-CTO jobs. Only the files listed here are part of this lock.",
+    "remote_execution_copies": {
+      "scripts/14_ai_copilot_extractor_v2.py": "/data/scraping/scripts/14_ai_copilot_extractor_v2.py",
+      "scripts/docling_ingestion.py": "/data/scraping/scripts/docling_ingestion.py",
+      "scripts/15_push_v2_extractions_to_supabase.py": "/data/scraping/scripts/15_push_v2_extractions_to_supabase.py",
+      "src/scorer/schemas.py": "/data/scraping/src/scorer/schemas.py",
+      "scripts/08_ai_copilot_extractor_clean.py": "/data/scraping/datasets/cto_accelerator/08_ai_copilot_extractor_clean.py",
+      "scripts/13_ground_citations.py": "/data/scraping/datasets/cto_accelerator/13_ground_citations.py",
+      "scripts/clean_parsed_documents.py": "/data/scraping/datasets/cto_accelerator/clean_parsed_documents.py",
+      "scripts/clean_parsed_documents_v2.py": "/data/scraping/datasets/cto_accelerator/clean_parsed_documents_v2.py",
+      "scripts/ocr_raster_deliverables.py": "/data/scraping/datasets/cto_accelerator/ocr_raster_deliverables.py",
+      "scripts/verify_data_integrity.py": "/data/scraping/datasets/cto_accelerator/verify_data_integrity.py",
+      "scripts/prompt_strategies.py": "/data/scraping/datasets/cto_accelerator/prompt_strategies.py",
+      "scripts/10_prompt_optimizer.py": "/data/scraping/datasets/cto_accelerator/10_prompt_optimizer.py",
+      "scripts/11_independent_verifier.py": "/data/scraping/datasets/cto_accelerator/11_independent_verifier.py",
+      "scripts/12_optimization_loop.py": "/data/scraping/datasets/cto_accelerator/12_optimization_loop.py"
+    },
+    "updated_this_lock": [
+      "scripts/14_ai_copilot_extractor_v2.py",
+      "scripts/docling_ingestion.py",
+      "scripts/08_ai_copilot_extractor_clean.py"
+    ],
+    "already_identical": [
+      "scripts/15_push_v2_extractions_to_supabase.py",
+      "src/scorer/schemas.py",
+      "scripts/13_ground_citations.py",
+      "scripts/clean_parsed_documents.py",
+      "scripts/clean_parsed_documents_v2.py",
+      "scripts/ocr_raster_deliverables.py",
+      "scripts/verify_data_integrity.py",
+      "scripts/prompt_strategies.py",
+      "scripts/10_prompt_optimizer.py",
+      "scripts/11_independent_verifier.py",
+      "scripts/12_optimization_loop.py"
+    ],
+    "v1_extractor": "Exits unless CTO_ALLOW_V1_EXTRACTOR=1. An opted-in rerun writes to ai_cache_v1_hold, not ai_cache_v3_strict and not a recreated ai_cache_clean.",
+    "push_scripts": "Unchanged. scripts/13_push_clean_extractions_to_supabase.py still commits to startup_extractions and defaults to data/ai_cache_v3_strict. scripts/15_push_v2_extractions_to_supabase.py still requires --commit and defaults to data/ai_cache_v2. Neither is pointed at ai_cache_v4_shadow."
+  },
+  "sha256": {
+    "scripts/14_ai_copilot_extractor_v2.py": "d47fa82f6b7ba6920d326c5baf10e17532623c1a1d5ce2202c9583dcea996d8d",
+    "scripts/docling_ingestion.py": "7f315f3e52429ba3372608541a5095db7a430f925f7671c0330b51b04f4039e7",
+    "scripts/08_ai_copilot_extractor_clean.py": "835c494ce5f1522e9b53b764a51057c4827602b0c7659a7a97c7413510aaafc3",
+    "data/active_startup_allowlist.json": "e0cb3d63521b4b2f3524613d8d5b0c7ef87cf2d2ba7bd317c6233c331d4c12bc"
+  }
+}

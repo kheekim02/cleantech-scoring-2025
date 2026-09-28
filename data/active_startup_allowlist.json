@@ -1,0 +1,417 @@
+{
+  "generated_at": "2026-09-28T17:29:10+00:00",
+  "source": "startup_extractions",
+  "rule": "Every row in startup_extractions. All 92 have payload.meta.clean_ready=true, model_version=v5_strict_grounded, and 282 human_questions.",
+  "count": 92,
+  "startups": [
+    {
+      "startup_id": "17",
+      "company_name": "17"
+    },
+    {
+      "startup_id": "2DaLoop",
+      "company_name": "2DaLoop"
+    },
+    {
+      "startup_id": "AmpTrans",
+      "company_name": "AmpTrans"
+    },
+    {
+      "startup_id": "Apex_Engineering_AI",
+      "company_name": "Apex Engineering AI"
+    },
+    {
+      "startup_id": "Aris_Hydronics",
+      "company_name": "Aris Hydronics"
+    },
+    {
+      "startup_id": "Averra",
+      "company_name": "Averra"
+    },
+    {
+      "startup_id": "Biomific",
+      "company_name": "Biomific"
+    },
+    {
+      "startup_id": "Biospheric_AI",
+      "company_name": "Biospheric AI"
+    },
+    {
+      "startup_id": "Bluesonde_Technologies",
+      "company_name": "Bluesonde Technologies"
+    },
+    {
+      "startup_id": "Bonhomme_&_Associates",
+      "company_name": "Bonhomme & Associates"
+    },
+    {
+      "startup_id": "CH4_Microbial_Solutions",
+      "company_name": "CH4 Microbial Solutions"
+    },
+    {
+      "startup_id": "CIRQ+",
+      "company_name": "CIRQ+"
+    },
+    {
+      "startup_id": "Calectra",
+      "company_name": "Calectra"
+    },
+    {
+      "startup_id": "California_Perovskite_Technology",
+      "company_name": "California Perovskite Technology"
+    },
+    {
+      "startup_id": "Candela_IoT",
+      "company_name": "Candela IoT"
+    },
+    {
+      "startup_id": "CarbonDots",
+      "company_name": "CarbonDots"
+    },
+    {
+      "startup_id": "Cero_Global_Holdings",
+      "company_name": "Cero Global Holdings"
+    },
+    {
+      "startup_id": "CleanQuity",
+      "company_name": "CleanQuity"
+    },
+    {
+      "startup_id": "Compocity",
+      "company_name": "Compocity"
+    },
+    {
+      "startup_id": "Condor_Calibration_Services",
+      "company_name": "Condor Calibration Services"
+    },
+    {
+      "startup_id": "ContainerGrid_GmbH",
+      "company_name": "ContainerGrid GmbH"
+    },
+    {
+      "startup_id": "Core_Envision",
+      "company_name": "Core Envision"
+    },
+    {
+      "startup_id": "Crucible_Energy",
+      "company_name": "Crucible Energy"
+    },
+    {
+      "startup_id": "Cryodrives",
+      "company_name": "Cryodrives"
+    },
+    {
+      "startup_id": "Curve_Control",
+      "company_name": "Curve Control"
+    },
+    {
+      "startup_id": "ECORECYCLETECH",
+      "company_name": "ECORECYCLETECH"
+    },
+    {
+      "startup_id": "EV_Innovations",
+      "company_name": "EV Innovations"
+    },
+    {
+      "startup_id": "Ecosphere_Organics",
+      "company_name": "Ecosphere Organics"
+    },
+    {
+      "startup_id": "EvoNatura",
+      "company_name": "EvoNatura"
+    },
+    {
+      "startup_id": "FLOAT_Modern_Houseboat",
+      "company_name": "FLOAT Modern Houseboat"
+    },
+    {
+      "startup_id": "Foregger_Energy_Solutions",
+      "company_name": "Foregger Energy Solutions"
+    },
+    {
+      "startup_id": "Fortifyy_PBC",
+      "company_name": "Fortifyy PBC"
+    },
+    {
+      "startup_id": "Gamotech",
+      "company_name": "Gamotech"
+    },
+    {
+      "startup_id": "GreenSight_Technologies",
+      "company_name": "GreenSight Technologies"
+    },
+    {
+      "startup_id": "Gridwave",
+      "company_name": "Gridwave"
+    },
+    {
+      "startup_id": "H2O_Now",
+      "company_name": "H2O Now"
+    },
+    {
+      "startup_id": "H2_Everywhere",
+      "company_name": "H2 Everywhere"
+    },
+    {
+      "startup_id": "HYDGEN",
+      "company_name": "HYDGEN"
+    },
+    {
+      "startup_id": "HYG-Motors_USA",
+      "company_name": "HYG-Motors USA"
+    },
+    {
+      "startup_id": "Hidrogenics_Technologies",
+      "company_name": "Hidrogenics Technologies"
+    },
+    {
+      "startup_id": "HomeWise_AI",
+      "company_name": "HomeWise AI"
+    },
+    {
+      "startup_id": "Hubbletek",
+      "company_name": "Hubbletek"
+    },
+    {
+      "startup_id": "KVA_Technologies",
+      "company_name": "KVA Technologies"
+    },
+    {
+      "startup_id": "Karbn",
+      "company_name": "Karbn"
+    },
+    {
+      "startup_id": "LIFE3",
+      "company_name": "LIFE3"
+    },
+    {
+      "startup_id": "LeRTechX_Renewable_Energy",
+      "company_name": "LeRTechX Renewable Energy"
+    },
+    {
+      "startup_id": "LeverageTech_Innovations",
+      "company_name": "LeverageTech Innovations"
+    },
+    {
+      "startup_id": "Lumiaq",
+      "company_name": "Lumiaq"
+    },
+    {
+      "startup_id": "Lute_&_Ether",
+      "company_name": "Lute & Ether"
+    },
+    {
+      "startup_id": "Manara_Materials",
+      "company_name": "Manara Materials"
+    },
+    {
+      "startup_id": "Materium_Technologies",
+      "company_name": "Materium Technologies"
+    },
+    {
+      "startup_id": "Modulium",
+      "company_name": "Modulium"
+    },
+    {
+      "startup_id": "Navia_Energy",
+      "company_name": "Navia Energy"
+    },
+    {
+      "startup_id": "Novagrid",
+      "company_name": "Novagrid"
+    },
+    {
+      "startup_id": "OpenRoad_Technologies",
+      "company_name": "OpenRoad Technologies"
+    },
+    {
+      "startup_id": "PFASolve",
+      "company_name": "PFASolve"
+    },
+    {
+      "startup_id": "Photometrics_AI",
+      "company_name": "Photometrics AI"
+    },
+    {
+      "startup_id": "Pinpoint_Irrigation",
+      "company_name": "Pinpoint Irrigation"
+    },
+    {
+      "startup_id": "Pipeline_Pilot",
+      "company_name": "Pipeline Pilot"
+    },
+    {
+      "startup_id": "PolyGone_Systems",
+      "company_name": "PolyGone Systems"
+    },
+    {
+      "startup_id": "R7_Instruments",
+      "company_name": "R7 Instruments"
+    },
+    {
+      "startup_id": "Renovigo_Chemicals",
+      "company_name": "Renovigo Chemicals"
+    },
+    {
+      "startup_id": "Restora_Homes",
+      "company_name": "Restora Homes"
+    },
+    {
+      "startup_id": "SBD_Technologies",
+      "company_name": "SBD Technologies"
+    },
+    {
+      "startup_id": "SMPnet",
+      "company_name": "SMPnet"
+    },
+    {
+      "startup_id": "SOLARSYSTEMS",
+      "company_name": "SOLARSYSTEMS"
+    },
+    {
+      "startup_id": "SPCTA_Industrial",
+      "company_name": "SPCTA Industrial"
+    },
+    {
+      "startup_id": "SSG_Environmental",
+      "company_name": "SSG Environmental"
+    },
+    {
+      "startup_id": "Scaled_Carbon,_PBC",
+      "company_name": "Scaled Carbon, PBC"
+    },
+    {
+      "startup_id": "Seyrab",
+      "company_name": "Seyrab"
+    },
+    {
+      "startup_id": "SolGrapH",
+      "company_name": "SolGrapH"
+    },
+    {
+      "startup_id": "Sol_Robotics",
+      "company_name": "Sol Robotics"
+    },
+    {
+      "startup_id": "Solar_Intelligence",
+      "company_name": "Solar Intelligence"
+    },
+    {
+      "startup_id": "SolenSphere",
+      "company_name": "SolenSphere"
+    },
+    {
+      "startup_id": "Spear_the_Air",
+      "company_name": "Spear the Air"
+    },
+    {
+      "startup_id": "Sterrett_Levin",
+      "company_name": "Sterrett Levin"
+    },
+    {
+      "startup_id": "Structural_BioComposites",
+      "company_name": "Structural BioComposites"
+    },
+    {
+      "startup_id": "Sustainable_Chemicals",
+      "company_name": "Sustainable Chemicals"
+    },
+    {
+      "startup_id": "Symbiotic_Agriculture",
+      "company_name": "Symbiotic Agriculture"
+    },
+    {
+      "startup_id": "Tensor_Planet",
+      "company_name": "Tensor Planet"
+    },
+    {
+      "startup_id": "Teragen_Energy",
+      "company_name": "Teragen Energy"
+    },
+    {
+      "startup_id": "Three_Rivers_Power_Limited_Liability",
+      "company_name": "Three Rivers Power Limited Liability"
+    },
+    {
+      "startup_id": "TiltingSolar",
+      "company_name": "TiltingSolar"
+    },
+    {
+      "startup_id": "Upstream_Carbon",
+      "company_name": "Upstream Carbon"
+    },
+    {
+      "startup_id": "Vaanelai",
+      "company_name": "Vaanelai"
+    },
+    {
+      "startup_id": "Volt_Harbor",
+      "company_name": "Volt Harbor"
+    },
+    {
+      "startup_id": "Wavon_Ceramics_—_Accelerating_Manufacturing",
+      "company_name": "Wavon Ceramics — Accelerating Manufacturing"
+    },
+    {
+      "startup_id": "Wayside",
+      "company_name": "Wayside"
+    },
+    {
+      "startup_id": "We_Think_Global",
+      "company_name": "We Think Global"
+    },
+    {
+      "startup_id": "Wind_Pulse_Energy",
+      "company_name": "Wind Pulse Energy"
+    },
+    {
+      "startup_id": "Yggdrasil_Trees",
+      "company_name": "Yggdrasil Trees"
+    },
+    {
+      "startup_id": "iGridSim",
+      "company_name": "iGridSim"
+    }
+  ],
+  "excluded_disk_entries": [
+    {
+      "name": "SPARK",
+      "kind": "directory",
+      "registry_key": "spark",
+      "present_in": [
+        "raw",
+        "parsed",
+        "parsed_clean",
+        "ai_cache_v3_strict"
+      ],
+      "reason": "Listed in raw/company_registry.json but absent from startup_extractions."
+    },
+    {
+      "name": "tmp_pages",
+      "kind": "directory",
+      "present_in": [
+        "raw",
+        "parsed",
+        "parsed_clean",
+        "ai_cache_v3_strict"
+      ],
+      "reason": "OCR page scratch, not a startup submission."
+    },
+    {
+      "name": "company_registry.json",
+      "kind": "file",
+      "present_in": [
+        "raw"
+      ],
+      "reason": "Display-name to folder-id map (93 keys, including spark). Not a company directory."
+    },
+    {
+      "name": "force_cut_pages.json",
+      "kind": "file",
+      "present_in": [
+        "parsed"
+      ],
+      "reason": "Parse scratch file, not a startup directory."
+    }
+  ]
+}
