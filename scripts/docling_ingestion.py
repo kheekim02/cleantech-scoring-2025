@@ -12,24 +12,94 @@ from typing import Any
 
 logger = logging.getLogger(__name__)
 
+# Deliverable names outrank module numbers in the filename. Checked first so
+# "Business_Model_Canvas_Module_1" stays EBD1 and "EBD_1_Team_Targets" stays M8.
+# Bare tokens (Canvas, Team, Legal, Patent) and a blanket EBD9→executive-summary
+# rule are intentionally absent: they pull the wrong file into a primary source.
+DOC_TYPE_ALIASES = {
+    # Content names are checked before EBD numbers. These are cohort-wide template
+    # names, not one company's filename: interview sheets, archetype exercises,
+    # financial models, and pitches stay in those groups even when the EBD number
+    # is glued on, misspelled, or omitted.
+    'M3': [r'Arch[ei]type', r'Product[_\-\s]*Market[_\-\s]*Fit', r'(?<![A-Za-z])PMF(?![A-Za-z])'],
+    'M8': [r'Team[_\-\s]*Targets?', r'Management[_\-\s]*Team', r'Managemet[_\-\s]*Team', r'Target[_\-\s]*Goals?'],
+    'M4': [r'Markets[_\-\s]*(?:and|&)[_\-\s]*Getting'],
+    'M1': [
+        r'Customer[_\-\s]*Interview',
+        r'Customer[_\-\s]*Discover',
+        r'Interview[_\-\s]*Capture',
+        r'Module[_\-\s]*One\b',
+    ],
+    'M2': [r'GHG'],
+    'M7': [r'Legal[_\-\s]*(?:Questions|Assignment)'],
+    'EBD5': [
+        r'Financial[_\-\s]*Projection',
+        r'Financial[_\-\s]*Plan',
+        r'Financial[_\-\s]*Model',
+        r'Fian+cial[_\-\s]*(?:Projection|Model|Plan)',
+        r'finincial[_\-\s]*proj',
+        r'[0-9][_\-\s]*year[_\-\s]*projections?',
+        r'Revenue[_\-\s]*(?:Projection|Forecast|Model)',
+        r'revenue[_\-\s]*cost[_\-\s]*model',
+        r'EBITDA[_\-\s]*Forecast',
+        r'projec+t+ion',
+        r'Pro[_\-\s]*Forma',
+    ],
+    'EBD8': [
+        r'Pitch[_\-\s]*Deck',
+        r'Slide[_\-\s]*Deck',
+        r'Investor[_\-\s]*(?:Deck|Pitch)',
+        r'PDeck',
+        r'Pitch',
+        r'Cleantech[_\-\s]*Open[_\-\s]*Deck',
+        r'CTO[_\-\s]*Deck',
+        # "Deck" names the investor deck. Technical_Deck and Strategy_Deck do not.
+        r'(?<!Technical_)(?<!Technical-)(?<!Strategy_)(?<!Strategy-)Deck',
+        r'EBD[_\-\s]*10(?![0-9])',
+    ],
+    'EBD1': [
+        r'Business[_\-\s]*Model[_\-\s]*Canvas',
+        r'Business[_\-\s]*Modle[_\-\s]*Canvas',
+        r'Business[_\-\s]*Model[_\-\s]*Convass',
+        r'Biz[_\-\s]*Model',
+        r'BMC',
+        r'Strategyzer',
+    ],
+    'EBD2': [r'Impact[_\-\s]*Statement'],
+    'EBD3': [r'Customer[_\-\s]*Segment', r'Competitive[_\-\s]*Matrix'],
+    'EBD4': [r'Technology[_\-\s]*Validation', r'Technology[_\-\s]*Testimonial', r'Tech[_\-\s]*Val'],
+    'EBD6': [
+        r'Executive[_\-\s]*Summary',
+        r'Exec[_\-\s]*Summary',
+        r'Executive[_\-\s]*Overview',
+        r'One[_\-\s]*Page',
+        r'1[_\-\s]*Pager',
+    ],
+}
+
 DOC_TYPE_PATTERNS = {
-    # Modules — match M1, Module_1, Module 1, etc.
-    'M1': [r'M1\b', r'Module[_\-\s]*1'],
-    'M2': [r'M2\b', r'Module[_\-\s]*2', r'GHG'],
-    'M3': [r'M3\b', r'Module[_\-\s]*3'],
-    'M4': [r'M4\b', r'Module[_\-\s]*4'],
-    'M5': [r'M5\b', r'Module[_\-\s]*5'],
-    'M6': [r'M6\b', r'Module[_\-\s]*6'],
-    'M7': [r'M7\b', r'Module[_\-\s]*7', r'Legal'],
-    'M8': [r'M8\b', r'Module[_\-\s]*8', r'Team'],
-    # EBDs — flexible separators: EBD1, EBD_1, EBD-1, EBD 1, Deliverable_1, etc.
-    'EBD1': [r'EBD[_\-\s]*1\b', r'Business[_\-\s]*Model[_\-\s]*Canvas', r'Biz.*Model', r'BMC', r'Strategyzer', r'Canvas'],
-    'EBD2': [r'EBD[_\-\s]*2\b', r'Impact[_\-\s]*Statement', r'Deliverable[_\-\s]*2'],
-    'EBD3': [r'EBD[_\-\s]*3\b', r'Customer[_\-\s]*Segment', r'Competitive[_\-\s]*Matrix', r'Deliverable[_\-\s]*3'],
-    'EBD4': [r'EBD[_\-\s]*4\b', r'Technology[_\-\s]*Validation', r'Tech.*Val', r'Patent', r'Deliverable[_\-\s]*4'],
-    'EBD5': [r'EBD[_\-\s]*5\b', r'Financial[_\-\s]*Projection', r'Pro[_\-\s]*Forma', r'Deliverable[_\-\s]*5'],
-    'EBD6': [r'EBD[_\-\s]*6\b', r'EBD[_\-\s]*9\b', r'Executive[_\-\s]*Summary', r'OnePage', r'Deliverable[_\-\s]*6'],
-    'EBD8': [r'EBD[_\-\s]*8\b', r'Pitch[_\-\s]*Deck', r'Slide[_\-\s]*Deck', r'Investor[_\-\s]*(?:Deck|Pitch)', r'Deliverable[_\-\s]*8'],
+    # Modules — match M1, Module_1, Module 1. The number is a whole token, so M10/Module 10 do not match M1.
+    # Underscore is a word character, so \b does not split Module_1_Customer or M8Team.
+    # (?![0-9]) still rejects Module_10 and M10.
+    # Company names are often glued on: GreenSightTechnologiesM3Assignment.
+    # M[_\-\s]*3 still rejects M10/M30 because the next character cannot be a digit.
+    'M1': [r'M[_\-\s]*1(?![0-9])', r'Module[_\-\s]*1(?![0-9])'],
+    'M2': [r'M[_\-\s]*2(?![0-9])', r'Module[_\-\s]*2(?![0-9])'],
+    'M3': [r'M[_\-\s]*3(?![0-9])', r'Module[_\-\s]*3(?![0-9])'],
+    'M4': [r'M[_\-\s]*4(?![0-9])', r'Module[_\-\s]*4(?![0-9])'],
+    'M5': [r'M[_\-\s]*5(?![0-9])', r'Module[_\-\s]*5(?![0-9])'],
+    'M6': [r'M[_\-\s]*6(?![0-9])', r'Module[_\-\s]*6(?![0-9])'],
+    'M7': [r'M[_\-\s]*7(?![0-9])', r'Module[_\-\s]*7(?![0-9])'],
+    'M8': [r'M[_\-\s]*8(?![0-9])', r'Module[_\-\s]*8(?![0-9])'],
+    # EBDs require a separator after the number. EBD1CustomerInterview is not a canvas;
+    # EBD_4_TechnologyValidation still matches, and the name alias catches the glued form.
+    'EBD1': [r'EBD[_\-\s]*1(?![A-Za-z0-9])', r'Deliverable[_\-\s]*1(?![A-Za-z0-9])'],
+    'EBD2': [r'EBD[_\-\s]*2(?![A-Za-z0-9])', r'Deliverable[_\-\s]*2(?![A-Za-z0-9])'],
+    'EBD3': [r'EBD[_\-\s]*3(?![A-Za-z0-9])', r'Deliverable[_\-\s]*3(?![A-Za-z0-9])'],
+    'EBD4': [r'EBD[_\-\s]*4(?![A-Za-z0-9])', r'Deliverable[_\-\s]*4(?![A-Za-z0-9])'],
+    'EBD5': [r'EBD[_\-\s]*5(?![A-Za-z0-9])', r'Deliverable[_\-\s]*5(?![A-Za-z0-9])'],
+    'EBD6': [r'EBD[_\-\s]*6(?![A-Za-z0-9])', r'Deliverable[_\-\s]*6(?![A-Za-z0-9])'],
+    'EBD8': [r'EBD[_\-\s]*8(?![A-Za-z0-9])', r'Deliverable[_\-\s]*8(?![A-Za-z0-9])'],
 }
 
 DOC_TYPE_CATALOG_MAP = {
@@ -107,14 +177,95 @@ def get_docling_converter():
     return _CONVERTER_CACHE
 
 
+def _first_doc_type_match(filename: str, table: dict[str, list[str]]) -> str | None:
+    for code, patterns in table.items():
+        for pat in patterns:
+            if re.search(pat, filename, re.IGNORECASE):
+                return code
+    return None
+
+
 def detect_doc_type(filename: str) -> str:
     """Detect deliverable type code (EBD1-EBD8, M1-M8) from PDF filename."""
     clean_name = os.path.basename(filename)
-    for code, patterns in DOC_TYPE_PATTERNS.items():
-        for pat in patterns:
-            if re.search(pat, clean_name, re.IGNORECASE):
-                return code
-    return 'OTHER'
+    alias = _first_doc_type_match(clean_name, DOC_TYPE_ALIASES)
+    if alias:
+        return alias
+    explicit = _first_doc_type_match(clean_name, DOC_TYPE_PATTERNS)
+    return explicit or 'OTHER'
+
+
+# Opening headings that name the deliverable. The first match in the window wins.
+# max_start keeps a later section (a pitch deck's finance slide, a canvas block
+# inside a tech-validation form) from renaming the document.
+TEXT_TITLE_RULES = [
+    (r'customer interview capture sheet', 'M1', 500),
+    (r'module\s*2.{0,80}?impact', 'M2', 400),
+    (r'module\s*3\W{0,40}product\s*/?\s*market\s*f[il]t', 'M3', 500),
+    (r'module\s*7\W{0,30}legal', 'M7', 500),
+    (r'module\s*8\W{0,40}management\s*team', 'M8', 500),
+    (r'team targets', 'M8', 180),
+    (r'greenhouse gas emission reduction potential', 'M2', 600),
+    (r'impact statement\s*:', 'EBD2', 600),
+    (r'markets and getting to them', 'M4', 500),
+    (r'finances and funding', 'M6', 500),
+    (r'customer segmentation', 'EBD3', 250),
+    (r'product technology validation', 'EBD4', 500),
+    (r'investor pitch', 'EBD8', 280),
+]
+
+# Doc types that share one scoring-interface group. A filename and a title may
+# disagree on M1 vs M3 and still be the same Product Market Fit dropdown.
+DOC_TYPE_INTERFACE = {
+    'EBD1': 'BC',
+    'EBD2': 'ES', 'M2': 'ES',
+    'EBD5': 'F', 'M6': 'F',
+    'EBD8': 'IP',
+    'EBD6': 'IS',
+    'M7': 'L',
+    'EBD3': 'M', 'M4': 'M',
+    'M1': 'PMF', 'M3': 'PMF',
+    'M8': 'T',
+    'EBD4': 'TP',
+}
+
+
+def infer_doc_type_from_text(text: str, window: int = 1200) -> str | None:
+    """Read the opening of an extracted PDF and return its deliverable type.
+
+    Returns None when the opening does not contain a template title. Mentions
+    deeper in the document are ignored.
+    """
+    if not text:
+        return None
+    head = text[:window].lower()
+    best: tuple[int, str] | None = None
+    for pattern, code, max_start in TEXT_TITLE_RULES:
+        match = re.search(pattern, head)
+        if match is None or match.start() > max_start:
+            continue
+        if best is None or match.start() < best[0]:
+            best = (match.start(), code)
+    return None if best is None else best[1]
+
+
+def resolve_doc_type(filename: str, text: str | None = None) -> str:
+    """Map a PDF using its filename, then its opening text when the name is weak.
+
+    A clear template title overrides a filename only when the two would land in
+    different interface groups. M1 and M3 both stay Product Market Fit.
+    """
+    named = detect_doc_type(filename)
+    inferred = infer_doc_type_from_text(text or '')
+    if inferred is None:
+        return named
+    if named == 'OTHER':
+        return inferred
+    named_group = DOC_TYPE_INTERFACE.get(named)
+    inferred_group = DOC_TYPE_INTERFACE.get(inferred)
+    if named_group != inferred_group:
+        return inferred
+    return named
 
 
 def load_scaffolding_catalog(catalog_path: str | None = None) -> dict[str, Any]:
@@ -200,8 +351,12 @@ def extract_pdf_chunks(
         raise FileNotFoundError(f"PDF not found: {pdf_path}")
 
     filename = os.path.basename(pdf_path)
+    filename_type = detect_doc_type(filename)
+    # A caller-supplied type that differs from the filename is kept.
+    # The filename type is provisional until the opening text is read.
+    forced = doc_type is not None and doc_type != filename_type
     if not doc_type:
-        doc_type = detect_doc_type(filename)
+        doc_type = filename_type
 
     converter = get_docling_converter()
     result = converter.convert(pdf_path)
@@ -241,6 +396,12 @@ def extract_pdf_chunks(
             'text': text.strip(),
         })
 
+    if raw_chunks and not forced:
+        opening = "\n".join(chunk["text"] for chunk in raw_chunks[:15])
+        doc_type = resolve_doc_type(filename, opening)
+        for chunk in raw_chunks:
+            chunk["doc_type"] = doc_type
+
     # Filter scaffolding
     clean_chunks = clean_scaffolding_from_chunks(raw_chunks, doc_type=doc_type, catalog_path=catalog_path)
     return clean_chunks
@@ -269,9 +430,9 @@ def process_startup_folder(
 
     for pdf in pdf_files:
         fname = pdf.name
-        doc_type = detect_doc_type(fname)
         try:
-            chunks = extract_pdf_chunks(str(pdf), doc_type=doc_type, catalog_path=catalog_path)
+            chunks = extract_pdf_chunks(str(pdf), catalog_path=catalog_path)
+            doc_type = chunks[0]["doc_type"] if chunks else detect_doc_type(fname)
             all_chunks.extend(chunks)
 
             # Build markdown section for prompt prefix caching

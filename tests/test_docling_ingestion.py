@@ -35,6 +35,73 @@ class TestDoclingIngestion(unittest.TestCase):
         self.assertEqual(detect_doc_type("11_17Inc_InvestorPitchDeck.pdf"), "EBD8")
         self.assertEqual(detect_doc_type("02_17_Inc_-_Biz_Model_Canvas.pdf"), "EBD1")
         self.assertEqual(detect_doc_type("unknown_custom_file.pdf"), "OTHER")
+        self.assertEqual(detect_doc_type("EBD_4_TechnologyValidation.pdf"), "EBD4")
+        self.assertEqual(detect_doc_type("03_Business_Model_Canvas_LeverageTech_Innovations_Module_1.pdf"), "EBD1")
+        self.assertEqual(detect_doc_type("01_Leveragetech_EBD_1_Team_Targets_CTO_Accelerator_2025.pdf"), "M8")
+        self.assertEqual(detect_doc_type("16_ArisHydronics_EBD9ExecutiveSummary_docx.pdf"), "EBD6")
+        self.assertEqual(detect_doc_type("05_Biospheric_AI_EBD9_GHG_ERP_Workbook.pdf"), "M2")
+        self.assertEqual(detect_doc_type("14_Fortifyy_Legal_Questions.pdf"), "M7")
+        self.assertEqual(detect_doc_type("05_Condor_Business_Modle_Canvas.pdf"), "EBD1")
+        self.assertEqual(detect_doc_type("15_Module_10_CTO_Investor_Pitch_Deck_August_26_2025.pdf"), "EBD8")
+        self.assertEqual(detect_doc_type("08_EcosphereOrganics_M4Questions.pdf"), "M4")
+        self.assertEqual(detect_doc_type("Patent_Filing.pdf"), "OTHER")
+        self.assertEqual(detect_doc_type("TeamName_Overview.pdf"), "OTHER")
+        self.assertEqual(detect_doc_type("Canvas_Notes.pdf"), "OTHER")
+        self.assertEqual(detect_doc_type("03_WindPulseEnergy_EBD1CustomerInterviewCaptures.pdf"), "M1")
+        self.assertEqual(detect_doc_type("08_Leveragetech_EBD4_Matrix_and_architype.pdf"), "M3")
+        self.assertEqual(detect_doc_type("14_Compocity_EBD6FinancialPlan_workbook.pdf"), "EBD5")
+        self.assertEqual(detect_doc_type("18_GreenSightTechnologiesPDeck.pdf"), "EBD8")
+        self.assertEqual(detect_doc_type("16_Calectra_deck.pdf"), "EBD8")
+        self.assertEqual(detect_doc_type("02_Technical_Deck_03-04-25b.pdf"), "OTHER")
+        self.assertEqual(detect_doc_type("07_Loco-motion_Revenue_Strategy_Deck.pdf"), "OTHER")
+        self.assertEqual(detect_doc_type("18_Bluesonde_1Pager.pdf"), "EBD6")
+        self.assertEqual(detect_doc_type("11_Sust_Chem_PMF_for_CTO.pdf"), "M3")
+        self.assertEqual(detect_doc_type("03_Lute_amp_Ether_TargetGoals_June9_2025.pdf"), "M8")
+        self.assertEqual(detect_doc_type("01_Core_Envision_finincial_proj_summary.pdf"), "EBD5")
+        self.assertEqual(detect_doc_type("01_2DaLoop_Revenue_Projections_-_SBIR.pdf"), "EBD5")
+        self.assertEqual(detect_doc_type("16_Biomific_2025_CTO_Exec_Summary_vfinal_Submitted_08252025.pdf"), "EBD6")
+        self.assertEqual(detect_doc_type("08_CrucibleEnergy_TechnologyTestimonials_v6.pdf"), "EBD4")
+
+    def test_02b_opening_text_overrides_a_weak_filename(self):
+        """A template title in the opening maps the file when the filename does not."""
+        from scripts.docling_ingestion import resolve_doc_type
+
+        self.assertEqual(
+            resolve_doc_type(
+                "13_2025_Module_6_Questions.pdf",
+                "## Module 4: Markets and Getting to Them Assignment Sheet",
+            ),
+            "M4",
+        )
+        self.assertEqual(
+            resolve_doc_type(
+                "03_Assignment_2.pdf",
+                "## Module 2 Assignment: Impact/Sustainability Questions",
+            ),
+            "M2",
+        )
+        self.assertEqual(
+            resolve_doc_type(
+                "05_cleantech_assignment_3.pdf",
+                "## Module 3: Product/Market Flt & Customer Discovery Questions",
+            ),
+            "M3",
+        )
+        self.assertEqual(
+            resolve_doc_type(
+                "01_PDFF.pdf",
+                "## Module 1: Business Model Canvas Customer Interview Capture Sheet",
+            ),
+            "M1",
+        )
+        self.assertEqual(
+            resolve_doc_type("18_Hubbletek-Carbon-Credits-Made-Simple.pdf", "Investor Pitch Deck"),
+            "EBD8",
+        )
+        pitch = "Investor Pitch Deck\n" + ("slide " * 40) + "financial projection"
+        self.assertEqual(resolve_doc_type("14_CTO-InvestorDeck_Final.pdf", pitch), "EBD8")
+        tech = "Product Technology Validation\n" + ("note " * 40) + "key partners value propositions"
+        self.assertEqual(resolve_doc_type("12_EBD4TechnologyValidation.pdf", tech), "EBD4")
 
     def test_03_scaffolding_filter(self):
         """Verify that known scaffolding catalog items are filtered out."""

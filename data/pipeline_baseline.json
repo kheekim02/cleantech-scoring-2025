@@ -85,9 +85,21 @@
     "push_scripts": "Unchanged. scripts/13_push_clean_extractions_to_supabase.py still commits to startup_extractions and defaults to data/ai_cache_v3_strict. scripts/15_push_v2_extractions_to_supabase.py still requires --commit and defaults to data/ai_cache_v2. Neither is pointed at ai_cache_v4_shadow."
   },
   "sha256": {
-    "scripts/14_ai_copilot_extractor_v2.py": "d47fa82f6b7ba6920d326c5baf10e17532623c1a1d5ce2202c9583dcea996d8d",
-    "scripts/docling_ingestion.py": "7f315f3e52429ba3372608541a5095db7a430f925f7671c0330b51b04f4039e7",
+    "scripts/14_ai_copilot_extractor_v2.py": "fe8422140cc45f7643b2667c3d37f1d5d72184c22810ef6f06c8dcec55e63eb2",
+    "scripts/docling_ingestion.py": "20fa178c3adaa64f3e33855648257be78831a88f0f0b17abf1310be965c92bba",
     "scripts/08_ai_copilot_extractor_clean.py": "835c494ce5f1522e9b53b764a51057c4827602b0c7659a7a97c7413510aaafc3",
     "data/active_startup_allowlist.json": "e0cb3d63521b4b2f3524613d8d5b0c7ef87cf2d2ba7bd317c6233c331d4c12bc"
+  },
+  "phase2_routing": {
+    "ES": [
+      "EBD2",
+      "M2"
+    ],
+    "IS": [
+      "EBD6"
+    ],
+    "context": "Primary documents are placed first inside a 300000 character cap. A category with no classified primary file is scored null at confidence 0 and the model is not called.",
+    "classifier": "Deliverable-name aliases outrank module numbers. Bare Canvas, Team, Legal, and Patent tokens are not classifiers. EBD9 is not folded into the executive summary. A generic filename is classified from the opening template title.",
+    "text_verified": "tests/test_cohort_doc_mapping.py reads all 92 allowlisted companies in data/parsed_clean (1465 PDFs). A template title in the opening must land in the same interface group as the resolved type."
   }
 }

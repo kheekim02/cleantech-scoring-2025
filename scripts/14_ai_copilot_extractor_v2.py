@@ -119,6 +119,45 @@ def create_instructor_client(sglang_url: str, timeout: int = 60) -> Any:
     return client
 
 
+# ES questions are SDGs, climate, and waste, so the impact statement and GHG module
+# are primary. IS questions open with company name, contact, and logo, so the
+# one-page executive summary is primary. Secondary documents stay in the prompt
+# only after the primary text, inside the character cap.
+CAT_PRIMARY_SOURCES: dict[str, list[str]] = {
+    "BC": ["EBD1"],
+    "ES": ["EBD2", "M2"],
+    "F": ["EBD5", "M6"],
+    "IP": ["EBD8"],
+    "IS": ["EBD6"],
+    "L": ["M7"],
+    "M": ["EBD3", "M4"],
+    "PMF": ["M3", "M1"],
+    "T": ["M8"],
+    "TP": ["EBD4"],
+}
+CONTEXT_CHAR_LIMIT = 300_000
+
+# Optgroup labels in site/js/render.js categoryNames. The dropdown uses these
+# labels, not the payload section heading.
+INTERFACE_CATEGORY_LABELS: dict[str, str] = {
+    "BC": "Business Canvas",
+    "ES": "Environmental & Social",
+    "F": "Financials",
+    "IP": "Investor Pitch",
+    "IS": "Impact Strategy",
+    "L": "Legal",
+    "M": "Marketing",
+    "PMF": "Product Market Fit",
+    "T": "Team",
+    "TP": "Tech / Product",
+}
+
+
+def interface_categories_for_doc_type(doc_type: str) -> list[str]:
+    """Rubric categories that treat this deliverable as a primary source."""
+    return [cat for cat, types in CAT_PRIMARY_SOURCES.items() if doc_type in types]
+
+
 def build_doc_manifest(chunks: list[dict[str, Any]]) -> dict[str, list[str]]:
     """Build a mapping from doc_type code to list of unique source_pdf filenames.
 
@@ -136,6 +175,72 @@ def build_doc_manifest(chunks: list[dict[str, Any]]) -> dict[str, list[str]]:
         manifest.setdefault(doc_type, []).append(source_pdf)
     return manifest
 
+
+def _render_document(file_chunks: list[dict[str, Any]], role: str) -> str:
+    fname = file_chunks[0].get("source_pdf") or "unknown"
+    doc_type = file_chunks[0].get("doc_type", "OTHER")
+    parts = [f"=== DOCUMENT: {fname} [Type: {doc_type}] [Role: {role}] ==="]
+    for chunk in file_chunks:
+        page = chunk.get("page_no") or chunk.get("page_number")
+        page_info = f"[Page {page}] " if page else ""
+        parts.append(f"{page_info}{chunk.get('text', '')}".strip())
+    return "\n\n".join(parts)
+
+
+def build_category_context(
+    chunks: list[dict[str, Any]],
+    cat_code: str,
+    char_limit: int = CONTEXT_CHAR_LIMIT,
+) -> dict[str, Any]:
+    """Place primary deliverables first and keep them inside the character cap.
+
+    Secondary documents fill only the remaining budget. A category with no
+    classified primary file is not scored from the rest of the packet.
+    """
+    primary_types = set(CAT_PRIMARY_SOURCES.get(cat_code, []))
+    by_file: dict[str, list[dict[str, Any]]] = {}
+    order: list[str] = []
+    for chunk in chunks:
+        fname = chunk.get("source_pdf") or ""
+        if fname not in by_file:
+            by_file[fname] = []
+            order.append(fname)
+        by_file[fname].append(chunk)
+
+    primary_files = [
+        fname for fname in order if by_file[fname][0].get("doc_type") in primary_types
+    ]
+    secondary_files = [fname for fname in order if fname not in primary_files]
+    pieces: list[str] = []
+    used = 0
+
+    def add_file(fname: str, role: str) -> bool:
+        nonlocal used
+        if used >= char_limit:
+            return False
+        block = _render_document(by_file[fname], role)
+        remain = char_limit - used
+        if len(block) > remain:
+            block = block[:remain]
+        pieces.append(block)
+        used += len(block) + 3
+        return used < char_limit
+
+    for fname in primary_files:
+        if not add_file(fname, "PRIMARY"):
+            break
+    if primary_files:
+        for fname in secondary_files:
+            if not add_file(fname, "SECONDARY"):
+                break
+
+    return {
+        "text": "\n\n\n".join(pieces),
+        "has_primary": bool(primary_files),
+        "primary_filenames": primary_files,
+    }
+
+
 def query_sglang_question(
     client: Any,
     model_id: str,
@@ -143,50 +248,34 @@ def query_sglang_question(
     question: dict[str, Any],
     timeout: int = 60,
     doc_manifest: dict[str, list[str]] | None = None,
+    has_primary: bool = True,
 ) -> dict[str, Any]:
     """Execute evaluation for a single rubric question against the cached prefix context using Instructor."""
     qid = question.get("new_q_id", question.get("q_id"))
     options = [o.get("val") for o in question.get("options", [])]
     options_desc = ", ".join(str(o) for o in options) if options else "0.0, 1.0"
 
-    # --- Strict Document Sourcing ---
-    # Map each rubric category to the deliverable type codes that are its primary sources.
-    # The doc_manifest (built per-startup from actual filenames) resolves these codes to
-    # the real document names present in <applicant_prose>.
-    CAT_PRIMARY_SOURCES: dict[str, list[str]] = {
-        "BC": ["EBD1"],                      # Business Model Canvas
-        "ES": ["EBD6"],                      # Executive Summary
-        "F":  ["EBD5", "M6"],                # Financial Projections
-        "IP": ["EBD8"],                      # Investor Pitch Deck
-        "IS": ["EBD2", "M2"],                # Impact Statement / Sustainability
-        "L":  ["M7"],                        # Legal & Governance
-        "M":  ["EBD3", "M4"],                # Customer Segments / Competitive Matrix
-        "PMF":["M3", "M1"],                  # Customer Discovery
-        "T":  ["M8"],                        # Team & Targets
-        "TP": ["EBD4"],                      # Technology Validation
-    }
-
     cat_code = question.get('cat_code', 'GENERAL')
-    sourcing_instruction = ""
+    if not has_primary:
+        return {
+            "q_id": qid,
+            "predicted_val": None,
+            "confidence": 0.0,
+            "citation": None,
+            "rationale": "No primary source document was classified for this category.",
+            "duration_sec": 0.0,
+        }
 
+    primary_filenames: list[str] = []
     if doc_manifest and cat_code in CAT_PRIMARY_SOURCES:
-        primary_type_codes = CAT_PRIMARY_SOURCES[cat_code]
-        primary_filenames = []
-        for tc in primary_type_codes:
+        for tc in CAT_PRIMARY_SOURCES[cat_code]:
             primary_filenames.extend(doc_manifest.get(tc, []))
-
-        if primary_filenames:
-            file_list = ", ".join(f'"{f}"' for f in primary_filenames)
-            sourcing_instruction = (
-                f"For this {cat_code} criterion, your PRIMARY source document(s) are: {file_list}. "
-                f"Extract your citation ONLY from these primary documents. "
-                f"Use other documents ONLY if the primary source(s) contain absolutely no relevant evidence."
-            )
-        else:
-            sourcing_instruction = (
-                f"No primary source document was found for category {cat_code}. "
-                f"Search all available documents but note reduced confidence."
-            )
+    file_list = ", ".join(f'"{f}"' for f in primary_filenames) if primary_filenames else "the documents marked [Role: PRIMARY]"
+    sourcing_instruction = (
+        f"For this {cat_code} criterion, your PRIMARY source document(s) are: {file_list}. "
+        f"Extract your citation from documents marked [Role: PRIMARY]. "
+        f"Documents marked [Role: SECONDARY] may be used only when the primary documents contain no relevant evidence."
+    )
 
     system_prompt = (
         "You are an objective due diligence evaluator scoring cleantech startup applications. "
@@ -195,8 +284,8 @@ def query_sglang_question(
         f"{sourcing_instruction}"
     )
 
-    # Cap prefix context to 300,000 chars (~75k tokens) to ensure rapid prefill within 131k window
-    safe_context = prefix_context[:300000] if len(prefix_context) > 300000 else prefix_context
+    # Category context is already primary-first and capped. This slice is a backstop.
+    safe_context = prefix_context[:CONTEXT_CHAR_LIMIT] if len(prefix_context) > CONTEXT_CHAR_LIMIT else prefix_context
     user_prompt = (
         f"<applicant_prose>\n{safe_context}\n</applicant_prose>\n\n"
         f"<rubric_criterion>\n"
@@ -326,10 +415,21 @@ def evaluate_startup(
 
     # Build per-startup document manifest mapping doc_type -> actual filenames
     doc_manifest = build_doc_manifest(chunks)
+    category_contexts = {
+        cat: build_category_context(chunks, cat) for cat in CAT_PRIMARY_SOURCES
+    }
     logger.info(
         f"Loaded {len(chunks)} chunks, full text size: {len(prefix_context):,} chars | "
         f"Document manifest: { {k: v for k, v in sorted(doc_manifest.items())} }"
     )
+    for cat, ctx in category_contexts.items():
+        logger.info(
+            "Context %s primary=%s files=%s chars=%s",
+            cat,
+            ctx["has_primary"],
+            ctx["primary_filenames"],
+            len(ctx["text"]),
+        )
 
     # 2. Load Rubric
     rubric_candidates = [
@@ -389,10 +489,11 @@ def evaluate_startup(
                 query_sglang_question,
                 inst_client,
                 model_id,
-                prefix_context,
+                category_contexts.get(q.get("cat_code") or "", {}).get("text", ""),
                 q,
                 60,
                 doc_manifest,
+                category_contexts.get(q.get("cat_code") or "", {}).get("has_primary", False),
             ): q for q in remaining_questions
         }
 
