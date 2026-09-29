@@ -1,4 +1,4 @@
-window.CTO = window.CTO || {};
+const CTO = window.CTO = window.CTO || {};
 
 CTO.App = {
   state: {
@@ -216,6 +216,23 @@ CTO.App = {
         e.target.style.display = 'none';
       }
     });
+
+    const btnFlagged = document.getElementById('btn-flagged-modal');
+    if (btnFlagged) {
+      btnFlagged.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.openFlaggedModal();
+      });
+    }
+
+    const flaggedModal = document.getElementById('flagged-modal');
+    if (flaggedModal) {
+      flaggedModal.addEventListener('click', (e) => {
+        if (e.target.id === 'flagged-modal') {
+          this.closeFlaggedModal();
+        }
+      });
+    }
 
     document.getElementById('submit-modal').addEventListener('click', (e) => {
       if (e.target.tagName === 'A' && e.target.dataset.qid) {
@@ -704,67 +721,82 @@ CTO.App = {
   },
 
   openFlaggedModal() {
-    const sId = this.state.activeStartupId;
-    const sData = this.state.startups[sId];
-    const sEval = this.state.evaluations[sId];
-    const flags = sEval?.humanFlags || {};
-    const flaggedQids = Object.keys(flags).filter(qid => flags[qid]);
+    try {
+      const modal = document.getElementById('flagged-modal');
+      if (!modal) {
+        console.error('[Flagged Modal] #flagged-modal element not found in DOM.');
+        return;
+      }
 
-    const modalBody = document.getElementById('flagged-modal-body');
-    if (!modalBody) return;
+      const sId = this.state.activeStartupId;
+      const sData = this.state.startups ? this.state.startups[sId] : null;
+      const sEval = this.state.evaluations ? this.state.evaluations[sId] : null;
+      const flags = sEval?.humanFlags || {};
+      const flaggedQids = Object.keys(flags).filter(qid => flags[qid]);
 
-    if (flaggedQids.length === 0) {
-      modalBody.innerHTML = `
-        <div style="text-align: center; padding: 36px 16px; color: var(--text-muted);">
-          <div style="font-size: 32px; margin-bottom: 8px;">🏳️</div>
-          <strong style="color: var(--text-main); font-size: 15px;">No Flagged Questions</strong>
-          <p style="font-size: 13px; margin-top: 6px; max-width: 320px; margin-left: auto; margin-right: auto; line-height: 1.4;">
-            Click the <strong>Flag for Review</strong> button on any question card to keep track of items you want to return to later.
-          </p>
-        </div>
-      `;
-    } else {
-      const qMap = new Map((sData?.human_questions || []).map(q => [q.new_q_id || q.q_id, q]));
-      let html = '';
-
-      flaggedQids.forEach(qid => {
-        const q = qMap.get(qid) || { cat_code: qid.split('_')[0], new_q_id: qid, text: '' };
-        const catName = CTO.Render.categoryNames[q.cat_code] || q.cat_code;
-        const answerVal = sEval.humanAnswers ? sEval.humanAnswers[qid] : undefined;
-        const isAnswered = answerVal !== undefined && answerVal !== null;
-        
-        let scoreBadge = '';
-        if (isAnswered) {
-          scoreBadge = `<span style="background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 8px; border-radius: 10px; font-family: var(--mono); font-size: 11px; font-weight: 700;">Score: ${CTO.Render.formatPoints(answerVal)}</span>`;
+      const modalBody = document.getElementById('flagged-modal-body');
+      if (modalBody) {
+        if (flaggedQids.length === 0) {
+          modalBody.innerHTML = `
+            <div style="text-align: center; padding: 36px 16px; color: var(--text-muted);">
+              <div style="font-size: 32px; margin-bottom: 8px;">🏳️</div>
+              <strong style="color: var(--text-main); font-size: 15px;">No Flagged Questions</strong>
+              <p style="font-size: 13px; margin-top: 6px; max-width: 320px; margin-left: auto; margin-right: auto; line-height: 1.4;">
+                Click the <strong>Flag for Review</strong> button on any question card to keep track of items you want to return to later.
+              </p>
+            </div>
+          `;
         } else {
-          scoreBadge = `<span style="background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; padding: 2px 8px; border-radius: 10px; font-family: var(--mono); font-size: 11px; font-weight: 700;">Unscored</span>`;
+          const qMap = new Map((sData?.human_questions || []).map(q => [q.new_q_id || q.q_id, q]));
+          let html = '';
+
+          flaggedQids.forEach(qid => {
+            const q = qMap.get(qid) || { cat_code: qid.split('_')[0], new_q_id: qid, text: '' };
+            const catName = (window.CTO?.Render?.categoryNames && window.CTO.Render.categoryNames[q.cat_code]) || q.cat_code;
+            const answerVal = sEval?.humanAnswers ? sEval.humanAnswers[qid] : undefined;
+            const isAnswered = answerVal !== undefined && answerVal !== null;
+            
+            let scoreBadge = '';
+            if (isAnswered) {
+              const ptText = window.CTO?.Render?.formatPoints ? window.CTO.Render.formatPoints(answerVal) : `${answerVal} pts`;
+              scoreBadge = `<span style="background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 8px; border-radius: 10px; font-family: var(--mono); font-size: 11px; font-weight: 700;">Score: ${ptText}</span>`;
+            } else {
+              scoreBadge = `<span style="background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; padding: 2px 8px; border-radius: 10px; font-family: var(--mono); font-size: 11px; font-weight: 700;">Unscored</span>`;
+            }
+
+            const safeSnippet = window.CTO?.Render?.escapeHtml ? window.CTO.Render.escapeHtml(q.text || '') : (q.text || '');
+
+            html += `
+              <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; padding: 12px 14px; background: var(--surface-sunk); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 10px;">
+                <div style="flex: 1; min-width: 0;">
+                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px; flex-wrap: wrap;">
+                    <span class="h-tag">${q.cat_code}</span>
+                    <strong style="font-family: var(--mono); font-size: 12px;">${q.new_q_id}</strong>
+                    <span style="font-size: 12px; color: var(--text-muted);">&bull; ${catName}</span>
+                    ${scoreBadge}
+                  </div>
+                  <div style="font-size: 13px; color: var(--text-main); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                    ${safeSnippet}
+                  </div>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0;">
+                  <button class="nav-btn btn-next ready" style="padding: 5px 12px; font-size: 12px;" onclick="window.CTO.App.jumpFromFlagModal('${q.cat_code}', '${q.new_q_id}')">Jump →</button>
+                  <button class="nav-btn" style="padding: 3px 8px; font-size: 11px; color: var(--accent-red); background: transparent;" onclick="window.CTO.App.unflagFromModal('${q.new_q_id}')">Unflag</button>
+                </div>
+              </div>
+            `;
+          });
+
+          modalBody.innerHTML = html;
         }
+      }
 
-        html += `
-          <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; padding: 12px 14px; background: var(--surface-sunk); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 10px;">
-            <div style="flex: 1; min-width: 0;">
-              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px; flex-wrap: wrap;">
-                <span class="h-tag">${q.cat_code}</span>
-                <strong style="font-family: var(--mono); font-size: 12px;">${q.new_q_id}</strong>
-                <span style="font-size: 12px; color: var(--text-muted);">&bull; ${catName}</span>
-                ${scoreBadge}
-              </div>
-              <div style="font-size: 13px; color: var(--text-main); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-                ${CTO.Render.escapeHtml(q.text || '')}
-              </div>
-            </div>
-            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0;">
-              <button class="nav-btn btn-next ready" style="padding: 5px 12px; font-size: 12px;" onclick="window.CTO.App.jumpFromFlagModal('${q.cat_code}', '${q.new_q_id}')">Jump →</button>
-              <button class="nav-btn" style="padding: 3px 8px; font-size: 11px; color: var(--accent-red); background: transparent;" onclick="window.CTO.App.unflagFromModal('${q.new_q_id}')">Unflag</button>
-            </div>
-          </div>
-        `;
-      });
-
-      modalBody.innerHTML = html;
+      modal.style.display = 'flex';
+    } catch (err) {
+      console.error('[Flagged Modal] Error opening modal:', err);
+      const modal = document.getElementById('flagged-modal');
+      if (modal) modal.style.display = 'flex';
     }
-
-    document.getElementById('flagged-modal').style.display = 'flex';
   },
 
   closeFlaggedModal() {
