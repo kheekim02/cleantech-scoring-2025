@@ -117,6 +117,27 @@ window.CTO.Render = {
     }
   },
 
+  renderSectionDropdown(categories, activeCat, humanQuestions = [], humanAnswers = {}) {
+    const selector = document.getElementById('section-nav-selector');
+    if (!selector) return;
+
+    let html = '';
+    categories.forEach((catCode, idx) => {
+      const name = this.categoryNames[catCode] || catCode;
+      const catHqs = humanQuestions.filter(q => q.cat_code === catCode);
+      const total = catHqs.length;
+      const answered = catHqs.filter(q => humanAnswers[q.new_q_id || q.q_id] !== undefined && humanAnswers[q.new_q_id || q.q_id] !== null).length;
+      const isDone = total > 0 && answered === total;
+      const selected = (catCode === activeCat) ? 'selected' : '';
+      const checkText = isDone ? ' ✓' : '';
+      
+      html += `<option value="${catCode}" ${selected}>${idx + 1}. ${name} (${answered}/${total}${checkText})</option>`;
+    });
+
+    selector.innerHTML = html;
+    selector.value = activeCat;
+  },
+
   renderRightPane(stepCat, stepIndex, totalSteps, aiCats, humanQuestions, answers, humanJustifications = {}) {
     document.getElementById('step-counter').textContent = `STEP ${stepIndex + 1} OF ${totalSteps}`;
     document.getElementById('step-title').textContent = this.categoryNames[stepCat] || stepCat;

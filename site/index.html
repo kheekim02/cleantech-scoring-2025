@@ -87,6 +87,16 @@
         </div>
       </div>
 
+      <!-- Section Navigation Dropdown Bar -->
+      <div class="section-nav-bar" id="section-nav-bar">
+        <label for="section-nav-selector" class="section-nav-label">
+          <span class="icon">📋</span> Section:
+        </label>
+        <select id="section-nav-selector" class="section-nav-selector" aria-label="Select Rubric Section" onchange="window.CTO.App.jumpToCategory(this.value)">
+          <!-- Populated dynamically via CTO.Render.renderSectionDropdown -->
+        </select>
+      </div>
+
       <div class="right-scroll-area">
 
         <!-- Human Review Section -->

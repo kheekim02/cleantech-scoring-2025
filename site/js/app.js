@@ -119,6 +119,8 @@ CTO.App = {
       if (this.state.currentStepIndex > 0) {
         this.state.currentStepIndex--;
         this.updateUI();
+        const scrollArea = document.querySelector('.right-scroll-area');
+        if (scrollArea) scrollArea.scrollTop = 0;
       }
     });
 
@@ -126,6 +128,8 @@ CTO.App = {
       if (this.state.currentStepIndex < this.state.categories.length - 1) {
         this.state.currentStepIndex++;
         this.updateUI();
+        const scrollArea = document.querySelector('.right-scroll-area');
+        if (scrollArea) scrollArea.scrollTop = 0;
       } else {
         this.submitEvaluation();
       }
@@ -449,6 +453,12 @@ CTO.App = {
     const catCode = this.state.categories[this.state.currentStepIndex];
     
     CTO.Render.renderLeftPane(catCode, sData.document);
+    CTO.Render.renderSectionDropdown(
+      this.state.categories,
+      catCode,
+      sData.human_questions,
+      sEval.humanAnswers
+    );
     CTO.Render.renderRightPane(
       catCode,
       this.state.currentStepIndex,
@@ -489,6 +499,12 @@ CTO.App = {
     const hqs = sData.human_questions.filter(q => q.cat_code === catCode);
     const answeredStep = hqs.filter(q => sEval.humanAnswers[q.new_q_id] !== undefined).length;
     CTO.Render.updateProgressText(answeredStep, hqs.length);
+    CTO.Render.renderSectionDropdown(
+      this.state.categories,
+      catCode,
+      sData.human_questions,
+      sEval.humanAnswers
+    );
 
     // REC 5: Optimistic Sync
     this.saveState();
@@ -586,6 +602,16 @@ CTO.App = {
     }
     
     modal.style.display = 'flex';
+  },
+
+  jumpToCategory(catCode) {
+    const targetIndex = this.state.categories.indexOf(catCode);
+    if (targetIndex !== -1 && targetIndex !== this.state.currentStepIndex) {
+      this.state.currentStepIndex = targetIndex;
+      this.updateUI();
+      const scrollArea = document.querySelector('.right-scroll-area');
+      if (scrollArea) scrollArea.scrollTop = 0;
+    }
   },
 
   // REC 2: Jump to question
