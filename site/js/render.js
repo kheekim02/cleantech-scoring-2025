@@ -138,7 +138,7 @@ window.CTO.Render = {
     selector.value = activeCat;
   },
 
-  renderRightPane(stepCat, stepIndex, totalSteps, aiCats, humanQuestions, answers, humanJustifications = {}) {
+  renderRightPane(stepCat, stepIndex, totalSteps, aiCats, humanQuestions, answers, humanJustifications = {}, flags = {}) {
     document.getElementById('step-counter').textContent = `STEP ${stepIndex + 1} OF ${totalSteps}`;
     document.getElementById('step-title').textContent = this.categoryNames[stepCat] || stepCat;
     
@@ -333,15 +333,26 @@ window.CTO.Render = {
               ${this.icons.check} 1 pt
             </button>
           `;
+
+        const isFlagged = Boolean(flags[q.new_q_id || q.q_id]);
+        const flagBtnHtml = `
+          <button class="flag-btn ${isFlagged ? 'flagged' : ''}" data-action="toggle-flag" data-qid="${q.new_q_id || q.q_id}" title="${isFlagged ? 'Flagged for review (Click to unflag)' : 'Flag this question for review'}">
+            <span class="flag-icon">${isFlagged ? '🚩' : '🏳️'}</span>
+            <span class="flag-label">${isFlagged ? 'Flagged' : 'Flag for Review'}</span>
+          </button>
+        `;
         
         hHtml += `
-          <div class="h-card" id="card-${q.new_q_id}" data-qid="${q.new_q_id}" style="animation-delay: ${(idx * 40) + 100}ms;">
+          <div class="h-card ${isFlagged ? 'is-flagged' : ''}" id="card-${q.new_q_id}" data-qid="${q.new_q_id}" style="animation-delay: ${(idx * 40) + 100}ms;">
             <div class="h-card-header">
-              <div>
+              <div style="display: flex; align-items: center; gap: 8px;">
                 <span class="h-tag">${q.cat_code}</span>
                 <span class="h-qid">${q.new_q_id}</span>
               </div>
-              ${aiSuggestHtml}
+              <div style="display: flex; align-items: center; gap: 10px;">
+                ${flagBtnHtml}
+                ${aiSuggestHtml}
+              </div>
             </div>
             <div class="h-card-body">
               ${safeQuestionText}
@@ -414,6 +425,58 @@ window.CTO.Render = {
         btnNext.classList.add('ready');
       } else {
         btnNext.classList.remove('ready');
+      }
+    }
+  },
+
+  updateFlagState(qid, isFlagged) {
+    const card = document.getElementById(`card-${qid}`);
+    if (card) {
+      if (isFlagged) {
+        card.classList.add('is-flagged');
+      } else {
+        card.classList.remove('is-flagged');
+      }
+      const flagBtn = card.querySelector(`[data-action="toggle-flag"]`);
+      if (flagBtn) {
+        if (isFlagged) {
+          flagBtn.classList.add('flagged');
+          flagBtn.title = 'Flagged for review (Click to unflag)';
+          const icon = flagBtn.querySelector('.flag-icon');
+          if (icon) icon.textContent = '🚩';
+          const label = flagBtn.querySelector('.flag-label');
+          if (label) label.textContent = 'Flagged';
+        } else {
+          flagBtn.classList.remove('flagged');
+          flagBtn.title = 'Flag this question for review';
+          const icon = flagBtn.querySelector('.flag-icon');
+          if (icon) icon.textContent = '🏳️';
+          const label = flagBtn.querySelector('.flag-label');
+          if (label) label.textContent = 'Flag for Review';
+        }
+      }
+    }
+  },
+
+  updateFlaggedNavBadge(count) {
+    const badge = document.getElementById('nav-flagged-count');
+    const btn = document.getElementById('btn-flagged-modal');
+    if (badge) {
+      badge.textContent = count;
+      if (count > 0) {
+        badge.style.background = '#ef4444';
+        badge.style.color = '#ffffff';
+        if (btn) {
+          btn.style.borderColor = '#fca5a5';
+          btn.style.background = '#fef2f2';
+        }
+      } else {
+        badge.style.background = 'var(--border-strong)';
+        badge.style.color = 'var(--text-main)';
+        if (btn) {
+          btn.style.borderColor = 'var(--border)';
+          btn.style.background = 'var(--surface-sunk)';
+        }
       }
     }
   }

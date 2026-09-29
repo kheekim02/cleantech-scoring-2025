@@ -368,6 +368,38 @@ body {
 .h-card-header {
   padding: 16px 24px; border-bottom: 1px solid var(--hairline); display: flex; justify-content: space-between; align-items: center;
 }
+.flag-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all var(--fast) var(--ease);
+}
+.flag-btn:hover {
+  background: var(--surface-sunk);
+  color: var(--text-main);
+  border-color: var(--border-strong);
+}
+.flag-btn.flagged {
+  background: #fef2f2;
+  border-color: #fca5a5;
+  color: #b91c1c;
+}
+.flag-btn.flagged:hover {
+  background: #fee2e2;
+  border-color: #f87171;
+}
+.h-card.is-flagged {
+  border-left: 4px solid #ef4444;
+}
 .h-tag {
   background: var(--surface-sunk); border: 1px solid var(--border); padding: 4px 8px; border-radius: 6px;
   font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--text-muted);

@@ -79,15 +79,17 @@ module.exports = async (req, res) => {
         await client.end();
         return res.status(400).json({ error: `Invalid score for ${item.qid}` });
       }
+      const isFlagged = (item.is_flagged !== undefined && item.is_flagged !== null) ? Boolean(item.is_flagged) : null;
       await client.query(`
-        INSERT INTO human_reviews (startup_id, question_id, judge_id, score_value, justification)
-        VALUES ($1, $2, $3, $4, $5)
+        INSERT INTO human_reviews (startup_id, question_id, judge_id, score_value, justification, is_flagged)
+        VALUES ($1, $2, $3, $4, $5, COALESCE($6, FALSE))
         ON CONFLICT (startup_id, question_id, judge_id) 
         DO UPDATE SET 
           score_value = COALESCE(EXCLUDED.score_value, human_reviews.score_value),
           justification = COALESCE(EXCLUDED.justification, human_reviews.justification),
+          is_flagged = COALESCE($6, human_reviews.is_flagged),
           updated_at = NOW();
-      `, [startup_id, item.qid, session.principalId, scoreVal, justVal]);
+      `, [startup_id, item.qid, session.principalId, scoreVal, justVal, isFlagged]);
     }
 
     await client.end();

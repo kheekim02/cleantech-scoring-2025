@@ -147,8 +147,16 @@ CTO.App = {
     // REC 4: Event Delegation for human review buttons
 
     document.getElementById('human-cards-container').addEventListener('click', (e) => {
-      // Toggle rubric modal
+      // Toggle flag for review
+      const flagBtn = e.target.closest('[data-action="toggle-flag"]');
+      if (flagBtn) {
+        e.preventDefault();
+        const qid = flagBtn.dataset.qid;
+        this.toggleFlag(qid);
+        return;
+      }
 
+      // Toggle rubric modal
       const rubricLink = e.target.closest('.view-rubric');
       if (rubricLink) {
         e.preventDefault();
@@ -466,13 +474,15 @@ CTO.App = {
       sData.ai_cats,
       sData.human_questions,
       sEval.humanAnswers,
-      sEval.humanJustifications
+      sEval.humanJustifications,
+      sEval.humanFlags || {}
     );
     CTO.Render.renderFooter(
       this.state.currentStepIndex,
       this.state.categories.length
     );
     this.refreshOverallProgress();
+    this.refreshFlaggedCount();
 
   },
 
@@ -525,6 +535,40 @@ CTO.App = {
     this.setSaveStatus('Saving…');
   },
 
+  toggleFlag(qid) {
+    const sEval = this.state.evaluations[this.state.activeStartupId];
+    if (!sEval.humanFlags) sEval.humanFlags = {};
+
+    const currentlyFlagged = Boolean(sEval.humanFlags[qid]);
+    const newFlagState = !currentlyFlagged;
+
+    if (newFlagState) {
+      sEval.humanFlags[qid] = true;
+    } else {
+      delete sEval.humanFlags[qid];
+    }
+
+    // Surgical DOM update for card
+    CTO.Render.updateFlagState(qid, newFlagState);
+
+    // Update top nav flagged counter
+    this.refreshFlaggedCount();
+
+    // Persist to local state & enqueue to database sync
+    this.saveState();
+    const value = sEval.humanAnswers[qid] !== undefined ? sEval.humanAnswers[qid] : null;
+    const justification = sEval.humanJustifications ? (sEval.humanJustifications[qid] || '') : '';
+    this.state.syncQueue.push({ qid, value, justification, is_flagged: newFlagState, timestamp: Date.now() });
+    this.setSaveStatus('Saving…');
+  },
+
+  refreshFlaggedCount() {
+    const sEval = this.state.evaluations[this.state.activeStartupId];
+    const flags = sEval?.humanFlags || {};
+    const count = Object.values(flags).filter(Boolean).length;
+    CTO.Render.updateFlaggedNavBadge(count);
+  },
+
   refreshOverallProgress() {
     const sId = this.state.activeStartupId;
     const sData = this.state.startups[sId];
@@ -546,7 +590,12 @@ CTO.App = {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           startup_id: this.state.activeStartupId,
-          scores: batch.map(b => ({ qid: b.qid, val: b.value !== undefined ? b.value : null, justification: b.justification || '' }))
+          scores: batch.map(b => ({
+            qid: b.qid,
+            val: b.value !== undefined ? b.value : null,
+            justification: b.justification || '',
+            is_flagged: b.is_flagged !== undefined ? b.is_flagged : null
+          }))
         })
       });
       if (!res.ok) throw new Error('SAVE_FAILED');
@@ -600,6 +649,24 @@ CTO.App = {
       auditContainer.style.display = 'none';
       confirmBtn.style.display = 'inline-block';
     }
+
+    const flags = sEval?.humanFlags || {};
+    const flaggedQids = Object.keys(flags).filter(qid => flags[qid]);
+    const flaggedNotice = document.getElementById('flagged-submit-notice');
+    const flaggedList = document.getElementById('flagged-submit-list');
+
+    if (flaggedQids.length > 0 && flaggedNotice) {
+      flaggedNotice.style.display = 'block';
+      if (flaggedList) {
+        flaggedList.innerHTML = flaggedQids.map(qid => {
+          const q = sData.human_questions.find(item => (item.new_q_id || item.q_id) === qid);
+          const cat = q?.cat_code || qid.split('_')[0];
+          return `<li><a href="#" data-cat="${cat}" data-qid="${qid}" style="color: #92400e; font-weight: 600; text-decoration: underline;">[${cat}] ${qid}</a> <span style="color: #78350f;">- ${q?.text ? (q.text.slice(0, 70) + '…') : ''}</span></li>`;
+        }).join('');
+      }
+    } else if (flaggedNotice) {
+      flaggedNotice.style.display = 'none';
+    }
     
     modal.style.display = 'flex';
   },
@@ -636,6 +703,85 @@ CTO.App = {
     }, 50);
   },
 
+  openFlaggedModal() {
+    const sId = this.state.activeStartupId;
+    const sData = this.state.startups[sId];
+    const sEval = this.state.evaluations[sId];
+    const flags = sEval?.humanFlags || {};
+    const flaggedQids = Object.keys(flags).filter(qid => flags[qid]);
+
+    const modalBody = document.getElementById('flagged-modal-body');
+    if (!modalBody) return;
+
+    if (flaggedQids.length === 0) {
+      modalBody.innerHTML = `
+        <div style="text-align: center; padding: 36px 16px; color: var(--text-muted);">
+          <div style="font-size: 32px; margin-bottom: 8px;">🏳️</div>
+          <strong style="color: var(--text-main); font-size: 15px;">No Flagged Questions</strong>
+          <p style="font-size: 13px; margin-top: 6px; max-width: 320px; margin-left: auto; margin-right: auto; line-height: 1.4;">
+            Click the <strong>Flag for Review</strong> button on any question card to keep track of items you want to return to later.
+          </p>
+        </div>
+      `;
+    } else {
+      const qMap = new Map((sData?.human_questions || []).map(q => [q.new_q_id || q.q_id, q]));
+      let html = '';
+
+      flaggedQids.forEach(qid => {
+        const q = qMap.get(qid) || { cat_code: qid.split('_')[0], new_q_id: qid, text: '' };
+        const catName = CTO.Render.categoryNames[q.cat_code] || q.cat_code;
+        const answerVal = sEval.humanAnswers ? sEval.humanAnswers[qid] : undefined;
+        const isAnswered = answerVal !== undefined && answerVal !== null;
+        
+        let scoreBadge = '';
+        if (isAnswered) {
+          scoreBadge = `<span style="background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 8px; border-radius: 10px; font-family: var(--mono); font-size: 11px; font-weight: 700;">Score: ${CTO.Render.formatPoints(answerVal)}</span>`;
+        } else {
+          scoreBadge = `<span style="background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; padding: 2px 8px; border-radius: 10px; font-family: var(--mono); font-size: 11px; font-weight: 700;">Unscored</span>`;
+        }
+
+        html += `
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; padding: 12px 14px; background: var(--surface-sunk); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 10px;">
+            <div style="flex: 1; min-width: 0;">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px; flex-wrap: wrap;">
+                <span class="h-tag">${q.cat_code}</span>
+                <strong style="font-family: var(--mono); font-size: 12px;">${q.new_q_id}</strong>
+                <span style="font-size: 12px; color: var(--text-muted);">&bull; ${catName}</span>
+                ${scoreBadge}
+              </div>
+              <div style="font-size: 13px; color: var(--text-main); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                ${CTO.Render.escapeHtml(q.text || '')}
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0;">
+              <button class="nav-btn btn-next ready" style="padding: 5px 12px; font-size: 12px;" onclick="window.CTO.App.jumpFromFlagModal('${q.cat_code}', '${q.new_q_id}')">Jump →</button>
+              <button class="nav-btn" style="padding: 3px 8px; font-size: 11px; color: var(--accent-red); background: transparent;" onclick="window.CTO.App.unflagFromModal('${q.new_q_id}')">Unflag</button>
+            </div>
+          </div>
+        `;
+      });
+
+      modalBody.innerHTML = html;
+    }
+
+    document.getElementById('flagged-modal').style.display = 'flex';
+  },
+
+  closeFlaggedModal() {
+    const modal = document.getElementById('flagged-modal');
+    if (modal) modal.style.display = 'none';
+  },
+
+  jumpFromFlagModal(catCode, qid) {
+    this.closeFlaggedModal();
+    this.jumpToQuestion(catCode, qid);
+  },
+
+  unflagFromModal(qid) {
+    this.toggleFlag(qid);
+    this.openFlaggedModal();
+  },
+
   // REC 5: Background Sync Worker (Updated for JWT / 401 Handling)
   startSyncWorker() {
     setInterval(async () => {
@@ -661,7 +807,12 @@ CTO.App = {
           },
           body: JSON.stringify({
             startup_id: this.state.activeStartupId,
-            scores: batch.map(b => ({ qid: b.qid, val: b.value !== undefined ? b.value : null, justification: b.justification || '' }))
+            scores: batch.map(b => ({
+              qid: b.qid,
+              val: b.value !== undefined ? b.value : null,
+              justification: b.justification || '',
+              is_flagged: b.is_flagged !== undefined ? b.is_flagged : null
+            }))
           })
         });
 
@@ -686,7 +837,10 @@ CTO.App = {
   loadState() {
     const sId = this.state.activeStartupId;
     if (!this.state.evaluations[sId]) {
-      this.state.evaluations[sId] = { humanAnswers: {}, humanJustifications: {} };
+      this.state.evaluations[sId] = { humanAnswers: {}, humanJustifications: {}, humanFlags: {} };
+    }
+    if (!this.state.evaluations[sId].humanFlags) {
+      this.state.evaluations[sId].humanFlags = {};
     }
 
     // 1. Seed from database reviews if returned by API
@@ -698,6 +852,9 @@ CTO.App = {
         }
         if (r.justification) {
           this.state.evaluations[sId].humanJustifications[r.question_id] = r.justification;
+        }
+        if (r.is_flagged) {
+          this.state.evaluations[sId].humanFlags[r.question_id] = true;
         }
       });
     }
@@ -714,6 +871,9 @@ CTO.App = {
           }
           if (data[draftKey].humanJustifications) {
             Object.assign(this.state.evaluations[sId].humanJustifications, data[draftKey].humanJustifications);
+          }
+          if (data[draftKey].humanFlags) {
+            Object.assign(this.state.evaluations[sId].humanFlags, data[draftKey].humanFlags);
           }
         }
       }

@@ -44,7 +44,7 @@ module.exports = async (req, res) => {
     const reviewsQuery = isTest
       ? { rows: [] }
       : await client.query(
-          'SELECT question_id, score_value, justification FROM human_reviews WHERE startup_id = $1 AND judge_id = $2',
+          'SELECT question_id, score_value, justification, is_flagged FROM human_reviews WHERE startup_id = $1 AND judge_id = $2',
           [id, session.principalId]
         );
     await client.end();
