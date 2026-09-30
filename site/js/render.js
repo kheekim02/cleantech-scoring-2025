@@ -138,13 +138,12 @@ window.CTO.Render = {
     selector.value = activeCat;
   },
 
-  renderRightPane(stepCat, stepIndex, totalSteps, aiCats, humanQuestions, answers, humanJustifications = {}, flags = {}) {
+  renderRightPane(stepCat, stepIndex, totalSteps, humanQuestions, answers, humanJustifications = {}, flags = {}) {
     document.getElementById('step-counter').textContent = `STEP ${stepIndex + 1} OF ${totalSteps}`;
     document.getElementById('step-title').textContent = this.categoryNames[stepCat] || stepCat;
     
     const hqs = humanQuestions.filter(q => q.cat_code === stepCat);
-    // Keep the rubric sequence stable. Review status and AI confidence must never
-    // move a question away from its numbered position in the scoring rubric.
+    // Keep the rubric sequence stable. Never reorder by review status.
     const sortedHqs = [...hqs].sort((a, b) =>
       (a.new_q_id || a.q_id || '').localeCompare(
         b.new_q_id || b.q_id || '',
@@ -156,8 +155,6 @@ window.CTO.Render = {
     const answeredCount = hqs.filter(q => answers[q.new_q_id] !== undefined).length;
     this.updateProgressText(answeredCount, hqs.length);
 
-
-
     const hContainer = document.getElementById('human-cards-container');
     let hHtml = '';
     
@@ -165,8 +162,8 @@ window.CTO.Render = {
       hHtml = `
         <div class="pane-empty verified">
           <div class="pane-empty-mark">${this.icons.shield}</div>
-          <strong>Fully Machine-Verified</strong>
-          <p>All checks in this section passed automated extraction. No human review is required.</p>
+          <strong>No Questions In This Section</strong>
+          <p>There are no human review criteria for this category.</p>
         </div>
       `;
     } else {
@@ -175,126 +172,14 @@ window.CTO.Render = {
         const ans = answers[q.new_q_id];
         const isYesSelected = ans === 1 ? 'selected' : '';
         const isNoSelected = ans === 0 ? 'selected' : '';
-        
-        const confNum = parseFloat(q.ai_confidence || 0);
-        let confText = (q.ai_confidence !== undefined && q.ai_confidence !== null) ? `${Math.round(q.ai_confidence * 100)}%` : 'N/A';
-        
-        let verdictText = 'N/A';
-        if (q.ai_suggestion !== undefined && q.ai_suggestion !== null) {
-            if (q.options && q.options.length > 0) {
-                const optMatch = q.options.find(o => o.val === q.ai_suggestion);
-                if (optMatch) verdictText = optMatch.label;
-                else verdictText = q.ai_suggestion;
-            } else {
-                verdictText = q.ai_suggestion === 1 ? 'YES' : 'NO';
-            }
-        }
-        // Show AI-assisted scores when confidence is high (>=80%), there is a citation, or there is an AI rationale
-        // --- AI ASSISTANCE TEMPORARILY DISABLED ---
-        // To keep a clean interface without potential AI bias, we explicitly hide all AI badges and citations.
-        const hasCitation = false; 
-        const hasRationale = false;
-        const isHighConfidence = false;
-        const hasValidSuggestion = false;
-        const showAiAssist = false;
 
-        const aiSuggestHtml = showAiAssist ? `
-              <div class="h-ai-suggest" aria-label="AI suggestion: ${verdictText}; ${confText} confidence">
-                ${this.icons.spark}
-                <span class="ai-label">AI suggestion</span>
-                <span class="verdict">${this.formatPoints(verdictText)}</span>
-                <span class="divider"></span>
-                <span class="score">${confText} confidence</span>
-              </div>
-        ` : '';
-        const aiAssistNote = showAiAssist ? `
-          <p class="ai-assist-note">AI is an aid, not a final score. Verify the deliverable in the document viewer before submitting.</p>
-        ` : '';
-
-        // Prepare AI Diligence Dossier (Concept 1: Dual-Tier Drawer, Collapsed by Default)
-        const hasDossier = hasRationale || hasCitation;
-        const pageLabel = q.page_number ? ` (p. ${q.page_number})` : '';
-        const docBadge = q.source_pdf ? `<span class="h-dossier-pdf-badge" title="${this.escapeHtml(q.source_pdf)}">${this.icons.doc} ${this.escapeHtml(q.source_pdf)}</span>` : '';
-        const safePdf = (q.source_pdf || '').replace(/"/g, '&quot;');
-        const safePage = q.page_number || '';
-
-        const jumpBtnHtml = q.source_pdf ? `
-          <a href="#" class="h-dossier-jump-btn" data-action="jump-pdf" data-pdf="${safePdf}" data-page="${safePage}">
-            Auto-Jump to Page ${q.page_number || 1} ↗
-          </a>
-        ` : '';
-
-        // Tier 1: Auditor Assessment & Deficit Breakdown
-        const auditRationale = hasRationale ? this.escapeHtml(q.ai_rationale) : 'No automated analysis recorded for this criterion.';
-        const tier1Html = `
-          <div class="h-dossier-tier1">
-            <div class="h-dossier-tier1-header">
-              <span class="h-dossier-tier1-title">
-                ${this.icons.spark || ''} Auditor Assessment & Deficit Breakdown
-              </span>
-              <span class="h-dossier-conf-badge">CONFIDENCE: ${confText}</span>
-            </div>
-            <div class="h-dossier-rationale-text">
-              ${auditRationale}
-            </div>
-          </div>
-        `;
-
-        // Tier 2: Verbatim Founder Citation
-        const tier2Html = hasCitation ? `
-          <div class="h-dossier-tier2">
-            <div class="h-dossier-tier2-header">
-              <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; min-width: 0; max-width: 100%;">
-                <strong style="color: var(--accent-yellow); font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">
-                  Verbatim Founder Citation${pageLabel}:
-                </strong>
-                ${docBadge}
-              </div>
-              ${jumpBtnHtml}
-            </div>
-            <blockquote class="h-dossier-citation-quote">
-              “${this.escapeHtml(q.verbatim_citation)}”
-            </blockquote>
-            <div style="margin-top: 8px; font-family: var(--mono); font-size: 10px; color: var(--text-muted);">
-              Verified verbatim against PDF character map &bull; OCR verified
-            </div>
-          </div>
-        ` : `
-          <div class="h-dossier-tier2-empty">
-            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px;">
-              <span style="font-family: var(--mono); font-size: 11px; color: var(--text-muted); overflow-wrap: anywhere; word-break: break-word;">
-                ℹ️ No verbatim quote extracted — score awarded based on absent or insufficient deliverable documentation.
-              </span>
-              ${docBadge}
-            </div>
-          </div>
-        `;
-
-        // Combined Drawer HTML (default collapsed: style="display: none;")
-        const citeHtml = hasDossier ? `
-          <div class="h-card-citation" style="display: none;">
-            ${tier1Html}
-            ${tier2Html}
-          </div>
-        ` : '';
-
-        // Footer Toggle Link
-        const dossierTitle = hasCitation ? `AI Diligence Dossier & Citation${pageLabel}` : `AI Diligence Dossier`;
-        const linkHtml = hasDossier ? `
-          <a href="#" class="link-source" data-action="toggle-cite" data-title="${dossierTitle}" data-pdf="${safePdf}" data-page="${safePage}">
-            ${this.icons.link} Expand ${dossierTitle} ↓
-          </a>
-        ` : '';
-
-        
-        
         const noteQuestionIds = new Set(['BC_Q1', 'BC_Q2', 'BC_Q3', 'BC_Q4', 'BC_Q5', 'IS_Q7', 'IS_Q16', 'PMF_Q15', 'PMF_Q17', 'TP_Q13', 'TP_Q14', 'TP_Q15', 'F_Q22', 'F_Q23', 'F_Q24', 'IP_Q22', 'IP_Q50']);
         const requiredJustificationIds = new Set(['BC_Q1', 'BC_Q2', 'BC_Q4', 'BC_Q5']);
         const showsNote = noteQuestionIds.has(q.new_q_id);
         const requiresJustification = requiredJustificationIds.has(q.new_q_id);
         const existingJustification = this.escapeHtml(humanJustifications[q.new_q_id] || '');
         
-                let justHtml = '';
+        let justHtml = '';
         if (showsNote) {
           const hasRubric = ['BC_Q1', 'BC_Q2', 'BC_Q3', 'BC_Q4', 'BC_Q5'].includes(q.new_q_id);
           const rubricLink = hasRubric ? `<a href="#" class="view-rubric" data-qid="${q.new_q_id}" style="float: right; color: var(--accent-blue); text-decoration: none; font-weight: 500;">${window.CTO.Render.icons.doc || '📄'} View Examples</a>` : '';
@@ -352,7 +237,6 @@ window.CTO.Render = {
               </div>
               <div style="display: flex; align-items: center; gap: 10px;">
                 ${flagBtnHtml}
-                ${aiSuggestHtml}
               </div>
             </div>
             <div class="h-card-body">
@@ -363,12 +247,8 @@ window.CTO.Render = {
                 ${actionHtml}
               </div>
             </div>
-            ${aiAssistNote}
-            ${citeHtml}
             ${justHtml}
-            <div class="h-card-footer">
-              ${linkHtml}
-            </div>
+            <div class="h-card-footer"></div>
           </div>
         `;
       });

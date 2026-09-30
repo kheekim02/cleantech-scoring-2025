@@ -60,6 +60,26 @@ class TestScorerTestMode(unittest.TestCase):
         self.assertIn("judge_reviews = reviewsQuery.rows", content)
         self.assertIn("payload.is_test = isTest", content)
 
+    def test_05b_get_startup_projects_human_only_questions(self):
+        """Verify get-startup strips AI fields from the scorer payload projection."""
+        content = self.get_startup_js.read_text(encoding="utf-8")
+        self.assertIn("payload.human_questions = questions.map", content)
+        self.assertIn("delete payload.ai_cats", content)
+        for forbidden in (
+            "ai_suggestion",
+            "ai_confidence",
+            "ai_rationale",
+            "verbatim_citation",
+            "source_pdf",
+            "page_number",
+        ):
+            # Must not appear as projected map keys (string form in object literal).
+            self.assertNotRegex(
+                content,
+                rf"{forbidden}\s*:",
+                f"get-startup must not project {forbidden} into human_questions",
+            )
+
     def test_06_sync_scores_intercepts_writes_for_test_scorer(self):
         """Verify api/sync-scores.js prevents writing to human_reviews for test accounts."""
         content = self.sync_scores_js.read_text(encoding="utf-8")
@@ -67,6 +87,16 @@ class TestScorerTestMode(unittest.TestCase):
         self.assertIn("if (isTest)", content)
         self.assertIn("test_mode: true", content)
         self.assertIn("Scores are not persisted to database", content)
+
+    def test_06b_sync_scores_overwrites_justification_on_clear(self):
+        """Empty justification must overwrite DB text (no COALESCE on justification)."""
+        content = self.sync_scores_js.read_text(encoding="utf-8")
+        self.assertIn("justification = EXCLUDED.justification", content)
+        self.assertNotIn(
+            "justification = COALESCE(EXCLUDED.justification, human_reviews.justification)",
+            content,
+        )
+        self.assertIn("String(item.justification ?? '').trim()", content)
 
     def test_07_admin_actions_create_judge_handles_is_test(self):
         """Verify api/admin-actions.js accepts and persists is_test in CREATE_JUDGE."""

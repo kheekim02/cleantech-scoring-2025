@@ -7,8 +7,12 @@ CTO.App = {
     categories: ['BC', 'ES', 'F', 'IP', 'IS', 'L', 'M', 'PMF', 'T', 'TP'],
     evaluations: {},
     startups: {},
-    syncQueue: [] // REC 5: Optimistic Sync Queue
+    syncQueue: [] // drained view; canonical pending state is _syncMap
   },
+
+  _syncMap: new Map(),
+  _justificationDebounce: null,
+  _pendingJustification: null,
 
   init() {
     fetch('/api/auth-session?role=scorer').then(async res => {
@@ -88,11 +92,16 @@ CTO.App = {
           picker.value = this.state.activeStartupId;
         }
 
-        picker.addEventListener('change', (e) => {
-          this.state.activeStartupId = e.target.value;
-          this.state.currentStepIndex = 0;
-          this.startApp();
-        });
+        if (!this._pickerBound) {
+          this._pickerBound = true;
+          picker.addEventListener('change', async (e) => {
+            this.commitPendingJustification();
+            await this.flushSyncQueue();
+            this.state.activeStartupId = e.target.value;
+            this.state.currentStepIndex = 0;
+            this.startApp();
+          });
+        }
       }
     } catch (e) {
       console.error("Failed to load startups list", e);
@@ -122,6 +131,7 @@ CTO.App = {
     this._listenersSetup = true;
     document.getElementById('btn-prev').addEventListener('click', () => {
       if (this.state.currentStepIndex > 0) {
+        this.commitPendingJustification();
         this.state.currentStepIndex--;
         this.updateUI();
         const scrollArea = document.querySelector('.right-scroll-area');
@@ -131,6 +141,7 @@ CTO.App = {
 
     document.getElementById('btn-next').addEventListener('click', () => {
       if (this.state.currentStepIndex < this.state.categories.length - 1) {
+        this.commitPendingJustification();
         this.state.currentStepIndex++;
         this.updateUI();
         const scrollArea = document.querySelector('.right-scroll-area');
@@ -146,6 +157,12 @@ CTO.App = {
         const qid = e.target.dataset.qid;
         const text = e.target.value;
         this.answerJustification(qid, text);
+      }
+    });
+
+    document.getElementById('human-cards-container').addEventListener('focusout', (e) => {
+      if (e.target.classList.contains('justification-input')) {
+        this.commitPendingJustification();
       }
     });
 
@@ -167,39 +184,6 @@ CTO.App = {
         e.preventDefault();
         this.openRubricModal(rubricLink.dataset.qid);
         return;
-      }
-
-      // Direct jump link inside dossier
-      const jumpBtn = e.target.closest('[data-action="jump-pdf"]');
-      if (jumpBtn) {
-        e.preventDefault();
-        if (jumpBtn.dataset.pdf) {
-          CTO.Render.jumpToCitation(jumpBtn.dataset.pdf, jumpBtn.dataset.page);
-        }
-        return;
-      }
-
-      // Toggle AI Diligence Dossier logic
-      let card = e.target.closest('.h-card');
-      const link = e.target.closest('.link-source');
-      if (link) {
-        e.preventDefault(); // prevent default anchor jump
-        if (card) {
-          const citeBlock = card.querySelector('.h-card-citation');
-          if (citeBlock) {
-            const isHidden = citeBlock.style.display === 'none';
-            citeBlock.style.display = isHidden ? 'block' : 'none';
-            const dossierTitle = link.dataset.title || 'AI Diligence Dossier';
-            link.innerHTML = isHidden 
-              ? `${CTO.Render.icons.link} Collapse ${dossierTitle} ↑` 
-              : `${CTO.Render.icons.link} Expand ${dossierTitle} ↓`;
-            
-            // Auto-jump viewer to document & page when opening citation
-            if (isHidden && link.dataset.pdf) {
-              CTO.Render.jumpToCitation(link.dataset.pdf, link.dataset.page);
-            }
-          }
-        }
       }
 
       // Button answer logic
@@ -536,7 +520,6 @@ CTO.App = {
       catCode,
       this.state.currentStepIndex,
       this.state.categories.length,
-      sData.ai_cats,
       sData.human_questions,
       sEval.humanAnswers,
       sEval.humanJustifications,
@@ -584,7 +567,7 @@ CTO.App = {
     // REC 5: Optimistic Sync
     this.saveState();
     const justification = sEval.humanJustifications ? (sEval.humanJustifications[qid] || '') : '';
-    this.state.syncQueue.push({ qid, value, justification, timestamp: Date.now() });
+    this.enqueueSync({ qid, value, justification });
     this.setSaveStatus('Saving…');
   },
 
@@ -594,10 +577,24 @@ CTO.App = {
     if (!sEval.humanJustifications) sEval.humanJustifications = {};
     sEval.humanJustifications[qid] = text;
     this.saveState();
-    
+
     const value = sEval.humanAnswers[qid] !== undefined ? sEval.humanAnswers[qid] : null;
-    this.state.syncQueue.push({ qid, value, justification: text, timestamp: Date.now() });
-    this.setSaveStatus('Saving…');
+    if (this._justificationDebounce) {
+      clearTimeout(this._justificationDebounce);
+    }
+    this._pendingJustification = { qid, text, value };
+    this._justificationDebounce = setTimeout(() => {
+      const pending = this._pendingJustification;
+      this._pendingJustification = null;
+      this._justificationDebounce = null;
+      if (!pending) return;
+      this.enqueueSync({
+        qid: pending.qid,
+        value: pending.value,
+        justification: pending.text,
+      });
+      this.setSaveStatus('Saving…');
+    }, 500);
   },
 
   toggleFlag(qid) {
@@ -623,7 +620,7 @@ CTO.App = {
     this.saveState();
     const value = sEval.humanAnswers[qid] !== undefined ? sEval.humanAnswers[qid] : null;
     const justification = sEval.humanJustifications ? (sEval.humanJustifications[qid] || '') : '';
-    this.state.syncQueue.push({ qid, value, justification, is_flagged: newFlagState, timestamp: Date.now() });
+    this.enqueueSync({ qid, value, justification, is_flagged: newFlagState });
     this.setSaveStatus('Saving…');
   },
 
@@ -645,30 +642,100 @@ CTO.App = {
     CTO.Render.updateOverallProgress(answeredCount, totalHumanQs);
   },
 
-  async flushSyncQueue() {
-    if (this.state.syncQueue.length === 0) return true;
-    const batch = [...this.state.syncQueue];
+  enqueueSync(partial) {
+    const startup_id = partial.startup_id || this.state.activeStartupId;
+    const qid = partial.qid;
+    if (!startup_id || !qid) return;
+    const key = `${startup_id}:${qid}`;
+    const prev = this._syncMap.get(key) || {};
+    const next = {
+      ...prev,
+      ...partial,
+      startup_id,
+      qid,
+      timestamp: Date.now(),
+    };
+    if (partial.is_flagged === undefined && prev.is_flagged !== undefined) {
+      next.is_flagged = prev.is_flagged;
+    }
+    if (partial.value === undefined && prev.value !== undefined) {
+      next.value = prev.value;
+    }
+    if (partial.justification === undefined && prev.justification !== undefined) {
+      next.justification = prev.justification;
+    }
+    this._syncMap.set(key, next);
+  },
+
+  commitPendingJustification() {
+    if (this._justificationDebounce) {
+      clearTimeout(this._justificationDebounce);
+      this._justificationDebounce = null;
+    }
+    const pending = this._pendingJustification;
+    this._pendingJustification = null;
+    if (!pending) return;
+    this.enqueueSync({
+      qid: pending.qid,
+      value: pending.value,
+      justification: pending.text,
+    });
+    this.setSaveStatus('Saving…');
+  },
+
+  drainSyncMap() {
+    const batch = [...this._syncMap.values()];
+    this._syncMap.clear();
     this.state.syncQueue = [];
+    return batch;
+  },
+
+  requeueBatch(batch) {
+    for (const item of batch) {
+      this.enqueueSync(item);
+    }
+  },
+
+  async postSyncBatch(startup_id, scores) {
+    const res = await fetch('/api/sync-scores', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        startup_id,
+        scores: scores.map(b => ({
+          qid: b.qid,
+          val: b.value !== undefined ? b.value : null,
+          justification: b.justification || '',
+          is_flagged: b.is_flagged !== undefined ? b.is_flagged : null
+        }))
+      })
+    });
+    if (res.status === 401) {
+      throw new Error('401_UNAUTHORIZED');
+    }
+    if (!res.ok) throw new Error('NETWORK_ERROR');
+    return res;
+  },
+
+  async flushSyncQueue() {
+    this.commitPendingJustification();
+    if (this._syncMap.size === 0) return true;
+    const batch = this.drainSyncMap();
+    const byStartup = {};
+    for (const item of batch) {
+      const sid = item.startup_id;
+      if (!byStartup[sid]) byStartup[sid] = [];
+      byStartup[sid].push(item);
+    }
     try {
-      const res = await fetch('/api/sync-scores', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          startup_id: this.state.activeStartupId,
-          scores: batch.map(b => ({
-            qid: b.qid,
-            val: b.value !== undefined ? b.value : null,
-            justification: b.justification || '',
-            is_flagged: b.is_flagged !== undefined ? b.is_flagged : null
-          }))
-        })
-      });
-      if (!res.ok) throw new Error('SAVE_FAILED');
+      for (const [startup_id, scores] of Object.entries(byStartup)) {
+        await this.postSyncBatch(startup_id, scores);
+      }
       this.setSaveStatus('Saved');
       return true;
     } catch (e) {
       console.error('Flush sync failed:', e);
-      this.state.syncQueue.unshift(...batch);
+      this.requeueBatch(batch);
       this.setSaveStatus('Save failed — retrying');
       return false;
     }
@@ -739,6 +806,7 @@ CTO.App = {
   jumpToCategory(catCode) {
     const targetIndex = this.state.categories.indexOf(catCode);
     if (targetIndex !== -1 && targetIndex !== this.state.currentStepIndex) {
+      this.commitPendingJustification();
       this.state.currentStepIndex = targetIndex;
       this.updateUI();
       const scrollArea = document.querySelector('.right-scroll-area');
@@ -752,6 +820,7 @@ CTO.App = {
     
     const targetIndex = this.state.categories.indexOf(catCode);
     if (targetIndex !== -1 && targetIndex !== this.state.currentStepIndex) {
+      this.commitPendingJustification();
       this.state.currentStepIndex = targetIndex;
       this.updateUI();
     }
@@ -866,47 +935,35 @@ CTO.App = {
 
   // REC 5: Background Sync Worker (Updated for JWT / 401 Handling)
   startSyncWorker() {
+    if (this._syncWorkerStarted) return;
+    this._syncWorkerStarted = true;
     setInterval(async () => {
-      // Suspend queue if empty or currently attempting to refresh an expired token
-      if (this.state.syncQueue.length === 0 || this.state.isRefreshingToken) return;
+      if (this._syncMap.size === 0 || this.state.isRefreshingToken) return;
+      if (!this.currentUser || !this.currentUser.id) {
+        console.log("No credentials available, skipping sync.");
+        return;
+      }
 
-      const batch = [...this.state.syncQueue];
-      this.state.syncQueue = []; // Optimistically clear
-      
+      this.commitPendingJustification();
+      if (this._syncMap.size === 0) return;
+
+      const batch = this.drainSyncMap();
+      const byStartup = {};
+      for (const item of batch) {
+        const sid = item.startup_id;
+        if (!byStartup[sid]) byStartup[sid] = [];
+        byStartup[sid].push(item);
+      }
+
       try {
-        if (!this.currentUser || !this.currentUser.id) {
-           console.log("No credentials available, skipping sync.");
-           this.state.syncQueue.unshift(...batch);
-           return;
-        }
-
         console.log(`[Sync Worker] Dispatching ${batch.length} updates...`);
-        
-        const res = await fetch('/api/sync-scores', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            startup_id: this.state.activeStartupId,
-            scores: batch.map(b => ({
-              qid: b.qid,
-              val: b.value !== undefined ? b.value : null,
-              justification: b.justification || '',
-              is_flagged: b.is_flagged !== undefined ? b.is_flagged : null
-            }))
-          })
-        });
-
-        if (res.status === 401) {
-          throw new Error("401_UNAUTHORIZED");
+        for (const [startup_id, scores] of Object.entries(byStartup)) {
+          await this.postSyncBatch(startup_id, scores);
         }
-        if (!res.ok) throw new Error("NETWORK_ERROR");
         this.setSaveStatus('Saved');
-
       } catch (error) {
-        this.state.syncQueue.unshift(...batch);
-        
+        this.requeueBatch(batch);
+
         if (error.message === "401_UNAUTHORIZED") {
            console.warn("Credentials rejected by server.");
            alert('Your scorer access has been revoked or expired. Please log in again.');

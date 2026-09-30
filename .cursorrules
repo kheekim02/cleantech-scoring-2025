@@ -6,19 +6,19 @@ This file defines the architecture, engineering protocols, prompting standards, 
 
 ## 1. Core System Overview
 
-The **CleanTech Open 2025 Diligence Engine** is an end-to-end AI-assisted scoring, diligence, and triage platform for clean technology startups. It enables expert human judges and administrators to evaluate founder submissions across 10 standardized categories using AI-extracted citations, auto-jumping PDF deliverables, and real-time database synchronization.
+The **CleanTech Open 2025 Diligence Engine** is an end-to-end diligence, scoring, and triage platform for clean technology startups. Expert human judges and administrators evaluate founder submissions across 10 standardized categories using founder PDF deliverables and a human-only scoring workspace. Offline AI extraction may still run for ops/analysis but **is not shown in the judge interface**.
 
 ### Key Architecture Components
-- **Frontend Scoring Portal (`site/index.html`)**: Side-by-side split workspace featuring an embedded PDF viewer (left) with dynamic document switching and auto-jump citation navigation, paired with interactive 282-criteria scoring cards (right).
-- **Admin Dashboard (`site/admin.html`)**: Cohort-level progress tracking, reviewer/judge assignment workflow, filter for clean AI-ready startups (`✓ Ready for Assignment`), and audit CSV exports.
+- **Frontend Scoring Portal (`site/index.html`)**: Side-by-side split workspace featuring an embedded PDF viewer (left) with dynamic document switching, paired with interactive 282-criteria human scoring cards (right). **No AI scores, suggestions, or citations are shown in the judge UI.**
+- **Admin Dashboard (`site/admin.html`)**: Cohort-level progress tracking, reviewer/judge assignment workflow, filter for clean AI-ready startups (`✓ Ready for Assignment`), and human-score audit CSV exports.
 - **Client Architecture (`site/js/`)**: Vanilla JS modular application:
   - `app.js`: State management, event delegation, Supabase API communication, rubric modal handlers.
-  - `render.js`: High-velocity DOM rendering for cards, AI suggestion badges, PDF embedder, and document switchers.
+  - `render.js`: High-velocity DOM rendering for human scoring cards, PDF embedder, and document switchers (AI assist UI is intentionally absent).
   - `scoring.js`: Dynamic progress calculation, score aggregation, and completion tracking.
   - `admin.js`: Administrative metrics, bulk judge assignments, and cohort progress filters.
-  - `export.js`: Diligence audit logs and submission exports.
-- **Database & Persistence**: Supabase PostgreSQL with real-time saving on every keystroke/selection:
-  - `startup_extractions`: Master table storing parsed startup payloads (JSONB), reverse-indexed citations, and `clean_ready` metadata.
+  - `export.js`: Diligence audit logs and submission exports (human scores).
+- **Database & Persistence**: Supabase PostgreSQL with queued persistence for scores/justifications:
+  - `startup_extractions`: Master table storing startup payloads (JSONB) and readiness metadata. AI extraction fields may exist for ops but are not part of the judge-facing UI contract.
   - `human_reviews`: Stores judge scores (`numeric` allowing `0.0`, `0.25`, `0.5`, `0.75`, `1.0`), textual justifications, and reviewer IDs.
   - `judge_assignments`: Manages evaluator-to-startup allocations and completion statuses.
 - **Serverless API Layer (`api/`)**: Netlify / Supabase edge functions:
@@ -87,30 +87,31 @@ Founders in CleanTech Open submit standardized templates containing extensive in
 
 ---
 
-## 4. Reverse-Indexing & Citation Page Mapping
+## 4. Reverse-Indexing & Citation Page Mapping (Ops / Offline)
 
-Extracted citations are mapped back to their original PDF deliverables so judges can verify evidence with a single click.
+Extracted citations may still be grounded against founder text for pipeline QA and offline analysis. **This evidence is not surfaced in the scoring UI.**
 
 ### Multi-Tier Normalized Fuzzy Matcher (`scripts/13_push_clean_extractions_to_supabase.py`)
 1. **Tier 1 (Exact Match)**: Normalized character sequence matching against full PDF text.
 2. **Tier 2 (8-Word Prefix)**: First 8 normalized words matched against page text corpus.
 3. **Tier 3 (5-Word Prefix)**: 5-word prefix match for specific terminology (>15 chars).
 4. **Tier 4 (Quoted Substrings)**: Regex-extracted quote fragments (>10 chars).
-- **Match Rate**: **16,006 of 17,278 citations (92.6%)** matched to exact PDF filename and page number.
-- In the scoring UI, clicking `🔗 View AI Citation (p. X)` auto-switches the viewer to the correct PDF and jumps directly to page `X`.
+- **Match Rate (historical)**: **16,006 of 17,278 citations (92.6%)** matched to exact PDF filename and page number.
+- **UI policy**: Judges navigate PDFs manually via the deliverable selector and viewer controls. Do not reintroduce `🔗 View AI Citation` or AI suggestion badges into `site/`.
 
 ---
 
 ## 5. Engineering Protocols & Grounding Standards
 
-1. **Zero Hallucination Tolerance:**
+1. **Zero Hallucination Tolerance (pipeline):**
    - Never invent financial numbers, valuation multiples, patent counts, or founder pedigree.
    - If an artifact lacks evidence for a question, output `"STATUS: INSUFFICIENT_DATA"` or award `0 PTS`.
-2. **Mandatory Human Review:**
-   - AI suggestions (`⚡ 1.0 PT | 95% Conf`) solely measure whether explicit text was found in founder documents.
-   - Judges must click the citation, inspect context in the PDF viewer, and verify credibility. Judges have full authority to override AI scores.
+2. **Human-Only Scoring Interface:**
+   - The judge portal must not display AI suggestions, confidence, citations, or auto-jump from model evidence.
+   - Judges score solely from founder deliverables and the rubric; they have full authority over all scores.
+   - Prefer omitting AI fields from judge-facing API responses rather than merely hiding them in CSS/JS.
 3. **Deterministic Output & Schema Conformance:**
-   - All machine-readable outputs must be strict, valid JSON conforming to the 282-question schema.
+   - All machine-readable pipeline outputs must be strict, valid JSON conforming to the 282-question schema.
 4. **Git Hygiene & Commit Discipline:**
    - Atomic commits following Conventional Commits (`feat:`, `fix:`, `refactor:`, `docs:`, `chore:`).
    - Pre-commit verification: verify scripts, tests, and builds cleanly before committing.

@@ -53,6 +53,17 @@ module.exports = async (req, res) => {
     payload.judge_reviews = reviewsQuery.rows;
     payload.is_test = isTest;
 
+    // Human-only scorer projection: omit AI scores/citations from the judge UI contract.
+    const questions = Array.isArray(payload.human_questions) ? payload.human_questions : [];
+    payload.human_questions = questions.map((q) => ({
+      q_id: q.q_id,
+      new_q_id: q.new_q_id,
+      cat_code: q.cat_code,
+      text: q.text,
+      options: q.options,
+    }));
+    delete payload.ai_cats;
+
     return res.status(200).json(payload);
 
   } catch (err) {

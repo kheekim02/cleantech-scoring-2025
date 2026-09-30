@@ -1,20 +1,29 @@
 # CleanTech Open 2025 Diligence Engine
 
-A high-velocity, AI-assisted diligence and scoring platform engineered for the **CleanTech Open 2025** accelerator cohort.
+A high-velocity diligence and scoring platform engineered for the **CleanTech Open 2025** accelerator cohort.
 
-The platform provides a side-by-side workspace allowing expert judges and evaluators to review founder deliverables, inspect AI-extracted verbatim evidence, auto-jump directly to the cited PDF pages, and grade startups across a standardized 282-question diligence rubric with real-time database persistence.
+The judge-facing product is a **human-only** side-by-side workspace: expert evaluators review founder deliverables in an embedded PDF viewer and grade startups across a standardized 282-question diligence rubric with real-time database persistence. Offline AI extraction and audits may still run in the pipeline for ops/analysis, but **AI scores and citations are not shown in the scoring interface**.
+
+---
+
+## Product goals (UI boundary)
+
+- **Human-only scorer UI** — judges see deliverables, rubric criteria, and their own scores/justifications only.
+- **No AI in the interface** — no suggestion pills, confidence badges, citation dossiers, or auto-jump from model evidence.
+- **AI stays offline / ops-side** — extraction caches, grounding audits, and optional concordance reports remain pipeline artifacts, not judge-visible API fields.
+- **Optimize the human path** — payload size, sync reliability, PDF stability, assignments, and human-score exports.
 
 ---
 
 ## Key Features & Highlights
 
-- **Side-by-Side Dual-Pane Workspace**: Split-screen interface with an embedded deliverable PDF viewer on the left (complete with page navigation, zoom, and document switching) and interactive scoring cards on the right.
-- **Auto-Jumping Citation Navigation**: 16,006 AI-extracted citations reverse-indexed to source PDFs (92.6% match rate). Clicking a citation immediately shifts the document viewer to the exact deliverable and page.
-- **Scaffolding-Stripped Grounded AI Extraction**: Filtered against a comprehensive cross-cohort catalog (>20% frequency across 1,481 files) to eliminate accelerator template instructions and prevent false-positive hallucinations.
+- **Side-by-Side Dual-Pane Workspace**: Split-screen interface with an embedded deliverable PDF viewer on the left (page navigation, zoom, document switching) and interactive human scoring cards on the right.
+- **Human Diligence Scoring**: Judges award calibrated scores and justifications with no AI suggestions or citations in the card UI.
+- **Offline Grounded Extraction (ops)**: Scaffolding-stripped pipeline extraction for internal analysis; not hydrated into the judge workspace.
 - **Standardized 282-Criteria Diligence Rubric**: Full 10-category evaluation framework spanning Business Canvas, Environmental & Social, Financials, Pitch, Legal, Market, PMF, Team, and Tech Validation.
 - **Calibrated 0 – 1 Point Scoring Scale**: Granular scoring (`0 PTS`, `0.25 PTS`, `0.5 PTS`, `0.75 PTS`, `1 PT`) with real-world examples and rubric guidance for Business Canvas questions (`BC_Q1`–`BC_Q5`).
-- **Real-Time Database Persistence**: Keystroke-level saving to Supabase PostgreSQL (`human_reviews` table) with auto-hydration for returning evaluators.
-- **Admin Management Portal**: Real-time evaluation progress tracking, judge assignment workflow, `✓ Ready for Assignment` filter, and CSV audit exports.
+- **Real-Time Database Persistence**: Queued saving to Supabase PostgreSQL (`human_reviews` table) with auto-hydration for returning evaluators.
+- **Admin Management Portal**: Evaluation progress tracking, judge assignment workflow, `✓ Ready for Assignment` filter, and human-score CSV exports.
 
 ---
 

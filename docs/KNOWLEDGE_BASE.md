@@ -9,7 +9,7 @@ This document serves as the exhaustive architectural and operational reference f
 ```
   ┌────────────────────────────────────────────────────────┐
   │                 Supabase PostgreSQL                   │
-  │  - startup_extractions (JSONB payloads, citations)     │
+  │  - startup_extractions (JSONB payloads; AI is ops-only)│
   │  - human_reviews (scorer points, justifications)       │
   │  - judge_assignments (evaluator cohort mappings)       │
   └───────────────────▲──────────────────┬─────────────────┘
@@ -21,10 +21,16 @@ This document serves as the exhaustive architectural and operational reference f
   │      (site/index.html)       │   │     (site/admin.html)      │
   │  - Embedded PDF Deliverables │   │  - Evaluator Assignments   │
   │  - 282 Diligence Criteria    │   │  - Cohort Progress Stats   │
-  │  - Real-time Score Saving    │   │  - CSV Export & Auditing   │
-  │  - Citation Auto-Jumping     │   │  - Clean Ready Filter      │
+  │  - Human score saving only   │   │  - Human CSV export        │
+  │  - No AI scores / citations  │   │  - Clean Ready Filter      │
   └──────────────────────────────┘   └────────────────────────────┘
 ```
+
+### Product goals (UI boundary)
+- **Human-only scorer UI**: judges see founder PDFs, rubric prompts, and their own scores/justifications.
+- **No AI in the interface**: do not surface AI suggestions, confidence, citations, or citation auto-jump in `site/` judge/admin scoring surfaces.
+- **AI stays offline / ops-side**: extraction caches and audits may exist for pipeline QA and research; they must not be part of the judge-facing API contract.
+- **Optimize the human path**: slim payloads, reliable `human_reviews` sync, stable PDF viewing, assignments, and human-score exports.
 
 ---
 
@@ -103,23 +109,18 @@ Accelerator deliverables are completed on top of standardized competition templa
 
 ---
 
-## 5. Frontend Navigation & Citation Auto-Jumping
+## 5. Frontend Navigation (Human-Only Scoring)
 
 ### Side-by-Side Split Workspace
-The scorer interface ([`site/index.html`](../site/index.html)) provides zero-tab-switching evaluation:
-- **Left Panel (PDF Viewer)**: Embedded `<iframe id="pdf-frame">` with integrated browser controls, page selection, and a deliverable selector dropdown.
+The scorer interface ([`site/index.html`](../site/index.html)) provides zero-tab-switching **human** evaluation. AI suggestions and citations are intentionally **not** shown:
+- **Left Panel (PDF Viewer)**: Embedded `<iframe id="pdf-frame">` with browser controls, page selection, and a deliverable selector dropdown.
 - **Right Panel (Criteria Cards)**:
-  - Header: Category badge, criterion ID, AI suggestion pill (`⚡ 1.0 PT | 95% Conf`).
+  - Header: Category badge and criterion ID (no AI suggestion pill).
   - Text: Diligence prompt question.
-  - Justification: Input field with `📄 View Examples` modal trigger.
-  - Citation: Clickable `🔗 View AI Citation (p. X)` link.
+  - Justification: Input field with optional `📄 View Examples` modal for calibrated criteria.
   - Point Selector: `1 PT`, `0.75 PTS`, `0.5 PTS`, `0.25 PTS`, `0 PTS`.
+  - Flags / progress: human review state only.
 
-### Citation Auto-Jump Mechanism
-When a reviewer clicks `🔗 View AI Citation (p. X)`:
-1. `site/js/app.js` captures click via event delegation.
-2. Reads `dataset.pdf` and `dataset.page` from the citation element.
-3. Invokes `CTO.Render.jumpToCitation(pdfFilename, pageNum)`:
-   - Switches the deliverable dropdown to `pdfFilename`.
-   - Appends `#page=X` to the iframe source.
-   - Updates status caption: *"Switched viewer to Page X. Use Cmd+F / Ctrl+F in the viewer to locate exact text."*
+### Explicit non-goals for the interface
+- Do **not** re-enable AI suggestion badges, confidence display, citation dossiers, or auto-jump from model evidence.
+- Offline extraction/push scripts may still store AI fields in `startup_extractions.payload` for ops; the scorer API should omit them from judge-facing responses.

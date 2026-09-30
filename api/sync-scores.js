@@ -71,7 +71,7 @@ module.exports = async (req, res) => {
         return res.status(400).json({ error: `Unknown question: ${item.qid}` });
       }
       const scoreVal = (item.val !== null && item.val !== undefined) ? parseFloat(item.val) : null;
-      const justVal = (item.justification && item.justification.trim().length > 0) ? item.justification.trim() : null;
+      const justVal = String(item.justification ?? '').trim();
       const allowedScores = Array.isArray(question.options) && question.options.length > 0
         ? question.options.map(option => Number(option.val))
         : [0, 0.25, 0.5, 0.75, 1];
@@ -86,7 +86,7 @@ module.exports = async (req, res) => {
         ON CONFLICT (startup_id, question_id, judge_id) 
         DO UPDATE SET 
           score_value = COALESCE(EXCLUDED.score_value, human_reviews.score_value),
-          justification = COALESCE(EXCLUDED.justification, human_reviews.justification),
+          justification = EXCLUDED.justification,
           is_flagged = COALESCE($6, human_reviews.is_flagged),
           updated_at = NOW();
       `, [startup_id, item.qid, session.principalId, scoreVal, justVal, isFlagged]);
