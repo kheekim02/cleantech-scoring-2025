@@ -1,6 +1,6 @@
 """CleanTech Open 2025 Diligence Engine - Scored Data Exporter.
 
-Exports judge scores, qualitative justifications, AI predictions, and citation provenance
+Exports judge scores, qualitative justifications, and review statuses
 from the Supabase PostgreSQL database to structured CSV or JSON files.
 """
 import os
@@ -21,6 +21,27 @@ CATEGORY_NAMES = {
     'T': 'Team Targets',
     'TP': 'Tech / Product',
 }
+
+
+def load_rubric_map() -> dict[str, dict]:
+    """Load rubric question metadata from master_282_rubric.json."""
+    rubric_candidates = [
+        os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "master_282_rubric.json"),
+        os.path.join(os.getcwd(), "master_282_rubric.json"),
+    ]
+    for p in rubric_candidates:
+        if os.path.exists(p):
+            try:
+                with open(p, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    return {
+                        (q.get("new_q_id") or q.get("q_id")): q
+                        for q in data
+                        if (q.get("new_q_id") or q.get("q_id"))
+                    }
+            except Exception as e:
+                print(f"Warning: Could not read {p}: {e}")
+    return {}
 
 
 def load_db_url(env_file: str = ".env") -> str:
@@ -46,7 +67,8 @@ def export_scores(
     startup_id: str | None = None,
     judge_id: str | None = None,
 ) -> int:
-    """Fetch human reviews from Supabase and export to CSV or JSON with expanded columns."""
+    """Fetch human reviews from Supabase and export to CSV or JSON with standardized columns."""
+    rubric_map = load_rubric_map()
     db_url = load_db_url()
     conn = psycopg2.connect(db_url)
     cur = conn.cursor()
@@ -59,8 +81,8 @@ def export_scores(
             hr.question_id,
             hr.score_value,
             hr.justification,
-            hr.updated_at,
-            se.payload->'human_questions' AS human_questions
+            hr.is_flagged,
+            hr.updated_at
         FROM human_reviews hr
         LEFT JOIN startup_extractions se ON hr.startup_id = se.startup_id
         WHERE hr.startup_id NOT ILIKE '%%solarpure%%'
@@ -78,32 +100,13 @@ def export_scores(
 
     expanded_records = []
     for r in rows:
-        sid, cname, jid, qid, score_val, just, updated_at, hqs_raw = r
-
-        qs = []
-        if isinstance(hqs_raw, list):
-            qs = hqs_raw
-        elif isinstance(hqs_raw, str):
-            try:
-                qs = json.loads(hqs_raw)
-            except Exception:
-                qs = []
-
-        matched_q = next((q for q in qs if q.get("new_q_id") == qid or q.get("q_id") == qid), {})
+        sid, cname, jid, qid, score_val, just, is_flagged, updated_at = r
+        matched_q = rubric_map.get(qid, {})
 
         cat_code = matched_q.get("cat_code") or (qid.split("_")[0] if qid else "")
         cat_name = CATEGORY_NAMES.get(cat_code, cat_code)
         q_text = matched_q.get("text", "")
-        ai_sug = matched_q.get("ai_suggestion")
-        ai_conf = matched_q.get("ai_confidence")
-
-        concordance = "N/A"
-        if score_val is not None and ai_sug is not None:
-            concordance = "AGREED" if abs(float(score_val) - float(ai_sug)) < 0.001 else "OVERRULED"
-
-        source_pdf = matched_q.get("source_pdf")
-        page_num = matched_q.get("page_number")
-        verbatim_cit = matched_q.get("verbatim_citation")
+        flagged_val = "Yes" if is_flagged else "No"
 
         expanded_records.append({
             "startup_id": sid,
@@ -113,14 +116,9 @@ def export_scores(
             "category_name": cat_name,
             "question_id": qid,
             "question_text": q_text,
-            "human_score": float(score_val) if score_val is not None else None,
-            "human_justification": just,
-            "ai_suggestion": float(ai_sug) if ai_sug is not None else None,
-            "ai_confidence": float(ai_conf) if ai_conf is not None else None,
-            "ai_concordance": concordance,
-            "source_deliverable": source_pdf,
-            "citation_page": page_num,
-            "verbatim_citation": verbatim_cit,
+            "score": float(score_val) if score_val is not None else None,
+            "justification": just,
+            "flagged_for_review": flagged_val,
             "scored_at": updated_at.isoformat() if updated_at else None,
         })
 
@@ -136,14 +134,9 @@ def export_scores(
             "Category Name",
             "Question ID",
             "Question Text",
-            "Human Score",
-            "Human Justification",
-            "AI Suggestion",
-            "AI Confidence",
-            "AI Concordance",
-            "Source Deliverable",
-            "Citation Page",
-            "Verbatim Citation",
+            "Score",
+            "Justification",
+            "Flagged for Review",
             "Scored At",
         ]
         with open(output_path, "w", encoding="utf-8", newline="") as f:
@@ -158,18 +151,13 @@ def export_scores(
                     rec["category_name"],
                     rec["question_id"],
                     rec["question_text"],
-                    rec["human_score"] if rec["human_score"] is not None else "",
-                    rec["human_justification"] if rec["human_justification"] is not None else "",
-                    rec["ai_suggestion"] if rec["ai_suggestion"] is not None else "",
-                    rec["ai_confidence"] if rec["ai_confidence"] is not None else "",
-                    rec["ai_concordance"],
-                    rec["source_deliverable"] if rec["source_deliverable"] is not None else "",
-                    rec["citation_page"] if rec["citation_page"] is not None else "",
-                    rec["verbatim_citation"] if rec["verbatim_citation"] is not None else "",
+                    rec["score"] if rec["score"] is not None else "",
+                    rec["justification"] if rec["justification"] is not None else "",
+                    rec["flagged_for_review"],
                     rec["scored_at"] if rec["scored_at"] is not None else "",
                 ])
 
-    print(f"Successfully exported {len(expanded_records)} expanded records to: {output_path}")
+    print(f"Successfully exported {len(expanded_records)} records to: {output_path}")
     return len(expanded_records)
 
 

@@ -1,5 +1,7 @@
 const { Client } = require('pg');
 const { requireSession } = require('./_auth');
+const path = require('path');
+const fs = require('fs');
 
 const CATEGORY_NAMES = {
   'BC': 'Business Canvas',
@@ -13,6 +15,20 @@ const CATEGORY_NAMES = {
   'T': 'Team Targets',
   'TP': 'Tech / Product'
 };
+
+const rubricMap = new Map();
+try {
+  const rubricPath = path.resolve(__dirname, '../master_282_rubric.json');
+  if (fs.existsSync(rubricPath)) {
+    const rubricData = JSON.parse(fs.readFileSync(rubricPath, 'utf8'));
+    rubricData.forEach(q => {
+      const qid = q.new_q_id || q.q_id;
+      if (qid) rubricMap.set(qid, q);
+    });
+  }
+} catch (e) {
+  console.warn("Could not load master_282_rubric.json in export-scores:", e.message);
+}
 
 module.exports = async (req, res) => {
   if (req.method !== 'GET') return res.status(405).send("Method Not Allowed");
@@ -52,8 +68,8 @@ module.exports = async (req, res) => {
         hr.question_id,
         hr.score_value,
         hr.justification,
-        hr.updated_at,
-        se.payload->'human_questions' AS human_questions
+        hr.is_flagged,
+        hr.updated_at
       FROM human_reviews hr
       LEFT JOIN startup_extractions se ON hr.startup_id = se.startup_id
       WHERE hr.startup_id NOT ILIKE '%solarpure%'
@@ -75,46 +91,24 @@ module.exports = async (req, res) => {
       'Category Name',
       'Question ID',
       'Question Text',
-      'Human Score',
-      'Human Justification',
-      'AI Suggestion',
-      'AI Confidence',
-      'AI Concordance',
-      'AI Rationale',
-      'Source Deliverable',
-      'Citation Page',
-      'Verbatim Citation',
+      'Score',
+      'Justification',
+      'Flagged for Review',
       'Scored At'
     ];
 
-    const mappedRows = processRows.map(r => {
-      let qs = [];
-      try {
-        qs = Array.isArray(r.human_questions) ? r.human_questions : JSON.parse(r.human_questions || '[]');
-      } catch (e) {
-        qs = [];
-      }
+    const escapeCsv = (str) => `"${String(str ?? '').replace(/"/g, '""').replace(/\r?\n/g, ' ')}"`;
 
+    const mappedRows = processRows.map(r => {
       const qid = r.question_id;
-      const matchedQ = qs.find(q => (q.new_q_id || q.q_id) === qid);
+      const matchedQ = rubricMap.get(qid);
 
       const catCode = matchedQ?.cat_code || (qid ? qid.split('_')[0] : '');
       const catName = CATEGORY_NAMES[catCode] || catCode;
       const qText = matchedQ?.text || '';
-      const aiSug = matchedQ?.ai_suggestion !== undefined && matchedQ?.ai_suggestion !== null ? matchedQ.ai_suggestion : '';
-      const aiConf = matchedQ?.ai_confidence !== undefined && matchedQ?.ai_confidence !== null ? matchedQ.ai_confidence : '';
-      
-      let concordance = 'N/A';
-      if (r.score_value !== null && aiSug !== '') {
-        concordance = Math.abs(Number(r.score_value) - Number(aiSug)) < 0.001 ? 'AGREED' : 'OVERRULED';
-      }
-
-      const aiRationale = matchedQ?.ai_rationale || '';
-      const sourcePdf = matchedQ?.source_pdf || '';
-      const pageNum = matchedQ?.page_number || '';
-      const verbatimCitation = matchedQ?.verbatim_citation || '';
-
-      const escapeCsv = (str) => `"${String(str || '').replace(/"/g, '""').replace(/\r?\n/g, ' ')}"`;
+      const scoreVal = (r.score_value !== null && r.score_value !== undefined) ? r.score_value : '';
+      const flaggedVal = r.is_flagged ? 'Yes' : 'No';
+      const scoredAt = r.updated_at ? new Date(r.updated_at).toISOString() : '';
 
       return [
         escapeCsv(r.startup_id),
@@ -124,16 +118,10 @@ module.exports = async (req, res) => {
         escapeCsv(catName),
         escapeCsv(qid),
         escapeCsv(qText),
-        r.score_value !== null && r.score_value !== undefined ? r.score_value : '',
+        scoreVal,
         escapeCsv(r.justification),
-        aiSug,
-        aiConf,
-        escapeCsv(concordance),
-        escapeCsv(aiRationale),
-        escapeCsv(sourcePdf),
-        pageNum,
-        escapeCsv(verbatimCitation),
-        r.updated_at ? new Date(r.updated_at).toISOString() : ''
+        flaggedVal,
+        scoredAt
       ];
     });
 
