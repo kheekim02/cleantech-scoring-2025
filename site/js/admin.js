@@ -3,12 +3,39 @@ window.AdminApp = {
   assignmentFilter: 'all',
   feedbackFilter: 'all',
   companySearch: '',
+  coverageFilter: 'all',
+  coverageSearch: '',
   selectedJudgeId: sessionStorage.getItem('cto_admin_selected_judge') || '',
   data: {
     judges: [],
     startups: [],
     assignments: [], // array of { judge_id, startup_id, assigned_at }
     feedback: []
+  },
+
+  formatTimeAgo(isoString) {
+    if (!isoString) return 'No activity';
+    const date = new Date(isoString);
+    if (isNaN(date.getTime())) return 'Unknown';
+    const diffSec = Math.floor((Date.now() - date.getTime()) / 1000);
+    if (diffSec < 60) return 'Just now';
+    const diffMin = Math.floor(diffSec / 60);
+    if (diffMin < 60) return `${diffMin}m ago`;
+    const diffHr = Math.floor(diffMin / 60);
+    if (diffHr < 24) return `${diffHr}h ago`;
+    const diffDays = Math.floor(diffHr / 24);
+    if (diffDays === 1) return 'Yesterday';
+    if (diffDays < 7) return `${diffDays}d ago`;
+    return date.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+  },
+
+  formatFullDateTime(isoString) {
+    if (!isoString) return '';
+    const date = new Date(isoString);
+    if (isNaN(date.getTime())) return '';
+    return date.toLocaleString(undefined, { 
+      month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' 
+    });
   },
 
   setAssignmentFilter(filter) {
@@ -78,6 +105,7 @@ window.AdminApp = {
       document.getElementById('admin-dashboard').style.display = 'block';
       this.renderScorers();
       this.renderFeedback();
+      this.renderCoverageBoard();
     } catch (e) {
       console.error(e);
       alert("Failed to load admin data");
@@ -98,11 +126,37 @@ window.AdminApp = {
       opt.textContent = j.is_test ? `${j.judge_id} (Test Mode)` : j.judge_id;
       select.appendChild(opt);
       
+      // Calculate scorer activity and progress
+      const judgeProgress = (this.data.progress || []).filter(p => p.judge_id === j.judge_id);
+      const judgeAssignments = (this.data.assignments || []).filter(a => a.judge_id === j.judge_id);
+
+      let latestSave = null;
+      let totalAnswered = 0;
+      let fullyScoredCount = 0;
+
+      judgeProgress.forEach(p => {
+        if (p.last_saved) {
+          const t = new Date(p.last_saved).getTime();
+          if (!latestSave || t > latestSave) latestSave = t;
+        }
+        const ans = parseInt(p.answered_count || 0, 10);
+        totalAnswered += ans;
+        if (ans >= 282) fullyScoredCount++;
+      });
+
+      const lastActiveText = latestSave 
+        ? `Last active: ${this.formatTimeAgo(new Date(latestSave).toISOString())}`
+        : 'No activity yet';
+
+      const statusLabel = j.is_test ? 'Test Account · Views all companies, no DB writes' : 'Password protected';
+      const workloadText = j.is_test 
+        ? 'Preview mode'
+        : `${judgeAssignments.length} assigned · ${fullyScoredCount} complete`;
+
       // List item
       const safeId = j.judge_id.replace(/'/g, "\\'");
       const escapedId = this.escapeHtml(j.judge_id);
-      const testBadge = j.is_test ? `<span style="background: #fef3c7; color: #92400e; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; border: 1px solid #fcd34d;">🧪 Test Mode</span>` : '';
-      const statusLabel = j.is_test ? 'Test Account · Views all companies, no DB writes' : 'Password protected';
+      const testBadge = j.is_test ? `<span style="background: #fef3c7; color: #92400e; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; border: 1px solid #fcd34d;">Test Mode</span>` : '';
       listHtml += `
         <div class="scorer-item" style="padding: 10px 12px; border-bottom: 1px solid var(--border);">
           <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px;">
@@ -115,9 +169,12 @@ window.AdminApp = {
               <button class="btn btn-delete-scorer" onclick="AdminApp.deleteScorer('${safeId}')" style="background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background 0.15s ease;" onmouseover="this.style.background='#fecaca'" onmouseout="this.style.background='#fee2e2'">Delete</button>
             </div>
           </div>
-          <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px; display: flex; align-items: center; gap: 4px;">
-            <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: ${j.is_test ? '#d97706' : '#10b981'};"></span>
-            <span>${statusLabel}</span>
+          <div style="font-size: 11px; color: var(--text-muted); margin-top: 5px; display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 4px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+              <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: ${j.is_test ? '#d97706' : (latestSave ? '#10b981' : '#94a3b8')}; flex-shrink: 0;"></span>
+              <span title="${statusLabel} · ${workloadText}">${statusLabel} · ${workloadText}</span>
+            </div>
+            <span style="font-weight: 600; color: ${latestSave ? 'var(--text-main)' : 'var(--text-muted)'}; flex-shrink: 0;" title="${latestSave ? this.formatFullDateTime(new Date(latestSave).toISOString()) : ''}">${lastActiveText}</span>
           </div>
         </div>
       `;
@@ -229,11 +286,15 @@ window.AdminApp = {
     
     // Map progress for this judge
     const progressMap = {};
+    const savedMap = {};
+    const flaggedMap = {};
     if (this.data.progress) {
       this.data.progress
         .filter(p => p.judge_id === selectedJudge)
         .forEach(p => {
           progressMap[p.startup_id] = parseInt(p.answered_count, 10);
+          savedMap[p.startup_id] = p.last_saved;
+          flaggedMap[p.startup_id] = parseInt(p.flagged_count || 0, 10);
         });
     }
 
@@ -246,7 +307,7 @@ window.AdminApp = {
     const isTestJudge = this.data.judges.find(j => j.judge_id === selectedJudge)?.is_test;
     if (summary) {
       if (isTestJudge) {
-        summary.innerHTML = `<span style="color: #92400e; font-weight: 600;">🧪 Test / Preview Account: Automatically has access to all ${this.data.startups.length} companies. Assignments are not needed and scores will not be logged.</span>`;
+        summary.innerHTML = `<span style="color: #92400e; font-weight: 600;">Test / Preview Account: Automatically has access to all ${this.data.startups.length} companies. Assignments are not needed and scores will not be logged.</span>`;
       } else {
         summary.textContent = `${assignedSet.size} of ${this.data.startups.length} companies assigned to ${selectedJudge} · showing ${startupsToRender.length}`;
       }
@@ -271,10 +332,23 @@ window.AdminApp = {
       let subBadge = '';
       if (isChecked) {
         const pCount = progressMap[s.id] || 0;
+        const pSaved = savedMap[s.id];
+        const pFlagged = flaggedMap[s.id] || 0;
+
         if (pCount === 0) {
-            subBadge = `<span style="color: #ef4444; font-size: 11px; font-weight: 600; margin-left: 10px; border: 1px solid #fca5a5; padding: 2px 6px; border-radius: 4px; background: #fef2f2;">Not Started</span>`;
+            subBadge = `<span style="color: #ef4444; font-size: 11px; font-weight: 600; margin-left: 10px; border: 1px solid #fca5a5; padding: 2px 6px; border-radius: 4px; background: #fef2f2;">Not Started (0/282)</span>`;
+        } else if (pCount < 282) {
+            const pct = Math.round((pCount / 282) * 100);
+            subBadge = `<span style="color: #0369a1; font-size: 11px; font-weight: 600; margin-left: 10px; border: 1px solid #7dd3fc; padding: 2px 6px; border-radius: 4px; background: #f0f9ff;">${pCount} / 282 Answers (${pct}%)</span>`;
         } else {
-            subBadge = `<span style="color: #0369a1; font-size: 11px; font-weight: 600; margin-left: 10px; border: 1px solid #7dd3fc; padding: 2px 6px; border-radius: 4px; background: #f0f9ff;">${pCount} Answers</span>`;
+            subBadge = `<span style="color: #166534; font-size: 11px; font-weight: 600; margin-left: 10px; border: 1px solid #86efac; padding: 2px 6px; border-radius: 4px; background: #f0fdf4;">Completed (282/282)</span>`;
+        }
+
+        if (pSaved) {
+          subBadge += `<span style="color: var(--text-muted); font-size: 11px; margin-left: 6px; border: 1px solid var(--border); padding: 2px 6px; border-radius: 4px; background: #f8fafc;" title="Exact save time: ${this.formatFullDateTime(pSaved)}">Saved ${this.formatTimeAgo(pSaved)}</span>`;
+        }
+        if (pFlagged > 0) {
+          subBadge += `<span style="color: #b45309; font-size: 11px; font-weight: 600; margin-left: 6px; border: 1px solid #fcd34d; padding: 2px 6px; border-radius: 4px; background: #fffbeb;">${pFlagged} Flagged</span>`;
         }
       }
 
@@ -334,8 +408,8 @@ window.AdminApp = {
     input.type = isPassword ? 'text' : 'password';
     if (btn) {
       btn.innerHTML = isPassword
-        ? '🙈 <span class="pass-toggle-label">Hide</span>'
-        : '👁️ <span class="pass-toggle-label">Show</span>';
+        ? '<span class="pass-toggle-label">Hide</span>'
+        : '<span class="pass-toggle-label">Show</span>';
       btn.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
     }
   },
@@ -378,7 +452,7 @@ window.AdminApp = {
             <div style="margin-top: 6px; font-size: 12px; color: var(--text-muted);">
               Temporary password: <code style="background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 4px; font-weight: 700; user-select: all;">${this.escapeHtml(new_password)}</code>
             </div>
-            ${is_test ? '<div style="margin-top: 4px; font-size: 11px; color: #92400e; font-weight: 600;">🧪 Configured as Test Account: Views all companies, scores will NOT be logged to DB.</div>' : ''}
+            ${is_test ? '<div style="margin-top: 4px; font-size: 11px; color: #92400e; font-weight: 600;">Configured as Test Account: Views all companies, scores will NOT be logged to DB.</div>' : ''}
             <div style="margin-top: 4px; font-size: 10px; color: #15803d;">
               Notice will remain visible for 1 minute for easy copying.
             </div>
@@ -391,7 +465,7 @@ window.AdminApp = {
         if (testInput) testInput.checked = false;
         const toggleBtn = document.getElementById('toggle-new-pass-btn');
         if (toggleBtn) {
-          toggleBtn.innerHTML = '👁️ <span class="pass-toggle-label">Show</span>';
+          toggleBtn.innerHTML = '<span class="pass-toggle-label">Show</span>';
           toggleBtn.setAttribute('aria-label', 'Toggle password visibility');
         }
         this.loadData(); // refresh list
@@ -432,6 +506,7 @@ window.AdminApp = {
           this.data.assignments = this.data.assignments.filter(a => !(a.judge_id === judge_id && a.startup_id === startup_id));
         }
         this.renderAssignments();
+        this.renderCoverageBoard();
       } else {
         alert("Failed to update assignment. Refresh the page.");
         this.loadData();
@@ -517,7 +592,7 @@ window.AdminApp = {
     }
     
     const originalText = btn.innerHTML;
-    btn.innerHTML = '⏳ Compiling Export...';
+    btn.innerHTML = 'Compiling Export...';
     btn.disabled = true;
 
     try {
@@ -527,7 +602,7 @@ window.AdminApp = {
       let fullCsv = "";
 
       while (keepFetching) {
-        btn.innerHTML = `⏳ Compiling Export... (${offset} rows)`;
+        btn.innerHTML = `Compiling Export... (${offset} rows)`;
         const res = await fetch(`/api/export-scores?offset=${offset}&limit=${limit}&chunk=true`);
         if (!res.ok) throw new Error("Export failed");
         
@@ -595,7 +670,6 @@ window.AdminApp = {
     if (items.length === 0) {
       container.innerHTML = `
         <div style="text-align: center; padding: 40px 16px; color: var(--text-muted);">
-          <div style="font-size: 32px; margin-bottom: 8px;">📭</div>
           <strong style="color: var(--text-main); font-size: 15px;">No Feedback Found</strong>
           <p style="font-size: 13px; margin-top: 6px; margin-bottom: 0;">
             ${this.feedbackFilter === 'all' ? 'No scorer feedback notes have been submitted yet.' : `No feedback with status "${this.feedbackFilter}".`}
@@ -610,19 +684,19 @@ window.AdminApp = {
       const escapedText = this.escapeHtml(item.feedback_text);
       const escapedScorer = this.escapeHtml(item.scorer_id);
       const companyTag = item.startup_name 
-        ? `<span style="background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 11px;">🏢 ${this.escapeHtml(item.startup_name)}</span>` 
-        : (item.startup_id ? `<span style="background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 11px;">🏢 ${this.escapeHtml(item.startup_id)}</span>` : '');
+        ? `<span style="background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 11px;">${this.escapeHtml(item.startup_name)}</span>` 
+        : (item.startup_id ? `<span style="background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 11px;">${this.escapeHtml(item.startup_id)}</span>` : '');
       const catTag = item.category_code
-        ? `<span style="background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 4px; font-family: var(--mono); font-size: 11px; font-weight: 600;">📋 ${this.escapeHtml(item.category_code)}</span>`
+        ? `<span style="background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 4px; font-family: var(--mono); font-size: 11px; font-weight: 600;">${this.escapeHtml(item.category_code)}</span>`
         : '';
       
       let statusBadge = '';
       if (item.status === 'new') {
-        statusBadge = `<span style="background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700;">● NEW</span>`;
+        statusBadge = `<span style="background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700;">NEW</span>`;
       } else if (item.status === 'reviewed') {
-        statusBadge = `<span style="background: #fef3c7; color: #92400e; border: 1px solid #fde68a; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700;">✓ REVIEWED</span>`;
+        statusBadge = `<span style="background: #fef3c7; color: #92400e; border: 1px solid #fde68a; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700;">REVIEWED</span>`;
       } else if (item.status === 'resolved') {
-        statusBadge = `<span style="background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700;">✔ RESOLVED</span>`;
+        statusBadge = `<span style="background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700;">RESOLVED</span>`;
       }
 
       const dateStr = item.created_at ? new Date(item.created_at).toLocaleString() : '';
@@ -631,7 +705,7 @@ window.AdminApp = {
         <div style="background: var(--surface-subdued); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; margin-bottom: 12px; transition: box-shadow 0.2s;">
           <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; margin-bottom: 8px;">
             <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-              <strong style="font-size: 13.5px; color: var(--text-main);">👤 ${escapedScorer}</strong>
+              <strong style="font-size: 13.5px; color: var(--text-main);">${escapedScorer}</strong>
               ${statusBadge}
               ${companyTag}
               ${catTag}
@@ -698,6 +772,345 @@ window.AdminApp = {
     } catch (e) {
       alert('Network error: ' + e.message);
     }
+  },
+
+  setCoverageFilter(filter) {
+    this.coverageFilter = filter;
+    document.querySelectorAll('.coverage-filter').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lane === filter);
+    });
+    this.renderCoverageBoard();
+  },
+
+  setCoverageSearch(value) {
+    this.coverageSearch = (value || '').trim().toLowerCase();
+    this.renderCoverageBoard();
+  },
+
+  renderCoverageBoard() {
+    if (!this.data || !this.data.startups) return;
+
+    const testJudgeSet = new Set(
+      (this.data.judges || []).filter(j => j.is_test).map(j => j.judge_id)
+    );
+
+    // Map progress by judge_id + startup_id
+    const progMap = new Map();
+    (this.data.progress || []).forEach(p => {
+      progMap.set(`${p.judge_id}__${p.startup_id}`, p);
+    });
+
+    // Map assignments by startup_id
+    const assignmentsByStartup = new Map();
+    (this.data.assignments || []).forEach(a => {
+      if (testJudgeSet.has(a.judge_id)) return; // Don't count test accounts towards real 2x quorum
+      if (!assignmentsByStartup.has(a.startup_id)) {
+        assignmentsByStartup.set(a.startup_id, []);
+      }
+      assignmentsByStartup.get(a.startup_id).push(a);
+    });
+
+    // Analyze each startup
+    let count2xScored = 0;
+    let count1xScored = 0;
+    let countInProgress = 0;
+    let countZeroAssigned = 0;
+    let totalRealAssignments = 0;
+
+    const lane1List = []; // Needs Attention / Under-Assigned (< 2 assigned or 0 progress)
+    const lane2List = []; // In Progress / Single-Scored (1 complete or active progress)
+    const lane3List = []; // 2x Fully Scored (2 completed)
+
+    this.data.startups.forEach(s => {
+      const assigned = assignmentsByStartup.get(s.id) || [];
+      totalRealAssignments += assigned.length;
+
+      // Analyze each assigned reviewer's progress
+      let fullyScoredCount = 0;
+      let inProgressCount = 0;
+      const reviewers = [];
+
+      assigned.forEach(a => {
+        const p = progMap.get(`${a.judge_id}__${s.id}`);
+        const answered = p ? parseInt(p.answered_count || 0, 10) : 0;
+        const lastSaved = p ? p.last_saved : null;
+        const flagged = p ? parseInt(p.flagged_count || 0, 10) : 0;
+        const isComplete = answered >= 282;
+        const isProg = answered > 0 && answered < 282;
+
+        if (isComplete) fullyScoredCount++;
+        else if (isProg) inProgressCount++;
+
+        reviewers.push({
+          judge_id: a.judge_id,
+          assigned_at: a.assigned_at,
+          answered_count: answered,
+          last_saved: lastSaved,
+          flagged_count: flagged,
+          is_complete: isComplete,
+          is_in_progress: isProg
+        });
+      });
+
+      if (assigned.length === 0) countZeroAssigned++;
+
+      const startupMeta = {
+        id: s.id,
+        name: s.name,
+        assigned_count: assigned.length,
+        fully_scored_count: fullyScoredCount,
+        in_progress_count: inProgressCount,
+        reviewers
+      };
+
+      if (fullyScoredCount >= 2) {
+        count2xScored++;
+        lane3List.push(startupMeta);
+      } else if (fullyScoredCount === 1 || inProgressCount > 0) {
+        if (fullyScoredCount === 1) count1xScored++;
+        else countInProgress++;
+        lane2List.push(startupMeta);
+      } else {
+        lane1List.push(startupMeta);
+      }
+    });
+
+    // Update KPI Header
+    const totalStartups = this.data.startups.length;
+    const targetAssignments = totalStartups * 2;
+    const coveragePct = targetAssignments > 0 
+      ? ((totalRealAssignments / targetAssignments) * 100).toFixed(1) 
+      : '0.0';
+
+    const elTotal = document.getElementById('kpi-total-startups');
+    const el2x = document.getElementById('kpi-2x-scored');
+    const el1x = document.getElementById('kpi-1x-scored');
+    const elInProg = document.getElementById('kpi-in-prog');
+    const elUnassigned = document.getElementById('kpi-unassigned');
+    const elCoverage = document.getElementById('kpi-assignment-coverage');
+
+    if (elTotal) elTotal.textContent = totalStartups;
+    if (el2x) el2x.textContent = count2xScored;
+    if (el1x) el1x.textContent = count1xScored;
+    if (elInProg) elInProg.textContent = countInProgress;
+    if (elUnassigned) elUnassigned.textContent = countZeroAssigned;
+    if (elCoverage) elCoverage.textContent = `${coveragePct}% (${totalRealAssignments}/${targetAssignments})`;
+
+    // Filter by search & selected tab
+    const searchFilter = (list) => {
+      if (!this.coverageSearch) return list;
+      return list.filter(item => {
+        const matchesName = item.name.toLowerCase().includes(this.coverageSearch);
+        const matchesReviewer = item.reviewers.some(r => r.judge_id.toLowerCase().includes(this.coverageSearch));
+        return matchesName || matchesReviewer;
+      });
+    };
+
+    const filteredLane1 = searchFilter(lane1List);
+    const filteredLane2 = searchFilter(lane2List);
+    const filteredLane3 = searchFilter(lane3List);
+
+    // Update Lane Count Badges
+    const badge1 = document.getElementById('lane-1-count');
+    const badge2 = document.getElementById('lane-2-count');
+    const badge3 = document.getElementById('lane-3-count');
+    if (badge1) badge1.textContent = `${filteredLane1.length} of ${lane1List.length}`;
+    if (badge2) badge2.textContent = `${filteredLane2.length} of ${lane2List.length}`;
+    if (badge3) badge3.textContent = `${filteredLane3.length} of ${lane3List.length}`;
+
+    // Render cards into lanes based on active filter
+    const lane1El = document.getElementById('lane-1');
+    const lane2El = document.getElementById('lane-2');
+    const lane3El = document.getElementById('lane-3');
+
+    const activeFilter = this.coverageFilter || 'all';
+    if (lane1El) lane1El.style.display = (activeFilter === 'all' || activeFilter === 'lane1') ? 'flex' : 'none';
+    if (lane2El) lane2El.style.display = (activeFilter === 'all' || activeFilter === 'lane2') ? 'flex' : 'none';
+    if (lane3El) lane3El.style.display = (activeFilter === 'all' || activeFilter === 'lane3') ? 'flex' : 'none';
+
+    const renderCard = (meta) => {
+      const escapedName = this.escapeHtml(meta.name);
+      const safeId = meta.id.replace(/'/g, "\\'");
+      const safeName = meta.name.replace(/'/g, "\\'");
+
+      // Badge for header
+      let badgeClass = 'c-badge-empty';
+      let badgeText = `${meta.assigned_count}/2 Assigned`;
+      if (meta.fully_scored_count >= 2) {
+        badgeClass = 'c-badge-goal';
+        badgeText = '2x Fully Scored';
+      } else if (meta.fully_scored_count === 1) {
+        badgeClass = 'c-badge-single';
+        badgeText = '1/2 Fully Scored';
+      } else if (meta.in_progress_count > 0) {
+        badgeClass = 'c-badge-prog';
+        badgeText = 'In Progress';
+      } else if (meta.assigned_count > 0) {
+        badgeClass = 'c-badge-prog';
+        badgeText = `${meta.assigned_count}/2 Assigned (0 Answers)`;
+      }
+
+      // Render 2 slots
+      let slotsHtml = '';
+      for (let i = 0; i < 2; i++) {
+        const rev = meta.reviewers[i];
+        if (rev) {
+          const safeRevId = this.escapeHtml(rev.judge_id);
+          let slotClass = 'c-slot-unstarted';
+          let progClass = 'unstarted';
+          let progText = '0 / 282 Answers';
+
+          if (rev.is_complete) {
+            slotClass = 'c-slot-complete';
+            progClass = 'complete';
+            progText = 'Completed (282/282)';
+          } else if (rev.is_in_progress) {
+            slotClass = 'c-slot-prog';
+            progClass = 'in-prog';
+            progText = `${rev.answered_count} / 282 (${Math.round((rev.answered_count / 282) * 100)}%)`;
+          }
+
+          const savedText = rev.last_saved 
+            ? `Saved ${this.formatTimeAgo(rev.last_saved)}`
+            : 'Not started';
+
+          const flagBadge = rev.flagged_count > 0 
+            ? `<span style="background: #fef3c7; color: #92400e; padding: 1px 5px; border-radius: 4px; font-size: 10px; font-weight: 700;">${rev.flagged_count} Flagged</span>`
+            : '';
+
+          slotsHtml += `
+            <div class="c-slot ${slotClass}">
+              <div class="c-slot-top">
+                <span class="c-slot-label">Evaluator ${i + 1}</span>
+                <span class="c-slot-scorer" title="${safeRevId}">${safeRevId}</span>
+              </div>
+              <div class="c-slot-meta">
+                <span class="c-slot-progress ${progClass}">${progText}</span>
+                <div style="display: flex; align-items: center; gap: 4px;">
+                  ${flagBadge}
+                  <span class="c-slot-time" title="${rev.last_saved ? this.formatFullDateTime(rev.last_saved) : ''}">${savedText}</span>
+                </div>
+              </div>
+            </div>
+          `;
+        } else {
+          // Empty slot
+          slotsHtml += `
+            <div class="c-slot c-slot-empty">
+              <div class="c-slot-top">
+                <span class="c-slot-label">Evaluator ${i + 1}</span>
+                <span style="font-size: 11px; color: var(--text-muted); font-style: italic;">Unassigned</span>
+              </div>
+              <div class="c-slot-meta" style="justify-content: flex-end; margin-top: 3px;">
+                <button type="button" class="c-slot-action-btn" onclick="AdminApp.openAssignModal('${safeId}', '${safeName}')">
+                  + Assign Evaluator
+                </button>
+              </div>
+            </div>
+          `;
+        }
+      }
+
+      return `
+        <div class="c-card" data-startup-id="${meta.id}">
+          <div class="c-card-header">
+            <span class="c-card-title" title="${escapedName}">${escapedName}</span>
+            <span class="c-card-badge ${badgeClass}">${badgeText}</span>
+          </div>
+          <div class="c-card-slots">
+            ${slotsHtml}
+          </div>
+        </div>
+      `;
+    };
+
+    const container1 = document.getElementById('lane-1-cards');
+    const container2 = document.getElementById('lane-2-cards');
+    const container3 = document.getElementById('lane-3-cards');
+
+    if (container1) {
+      container1.innerHTML = filteredLane1.length > 0 
+        ? filteredLane1.map(renderCard).join('')
+        : '<div style="padding: 30px 10px; text-align: center; color: var(--text-muted); font-size: 12.5px;">No startups in this lane.</div>';
+    }
+    if (container2) {
+      container2.innerHTML = filteredLane2.length > 0 
+        ? filteredLane2.map(renderCard).join('')
+        : '<div style="padding: 30px 10px; text-align: center; color: var(--text-muted); font-size: 12.5px;">No startups in this lane.</div>';
+    }
+    if (container3) {
+      container3.innerHTML = filteredLane3.length > 0 
+        ? filteredLane3.map(renderCard).join('')
+        : '<div style="padding: 30px 10px; text-align: center; color: var(--text-muted); font-size: 12.5px;">No startups reached 2x quorum yet.</div>';
+    }
+  },
+
+  openAssignModal(startupId, startupName) {
+    const modal = document.getElementById('quick-assign-modal');
+    if (!modal) return;
+
+    document.getElementById('qa-startup-id').value = startupId;
+    document.getElementById('qa-startup-name').textContent = startupName;
+
+    // Find currently assigned judges for this startup
+    const testJudgeSet = new Set((this.data.judges || []).filter(j => j.is_test).map(j => j.judge_id));
+    const currentAssignments = (this.data.assignments || []).filter(a => a.startup_id === startupId && !testJudgeSet.has(a.judge_id));
+    const currentJudgeIds = new Set(currentAssignments.map(a => a.judge_id));
+
+    // Show current evaluators
+    const currentEl = document.getElementById('qa-current-evaluators');
+    if (currentEl) {
+      if (currentAssignments.length === 0) {
+        currentEl.innerHTML = '<span>Current status: <strong>0 evaluators assigned</strong></span>';
+      } else {
+        const names = currentAssignments.map(a => `<code style="font-weight:700; color:var(--text-main);">${this.escapeHtml(a.judge_id)}</code>`).join(', ');
+        currentEl.innerHTML = `<span>Currently assigned: ${names}</span>`;
+      }
+    }
+
+    // Populate dropdown with available non-test judges not yet assigned to this company
+    const select = document.getElementById('qa-judge-select');
+    select.innerHTML = '';
+
+    // Count workloads for each judge
+    const workloadMap = {};
+    (this.data.assignments || []).forEach(a => {
+      workloadMap[a.judge_id] = (workloadMap[a.judge_id] || 0) + 1;
+    });
+
+    const eligibleJudges = (this.data.judges || []).filter(j => !j.is_test && !currentJudgeIds.has(j.judge_id));
+
+    if (eligibleJudges.length === 0) {
+      select.innerHTML = '<option value="">No eligible evaluators available</option>';
+    } else {
+      select.innerHTML = '<option value="">-- Choose an Evaluator --</option>';
+      eligibleJudges.forEach(j => {
+        const count = workloadMap[j.judge_id] || 0;
+        const opt = document.createElement('option');
+        opt.value = j.judge_id;
+        opt.textContent = `${j.judge_id} (${count} companies currently assigned)`;
+        select.appendChild(opt);
+      });
+    }
+
+    modal.style.display = 'flex';
+  },
+
+  closeAssignModal() {
+    const modal = document.getElementById('quick-assign-modal');
+    if (modal) modal.style.display = 'none';
+  },
+
+  async confirmQuickAssign() {
+    const startupId = document.getElementById('qa-startup-id').value;
+    const judgeId = document.getElementById('qa-judge-select').value;
+    if (!startupId || !judgeId) {
+      alert("Please select an evaluator.");
+      return;
+    }
+    this.closeAssignModal();
+    await this.toggleAssignment(judgeId, startupId, true);
+    this.renderCoverageBoard();
   }
 };
 

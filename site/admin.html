@@ -43,6 +43,327 @@
     .assignment-summary { margin: 0 0 10px; color: var(--text-muted); font-size: 12px; font-weight: 600; }
     @media (max-width: 960px) { .admin-container { padding: 20px; } .grid { grid-template-columns: 1fr; } }
     @media (max-width: 560px) { .company-item { grid-template-columns: auto minmax(0, 1fr); } .assignment-badge { grid-column: 2; justify-self: start; } }
+
+    /* Cohort 2x Coverage Hub Styling */
+    .cohort-coverage-card {
+      margin-top: 28px;
+      padding: 24px;
+    }
+    .coverage-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .coverage-title {
+      font-size: 20px;
+      font-weight: 800;
+      margin: 0;
+      color: var(--text-main);
+      letter-spacing: -0.01em;
+    }
+    .coverage-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 4px 0 0;
+    }
+    .coverage-kpi-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .kpi-box {
+      background: var(--surface-subdued);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 105px;
+    }
+    .kpi-box.kpi-target {
+      background: #f0fdf4;
+      border-color: #86efac;
+    }
+    .kpi-box.kpi-target .kpi-num {
+      color: #166534;
+    }
+    .kpi-box.kpi-warning {
+      background: #fefce8;
+      border-color: #fde047;
+    }
+    .kpi-box.kpi-warning .kpi-num {
+      color: #854d0e;
+    }
+    .kpi-box.kpi-info {
+      background: #f0f9ff;
+      border-color: #7dd3fc;
+    }
+    .kpi-box.kpi-info .kpi-num {
+      color: #0369a1;
+    }
+    .kpi-box.kpi-danger {
+      background: #fef2f2;
+      border-color: #fca5a5;
+    }
+    .kpi-box.kpi-danger .kpi-num {
+      color: #991b1b;
+    }
+    .kpi-num {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-main);
+      font-family: var(--mono);
+      line-height: 1.2;
+    }
+    .kpi-label {
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-top: 3px;
+    }
+
+    /* Controls */
+    .coverage-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .coverage-search-wrap {
+      flex: 1;
+      min-width: 240px;
+      max-width: 400px;
+    }
+    .coverage-search-wrap input {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 13px;
+      box-sizing: border-box;
+    }
+    .coverage-filter-pills {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .coverage-filter {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 6px 12px;
+      background: var(--surface-subdued);
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .coverage-filter:hover {
+      background: #e2e8f0;
+      color: var(--text-main);
+    }
+    .coverage-filter.active {
+      background: var(--accent-blue);
+      border-color: var(--accent-blue);
+      color: #fff;
+    }
+
+    /* Kanban Grid */
+    .kanban-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      align-items: start;
+    }
+    @media (max-width: 1100px) {
+      .kanban-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .kanban-lane {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+    }
+    .lane-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .lane-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .lane-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .indicator-danger { background: #ef4444; }
+    .indicator-warning { background: #f59e0b; }
+    .indicator-success { background: #10b981; }
+    
+    .lane-count-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.06);
+      color: var(--text-main);
+    }
+    .lane-subtext {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+    .lane-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-height: 720px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    /* Startup Card in Lane */
+    .c-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+    .c-card:hover {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      border-color: #cbd5e1;
+    }
+    .c-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .c-card-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-main);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      min-width: 0;
+    }
+    .c-card-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 10px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .c-badge-goal { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+    .c-badge-single { background: #fef9c3; color: #854d0e; border: 1px solid #fde047; }
+    .c-badge-prog { background: #e0f2fe; color: #0369a1; border: 1px solid #7dd3fc; }
+    .c-badge-empty { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+
+    /* Reviewer Slots */
+    .c-card-slots {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .c-slot {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 9px;
+      background: var(--surface-subdued);
+      font-size: 11.5px;
+    }
+    .c-slot.c-slot-complete {
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+    }
+    .c-slot.c-slot-prog {
+      background: #f0f9ff;
+      border-color: #bae6fd;
+    }
+    .c-slot.c-slot-empty {
+      background: #f8fafc;
+      border-style: dashed;
+      border-color: #cbd5e1;
+    }
+    .c-slot-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2px;
+    }
+    .c-slot-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .c-slot-scorer {
+      font-weight: 700;
+      color: var(--text-main);
+      font-family: var(--mono);
+      font-size: 11px;
+    }
+    .c-slot-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+    }
+    .c-slot-progress {
+      font-weight: 600;
+    }
+    .c-slot-progress.complete { color: #16a34a; }
+    .c-slot-progress.in-prog { color: #0284c7; }
+    .c-slot-progress.unstarted { color: #ef4444; }
+    
+    .c-slot-time {
+      color: var(--text-muted);
+      font-size: 10.5px;
+    }
+    .c-slot-action-btn {
+      background: none;
+      border: none;
+      color: var(--accent-blue);
+      font-weight: 600;
+      font-size: 11px;
+      cursor: pointer;
+      padding: 0;
+      text-decoration: underline;
+    }
+    .c-slot-action-btn:hover {
+      color: #0056b3;
+    }
   </style>
 </head>
 <body>
@@ -54,7 +375,7 @@
         <h2 style="font-size: 24px; font-weight: 800;">Admin Portal</h2>
         <p style="color: var(--text-muted); font-size: 14px;">Enter administrator credentials.</p>
         <p style="margin-top: 8px; font-size: 12.5px;">
-          <a href="admin_tutorial.html" target="_blank" rel="noopener noreferrer" style="color: var(--accent-blue); text-decoration: underline; font-weight: 600;">📖 View Administrator Operations Walkthrough</a>
+          <a href="admin_tutorial.html" target="_blank" rel="noopener noreferrer" style="color: var(--accent-blue); text-decoration: underline; font-weight: 600;">View Administrator Operations Walkthrough</a>
         </p>
       </div>
       <div class="form-group">
@@ -65,7 +386,7 @@
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
           <label for="auth-admin-pass" style="margin-bottom: 0;">Passcode</label>
           <button type="button" onclick="AdminApp.togglePassVisibility('auth-admin-pass', this)" style="background: none; border: none; font-size: 12px; color: var(--accent-blue); cursor: pointer; padding: 0; font-weight: 600; display: inline-flex; align-items: center; gap: 4px;" title="Show or hide password" aria-label="Toggle password visibility">
-            👁️ <span class="pass-toggle-label">Show</span>
+            <span class="pass-toggle-label">Show</span>
           </button>
         </div>
         <input type="password" id="auth-admin-pass" placeholder="••••••••">
@@ -79,9 +400,12 @@
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
       <h1 style="font-size: 24px; margin: 0;">CleanTech Open - Admin Portal</h1>
       <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-        <a href="admin_tutorial.html" target="_blank" rel="noopener noreferrer" class="btn" style="background: #0c6b5d; color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; padding: 10px 14px; font-size: 13px;" title="Open Administrator Operations Walkthrough">📖 Admin Walkthrough</a>
-        <a href="scorer_tutorial.html" target="_blank" rel="noopener noreferrer" class="btn" style="background: #0284c7; color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; padding: 10px 14px; font-size: 13px;" title="Open Judge & Scorer Walkthrough">📘 Scorer Guide</a>
-        <button class="btn" style="background: #166534; color: #fff;" onclick="AdminApp.exportScores()">📥 Export Scored Data (CSV)</button>
+        <a href="admin_tutorial.html" target="_blank" rel="noopener noreferrer" class="btn" style="background: #0c6b5d; color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; padding: 10px 14px; font-size: 13px;" title="Open Administrator Operations Walkthrough">Admin Walkthrough</a>
+        <a href="scorer_tutorial.html" target="_blank" rel="noopener noreferrer" class="btn" style="background: #0284c7; color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; padding: 10px 14px; font-size: 13px;" title="Open Judge & Scorer Walkthrough">Scorer Guide</a>
+        <button class="btn" style="background: #166534; color: #fff; display: inline-flex; align-items: center; gap: 6px;" onclick="AdminApp.exportScores()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="vertical-align: -1px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>Export Scored Data (CSV)</span>
+        </button>
         <button class="btn" style="background: var(--surface-sunk); color: var(--text-main); border: 1px solid var(--border);" onclick="AdminApp.logout()">Log Out</button>
       </div>
     </div>
@@ -99,7 +423,7 @@
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
               <label for="new-judge-pass" style="margin-bottom: 0;">Temporary password</label>
               <button type="button" id="toggle-new-pass-btn" onclick="AdminApp.togglePassVisibility('new-judge-pass', this)" style="background: none; border: none; font-size: 12px; color: var(--accent-blue); cursor: pointer; padding: 0; font-weight: 600; display: inline-flex; align-items: center; gap: 4px;" title="Show or hide password" aria-label="Toggle password visibility">
-                👁️ <span class="pass-toggle-label">Show</span>
+                <span class="pass-toggle-label">Show</span>
               </button>
             </div>
             <input type="password" id="new-judge-pass" placeholder="Enter a temporary password">
@@ -107,7 +431,7 @@
           <div class="form-group" style="display: flex; align-items: center; gap: 8px; margin-top: 10px; margin-bottom: 16px;">
             <input type="checkbox" id="new-judge-test" style="width: 16px; height: 16px; cursor: pointer; margin: 0;">
             <label for="new-judge-test" style="margin-bottom: 0; font-size: 12px; cursor: pointer; color: var(--text-main); font-weight: 500;">
-              🧪 <strong>Test / Preview Mode</strong> <span style="color: var(--text-muted);">(Views all companies, scores not logged to DB)</span>
+              <strong>Test / Preview Mode</strong> <span style="color: var(--text-muted);">(Views all companies, scores not logged to DB)</span>
             </label>
           </div>
           <button class="btn" style="width: 100%;" onclick="AdminApp.createScorer()">Create Scorer</button>
@@ -162,7 +486,7 @@
       <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
         <div style="display: flex; align-items: center; gap: 10px;">
           <h2 style="font-size: 18px; margin: 0; display: flex; align-items: center; gap: 8px;">
-            <span>💬</span> Scorer Feedback &amp; Diligence Notes
+            <span>Scorer Feedback &amp; Diligence Notes</span>
           </h2>
           <span class="badge" id="feedback-count-badge" style="background: #e0e7ff; color: #4338ca; padding: 2px 10px; border-radius: 12px; font-size: 12px; font-weight: 700;">0 Notes</span>
         </div>
@@ -173,7 +497,10 @@
             <button class="assignment-filter" id="fb-filter-reviewed" data-fb-filter="reviewed" onclick="AdminApp.setFeedbackFilter('reviewed')">Reviewed</button>
             <button class="assignment-filter" id="fb-filter-resolved" data-fb-filter="resolved" onclick="AdminApp.setFeedbackFilter('resolved')">Resolved</button>
           </div>
-          <button class="btn" style="background: var(--surface-subdued); color: var(--text-main); border: 1px solid var(--border); padding: 7px 12px; font-size: 12px;" onclick="AdminApp.loadData()">🔄 Refresh</button>
+          <button class="btn" style="background: var(--surface-subdued); color: var(--text-main); border: 1px solid var(--border); padding: 7px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 5px;" onclick="AdminApp.loadData()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+            <span>Refresh</span>
+          </button>
         </div>
       </div>
       <div id="feedback-feed-container" style="max-height: 520px; overflow-y: auto;">
@@ -181,8 +508,130 @@
       </div>
     </div>
 
+    <!-- Cohort 2x Diligence Coverage Hub -->
+    <div class="card cohort-coverage-card" id="cohort-coverage-section">
+      <div class="coverage-header">
+        <div>
+          <h2 class="coverage-title">Cohort 2x Diligence Coverage Hub</h2>
+          <p class="coverage-subtitle">Dual-evaluator quorum tracking and real-time progress across all 92 cohort startups</p>
+        </div>
+        <div class="coverage-kpi-strip">
+          <div class="kpi-box">
+            <span class="kpi-num" id="kpi-total-startups">92</span>
+            <span class="kpi-label">Total Startups</span>
+          </div>
+          <div class="kpi-box kpi-target">
+            <span class="kpi-num" id="kpi-2x-scored">0</span>
+            <span class="kpi-label">2x Fully Scored (Goal)</span>
+          </div>
+          <div class="kpi-box kpi-warning">
+            <span class="kpi-num" id="kpi-1x-scored">0</span>
+            <span class="kpi-label">1x Scored (Needs 2nd)</span>
+          </div>
+          <div class="kpi-box kpi-info">
+            <span class="kpi-num" id="kpi-in-prog">0</span>
+            <span class="kpi-label">In Progress</span>
+          </div>
+          <div class="kpi-box kpi-danger">
+            <span class="kpi-num" id="kpi-unassigned">0</span>
+            <span class="kpi-label">0 Scorers Assigned</span>
+          </div>
+          <div class="kpi-box">
+            <span class="kpi-num" id="kpi-assignment-coverage">0.0%</span>
+            <span class="kpi-label">Assigned Target</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls & Search -->
+      <div class="coverage-controls">
+        <div class="coverage-search-wrap">
+          <input type="search" id="coverage-search-input" placeholder="Search startup or evaluator ID..." oninput="AdminApp.setCoverageSearch(this.value)">
+        </div>
+        <div class="coverage-filter-pills">
+          <button class="coverage-filter active" data-lane="all" onclick="AdminApp.setCoverageFilter('all')">All Startups</button>
+          <button class="coverage-filter" data-lane="lane1" onclick="AdminApp.setCoverageFilter('lane1')">Needs Attention (&lt;2 Scorers / 0 Answers)</button>
+          <button class="coverage-filter" data-lane="lane2" onclick="AdminApp.setCoverageFilter('lane2')">In Progress / Single-Scored</button>
+          <button class="coverage-filter" data-lane="lane3" onclick="AdminApp.setCoverageFilter('lane3')">2x Fully Scored</button>
+        </div>
+      </div>
+
+      <!-- 3-Lane Kanban Columns -->
+      <div class="kanban-grid" id="coverage-kanban-grid">
+        <!-- Lane 1: Needs Attention / Under-Assigned -->
+        <div class="kanban-lane lane-needs-attention" id="lane-1">
+          <div class="lane-header">
+            <div class="lane-title">
+              <span class="lane-indicator indicator-danger"></span>
+              <span>Needs Attention / Under-Assigned</span>
+            </div>
+            <span class="lane-count-badge" id="lane-1-count">0</span>
+          </div>
+          <div class="lane-subtext">Startups with 0 or 1 evaluator assigned, or 0 scoring progress made.</div>
+          <div class="lane-cards" id="lane-1-cards"></div>
+        </div>
+
+        <!-- Lane 2: In Progress / Single-Scored -->
+        <div class="kanban-lane lane-in-progress" id="lane-2">
+          <div class="lane-header">
+            <div class="lane-title">
+              <span class="lane-indicator indicator-warning"></span>
+              <span>In Progress / Single-Scored</span>
+            </div>
+            <span class="lane-count-badge" id="lane-2-count">0</span>
+          </div>
+          <div class="lane-subtext">1 evaluator completed (282/282) or active evaluation underway.</div>
+          <div class="lane-cards" id="lane-2-cards"></div>
+        </div>
+
+        <!-- Lane 3: 2x Fully Scored (Goal Reached) -->
+        <div class="kanban-lane lane-goal-reached" id="lane-3">
+          <div class="lane-header">
+            <div class="lane-title">
+              <span class="lane-indicator indicator-success"></span>
+              <span>2x Fully Scored (Goal Reached)</span>
+            </div>
+            <span class="lane-count-badge" id="lane-3-count">0</span>
+          </div>
+          <div class="lane-subtext">2 independent evaluators completed all 282 criteria. Quorum reached.</div>
+          <div class="lane-cards" id="lane-3-cards"></div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <script src="js/admin.js?v=6"></script>
+  <!-- Quick Assign Modal -->
+  <div class="modal-overlay" id="quick-assign-modal" style="display:none; z-index: 1000; backdrop-filter: blur(2px);">
+    <div class="modal-content" style="max-width: 440px; padding: 28px; background: #fff; border-radius: 12px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+        <div>
+          <h3 style="margin: 0; font-size: 17px; font-weight: 800; color: var(--text-main);">Assign Evaluator</h3>
+          <p style="margin: 4px 0 0; font-size: 13px; color: var(--text-muted);" id="qa-startup-name">Startup Name</p>
+        </div>
+        <button type="button" onclick="AdminApp.closeAssignModal()" style="background: none; border: none; font-size: 20px; line-height: 1; cursor: pointer; color: var(--text-muted);">&times;</button>
+      </div>
+
+      <input type="hidden" id="qa-startup-id">
+
+      <div class="form-group">
+        <label for="qa-judge-select" style="font-size: 13px; font-weight: 600; margin-bottom: 6px;">Select Evaluator</label>
+        <select id="qa-judge-select" style="width: 100%; padding: 9px 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; box-sizing: border-box;">
+          <!-- Options populated dynamically -->
+        </select>
+      </div>
+
+      <div id="qa-current-evaluators" style="margin-bottom: 16px; font-size: 12px; color: var(--text-muted);">
+        <!-- Currently assigned evaluators shown here -->
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 20px;">
+        <button type="button" class="btn" style="background: var(--surface-subdued); color: var(--text-main); border: 1px solid var(--border);" onclick="AdminApp.closeAssignModal()">Cancel</button>
+        <button type="button" class="btn" style="background: var(--accent-blue); color: white;" onclick="AdminApp.confirmQuickAssign()">Assign Evaluator</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/admin.js?v=7"></script>
 </body>
 </html>

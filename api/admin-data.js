@@ -20,7 +20,16 @@ module.exports = async (req, res) => {
     const judgesRes = await client.query('SELECT judge_id, is_test FROM judges ORDER BY judge_id ASC');
     const startupsRes = await client.query('SELECT startup_id as id, company_name as name FROM startup_extractions ORDER BY company_name ASC');
     const assignmentsRes = await client.query('SELECT judge_id, startup_id, assigned_at FROM judge_assignments');
-    const progressRes = await client.query('SELECT judge_id, startup_id, count(question_id) as answered_count FROM human_reviews GROUP BY judge_id, startup_id');
+    const progressRes = await client.query(`
+      SELECT 
+        judge_id, 
+        startup_id, 
+        COUNT(CASE WHEN score_value IS NOT NULL THEN 1 END)::int as answered_count,
+        COUNT(CASE WHEN is_flagged = TRUE THEN 1 END)::int as flagged_count,
+        MAX(updated_at) as last_saved
+      FROM human_reviews 
+      GROUP BY judge_id, startup_id
+    `);
     const feedbackRes = await client.query(`
       SELECT sf.id, sf.scorer_id, sf.startup_id, sf.feedback_text, sf.category_code, 
              sf.status, sf.admin_notes, sf.created_at,
