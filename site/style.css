@@ -107,15 +107,127 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 32px;
+  padding: 0 24px;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35), 0 8px 24px -16px rgba(0, 0, 0, 0.7);
   position: relative;
   z-index: 20;
 }
-.nav-left { display: flex; align-items: center; gap: 10px; font-size: 17px; }
-.logo-icon { font-size: 20px; color: #4ade80; }
+.nav-left { display: flex; align-items: center; gap: 12px; font-size: 15px; }
+.logo-icon { font-size: 20px; color: #4ade80; display: flex; align-items: center; }
+.nav-title { white-space: nowrap; font-size: 14.5px; }
 .nav-title strong { font-weight: 700; letter-spacing: 0.02em; }
-.nav-right { display: flex; align-items: center; gap: 20px; }
+.nav-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+
+/* Top Nav Buttons */
+.top-nav .nav-btn {
+  height: 34px;
+  padding: 0 12px;
+  font-size: 12.5px;
+  font-weight: 600;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-light);
+  transition: all var(--fast) var(--ease);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+.top-nav .nav-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+.top-nav .nav-btn:active {
+  transform: scale(0.98);
+}
+.top-nav #btn-feedback-modal {
+  background: rgba(79, 70, 229, 0.22);
+  border-color: rgba(129, 140, 248, 0.35);
+  color: #e0e7ff;
+}
+.top-nav #btn-feedback-modal:hover {
+  background: rgba(79, 70, 229, 0.4);
+  border-color: rgba(129, 140, 248, 0.6);
+  color: #ffffff;
+}
+
+/* Top Nav Dropdowns */
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.nav-dropdown-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-dropdown-btn .chevron-ico {
+  transition: transform var(--fast) var(--ease);
+  opacity: 0.75;
+}
+.nav-dropdown.open .chevron-ico {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+.nav-dropdown.open > .nav-dropdown-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 210px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.18), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+  padding: 6px 0;
+  z-index: 1000;
+}
+.dropdown-header {
+  padding: 8px 14px 6px;
+}
+.dropdown-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 4px 0;
+}
+.dropdown-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  font-size: 13px;
+  color: var(--text-main);
+  text-decoration: none;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-family: var(--sans);
+  font-weight: 500;
+  transition: background var(--fast) var(--ease), color var(--fast) var(--ease);
+}
+.dropdown-item:hover {
+  background: var(--surface-subdued);
+  color: var(--text-main);
+}
+.dropdown-item.logout-item {
+  color: var(--accent-red);
+}
+.dropdown-item.logout-item:hover {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
 .startup-badge {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.1);

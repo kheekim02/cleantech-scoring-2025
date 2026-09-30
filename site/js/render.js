@@ -214,7 +214,7 @@ window.CTO.Render = {
         // Prepare AI Diligence Dossier (Concept 1: Dual-Tier Drawer, Collapsed by Default)
         const hasDossier = hasRationale || hasCitation;
         const pageLabel = q.page_number ? ` (p. ${q.page_number})` : '';
-        const docBadge = q.source_pdf ? `<span class="h-dossier-pdf-badge" title="${this.escapeHtml(q.source_pdf)}">📄 ${this.escapeHtml(q.source_pdf)}</span>` : '';
+        const docBadge = q.source_pdf ? `<span class="h-dossier-pdf-badge" title="${this.escapeHtml(q.source_pdf)}">${this.icons.doc} ${this.escapeHtml(q.source_pdf)}</span>` : '';
         const safePdf = (q.source_pdf || '').replace(/"/g, '&quot;');
         const safePage = q.page_number || '';
 
@@ -335,9 +335,10 @@ window.CTO.Render = {
           `;
 
         const isFlagged = Boolean(flags[q.new_q_id || q.q_id]);
+        const flagIconSvg = `<svg class="flag-icon-svg" viewBox="0 0 24 24" fill="${isFlagged ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="vertical-align: -1px;"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>`;
         const flagBtnHtml = `
           <button class="flag-btn ${isFlagged ? 'flagged' : ''}" data-action="toggle-flag" data-qid="${q.new_q_id || q.q_id}" title="${isFlagged ? 'Flagged for review (Click to unflag)' : 'Flag this question for review'}">
-            <span class="flag-icon">${isFlagged ? '🚩' : '🏳️'}</span>
+            <span class="flag-icon">${flagIconSvg}</span>
             <span class="flag-label">${isFlagged ? 'Flagged' : 'Flag for Review'}</span>
           </button>
         `;
@@ -439,19 +440,17 @@ window.CTO.Render = {
       }
       const flagBtn = card.querySelector(`[data-action="toggle-flag"]`);
       if (flagBtn) {
+        const iconSvg = flagBtn.querySelector('.flag-icon-svg');
+        const label = flagBtn.querySelector('.flag-label');
         if (isFlagged) {
           flagBtn.classList.add('flagged');
           flagBtn.title = 'Flagged for review (Click to unflag)';
-          const icon = flagBtn.querySelector('.flag-icon');
-          if (icon) icon.textContent = '🚩';
-          const label = flagBtn.querySelector('.flag-label');
+          if (iconSvg) iconSvg.setAttribute('fill', 'currentColor');
           if (label) label.textContent = 'Flagged';
         } else {
           flagBtn.classList.remove('flagged');
           flagBtn.title = 'Flag this question for review';
-          const icon = flagBtn.querySelector('.flag-icon');
-          if (icon) icon.textContent = '🏳️';
-          const label = flagBtn.querySelector('.flag-label');
+          if (iconSvg) iconSvg.setAttribute('fill', 'none');
           if (label) label.textContent = 'Flag for Review';
         }
       }
@@ -469,13 +468,15 @@ window.CTO.Render = {
         if (btn) {
           btn.style.borderColor = '#fca5a5';
           btn.style.background = '#fef2f2';
+          btn.style.color = '#991b1b';
         }
       } else {
-        badge.style.background = 'var(--border-strong)';
-        badge.style.color = 'var(--text-main)';
+        badge.style.background = 'rgba(255, 255, 255, 0.2)';
+        badge.style.color = '#ffffff';
         if (btn) {
-          btn.style.borderColor = 'var(--border)';
-          btn.style.background = 'var(--surface-sunk)';
+          btn.style.borderColor = 'rgba(255, 255, 255, 0.16)';
+          btn.style.background = 'rgba(255, 255, 255, 0.08)';
+          btn.style.color = 'var(--text-light)';
         }
       }
     }

@@ -30,6 +30,11 @@ CTO.App = {
     if (banner) {
       banner.style.display = this.currentUser?.is_test ? 'flex' : 'none';
     }
+    const accountLabel = document.getElementById('nav-account-label');
+    const dropdownUserId = document.getElementById('dropdown-user-id');
+    const username = this.currentUser?.id || 'Account';
+    if (accountLabel) accountLabel.textContent = username;
+    if (dropdownUserId) dropdownUserId.textContent = username;
   },
 
   async handleLogin() {
@@ -260,6 +265,22 @@ CTO.App = {
         }
       });
     }
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-dropdown')) {
+        this.closeAllDropdowns();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        this.closeAllDropdowns();
+        this.closeFlaggedModal();
+        this.closeFeedbackModal();
+        this.closeFaqModal();
+        this.closePasswordModal();
+      }
+    });
 
     document.getElementById('submit-modal').addEventListener('click', (e) => {
       if (e.target.tagName === 'A' && e.target.dataset.qid) {
@@ -766,7 +787,9 @@ CTO.App = {
         if (flaggedQids.length === 0) {
           modalBody.innerHTML = `
             <div style="text-align: center; padding: 36px 16px; color: var(--text-muted);">
-              <div style="font-size: 32px; margin-bottom: 8px;">🏳️</div>
+              <div style="margin-bottom: 10px; color: var(--text-faint);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="36" height="36"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+              </div>
               <strong style="color: var(--text-main); font-size: 15px;">No Flagged Questions</strong>
               <p style="font-size: 13px; margin-top: 6px; max-width: 320px; margin-left: auto; margin-right: auto; line-height: 1.4;">
                 Click the <strong>Flag for Review</strong> button on any question card to keep track of items you want to return to later.
@@ -1104,6 +1127,24 @@ CTO.App = {
     const body = await res.json();
     message.textContent = body.message || body.error;
     message.style.color = res.ok ? 'var(--accent-green)' : 'var(--accent-red)';
+  },
+
+  toggleDropdown(menuId) {
+    const menu = document.getElementById(menuId);
+    if (!menu) return;
+    const isVisible = menu.style.display === 'block';
+    this.closeAllDropdowns();
+    if (!isVisible) {
+      menu.style.display = 'block';
+      menu.parentElement?.classList.add('open');
+    }
+  },
+
+  closeAllDropdowns() {
+    document.querySelectorAll('.nav-dropdown-menu').forEach(menu => {
+      menu.style.display = 'none';
+      menu.parentElement?.classList.remove('open');
+    });
   }
 };
 

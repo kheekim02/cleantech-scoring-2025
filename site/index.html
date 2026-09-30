@@ -6,7 +6,7 @@
   <title>CleanTech Open 2025 | Scoring Interface</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="style.css?v=23">
+  <link rel="stylesheet" href="style.css?v=24">
 </head>
 <body>
 
@@ -25,32 +25,69 @@
         </svg>
       </div>
       <div class="nav-title"><strong>CleanTech Open 2025</strong> | Scoring Interface</div>
-      <select id="startup-picker" class="h-picker" style="margin-left: 20px; padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border); background: var(--surface); color: var(--text-main); font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; display: none;">
-        <option value="">Loading startups...</option>
-      </select>
+      <div class="startup-picker-container" style="display: flex; align-items: center; gap: 8px; margin-left: 16px;">
+        <label for="startup-picker" style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); font-weight: 700; white-space: nowrap;">Company:</label>
+        <select id="startup-picker" class="h-picker" style="padding: 5px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: #fff; font-family: var(--sans); font-size: 13px; font-weight: 600; display: none; cursor: pointer; outline: none;">
+          <option value="">Loading startups...</option>
+        </select>
+        <span id="hdr-startup-name" style="display: none;">SolarPure Inc.</span>
+      </div>
     </div>
     <div class="nav-right">
-      <span id="save-status" aria-live="polite" style="font-size: 12px; color: var(--text-muted); margin-right: 12px; white-space: nowrap; flex-shrink: 0;">Checking session…</span>
-      <div class="startup-badge">
-        <span id="hdr-startup-name">SolarPure Inc.</span>
-        
-      </div>
-      <button class="nav-btn" id="btn-flagged-modal" style="padding: 7px 11px; margin-left: 10px; font-size: 12px; background: var(--surface-sunk); color: var(--text-main); display: inline-flex; align-items: center; gap: 6px; font-weight: 600; border: 1px solid var(--border);" onclick="window.CTO.App.openFlaggedModal()" title="View questions flagged for review">
-        <span>🚩 Flagged</span>
-        <span id="nav-flagged-count" class="badge" style="background: var(--border-strong); color: var(--text-main); padding: 1px 7px; border-radius: 10px; font-family: var(--mono); font-size: 11px; font-weight: 700;">0</span>
+      <span id="save-status" aria-live="polite" style="font-size: 12px; color: var(--text-muted); font-family: var(--mono); margin-right: 8px; white-space: nowrap; flex-shrink: 0;">Checking session…</span>
+
+      <button class="nav-btn" id="btn-flagged-modal" onclick="window.CTO.App.openFlaggedModal()" title="View questions flagged for review">
+        <span>Flagged</span>
+        <span id="nav-flagged-count" class="badge" style="background: rgba(255,255,255,0.2); color: #fff; padding: 1px 7px; border-radius: 10px; font-family: var(--mono); font-size: 11px; font-weight: 700;">0</span>
       </button>
-      <a href="scorer_tutorial.html" target="_blank" rel="noopener noreferrer" class="nav-btn" style="padding: 7px 11px; margin-left: 8px; font-size: 12px; background: #0c6b5d; color: white; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; text-decoration: none;" title="Open Judge & Scorer Walkthrough (HTML)">📖 Scorer Guide</a>
-      <button class="nav-btn" style="padding: 7px 11px; margin-left: 8px; font-size: 12px; background: #0284c7; color: white; display: inline-flex; align-items: center; gap: 4px; font-weight: 600;" onclick="window.CTO.App.openFaqModal()">❓ Scorer FAQ</button>
-      <button class="nav-btn" id="btn-feedback-modal" style="padding: 7px 11px; margin-left: 8px; font-size: 12px; background: #4f46e5; color: white; display: inline-flex; align-items: center; gap: 4px; font-weight: 600;" onclick="window.CTO.App.openFeedbackModal()" title="Submit general feedback or notes to admins">💬 Feedback</button>
-      <button class="nav-btn" style="padding: 7px 10px; margin-left: 8px; font-size: 12px;" onclick="window.CTO.App.openPasswordModal()">Change password</button>
-      <button class="nav-btn" style="padding: 7px 10px; margin-left: 8px; font-size: 12px;" onclick="window.CTO.App.logout()">Log out</button>
+
+      <button class="nav-btn" id="btn-feedback-modal" onclick="window.CTO.App.openFeedbackModal()" title="Submit general feedback or notes to admins">
+        <span>Feedback</span>
+      </button>
+
+      <!-- Help Dropdown -->
+      <div class="nav-dropdown" id="help-dropdown">
+        <button class="nav-btn nav-dropdown-btn" id="btn-help-dropdown" onclick="window.CTO.App.toggleDropdown('help-dropdown-menu')" title="Help, guides, and rubric FAQs">
+          <span>Help</span>
+          <svg class="chevron-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="nav-dropdown-menu" id="help-dropdown-menu" style="display: none;">
+          <a href="scorer_tutorial.html" target="_blank" rel="noopener noreferrer" class="dropdown-item" onclick="window.CTO.App.closeAllDropdowns()">
+            Scorer Guide &amp; Walkthrough
+          </a>
+          <button class="dropdown-item" onclick="window.CTO.App.openFaqModal(); window.CTO.App.closeAllDropdowns();">
+            Evaluator FAQs &amp; BMC Rules
+          </button>
+        </div>
+      </div>
+
+      <!-- Account Dropdown -->
+      <div class="nav-dropdown" id="account-dropdown">
+        <button class="nav-btn nav-dropdown-btn" id="btn-account-dropdown" onclick="window.CTO.App.toggleDropdown('account-dropdown-menu')" title="Account settings and sign out">
+          <span id="nav-account-label">Account</span>
+          <svg class="chevron-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="nav-dropdown-menu" id="account-dropdown-menu" style="display: none;">
+          <div class="dropdown-header">
+            <span style="font-size: 11px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; letter-spacing: 0.04em;">Signed in as</span>
+            <strong id="dropdown-user-id" style="display: block; font-family: var(--mono); font-size: 13px; color: var(--text-main); margin-top: 2px;">Scorer</strong>
+          </div>
+          <div class="dropdown-divider"></div>
+          <button class="dropdown-item" onclick="window.CTO.App.openPasswordModal(); window.CTO.App.closeAllDropdowns();">
+            Change Password
+          </button>
+          <button class="dropdown-item logout-item" onclick="window.CTO.App.logout(); window.CTO.App.closeAllDropdowns();">
+            Log Out
+          </button>
+        </div>
+      </div>
       
     </div>
   </header>
 
   <!-- Test / Admin Preview Banner -->
   <div id="test-mode-banner" style="display: none; background: #fef3c7; color: #92400e; border-bottom: 1px solid #fcd34d; padding: 7px 16px; font-size: 12px; font-weight: 600; text-align: center; align-items: center; justify-content: center; gap: 8px;">
-    <span>🧪 <strong>Test & Admin Preview Mode:</strong> All companies are accessible for testing. Scores and justifications are ephemeral and will <u>NOT</u> be saved to the database.</span>
+    <span><strong style="text-transform: uppercase; letter-spacing: 0.05em; background: #fde68a; padding: 2px 6px; border-radius: 4px; margin-right: 6px;">Test & Admin Preview Mode:</strong> All companies are accessible for testing. Scores and justifications are ephemeral and will <u>NOT</u> be saved to the database.</span>
   </div>
 
   <!-- Main Layout -->
@@ -60,7 +97,7 @@
     <section class="left-pane" id="left-pane">
       <div class="pane-header">
         <div class="pane-title">
-          <span class="icon">📑</span> Source vs. AI Extraction Viewer
+          Source vs. AI Extraction Viewer
         </div>
         <div class="step-pill" id="left-step-pill">Executive Summary</div>
       </div>
@@ -95,7 +132,7 @@
       <!-- Section Navigation Dropdown Bar -->
       <div class="section-nav-bar" id="section-nav-bar">
         <label for="section-nav-selector" class="section-nav-label">
-          <span class="icon">📋</span> Section:
+          Section:
         </label>
         <select id="section-nav-selector" class="section-nav-selector" aria-label="Select Rubric Section" onchange="window.CTO.App.jumpToCategory(this.value)">
           <!-- Populated dynamically via CTO.Render.renderSectionDropdown -->
@@ -106,7 +143,7 @@
 
         <!-- Human Review Section -->
         <div class="section-block">
-          <h3 class="section-label">👤 HUMAN REVIEW REQUIRED</h3>
+          <h3 class="section-label">HUMAN REVIEW REQUIRED</h3>
           
           <div class="human-cards-container" id="human-cards-container">
             <!-- Rendered via JS -->
@@ -139,7 +176,7 @@
 
       <div id="flagged-submit-notice" style="display:none; margin-top: 16px; background: #fffbeb; border: 1px solid #fde68a; padding: 14px 16px; border-radius: 6px;">
         <div style="font-size: 12px; font-weight: 700; color: #92400e; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">
-          <span>🚩</span> <span>FLAGGED QUESTIONS PENDING REVIEW</span>
+          <span>FLAGGED QUESTIONS PENDING REVIEW</span>
         </div>
         <p style="font-size: 12px; color: #78350f; margin-bottom: 8px;">
           You have flagged questions in this evaluation. You may submit anyway or review them before confirming.
@@ -161,8 +198,8 @@
     <div class="modal-content" style="max-width: 600px; padding: 32px;">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
         <div>
-          <h2 style="font-size: 20px; font-weight: 800; display: flex; align-items: center; gap: 8px; margin: 0;">
-            <span>🚩</span> Flagged for Review
+          <h2 style="font-size: 20px; font-weight: 800; margin: 0;">
+            Flagged for Review
           </h2>
           <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px; margin-bottom: 0;">
             Questions you marked to revisit before submitting your evaluation.
@@ -186,8 +223,8 @@
     <div class="modal-content" style="max-width: 540px; padding: 32px;">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
         <div>
-          <h2 style="font-size: 20px; font-weight: 800; display: flex; align-items: center; gap: 8px; margin: 0;">
-            <span>💬</span> Scorer Feedback &amp; Notes
+          <h2 style="font-size: 20px; font-weight: 800; margin: 0;">
+            Scorer Feedback &amp; Notes
           </h2>
           <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px; margin-bottom: 0;">
             Submit general feedback, observations, or questions to the administrators.
@@ -258,9 +295,9 @@
     </div>
   </div>
 
-  <script src="js/scoring.js?v=23"></script>
-  <script src="js/render.js?v=23"></script>
-  <script src="js/app.js?v=23"></script>
+  <script src="js/scoring.js?v=24"></script>
+  <script src="js/render.js?v=24"></script>
+  <script src="js/app.js?v=24"></script>
 
   <!-- Rubric Modal -->
   <div class="modal-overlay" id="rubric-modal" style="display:none; z-index: 999; backdrop-filter: blur(4px);">
