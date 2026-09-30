@@ -234,6 +234,33 @@ CTO.App = {
       });
     }
 
+    const btnFeedback = document.getElementById('btn-feedback-modal');
+    if (btnFeedback) {
+      btnFeedback.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.openFeedbackModal();
+      });
+    }
+
+    const feedbackModal = document.getElementById('feedback-modal');
+    if (feedbackModal) {
+      feedbackModal.addEventListener('click', (e) => {
+        if (e.target.id === 'feedback-modal') {
+          this.closeFeedbackModal();
+        }
+      });
+    }
+
+    const feedbackInput = document.getElementById('feedback-input');
+    if (feedbackInput) {
+      feedbackInput.addEventListener('input', () => {
+        const charCount = document.getElementById('feedback-char-count');
+        if (charCount) {
+          charCount.textContent = `${feedbackInput.value.length.toLocaleString()} / 5,000 chars`;
+        }
+      });
+    }
+
     document.getElementById('submit-modal').addEventListener('click', (e) => {
       if (e.target.tagName === 'A' && e.target.dataset.qid) {
         e.preventDefault();
@@ -952,6 +979,117 @@ CTO.App = {
   closePasswordModal() {
     document.getElementById('password-modal').style.display = 'none';
     document.getElementById('password-message').textContent = '';
+  },
+
+  openFeedbackModal() {
+    const modal = document.getElementById('feedback-modal');
+    if (!modal) return;
+
+    const sId = this.state.activeStartupId;
+    const sData = this.state.startups ? this.state.startups[sId] : null;
+    const currentCat = this.state.categories[this.state.currentStepIndex] || '';
+    const catName = (window.CTO?.Render?.categoryNames && window.CTO.Render.categoryNames[currentCat]) || currentCat;
+    const startupName = sData?.meta?.name || sId || 'General';
+
+    const contextHint = document.getElementById('feedback-context-hint');
+    if (contextHint) {
+      contextHint.textContent = `Context: ${startupName} • Section: ${catName}`;
+    }
+
+    const input = document.getElementById('feedback-input');
+    if (input) {
+      input.value = '';
+      setTimeout(() => input.focus(), 50);
+    }
+
+    const charCount = document.getElementById('feedback-char-count');
+    if (charCount) {
+      charCount.textContent = '0 / 5,000 chars';
+    }
+
+    const statusMsg = document.getElementById('feedback-status-msg');
+    if (statusMsg) {
+      statusMsg.style.display = 'none';
+      statusMsg.textContent = '';
+    }
+
+    const submitBtn = document.getElementById('btn-submit-feedback');
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit Feedback';
+    }
+
+    modal.style.display = 'flex';
+  },
+
+  closeFeedbackModal() {
+    const modal = document.getElementById('feedback-modal');
+    if (modal) modal.style.display = 'none';
+  },
+
+  async submitFeedback() {
+    const input = document.getElementById('feedback-input');
+    const statusMsg = document.getElementById('feedback-status-msg');
+    const submitBtn = document.getElementById('btn-submit-feedback');
+    if (!input || !statusMsg) return;
+
+    const text = input.value.trim();
+    if (!text) {
+      statusMsg.style.display = 'block';
+      statusMsg.style.background = '#fef2f2';
+      statusMsg.style.color = '#991b1b';
+      statusMsg.style.border = '1px solid #fecaca';
+      statusMsg.textContent = 'Please enter your feedback before submitting.';
+      input.focus();
+      return;
+    }
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+    }
+
+    statusMsg.style.display = 'none';
+
+    try {
+      const res = await fetch('/api/submit-feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          feedback_text: text,
+          startup_id: this.state.activeStartupId || null,
+          category_code: this.state.categories[this.state.currentStepIndex] || null
+        })
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        statusMsg.style.display = 'block';
+        statusMsg.style.background = '#ecfdf5';
+        statusMsg.style.color = '#065f46';
+        statusMsg.style.border = '1px solid #a7f3d0';
+        statusMsg.textContent = '✓ Thank you! Your feedback has been submitted to the admin team.';
+        input.value = '';
+
+        setTimeout(() => {
+          this.closeFeedbackModal();
+        }, 1500);
+      } else {
+        throw new Error(data.error || 'Failed to submit feedback.');
+      }
+    } catch (err) {
+      console.error('Error submitting feedback:', err);
+      statusMsg.style.display = 'block';
+      statusMsg.style.background = '#fef2f2';
+      statusMsg.style.color = '#991b1b';
+      statusMsg.style.border = '1px solid #fecaca';
+      statusMsg.textContent = `Error: ${err.message || 'Unable to submit feedback.'}`;
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Try Again';
+      }
+    }
   },
 
   async changePassword() {

@@ -1,12 +1,14 @@
 window.AdminApp = {
   auth: null,
   assignmentFilter: 'all',
+  feedbackFilter: 'all',
   companySearch: '',
   selectedJudgeId: sessionStorage.getItem('cto_admin_selected_judge') || '',
   data: {
     judges: [],
     startups: [],
-    assignments: [] // array of { judge_id, startup_id, assigned_at }
+    assignments: [], // array of { judge_id, startup_id, assigned_at }
+    feedback: []
   },
 
   setAssignmentFilter(filter) {
@@ -75,6 +77,7 @@ window.AdminApp = {
       this.data = await res.json();
       document.getElementById('admin-dashboard').style.display = 'block';
       this.renderScorers();
+      this.renderFeedback();
     } catch (e) {
       console.error(e);
       alert("Failed to load admin data");
@@ -562,6 +565,138 @@ window.AdminApp = {
     } finally {
       btn.innerHTML = originalText;
       btn.disabled = false;
+    }
+  },
+
+  setFeedbackFilter(filter) {
+    this.feedbackFilter = filter;
+    document.querySelectorAll('[data-fb-filter]').forEach(button => {
+      button.classList.toggle('active', button.dataset.fbFilter === filter);
+    });
+    this.renderFeedback();
+  },
+
+  renderFeedback() {
+    const container = document.getElementById('feedback-feed-container');
+    const badge = document.getElementById('feedback-count-badge');
+    if (!container) return;
+
+    const allFeedback = this.data.feedback || [];
+    const newCount = allFeedback.filter(f => f.status === 'new').length;
+    if (badge) {
+      badge.textContent = `${newCount} New / ${allFeedback.length} Total`;
+    }
+
+    let items = allFeedback;
+    if (this.feedbackFilter && this.feedbackFilter !== 'all') {
+      items = items.filter(f => f.status === this.feedbackFilter);
+    }
+
+    if (items.length === 0) {
+      container.innerHTML = `
+        <div style="text-align: center; padding: 40px 16px; color: var(--text-muted);">
+          <div style="font-size: 32px; margin-bottom: 8px;">📭</div>
+          <strong style="color: var(--text-main); font-size: 15px;">No Feedback Found</strong>
+          <p style="font-size: 13px; margin-top: 6px; margin-bottom: 0;">
+            ${this.feedbackFilter === 'all' ? 'No scorer feedback notes have been submitted yet.' : `No feedback with status "${this.feedbackFilter}".`}
+          </p>
+        </div>
+      `;
+      return;
+    }
+
+    let html = '';
+    items.forEach(item => {
+      const escapedText = this.escapeHtml(item.feedback_text);
+      const escapedScorer = this.escapeHtml(item.scorer_id);
+      const companyTag = item.startup_name 
+        ? `<span style="background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 11px;">🏢 ${this.escapeHtml(item.startup_name)}</span>` 
+        : (item.startup_id ? `<span style="background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 11px;">🏢 ${this.escapeHtml(item.startup_id)}</span>` : '');
+      const catTag = item.category_code
+        ? `<span style="background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 4px; font-family: var(--mono); font-size: 11px; font-weight: 600;">📋 ${this.escapeHtml(item.category_code)}</span>`
+        : '';
+      
+      let statusBadge = '';
+      if (item.status === 'new') {
+        statusBadge = `<span style="background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700;">● NEW</span>`;
+      } else if (item.status === 'reviewed') {
+        statusBadge = `<span style="background: #fef3c7; color: #92400e; border: 1px solid #fde68a; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700;">✓ REVIEWED</span>`;
+      } else if (item.status === 'resolved') {
+        statusBadge = `<span style="background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700;">✔ RESOLVED</span>`;
+      }
+
+      const dateStr = item.created_at ? new Date(item.created_at).toLocaleString() : '';
+
+      html += `
+        <div style="background: var(--surface-subdued); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; margin-bottom: 12px; transition: box-shadow 0.2s;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; margin-bottom: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              <strong style="font-size: 13.5px; color: var(--text-main);">👤 ${escapedScorer}</strong>
+              ${statusBadge}
+              ${companyTag}
+              ${catTag}
+            </div>
+            <div style="font-size: 12px; color: var(--text-muted); font-family: var(--mono);">
+              ${dateStr}
+            </div>
+          </div>
+          <div style="font-size: 13.5px; color: var(--text-main); line-height: 1.5; white-space: pre-wrap; background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 10px 12px; margin-bottom: 10px;">${escapedText}</div>
+          <div style="display: flex; justify-content: flex-end; gap: 8px; align-items: center;">
+            ${item.status !== 'reviewed' ? `<button class="btn" style="background: #f59e0b; color: white; padding: 4px 10px; font-size: 11.5px;" onclick="AdminApp.updateFeedbackStatus(${item.id}, 'reviewed')">Mark Reviewed</button>` : ''}
+            ${item.status !== 'resolved' ? `<button class="btn" style="background: #10b981; color: white; padding: 4px 10px; font-size: 11.5px;" onclick="AdminApp.updateFeedbackStatus(${item.id}, 'resolved')">Resolve</button>` : ''}
+            ${item.status !== 'new' ? `<button class="btn" style="background: var(--surface-subdued); color: var(--text-muted); border: 1px solid var(--border); padding: 4px 10px; font-size: 11.5px;" onclick="AdminApp.updateFeedbackStatus(${item.id}, 'new')">Reopen</button>` : ''}
+            <button class="btn" style="background: transparent; color: var(--accent-red); padding: 4px 8px; font-size: 11.5px; border: 1px solid #fecaca;" onclick="AdminApp.deleteFeedback(${item.id})">Delete</button>
+          </div>
+        </div>
+      `;
+    });
+
+    container.innerHTML = html;
+  },
+
+  async updateFeedbackStatus(feedbackId, newStatus) {
+    try {
+      const res = await fetch('/api/admin-actions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          action: 'UPDATE_FEEDBACK_STATUS',
+          data: { feedback_id: feedbackId, status: newStatus }
+        })
+      });
+      if (res.ok) {
+        const item = (this.data.feedback || []).find(f => f.id === feedbackId);
+        if (item) item.status = newStatus;
+        this.renderFeedback();
+      } else {
+        const err = await res.json();
+        alert('Failed to update status: ' + (err.error || 'Server error'));
+      }
+    } catch (e) {
+      alert('Network error: ' + e.message);
+    }
+  },
+
+  async deleteFeedback(feedbackId) {
+    if (!confirm('Are you sure you want to permanently delete this feedback submission?')) return;
+    try {
+      const res = await fetch('/api/admin-actions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          action: 'DELETE_FEEDBACK',
+          data: { feedback_id: feedbackId }
+        })
+      });
+      if (res.ok) {
+        this.data.feedback = (this.data.feedback || []).filter(f => f.id !== feedbackId);
+        this.renderFeedback();
+      } else {
+        const err = await res.json();
+        alert('Failed to delete feedback: ' + (err.error || 'Server error'));
+      }
+    } catch (e) {
+      alert('Network error: ' + e.message);
     }
   }
 };

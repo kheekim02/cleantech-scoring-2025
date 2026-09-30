@@ -21,9 +21,15 @@ module.exports = async (req, res) => {
     const startupsRes = await client.query('SELECT startup_id as id, company_name as name FROM startup_extractions ORDER BY company_name ASC');
     const assignmentsRes = await client.query('SELECT judge_id, startup_id, assigned_at FROM judge_assignments');
     const progressRes = await client.query('SELECT judge_id, startup_id, count(question_id) as answered_count FROM human_reviews GROUP BY judge_id, startup_id');
-    
-    // Optional: Fetch review progress (how many distinct startups each judge has started/completed)
-    // For simplicity, we just return the raw data and let the frontend compute relationships.
+    const feedbackRes = await client.query(`
+      SELECT sf.id, sf.scorer_id, sf.startup_id, sf.feedback_text, sf.category_code, 
+             sf.status, sf.admin_notes, sf.created_at,
+             se.company_name as startup_name
+      FROM scorer_feedback sf
+      LEFT JOIN startup_extractions se ON sf.startup_id = se.startup_id
+      ORDER BY sf.created_at DESC
+      LIMIT 200
+    `);
     
     await client.end();
 
@@ -31,7 +37,8 @@ module.exports = async (req, res) => {
       judges: judgesRes.rows,
       startups: startupsRes.rows,
       assignments: assignmentsRes.rows,
-      progress: progressRes.rows
+      progress: progressRes.rows,
+      feedback: feedbackRes.rows
     });
 
   } catch (err) {

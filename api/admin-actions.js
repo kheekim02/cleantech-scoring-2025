@@ -107,6 +107,28 @@ module.exports = async (req, res) => {
 
       await client.end();
       return res.status(200).json({ success: true, message: `Password reset successfully for ${judge_id}` });
+    } else if (action === 'UPDATE_FEEDBACK_STATUS') {
+      const { feedback_id, status } = data || {};
+      if (!feedback_id || !status) throw new Error("Missing feedback ID or status");
+
+      const validStatuses = ['new', 'reviewed', 'resolved'];
+      if (!validStatuses.includes(status)) throw new Error("Invalid feedback status");
+
+      const updateRes = await client.query('UPDATE scorer_feedback SET status = $1 WHERE id = $2', [status, feedback_id]);
+      if (updateRes.rowCount === 0) {
+        await client.end();
+        return res.status(404).json({ error: "Feedback item not found" });
+      }
+
+      await client.end();
+      return res.status(200).json({ success: true, feedback_id, status });
+    } else if (action === 'DELETE_FEEDBACK') {
+      const { feedback_id } = data || {};
+      if (!feedback_id) throw new Error("Missing feedback ID");
+
+      await client.query('DELETE FROM scorer_feedback WHERE id = $1', [feedback_id]);
+      await client.end();
+      return res.status(200).json({ success: true, deleted: feedback_id });
     } else {
       await client.end();
       return res.status(400).json({ error: "Unknown action" });

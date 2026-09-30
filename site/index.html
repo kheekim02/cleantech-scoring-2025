@@ -6,7 +6,7 @@
   <title>CleanTech Open 2025 | Scoring Interface</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="style.css?v=22">
+  <link rel="stylesheet" href="style.css?v=23">
 </head>
 <body>
 
@@ -41,6 +41,7 @@
       </button>
       <a href="scorer_tutorial.html" target="_blank" rel="noopener noreferrer" class="nav-btn" style="padding: 7px 11px; margin-left: 8px; font-size: 12px; background: #0c6b5d; color: white; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; text-decoration: none;" title="Open Judge & Scorer Walkthrough (HTML)">📖 Scorer Guide</a>
       <button class="nav-btn" style="padding: 7px 11px; margin-left: 8px; font-size: 12px; background: #0284c7; color: white; display: inline-flex; align-items: center; gap: 4px; font-weight: 600;" onclick="window.CTO.App.openFaqModal()">❓ Scorer FAQ</button>
+      <button class="nav-btn" id="btn-feedback-modal" style="padding: 7px 11px; margin-left: 8px; font-size: 12px; background: #4f46e5; color: white; display: inline-flex; align-items: center; gap: 4px; font-weight: 600;" onclick="window.CTO.App.openFeedbackModal()" title="Submit general feedback or notes to admins">💬 Feedback</button>
       <button class="nav-btn" style="padding: 7px 10px; margin-left: 8px; font-size: 12px;" onclick="window.CTO.App.openPasswordModal()">Change password</button>
       <button class="nav-btn" style="padding: 7px 10px; margin-left: 8px; font-size: 12px;" onclick="window.CTO.App.logout()">Log out</button>
       
@@ -180,6 +181,41 @@
     </div>
   </div>
 
+  <!-- Scorer Feedback Modal -->
+  <div class="modal-overlay" id="feedback-modal" style="display:none; z-index: 998;">
+    <div class="modal-content" style="max-width: 540px; padding: 32px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <div>
+          <h2 style="font-size: 20px; font-weight: 800; display: flex; align-items: center; gap: 8px; margin: 0;">
+            <span>💬</span> Scorer Feedback &amp; Notes
+          </h2>
+          <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px; margin-bottom: 0;">
+            Submit general feedback, observations, or questions to the administrators.
+          </p>
+        </div>
+        <button class="nav-btn" style="padding: 4px 10px; font-size: 12px;" onclick="window.CTO.App.closeFeedbackModal()">✕ Close</button>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <label for="feedback-input" style="display: block; font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px;">
+          Your Feedback / Notes
+        </label>
+        <textarea id="feedback-input" rows="5" style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px; font-family: var(--sans); font-size: 14px; line-height: 1.5; resize: vertical; box-sizing: border-box; outline: none;" placeholder="Type your feedback, question clarification note, or general comments here..."></textarea>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px; font-size: 11.5px; color: var(--text-muted);">
+          <span id="feedback-context-hint">Context: General</span>
+          <span id="feedback-char-count">0 / 5,000 chars</span>
+        </div>
+      </div>
+
+      <div id="feedback-status-msg" style="display: none; padding: 10px 14px; border-radius: 6px; font-size: 13px; margin-bottom: 14px;"></div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 10px;">
+        <button class="nav-btn" onclick="window.CTO.App.closeFeedbackModal()">Cancel</button>
+        <button class="nav-btn btn-next ready" id="btn-submit-feedback" onclick="window.CTO.App.submitFeedback()">Submit Feedback</button>
+      </div>
+    </div>
+  </div>
+
   <div class="modal-overlay" id="password-modal" style="display:none; z-index: 999;">
     <div class="modal-content" style="max-width: 420px; padding: 32px;">
       <h2>Change password</h2>
@@ -222,9 +258,9 @@
     </div>
   </div>
 
-  <script src="js/scoring.js?v=22"></script>
-  <script src="js/render.js?v=22"></script>
-  <script src="js/app.js?v=22"></script>
+  <script src="js/scoring.js?v=23"></script>
+  <script src="js/render.js?v=23"></script>
+  <script src="js/app.js?v=23"></script>
 
   <!-- Rubric Modal -->
   <div class="modal-overlay" id="rubric-modal" style="display:none; z-index: 999; backdrop-filter: blur(4px);">
