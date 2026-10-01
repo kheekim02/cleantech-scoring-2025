@@ -300,6 +300,88 @@ CTO.App = {
         }, 800);
       });
     }
+
+    this.setupPaneResizer();
+  },
+
+  setupPaneResizer() {
+    if (this._resizerBound) return;
+    this._resizerBound = true;
+
+    const resizer = document.getElementById('pane-resizer');
+    const layout = document.querySelector('.app-layout');
+    if (!resizer || !layout) return;
+
+    // Restore saved width from localStorage if present and within reasonable bounds
+    const savedPctStr = localStorage.getItem('cto_left_pane_width');
+    if (savedPctStr) {
+      const savedPct = parseFloat(savedPctStr);
+      if (!isNaN(savedPct) && savedPct >= 15 && savedPct <= 85) {
+        layout.style.setProperty('--left-pane-width', `${savedPct}%`);
+      }
+    }
+
+    let isDragging = false;
+
+    const onPointerMove = (e) => {
+      if (!isDragging) return;
+      const rect = layout.getBoundingClientRect();
+      if (rect.width <= 0) return;
+
+      const minPx = 360;
+      const maxPx = Math.max(minPx, rect.width - minPx);
+      const rawLeft = e.clientX - rect.left;
+      const clamped = Math.max(minPx, Math.min(maxPx, rawLeft));
+      const pct = (clamped / rect.width) * 100;
+
+      layout.style.setProperty('--left-pane-width', `${pct.toFixed(2)}%`);
+    };
+
+    const onPointerUp = (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      document.body.classList.remove('is-resizing');
+      resizer.classList.remove('is-dragging');
+
+      try {
+        resizer.releasePointerCapture(e.pointerId);
+      } catch (err) {}
+
+      window.removeEventListener('pointermove', onPointerMove);
+      window.removeEventListener('pointerup', onPointerUp);
+      window.removeEventListener('pointercancel', onPointerUp);
+
+      const currentPct = layout.style.getPropertyValue('--left-pane-width');
+      if (currentPct) {
+        const num = parseFloat(currentPct);
+        if (!isNaN(num)) {
+          localStorage.setItem('cto_left_pane_width', num.toFixed(2));
+        }
+      }
+    };
+
+    resizer.addEventListener('pointerdown', (e) => {
+      if (e.button !== 0) return;
+      e.preventDefault();
+
+      isDragging = true;
+      document.body.classList.add('is-resizing');
+      resizer.classList.add('is-dragging');
+
+      try {
+        resizer.setPointerCapture(e.pointerId);
+      } catch (err) {}
+
+      window.addEventListener('pointermove', onPointerMove);
+      window.addEventListener('pointerup', onPointerUp);
+      window.addEventListener('pointercancel', onPointerUp);
+    });
+
+    resizer.addEventListener('dblclick', (e) => {
+      e.preventDefault();
+      layout.style.setProperty('--left-pane-width', '60%');
+      localStorage.removeItem('cto_left_pane_width');
+    });
   },
 
 

@@ -6,7 +6,7 @@
   <title>CleanTech Open 2025 | Scoring Interface</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="style.css?v=25">
+  <link rel="stylesheet" href="style.css?v=26">
 </head>
 <body>
 
@@ -107,8 +107,13 @@
       </div>
     </section>
 
+    <!-- Resizer Divider Handle -->
+    <div class="pane-resizer" id="pane-resizer" role="separator" aria-orientation="vertical" aria-label="Resize panels" title="Drag to resize, double-click to reset (60/40)">
+      <div class="resizer-handle"></div>
+    </div>
+
     <!-- RIGHT PANE: Scoring / Review Area -->
-    <section class="right-pane">
+    <section class="right-pane" id="right-pane">
       
       <!-- Right Pane Header -->
       <div class="right-header">
@@ -295,9 +300,9 @@
     </div>
   </div>
 
-  <script src="js/scoring.js?v=25"></script>
-  <script src="js/render.js?v=25"></script>
-  <script src="js/app.js?v=25"></script>
+  <script src="js/scoring.js?v=26"></script>
+  <script src="js/render.js?v=26"></script>
+  <script src="js/app.js?v=26"></script>
 
   <!-- Rubric Modal -->
   <div class="modal-overlay" id="rubric-modal" style="display:none; z-index: 999; backdrop-filter: blur(4px);">
