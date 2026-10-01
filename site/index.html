@@ -6,7 +6,10 @@
   <title>CleanTech Open 2025 | Scoring Interface</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="style.css?v=26">
+  <!-- Supabase Storage CDN (deliverable PDFs) -->
+  <link rel="dns-prefetch" href="https://ubuqkdhajnnagropmatv.supabase.co">
+  <link rel="preconnect" href="https://ubuqkdhajnnagropmatv.supabase.co" crossorigin>
+  <link rel="stylesheet" href="style.css?v=30">
 </head>
 <body>
 
@@ -99,7 +102,13 @@
         <div class="pane-title">
           Deliverable Viewer
         </div>
-        <div class="step-pill" id="left-step-pill">Executive Summary</div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div class="step-pill" id="left-step-pill">Executive Summary</div>
+          <button class="pane-toggle-btn" id="btn-toggle-left-pane" onclick="window.CTO.App.toggleMaximizePane('left')" title="Expand Deliverable Viewer" aria-label="Expand Deliverable Viewer">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            <span class="pane-toggle-label">Expand</span>
+          </button>
+        </div>
       </div>
       
       <div class="pane-body" id="extraction-viewer">
@@ -118,7 +127,13 @@
       <!-- Right Pane Header -->
       <div class="right-header">
         <div class="step-info">
-          <div class="step-counter" id="step-counter">STEP 1 OF 10</div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+            <div class="step-counter" id="step-counter">STEP 1 OF 10</div>
+            <button class="pane-toggle-btn" id="btn-toggle-right-pane" onclick="window.CTO.App.toggleMaximizePane('right')" title="Expand Scoring Pane" aria-label="Expand Scoring Pane">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              <span class="pane-toggle-label">Expand</span>
+            </button>
+          </div>
           <h1 class="step-title" id="step-title">Business Canvas</h1>
         </div>
         <div class="header-metrics">
@@ -300,9 +315,9 @@
     </div>
   </div>
 
-  <script src="js/scoring.js?v=26"></script>
-  <script src="js/render.js?v=26"></script>
-  <script src="js/app.js?v=26"></script>
+  <script src="js/scoring.js?v=30"></script>
+  <script src="js/render.js?v=30"></script>
+  <script src="js/app.js?v=30"></script>
 
   <!-- Rubric Modal -->
   <div class="modal-overlay" id="rubric-modal" style="display:none; z-index: 999; backdrop-filter: blur(4px);">

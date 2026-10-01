@@ -55,42 +55,73 @@ window.CTO.Render = {
     // Set default selection
     const activePdfUrl = defaultPdfUrl || firstAvailablePdfUrl;
     
-    // 2. Build the Universal Dropdown
-    let dropdownHtml = `<select id="universal-pdf-selector" style="width: 100%; padding: 8px 12px; margin-bottom: 16px; border-radius: 6px; border: 1px solid var(--border); font-size: 14px; background-color: var(--surface-sunk); color: var(--text-main); cursor: pointer;" onchange="window.CTO.Render.switchPDF(this.value)">`;
-    
+    // 2. Build the Universal Dropdown Options
+    let dropdownOptionsHtml = '';
     allCategories.forEach(cat => {
-        dropdownHtml += `<optgroup label="${cat.catName}">`;
+        dropdownOptionsHtml += `<optgroup label="${cat.catName}">`;
         cat.pdfs.forEach(pdf => {
             const selected = (pdf.url === activePdfUrl) ? 'selected' : '';
-            dropdownHtml += `<option value="${pdf.url}" ${selected}>${pdf.label}</option>`;
+            dropdownOptionsHtml += `<option value="${pdf.url}" ${selected}>${pdf.label}</option>`;
         });
-        dropdownHtml += `</optgroup>`;
+        dropdownOptionsHtml += `</optgroup>`;
     });
-    dropdownHtml += `</select>`;
     
     // Optional Notice if category has no explicitly mapped PDF
-    let noticeHtml = '';
-    if (!defaultPdfUrl) {
-        noticeHtml = `<div style="padding: 10px 14px; background: #fff8e1; border-left: 3px solid var(--accent-yellow); margin-bottom: 16px; border-radius: 4px; font-size: 13px; color: #744210;">
-          <strong>No specific document mapped.</strong> Displaying alternative application documents.
-        </div>`;
+    let noticeHtml = !defaultPdfUrl ? `<div id="pdf-unmapped-notice" style="padding: 10px 14px; background: #fff8e1; border-left: 3px solid var(--accent-yellow); margin-bottom: 16px; border-radius: 4px; font-size: 13px; color: #744210;">
+      <strong>No specific document mapped.</strong> Displaying alternative application documents.
+    </div>` : '';
+
+    // Check for existing stable viewer in container to avoid costly iframe teardown
+    const existingIframe = document.getElementById('primary-pdf-viewer');
+    const existingSelector = document.getElementById('universal-pdf-selector');
+    const existingNoticeWrapper = document.getElementById('pdf-notice-container');
+
+    if (existingIframe && existingSelector) {
+      existingSelector.innerHTML = dropdownOptionsHtml;
+      existingSelector.value = activePdfUrl;
+      if (existingNoticeWrapper) {
+        existingNoticeWrapper.innerHTML = noticeHtml;
+      }
+      const targetSrc = `${activePdfUrl}#navpanes=0&pagemode=none`;
+      if (existingIframe.dataset.currentPdf !== activePdfUrl) {
+        const skeleton = document.getElementById('pdf-loading-skeleton');
+        if (skeleton) skeleton.classList.remove('is-hidden');
+        existingIframe.dataset.currentPdf = activePdfUrl;
+        existingIframe.src = targetSrc;
+      }
+      return;
     }
 
-    // 3. Render the single Viewer
+    // Initial mount path
+    let dropdownHtml = `<select id="universal-pdf-selector" style="width: 100%; padding: 8px 12px; margin-bottom: 16px; border-radius: 6px; border: 1px solid var(--border); font-size: 14px; background-color: var(--surface-sunk); color: var(--text-main); cursor: pointer;" onchange="window.CTO.Render.switchPDF(this.value)">${dropdownOptionsHtml}</select>`;
+
     let html = `<div class="pdf-viewer-container" style="display:flex; flex-direction:column; height:100%; width:100%;">
       ${dropdownHtml}
-      ${noticeHtml}
-      <div class="pdf-wrapper" style="flex: 1; display: flex; flex-direction: column; min-height: 600px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: #fff;">
-        <iframe id="primary-pdf-viewer" src="${activePdfUrl}#navpanes=0&pagemode=none" width="100%" height="100%" style="border: none; flex: 1;"></iframe>
+      <div id="pdf-notice-container">${noticeHtml}</div>
+      <div class="pdf-wrapper" id="pdf-wrapper" style="flex: 1; display: flex; flex-direction: column; min-height: 600px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: #fff; position: relative;">
+        <div id="pdf-loading-skeleton" class="pdf-loading-skeleton" aria-hidden="true">
+          <div class="pdf-skeleton-bar"></div>
+          <div class="pdf-skeleton-bar short"></div>
+          <div class="pdf-skeleton-page"></div>
+        </div>
+        <iframe id="primary-pdf-viewer" data-current-pdf="${activePdfUrl}" src="${activePdfUrl}#navpanes=0&pagemode=none" width="100%" height="100%" style="border: none; flex: 1;" onload="window.CTO.Render.onPdfLoaded()"></iframe>
       </div>
     </div>`;
 
     container.innerHTML = html;
   },
   
+  onPdfLoaded() {
+    const skeleton = document.getElementById('pdf-loading-skeleton');
+    if (skeleton) skeleton.classList.add('is-hidden');
+  },
+
   switchPDF(url) {
     const iframe = document.getElementById('primary-pdf-viewer');
+    const skeleton = document.getElementById('pdf-loading-skeleton');
+    if (skeleton) skeleton.classList.remove('is-hidden');
     if (iframe) {
+        iframe.dataset.currentPdf = url;
         iframe.src = url + '#navpanes=0&pagemode=none';
     }
   },
@@ -112,6 +143,7 @@ window.CTO.Render = {
       if (iframe) {
         let hash = pageNumber ? `#page=${pageNumber}` : '';
         hash += `${hash ? '&' : '#'}navpanes=0&pagemode=none`;
+        iframe.dataset.currentPdf = targetOption.value;
         iframe.src = targetOption.value.split('#')[0] + hash;
       }
     }
@@ -182,7 +214,7 @@ window.CTO.Render = {
         let justHtml = '';
         if (showsNote) {
           const hasRubric = ['BC_Q1', 'BC_Q2', 'BC_Q3', 'BC_Q4', 'BC_Q5'].includes(q.new_q_id);
-          const rubricLink = hasRubric ? `<a href="#" class="view-rubric" data-qid="${q.new_q_id}" style="float: right; color: var(--accent-blue); text-decoration: none; font-weight: 500;">${window.CTO.Render.icons.doc || '📄'} View Examples</a>` : '';
+          const rubricLink = hasRubric ? `<a href="#" class="view-rubric" data-qid="${q.new_q_id}" style="color: var(--accent-blue); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 4px;">${window.CTO.Render.icons.doc || ''} View Examples</a>` : '';
           const noteLabel = requiresJustification ? 'Justification <span style="color: var(--accent-red);">required</span>' : 'Optional note';
           const notePlaceholder = requiresJustification
             ? (hasRubric ? 'Provide justification based on the markdown rubrics...' : 'Provide justification')
@@ -190,8 +222,8 @@ window.CTO.Render = {
           
           justHtml = `
             <div class="h-card-justification" style="padding: 0 24px 16px 24px;">
-              <label style="display: block; font-size: 13px; font-weight: 600; color: var(--text-main); margin-bottom: 8px;">
-                ${noteLabel}
+              <label style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 13px; font-weight: 600; color: var(--text-main); margin-bottom: 8px;">
+                <span>${noteLabel}</span>
                 ${rubricLink}
               </label>
               <textarea class="justification-input" data-qid="${q.new_q_id}" placeholder="${notePlaceholder}" style="width: 100%; min-height: 80px; padding: 12px; border: 1px solid var(--border); border-radius: 6px; font-family: inherit; font-size: 13px; resize: vertical; box-sizing: border-box; background: var(--surface-main);">${existingJustification}</textarea>

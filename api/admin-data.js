@@ -1,26 +1,20 @@
-const { Client } = require('pg');
+const { pool } = require('./_db');
 const { requireSession } = require('./_auth');
 
 module.exports = async (req, res) => {
-  const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: { rejectUnauthorized: false }
-  });
 
   try {
-    await client.connect();
-    
-    const session = await requireSession(client, req, res, 'admin');
+        
+    const session = await requireSession(pool, req, res, 'admin');
     if (!session) {
-      await client.end();
-      return;
+            return;
     }
 
     // Fetch data
-    const judgesRes = await client.query('SELECT judge_id, is_test FROM judges ORDER BY judge_id ASC');
-    const startupsRes = await client.query('SELECT startup_id as id, company_name as name FROM startup_extractions ORDER BY company_name ASC');
-    const assignmentsRes = await client.query('SELECT judge_id, startup_id, assigned_at FROM judge_assignments');
-    const progressRes = await client.query(`
+    const judgesRes = await pool.query('SELECT judge_id, is_test FROM judges ORDER BY judge_id ASC');
+    const startupsRes = await pool.query('SELECT startup_id as id, company_name as name FROM startup_extractions ORDER BY company_name ASC');
+    const assignmentsRes = await pool.query('SELECT judge_id, startup_id, assigned_at FROM judge_assignments');
+    const progressRes = await pool.query(`
       SELECT 
         judge_id, 
         startup_id, 
@@ -30,7 +24,7 @@ module.exports = async (req, res) => {
       FROM human_reviews 
       GROUP BY judge_id, startup_id
     `);
-    const feedbackRes = await client.query(`
+    const feedbackRes = await pool.query(`
       SELECT sf.id, sf.scorer_id, sf.startup_id, sf.feedback_text, sf.category_code, 
              sf.status, sf.admin_notes, sf.created_at,
              se.company_name as startup_name
@@ -40,8 +34,7 @@ module.exports = async (req, res) => {
       LIMIT 200
     `);
     
-    await client.end();
-
+    
     return res.status(200).json({
       judges: judgesRes.rows,
       startups: startupsRes.rows,
@@ -53,7 +46,5 @@ module.exports = async (req, res) => {
   } catch (err) {
     console.error("Database Error:", err);
     return res.status(500).json({ error: "DB Error: " + err.message });
-  } finally {
-    try { await client.end(); } catch(e) {}
   }
 };

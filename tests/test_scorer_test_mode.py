@@ -55,16 +55,19 @@ class TestScorerTestMode(unittest.TestCase):
     def test_05_get_startup_bypasses_assignment_and_omits_db_reviews_for_test_scorer(self):
         """Verify api/get-startup.js allows unassigned startup access and omits reviews for test scorer."""
         content = self.get_startup_js.read_text(encoding="utf-8")
+        project = (self.root / "api" / "_project_startup.js").read_text(encoding="utf-8")
         self.assertIn("isTestScorer", content)
         self.assertIn("if (!isTest)", content)
-        self.assertIn("judge_reviews = reviewsQuery.rows", content)
-        self.assertIn("payload.is_test = isTest", content)
+        self.assertIn("applyHumanProjectionInPlace", content)
+        self.assertIn("payload.judge_reviews = reviewsRows", project)
+        self.assertIn("payload.is_test = isTest", project)
 
     def test_05b_get_startup_projects_human_only_questions(self):
-        """Verify get-startup strips AI fields from the scorer payload projection."""
+        """Verify get-startup strips AI fields via shared human-only projection."""
         content = self.get_startup_js.read_text(encoding="utf-8")
-        self.assertIn("payload.human_questions = questions.map", content)
-        self.assertIn("delete payload.ai_cats", content)
+        project = (self.root / "api" / "_project_startup.js").read_text(encoding="utf-8")
+        self.assertIn("applyHumanProjectionInPlace", content)
+        self.assertIn("delete payload.ai_cats", project)
         for forbidden in (
             "ai_suggestion",
             "ai_confidence",
@@ -73,11 +76,10 @@ class TestScorerTestMode(unittest.TestCase):
             "source_pdf",
             "page_number",
         ):
-            # Must not appear as projected map keys (string form in object literal).
             self.assertNotRegex(
-                content,
+                project,
                 rf"{forbidden}\s*:",
-                f"get-startup must not project {forbidden} into human_questions",
+                f"projection must not include {forbidden}",
             )
 
     def test_06_sync_scores_intercepts_writes_for_test_scorer(self):
@@ -97,6 +99,17 @@ class TestScorerTestMode(unittest.TestCase):
             content,
         )
         self.assertIn("String(item.justification ?? '').trim()", content)
+
+    def test_06c_sync_scores_uses_unnest_and_rubric_not_payload(self):
+        """Batch upsert via UNNEST; validate against master_282_rubric.json, not payload JSONB."""
+        content = self.sync_scores_js.read_text(encoding="utf-8")
+        self.assertIn("UNNEST", content)
+        self.assertIn("master_282_rubric.json", content)
+        self.assertIn("SELECT 1 FROM startup_extractions WHERE startup_id = $1", content)
+        self.assertNotIn("SELECT payload FROM startup_extractions", content)
+        # Per-row INSERT … VALUES ($1..$6) loop must be gone.
+        self.assertNotIn("VALUES ($1, $2, $3, $4, $5, COALESCE($6, FALSE))", content)
+        self.assertIn("FROM UNNEST(", content)
 
     def test_07_admin_actions_create_judge_handles_is_test(self):
         """Verify api/admin-actions.js accepts and persists is_test in CREATE_JUDGE."""

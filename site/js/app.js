@@ -13,19 +13,78 @@ CTO.App = {
   _syncMap: new Map(),
   _justificationDebounce: null,
   _pendingJustification: null,
+  _maximizedPane: null,
 
   init() {
-    fetch('/api/auth-session?role=scorer').then(async res => {
-      if (!res.ok) throw new Error('No active session');
-      return res.json();
-    }).then(data => {
-      this.currentUser = data.user;
-      this.applyUserRoleUI();
-      document.getElementById('login-modal').style.display = 'none';
-      this.loadStartupsList().then(() => this.startApp());
-    }).catch(() => {
-      document.getElementById('login-modal').style.display = 'flex';
-      this.setSaveStatus('Sign in required');
+    const params = new URLSearchParams(window.location.search);
+    const fromUrl = params.get('startup') || params.get('startup_id');
+    const fromStorage = localStorage.getItem('cto2025_last_startup');
+    const targetId = fromUrl || fromStorage || this.state.activeStartupId || '';
+    const qs = targetId ? `?startup_id=${encodeURIComponent(targetId)}` : '';
+
+    fetch(`/api/bootstrap${qs}`)
+      .then(async (res) => {
+        if (!res.ok) throw new Error('No active session');
+        return res.json();
+      })
+      .then((data) => {
+        this.applyBootstrapPayload(data);
+        document.getElementById('login-modal').style.display = 'none';
+        this.setupListeners();
+        this.startSyncWorker();
+        this.loadState();
+        this.setSaveStatus('Saved');
+        this.updateUI();
+      })
+      .catch(() => {
+        document.getElementById('login-modal').style.display = 'flex';
+        this.setSaveStatus('Sign in required');
+      });
+  },
+
+  applyBootstrapPayload(data) {
+    this.currentUser = data.user;
+    this.applyUserRoleUI();
+
+    const startups = Array.isArray(data.startups) ? data.startups : [];
+    const picker = document.getElementById('startup-picker');
+    if (picker) {
+      picker.innerHTML = startups
+        .map((s) => `<option value="${s.id}">${CTO.Render.escapeHtml(s.name)}</option>`)
+        .join('');
+      picker.style.display = startups.length ? 'inline-block' : 'none';
+      this.bindStartupPicker(picker);
+    }
+
+    const activeId =
+      data.active_startup_id ||
+      (data.active_startup && data.active_startup.startup_id) ||
+      (startups[0] && startups[0].id) ||
+      this.state.activeStartupId;
+    this.state.activeStartupId = activeId;
+    if (picker && activeId) picker.value = activeId;
+    if (activeId) localStorage.setItem('cto2025_last_startup', activeId);
+
+    if (data.active_startup && activeId) {
+      this.state.startups[activeId] = data.active_startup;
+      const nameEl = document.getElementById('hdr-startup-name');
+      if (nameEl) {
+        nameEl.textContent =
+          data.active_startup.meta?.name || activeId;
+      }
+    }
+  },
+
+  bindStartupPicker(picker) {
+    if (this._pickerBound || !picker) return;
+    this._pickerBound = true;
+    picker.addEventListener('change', async (e) => {
+      this.commitPendingJustification();
+      await this.flushSyncQueue();
+      this.state.activeStartupId = e.target.value;
+      this.state.currentStepIndex = 0;
+      localStorage.setItem('cto2025_last_startup', this.state.activeStartupId);
+      this.startApp();
     });
   },
 
@@ -61,7 +120,22 @@ CTO.App = {
         this.currentUser = authData.user;
         this.applyUserRoleUI();
         document.getElementById('login-modal').style.display = 'none';
-        this.loadStartupsList().then(() => this.startApp());
+        const params = new URLSearchParams(window.location.search);
+        const targetId =
+          params.get('startup') ||
+          params.get('startup_id') ||
+          localStorage.getItem('cto2025_last_startup') ||
+          '';
+        const qs = targetId ? `?startup_id=${encodeURIComponent(targetId)}` : '';
+        const bootRes = await fetch(`/api/bootstrap${qs}`);
+        if (!bootRes.ok) throw new Error('Bootstrap failed');
+        const bootData = await bootRes.json();
+        this.applyBootstrapPayload(bootData);
+        this.setupListeners();
+        this.startSyncWorker();
+        this.loadState();
+        this.setSaveStatus('Saved');
+        this.updateUI();
       } else {
         const errData = await res.json();
         document.getElementById('login-error').textContent = errData.error || 'Invalid credentials.';
@@ -85,23 +159,13 @@ CTO.App = {
         picker.innerHTML = startups.map(s => `<option value="${s.id}">${CTO.Render.escapeHtml(s.name)}</option>`).join('');
         picker.style.display = 'inline-block';
         
-        // If the current activeStartupId is not in the list, default to first
         if (!startups.find(s => s.id === this.state.activeStartupId) && startups.length > 0) {
           this.state.activeStartupId = startups[0].id;
         } else {
           picker.value = this.state.activeStartupId;
         }
 
-        if (!this._pickerBound) {
-          this._pickerBound = true;
-          picker.addEventListener('change', async (e) => {
-            this.commitPendingJustification();
-            await this.flushSyncQueue();
-            this.state.activeStartupId = e.target.value;
-            this.state.currentStepIndex = 0;
-            this.startApp();
-          });
-        }
+        this.bindStartupPicker(picker);
       }
     } catch (e) {
       console.error("Failed to load startups list", e);
@@ -312,7 +376,7 @@ CTO.App = {
     const layout = document.querySelector('.app-layout');
     if (!resizer || !layout) return;
 
-    // Restore saved width from localStorage if present and within reasonable bounds
+    // Restore saved width from localStorage directly; CSS min/max-width enforces bounds natively
     const savedPctStr = localStorage.getItem('cto_left_pane_width');
     if (savedPctStr) {
       const savedPct = parseFloat(savedPctStr);
@@ -351,6 +415,10 @@ CTO.App = {
       window.removeEventListener('pointerup', onPointerUp);
       window.removeEventListener('pointercancel', onPointerUp);
 
+      // Reset any active maximize toggle state on manual drag
+      this._maximizedPane = null;
+      this.updatePaneToggleButtons();
+
       const currentPct = layout.style.getPropertyValue('--left-pane-width');
       if (currentPct) {
         const num = parseFloat(currentPct);
@@ -381,7 +449,102 @@ CTO.App = {
       e.preventDefault();
       layout.style.setProperty('--left-pane-width', '60%');
       localStorage.removeItem('cto_left_pane_width');
+      this._maximizedPane = null;
+      this.updatePaneToggleButtons();
     });
+
+    // Window resize handler: ensure panes do not collapse below 360px guardrail (debounced with rAF)
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+      if (resizeTimer) cancelAnimationFrame(resizeTimer);
+      resizeTimer = requestAnimationFrame(() => {
+        const rect = layout.getBoundingClientRect();
+        if (rect.width <= 0) return;
+        const minPx = 360;
+        if (rect.width < minPx * 2) return;
+        const currentPct = parseFloat(layout.style.getPropertyValue('--left-pane-width') || '60');
+        if (isNaN(currentPct)) return;
+        const currentPx = (currentPct / 100) * rect.width;
+        const maxPx = rect.width - minPx;
+        if (currentPx < minPx || currentPx > maxPx) {
+          const clampedPx = Math.max(minPx, Math.min(maxPx, currentPx));
+          const clampedPct = (clampedPx / rect.width) * 100;
+          layout.style.setProperty('--left-pane-width', `${clampedPct.toFixed(2)}%`);
+        }
+      });
+    });
+  },
+
+  toggleMaximizePane(pane) {
+    const layout = document.querySelector('.app-layout');
+    if (!layout) return;
+    const rect = layout.getBoundingClientRect();
+    const minPx = 360;
+
+    if (this._maximizedPane === pane) {
+      // Restore previous state or default 60%
+      const savedPctStr = localStorage.getItem('cto_left_pane_width');
+      let restorePct = 60;
+      if (savedPctStr) {
+        const parsed = parseFloat(savedPctStr);
+        if (!isNaN(parsed) && parsed >= 15 && parsed <= 85) {
+          restorePct = parsed;
+        }
+      }
+      if (rect.width > 0) {
+        const maxPx = Math.max(minPx, rect.width - minPx);
+        const desiredPx = (restorePct / 100) * rect.width;
+        const clampedPx = Math.max(minPx, Math.min(maxPx, desiredPx));
+        restorePct = (clampedPx / rect.width) * 100;
+      }
+      layout.style.setProperty('--left-pane-width', `${restorePct.toFixed(2)}%`);
+      this._maximizedPane = null;
+    } else {
+      // Maximize the target pane while strictly respecting 360px minimum on both panes
+      if (pane === 'left') {
+        let targetPct = 80;
+        if (rect.width > 0) {
+          const maxLeftPx = Math.max(minPx, rect.width - minPx);
+          const desiredPx = Math.min(maxLeftPx, rect.width * 0.80);
+          targetPct = (desiredPx / rect.width) * 100;
+        }
+        layout.style.setProperty('--left-pane-width', `${targetPct.toFixed(2)}%`);
+        this._maximizedPane = 'left';
+      } else if (pane === 'right') {
+        let targetPct = 25;
+        if (rect.width > 0) {
+          const minLeftPx = minPx;
+          const desiredPx = Math.max(minLeftPx, rect.width * 0.25);
+          targetPct = (desiredPx / rect.width) * 100;
+        }
+        layout.style.setProperty('--left-pane-width', `${targetPct.toFixed(2)}%`);
+        this._maximizedPane = 'right';
+      }
+    }
+    this.updatePaneToggleButtons();
+  },
+
+  updatePaneToggleButtons() {
+    const leftBtn = document.getElementById('btn-toggle-left-pane');
+    const rightBtn = document.getElementById('btn-toggle-right-pane');
+
+    if (leftBtn) {
+      const isLeftMax = this._maximizedPane === 'left';
+      leftBtn.classList.toggle('is-active', isLeftMax);
+      const label = leftBtn.querySelector('.pane-toggle-label');
+      if (label) label.textContent = isLeftMax ? 'Restore' : 'Expand';
+      leftBtn.title = isLeftMax ? 'Restore Deliverable Viewer' : 'Expand Deliverable Viewer';
+      leftBtn.setAttribute('aria-label', leftBtn.title);
+    }
+
+    if (rightBtn) {
+      const isRightMax = this._maximizedPane === 'right';
+      rightBtn.classList.toggle('is-active', isRightMax);
+      const label = rightBtn.querySelector('.pane-toggle-label');
+      if (label) label.textContent = isRightMax ? 'Restore' : 'Expand';
+      rightBtn.title = isRightMax ? 'Restore Scoring Pane' : 'Expand Scoring Pane';
+      rightBtn.setAttribute('aria-label', rightBtn.title);
+    }
   },
 
 

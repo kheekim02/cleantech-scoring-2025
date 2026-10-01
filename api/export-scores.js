@@ -1,4 +1,4 @@
-const { Client } = require('pg');
+const { pool } = require('./_db');
 const { requireSession } = require('./_auth');
 const path = require('path');
 const fs = require('fs');
@@ -33,18 +33,11 @@ try {
 module.exports = async (req, res) => {
   if (req.method !== 'GET') return res.status(405).send("Method Not Allowed");
 
-  const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: { rejectUnauthorized: false }
-  });
-
   try {
-    await client.connect();
-
-    const session = await requireSession(client, req, res, 'admin');
+    
+    const session = await requireSession(pool, req, res, 'admin');
     if (!session) {
-      await client.end();
-      return;
+            return;
     }
 
     const isChunked = req.query.chunk === 'true';
@@ -77,9 +70,8 @@ module.exports = async (req, res) => {
       ORDER BY se.company_name ASC, hr.judge_id ASC, hr.question_id ASC
       ${paginationSql};
     `;
-    const result = await client.query(query, params);
-    await client.end();
-
+    const result = await pool.query(query, params);
+    
     const hasMore = isChunked && result.rows.length > fetchLimit;
     const processRows = hasMore ? result.rows.slice(0, fetchLimit) : result.rows;
 
@@ -142,7 +134,5 @@ module.exports = async (req, res) => {
   } catch (err) {
     console.error("Export error:", err);
     return res.status(500).json({ error: "Failed to export scores: " + err.message });
-  } finally {
-    try { await client.end(); } catch(e) {}
   }
 };
