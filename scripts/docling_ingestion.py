@@ -65,8 +65,8 @@ DOC_TYPE_ALIASES = {
         r'BMC',
         r'Strategyzer',
     ],
-    'EBD2': [r'Impact[_\-\s]*Statement'],
-    'EBD3': [r'Customer[_\-\s]*Segment', r'Competitive[_\-\s]*Matrix'],
+    'EBD2': [r'Impact[_\-\s]*Statement', r'assignment[_\-\s]*2[_\-\s]*1\b'],
+    'EBD3': [r'Customer[_\-\s]*Segment', r'Competitive[_\-\s]*Matrix', r'assignmen?e?nt[_\-\s]*4\b'],
     'EBD4': [r'Technology[_\-\s]*Validation', r'Technology[_\-\s]*Testimonial', r'Tech[_\-\s]*Val'],
     'EBD6': [
         r'Executive[_\-\s]*Summary',
@@ -84,13 +84,13 @@ DOC_TYPE_PATTERNS = {
     # Company names are often glued on: GreenSightTechnologiesM3Assignment.
     # M[_\-\s]*3 still rejects M10/M30 because the next character cannot be a digit.
     'M1': [r'M[_\-\s]*1(?![0-9])', r'Module[_\-\s]*1(?![0-9])'],
-    'M2': [r'M[_\-\s]*2(?![0-9])', r'Module[_\-\s]*2(?![0-9])'],
-    'M3': [r'M[_\-\s]*3(?![0-9])', r'Module[_\-\s]*3(?![0-9])'],
-    'M4': [r'M[_\-\s]*4(?![0-9])', r'Module[_\-\s]*4(?![0-9])'],
-    'M5': [r'M[_\-\s]*5(?![0-9])', r'Module[_\-\s]*5(?![0-9])'],
-    'M6': [r'M[_\-\s]*6(?![0-9])', r'Module[_\-\s]*6(?![0-9])'],
-    'M7': [r'M[_\-\s]*7(?![0-9])', r'Module[_\-\s]*7(?![0-9])'],
-    'M8': [r'M[_\-\s]*8(?![0-9])', r'Module[_\-\s]*8(?![0-9])'],
+    'M2': [r'M[_\-\s]*2(?![0-9])', r'Module[_\-\s]*2(?![0-9])', r'Assignment[_\-\s]*2(?![0-9])'],
+    'M3': [r'M[_\-\s]*3(?![0-9])', r'Module[_\-\s]*3(?![0-9])', r'Assignment[_\-\s]*3(?![0-9])'],
+    'M4': [r'M[_\-\s]*4(?![0-9])', r'Module[_\-\s]*4(?![0-9])', r'Assignment[_\-\s]*4(?![0-9])', r'Adobe[_\-\s]*Scan'],
+    'M5': [r'M[_\-\s]*5(?![0-9])', r'Module[_\-\s]*5(?![0-9])', r'Assignment[_\-\s]*5(?![0-9])'],
+    'M6': [r'M[_\-\s]*6(?![0-9])', r'Module[_\-\s]*6(?![0-9])', r'Assignment[_\-\s]*6(?![0-9])'],
+    'M7': [r'M[_\-\s]*7(?![0-9])', r'Module[_\-\s]*7(?![0-9])', r'Assignment[_\-\s]*7(?![0-9])'],
+    'M8': [r'M[_\-\s]*8(?![0-9])', r'Module[_\-\s]*8(?![0-9])', r'Assignment[_\-\s]*8(?![0-9])'],
     # EBDs require a separator after the number. EBD1CustomerInterview is not a canvas;
     # EBD_4_TechnologyValidation still matches, and the name alias catches the glued form.
     'EBD1': [r'EBD[_\-\s]*1(?![A-Za-z0-9])', r'Deliverable[_\-\s]*1(?![A-Za-z0-9])'],
@@ -128,6 +128,7 @@ UNIVERSAL_SCAFFOLDING_PATTERNS = [
     r'(?i)the\s+information\s+presented\s+above\s+is\s+confidential[^\n]*',
     r'(?i)\(?\s*\d+[,\d]*\s*(?:total\s*)?characters?\s*(?:limit|max|maximum)[^\)\n]*\)?',
     r'(?i)upload\s+this\s+document\s+as\s+teamname[^\n]*',
+    r'(?im)^.*upload\s+(?:this\s+document\s+)?as.*$',
     r'(?i)^#*\s*(?:instructions?|directions?):?.*$',
     r'(?im)^.*essential\s+business\s+deliverable.*$',
     r'(?i)^#*\s*module\s*\d+.*instructions:?.*$',

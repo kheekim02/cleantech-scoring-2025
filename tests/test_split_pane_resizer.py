@@ -11,12 +11,14 @@ class TestSplitPaneResizer(unittest.TestCase):
         self.index_html = self.root / "site" / "index.html"
         self.style_css = self.root / "site" / "style.css"
         self.app_js = self.root / "site" / "js" / "app.js"
+        self.render_js = self.root / "site" / "js" / "render.js"
         self.assertTrue(self.index_html.exists(), "site/index.html must exist")
         self.assertTrue(self.style_css.exists(), "site/style.css must exist")
         self.assertTrue(self.app_js.exists(), "site/js/app.js must exist")
+        self.assertTrue(self.render_js.exists(), "site/js/render.js must exist")
 
     def test_01_index_html_has_resizer_markup(self):
-        """Verify site/index.html contains the pane-resizer separator between panels."""
+        """Verify site/index.html contains the pane-resizer separator between panels and toggle buttons."""
         content = self.index_html.read_text(encoding="utf-8")
         self.assertIn('id="pane-resizer"', content)
         self.assertIn('class="pane-resizer"', content)
@@ -24,11 +26,14 @@ class TestSplitPaneResizer(unittest.TestCase):
         self.assertIn('aria-orientation="vertical"', content)
         self.assertIn('class="resizer-handle"', content)
         self.assertIn('id="right-pane"', content)
-        self.assertIn('style.css?v=26', content)
-        self.assertIn('js/app.js?v=26', content)
+        self.assertIn('style.css?v=', content)
+        self.assertIn('js/app.js?v=', content)
+        self.assertIn('id="btn-toggle-left-pane"', content)
+        self.assertIn('id="btn-toggle-right-pane"', content)
+        self.assertIn('toggleMaximizePane', content)
 
-    def test_02_css_supports_resizer_and_variable_widths(self):
-        """Verify site/style.css defines custom property width, clamping, and pointer styles."""
+    def test_02_css_supports_resizer_and_container_queries(self):
+        """Verify site/style.css defines custom property width, rightpane container queries, toggle styles, and dark picker."""
         content = self.style_css.read_text(encoding="utf-8")
         self.assertIn("--left-pane-width", content)
         self.assertIn("min-width: 360px", content)
@@ -39,9 +44,18 @@ class TestSplitPaneResizer(unittest.TestCase):
         self.assertIn("body.is-resizing", content)
         self.assertIn("body.is-resizing #primary-pdf-viewer", content)
         self.assertIn("pointer-events: none !important", content)
+        self.assertIn("container-name: rightpane", content)
+        self.assertIn("@container rightpane (max-width: 540px)", content)
+        self.assertIn(".pane-toggle-btn", content)
+        self.assertIn(".h-picker", content)
+        self.assertIn("color-scheme: dark", content)
+        self.assertIn(".h-picker option", content)
+        self.assertIn("background-color: var(--bg-dark", content)
+        # Verify left-pane does not force layout containment on the iframe
+        self.assertNotIn("container-name: leftpane", content, "left-pane must not establish size containment over iframe")
 
-    def test_03_app_js_implements_setup_pane_resizer(self):
-        """Verify site/js/app.js implements draggable resizing, persistence, and double-click reset."""
+    def test_03_app_js_implements_setup_pane_resizer_and_maximize(self):
+        """Verify site/js/app.js implements draggable resizing, persistence, double-click, and toggle maximize."""
         content = self.app_js.read_text(encoding="utf-8")
         self.assertIn("this.setupPaneResizer()", content)
         self.assertIn("setupPaneResizer()", content)
@@ -53,6 +67,18 @@ class TestSplitPaneResizer(unittest.TestCase):
         self.assertIn("dblclick", content)
         self.assertIn("localStorage.removeItem('cto_left_pane_width')", content)
         self.assertIn("360", content, "Resizer must clamp at 360px minimum width")
+        self.assertIn("toggleMaximizePane", content)
+        self.assertIn("updatePaneToggleButtons", content)
+        self.assertIn("_maximizedPane", content)
+        self.assertIn("window.addEventListener('resize'", content)
+
+    def test_04_render_js_supports_stable_iframe_and_flex_rubric(self):
+        """Verify site/js/render.js uses streaming PDF parameter, stable iframe reuse, and flex rubric without emojis."""
+        content = self.render_js.read_text(encoding="utf-8")
+        self.assertIn("navpanes=0&pagemode=none", content)
+        self.assertIn("data-current-pdf", content, "render.js must track dataset.currentPdf for stable iframe reuse")
+        self.assertIn("display: flex; justify-content: space-between", content)
+        self.assertNotIn("📄", content, "render.js must not contain emoji fallbacks")
 
 
 if __name__ == "__main__":
