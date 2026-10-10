@@ -1,0 +1,6 @@
+{
+  "category": {},
+  "question": {
+    "ES_Q1": " For ES_Q1 specifically: score 1.0 only when the citation shows the company purpose addressing two or more distinct UN SDG themes (e.g. climate/energy, water, waste/circularity, equity/community) with founder-specific facts; score 0.5 for one theme; score 0.0 when no impact-purpose evidence exists. You may award 0.5/1.0 from grounded narrative impact language without a literal 'SDG N' label. Never invent an SDG number. Prefer predicted_val 0.0 with a company-named absence rationale over withholding when evidence is truly absent."
+  }
+}

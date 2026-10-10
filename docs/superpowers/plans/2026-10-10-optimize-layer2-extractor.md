@@ -456,7 +456,7 @@ git commit -m "feat(extractor): short-circuit structured criteria with grounded 
 - Produces: `load_policies(path: str | None = None) -> dict` with shape `{"category": {cat: str}, "question": {qid: str}}`
 - Produces: `build_system_prompt(question: dict, doc_manifest: dict | None, policies: dict) -> str`
 
-- [ ] **Step 1: Write a characterization test against the CURRENT code (it should pass now)**
+- [x] **Step 1: Write a characterization test against the CURRENT code (it should pass now)**
 
 ```python
 # tests/test_layer2_policies.py
@@ -521,7 +521,7 @@ if __name__ == "__main__":
     unittest.main()
 ```
 
-- [ ] **Step 2: Run it. The golden file gets written; characterization passes and the policy test fails.**
+- [x] **Step 2: Run it. The golden file gets written; characterization passes and the policy test fails.**
 
 Run: `./venv/bin/python3 -m unittest -v tests.test_layer2_policies`
 Expected: `test_system_prompts_unchanged` OK (golden file created from current code). `test_build_system_prompt_uses_policy_file` ERRORS with `AttributeError: … 'load_policies'`. Commit the golden fixture now so the refactor is checked against it:
@@ -531,7 +531,7 @@ git add tests/fixtures/l2_system_prompts.json tests/test_layer2_policies.py
 git commit -m "test(extractor): freeze current system prompts as characterization golden"
 ```
 
-- [ ] **Step 3: Implement**
+- [x] **Step 3: Implement**
 
 Create `data/category_policies.json`. Copy the ES_Q1 string **verbatim** from the current `sourcing_instruction +=` block (L657–665), including its leading space:
 
@@ -592,12 +592,12 @@ In `query_sglang_question`, delete the `primary_filenames` / `file_list` / `sour
 
 Add `_POLICIES = load_policies()` at module level, after `load_policies` is defined.
 
-- [ ] **Step 4: Run tests**
+- [x] **Step 4: Run tests**
 
 Run: `./venv/bin/python3 -m unittest -v tests.test_layer2_policies tests.test_layer2_short_circuit tests.test_parsed_markdown_scoring`
 Expected: all OK. `test_system_prompts_unchanged` is the proof that the prompts are byte-identical after the refactor.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add data/category_policies.json scripts/14_ai_copilot_extractor_v2.py

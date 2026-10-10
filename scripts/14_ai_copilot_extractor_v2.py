@@ -610,6 +610,46 @@ def accept_model_answer(
     return validated
 
 
+POLICY_PATH = Path(__file__).resolve().parent.parent / "data" / "category_policies.json"
+
+
+def load_policies(path: str | None = None) -> dict[str, dict[str, str]]:
+    p = Path(path) if path else POLICY_PATH
+    data = json.loads(p.read_text(encoding="utf-8"))
+    return {"category": data.get("category", {}), "question": data.get("question", {})}
+
+
+def build_system_prompt(
+    question: dict[str, Any], doc_manifest: dict[str, list[str]] | None, policies: dict[str, dict[str, str]]
+) -> str:
+    qid = question.get("new_q_id", question.get("q_id"))
+    cat_code = question.get("cat_code", "GENERAL")
+    primary_filenames: list[str] = []
+    if doc_manifest and cat_code in CAT_PRIMARY_SOURCES:
+        for tc in CAT_PRIMARY_SOURCES[cat_code]:
+            primary_filenames.extend(doc_manifest.get(tc, []))
+    file_list = ", ".join(f'"{f}"' for f in primary_filenames) if primary_filenames else "the documents marked [Role: PRIMARY]"
+    sourcing_instruction = (
+        f"For this {cat_code} criterion, quote only from these PRIMARY documents: {file_list}. "
+        "Copy one unbroken contiguous region of founder text exactly as it appears. "
+        "Do not paraphrase, splice distant sentences, or join table cells with pipes. "
+        "If evidence is on separate short lines, copy those lines in document order with spaces only. "
+        "The rationale may only repeat facts that appear in that span. "
+        "Do not name an SDG number, dollar amount, or percentage unless those characters appear in the quote."
+    )
+    sourcing_instruction += policies["category"].get(cat_code, "")
+    sourcing_instruction += policies["question"].get(str(qid), "")
+    return (
+        "You are an objective due diligence evaluator scoring cleantech startup applications. "
+        "Strictly adhere to the provided rubric and only quote verbatim text written by founders. "
+        "Do NOT quote instructions or template boilerplate. "
+        f"{sourcing_instruction}"
+    )
+
+
+_POLICIES = load_policies()
+
+
 def query_sglang_question(
     client: Any,
     model_id: str,
@@ -640,37 +680,7 @@ def query_sglang_question(
             "duration_sec": 0.0,
         }
 
-    primary_filenames: list[str] = []
-    if doc_manifest and cat_code in CAT_PRIMARY_SOURCES:
-        for tc in CAT_PRIMARY_SOURCES[cat_code]:
-            primary_filenames.extend(doc_manifest.get(tc, []))
-    file_list = ", ".join(f'"{f}"' for f in primary_filenames) if primary_filenames else "the documents marked [Role: PRIMARY]"
-    sourcing_instruction = (
-        f"For this {cat_code} criterion, quote only from these PRIMARY documents: {file_list}. "
-        "Copy one unbroken contiguous region of founder text exactly as it appears. "
-        "Do not paraphrase, splice distant sentences, or join table cells with pipes. "
-        "If evidence is on separate short lines, copy those lines in document order with spaces only. "
-        "The rationale may only repeat facts that appear in that span. "
-        "Do not name an SDG number, dollar amount, or percentage unless those characters appear in the quote."
-    )
-    # Wave 2 ES_Q1: narrative impact may score without a literal "SDG N" label.
-    if str(qid) == "ES_Q1":
-        sourcing_instruction += (
-            " For ES_Q1 specifically: score 1.0 only when the citation shows the company "
-            "purpose addressing two or more distinct UN SDG themes (e.g. climate/energy, "
-            "water, waste/circularity, equity/community) with founder-specific facts; "
-            "score 0.5 for one theme; score 0.0 when no impact-purpose evidence exists. "
-            "You may award 0.5/1.0 from grounded narrative impact language without a literal "
-            "'SDG N' label. Never invent an SDG number. Prefer predicted_val 0.0 with a "
-            "company-named absence rationale over withholding when evidence is truly absent."
-        )
-
-    system_prompt = (
-        "You are an objective due diligence evaluator scoring cleantech startup applications. "
-        "Strictly adhere to the provided rubric and only quote verbatim text written by founders. "
-        "Do NOT quote instructions or template boilerplate. "
-        f"{sourcing_instruction}"
-    )
+    system_prompt = build_system_prompt(question, doc_manifest, _POLICIES)
 
     # The category builder already stops on a chunk boundary. This only drops a tail
     # that somehow still crosses the budget, and it drops that tail at a break.
