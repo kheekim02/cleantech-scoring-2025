@@ -21,13 +21,25 @@ DOC_TYPE_ALIASES = {
     # names, not one company's filename: interview sheets, archetype exercises,
     # financial models, and pitches stay in those groups even when the EBD number
     # is glued on, misspelled, or omitted.
-    'M3': [r'Arch[ei]type', r'Product[_\-\s]*Market[_\-\s]*Fit', r'(?<![A-Za-z])PMF(?![A-Za-z])'],
+    'M3': [
+        r'Arch[ei]type',
+        r'Product[_\-\s]*Market[_\-\s]*Fit',
+        r'(?<![A-Za-z])PMF(?![A-Za-z])',
+        r'Persona[_\-\s]*Sheet',
+        r'Customer[_\-\s]*Persona',
+    ],
     'M8': [r'Team[_\-\s]*Targets?', r'Management[_\-\s]*Team', r'Managemet[_\-\s]*Team', r'Target[_\-\s]*Goals?'],
-    'M4': [r'Markets[_\-\s]*(?:and|&)[_\-\s]*Getting'],
+    'M4': [
+        r'Markets[_\-\s]*(?:and|&)[_\-\s]*Getting',
+        r'Target[_\-\s]*Market[_\-\s]*Access',
+        r'Market[_\-\s]*Access',
+    ],
     'M1': [
         r'Customer[_\-\s]*Interview',
         r'Customer[_\-\s]*Discover',
         r'Interview[_\-\s]*Capture',
+        r'Interview[_\-\s]*Summary',
+        r'Discovery[_\-\s]*(?:Log|Notes|Sheet)',
         r'Module[_\-\s]*One\b',
     ],
     'M2': [r'GHG'],
@@ -66,7 +78,14 @@ DOC_TYPE_ALIASES = {
         r'Strategyzer',
     ],
     'EBD2': [r'Impact[_\-\s]*Statement', r'assignment[_\-\s]*2[_\-\s]*1\b'],
-    'EBD3': [r'Customer[_\-\s]*Segment', r'Competitive[_\-\s]*Matrix', r'assignmen?e?nt[_\-\s]*4\b'],
+    'EBD3': [
+        r'Customer[_\-\s]*Segment',
+        r'Competitive[_\-\s]*Matrix',
+        r'Competitive[_\-\s]*Analysis',
+        r'Competition[_\-\s]*Landscape',
+        r'Competitive[_\-\s]*Landscape',
+        r'assignmen?e?nt[_\-\s]*4\b',
+    ],
     'EBD4': [r'Technology[_\-\s]*Validation', r'Technology[_\-\s]*Testimonial', r'Tech[_\-\s]*Val'],
     'EBD6': [
         r'Executive[_\-\s]*Summary',
@@ -200,9 +219,11 @@ def detect_doc_type(filename: str) -> str:
 # max_start keeps a later section (a pitch deck's finance slide, a canvas block
 # inside a tech-validation form) from renaming the document.
 TEXT_TITLE_RULES = [
+    (r'customer\s+discovery\s+interview', 'M1', 500),
     (r'customer interview capture sheet', 'M1', 500),
     (r'module\s*2.{0,80}?impact', 'M2', 400),
     (r'module\s*3\W{0,40}product\s*/?\s*market\s*f[il]t', 'M3', 500),
+    (r'customer\s+archetype', 'M3', 500),
     (r'module\s*7\W{0,30}legal', 'M7', 500),
     (r'module\s*8\W{0,40}management\s*team', 'M8', 500),
     (r'team targets', 'M8', 180),
@@ -211,6 +232,8 @@ TEXT_TITLE_RULES = [
     (r'markets and getting to them', 'M4', 500),
     (r'finances and funding', 'M6', 500),
     (r'customer segmentation', 'EBD3', 250),
+    (r'competitive\s+matrix', 'EBD3', 500),
+    (r'competition\s+landscape', 'EBD3', 500),
     (r'product technology validation', 'EBD4', 500),
     (r'investor pitch', 'EBD8', 280),
 ]
