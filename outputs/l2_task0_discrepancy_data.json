@@ -1,0 +1,274 @@
+{
+  "provenance": {
+    "source_host": "Spark 136.24.130.250",
+    "cache_dir": "datasets/cto_accelerator/ai_cache_l2_bench_baseline",
+    "startups": [
+      "2DaLoop",
+      "AmpTrans",
+      "Averra",
+      "Biomific",
+      "Calectra"
+    ]
+  },
+  "category_summary": {
+    "BC": {
+      "total_criteria": 25,
+      "pairs": 17,
+      "exact_count": 8,
+      "exact_match_pct": 47.05882352941176,
+      "mae": 0.29411764705882354,
+      "mean_bias": 0.0,
+      "withheld_count": 8,
+      "withheld_pct": 32.0
+    },
+    "ES": {
+      "total_criteria": 50,
+      "pairs": 45,
+      "exact_count": 35,
+      "exact_match_pct": 77.77777777777779,
+      "mae": 0.2111111111111111,
+      "mean_bias": -0.12222222222222222,
+      "withheld_count": 5,
+      "withheld_pct": 10.0
+    },
+    "F": {
+      "total_criteria": 145,
+      "pairs": 132,
+      "exact_count": 104,
+      "exact_match_pct": 78.78787878787878,
+      "mae": 0.21212121212121213,
+      "mean_bias": 0.09090909090909091,
+      "withheld_count": 13,
+      "withheld_pct": 8.96551724137931
+    },
+    "IP": {
+      "total_criteria": 290,
+      "pairs": 276,
+      "exact_count": 183,
+      "exact_match_pct": 66.30434782608695,
+      "mae": 0.33695652173913043,
+      "mean_bias": -0.2717391304347826,
+      "withheld_count": 14,
+      "withheld_pct": 4.827586206896552
+    },
+    "IS": {
+      "total_criteria": 170,
+      "pairs": 159,
+      "exact_count": 102,
+      "exact_match_pct": 64.15094339622641,
+      "mae": 0.3584905660377358,
+      "mean_bias": -0.23270440251572327,
+      "withheld_count": 11,
+      "withheld_pct": 6.470588235294119
+    },
+    "L": {
+      "total_criteria": 265,
+      "pairs": 231,
+      "exact_count": 164,
+      "exact_match_pct": 70.995670995671,
+      "mae": 0.29004329004329005,
+      "mean_bias": -0.1341991341991342,
+      "withheld_count": 34,
+      "withheld_pct": 12.830188679245284
+    },
+    "M": {
+      "total_criteria": 60,
+      "pairs": 56,
+      "exact_count": 33,
+      "exact_match_pct": 58.92857142857143,
+      "mae": 0.4107142857142857,
+      "mean_bias": -0.19642857142857142,
+      "withheld_count": 4,
+      "withheld_pct": 6.666666666666667
+    },
+    "PMF": {
+      "total_criteria": 170,
+      "pairs": 151,
+      "exact_count": 105,
+      "exact_match_pct": 69.5364238410596,
+      "mae": 0.304635761589404,
+      "mean_bias": -0.1986754966887417,
+      "withheld_count": 19,
+      "withheld_pct": 11.176470588235295
+    },
+    "T": {
+      "total_criteria": 155,
+      "pairs": 119,
+      "exact_count": 81,
+      "exact_match_pct": 68.0672268907563,
+      "mae": 0.18386554621848739,
+      "mean_bias": 0.05495798319327731,
+      "withheld_count": 36,
+      "withheld_pct": 23.225806451612904
+    },
+    "TP": {
+      "total_criteria": 80,
+      "pairs": 80,
+      "exact_count": 62,
+      "exact_match_pct": 77.5,
+      "mae": 0.181125,
+      "mean_bias": -0.077125,
+      "withheld_count": 0,
+      "withheld_pct": 0.0
+    }
+  },
+  "worst_criteria": [
+    {
+      "q_id": "PMF_Q24",
+      "cat_code": "PMF",
+      "text": "Startup has a logo that is discernible when billboard size.",
+      "pairs": 3,
+      "mae": 1.0,
+      "mean_bias": -1.0,
+      "exact_match_pct": 0.0,
+      "withheld_count": 2
+    },
+    {
+      "q_id": "PMF_Q30",
+      "cat_code": "PMF",
+      "text": "Has the startup analyzed the reasons why customers use the competition?",
+      "pairs": 5,
+      "mae": 1.0,
+      "mean_bias": -1.0,
+      "exact_match_pct": 0.0,
+      "withheld_count": 0
+    },
+    {
+      "q_id": "F_Q11",
+      "cat_code": "F",
+      "text": "Are revenue and expenses by project identified by source or line item?",
+      "pairs": 5,
+      "mae": 1.0,
+      "mean_bias": 1.0,
+      "exact_match_pct": 0.0,
+      "withheld_count": 0
+    },
+    {
+      "q_id": "F_Q14",
+      "cat_code": "F",
+      "text": "Does the capital budget include revenue, expense, and market projections for the next 3, 5, or 10 years, or for the life of each project?",
+      "pairs": 3,
+      "mae": 1.0,
+      "mean_bias": 1.0,
+      "exact_match_pct": 0.0,
+      "withheld_count": 2
+    },
+    {
+      "q_id": "IP_Q7",
+      "cat_code": "IP",
+      "text": "Is there a visual \"model\" depicting the problem?",
+      "pairs": 5,
+      "mae": 1.0,
+      "mean_bias": -1.0,
+      "exact_match_pct": 0.0,
+      "withheld_count": 0
+    },
+    {
+      "q_id": "IP_Q20",
+      "cat_code": "IP",
+      "text": "Does the methodology combine quantitative rigor with qualitative sensitivity?",
+      "pairs": 5,
+      "mae": 1.0,
+      "mean_bias": -1.0,
+      "exact_match_pct": 0.0,
+      "withheld_count": 0
+    },
+    {
+      "q_id": "IP_Q49",
+      "cat_code": "IP",
+      "text": "Does the Company present thorough and thoughtful financials?",
+      "pairs": 4,
+      "mae": 1.0,
+      "mean_bias": -1.0,
+      "exact_match_pct": 0.0,
+      "withheld_count": 1
+    },
+    {
+      "q_id": "ES_Q2",
+      "cat_code": "ES",
+      "text": "Clearly maps applicable SDGs across the company\u2019s value chain (Two or more: 1, One only: 0.5, None: 0).",
+      "pairs": 5,
+      "mae": 0.9,
+      "mean_bias": -0.9,
+      "exact_match_pct": 0.0,
+      "withheld_count": 0
+    },
+    {
+      "q_id": "PMF_Q32",
+      "cat_code": "PMF",
+      "text": "Has the startup identified customer experience pain-points in at least 1 major competitor's product?",
+      "pairs": 5,
+      "mae": 0.8,
+      "mean_bias": -0.8,
+      "exact_match_pct": 20.0,
+      "withheld_count": 0
+    },
+    {
+      "q_id": "M_Q9",
+      "cat_code": "M",
+      "text": "Has the startup created a customer feedback channel within the sales process?",
+      "pairs": 5,
+      "mae": 0.8,
+      "mean_bias": -0.8,
+      "exact_match_pct": 20.0,
+      "withheld_count": 0
+    },
+    {
+      "q_id": "L_Q23",
+      "cat_code": "L",
+      "text": "Has the company evaluated their patent portfolios?",
+      "pairs": 5,
+      "mae": 0.8,
+      "mean_bias": 0.8,
+      "exact_match_pct": 20.0,
+      "withheld_count": 0
+    },
+    {
+      "q_id": "L_Q24",
+      "cat_code": "L",
+      "text": "Has the company evaluated their products?",
+      "pairs": 5,
+      "mae": 0.8,
+      "mean_bias": -0.8,
+      "exact_match_pct": 20.0,
+      "withheld_count": 0
+    },
+    {
+      "q_id": "L_Q26",
+      "cat_code": "L",
+      "text": "Does the company know whether customers buy its products based on any particular technical feature that it invented?",
+      "pairs": 5,
+      "mae": 0.8,
+      "mean_bias": -0.8,
+      "exact_match_pct": 20.0,
+      "withheld_count": 0
+    },
+    {
+      "q_id": "L_Q31",
+      "cat_code": "L",
+      "text": "Has the company identified business information that is known to the company, is not generally known or readily accessible to competitors, and derives value from not being generally known or readily accessible?",
+      "pairs": 5,
+      "mae": 0.8,
+      "mean_bias": 0.8,
+      "exact_match_pct": 20.0,
+      "withheld_count": 0
+    },
+    {
+      "q_id": "L_Q42",
+      "cat_code": "L",
+      "text": "Does the Company own, or plan to acquire, real or material personal property?\n - If no: award 1 pt.\n - If yes: award 1 pt only if the Company provides: a list of real and material personal property owned by the Company; documents of title, mortgages, deeds of trust, and security agreements pertaining to those properties; and all outstanding leases with an original term greater than one year for real and personal property to which the Company is either lessor or lessee. Otherwise, 0 pts.",
+      "pairs": 5,
+      "mae": 0.8,
+      "mean_bias": -0.8,
+      "exact_match_pct": 20.0,
+      "withheld_count": 0
+    }
+  ],
+  "error_modes": {
+    "exact_match": 877,
+    "over_prediction": 86,
+    "under_prediction": 263,
+    "fractional_tier_mismatch": 40,
+    "withheld": 144
+  }
+}
