@@ -1,0 +1,117 @@
+# scripts/generate_calibrated_cache.py
+from __future__ import annotations
+
+import argparse
+import json
+import logging
+from pathlib import Path
+from typing import Any
+
+from src.scorer.score_calibrator import calibrate_record
+from src.scorer.visual_deck_inspector import inspect_deck_visuals
+from src.scorer.deterministic_evaluator import evaluate_visual_criterion
+
+logger = logging.getLogger("generate_calibrated_cache")
+
+
+def generate_calibrated_cache(
+    src_cache_dir: Path | str,
+    dst_cache_dir: Path | str,
+    raw_dir: Path | str,
+    allowlist_path: Path | str,
+    rubric_path: Path | str,
+) -> dict[str, Any]:
+    src = Path(src_cache_dir)
+    dst = Path(dst_cache_dir)
+    raw = Path(raw_dir)
+    dst.mkdir(parents=True, exist_ok=True)
+
+    allowlist = json.loads(Path(allowlist_path).read_text(encoding="utf-8"))
+    rubric = json.loads(Path(rubric_path).read_text(encoding="utf-8"))
+    rubric_map = {q.get("new_q_id", q.get("q_id")): q for q in rubric}
+    startup_ids = [s["startup_id"] for s in allowlist.get("startups", [])]
+
+    calibrated_count = 0
+    visual_override_count = 0
+
+    for sid in startup_ids:
+        src_path = src / f"{sid}.json"
+        if not src_path.exists():
+            continue
+        records = json.loads(src_path.read_text(encoding="utf-8"))
+        records_map = {r["q_id"]: r for r in records}
+
+        # Visual deck inspection if raw deck exists
+        deck_pdf = None
+        co_raw = raw / sid
+        if co_raw.is_dir():
+            for p in co_raw.glob("08_*.pdf"):
+                deck_pdf = p
+                break
+            if not deck_pdf:
+                for p in co_raw.glob("*[Pp]itch*.pdf"):
+                    deck_pdf = p
+                    break
+
+        deck_meta = None
+        if deck_pdf and deck_pdf.exists():
+            try:
+                deck_meta = inspect_deck_visuals(deck_pdf)
+            except Exception as e:
+                logger.warning(f"Error inspecting deck visuals for {sid}: {e}")
+
+        for qid, rec in list(records_map.items()):
+            q_def = rubric_map.get(qid)
+            if not q_def:
+                continue
+
+            # Visual criteria check
+            if qid in {"IP_Q7", "PMF_Q24"} and deck_meta:
+                vis_rec = evaluate_visual_criterion(qid, deck_meta, startup_id=sid)
+                if vis_rec and vis_rec.get("predicted_val") == 1.0:
+                    records_map[qid] = vis_rec
+                    visual_override_count += 1
+                    continue
+
+            # Layer 3 Fractional calibration
+            cal = calibrate_record(rec, q_def)
+            if cal.get("calibrated"):
+                records_map[qid] = cal
+                calibrated_count += 1
+
+        # Preserve exact rubric order
+        ordered = [
+            records_map[q.get("new_q_id", q.get("q_id"))]
+            for q in rubric
+            if q.get("new_q_id", q.get("q_id")) in records_map
+        ]
+        (dst / f"{sid}.json").write_text(json.dumps(ordered, indent=2) + "\n", encoding="utf-8")
+
+    return {
+        "startups_processed": len(startup_ids),
+        "calibrated_count": calibrated_count,
+        "visual_override_count": visual_override_count,
+    }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Generate Layer 3 Calibrated & Visual Extraction Cache")
+    parser.add_argument("--src-cache", required=True)
+    parser.add_argument("--dst-cache", required=True)
+    parser.add_argument("--raw-dir", required=True)
+    parser.add_argument("--allowlist", required=True)
+    parser.add_argument("--rubric", required=True)
+    args = parser.parse_args()
+
+    stats = generate_calibrated_cache(
+        args.src_cache,
+        args.dst_cache,
+        args.raw_dir,
+        args.allowlist,
+        args.rubric,
+    )
+    print(json.dumps(stats, indent=2))
+
+
+if __name__ == "__main__":
+    main()
