@@ -618,7 +618,7 @@ git commit -m "refactor(extractor): move per-question prompt patches into catego
 **Interfaces:**
 - Produces: `count_visual_markers(text: str) -> dict[str, int]` keyed by marker family (`image_comment`, `md_image`, `diagram_heading`, `figure_caption`).
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```python
 # tests/test_measure_visual_markers.py
@@ -643,12 +643,12 @@ if __name__ == "__main__":
     unittest.main()
 ```
 
-- [ ] **Step 2: Run it to confirm it fails**
+- [x] **Step 2: Run it to confirm it fails**
 
 Run: `./venv/bin/python3 -m unittest -v tests.test_measure_visual_markers`
 Expected: `ModuleNotFoundError`
 
-- [ ] **Step 3: Implement**
+- [x] **Step 3: Implement**
 
 ```python
 # scripts/measure_visual_markers.py
@@ -691,12 +691,12 @@ if __name__ == "__main__":
     main()
 ```
 
-- [ ] **Step 4: Run the test to confirm it passes**
+- [x] **Step 4: Run the test to confirm it passes**
 
 Run: `./venv/bin/python3 -m unittest -v tests.test_measure_visual_markers`
 Expected: OK
 
-- [ ] **Step 5: Measure on Spark**
+- [x] **Step 5: Measure on Spark**
 
 ```bash
 scp scripts/measure_visual_markers.py jkim@136.24.130.250:/tmp/l2/
@@ -706,15 +706,15 @@ ssh jkim@136.24.130.250 'cd /data/scraping && venv/bin/python /tmp/l2/measure_vi
 
 If the EBD8 filename glob matches 0 files, check how `resolve_doc_type` names pitch decks and rerun with the right `--glob`. Do not guess.
 
-- [ ] **Step 6: Decide (ruling, recorded in the ledger)**
+- [x] **Step 6: Decide (ruling, recorded in the ledger)**
 
-- **If ≥50% of EBD8 files contain markers:** add an `"IP"` category policy and a `"PMF_Q24"` question policy to `data/category_policies.json`. The text should tell the model that the listed marker families are evidence of a visual, and that the citation must quote the caption or the marker line itself. Re-run `tests.test_layer2_policies`. The golden fixture will now differ for IP questions only, so regenerate it and review the diff line by line. Then run the Task 0 benchmark on IP_Q3, IP_Q7, IP_Q12, and PMF_Q24.
-- **If <50%:** do not add the policy. Text prompting cannot see images that the parser dropped. Ledger `Task 4: Ruling: visual criteria need page-image (multimodal) scoring; out of scope`. Also flag that the Layer 3 diagram proxy (`src/scorer/diagram_proxy_rescorer.py`) matches prose words like "flowchart" and "schematic", so its AmpTrans upgrades need human review.
+Measured: 1/89 files (1.12%) contain visual markers (<50%). Text prompting cannot see images that the parser dropped.
+Ledger `Task 4: Ruling: visual criteria need page-image (multimodal) scoring; out of scope`. No policy added to `data/category_policies.json`. Layer 3 diagram proxy (`src/scorer/diagram_proxy_rescorer.py`) matches prose words like "flowchart" and "schematic", so its AmpTrans upgrades need human review.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
-git add scripts/measure_visual_markers.py tests/test_measure_visual_markers.py
+git add scripts/measure_visual_markers.py tests/test_measure_visual_markers.py outputs/visual_markers_v4.json
 git commit -m "feat(extractor): add visual-marker census for pitch-deck markdown"
 ```
 

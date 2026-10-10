@@ -1,0 +1,540 @@
+{
+  "files": 89,
+  "files_with_any_marker": 1,
+  "per_file": {
+    "Ecosphere_Organics/converted/16_Ecosphere_Organics_Pitch_Deck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "PFASolve/converted/18_PFASolve_CTO_pitchdeck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Core_Envision/converted/18_Core_Envision_Pitch_Deck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "PolyGone_Systems/converted/19_PolyGone_Deck_Cleantech_Open.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "2DaLoop/converted/02_2DaLoop_-_Slide_Deck_-_2025.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Bluesonde_Technologies/converted/19_Bluesonde_Pitch_Deck_2025-08-26_CTO.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "KVA_Technologies/converted/19_KVA_Tech_EBD8_Pitch_Deck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Aris_Hydronics/converted/17_ArisHydronics_EBD10PitchDeck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "SolenSphere/converted/17_Pitch-Deck-Exposition.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Gridwave/converted/17_Gridwave_Deck_v5_0_2.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Averra/converted/17_Averra_Investor_Pitch.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Sustainable_Chemicals/converted/18_Sust-Chem_Pitch_Deck_August_5_2025.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Sol_Robotics/converted/16_CleanTech_Open_Pitchdeck_Update_08252025.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Renovigo_Chemicals/converted/13_Renovigo_Investor_Pitch.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "HYDGEN/converted/19_HYDGEN_PitchDeck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Foregger_Energy_Solutions/converted/11_FES_CTO_Slide_Deck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "CleanQuity/converted/19_CleanQuity_EBD8InvestorPitch.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Photometrics_AI/converted/18_20250811_PhotometricsAI_PitchDeck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "HomeWise_AI/converted/02_Homewise_AI_Deck_Yuna.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "HomeWise_AI/converted/16_Print_-_HomeWise_AI_Deck_5.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Volt_Harbor/converted/17_Volt_Harbor_Full_Pitch_Deck_June2025v4.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Navia_Energy/converted/19_Navia_Energy_CTO_Deck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "CIRQ+/converted/16_CIRQ_Cleantech_Open_Deck_2025.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Structural_BioComposites/converted/18_Structural_BioComposites_Pitch_deck_Draft.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "H2_Everywhere/converted/18_H2_Everywhere_Pitch_Deck_-_CTO.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "H2O_Now/converted/14_H20_Now_Pitch_deck_8_26.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Calectra/converted/16_Calectra_deck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Biospheric_AI/converted/13_Biospheric_AI_EBD8_InvestorPitchDeck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Wayside/converted/16_Wayside_CTO_Investor_Deck_2025.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Vaanelai/converted/16_VaanelAI_overview_deck-v3-08262025.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Karbn/converted/17_KarbnLLC_EBD10_Pitch.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "OpenRoad_Technologies/converted/08_openroad-pitch-deck_3.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "California_Perovskite_Technology/converted/16_CPTI_Deck_08-2025_SO.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Modulium/converted/11_Modulium_JULY_InitialPitch.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Spear_the_Air/converted/18_SpeartheAir_PitchDeck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "17/converted/11_17Inc_InvestorPitchDeck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Condor_Calibration_Services/converted/17_Condor_EBD8_Pitch_Deck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Biomific/converted/17_BIOMIFIC_EBD8_Pitch_deck_-_Investor_Pitch_working_copy_Submitted_08262025.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "GreenSight_Technologies/converted/18_GreenSightTechnologiesPDeck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "EvoNatura/converted/18_CleanTech_Open_EvoNatura_Pitch_Deck_2025_pptx_1.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "CH4_Microbial_Solutions/converted/17_CH4MicrobialSolutionsPitchDeckEBD8.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Yggdrasil_Trees/converted/18_YggdrasilTrees_PitchDeck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "SOLARSYSTEMS/converted/14_CTO-InvestorDeck_Final-SOLARYSTEMS-compressed.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Hubbletek/converted/18_Hubbletek-Carbon-Credits-Made-Simple.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Hubbletek/converted/02_Hubbletek_Pitch_Deck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Hubbletek/converted/01_Hubbletek_Pitch_Deck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "LIFE3/converted/18_LIFE3_CTO_Pitch_Deck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Teragen_Energy/converted/18_TeragenEnergy_Cleantech_Open_Pitch.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "SolGrapH/converted/14_SolGrapH_EBD8InvestorPitchDeck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Lumiaq/converted/20_Lumiaq_PitchDeck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "SSG_Environmental/converted/17_SSGEnvironmental_PitchDeck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "SBD_Technologies/converted/19_SBD_Technologies_EBD8_Investor_Pitch_Deck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "SMPnet/converted/19_SMPnet_Investor_Pitch.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Upstream_Carbon/converted/19_Upstream_Carbon_EBDPitchDeck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Restora_Homes/converted/19_RestoraHomes_-_Investor_Pitch.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Hidrogenics_Technologies/converted/09_HidrogeniCs_Inc_Pitch_Deck_V8_0_Cleantech_Open_2025.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "FLOAT_Modern_Houseboat/converted/10_FLOAT_INVESTOR_PITCH_DECK_OPTIMIZED_FILE_SIZE.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "TiltingSolar/converted/17_CTO_Pitch_Deck_-_Birnie_-_new_10.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Cero_Global_Holdings/converted/19_Cero_Global_-_Investor_Deck_v2_release_-_CTO.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Crucible_Energy/converted/15_Crucible_Pitch_Deck_v2-opt.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Candela_IoT/converted/15_Candela_M10InvestorPitch.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "We_Think_Global/converted/15_Module_10_CTO_Investor_Pitch_Deck_August_26_2025.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Novagrid/converted/19_pitchDeckDraft1.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "CarbonDots/converted/17_CarbonDots_CTO_PitchDeck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "ECORECYCLETECH/converted/17_ERT_EBD8pitchdeck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Curve_Control/converted/17_Curve_Control_Pitch_Deck_26AUG25.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Cryodrives/converted/13_CryodrivesPitchDeck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Apex_Engineering_AI/converted/17_APEX_EAI_EBD8PitchDeck_ReducedSize.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "R7_Instruments/converted/16_Pitch_Deck_R7_Instruments.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Gamotech/converted/17_Gamotech_EBD10PitchDeck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "EV_Innovations/converted/14_EV_Innovations_CTO_Investor_Pitch_Deck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Pipeline_Pilot/converted/18_PipelinePilot_10MinutePitch_withnotes.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Tensor_Planet/converted/02_Tensor_Planet_Investor_Deck_-_CleanTech_Open.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Tensor_Planet/converted/19_Tensor-Planet_Pitch-Deck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Manara_Materials/converted/16_EBD_10_-_ManaraMaterials.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Sterrett_Levin/converted/13_Watermaven_by_Sterrett_Levin_Inc_Pitch_Deck_EBD8.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Wind_Pulse_Energy/converted/16_WindPulseEnergy_PitchDeck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Solar_Intelligence/converted/15_Solar_Intelligence_Pitch_Deck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Symbiotic_Agriculture/converted/17_SymbioticAgriculture_EBD8InvestorPitchDeck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "AmpTrans/converted/16_AmpTrans_Investor_Pitch_Deck-V3.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 1,
+      "figure_caption": 0
+    },
+    "SPCTA_Industrial/converted/18_SPCTA_Investor_Pitch_Deck_CTO_2025_v3.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Three_Rivers_Power_Limited_Liability/converted/10_Essential_Business_Deliverable_8_Investor_Pitch_Deck_Three_Rivers_Power.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Seyrab/converted/17_SEYRAB_M10_PitchDeck.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Fortifyy_PBC/converted/18_Fortifyy_EBD_8_Investor_Pitch_Deck_8_24.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Scaled_Carbon,_PBC/converted/18_Scaled_Carbon_CTO_Deck_v1.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "LeverageTech_Innovations/converted/15_leveragetech_pitchdeckEBD8.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "LeRTechX_Renewable_Energy/converted/15_LeRTechX_-now_Sollar_Well-Essential_Business_Deliverable_8.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Wavon_Ceramics_\u2014_Accelerating_Manufacturing/converted/18_WavonCeramics_InvestorPitch.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    },
+    "Lute_&_Ether/converted/19_Lute_amp_EtherPitchDeckAug26_2025.pdf.md": {
+      "image_comment": 0,
+      "md_image": 0,
+      "diagram_heading": 0,
+      "figure_caption": 0
+    }
+  }
+}
