@@ -89,7 +89,7 @@ git commit -m "test(extractor): add read-only cache-vs-human benchmark harness a
 - Produces: `find_deterministic_evidence(q_id: str, primary_text: str | None) -> str | None`. Returns the full source line containing the match, copied verbatim from `primary_text`, or `None`.
 - Produces: `evaluate_deterministic_criterion(q_id: str, raw_text: str | None, current_val: float | None) -> tuple[float | None, bool, str]`
 
-- [ ] **Step 1: Write the failing tests**
+- [x] **Step 1: Write the failing tests**
 
 ```python
 # tests/test_deterministic_evaluator.py
@@ -155,12 +155,12 @@ if __name__ == "__main__":
     unittest.main()
 ```
 
-- [ ] **Step 2: Run them to confirm they fail**
+- [x] **Step 2: Run them to confirm they fail**
 
 Run: `./venv/bin/python3 -m unittest -v tests.test_deterministic_evaluator`
 Expected: `ModuleNotFoundError: No module named 'src.scorer.deterministic_evaluator'`
 
-- [ ] **Step 3: Implement `src/scorer/deterministic_evaluator.py`**
+- [x] **Step 3: Implement `src/scorer/deterministic_evaluator.py`**
 
 ```python
 # src/scorer/deterministic_evaluator.py
@@ -232,12 +232,12 @@ def evaluate_deterministic_criterion(
     return current_val, False, ""
 ```
 
-- [ ] **Step 4: Run tests to confirm they pass**
+- [x] **Step 4: Run tests to confirm they pass**
 
 Run: `./venv/bin/python3 -m unittest -v tests.test_deterministic_evaluator`
 Expected: All 9 tests OK.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/scorer/deterministic_evaluator.py tests/test_deterministic_evaluator.py
