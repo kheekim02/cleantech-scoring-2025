@@ -144,3 +144,44 @@ Tutorial manuals are generated via Chrome headless and kept synchronized on the 
 - **Scorer Tutorial**: `/Users/geoffrey/Desktop/CleanTech_Open_Scorer_Tutorial.pdf` (5 pages)
 - **Admin Tutorial**: `/Users/geoffrey/Desktop/CleanTech_Open_Admin_Tutorial.pdf` (6 pages)
 - Generator script: `venv/bin/python3 scripts/generate_tutorials.py`
+
+---
+
+## 7. Data Provenance & Authoritative Datasets Layout (Spark Remote)
+
+All authoritative model evaluation, extraction caches, and cohort deliverable datasets reside on the Spark remote server (`136.24.130.250`) under `/data/scraping/datasets/cto_accelerator/`.
+
+### Authoritative Active Production Layout
+```text
+/data/scraping/datasets/cto_accelerator/
+├── ai_cache_promoted -> ai_cache_v5_parsed  # Canonical pointer to currently promoted SoR
+├── ai_cache_v5_parsed/                      # Audited extraction cache (92 active startups, 282 criteria)
+├── ai_cache_v5_remediated -> ai_cache_v5_parsed
+├── parsed_clean_v4/                         # Authoritative Docling cleaned markdown corpus
+├── raw/                                     # Raw deliverable PDFs (96 company directories)
+├── active_startup_allowlist.json            # 92 active cohort startup IDs
+├── master_282_rubric.json                   # Frozen 282-criteria rubric definitions
+├── scaffolding_master_catalog.json          # Master 15-deliverable scaffolding catalog
+├── pipeline_baseline.json                   # Pipeline performance baseline
+└── archive/                                 # Historical datasets & pre-remediation snapshots
+    ├── ai_cache_v5_parsed_pre_remediation_20261003T214821Z/
+    ├── ai_cache_v3_strict/
+    ├── ai_cache_v4_shadow/
+    ├── ai_cache_v5_sample5/
+    ├── legacy_2025/
+    ├── parsed/
+    └── parsed_clean/
+```
+
+### Data Provenance & Verification Invariants (Mandatory)
+1. **Canonical SoR Resolution:**
+   - Production consumption and offline calibration scripts must read from `ai_cache_promoted` (or an explicitly provided `--cache-dir`). Silent relative fallbacks to stale local folders are strictly prohibited.
+2. **Structural Validation Over Version String Hardcoding:**
+   - Never write brittle code asserting hardcoded version strings like `cache_type == "v5_parsed"`.
+   - Instead, scripts validate **structural contracts**:
+     - Exactly 92 allowlisted startup JSON files present.
+     - Exactly 282 criteria records per startup matching `master_282_rubric.json`.
+     - Validated schema compliance via `src/scorer/schemas.py` (`error_code`, `citation`, and `predicted_val`).
+3. **Mandatory Provenance Header in Quantitative Reports:**
+   - Every quantitative report, distribution audit, or IRR analysis must log its dataset provenance (source host, path, symlink target, startup count, record count, and timestamp) in its output header.
+
