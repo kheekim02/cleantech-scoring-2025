@@ -870,13 +870,13 @@ git commit -m "feat(extractor): add opt-in same-category batching gated by bench
 **Files:**
 - Create: `outputs/l2_benchmark_report.md` (generated, committed)
 
-- [ ] **Step 1: Run the final configuration on BENCH_SET into `ai_cache_l2_bench_final` and benchmark it against `l2_bench_baseline.json`.**
+- [x] **Step 1: Run the final configuration on BENCH_SET into `ai_cache_l2_bench_final` and benchmark it against `l2_bench_baseline.json`.**
 
-- [ ] **Step 2: Write the report.** Include a table of baseline vs final for wall time per startup, LLM request count (count records with no `source` field plus retries from the logs), `exact_match`, `mae`, `withheld_rate`, `cited_rate`, and the audit PASS count. Then list every ledger `Ruling:` line.
+- [x] **Step 2: Write the report.** Include a table of baseline vs final for wall time per startup, LLM request count (count records with no `source` field plus retries from the logs), `exact_match`, `mae`, `withheld_rate`, `cited_rate`, and the audit PASS count. Then list every ledger `Ruling:` line.
 
-- [ ] **Step 3: Go/no-go.** A full 92-startup re-run into a new cache directory is the user's decision. It is not part of this plan. Promoting a new cache over `ai_cache_v5_parsed` must go through `scripts/promote_cache_gate.py` with the user's explicit approval.
+- [x] **Step 3: Go/no-go.** A full 92-startup re-run into a new cache directory is the user's decision. It is not part of this plan. Promoting a new cache over `ai_cache_v5_parsed` must go through `scripts/promote_cache_gate.py` with the user's explicit approval.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add outputs/l2_benchmark_report.md
