@@ -69,6 +69,22 @@ class TestAnalyzeBenchmarkDiscrepancies(unittest.TestCase):
         self.assertEqual(modes["fractional_tier_mismatch"], 1)
         self.assertEqual(modes["withheld"], 1)
 
+    def test_format_discrepancy_markdown(self):
+        from scripts.analyze_benchmark_discrepancies import format_discrepancy_markdown
+        cat_summary = {
+            "BC": {"pairs": 10, "exact_match_pct": 50.0, "mae": 0.3, "mean_bias": 0.1, "withheld_pct": 20.0, "total_criteria": 12}
+        }
+        worst_q = [
+            {"q_id": "BC_Q1", "cat_code": "BC", "text": "Value Prop", "pairs": 5, "mae": 0.6, "mean_bias": 0.2, "exact_match_pct": 40.0}
+        ]
+        modes = {"exact_match": 5, "over_prediction": 2, "under_prediction": 1, "fractional_tier_mismatch": 2, "withheld": 2}
+        md = format_discrepancy_markdown(cat_summary, worst_q, modes, 12, {"source_host": "local", "path": "test"})
+        self.assertIn("# Task 0 Benchmark Discrepancy Analysis", md)
+        self.assertIn("| BC |", md)
+        self.assertIn("BC_Q1", md)
+        self.assertIn("Over-prediction", md)
+
 
 if __name__ == "__main__":
     unittest.main()
+
