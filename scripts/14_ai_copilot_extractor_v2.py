@@ -168,6 +168,13 @@ CAT_PRIMARY_SOURCES: dict[str, list[str]] = {
     "T": ["M8"],
     "TP": ["EBD4"],
 }
+
+CAT_FALLBACK_SOURCES: dict[str, list[str]] = {
+    "PMF": ["EBD1", "EBD8"],
+    "M": ["EBD1", "EBD8"],
+    "BC": ["EBD8"],
+    "IS": ["EBD8"],
+}
 # Fits a 32,768-token model window with room for the question and the answer.
 CONTEXT_CHAR_LIMIT = 80_000
 
@@ -278,15 +285,26 @@ def build_category_context(
     primary_files = [
         fname for fname in order if by_file[fname][0].get("doc_type") in primary_types
     ]
+    is_fallback = False
+    if not primary_files:
+        fallback_types = set(CAT_FALLBACK_SOURCES.get(cat_code, []))
+        if fallback_types:
+            primary_files = [
+                fname for fname in order if by_file[fname][0].get("doc_type") in fallback_types
+            ]
+            if primary_files:
+                is_fallback = True
+
     pieces: list[str] = []
     used = 0
 
     def add_file(fname: str) -> bool:
         nonlocal used
         file_chunks = by_file[fname]
+        role_label = "FALLBACK" if is_fallback else "PRIMARY"
         header = (
             f"=== DOCUMENT: {fname} "
-            f"[Type: {file_chunks[0].get('doc_type', 'OTHER')}] [Role: PRIMARY] ==="
+            f"[Type: {file_chunks[0].get('doc_type', 'OTHER')}] [Role: {role_label}] ==="
         )
         if used + len(header) > char_limit:
             return False
@@ -320,6 +338,7 @@ def build_category_context(
             "\n\n".join(_chunk_block(c) for c in by_file[fname] if _chunk_block(c))
             for fname in primary_files
         ),
+        "is_fallback": is_fallback,
     }
 
 
@@ -336,6 +355,15 @@ def build_category_context_from_docs(
     """
     primary_types = set(CAT_PRIMARY_SOURCES.get(cat_code, []))
     primary_docs = [doc for doc in docs if doc.get("doc_type") in primary_types]
+    is_fallback = False
+
+    if not primary_docs:
+        fallback_types = set(CAT_FALLBACK_SOURCES.get(cat_code, []))
+        if fallback_types:
+            primary_docs = [doc for doc in docs if doc.get("doc_type") in fallback_types]
+            if primary_docs:
+                is_fallback = True
+
     pieces: list[str] = []
     body_parts: list[str] = []
     used = 0
@@ -345,7 +373,8 @@ def build_category_context_from_docs(
         body = (doc.get("text") or "").strip()
         if not body:
             continue
-        header = f"=== DOCUMENT: {fname} [Type: {doc.get('doc_type', 'OTHER')}] [Role: PRIMARY] ==="
+        role_label = "FALLBACK" if is_fallback else "PRIMARY"
+        header = f"=== DOCUMENT: {fname} [Type: {doc.get('doc_type', 'OTHER')}] [Role: {role_label}] ==="
         block = f"{header}\n\n{body}"
         if used + len(block) + (3 if pieces else 0) <= char_limit:
             pieces.append(block)
@@ -365,6 +394,7 @@ def build_category_context_from_docs(
         "has_primary": bool(primary_docs),
         "primary_filenames": [doc.get("source_pdf") or "unknown" for doc in primary_docs],
         "primary_text": "\n\n".join(body_parts),
+        "is_fallback": is_fallback,
     }
 
 
