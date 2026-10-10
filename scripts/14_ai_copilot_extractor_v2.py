@@ -33,6 +33,7 @@ from src.scorer.schemas import (
     match_citation_to_text,
     normalize_text,
 )
+from src.scorer.deterministic_evaluator import DETERMINISTIC_RULES, find_deterministic_evidence
 from scripts.audit_v5_parsed import SDG_QUESTION_RE, audit_parsed_records
 from scripts.docling_ingestion import resolve_doc_type
 
@@ -799,6 +800,58 @@ def query_sglang_question(
     }
 
 
+def deterministic_answer(question: dict[str, Any], primary_text: str, company: str) -> dict[str, Any] | None:
+    """Positive-only structured answer. Regex absence never produces a score."""
+    qid = question.get("new_q_id") or question.get("q_id")
+    allowed = {round(float(o.get("val")), 2) for o in question.get("options") or [] if o.get("val") is not None}
+    if allowed and 1.0 not in allowed:
+        return None
+    span = find_deterministic_evidence(qid, primary_text)
+    if not span:
+        return None
+    raw = {
+        "q_id": qid,
+        "predicted_val": 1.0,
+        "confidence": 0.95,
+        "citation": span,
+        "rationale": f"{company} primary text states: {span} {DETERMINISTIC_RULES[qid]['label']}.",
+    }
+    rec = accept_model_answer(raw, primary_text, question, company=company)
+    if rec.get("error_code") or rec.get("predicted_val") != 1.0:
+        return None
+    rec["source"] = "deterministic"
+    return rec
+
+
+def score_question(
+    question: dict[str, Any],
+    ctx: dict[str, Any],
+    *,
+    query_fn: Any,
+    client: Any,
+    model_id: str,
+    timeout: int,
+    doc_manifest: dict[str, list[str]],
+    endpoint: str,
+    startup_id: str,
+) -> dict[str, Any]:
+    primary_text = ctx.get("primary_text", "")
+    has_primary = ctx.get("has_primary", False)
+    if has_primary:
+        det = deterministic_answer(question, primary_text, startup_id)
+        if det is not None:
+            return det
+
+    def _ask(temperature: float) -> dict[str, Any]:
+        raw = query_fn(client, model_id, ctx.get("text", ""), question, timeout, doc_manifest,
+                       has_primary, endpoint, startup_id=startup_id, temperature=temperature)
+        return accept_model_answer(raw, primary_text, question, company=startup_id)
+
+    rec = _ask(0.0)
+    if rec.get("error_code") in RETRYABLE_ERROR_CODES:
+        rec = _ask(0.2)
+    return rec
+
 
 def evaluate_startup(
     startup_id: str,
@@ -897,37 +950,17 @@ def evaluate_startup(
     total_to_run = len(remaining_questions)
 
     def _score_one(q: dict[str, Any]) -> dict[str, Any]:
-        cat = q.get("cat_code") or ""
-        ctx = category_contexts.get(cat) or {}
-        primary_text = ctx.get("primary_text", "")
-        raw_res = query_sglang_question(
-            inst_client,
-            model_id,
-            ctx.get("text", ""),
+        return score_question(
             q,
-            timeout,
-            doc_manifest,
-            ctx.get("has_primary", False),
-            sglang_url,
+            category_contexts.get(q.get("cat_code") or "") or {},
+            query_fn=query_sglang_question,
+            client=inst_client,
+            model_id=model_id,
+            timeout=timeout,
+            doc_manifest=doc_manifest,
+            endpoint=sglang_url,
             startup_id=startup_id,
-            temperature=0.0,
         )
-        eval_record = accept_model_answer(raw_res, primary_text, q, company=startup_id)
-        if eval_record.get("error_code") in RETRYABLE_ERROR_CODES:
-            raw_retry = query_sglang_question(
-                inst_client,
-                model_id,
-                ctx.get("text", ""),
-                q,
-                timeout,
-                doc_manifest,
-                ctx.get("has_primary", False),
-                sglang_url,
-                startup_id=startup_id,
-                temperature=0.2,
-            )
-            eval_record = accept_model_answer(raw_retry, primary_text, q, company=startup_id)
-        return eval_record
 
     with ThreadPoolExecutor(max_workers=concurrency) as executor:
         future_to_q = {executor.submit(_score_one, q): q for q in remaining_questions}

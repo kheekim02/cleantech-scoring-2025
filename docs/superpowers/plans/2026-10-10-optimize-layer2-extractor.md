@@ -257,7 +257,7 @@ git commit -m "feat(scorer): create line-bounded deterministic evaluator with ev
 - Produces: `deterministic_answer(question: dict, primary_text: str, company: str) -> dict | None`
 - Produces: `score_question(question: dict, ctx: dict, *, query_fn, client, model_id, timeout, doc_manifest, endpoint, startup_id) -> dict`
 
-- [ ] **Step 1: Write the failing tests**
+- [x] **Step 1: Write the failing tests**
 
 ```python
 # tests/test_layer2_short_circuit.py
@@ -334,12 +334,12 @@ if __name__ == "__main__":
     unittest.main()
 ```
 
-- [ ] **Step 2: Run them to confirm they fail**
+- [x] **Step 2: Run them to confirm they fail**
 
 Run: `./venv/bin/python3 -m unittest -v tests.test_layer2_short_circuit`
 Expected: `AttributeError: module 'extractor_l2' has no attribute 'score_question'`
 
-- [ ] **Step 3: Implement**
+- [x] **Step 3: Implement**
 
 Add the import near the other `src.scorer` imports:
 
@@ -420,12 +420,12 @@ Replace the body of the nested `_score_one` in `evaluate_startup` with:
         )
 ```
 
-- [ ] **Step 4: Run new and existing extractor tests**
+- [x] **Step 4: Run new and existing extractor tests**
 
 Run: `./venv/bin/python3 -m unittest -v tests.test_layer2_short_circuit tests.test_parsed_markdown_scoring tests.test_accept_path_remediation tests.test_category_context tests.test_extraction_audit`
 Expected: all OK. If an existing test fails, use superpowers:systematic-debugging. Do not edit the existing tests.
 
-- [ ] **Step 5: Small-batch Spark check (1 startup, F and L questions only)**
+- [x] **Step 5: Small-batch Spark check (1 startup, F and L questions only)**
 
 ```bash
 scp scripts/14_ai_copilot_extractor_v2.py src/scorer/deterministic_evaluator.py jkim@136.24.130.250:/tmp/l2/
@@ -436,7 +436,7 @@ ssh jkim@136.24.130.250 'cd /data/scraping && PYTHONPATH=/tmp/l2:/data/scraping 
 
 Expected: records with `"source": "deterministic"` carry a citation that `audit_v5_parsed.py` accepts. Inspect every deterministic hit by hand. Any false positive sends you back to Task 1.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add scripts/14_ai_copilot_extractor_v2.py tests/test_layer2_short_circuit.py
