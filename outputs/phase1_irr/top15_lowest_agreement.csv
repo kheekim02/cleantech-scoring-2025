@@ -1,0 +1,40 @@
+q_id,cat,question_text,archetype,is_objective,n_pairs,exact_agree,kappa_linear,icc_2_1,mad_norm,floor_pct,ceiling_pct,rater_bias
+BC_Q2,BC,Does the company clearly identify its customer segments and customer attributes?,SUBJECTIVE_LIKERT,0,847,0.500590318772137,,0.6655046178293106,0.1077331759149941,0.01475796930342385,0.0005903187721369539,0.07260920897284517
+BC_Q1,BC,How clearly is the value proposition understood?,SUBJECTIVE_LIKERT,0,847,0.5608028335301063,0.5604503196745582,0.6529471661897671,0.11877213695395512,0.012987012987012988,0.28158205430932703,0.027154663518300204
+BC_Q4,BC,Are the large sections of the BMC clearly filled and articulated?,SUBJECTIVE_LIKERT,0,841,0.5671819262782402,,0.7775786350148366,0.11048751486325804,0.02497027348394768,0.20451843043995244,0.04922711058263962
+BC_Q5,BC,Are the small sections of the BMC clearly filled and articulated?,ORDINAL_MILESTONE,0,722,0.6357340720221607,,0.6083926276698606,0.09259002770083102,0.02077562326869806,0.018005540166204988,-0.0003462603878117143
+BC_Q3,BC,Has the company interviewed at least 5 customers?,CUMULATIVE_LADDER,1,846,0.6382978723404256,,0.7534804186410842,0.11950354609929077,0.09160756501182032,0.18971631205673758,0.14598108747044902
+L_Q9,L,"According to the USPTO, strong, highly registerable marks are creative or unique names that set a brand apart. These include fanciful marks (made-up words like Pepsi), arbitrary marks (unrelated real words like Apple for computers), and suggestive marks (words hinting at a quality without stating it outright like Coppertone). Conversely, weak or unacceptable marks are hard to protect and usually cannot be federally registered. These include descriptive marks (merely detailing a feature or quality, like Creamy for yogurt) and generic terms (the common, everyday product name, like Bagel shop).
+On average across every mark the Company plans to apply for, how descriptive are they on a scale of 1–5? Please rate them with 1 being a weak mark that concisely describes a feature or quality of the goods or services, and 5 being a strong mark that has no relationship to what the Company is selling.",SUBJECTIVE_LIKERT,1,799,0.6733416770963705,,0.6683198413367122,0.11476846057571964,0.4568210262828536,0.039424280350438046,-0.02941176470588247
+T_Q7,T,"What is the breadth of the team's capabilities in supply chain?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts",ORDINAL_MILESTONE,1,821,0.6906211936662606,0.6129413802397622,0.6705948290437282,0.12399512789281364,0.1607795371498173,0.09317904993909866,0.032886723507917326
+T_Q9,T,"What is the breadth of the team's capabilities in finance?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts",ORDINAL_MILESTONE,1,821,0.6930572472594397,0.591877583951194,0.6274595133177204,0.1376370280146163,0.146163215590743,0.1364190012180268,-0.030450669914737993
+IS_Q2,IS,Is clear and complete contact information provided?,BINARY,1,836,0.69377990430622,,0.6048345529350194,0.12739234449760767,0.2242822966507177,0.0011961722488038277,-0.029306220095693725
+T_Q11,T,"What is the breadth of the team's capabilities in sales/marketing?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts",ORDINAL_MILESTONE,1,821,0.702801461632156,0.609418558431823,0.6479368610562788,0.13032886723507917,0.15347137637028013,0.1315468940316687,0.020706455542021995
+TP_Q7,TP,"What is the product’s DOD/DOE/Isles Utilities Technology Readiness Level?  (If Levels 1-3: 0 pts, If Levels 4-6: 0.5 pts, If Levels 7-9: 1 pt)",ORDINAL_MILESTONE,1,831,0.7051744885679904,,0.7000635107303338,0.04953870838347373,0.27256317689530685,0.0018050541516245488,0.05475330926594446
+T_Q13,T,"What is the breadth of the team's capabilities in systems/IT?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts",ORDINAL_MILESTONE,1,821,0.705237515225335,0.6337264755653556,0.6823381141821195,0.12716199756394642,0.15225334957369063,0.14677222898903775,-0.03654080389768555
+T_Q19,T,"What percentage of team time is spent on the startup?
+ - More than 90%: award 1 pt
+ - 50% to 90%: award 0.5 pts
+ - Less than 50%: award 0 pts",ORDINAL_MILESTONE,1,816,0.7083333333333334,0.6161231249831687,0.6269751162389486,0.13700980392156864,0.17892156862745098,0.1409313725490196,0.035539215686274606
+T_Q8,T,"What is the breadth of the team's capabilities in operations?
+ - Technical, engineering operations, sales + marketing, finance: award 1 pt
+ - Technical, engineering operations: award 0.67 pts
+ - Technical only: award 0.33 pts
+ - None: award 0 pts",ORDINAL_MILESTONE,1,821,0.7137637028014616,0.6226079053386817,0.6594045012264599,0.12813641900121803,0.13337393422655297,0.15286236297198538,0.012180267965895109
+TP_Q5,TP,"How many patents has the company filed, including subsequently granted patents? (If only 1 patent: 0 pts, If only 1-2 patents: 0.5 pts, If 3+ patents: 1 pt)",ORDINAL_MILESTONE,1,835,0.7149700598802395,0.6574887506707463,0.6985521377822723,0.06646706586826347,0.30479041916167665,0.0011976047904191617,0.0011976047904191933

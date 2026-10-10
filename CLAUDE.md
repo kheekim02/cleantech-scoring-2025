@@ -21,9 +21,9 @@ The **CleanTech Open 2025 Diligence Engine** is an end-to-end diligence, scoring
   - `startup_extractions`: Master table storing startup payloads (JSONB) and readiness metadata. AI extraction fields may exist for ops but are not part of the judge-facing UI contract.
   - `human_reviews`: Stores judge scores (`numeric` allowing `0.0`, `0.25`, `0.5`, `0.75`, `1.0`), textual justifications, and reviewer IDs.
   - `judge_assignments`: Manages evaluator-to-startup allocations and completion statuses.
-- **Serverless API Layer (`api/`)**: Netlify / Supabase edge functions:
+- **Serverless API Layer (`api/`)**: Vercel serverless functions:
   - `get-startup.js`: Fetches startup payload and hydrates existing judge reviews.
-  - `save-score.js`: Debounced real-time persistence for scores and justifications.
+  - `sync-scores.js`: Queued persistence for scores and justifications.
   - `list-startups.js`: Supplies startup lists and metadata to dashboards.
 
 ---

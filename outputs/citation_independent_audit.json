@@ -1,0 +1,2899 @@
+{
+  "generated_at": "2026-10-03T18:36:47.904382+00:00",
+  "gates_doc": "docs/CITATION_RATIONALE_AUDIT_GATES.md",
+  "cache_dir": "/data/scraping/datasets/cto_accelerator/ai_cache_v5_parsed",
+  "stats": {
+    "companies": 92,
+    "records": 25944,
+    "cited": 16968,
+    "nonzero": 11384,
+    "zero": 11053
+  },
+  "cohort_status": "RED",
+  "hard_count": 1818,
+  "soft_count": 15879,
+  "by_gate": {
+    "G1.4": 3514,
+    "G2.1": 8530,
+    "G2.2": 1422,
+    "G2.3": 207,
+    "G3.1": 72,
+    "G3.2": 999,
+    "G3.3": 2949,
+    "G3.4": 4
+  },
+  "clone_citation_clusters": 72,
+  "clone_rationale_clusters": 999,
+  "hard_samples": [
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "17",
+      "q_id": "TP_Q5",
+      "detail": "absence language with score 0.5",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "17",
+      "q_id": "IS_Q1",
+      "detail": "citation too short (2 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "IP_Q4",
+      "detail": "rationale too short (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "2DaLoop",
+      "q_id": "L_Q8",
+      "detail": "absence language with score 1.0",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "2DaLoop",
+      "q_id": "T_Q2",
+      "detail": "absence language with score 0.5",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "2DaLoop",
+      "q_id": "T_Q9",
+      "detail": "absence language with score 0.67",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "2DaLoop",
+      "q_id": "T_Q11",
+      "detail": "absence language with score 0.67",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "2DaLoop",
+      "q_id": "IS_Q1",
+      "detail": "citation too short (1 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "2DaLoop",
+      "q_id": "IP_Q16",
+      "detail": "citation too short (2 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "2DaLoop",
+      "q_id": "IP_Q38",
+      "detail": "citation too short (2 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "AmpTrans",
+      "q_id": "L_Q32",
+      "detail": "absence language with score 1.0",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "AmpTrans",
+      "q_id": "L_Q33",
+      "detail": "citation too short (2 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "AmpTrans",
+      "q_id": "IP_Q12",
+      "detail": "citation too short (1 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.1",
+      "company": "AmpTrans",
+      "q_id": "IP_Q49",
+      "detail": "rationale too short (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.1",
+      "company": "AmpTrans",
+      "q_id": "IP_Q50",
+      "detail": "rationale too short (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.1",
+      "company": "AmpTrans",
+      "q_id": "IP_Q52",
+      "detail": "rationale too short (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Apex_Engineering_AI",
+      "q_id": "ES_Q10",
+      "detail": "citation too short (1 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.1",
+      "company": "Apex_Engineering_AI",
+      "q_id": "F_Q16",
+      "detail": "rationale too short (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "Apex_Engineering_AI",
+      "q_id": "L_Q35",
+      "detail": "absence language with score 1.0",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.1",
+      "company": "Apex_Engineering_AI",
+      "q_id": "T_Q4",
+      "detail": "rationale too short (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Apex_Engineering_AI",
+      "q_id": "IS_Q4",
+      "detail": "citation too short (2 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Aris_Hydronics",
+      "q_id": "L_Q32",
+      "detail": "citation too short (1 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Aris_Hydronics",
+      "q_id": "L_Q35",
+      "detail": "citation too short (1 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Aris_Hydronics",
+      "q_id": "L_Q36",
+      "detail": "citation too short (1 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Aris_Hydronics",
+      "q_id": "L_Q37",
+      "detail": "citation too short (1 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Aris_Hydronics",
+      "q_id": "L_Q38",
+      "detail": "citation too short (1 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Aris_Hydronics",
+      "q_id": "L_Q44",
+      "detail": "citation too short (1 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Aris_Hydronics",
+      "q_id": "L_Q48",
+      "detail": "citation too short (1 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Aris_Hydronics",
+      "q_id": "L_Q53",
+      "detail": "citation too short (1 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Aris_Hydronics",
+      "q_id": "IS_Q1",
+      "detail": "citation too short (2 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.1",
+      "company": "Averra",
+      "q_id": "BC_Q4",
+      "detail": "rationale too short (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.1",
+      "company": "Averra",
+      "q_id": "BC_Q5",
+      "detail": "rationale too short (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "Averra",
+      "q_id": "L_Q8",
+      "detail": "absence language with score 1.0",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "Averra",
+      "q_id": "L_Q32",
+      "detail": "absence language with score 1.0",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.1",
+      "company": "Averra",
+      "q_id": "T_Q16",
+      "detail": "rationale too short (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Averra",
+      "q_id": "IS_Q1",
+      "detail": "citation too short (1 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.1",
+      "company": "Averra",
+      "q_id": "IP_Q34",
+      "detail": "rationale too short (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.1",
+      "company": "Biomific",
+      "q_id": "F_Q2",
+      "detail": "rationale too short (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.1",
+      "company": "Biomific",
+      "q_id": "F_Q14",
+      "detail": "rationale too short (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "Biomific",
+      "q_id": "L_Q14",
+      "detail": "absence language with score 1.0",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Biomific",
+      "q_id": "L_Q35",
+      "detail": "citation too short (2 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "Biomific",
+      "q_id": "L_Q35",
+      "detail": "absence language with score 1.0",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Biospheric_AI",
+      "q_id": "IS_Q1",
+      "detail": "citation too short (2 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "Bluesonde_Technologies",
+      "q_id": "L_Q8",
+      "detail": "absence language with score 1.0",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "Bluesonde_Technologies",
+      "q_id": "L_Q37",
+      "detail": "absence language with score 1.0",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "Bluesonde_Technologies",
+      "q_id": "T_Q3",
+      "detail": "absence language with score 0.5",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.1",
+      "company": "CH4_Microbial_Solutions",
+      "q_id": "PMF_Q5",
+      "detail": "rationale too short (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "CH4_Microbial_Solutions",
+      "q_id": "L_Q8",
+      "detail": "absence language with score 1.0",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "CH4_Microbial_Solutions",
+      "q_id": "L_Q32",
+      "detail": "absence language with score 1.0",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "CH4_Microbial_Solutions",
+      "q_id": "L_Q35",
+      "detail": "absence language with score 1.0",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "CH4_Microbial_Solutions",
+      "q_id": "L_Q38",
+      "detail": "absence language with score 1.0",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "CH4_Microbial_Solutions",
+      "q_id": "L_Q44",
+      "detail": "absence language with score 1.0",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "CH4_Microbial_Solutions",
+      "q_id": "L_Q53",
+      "detail": "absence language with score 1.0",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "CH4_Microbial_Solutions",
+      "q_id": "T_Q12",
+      "detail": "absence language with score 0.67",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "CH4_Microbial_Solutions",
+      "q_id": "T_Q14",
+      "detail": "absence language with score 0.67",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.1",
+      "company": "CIRQ+",
+      "q_id": "F_Q2",
+      "detail": "rationale too short (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.1",
+      "company": "CIRQ+",
+      "q_id": "F_Q6",
+      "detail": "rationale too short (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "CIRQ+",
+      "q_id": "L_Q44",
+      "detail": "absence language with score 1.0",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "CIRQ+",
+      "q_id": "T_Q8",
+      "detail": "absence language with score 0.67",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.1",
+      "company": "Calectra",
+      "q_id": "PMF_Q3",
+      "detail": "rationale too short (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.1",
+      "company": "Calectra",
+      "q_id": "F_Q2",
+      "detail": "rationale too short (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.1",
+      "company": "Calectra",
+      "q_id": "F_Q14",
+      "detail": "rationale too short (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "Calectra",
+      "q_id": "L_Q13",
+      "detail": "absence language with score 1.0",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Calectra",
+      "q_id": "L_Q14",
+      "detail": "citation too short (1 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Calectra",
+      "q_id": "L_Q32",
+      "detail": "citation too short (1 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Calectra",
+      "q_id": "L_Q33",
+      "detail": "citation too short (2 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Calectra",
+      "q_id": "L_Q35",
+      "detail": "citation too short (1 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Calectra",
+      "q_id": "L_Q38",
+      "detail": "citation too short (1 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Calectra",
+      "q_id": "L_Q44",
+      "detail": "citation too short (1 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Calectra",
+      "q_id": "L_Q47",
+      "detail": "citation too short (2 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Calectra",
+      "q_id": "L_Q48",
+      "detail": "citation too short (1 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Calectra",
+      "q_id": "L_Q53",
+      "detail": "citation too short (1 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G1.4",
+      "company": "Calectra",
+      "q_id": "IS_Q1",
+      "detail": "citation too short (1 words) for non-zero",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.1",
+      "company": "California_Perovskite_Technology",
+      "q_id": "PMF_Q3",
+      "detail": "rationale too short (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "California_Perovskite_Technology",
+      "q_id": "L_Q13",
+      "detail": "absence language with score 1.0",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "California_Perovskite_Technology",
+      "q_id": "L_Q14",
+      "detail": "absence language with score 1.0",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.3",
+      "company": "California_Perovskite_Technology",
+      "q_id": "L_Q53",
+      "detail": "absence language with score 1.0",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.1",
+      "company": "California_Perovskite_Technology",
+      "q_id": "IP_Q22",
+      "detail": "rationale too short (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.1",
+      "company": "California_Perovskite_Technology",
+      "q_id": "IP_Q23",
+      "detail": "rationale too short (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "HARD",
+      "gate": "G2.1",
+      "company": "California_Perovskite_Technology",
+      "q_id": "IP_Q42",
+      "detail": "rationale too short (5 words)",
+      "extra": {}
+    }
+  ],
+  "soft_samples": [
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "BC_Q2",
+      "detail": "rationale length suboptimal (14 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G1.4",
+      "company": "17",
+      "q_id": "ES_Q1",
+      "detail": "citation length suboptimal (94 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "ES_Q1",
+      "detail": "rationale length suboptimal (8 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "ES_Q3",
+      "detail": "rationale length suboptimal (18 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "ES_Q6",
+      "detail": "rationale length suboptimal (11 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "ES_Q8",
+      "detail": "rationale length suboptimal (19 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "ES_Q10",
+      "detail": "rationale length suboptimal (18 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "PMF_Q17",
+      "detail": "rationale length suboptimal (19 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "PMF_Q23",
+      "detail": "rationale length suboptimal (18 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "PMF_Q24",
+      "detail": "rationale length suboptimal (13 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "PMF_Q25",
+      "detail": "rationale length suboptimal (13 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "PMF_Q26",
+      "detail": "rationale length suboptimal (14 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "PMF_Q27",
+      "detail": "rationale length suboptimal (14 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G1.4",
+      "company": "17",
+      "q_id": "PMF_Q34",
+      "detail": "citation length suboptimal (113 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G1.4",
+      "company": "17",
+      "q_id": "M_Q1",
+      "detail": "citation length suboptimal (2 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G1.4",
+      "company": "17",
+      "q_id": "M_Q4",
+      "detail": "citation length suboptimal (4 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "M_Q6",
+      "detail": "rationale length suboptimal (19 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G1.4",
+      "company": "17",
+      "q_id": "M_Q8",
+      "detail": "citation length suboptimal (2 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "TP_Q1",
+      "detail": "rationale length suboptimal (18 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "TP_Q3",
+      "detail": "rationale length suboptimal (19 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G1.4",
+      "company": "17",
+      "q_id": "TP_Q5",
+      "detail": "citation length suboptimal (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G1.4",
+      "company": "17",
+      "q_id": "TP_Q6",
+      "detail": "citation length suboptimal (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G1.4",
+      "company": "17",
+      "q_id": "F_Q2",
+      "detail": "citation length suboptimal (81 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "F_Q6",
+      "detail": "rationale length suboptimal (17 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G1.4",
+      "company": "17",
+      "q_id": "F_Q9",
+      "detail": "citation length suboptimal (6 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "F_Q14",
+      "detail": "rationale length suboptimal (17 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G1.4",
+      "company": "17",
+      "q_id": "F_Q22",
+      "detail": "citation length suboptimal (6 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G1.4",
+      "company": "17",
+      "q_id": "F_Q24",
+      "detail": "citation length suboptimal (5 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "F_Q25",
+      "detail": "rationale length suboptimal (18 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "F_Q27",
+      "detail": "rationale length suboptimal (18 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q1",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q1",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q2",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q2",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q3",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q3",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q4",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q4",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q5",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q5",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q6",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q6",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q7",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q7",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q8",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q8",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q9",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q9",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q10",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q10",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q11",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q11",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q12",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q12",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q13",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q13",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q14",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q14",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q15",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q15",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q16",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q16",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q17",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q17",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q18",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q18",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q19",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q19",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q20",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q20",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q21",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q21",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q22",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q22",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q23",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q23",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q24",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q24",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.1",
+      "company": "17",
+      "q_id": "L_Q25",
+      "detail": "rationale length suboptimal (9 words)",
+      "extra": {}
+    },
+    {
+      "severity": "SOFT",
+      "gate": "G2.2",
+      "company": "17",
+      "q_id": "L_Q25",
+      "detail": "rationale lacks company-specific tokens/numbers",
+      "extra": {}
+    }
+  ],
+  "top_citation_clones": [
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "17,2DaLoop,Apex_Engineering_AI,Averra,ECORECYCLETECH,Ecosphere_Organics,EvoNatura,Gridwave",
+      "q_id": "F_Q24",
+      "detail": "exact clone across 20 companies",
+      "extra": {
+        "companies": [
+          "17",
+          "2DaLoop",
+          "Apex_Engineering_AI",
+          "Averra",
+          "ECORECYCLETECH",
+          "Ecosphere_Organics",
+          "EvoNatura",
+          "Gridwave",
+          "Karbn",
+          "LIFE3",
+          "LeRTechX_Renewable_Energy",
+          "Novagrid",
+          "Photometrics_AI",
+          "PolyGone_Systems",
+          "R7_Instruments",
+          "SolGrapH",
+          "Spear_the_Air",
+          "Three_Rivers_Power_Limited_Liability",
+          "TiltingSolar",
+          "Wavon_Ceramics_\u2014_Accelerating_Manufacturing"
+        ],
+        "norm_preview": "less taxation 0 0 0"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "AmpTrans,Condor_Calibration_Services,Cryodrives,Curve_Control,EV_Innovations,EvoNatura,Fortifyy_PBC,GreenSight_Technologies",
+      "q_id": "PMF_Q5",
+      "detail": "exact clone across 17 companies",
+      "extra": {
+        "companies": [
+          "AmpTrans",
+          "Condor_Calibration_Services",
+          "Cryodrives",
+          "Curve_Control",
+          "EV_Innovations",
+          "EvoNatura",
+          "Fortifyy_PBC",
+          "GreenSight_Technologies",
+          "H2O_Now",
+          "KVA_Technologies",
+          "LeverageTech_Innovations",
+          "Modulium",
+          "PFASolve",
+          "Scaled_Carbon,_PBC",
+          "Symbiotic_Agriculture",
+          "TiltingSolar",
+          "Wind_Pulse_Energy"
+        ],
+        "norm_preview": "document a sampling below of at least 5 customer interviews you did this week showing what you learned"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "17,2DaLoop,Biomific,ContainerGrid_GmbH,LIFE3,LeRTechX_Renewable_Energy,Photometrics_AI,PolyGone_Systems",
+      "q_id": "F_Q9",
+      "detail": "exact clone across 11 companies",
+      "extra": {
+        "companies": [
+          "17",
+          "2DaLoop",
+          "Biomific",
+          "ContainerGrid_GmbH",
+          "LIFE3",
+          "LeRTechX_Renewable_Energy",
+          "Photometrics_AI",
+          "PolyGone_Systems",
+          "SSG_Environmental",
+          "Spear_the_Air",
+          "Three_Rivers_Power_Limited_Liability"
+        ],
+        "norm_preview": "less capex spent 0 0 0"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "Condor_Calibration_Services,GreenSight_Technologies,Pipeline_Pilot,PolyGone_Systems,SolGrapH,Sol_Robotics,Solar_Intelligence,Teragen_Energy",
+      "q_id": "L_Q33",
+      "detail": "exact clone across 9 companies",
+      "extra": {
+        "companies": [
+          "Condor_Calibration_Services",
+          "GreenSight_Technologies",
+          "Pipeline_Pilot",
+          "PolyGone_Systems",
+          "SolGrapH",
+          "Sol_Robotics",
+          "Solar_Intelligence",
+          "Teragen_Energy",
+          "Volt_Harbor"
+        ],
+        "norm_preview": "delaware c corp"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "GreenSight_Technologies,Pipeline_Pilot,SolGrapH,Sol_Robotics,Solar_Intelligence,Teragen_Energy,Volt_Harbor",
+      "q_id": "L_Q34",
+      "detail": "exact clone across 7 companies",
+      "extra": {
+        "companies": [
+          "GreenSight_Technologies",
+          "Pipeline_Pilot",
+          "SolGrapH",
+          "Sol_Robotics",
+          "Solar_Intelligence",
+          "Teragen_Energy",
+          "Volt_Harbor"
+        ],
+        "norm_preview": "delaware c corp"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "17,Hubbletek,Karbn,LIFE3,Photometrics_AI,Three_Rivers_Power_Limited_Liability",
+      "q_id": "F_Q22",
+      "detail": "exact clone across 6 companies",
+      "extra": {
+        "companies": [
+          "17",
+          "Hubbletek",
+          "Karbn",
+          "LIFE3",
+          "Photometrics_AI",
+          "Three_Rivers_Power_Limited_Liability"
+        ],
+        "norm_preview": "plus financing funding 0 0 0"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "CleanQuity,Foregger_Energy_Solutions,HYDGEN,Modulium,SolenSphere,Teragen_Energy",
+      "q_id": "F_Q24",
+      "detail": "exact clone across 6 companies",
+      "extra": {
+        "companies": [
+          "CleanQuity",
+          "Foregger_Energy_Solutions",
+          "HYDGEN",
+          "Modulium",
+          "SolenSphere",
+          "Teragen_Energy"
+        ],
+        "norm_preview": "less taxation 0 0"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "Bluesonde_Technologies,Core_Envision,H2O_Now,Navia_Energy,Restora_Homes,SPCTA_Industrial",
+      "q_id": "IS_Q13",
+      "detail": "exact clone across 6 companies",
+      "extra": {
+        "companies": [
+          "Bluesonde_Technologies",
+          "Core_Envision",
+          "H2O_Now",
+          "Navia_Energy",
+          "Restora_Homes",
+          "SPCTA_Industrial"
+        ],
+        "norm_preview": "technology status trl 7"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "H2O_Now,Modulium,Teragen_Energy,Wayside",
+      "q_id": "F_Q9",
+      "detail": "exact clone across 4 companies",
+      "extra": {
+        "companies": [
+          "H2O_Now",
+          "Modulium",
+          "Teragen_Energy",
+          "Wayside"
+        ],
+        "norm_preview": "less capex spent 0 0"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "LIFE3,Pinpoint_Irrigation,Teragen_Energy,iGridSim",
+      "q_id": "IS_Q13",
+      "detail": "exact clone across 4 companies",
+      "extra": {
+        "companies": [
+          "LIFE3",
+          "Pinpoint_Irrigation",
+          "Teragen_Energy",
+          "iGridSim"
+        ],
+        "norm_preview": "technology status trl 4"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "Aris_Hydronics,OpenRoad_Technologies,Pipeline_Pilot",
+      "q_id": "F_Q24",
+      "detail": "exact clone across 3 companies",
+      "extra": {
+        "companies": [
+          "Aris_Hydronics",
+          "OpenRoad_Technologies",
+          "Pipeline_Pilot"
+        ],
+        "norm_preview": "less taxation 0 0 0 0 0"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "Biomific,Bluesonde_Technologies,PFASolve",
+      "q_id": "IS_Q4",
+      "detail": "exact clone across 3 companies",
+      "extra": {
+        "companies": [
+          "Biomific",
+          "Bluesonde_Technologies",
+          "PFASolve"
+        ],
+        "norm_preview": "category water amp waste"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "Bonhomme_&_Associates,California_Perovskite_Technology,LIFE3",
+      "q_id": "IS_Q4",
+      "detail": "exact clone across 3 companies",
+      "extra": {
+        "companies": [
+          "Bonhomme_&_Associates",
+          "California_Perovskite_Technology",
+          "LIFE3"
+        ],
+        "norm_preview": "category information amp communication technology"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "Candela_IoT,LeverageTech_Innovations,SSG_Environmental",
+      "q_id": "IS_Q4",
+      "detail": "exact clone across 3 companies",
+      "extra": {
+        "companies": [
+          "Candela_IoT",
+          "LeverageTech_Innovations",
+          "SSG_Environmental"
+        ],
+        "norm_preview": "category i e energy generation energy distribution amp storage energy efficiency green buildings transportation chemical amp advanced materials information amp "
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "CleanQuity,Solar_Intelligence,SolenSphere",
+      "q_id": "IS_Q4",
+      "detail": "exact clone across 3 companies",
+      "extra": {
+        "companies": [
+          "CleanQuity",
+          "Solar_Intelligence",
+          "SolenSphere"
+        ],
+        "norm_preview": "category energy generation"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "Candela_IoT,Gamotech,PolyGone_Systems",
+      "q_id": "IS_Q13",
+      "detail": "exact clone across 3 companies",
+      "extra": {
+        "companies": [
+          "Candela_IoT",
+          "Gamotech",
+          "PolyGone_Systems"
+        ],
+        "norm_preview": "technology status trl 8"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "Condor_Calibration_Services,HYG-Motors_USA,We_Think_Global",
+      "q_id": "IS_Q13",
+      "detail": "exact clone across 3 companies",
+      "extra": {
+        "companies": [
+          "Condor_Calibration_Services",
+          "HYG-Motors_USA",
+          "We_Think_Global"
+        ],
+        "norm_preview": "technology status trl 9"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "GreenSight_Technologies,Pipeline_Pilot,Sol_Robotics",
+      "q_id": "L_Q47",
+      "detail": "exact clone across 3 companies",
+      "extra": {
+        "companies": [
+          "GreenSight_Technologies",
+          "Pipeline_Pilot",
+          "Sol_Robotics"
+        ],
+        "norm_preview": "delaware c corp"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "ECORECYCLETECH,Solar_Intelligence,Wavon_Ceramics_\u2014_Accelerating_Manufacturing",
+      "q_id": "IS_Q5",
+      "detail": "exact clone across 3 companies",
+      "extra": {
+        "companies": [
+          "ECORECYCLETECH",
+          "Solar_Intelligence",
+          "Wavon_Ceramics_\u2014_Accelerating_Manufacturing"
+        ],
+        "norm_preview": "number of employees 2"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "Hubbletek,SolenSphere,Teragen_Energy",
+      "q_id": "IS_Q25",
+      "detail": "exact clone across 3 companies",
+      "extra": {
+        "companies": [
+          "Hubbletek",
+          "SolenSphere",
+          "Teragen_Energy"
+        ],
+        "norm_preview": "funding to date 0"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "CIRQ+,Wind_Pulse_Energy",
+      "q_id": "BC_Q4",
+      "detail": "exact clone across 2 companies",
+      "extra": {
+        "companies": [
+          "CIRQ+",
+          "Wind_Pulse_Energy"
+        ],
+        "norm_preview": "key partners key activities value propositions customer relationships customer segments"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "Calectra,Modulium",
+      "q_id": "BC_Q4",
+      "detail": "exact clone across 2 companies",
+      "extra": {
+        "companies": [
+          "Calectra",
+          "Modulium"
+        ],
+        "norm_preview": "key partnerships key activities value propositions customer relationships key resources channels cost structure customer segments"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "GreenSight_Technologies,LeverageTech_Innovations",
+      "q_id": "PMF_Q4",
+      "detail": "exact clone across 2 companies",
+      "extra": {
+        "companies": [
+          "GreenSight_Technologies",
+          "LeverageTech_Innovations"
+        ],
+        "norm_preview": "document a sampling below of at least 5 customer interviews you did this week showing what you learned"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "Navia_Energy,Solar_Intelligence",
+      "q_id": "PMF_Q5",
+      "detail": "exact clone across 2 companies",
+      "extra": {
+        "companies": [
+          "Navia_Energy",
+          "Solar_Intelligence"
+        ],
+        "norm_preview": "five customer interviews"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.1",
+      "company": "Cryodrives,HYG-Motors_USA",
+      "q_id": "PMF_Q13",
+      "detail": "exact clone across 2 companies",
+      "extra": {
+        "companies": [
+          "Cryodrives",
+          "HYG-Motors_USA"
+        ],
+        "norm_preview": "document a sampling below of at least 5 customer interviews you did this week showing what you learned"
+      }
+    }
+  ],
+  "top_rationale_clones": [
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "17,2DaLoop,AmpTrans,Apex_Engineering_AI,Aris_Hydronics,Averra,Biomific,Biospheric_AI",
+      "q_id": "ES_Q1",
+      "detail": "exact clone across 87 companies",
+      "extra": {
+        "companies": [
+          "17",
+          "2DaLoop",
+          "AmpTrans",
+          "Apex_Engineering_AI",
+          "Aris_Hydronics",
+          "Averra",
+          "Biomific",
+          "Biospheric_AI",
+          "Bluesonde_Technologies",
+          "Bonhomme_&_Associates",
+          "CH4_Microbial_Solutions",
+          "CIRQ+",
+          "Calectra",
+          "California_Perovskite_Technology",
+          "Candela_IoT",
+          "CarbonDots",
+          "Cero_Global_Holdings",
+          "CleanQuity",
+          "Compocity",
+          "Condor_Calibration_Services",
+          "ContainerGrid_GmbH",
+          "Core_Envision",
+          "Cryodrives",
+          "Curve_Control",
+          "ECORECYCLETECH",
+          "EV_Innovations",
+          "Ecosphere_Organics",
+          "EvoNatura",
+          "FLOAT_Modern_Houseboat",
+          "Foregger_Energy_Solutions",
+          "Fortifyy_PBC",
+          "Gamotech",
+          "GreenSight_Technologies",
+          "Gridwave",
+          "H2O_Now",
+          "H2_Everywhere",
+          "HYDGEN",
+          "HYG-Motors_USA",
+          "Hidrogenics_Technologies",
+          "HomeWise_AI",
+          "Hubbletek",
+          "KVA_Technologies",
+          "Karbn",
+          "LIFE3",
+          "LeRTechX_Renewable_Energy",
+          "LeverageTech_Innovations",
+          "Lumiaq",
+          "Lute_&_Ether",
+          "Manara_Materials",
+          "Materium_Technologies",
+          "Modulium",
+          "Novagrid",
+          "OpenRoad_Technologies",
+          "PFASolve",
+          "Photometrics_AI",
+          "Pinpoint_Irrigation",
+          "Pipeline_Pilot",
+          "PolyGone_Systems",
+          "R7_Instruments",
+          "Renovigo_Chemicals",
+          "Restora_Homes",
+          "SBD_Technologies",
+          "SMPnet",
+          "SOLARSYSTEMS",
+          "SSG_Environmental",
+          "Scaled_Carbon,_PBC",
+          "Seyrab",
+          "SolGrapH",
+          "Sol_Robotics",
+          "Solar_Intelligence",
+          "SolenSphere",
+          "Spear_the_Air",
+          "Sterrett_Levin",
+          "Sustainable_Chemicals",
+          "Symbiotic_Agriculture",
+          "Tensor_Planet",
+          "Teragen_Energy",
+          "Three_Rivers_Power_Limited_Liability",
+          "TiltingSolar",
+          "Upstream_Carbon",
+          "Volt_Harbor",
+          "Wavon_Ceramics_\u2014_Accelerating_Manufacturing",
+          "Wayside",
+          "We_Think_Global",
+          "Wind_Pulse_Energy",
+          "Yggdrasil_Trees",
+          "iGridSim"
+        ],
+        "norm_preview": "score based on the cited primary text only"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "AmpTrans,Apex_Engineering_AI,Aris_Hydronics,Averra,Biomific,Bluesonde_Technologies,CH4_Microbial_Solutions,Calectra",
+      "q_id": "PMF_Q27",
+      "detail": "exact clone across 60 companies",
+      "extra": {
+        "companies": [
+          "AmpTrans",
+          "Apex_Engineering_AI",
+          "Aris_Hydronics",
+          "Averra",
+          "Biomific",
+          "Bluesonde_Technologies",
+          "CH4_Microbial_Solutions",
+          "Calectra",
+          "Candela_IoT",
+          "Cero_Global_Holdings",
+          "CleanQuity",
+          "Condor_Calibration_Services",
+          "ContainerGrid_GmbH",
+          "Core_Envision",
+          "Crucible_Energy",
+          "ECORECYCLETECH",
+          "EvoNatura",
+          "Fortifyy_PBC",
+          "Gamotech",
+          "GreenSight_Technologies",
+          "Gridwave",
+          "H2O_Now",
+          "H2_Everywhere",
+          "HYDGEN",
+          "HomeWise_AI",
+          "Hubbletek",
+          "KVA_Technologies",
+          "LIFE3",
+          "LeRTechX_Renewable_Energy",
+          "LeverageTech_Innovations",
+          "Lumiaq",
+          "Lute_&_Ether",
+          "Manara_Materials",
+          "Materium_Technologies",
+          "Modulium",
+          "Navia_Energy",
+          "Novagrid",
+          "PFASolve",
+          "Pipeline_Pilot",
+          "PolyGone_Systems",
+          "Restora_Homes",
+          "SMPnet",
+          "SPCTA_Industrial",
+          "Scaled_Carbon,_PBC",
+          "Sol_Robotics",
+          "Solar_Intelligence",
+          "Structural_BioComposites",
+          "Sustainable_Chemicals",
+          "Symbiotic_Agriculture",
+          "Tensor_Planet",
+          "Teragen_Energy",
+          "TiltingSolar",
+          "Upstream_Carbon",
+          "Vaanelai",
+          "Volt_Harbor",
+          "Wavon_Ceramics_\u2014_Accelerating_Manufacturing",
+          "We_Think_Global",
+          "Wind_Pulse_Energy",
+          "Yggdrasil_Trees",
+          "iGridSim"
+        ],
+        "norm_preview": "the provided documents contain no mention of a branding professional or work with one"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "2DaLoop,AmpTrans,Averra,Bluesonde_Technologies,CH4_Microbial_Solutions,CIRQ+,California_Perovskite_Technology,Candela_IoT",
+      "q_id": "L_Q45",
+      "detail": "exact clone across 58 companies",
+      "extra": {
+        "companies": [
+          "2DaLoop",
+          "AmpTrans",
+          "Averra",
+          "Bluesonde_Technologies",
+          "CH4_Microbial_Solutions",
+          "CIRQ+",
+          "California_Perovskite_Technology",
+          "Candela_IoT",
+          "CarbonDots",
+          "Cero_Global_Holdings",
+          "CleanQuity",
+          "Condor_Calibration_Services",
+          "ContainerGrid_GmbH",
+          "Core_Envision",
+          "Crucible_Energy",
+          "Curve_Control",
+          "EV_Innovations",
+          "Ecosphere_Organics",
+          "EvoNatura",
+          "Fortifyy_PBC",
+          "Gamotech",
+          "GreenSight_Technologies",
+          "Gridwave",
+          "H2O_Now",
+          "H2_Everywhere",
+          "HYDGEN",
+          "HYG-Motors_USA",
+          "Hubbletek",
+          "KVA_Technologies",
+          "LeRTechX_Renewable_Energy",
+          "Manara_Materials",
+          "Materium_Technologies",
+          "Navia_Energy",
+          "PFASolve",
+          "Photometrics_AI",
+          "Pipeline_Pilot",
+          "PolyGone_Systems",
+          "R7_Instruments",
+          "Renovigo_Chemicals",
+          "Restora_Homes",
+          "SBD_Technologies",
+          "SMPnet",
+          "SOLARSYSTEMS",
+          "SSG_Environmental",
+          "Scaled_Carbon,_PBC",
+          "Seyrab",
+          "SolGrapH",
+          "Sol_Robotics",
+          "Solar_Intelligence",
+          "Spear_the_Air",
+          "Symbiotic_Agriculture",
+          "Tensor_Planet",
+          "Teragen_Energy",
+          "TiltingSolar",
+          "Vaanelai",
+          "Wayside",
+          "Yggdrasil_Trees",
+          "iGridSim"
+        ],
+        "norm_preview": "the provided text contains no evidence of press releases marketing studies competitor information customer surveys or sales materials"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "AmpTrans,Apex_Engineering_AI,Aris_Hydronics,Averra,Biomific,Bluesonde_Technologies,CH4_Microbial_Solutions,CIRQ+",
+      "q_id": "L_Q18",
+      "detail": "exact clone across 52 companies",
+      "extra": {
+        "companies": [
+          "AmpTrans",
+          "Apex_Engineering_AI",
+          "Aris_Hydronics",
+          "Averra",
+          "Biomific",
+          "Bluesonde_Technologies",
+          "CH4_Microbial_Solutions",
+          "CIRQ+",
+          "Calectra",
+          "California_Perovskite_Technology",
+          "Compocity",
+          "ContainerGrid_GmbH",
+          "Core_Envision",
+          "Crucible_Energy",
+          "Curve_Control",
+          "EV_Innovations",
+          "Ecosphere_Organics",
+          "EvoNatura",
+          "Gamotech",
+          "Gridwave",
+          "H2_Everywhere",
+          "HYDGEN",
+          "Hubbletek",
+          "KVA_Technologies",
+          "LeRTechX_Renewable_Energy",
+          "Lumiaq",
+          "Manara_Materials",
+          "Materium_Technologies",
+          "PFASolve",
+          "Photometrics_AI",
+          "Pipeline_Pilot",
+          "PolyGone_Systems",
+          "R7_Instruments",
+          "Renovigo_Chemicals",
+          "SBD_Technologies",
+          "SMPnet",
+          "SOLARSYSTEMS",
+          "SSG_Environmental",
+          "Seyrab",
+          "SolGrapH",
+          "Sol_Robotics",
+          "Spear_the_Air",
+          "Structural_BioComposites",
+          "Teragen_Energy",
+          "Vaanelai",
+          "Volt_Harbor",
+          "Wavon_Ceramics_\u2014_Accelerating_Manufacturing",
+          "Wayside",
+          "We_Think_Global",
+          "Wind_Pulse_Energy",
+          "Yggdrasil_Trees",
+          "iGridSim"
+        ],
+        "norm_preview": "the provided text contains no information regarding website archival practices or the ability to prove historical website content"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "17,2DaLoop,Apex_Engineering_AI,Aris_Hydronics,Biomific,Bluesonde_Technologies,CH4_Microbial_Solutions,California_Perovskite_Technology",
+      "q_id": "IP_Q58",
+      "detail": "exact clone across 48 companies",
+      "extra": {
+        "companies": [
+          "17",
+          "2DaLoop",
+          "Apex_Engineering_AI",
+          "Aris_Hydronics",
+          "Biomific",
+          "Bluesonde_Technologies",
+          "CH4_Microbial_Solutions",
+          "California_Perovskite_Technology",
+          "Cero_Global_Holdings",
+          "CleanQuity",
+          "Condor_Calibration_Services",
+          "Curve_Control",
+          "ECORECYCLETECH",
+          "EV_Innovations",
+          "Ecosphere_Organics",
+          "EvoNatura",
+          "Fortifyy_PBC",
+          "Gamotech",
+          "GreenSight_Technologies",
+          "H2O_Now",
+          "H2_Everywhere",
+          "HYDGEN",
+          "Hidrogenics_Technologies",
+          "HomeWise_AI",
+          "Hubbletek",
+          "Karbn",
+          "LIFE3",
+          "LeRTechX_Renewable_Energy",
+          "Lumiaq",
+          "Manara_Materials",
+          "OpenRoad_Technologies",
+          "PFASolve",
+          "Photometrics_AI",
+          "PolyGone_Systems",
+          "Restora_Homes",
+          "SBD_Technologies",
+          "SSG_Environmental",
+          "Sol_Robotics",
+          "Solar_Intelligence",
+          "SolenSphere",
+          "Spear_the_Air",
+          "Sterrett_Levin",
+          "Structural_BioComposites",
+          "TiltingSolar",
+          "Volt_Harbor",
+          "We_Think_Global",
+          "Wind_Pulse_Energy",
+          "Yggdrasil_Trees"
+        ],
+        "norm_preview": "score based on the cited primary text only"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "2DaLoop,AmpTrans,Apex_Engineering_AI,Aris_Hydronics,Averra,Biomific,CH4_Microbial_Solutions,California_Perovskite_Technology",
+      "q_id": "T_Q19",
+      "detail": "exact clone across 43 companies",
+      "extra": {
+        "companies": [
+          "2DaLoop",
+          "AmpTrans",
+          "Apex_Engineering_AI",
+          "Aris_Hydronics",
+          "Averra",
+          "Biomific",
+          "CH4_Microbial_Solutions",
+          "California_Perovskite_Technology",
+          "CleanQuity",
+          "Compocity",
+          "ContainerGrid_GmbH",
+          "Core_Envision",
+          "Curve_Control",
+          "Ecosphere_Organics",
+          "EvoNatura",
+          "GreenSight_Technologies",
+          "H2_Everywhere",
+          "HYDGEN",
+          "HYG-Motors_USA",
+          "KVA_Technologies",
+          "LIFE3",
+          "Materium_Technologies",
+          "Novagrid",
+          "PFASolve",
+          "Photometrics_AI",
+          "Pipeline_Pilot",
+          "PolyGone_Systems",
+          "R7_Instruments",
+          "Renovigo_Chemicals",
+          "Restora_Homes",
+          "SBD_Technologies",
+          "SMPnet",
+          "SPCTA_Industrial",
+          "Scaled_Carbon,_PBC",
+          "Sol_Robotics",
+          "Solar_Intelligence",
+          "SolenSphere",
+          "Spear_the_Air",
+          "Tensor_Planet",
+          "Teragen_Energy",
+          "Upstream_Carbon",
+          "Vaanelai",
+          "Yggdrasil_Trees"
+        ],
+        "norm_preview": "the provided documents do not contain any information regarding the percentage of time team members spend on the startup"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "2DaLoop,Apex_Engineering_AI,Aris_Hydronics,Biomific,Bluesonde_Technologies,Calectra,California_Perovskite_Technology,Candela_IoT",
+      "q_id": "PMF_Q23",
+      "detail": "exact clone across 41 companies",
+      "extra": {
+        "companies": [
+          "2DaLoop",
+          "Apex_Engineering_AI",
+          "Aris_Hydronics",
+          "Biomific",
+          "Bluesonde_Technologies",
+          "Calectra",
+          "California_Perovskite_Technology",
+          "Candela_IoT",
+          "Cero_Global_Holdings",
+          "Condor_Calibration_Services",
+          "ContainerGrid_GmbH",
+          "Crucible_Energy",
+          "Curve_Control",
+          "Ecosphere_Organics",
+          "EvoNatura",
+          "Gamotech",
+          "GreenSight_Technologies",
+          "H2_Everywhere",
+          "HYDGEN",
+          "KVA_Technologies",
+          "LIFE3",
+          "LeverageTech_Innovations",
+          "Lumiaq",
+          "Manara_Materials",
+          "Materium_Technologies",
+          "Navia_Energy",
+          "Novagrid",
+          "PFASolve",
+          "PolyGone_Systems",
+          "Restora_Homes",
+          "SMPnet",
+          "Scaled_Carbon,_PBC",
+          "Solar_Intelligence",
+          "Sustainable_Chemicals",
+          "Tensor_Planet",
+          "Teragen_Energy",
+          "Upstream_Carbon",
+          "Volt_Harbor",
+          "We_Think_Global",
+          "Wind_Pulse_Energy",
+          "iGridSim"
+        ],
+        "norm_preview": "the provided documents contain no information regarding the startup s logo or its visual discernibility at small sizes"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "2DaLoop,Aris_Hydronics,Biomific,Bluesonde_Technologies,CH4_Microbial_Solutions,Calectra,Candela_IoT,Cero_Global_Holdings",
+      "q_id": "PMF_Q22",
+      "detail": "exact clone across 36 companies",
+      "extra": {
+        "companies": [
+          "2DaLoop",
+          "Aris_Hydronics",
+          "Biomific",
+          "Bluesonde_Technologies",
+          "CH4_Microbial_Solutions",
+          "Calectra",
+          "Candela_IoT",
+          "Cero_Global_Holdings",
+          "Crucible_Energy",
+          "EvoNatura",
+          "Fortifyy_PBC",
+          "Gamotech",
+          "GreenSight_Technologies",
+          "H2O_Now",
+          "H2_Everywhere",
+          "HomeWise_AI",
+          "Hubbletek",
+          "LIFE3",
+          "LeRTechX_Renewable_Energy",
+          "LeverageTech_Innovations",
+          "Modulium",
+          "Navia_Energy",
+          "PFASolve",
+          "Pipeline_Pilot",
+          "PolyGone_Systems",
+          "Restora_Homes",
+          "SMPnet",
+          "Sol_Robotics",
+          "Solar_Intelligence",
+          "Structural_BioComposites",
+          "Tensor_Planet",
+          "Vaanelai",
+          "Volt_Harbor",
+          "Wavon_Ceramics_\u2014_Accelerating_Manufacturing",
+          "We_Think_Global",
+          "Wind_Pulse_Energy"
+        ],
+        "norm_preview": "the provided documents contain no mention of a user or customer research professional being involved in the startup s process"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "AmpTrans,Biomific,Biospheric_AI,CH4_Microbial_Solutions,California_Perovskite_Technology,ContainerGrid_GmbH,ECORECYCLETECH,EvoNatura",
+      "q_id": "IS_Q3",
+      "detail": "exact clone across 33 companies",
+      "extra": {
+        "companies": [
+          "AmpTrans",
+          "Biomific",
+          "Biospheric_AI",
+          "CH4_Microbial_Solutions",
+          "California_Perovskite_Technology",
+          "ContainerGrid_GmbH",
+          "ECORECYCLETECH",
+          "EvoNatura",
+          "GreenSight_Technologies",
+          "Hubbletek",
+          "KVA_Technologies",
+          "LIFE3",
+          "LeRTechX_Renewable_Energy",
+          "Manara_Materials",
+          "Modulium",
+          "Navia_Energy",
+          "Novagrid",
+          "PFASolve",
+          "Photometrics_AI",
+          "R7_Instruments",
+          "Renovigo_Chemicals",
+          "SBD_Technologies",
+          "SSG_Environmental",
+          "Scaled_Carbon,_PBC",
+          "SolGrapH",
+          "Spear_the_Air",
+          "Sustainable_Chemicals",
+          "Symbiotic_Agriculture",
+          "Tensor_Planet",
+          "TiltingSolar",
+          "Upstream_Carbon",
+          "Volt_Harbor",
+          "iGridSim"
+        ],
+        "norm_preview": "the provided text contains no mention of a company logo or visual branding assets"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "AmpTrans,Aris_Hydronics,Cero_Global_Holdings,CleanQuity,Condor_Calibration_Services,Curve_Control,Ecosphere_Organics,EvoNatura",
+      "q_id": "PMF_Q24",
+      "detail": "exact clone across 32 companies",
+      "extra": {
+        "companies": [
+          "AmpTrans",
+          "Aris_Hydronics",
+          "Cero_Global_Holdings",
+          "CleanQuity",
+          "Condor_Calibration_Services",
+          "Curve_Control",
+          "Ecosphere_Organics",
+          "EvoNatura",
+          "Fortifyy_PBC",
+          "H2O_Now",
+          "Hubbletek",
+          "KVA_Technologies",
+          "LeRTechX_Renewable_Energy",
+          "Lumiaq",
+          "Lute_&_Ether",
+          "Modulium",
+          "Novagrid",
+          "PFASolve",
+          "Pipeline_Pilot",
+          "PolyGone_Systems",
+          "Scaled_Carbon,_PBC",
+          "Sol_Robotics",
+          "Solar_Intelligence",
+          "Sustainable_Chemicals",
+          "Symbiotic_Agriculture",
+          "Tensor_Planet",
+          "TiltingSolar",
+          "Upstream_Carbon",
+          "Vaanelai",
+          "Wavon_Ceramics_\u2014_Accelerating_Manufacturing",
+          "Yggdrasil_Trees",
+          "iGridSim"
+        ],
+        "norm_preview": "the provided documents contain no mention of a logo or its visual characteristics"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "Calectra,California_Perovskite_Technology,Candela_IoT,Cero_Global_Holdings,Condor_Calibration_Services,Crucible_Energy,Cryodrives,EvoNatura",
+      "q_id": "PMF_Q3",
+      "detail": "exact clone across 31 companies",
+      "extra": {
+        "companies": [
+          "Calectra",
+          "California_Perovskite_Technology",
+          "Candela_IoT",
+          "Cero_Global_Holdings",
+          "Condor_Calibration_Services",
+          "Crucible_Energy",
+          "Cryodrives",
+          "EvoNatura",
+          "Fortifyy_PBC",
+          "GreenSight_Technologies",
+          "H2O_Now",
+          "H2_Everywhere",
+          "HYG-Motors_USA",
+          "LeverageTech_Innovations",
+          "Lute_&_Ether",
+          "Manara_Materials",
+          "Modulium",
+          "Navia_Energy",
+          "PFASolve",
+          "Pipeline_Pilot",
+          "PolyGone_Systems",
+          "Restora_Homes",
+          "SMPnet",
+          "Scaled_Carbon,_PBC",
+          "Seyrab",
+          "Sol_Robotics",
+          "Solar_Intelligence",
+          "SolenSphere",
+          "Symbiotic_Agriculture",
+          "TiltingSolar",
+          "Wavon_Ceramics_\u2014_Accelerating_Manufacturing"
+        ],
+        "norm_preview": "evaluation failed or timed out"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "AmpTrans,Aris_Hydronics,Biomific,Candela_IoT,ContainerGrid_GmbH,Ecosphere_Organics,Fortifyy_PBC,Gamotech",
+      "q_id": "PMF_Q26",
+      "detail": "exact clone across 31 companies",
+      "extra": {
+        "companies": [
+          "AmpTrans",
+          "Aris_Hydronics",
+          "Biomific",
+          "Candela_IoT",
+          "ContainerGrid_GmbH",
+          "Ecosphere_Organics",
+          "Fortifyy_PBC",
+          "Gamotech",
+          "Gridwave",
+          "H2O_Now",
+          "H2_Everywhere",
+          "HYDGEN",
+          "Hubbletek",
+          "LeRTechX_Renewable_Energy",
+          "Lumiaq",
+          "Lute_&_Ether",
+          "Modulium",
+          "Navia_Energy",
+          "PFASolve",
+          "SPCTA_Industrial",
+          "Scaled_Carbon,_PBC",
+          "Seyrab",
+          "Sol_Robotics",
+          "Sustainable_Chemicals",
+          "Tensor_Planet",
+          "TiltingSolar",
+          "Upstream_Carbon",
+          "Vaanelai",
+          "We_Think_Global",
+          "Wind_Pulse_Energy",
+          "iGridSim"
+        ],
+        "norm_preview": "the provided documents contain no evidence of a visual design system website or email assets"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "Biomific,CH4_Microbial_Solutions,Calectra,California_Perovskite_Technology,CarbonDots,Cryodrives,EV_Innovations,Ecosphere_Organics",
+      "q_id": "IP_Q9",
+      "detail": "exact clone across 30 companies",
+      "extra": {
+        "companies": [
+          "Biomific",
+          "CH4_Microbial_Solutions",
+          "Calectra",
+          "California_Perovskite_Technology",
+          "CarbonDots",
+          "Cryodrives",
+          "EV_Innovations",
+          "Ecosphere_Organics",
+          "EvoNatura",
+          "Foregger_Energy_Solutions",
+          "H2O_Now",
+          "Hidrogenics_Technologies",
+          "Karbn",
+          "LeRTechX_Renewable_Energy",
+          "Lute_&_Ether",
+          "OpenRoad_Technologies",
+          "PFASolve",
+          "Photometrics_AI",
+          "PolyGone_Systems",
+          "Renovigo_Chemicals",
+          "SPCTA_Industrial",
+          "Sol_Robotics",
+          "Solar_Intelligence",
+          "Sterrett_Levin",
+          "Structural_BioComposites",
+          "Symbiotic_Agriculture",
+          "TiltingSolar",
+          "Wayside",
+          "We_Think_Global",
+          "Yggdrasil_Trees"
+        ],
+        "norm_preview": "the provided text contains no customer testimonials endorsements or validating quotes from third parties"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "Biomific,CIRQ+,Calectra,Candela_IoT,Cero_Global_Holdings,Core_Envision,FLOAT_Modern_Houseboat,Gridwave",
+      "q_id": "F_Q2",
+      "detail": "exact clone across 26 companies",
+      "extra": {
+        "companies": [
+          "Biomific",
+          "CIRQ+",
+          "Calectra",
+          "Candela_IoT",
+          "Cero_Global_Holdings",
+          "Core_Envision",
+          "FLOAT_Modern_Houseboat",
+          "Gridwave",
+          "HYDGEN",
+          "Hidrogenics_Technologies",
+          "Hubbletek",
+          "KVA_Technologies",
+          "LeverageTech_Innovations",
+          "R7_Instruments",
+          "SMPnet",
+          "SOLARSYSTEMS",
+          "SSG_Environmental",
+          "Scaled_Carbon,_PBC",
+          "Seyrab",
+          "Sol_Robotics",
+          "Spear_the_Air",
+          "Structural_BioComposites",
+          "Tensor_Planet",
+          "Upstream_Carbon",
+          "Wavon_Ceramics_\u2014_Accelerating_Manufacturing",
+          "Wind_Pulse_Energy"
+        ],
+        "norm_preview": "evaluation failed or timed out"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "2DaLoop,AmpTrans,CH4_Microbial_Solutions,California_Perovskite_Technology,CarbonDots,CleanQuity,Compocity,Condor_Calibration_Services",
+      "q_id": "T_Q26",
+      "detail": "exact clone across 26 companies",
+      "extra": {
+        "companies": [
+          "2DaLoop",
+          "AmpTrans",
+          "CH4_Microbial_Solutions",
+          "California_Perovskite_Technology",
+          "CarbonDots",
+          "CleanQuity",
+          "Compocity",
+          "Condor_Calibration_Services",
+          "Curve_Control",
+          "ECORECYCLETECH",
+          "GreenSight_Technologies",
+          "HYG-Motors_USA",
+          "Karbn",
+          "LIFE3",
+          "Navia_Energy",
+          "Photometrics_AI",
+          "R7_Instruments",
+          "Renovigo_Chemicals",
+          "Restora_Homes",
+          "SMPnet",
+          "SOLARSYSTEMS",
+          "Scaled_Carbon,_PBC",
+          "Spear_the_Air",
+          "Structural_BioComposites",
+          "Symbiotic_Agriculture",
+          "Yggdrasil_Trees"
+        ],
+        "norm_preview": "the provided documents contain no mention of angel investors fundraising amounts or completed deals"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "2DaLoop,Averra,California_Perovskite_Technology,ContainerGrid_GmbH,Cryodrives,Ecosphere_Organics,GreenSight_Technologies,HYDGEN",
+      "q_id": "ES_Q9",
+      "detail": "exact clone across 23 companies",
+      "extra": {
+        "companies": [
+          "2DaLoop",
+          "Averra",
+          "California_Perovskite_Technology",
+          "ContainerGrid_GmbH",
+          "Cryodrives",
+          "Ecosphere_Organics",
+          "GreenSight_Technologies",
+          "HYDGEN",
+          "LeverageTech_Innovations",
+          "Materium_Technologies",
+          "Pinpoint_Irrigation",
+          "Renovigo_Chemicals",
+          "SOLARSYSTEMS",
+          "SSG_Environmental",
+          "SolGrapH",
+          "Sol_Robotics",
+          "Sterrett_Levin",
+          "Sustainable_Chemicals",
+          "Tensor_Planet",
+          "TiltingSolar",
+          "Upstream_Carbon",
+          "Wavon_Ceramics_\u2014_Accelerating_Manufacturing",
+          "We_Think_Global"
+        ],
+        "norm_preview": "score withheld the citation is not an exact continuous span of a primary document"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "Averra,Biomific,Bluesonde_Technologies,Calectra,California_Perovskite_Technology,Cero_Global_Holdings,Crucible_Energy,ECORECYCLETECH",
+      "q_id": "L_Q17",
+      "detail": "exact clone across 23 companies",
+      "extra": {
+        "companies": [
+          "Averra",
+          "Biomific",
+          "Bluesonde_Technologies",
+          "Calectra",
+          "California_Perovskite_Technology",
+          "Cero_Global_Holdings",
+          "Crucible_Energy",
+          "ECORECYCLETECH",
+          "Ecosphere_Organics",
+          "EvoNatura",
+          "Gridwave",
+          "H2_Everywhere",
+          "HYDGEN",
+          "Hubbletek",
+          "PFASolve",
+          "PolyGone_Systems",
+          "Restora_Homes",
+          "SBD_Technologies",
+          "SMPnet",
+          "Sol_Robotics",
+          "Spear_the_Air",
+          "Symbiotic_Agriculture",
+          "Wavon_Ceramics_\u2014_Accelerating_Manufacturing"
+        ],
+        "norm_preview": "the provided text contains no mention of website registration or domain ownership"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "Aris_Hydronics,Averra,Bluesonde_Technologies,Candela_IoT,CarbonDots,Condor_Calibration_Services,EvoNatura,HYG-Motors_USA",
+      "q_id": "L_Q41",
+      "detail": "exact clone across 23 companies",
+      "extra": {
+        "companies": [
+          "Aris_Hydronics",
+          "Averra",
+          "Bluesonde_Technologies",
+          "Candela_IoT",
+          "CarbonDots",
+          "Condor_Calibration_Services",
+          "EvoNatura",
+          "HYG-Motors_USA",
+          "KVA_Technologies",
+          "LIFE3",
+          "Lute_&_Ether",
+          "Manara_Materials",
+          "Pipeline_Pilot",
+          "R7_Instruments",
+          "Renovigo_Chemicals",
+          "SBD_Technologies",
+          "SSG_Environmental",
+          "Scaled_Carbon,_PBC",
+          "Seyrab",
+          "Sol_Robotics",
+          "Symbiotic_Agriculture",
+          "Vaanelai",
+          "iGridSim"
+        ],
+        "norm_preview": "the provided text contains no mention of employee handbooks osha examinations or specific hr policies such as vacation or benefits"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "AmpTrans,Averra,California_Perovskite_Technology,Candela_IoT,ContainerGrid_GmbH,EvoNatura,GreenSight_Technologies,Gridwave",
+      "q_id": "T_Q14",
+      "detail": "exact clone across 23 companies",
+      "extra": {
+        "companies": [
+          "AmpTrans",
+          "Averra",
+          "California_Perovskite_Technology",
+          "Candela_IoT",
+          "ContainerGrid_GmbH",
+          "EvoNatura",
+          "GreenSight_Technologies",
+          "Gridwave",
+          "HYG-Motors_USA",
+          "LeRTechX_Renewable_Energy",
+          "Photometrics_AI",
+          "Pinpoint_Irrigation",
+          "Restora_Homes",
+          "SBD_Technologies",
+          "SMPnet",
+          "SOLARSYSTEMS",
+          "SPCTA_Industrial",
+          "Seyrab",
+          "Structural_BioComposites",
+          "Vaanelai",
+          "Wayside",
+          "Yggdrasil_Trees",
+          "iGridSim"
+        ],
+        "norm_preview": "score withheld the citation is not an exact continuous span of a primary document"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "17,Bluesonde_Technologies,CH4_Microbial_Solutions,Candela_IoT,CarbonDots,Curve_Control,H2O_Now,KVA_Technologies",
+      "q_id": "ES_Q6",
+      "detail": "exact clone across 22 companies",
+      "extra": {
+        "companies": [
+          "17",
+          "Bluesonde_Technologies",
+          "CH4_Microbial_Solutions",
+          "Candela_IoT",
+          "CarbonDots",
+          "Curve_Control",
+          "H2O_Now",
+          "KVA_Technologies",
+          "Karbn",
+          "Manara_Materials",
+          "Modulium",
+          "Navia_Energy",
+          "Photometrics_AI",
+          "R7_Instruments",
+          "Scaled_Carbon,_PBC",
+          "SolGrapH",
+          "SolenSphere",
+          "Sustainable_Chemicals",
+          "Tensor_Planet",
+          "Teragen_Energy",
+          "Three_Rivers_Power_Limited_Liability",
+          "TiltingSolar"
+        ],
+        "norm_preview": "the provided documents do not mention any certifications by environmental organizations"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "Cero_Global_Holdings,Compocity,Core_Envision,Curve_Control,FLOAT_Modern_Houseboat,Gamotech,Gridwave,H2_Everywhere",
+      "q_id": "F_Q3",
+      "detail": "exact clone across 22 companies",
+      "extra": {
+        "companies": [
+          "Cero_Global_Holdings",
+          "Compocity",
+          "Core_Envision",
+          "Curve_Control",
+          "FLOAT_Modern_Houseboat",
+          "Gamotech",
+          "Gridwave",
+          "H2_Everywhere",
+          "HomeWise_AI",
+          "Hubbletek",
+          "LIFE3",
+          "R7_Instruments",
+          "SMPnet",
+          "SOLARSYSTEMS",
+          "SSG_Environmental",
+          "Scaled_Carbon,_PBC",
+          "Seyrab",
+          "Structural_BioComposites",
+          "Tensor_Planet",
+          "Vaanelai",
+          "Wavon_Ceramics_\u2014_Accelerating_Manufacturing",
+          "We_Think_Global"
+        ],
+        "norm_preview": "evaluation failed or timed out"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "2DaLoop,Biospheric_AI,Condor_Calibration_Services,ContainerGrid_GmbH,Curve_Control,Fortifyy_PBC,LeverageTech_Innovations,Modulium",
+      "q_id": "IS_Q33",
+      "detail": "exact clone across 22 companies",
+      "extra": {
+        "companies": [
+          "2DaLoop",
+          "Biospheric_AI",
+          "Condor_Calibration_Services",
+          "ContainerGrid_GmbH",
+          "Curve_Control",
+          "Fortifyy_PBC",
+          "LeverageTech_Innovations",
+          "Modulium",
+          "Navia_Energy",
+          "PFASolve",
+          "Pinpoint_Irrigation",
+          "PolyGone_Systems",
+          "SOLARSYSTEMS",
+          "SSG_Environmental",
+          "SolenSphere",
+          "Sterrett_Levin",
+          "Structural_BioComposites",
+          "Tensor_Planet",
+          "Three_Rivers_Power_Limited_Liability",
+          "Vaanelai",
+          "Wavon_Ceramics_\u2014_Accelerating_Manufacturing",
+          "iGridSim"
+        ],
+        "norm_preview": "score based on the cited primary text only"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "AmpTrans,Averra,California_Perovskite_Technology,Candela_IoT,EvoNatura,FLOAT_Modern_Houseboat,GreenSight_Technologies,Gridwave",
+      "q_id": "T_Q12",
+      "detail": "exact clone across 21 companies",
+      "extra": {
+        "companies": [
+          "AmpTrans",
+          "Averra",
+          "California_Perovskite_Technology",
+          "Candela_IoT",
+          "EvoNatura",
+          "FLOAT_Modern_Houseboat",
+          "GreenSight_Technologies",
+          "Gridwave",
+          "HYG-Motors_USA",
+          "HomeWise_AI",
+          "LeRTechX_Renewable_Energy",
+          "Photometrics_AI",
+          "Restora_Homes",
+          "SBD_Technologies",
+          "SMPnet",
+          "SOLARSYSTEMS",
+          "SPCTA_Industrial",
+          "Structural_BioComposites",
+          "Vaanelai",
+          "Wayside",
+          "iGridSim"
+        ],
+        "norm_preview": "score withheld the citation is not an exact continuous span of a primary document"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "CarbonDots,Cero_Global_Holdings,Compocity,Condor_Calibration_Services,EvoNatura,Gamotech,H2_Everywhere,HYDGEN",
+      "q_id": "IS_Q29",
+      "detail": "exact clone across 21 companies",
+      "extra": {
+        "companies": [
+          "CarbonDots",
+          "Cero_Global_Holdings",
+          "Compocity",
+          "Condor_Calibration_Services",
+          "EvoNatura",
+          "Gamotech",
+          "H2_Everywhere",
+          "HYDGEN",
+          "HomeWise_AI",
+          "Karbn",
+          "Lumiaq",
+          "SOLARSYSTEMS",
+          "SPCTA_Industrial",
+          "Seyrab",
+          "SolGrapH",
+          "Sol_Robotics",
+          "Tensor_Planet",
+          "TiltingSolar",
+          "Volt_Harbor",
+          "Wayside",
+          "We_Think_Global"
+        ],
+        "norm_preview": "the applicant provides a direct youtube link which is a public platform indicating the video is available to the public"
+      }
+    },
+    {
+      "severity": "HARD",
+      "gate": "G3.2",
+      "company": "CH4_Microbial_Solutions,Candela_IoT,CleanQuity,Condor_Calibration_Services,Crucible_Energy,Gridwave,HomeWise_AI,KVA_Technologies",
+      "q_id": "PMF_Q16",
+      "detail": "exact clone across 20 companies",
+      "extra": {
+        "companies": [
+          "CH4_Microbial_Solutions",
+          "Candela_IoT",
+          "CleanQuity",
+          "Condor_Calibration_Services",
+          "Crucible_Energy",
+          "Gridwave",
+          "HomeWise_AI",
+          "KVA_Technologies",
+          "Lute_&_Ether",
+          "Manara_Materials",
+          "Modulium",
+          "Pipeline_Pilot",
+          "PolyGone_Systems",
+          "Seyrab",
+          "Solar_Intelligence",
+          "Structural_BioComposites",
+          "Symbiotic_Agriculture",
+          "Teragen_Energy",
+          "TiltingSolar",
+          "Vaanelai"
+        ],
+        "norm_preview": "the provided documents contain no mention of net promoter score nps or any embedded feedback mechanism"
+      }
+    }
+  ]
+}

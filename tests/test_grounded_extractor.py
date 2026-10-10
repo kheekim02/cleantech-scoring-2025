@@ -51,11 +51,31 @@ class TestGroundedExtractor(unittest.TestCase):
             }
         ]
 
-        # Valid verbatim citation
-        matched = match_citation_to_chunks("ammonia production solution that reduces GHG emissions", chunks)
+        # Valid verbatim citation of eight or more words
+        matched = match_citation_to_chunks(
+            "scalable intermittent ammonia production solution that reduces GHG emissions",
+            chunks,
+        )
         self.assertIsNotNone(matched)
         self.assertEqual(matched["page_number"], 1)
         self.assertEqual(matched["source_pdf"], "04_17Inc_EBD2ImpactStatement.pdf")
+        self.assertEqual(matched["match_tier"], 1)
+
+        # A one-word exact token is kept
+        short_name = match_citation_to_chunks("400Mt", chunks)
+        self.assertIsNotNone(short_name)
+
+        # Four to seven words are rejected even when they occur in the chunk
+        medium = match_citation_to_chunks("ammonia production solution that reduces", chunks)
+        self.assertIsNone(medium)
+
+        # Two real sentences joined together are not one span
+        spliced = match_citation_to_chunks(
+            "ammonia production solution that reduces GHG emissions by 400Mt. "
+            "Projected year-3 EBITDA is $4.2M with unit economics",
+            chunks,
+        )
+        self.assertIsNone(spliced)
 
         # Hallucinated citation
         hallucinated = match_citation_to_chunks("This company was founded in 1999 by Elon Musk", chunks)

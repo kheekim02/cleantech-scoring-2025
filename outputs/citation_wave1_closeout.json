@@ -1,0 +1,55 @@
+{
+  "wave": "1",
+  "generated_at": "2026-10-04T00:01:33.215948+00:00",
+  "hygiene_pass1": {
+    "shadow_to_no_evidence": 1330,
+    "records": 25944,
+    "scaffolding_cites": 27,
+    "scaffolding_zero_cite_stripped": 25,
+    "junk_micro_withheld": 124,
+    "scaffolding_nonzero_withheld": 2
+  },
+  "hygiene_pass2": {
+    "records": 25944,
+    "junk_micro_withheld": 8
+  },
+  "post_checks": {
+    "shadow_null_null": 0,
+    "error_codes": {
+      "NO_EVIDENCE": 1330,
+      "WITHHELD_UNSUPPORTED_CLAIM": 276,
+      "WITHHELD_UNGROUNDED": 640,
+      "TIMEOUT": 256,
+      "WITHHELD_SCORE_ABSENCE_MISMATCH": 49,
+      "NO_PRIMARY": 1422
+    },
+    "engineered_rationales": 0,
+    "scaffolding_cites_left": 0,
+    "junk_micro_nonzero_left": 0
+  },
+  "integrity": {
+    "status": "GREEN",
+    "readable_primary_maps": 92,
+    "hard_count": 0
+  },
+  "independent_audit": {
+    "status": "GREEN",
+    "hard": 0,
+    "soft": 11013,
+    "by_gate": {
+      "G1.4": 3111,
+      "G2.1": 5140,
+      "G2.2": 16,
+      "G3.2": 417,
+      "G3.3": 2327,
+      "G3.4": 2
+    }
+  },
+  "exit_criteria": {
+    "shadow_cleared": true,
+    "scaffolding_cleared": true,
+    "junk_nonzero_cleared": true,
+    "integrity_green": true,
+    "independent_hard_zero": true
+  }
+}

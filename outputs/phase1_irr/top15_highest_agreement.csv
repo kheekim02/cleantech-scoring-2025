@@ -1,0 +1,29 @@
+q_id,cat,question_text,archetype,is_objective,n_pairs,exact_agree,kappa_linear,icc_2_1,mad_norm,floor_pct,ceiling_pct,rater_bias
+ES_Q1,ES,"Company purpose directly addresses two or more United Nations Sustainable Development Goals (SDGs), maximizing environmental, economic, and social value (Two or more: 1, One only: 0.5, None: 0).",ORDINAL_MILESTONE,1,834,0.9796163069544365,0.5314297045409478,0.5317284481333291,0.02038369304556355,0.022182254196642687,0.9778177458033573,-0.015587529976019199
+PMF_Q16,PMF,Startups has embedded Net Promoter Score (NPS) into ongoing feedback.,BINARY,1,825,0.9684848484848485,,0.4864789642261907,0.027006060606060606,0.9696969696969697,0.0036363636363636364,0.003745454545454544
+F_Q22,F,Do return on equity and return on assets projections assume repayment of investor equity and return on investor equity?,BINARY,1,825,0.9636363636363636,,0.6220767284232323,0.028808080808080807,0.9545454545454546,0.0006060606060606061,0.03066666666666666
+T_Q29,T,"From which ecosystem has the company hired from, raised money, or completed deals — Grants/NGOs?
+ - $10m+: award 1 pt
+ - $2m to $10m: award 0.67 pts
+ - $250k to $2m: award 0.33 pts
+ - None: award 0 pts",ORDINAL_MILESTONE,1,767,0.9634941329856584,,0.6017234987204872,0.012255541069100392,0.9295958279009127,0.001303780964797914,0.014341590612777053
+T_Q28,T,"From which ecosystem has the company hired from, raised money, or completed deals — VCs?
+ - $10m+: award 1 pt
+ - $2m to $10m: award 0.67 pts
+ - $250k to $2m: award 0.33 pts
+ - None: award 0 pts",ORDINAL_MILESTONE,1,766,0.9634464751958225,,0.45860191907337183,0.008877284595300261,0.9556135770234987,0.0006527415143603133,0.018276762402088774
+F_Q24,F,Does the company have prior-year income tax returns?,BINARY,1,829,0.962605548854041,,0.5192763956557158,0.019240048250904702,0.9613992762364294,0.0024125452352231603,0.02575392038600724
+F_Q23,F,Does the company have prior-year audited financial statements?,BINARY,1,828,0.9625603864734299,,0.6738605921121331,0.030334138486312397,0.9450483091787439,0.0006038647342995169,0.04510869565217389
+L_Q50,L,"If the Company has created a comprehensive information and data privacy policy, has it provided a copy of this policy, as well as a summary of all federal, state, local and international laws, rules and regulations applicable to the Company's data collecting and data processing activities?",BINARY,1,782,0.9552429667519181,,0.627772467816319,0.04443734015345269,0.9360613810741688,0.0632992327365729,-0.006074168797953972
+L_Q7,L,Has the company done a clearance search to determine whether or not it is okay to use the trade or service mark it wants?,BINARY,1,818,0.9547677261613692,,0.7115057101376271,0.043704156479217604,0.9168704156479217,0.08068459657701711,-0.0009168704156479329
+F_Q21,F,Are the market assumptions upon which return on equity and return on assets projections are based identified?,BINARY,1,825,0.953939393939394,,0.6193237945630373,0.03777777777777778,0.9406060606060606,0.0006060606060606061,0.013939393939393946
+L_Q29,L,Have all employees signed non-disclosure and invention assignment agreements?,BINARY,1,816,0.9509803921568627,,0.6840541907458799,0.04718137254901961,0.9191176470588235,0.07904411764705882,0.012867647058823525
+F_Q26,F,(5) Does the company compare actual sales or revenue data to industry total sales to calculate market share based on similar companies in the same industry?,BINARY,1,826,0.9491525423728814,0.47121531224775715,0.49107675944040113,0.039951573849878935,0.9521791767554479,0.03450363196125908,0.05932203389830509
+T_Q31,T,"To what extent has the team hired or supervised senior subject matter/functional experts?
+ - More than 10 people: award 1 pt
+ - 2 to 10 people: award 0.67 pts
+ - 1 to 2 people: award 0.33 pts
+ - None: award 0 pts",ORDINAL_MILESTONE,1,763,0.9488859764089121,0.589066918001885,0.5540189022804126,0.015465268676277852,0.9305373525557011,0.00327653997378768,0.009174311926605505
+L_Q51,L,"Has the Company crafted a policy to keep its customers' personal data safe?
+ - Award 1 pt only if the Company provides a copy of this policy, together with a summary of all federal, state, local, and international laws, rules, and regulations applicable to its data collection and processing activities. Otherwise, 0 pts.",BINARY,1,789,0.9455006337135615,0.6209061958768647,0.6212046684255244,0.05449936628643853,0.9220532319391636,0.0779467680608365,-0.006337135614702144
+L_Q22,L,Does the company know which of its competitors is filing patent applications?,BINARY,1,815,0.9447852760736196,,0.5524214316537747,0.011656441717791411,0.9276073619631902,0.0006134969325153375,0.01533742331288343

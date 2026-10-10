@@ -24,20 +24,28 @@ class TestCategoryContext(unittest.TestCase):
         chunks = [
             {"source_pdf": "pitch.pdf", "doc_type": "EBD8", "page_no": 1, "text": "PITCH " * 50},
             {"source_pdf": "impact.pdf", "doc_type": "EBD2", "page_no": 2, "text": "IMPACT EVIDENCE"},
+            {"source_pdf": "impact.pdf", "doc_type": "EBD2", "page_no": 3, "text": "SECOND PAGE " * 20},
             {"source_pdf": "exec.pdf", "doc_type": "EBD6", "page_no": 1, "text": "EXEC NAME AND LOGO"},
         ]
         es = self.mod.build_category_context(chunks, "ES", char_limit=5000)
-        short = self.mod.build_category_context(chunks, "ES", char_limit=40)
+        header = "=== DOCUMENT: impact.pdf [Type: EBD2] [Role: PRIMARY] ==="
+        first = "[Page 2] IMPACT EVIDENCE"
+        fits_first = len(header) + 2 + len(first)
+        short = self.mod.build_category_context(chunks, "ES", char_limit=fits_first)
         is_ctx = self.mod.build_category_context(chunks, "IS", char_limit=5000)
         self.assertTrue(es["has_primary"])
         self.assertEqual(es["primary_filenames"], ["impact.pdf"])
-        self.assertLess(es["text"].index("IMPACT EVIDENCE"), es["text"].index("PITCH"))
-        self.assertLessEqual(len(short["text"]), 40)
-        self.assertTrue(short["text"].startswith("=== DOCUMENT: impact.pdf"))
-        self.assertNotIn("PITCH", short["text"])
-        self.assertLess(is_ctx["text"].index("EXEC NAME"), is_ctx["text"].index("PITCH"))
+        self.assertIn("IMPACT EVIDENCE", es["text"])
+        self.assertIn("SECOND PAGE", es["text"])
+        self.assertNotIn("PITCH", es["text"])
+        self.assertNotIn("[Role: SECONDARY]", es["text"])
+        self.assertIn("IMPACT EVIDENCE", short["text"])
+        self.assertNotIn("SECOND PAGE", short["text"])
+        self.assertTrue(short["text"].endswith("IMPACT EVIDENCE"))
+        self.assertIn("EXEC NAME", is_ctx["text"])
+        self.assertNotIn("PITCH", is_ctx["text"])
+        self.assertNotIn("IMPACT", is_ctx["text"])
         self.assertIn("[Role: PRIMARY]", is_ctx["text"])
-        self.assertIn("[Role: SECONDARY]", is_ctx["text"])
 
         empty = self.mod.build_category_context(chunks, "L", char_limit=5000)
         self.assertFalse(empty["has_primary"])

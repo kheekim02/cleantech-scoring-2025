@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-10-04T00:40:55.865277+00:00",
+  "mode": "check_only",
+  "candidate": "/data/scraping/datasets/cto_accelerator/ai_cache_v5_parsed",
+  "live": "/data/scraping/datasets/cto_accelerator/ai_cache_v5_parsed",
+  "integrity": {
+    "status": "GREEN",
+    "hard_count": 0,
+    "readable_primary_maps": 92,
+    "symlink_primary_maps": []
+  },
+  "independent": {
+    "status": "GREEN",
+    "hard_count": 0,
+    "soft_count": 11055,
+    "out": "/data/scraping/datasets/cto_accelerator/citation_independent_audit_promote_20261004T004042Z.json"
+  },
+  "v5_grounding": {
+    "ok": 92,
+    "fail": 0,
+    "status": "PASS",
+    "failures": []
+  },
+  "gates_green": true,
+  "supabase_push": "REFUSED_not_in_interface",
+  "promote": null,
+  "status": "GREEN"
+}

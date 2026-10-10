@@ -1,0 +1,72 @@
+{
+  "wave": "2",
+  "generated_at": "2026-10-04T00:37:46.281516+00:00",
+  "es_q1": {
+    "total": 92,
+    "scored": 78,
+    "nonzero": 77,
+    "zero": 1,
+    "withheld": 14,
+    "withheld_pct": 15.22,
+    "withheld_by_code": {
+      "WITHHELD_UNSUPPORTED_CLAIM": 10,
+      "WITHHELD_UNGROUNDED": 2,
+      "WITHHELD_SCORE_ABSENCE_MISMATCH": 2
+    }
+  },
+  "sample_gate": {
+    "companies": [
+      "Vaanelai",
+      "H2O_Now",
+      "CarbonDots",
+      "AmpTrans",
+      "Curve_Control"
+    ],
+    "hard": 0
+  },
+  "full_regen": {
+    "done": 86,
+    "failed": 0,
+    "model": "qwen3.8:27b-32k",
+    "endpoint": "http://127.0.0.1:11435"
+  },
+  "vaanelai": {
+    "ES_Q1": {
+      "score": 1.0,
+      "ec": null
+    },
+    "IS_Q17": {
+      "score": null,
+      "ec": "WITHHELD_UNGROUNDED"
+    },
+    "IS_Q21": {
+      "score": 1.0,
+      "ec": null
+    }
+  },
+  "scaffolding_nonzero_left": 0,
+  "integrity": {
+    "status": "GREEN",
+    "readable_primary_maps": 92,
+    "hard_count": 0
+  },
+  "independent_audit": {
+    "status": "GREEN",
+    "hard": 0,
+    "soft": 11055,
+    "by_gate": {
+      "G1.4": 3153,
+      "G2.1": 5140,
+      "G2.2": 16,
+      "G3.2": 417,
+      "G3.3": 2327,
+      "G3.4": 2
+    }
+  },
+  "exit_criteria": {
+    "es_q1_withheld_le_20pct": true,
+    "scaffolding_nonzero_cleared": true,
+    "integrity_green": true,
+    "independent_hard_zero": true
+  }
+}

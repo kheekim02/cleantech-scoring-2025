@@ -4,6 +4,26 @@ This file defines the architecture, engineering protocols, prompting standards, 
 
 ---
 
+## 0. CRITICAL PROJECT BOUNDARIES & PROTOTYPE DISTINCTION (MANDATORY)
+
+Do NOT conflate the following separate platforms:
+1. **Internal Scoring Prototype (CleanTech Open 2025 Diligence Engine — This Repo):**
+   - Built with **Vercel + Supabase PostgreSQL** (`site/` and `api/`).
+   - Collaborating under Global Key Advisors with CleanTech Open.
+   - Purpose: **Internal human scoring** of the CleanTech Open 2025 cohort.
+2. **Nafees's Due Diligence Scoring Platform (Coworker Prototype):**
+   - Built separately by coworker **Nafees**.
+   - Distinct codebase from this Vercel/Supabase repository.
+   - Purpose: Separate due diligence platform prototype.
+3. **FrontSignal Production MVP (AWS Target Architecture):**
+   - Future platform architecture incorporating **AWS (Cognito, IAM, S3)**, **DGX Spark (Compute/ML)**, and **Cloudflare Tunnel (`app.frontsignal.ai`)**.
+   - May adapt concepts/code from Nafees's prototype, NOT from the internal Vercel/Supabase tool.
+
+> [!IMPORTANT]
+> **RULE FOR ALL AI ASSISTANTS:** If the user mentions "the prototype" or modifying a platform for AWS, **NEVER assume** it refers to the Vercel/Supabase internal scoring tool. If there is any ambiguity about which codebase or prototype is being discussed, **STOP and ask the user for clarification first.**
+
+---
+
 ## 1. Core System Overview
 
 The **CleanTech Open 2025 Diligence Engine** is an end-to-end diligence, scoring, and triage platform for clean technology startups. Expert human judges and administrators evaluate founder submissions across 10 standardized categories using founder PDF deliverables and a human-only scoring workspace. Offline AI extraction may still run for ops/analysis but **is not shown in the judge interface**.
@@ -21,9 +41,9 @@ The **CleanTech Open 2025 Diligence Engine** is an end-to-end diligence, scoring
   - `startup_extractions`: Master table storing startup payloads (JSONB) and readiness metadata. AI extraction fields may exist for ops but are not part of the judge-facing UI contract.
   - `human_reviews`: Stores judge scores (`numeric` allowing `0.0`, `0.25`, `0.5`, `0.75`, `1.0`), textual justifications, and reviewer IDs.
   - `judge_assignments`: Manages evaluator-to-startup allocations and completion statuses.
-- **Serverless API Layer (`api/`)**: Netlify / Supabase edge functions:
+- **Serverless API Layer (`api/`)**: Vercel serverless functions:
   - `get-startup.js`: Fetches startup payload and hydrates existing judge reviews.
-  - `save-score.js`: Debounced real-time persistence for scores and justifications.
+  - `sync-scores.js`: Queued persistence for scores and justifications.
   - `list-startups.js`: Supplies startup lists and metadata to dashboards.
 
 ---

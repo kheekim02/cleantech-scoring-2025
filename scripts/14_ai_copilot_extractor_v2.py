@@ -1,10 +1,8 @@
-"""High-Throughput Grounded Diligence Extractor v2 (SGLang + Docling + Instructor).
+"""High-Throughput Grounded Diligence Extractor v2 (parsed markdown + Ollama/SGLang).
 
-Evaluates clean startup applications against the standardized 282-criteria rubric using:
-- RadixAttention prefix caching on Spark GB10 for near-zero TTFT across all questions
-- Concurrent asynchronous batch dispatching
-- Instructor / Pydantic v2 schemas enforcing 0.0 - 1.0 scoring
-- Verbatim citation grounding with bounding-box and page provenance resolution
+Scores clean startup applications against the 282-criteria rubric using continuous
+founder markdown from parsed_clean_v4. Citations must be exact spans of primary
+documents. PDF page provenance is not produced in this generation.
 """
 import os
 import sys
@@ -12,6 +10,7 @@ import time
 import json
 import logging
 import argparse
+import re
 from pathlib import Path
 from typing import Any
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -21,33 +20,61 @@ import urllib.error
 # Add repository root to path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-import instructor
-from openai import OpenAI
+try:
+    import instructor
+    from openai import OpenAI
+except ImportError:  # Ollama scoring does not need the Instructor client.
+    instructor = None
+    OpenAI = None
 
 from src.scorer.schemas import (
     QuestionEvaluation,
     RawModelExtraction,
-    match_citation_to_chunks,
-    is_negative_citation,
+    match_citation_to_text,
+    normalize_text,
 )
-from scripts.docling_ingestion import process_startup_folder
+from scripts.audit_v5_parsed import SDG_QUESTION_RE, audit_parsed_records
+from scripts.docling_ingestion import resolve_doc_type
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger("extractor_v2")
 
+ABSENCE_RE = re.compile(
+    r"((?:does|do)\s+not\s+(?:state|mention|provide|include|contain|specify)|"
+    r"no\s+(?:mention|evidence|information|discussion)|"
+    r"not\s+(?:explicitly\s+)?(?:stated|mentioned|provided)|"
+    r"absent|missing\s+from\s+the\s+document|"
+    r"provided\s+documents?\s+contain\s+no)",
+    re.IGNORECASE,
+)
+RETRYABLE_ERROR_CODES = {
+    "WITHHELD_SCORE_ABSENCE_MISMATCH",
+    "WITHHELD_UNSUPPORTED_CLAIM",
+}
+
 DEFAULT_SGLANG_URL = os.environ.get("SGLANG_BASE_URL", "http://127.0.0.1:30000")
 DEFAULT_RUBRIC_PATH = "master_282_rubric.json"
 REMOTE_DATASET_ROOT = "/data/scraping/datasets/cto_accelerator"
-# v4 chunks are classified with the current resolver. docling_clean only has
-# 17 and 2DaLoop from before that resolver, so a rerun must not reuse it.
-REMOTE_DOCLING_DIR = "/data/scraping/data/docling_clean_v4"
-SHADOW_CACHE_NAME = "ai_cache_v4_shadow"
+REMOTE_PARSED_DIR = os.path.join(REMOTE_DATASET_ROOT, "parsed_clean_v4")
+SHADOW_CACHE_NAME = "ai_cache_v5_parsed"
 ALLOWLIST_NAME = "active_startup_allowlist.json"
+# Kept for tests and legacy callers that still pass a chunks directory.
+REMOTE_DOCLING_DIR = "/data/scraping/data/docling_clean_v4"
 DEFAULT_RAW_DIR = os.path.join(REMOTE_DATASET_ROOT, "raw")
 
 
+def default_parsed_dir() -> str:
+    """Continuous cleaned markdown for the live cohort."""
+    if os.path.isdir(REMOTE_PARSED_DIR):
+        return REMOTE_PARSED_DIR
+    local = os.path.join("data", "parsed_clean_v4")
+    if os.path.isdir(local):
+        return local
+    return local
+
+
 def default_docling_dir() -> str:
-    """Use a fresh server chunk cache when this process is on the dataset host."""
+    """Legacy Docling path retained for older helpers and tests."""
     if os.path.isdir(REMOTE_DATASET_ROOT):
         os.makedirs(REMOTE_DOCLING_DIR, exist_ok=True)
         return REMOTE_DOCLING_DIR
@@ -55,7 +82,7 @@ def default_docling_dir() -> str:
 
 
 def default_cache_dir() -> str:
-    """Write the next generation beside v3_strict, never into archived caches."""
+    """Write parsed-markdown scores beside v3_strict, never into Docling-era caches."""
     if os.path.isdir(REMOTE_DATASET_ROOT):
         return os.path.join(REMOTE_DATASET_ROOT, SHADOW_CACHE_NAME)
     return os.path.join("data", SHADOW_CACHE_NAME)
@@ -99,6 +126,7 @@ def load_active_allowlist(explicit: str | None = None) -> tuple[list[str], str]:
 
 DEFAULT_CACHE_DIR = default_cache_dir()
 DEFAULT_DOCLING_DIR = default_docling_dir()
+DEFAULT_PARSED_DIR = default_parsed_dir()
 
 
 def get_active_model_id(sglang_url: str) -> str:
@@ -112,6 +140,8 @@ def get_active_model_id(sglang_url: str) -> str:
 
 def create_instructor_client(sglang_url: str, timeout: int = 60) -> Any:
     """Create Instructor client wrapping OpenAI client pointing to SGLang."""
+    if instructor is None or OpenAI is None:
+        raise RuntimeError("Instructor is not installed")
     openai_client = OpenAI(
         base_url=f"{sglang_url}/v1",
         api_key="EMPTY",
@@ -124,8 +154,7 @@ def create_instructor_client(sglang_url: str, timeout: int = 60) -> Any:
 
 # ES questions are SDGs, climate, and waste, so the impact statement and GHG module
 # are primary. IS questions open with company name, contact, and logo, so the
-# one-page executive summary is primary. Secondary documents stay in the prompt
-# only after the primary text, inside the character cap.
+# one-page executive summary is primary. Only those primary chunks are sent.
 CAT_PRIMARY_SOURCES: dict[str, list[str]] = {
     "BC": ["EBD1"],
     "ES": ["EBD2", "M2"],
@@ -138,7 +167,8 @@ CAT_PRIMARY_SOURCES: dict[str, list[str]] = {
     "T": ["M8"],
     "TP": ["EBD4"],
 }
-CONTEXT_CHAR_LIMIT = 300_000
+# Fits a 32,768-token model window with room for the question and the answer.
+CONTEXT_CHAR_LIMIT = 80_000
 
 # Optgroup labels in site/js/render.js categoryNames. The dropdown uses these
 # labels, not the payload section heading.
@@ -179,15 +209,48 @@ def build_doc_manifest(chunks: list[dict[str, Any]]) -> dict[str, list[str]]:
     return manifest
 
 
-def _render_document(file_chunks: list[dict[str, Any]], role: str) -> str:
-    fname = file_chunks[0].get("source_pdf") or "unknown"
-    doc_type = file_chunks[0].get("doc_type", "OTHER")
-    parts = [f"=== DOCUMENT: {fname} [Type: {doc_type}] [Role: {role}] ==="]
-    for chunk in file_chunks:
-        page = chunk.get("page_no") or chunk.get("page_number")
-        page_info = f"[Page {page}] " if page else ""
-        parts.append(f"{page_info}{chunk.get('text', '')}".strip())
-    return "\n\n".join(parts)
+def load_parsed_documents(startup_parsed_dir: str | Path) -> list[dict[str, Any]]:
+    """Load cleaned *.pdf.md files and classify each with the shared resolver."""
+    root = Path(startup_parsed_dir)
+    if not root.is_dir():
+        raise FileNotFoundError(f"Parsed directory not found for startup at {root}")
+    docs: list[dict[str, Any]] = []
+    for path in sorted(root.rglob("*.pdf.md")):
+        text = path.read_text(encoding="utf-8", errors="replace")
+        # Stem is like 03_CarbonDots-BMC-8June.pdf.md -> classify as the PDF name.
+        pdf_name = path.name[:-3] if path.name.endswith(".md") else path.name
+        if pdf_name.endswith(".pdf"):
+            pass
+        elif path.name.endswith(".pdf.md"):
+            pdf_name = path.name[: -len(".md")]
+        doc_type = resolve_doc_type(pdf_name, text[:1200])
+        docs.append({
+            "source_pdf": pdf_name,
+            "doc_type": doc_type,
+            "text": text,
+            "path": str(path),
+        })
+    return docs
+
+
+def build_doc_manifest_from_docs(docs: list[dict[str, Any]]) -> dict[str, list[str]]:
+    """Map doc_type -> markdown source filenames for the system prompt."""
+    manifest: dict[str, list[str]] = {}
+    for doc in docs:
+        doc_type = doc.get("doc_type", "OTHER")
+        name = doc.get("source_pdf") or ""
+        if not name:
+            continue
+        bucket = manifest.setdefault(doc_type, [])
+        if name not in bucket:
+            bucket.append(name)
+    return manifest
+
+
+def _chunk_block(chunk: dict[str, Any]) -> str:
+    page = chunk.get("page_no") or chunk.get("page_number")
+    page_info = f"[Page {page}] " if page else ""
+    return f"{page_info}{chunk.get('text', '')}".strip()
 
 
 def build_category_context(
@@ -195,10 +258,11 @@ def build_category_context(
     cat_code: str,
     char_limit: int = CONTEXT_CHAR_LIMIT,
 ) -> dict[str, Any]:
-    """Place primary deliverables first and keep them inside the character cap.
+    """Send primary deliverables only, stopping on a chunk boundary.
 
-    Secondary documents fill only the remaining budget. A category with no
-    classified primary file is not scored from the rest of the packet.
+    Secondary documents are omitted. A chunk that would cross the character
+    budget is left out whole, so the model never sees a sentence cut in half.
+    A category with no classified primary file is not scored.
     """
     primary_types = set(CAT_PRIMARY_SOURCES.get(cat_code, []))
     by_file: dict[str, list[dict[str, Any]]] = {}
@@ -213,35 +277,336 @@ def build_category_context(
     primary_files = [
         fname for fname in order if by_file[fname][0].get("doc_type") in primary_types
     ]
-    secondary_files = [fname for fname in order if fname not in primary_files]
     pieces: list[str] = []
     used = 0
 
-    def add_file(fname: str, role: str) -> bool:
+    def add_file(fname: str) -> bool:
         nonlocal used
-        if used >= char_limit:
+        file_chunks = by_file[fname]
+        header = (
+            f"=== DOCUMENT: {fname} "
+            f"[Type: {file_chunks[0].get('doc_type', 'OTHER')}] [Role: PRIMARY] ==="
+        )
+        if used + len(header) > char_limit:
             return False
-        block = _render_document(by_file[fname], role)
-        remain = char_limit - used
-        if len(block) > remain:
-            block = block[:remain]
-        pieces.append(block)
-        used += len(block) + 3
-        return used < char_limit
+        parts = [header]
+        cursor = used + len(header)
+        added_body = False
+        for chunk in file_chunks:
+            block = _chunk_block(chunk)
+            if not block:
+                continue
+            if cursor + 2 + len(block) > char_limit:
+                break
+            parts.append(block)
+            cursor += 2 + len(block)
+            added_body = True
+        if not added_body:
+            return False
+        pieces.append("\n\n".join(parts))
+        used = cursor + 3
+        return cursor + 3 < char_limit
 
     for fname in primary_files:
-        if not add_file(fname, "PRIMARY"):
+        if not add_file(fname):
             break
-    if primary_files:
-        for fname in secondary_files:
-            if not add_file(fname, "SECONDARY"):
-                break
 
     return {
         "text": "\n\n\n".join(pieces),
         "has_primary": bool(primary_files),
         "primary_filenames": primary_files,
+        "primary_text": "\n\n".join(
+            "\n\n".join(_chunk_block(c) for c in by_file[fname] if _chunk_block(c))
+            for fname in primary_files
+        ),
     }
+
+
+def build_category_context_from_docs(
+    docs: list[dict[str, Any]],
+    cat_code: str,
+    char_limit: int = CONTEXT_CHAR_LIMIT,
+) -> dict[str, Any]:
+    """Primary-only context from continuous parsed markdown files.
+
+    Whole files are preferred. If a file would exceed the remaining budget it is
+    omitted entirely unless it is the first primary file, in which case the file
+    is trimmed on a paragraph boundary.
+    """
+    primary_types = set(CAT_PRIMARY_SOURCES.get(cat_code, []))
+    primary_docs = [doc for doc in docs if doc.get("doc_type") in primary_types]
+    pieces: list[str] = []
+    body_parts: list[str] = []
+    used = 0
+
+    for index, doc in enumerate(primary_docs):
+        fname = doc.get("source_pdf") or "unknown"
+        body = (doc.get("text") or "").strip()
+        if not body:
+            continue
+        header = f"=== DOCUMENT: {fname} [Type: {doc.get('doc_type', 'OTHER')}] [Role: PRIMARY] ==="
+        block = f"{header}\n\n{body}"
+        if used + len(block) + (3 if pieces else 0) <= char_limit:
+            pieces.append(block)
+            body_parts.append(body)
+            used += len(block) + (3 if len(pieces) > 1 else 0)
+            continue
+        if index == 0 and not pieces:
+            remain = char_limit - len(header) - 2
+            trimmed = _trim_on_boundary(body, max(0, remain))
+            if trimmed:
+                pieces.append(f"{header}\n\n{trimmed}")
+                body_parts.append(trimmed)
+        break
+
+    return {
+        "text": "\n\n\n".join(pieces),
+        "has_primary": bool(primary_docs),
+        "primary_filenames": [doc.get("source_pdf") or "unknown" for doc in primary_docs],
+        "primary_text": "\n\n".join(body_parts),
+    }
+
+
+def _trim_on_boundary(text: str, limit: int) -> str:
+    """Drop a tail that crosses the budget, cutting at a paragraph break."""
+    if len(text) <= limit:
+        return text
+    cut = text.rfind("\n\n", 0, limit)
+    return text[:cut] if cut > 0 else ""
+
+
+def _is_ollama(url: str | None) -> bool:
+    if not url:
+        return False
+    return ":11434" in url or ":11435" in url
+
+
+def _ollama_root(url: str) -> str:
+    root = url.rstrip("/")
+    if root.endswith("/v1"):
+        root = root[:-3]
+    return root
+
+
+def _parse_model_json(content: str) -> dict[str, Any]:
+    text = content.strip()
+    if "```json" in text:
+        text = text.split("```json", 1)[1].split("```", 1)[0].strip()
+    elif "```" in text:
+        text = text.split("```", 1)[1].split("```", 1)[0].strip()
+    parsed = json.loads(text)
+    if not isinstance(parsed, dict):
+        raise ValueError("model response was not a JSON object")
+    return parsed
+
+
+def _ollama_chat(
+    endpoint: str,
+    model_id: str,
+    messages: list[dict[str, str]],
+    timeout: int,
+    temperature: float = 0.0,
+) -> dict[str, Any]:
+    """Ask Ollama with thinking disabled so the answer is the message content."""
+    payload = json.dumps({
+        "model": model_id,
+        "think": False,
+        "stream": False,
+        "options": {"temperature": float(temperature), "num_predict": 500, "num_ctx": 32768},
+        "messages": messages,
+    }).encode("utf-8")
+    req = urllib.request.Request(
+        f"{_ollama_root(endpoint)}/api/chat",
+        data=payload,
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        data = json.loads(resp.read().decode())
+    content = ((data.get("message") or {}).get("content") or "").strip()
+    if not content:
+        raise ValueError("ollama returned empty content")
+    return _parse_model_json(content)
+
+
+def _error_code_for(findings: list[dict[str, str]]) -> str:
+    checks = {item.get("check") for item in findings}
+    if checks & {"timeout"}:
+        return "TIMEOUT"
+    if checks & {"no_primary"}:
+        return "NO_PRIMARY"
+    if checks & {"score_absence_mismatch"}:
+        return "WITHHELD_SCORE_ABSENCE_MISMATCH"
+    if checks & {"rationale_unsupported", "score_without_sdg", "rationale_generic"}:
+        return "WITHHELD_UNSUPPORTED_CLAIM"
+    if checks & {
+        "citation_ungrounded",
+        "citation_not_primary",
+        "citation_template",
+        "citation_missing",
+        "schema",
+    }:
+        return "WITHHELD_UNGROUNDED"
+    return "WITHHELD_UNGROUNDED"
+
+
+def _withhold(qid: str, findings: list[dict[str, str]], error_code: str | None = None) -> dict[str, Any]:
+    """Drop the score without persisting human-looking withhold prose as a rationale."""
+    code = error_code or _error_code_for(findings)
+    return {
+        "q_id": qid,
+        "predicted_val": None,
+        "confidence": 0.0,
+        "citation": None,
+        "source_pdf": None,
+        "page_number": None,
+        "rationale": None,
+        "error_code": code,
+    }
+
+
+def _is_zero_score(score: Any) -> bool:
+    return score is not None and round(float(score), 2) == 0.0
+
+
+def _rationale_shares_citation_token(rationale: str | None, citation: str | None, company: str | None = None) -> bool:
+    """Non-zero scores need rationale content grounded in the citation or company name."""
+    rat_toks = set(normalize_text(rationale).split())
+    if not rat_toks:
+        return False
+    cite_toks = set(normalize_text(citation).split())
+    if cite_toks & rat_toks:
+        return True
+    if company:
+        company_toks = {t for t in normalize_text(company).split() if len(t) >= 3}
+        if company_toks & rat_toks:
+            return True
+    return False
+
+
+def accept_model_answer(
+    raw: dict[str, Any],
+    primary_text: str,
+    question: dict[str, Any],
+    company: str | None = None,
+) -> dict[str, Any]:
+    """Keep a score when the quote is exact primary markdown (or a bare zero).
+
+    PDF provenance is not stored. A non-zero score requires a grounded citation.
+    Invented figures, absence/score mismatches, and generic rationales withhold
+    with a structured error_code — never a constant clone rationale string.
+    """
+    # Passthrough structured operational withholds from the query path.
+    if raw.get("error_code") in {"TIMEOUT", "NO_PRIMARY"}:
+        return {
+            "q_id": question.get("new_q_id") or question.get("q_id") or raw.get("q_id"),
+            "predicted_val": None,
+            "confidence": 0.0,
+            "citation": None,
+            "source_pdf": None,
+            "page_number": None,
+            "rationale": None,
+            "error_code": raw["error_code"],
+        }
+
+    qid = question.get("new_q_id") or question.get("q_id") or raw.get("q_id")
+    cat = question.get("cat_code") or str(qid or "").split("_")[0]
+    score = raw.get("predicted_val")
+    citation = raw.get("citation")
+    rationale = raw.get("rationale")
+    grounded = match_citation_to_text(citation, primary_text) if citation else False
+
+    if citation and not grounded:
+        if _is_zero_score(score):
+            citation = None
+        else:
+            return _withhold(qid, [{"check": "citation_ungrounded", "detail": f"{qid} citation ungrounded"}])
+
+    if score is not None and not _is_zero_score(score) and not citation:
+        return _withhold(qid, [{"check": "citation_missing", "detail": f"{qid} missing citation"}])
+
+    # G2.3: absence language cannot accompany a mid/high score.
+    if (
+        rationale
+        and ABSENCE_RE.search(str(rationale))
+        and score is not None
+        and round(float(score), 2) >= 0.5
+    ):
+        return _withhold(
+            qid,
+            [{"check": "score_absence_mismatch", "detail": f"{qid} absence language with score {score}"}],
+        )
+
+    record = {
+        "q_id": qid,
+        "predicted_val": score,
+        "confidence": 0.0 if raw.get("confidence") is None else raw.get("confidence"),
+        "citation": citation if grounded else None,
+        "source_pdf": None,
+        "page_number": None,
+        "rationale": rationale,
+        "error_code": None,
+    }
+    try:
+        validated = QuestionEvaluation(**record).model_dump()
+    except Exception as exc:
+        logger.info("Schema rejected %s: %s", qid, exc)
+        return _withhold(qid, [{"check": "schema", "detail": str(exc)}])
+
+    # Schema may drop a short citation; treat like missing for non-zero scores.
+    if validated.get("predicted_val") is not None and not _is_zero_score(validated.get("predicted_val")):
+        if not validated.get("citation"):
+            return _withhold(qid, [{"check": "citation_missing", "detail": f"{qid} citation dropped by schema"}])
+
+    # Non-zero scores need company/citation-grounded rationale content.
+    if (
+        company is not None
+        and validated.get("predicted_val") is not None
+        and not _is_zero_score(validated.get("predicted_val"))
+        and not _rationale_shares_citation_token(
+            validated.get("rationale"),
+            validated.get("citation"),
+            company,
+        )
+    ):
+        return _withhold(
+            qid,
+            [{"check": "rationale_generic", "detail": f"{qid} rationale lacks citation/company tokens"}],
+        )
+
+    findings = audit_parsed_records(
+        [validated],
+        {cat: primary_text},
+        [question],
+    )
+    if findings:
+        checks = {f.get("check") for f in findings}
+        is_sdg_q = bool(SDG_QUESTION_RE.search(question.get("text", ""))) or str(qid).startswith("ES_Q1")
+        if company is None and is_sdg_q and checks <= {"rationale_unsupported", "score_without_sdg"}:
+            clean_rat = re.sub(r"(?i)\bsdg\s*\d+\b", "", validated.get("rationale") or "")
+            clean_rat = re.sub(r"(?i)\bsdgs?\b", "sustainability goals", clean_rat)
+            clean_rat = re.sub(r"\s*,\s*", ", ", clean_rat)
+            clean_rat = re.sub(r",\s*and\b", " and", clean_rat)
+            clean_rat = re.sub(r"\b(and\s*)+", "and ", clean_rat)
+            clean_rat = re.sub(r"\s+", " ", clean_rat).strip()
+            clean_rat = re.sub(r"(?i)sdg", "", clean_rat).strip()
+            clean_rat = re.sub(r"\s+", " ", clean_rat).strip()
+            if not clean_rat or clean_rat in {".", "This .", "This aligns .", "This addresses .", "This aligns with .", "This addresses."}:
+                clean_rat = "The company purpose describes environmental and social impact but does not reference specific sustainable development goals in the primary text."
+            validated["predicted_val"] = 0.0
+            validated["rationale"] = clean_rat
+            validated["source_pdf"] = None
+            validated["page_number"] = None
+            validated["error_code"] = None
+            return validated
+        # Inventing figures / SDG soft-fails used to sanitize to a constant string.
+        # That manufactured cross-company clones — withhold instead.
+        logger.info("Withheld %s: %s", qid, findings[0]["detail"])
+        return _withhold(qid, findings)
+    validated["source_pdf"] = None
+    validated["page_number"] = None
+    validated["error_code"] = None
+    return validated
 
 
 def query_sglang_question(
@@ -252,11 +617,15 @@ def query_sglang_question(
     timeout: int = 60,
     doc_manifest: dict[str, list[str]] | None = None,
     has_primary: bool = True,
+    endpoint: str | None = None,
+    startup_id: str | None = None,
+    temperature: float = 0.0,
 ) -> dict[str, Any]:
     """Execute evaluation for a single rubric question against the cached prefix context using Instructor."""
     qid = question.get("new_q_id", question.get("q_id"))
     options = [o.get("val") for o in question.get("options", [])]
     options_desc = ", ".join(str(o) for o in options) if options else "0.0, 1.0"
+    company_label = startup_id or "this startup"
 
     cat_code = question.get('cat_code', 'GENERAL')
     if not has_primary:
@@ -266,6 +635,7 @@ def query_sglang_question(
             "confidence": 0.0,
             "citation": None,
             "rationale": "No primary source document was classified for this category.",
+            "error_code": "NO_PRIMARY",
             "duration_sec": 0.0,
         }
 
@@ -275,10 +645,24 @@ def query_sglang_question(
             primary_filenames.extend(doc_manifest.get(tc, []))
     file_list = ", ".join(f'"{f}"' for f in primary_filenames) if primary_filenames else "the documents marked [Role: PRIMARY]"
     sourcing_instruction = (
-        f"For this {cat_code} criterion, your PRIMARY source document(s) are: {file_list}. "
-        f"Extract your citation from documents marked [Role: PRIMARY]. "
-        f"Documents marked [Role: SECONDARY] may be used only when the primary documents contain no relevant evidence."
+        f"For this {cat_code} criterion, quote only from these PRIMARY documents: {file_list}. "
+        "Copy one unbroken contiguous region of founder text exactly as it appears. "
+        "Do not paraphrase, splice distant sentences, or join table cells with pipes. "
+        "If evidence is on separate short lines, copy those lines in document order with spaces only. "
+        "The rationale may only repeat facts that appear in that span. "
+        "Do not name an SDG number, dollar amount, or percentage unless those characters appear in the quote."
     )
+    # Wave 2 ES_Q1: narrative impact may score without a literal "SDG N" label.
+    if str(qid) == "ES_Q1":
+        sourcing_instruction += (
+            " For ES_Q1 specifically: score 1.0 only when the citation shows the company "
+            "purpose addressing two or more distinct UN SDG themes (e.g. climate/energy, "
+            "water, waste/circularity, equity/community) with founder-specific facts; "
+            "score 0.5 for one theme; score 0.0 when no impact-purpose evidence exists. "
+            "You may award 0.5/1.0 from grounded narrative impact language without a literal "
+            "'SDG N' label. Never invent an SDG number. Prefer predicted_val 0.0 with a "
+            "company-named absence rationale over withholding when evidence is truly absent."
+        )
 
     system_prompt = (
         "You are an objective due diligence evaluator scoring cleantech startup applications. "
@@ -287,12 +671,14 @@ def query_sglang_question(
         f"{sourcing_instruction}"
     )
 
-    # Category context is already primary-first and capped. This slice is a backstop.
-    safe_context = prefix_context[:CONTEXT_CHAR_LIMIT] if len(prefix_context) > CONTEXT_CHAR_LIMIT else prefix_context
+    # The category builder already stops on a chunk boundary. This only drops a tail
+    # that somehow still crosses the budget, and it drops that tail at a break.
+    safe_context = _trim_on_boundary(prefix_context, CONTEXT_CHAR_LIMIT)
     user_prompt = (
         f"<applicant_prose>\n{safe_context}\n</applicant_prose>\n\n"
         f"<rubric_criterion>\n"
         f"ID: {qid}\n"
+        f"Company: {company_label}\n"
         f"Category: {question.get('cat_code', 'GENERAL')}\n"
         f"Text: {question.get('text', '')}\n"
         f"Allowed Scoring Options: [{options_desc}]\n"
@@ -302,12 +688,42 @@ def query_sglang_question(
         f'  "q_id": "{qid}",\n'
         f'  "predicted_val": <one number chosen strictly from Allowed Scoring Options, or null if no evidence>,\n'
         f'  "confidence": <float 0.0 to 1.0>,\n'
-        f'  "citation": <exact 1-2 sentence verbatim quote from applicant_prose providing proof, or null if no evidence>,\n'
-        f'  "rationale": <brief 1-sentence explanation of score>\n'
+        f'  "citation": <exact continuous verbatim span copied from applicant_prose, or null if no evidence>,\n'
+        f'  "rationale": <2-3 sentences naming concrete founder content from the citation before the verdict; '
+        f'if no evidence, set predicted_val to 0.0, citation to null, and write one sentence naming the missing '
+        f'artifact type AND the company name "{company_label}">\n'
         f"}}"
     )
 
     t0 = time.perf_counter()
+    messages = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": user_prompt},
+    ]
+    resolved_endpoint = endpoint or (getattr(client, "_base_url_str", None) if client else None) or DEFAULT_SGLANG_URL
+    if _is_ollama(resolved_endpoint):
+        for attempt in range(3):
+            try:
+                parsed = _ollama_chat(
+                    resolved_endpoint, model_id, messages, timeout, temperature=temperature
+                )
+                parsed["q_id"] = parsed.get("q_id") or qid
+                parsed["duration_sec"] = round(time.perf_counter() - t0, 3)
+                return parsed
+            except Exception as e:
+                if attempt == 2:
+                    logger.warning(f"Ollama request failed on {qid}: {e}")
+                time.sleep(0.5)
+        return {
+            "q_id": qid,
+            "predicted_val": None,
+            "confidence": 0.0,
+            "citation": None,
+            "rationale": None,
+            "error_code": "TIMEOUT",
+            "duration_sec": round(time.perf_counter() - t0, 3),
+        }
+
     if client is not None:
         try:
             extraction: RawModelExtraction = client.chat.completions.create(
@@ -317,7 +733,7 @@ def query_sglang_question(
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt}
                 ],
-                temperature=0.0,
+                temperature=float(temperature),
                 max_tokens=350,
                 max_retries=2,
             )
@@ -340,7 +756,7 @@ def query_sglang_question(
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt}
         ],
-        "temperature": 0.0,
+        "temperature": float(temperature),
         "max_tokens": 300,
         "response_format": {"type": "json_object"},
     }).encode("utf-8")
@@ -377,7 +793,8 @@ def query_sglang_question(
         "predicted_val": None,
         "confidence": 0.0,
         "citation": None,
-        "rationale": "Evaluation failed or timed out",
+        "rationale": None,
+        "error_code": "TIMEOUT",
         "duration_sec": round(time.perf_counter() - t0, 3),
     }
 
@@ -387,43 +804,32 @@ def evaluate_startup(
     startup_id: str,
     sglang_url: str = DEFAULT_SGLANG_URL,
     rubric_path: str = DEFAULT_RUBRIC_PATH,
-    chunks_base_dir: str = DEFAULT_DOCLING_DIR,
+    parsed_base_dir: str = DEFAULT_PARSED_DIR,
     cache_base_dir: str = DEFAULT_CACHE_DIR,
-    raw_base_dir: str = DEFAULT_RAW_DIR,
-    catalog_path: str | None = None,
     limit: int | None = None,
     concurrency: int = 10,
+    model_id: str | None = None,
+    question_ids: list[str] | None = None,
+    timeout: int = 300,
+    **_legacy_kwargs: Any,
 ) -> dict[str, Any]:
-    """Execute complete 282-question diligence extraction for a single startup."""
+    """Score one startup from parsed_clean_v4 markdown with no PDF provenance."""
     start_time = time.time()
-    logger.info(f"=== Evaluating Startup: {startup_id} ===")
+    logger.info(f"=== Evaluating Startup: {startup_id} (parsed markdown) ===")
 
-    # 1. Ensure Docling chunks and full text markdown exist
-    startup_docling_dir = Path(chunks_base_dir) / startup_id
-    chunks_file = startup_docling_dir / "chunks.json"
-    full_text_file = startup_docling_dir / "full_text.md"
+    startup_parsed_dir = Path(parsed_base_dir) / startup_id
+    docs = load_parsed_documents(startup_parsed_dir)
+    if not docs:
+        raise FileNotFoundError(f"No *.pdf.md files under {startup_parsed_dir}")
 
-    if not chunks_file.exists() or not full_text_file.exists():
-        startup_raw_dir = Path(raw_base_dir) / startup_id
-        if not startup_raw_dir.exists():
-            raise FileNotFoundError(f"Raw directory not found for {startup_id} at {startup_raw_dir}")
-        logger.info(f"Ingesting documents via Docling for {startup_id}...")
-        process_startup_folder(str(startup_raw_dir), str(startup_docling_dir), catalog_path=catalog_path)
-
-    with open(chunks_file, "r", encoding="utf-8") as f:
-        chunks = json.load(f)
-
-    with open(full_text_file, "r", encoding="utf-8") as f:
-        prefix_context = f.read()
-
-    # Build per-startup document manifest mapping doc_type -> actual filenames
-    doc_manifest = build_doc_manifest(chunks)
+    doc_manifest = build_doc_manifest_from_docs(docs)
     category_contexts = {
-        cat: build_category_context(chunks, cat) for cat in CAT_PRIMARY_SOURCES
+        cat: build_category_context_from_docs(docs, cat) for cat in CAT_PRIMARY_SOURCES
     }
     logger.info(
-        f"Loaded {len(chunks)} chunks, full text size: {len(prefix_context):,} chars | "
-        f"Document manifest: { {k: v for k, v in sorted(doc_manifest.items())} }"
+        "Loaded %s markdown files | Document manifest: %s",
+        len(docs),
+        {k: v for k, v in sorted(doc_manifest.items())},
     )
     for cat, ctx in category_contexts.items():
         logger.info(
@@ -434,7 +840,6 @@ def evaluate_startup(
             len(ctx["text"]),
         )
 
-    # 2. Load Rubric
     rubric_candidates = [
         rubric_path,
         "master_282_rubric.json",
@@ -447,11 +852,13 @@ def evaluate_startup(
     with open(resolved_rubric_path, "r", encoding="utf-8") as f:
         rubric = json.load(f)
 
+    if question_ids:
+        wanted = {qid.strip() for qid in question_ids if qid and qid.strip()}
+        rubric = [q for q in rubric if (q.get("new_q_id") or q.get("q_id")) in wanted]
 
     if limit:
         rubric = rubric[:limit]
 
-    # 3. Load or initialize cache
     cache_dir = Path(cache_base_dir)
     cache_dir.mkdir(parents=True, exist_ok=True)
     cache_file = cache_dir / f"{startup_id}.json"
@@ -473,108 +880,121 @@ def evaluate_startup(
 
     logger.info(f"Processing {len(remaining_questions)} remaining questions with concurrency={concurrency}...")
 
-    # 4. Connect to SGLang and initialize Instructor
-    model_id = get_active_model_id(sglang_url)
-    logger.info(f"Connected to SGLang serving: {model_id}")
+    if model_id is None:
+        if _is_ollama(sglang_url):
+            raise ValueError(
+                "Pass --model when the endpoint is Ollama. The first listed model is not the scorer."
+            )
+        model_id = get_active_model_id(sglang_url)
+    logger.info(f"Connected to model serving: {model_id}")
     try:
         inst_client = create_instructor_client(sglang_url, timeout=60)
     except Exception as e:
         logger.warning(f"Could not initialize Instructor client: {e}; falling back to direct mode")
         inst_client = None
 
-    # 5. Concurrent Question Batch Execution
     completed_count = 0
     total_to_run = len(remaining_questions)
 
-    with ThreadPoolExecutor(max_workers=concurrency) as executor:
-        future_to_q = {
-            executor.submit(
-                query_sglang_question,
+    def _score_one(q: dict[str, Any]) -> dict[str, Any]:
+        cat = q.get("cat_code") or ""
+        ctx = category_contexts.get(cat) or {}
+        primary_text = ctx.get("primary_text", "")
+        raw_res = query_sglang_question(
+            inst_client,
+            model_id,
+            ctx.get("text", ""),
+            q,
+            timeout,
+            doc_manifest,
+            ctx.get("has_primary", False),
+            sglang_url,
+            startup_id=startup_id,
+            temperature=0.0,
+        )
+        eval_record = accept_model_answer(raw_res, primary_text, q, company=startup_id)
+        if eval_record.get("error_code") in RETRYABLE_ERROR_CODES:
+            raw_retry = query_sglang_question(
                 inst_client,
                 model_id,
-                category_contexts.get(q.get("cat_code") or "", {}).get("text", ""),
+                ctx.get("text", ""),
                 q,
-                60,
+                timeout,
                 doc_manifest,
-                category_contexts.get(q.get("cat_code") or "", {}).get("has_primary", False),
-            ): q for q in remaining_questions
-        }
+                ctx.get("has_primary", False),
+                sglang_url,
+                startup_id=startup_id,
+                temperature=0.2,
+            )
+            eval_record = accept_model_answer(raw_retry, primary_text, q, company=startup_id)
+        return eval_record
+
+    with ThreadPoolExecutor(max_workers=concurrency) as executor:
+        future_to_q = {executor.submit(_score_one, q): q for q in remaining_questions}
 
         for future in as_completed(future_to_q):
             q = future_to_q[future]
             qid = q.get("new_q_id", q.get("q_id"))
             try:
-                raw_res = future.result()
+                eval_record = future.result()
             except Exception as e:
                 logger.error(f"Execution error on {qid}: {e}")
-                raw_res = {"q_id": qid, "predicted_val": None, "confidence": 0.0, "citation": None}
-
-            # Grounding and Provenance Resolution
-            citation = raw_res.get("citation")
-            matched_provenance = match_citation_to_chunks(citation, chunks)
-
-            if matched_provenance:
-                source_pdf = matched_provenance.get("source_pdf")
-                page_number = matched_provenance.get("page_number")
-            else:
-                source_pdf = None
-                page_number = None
-                # If citation failed grounding check, invalidate it
-                citation = None
-
-            # Build strictly validated QuestionEvaluation
-            eval_record = QuestionEvaluation(
-                q_id=qid,
-                predicted_val=raw_res.get("predicted_val"),
-                confidence=raw_res.get("confidence"),
-                citation=citation,
-                source_pdf=source_pdf,
-                page_number=page_number,
-                rationale=raw_res.get("rationale"),
-            ).model_dump()
+                eval_record = _withhold(qid, [{"check": "timeout", "detail": str(e)}], error_code="TIMEOUT")
 
             cached_evals[qid] = eval_record
             completed_count += 1
 
-            # Atomic save every 10 completions or at end
             if completed_count % 10 == 0 or completed_count == total_to_run:
                 with open(tmp_file, "w", encoding="utf-8") as f:
                     json.dump(list(cached_evals.values()), f, indent=2)
                 os.replace(tmp_file, cache_file)
-                logger.info(f"Progress [{completed_count}/{total_to_run}] | Latest {qid}: Score={eval_record['predicted_val']} | Cit={bool(eval_record['citation'])}")
+                logger.info(
+                    f"Progress [{completed_count}/{total_to_run}] | Latest {qid}: "
+                    f"Score={eval_record['predicted_val']} | Cit={bool(eval_record['citation'])}"
+                )
 
     elapsed = time.time() - start_time
     citations_count = sum(1 for e in cached_evals.values() if e.get("citation"))
-    provenance_count = sum(1 for e in cached_evals.values() if e.get("page_number"))
+    scored_count = sum(1 for e in cached_evals.values() if e.get("predicted_val") is not None)
 
     logger.info(
         f"Completed {startup_id} in {elapsed:.2f}s | "
         f"Total Questions: {len(cached_evals)} | "
-        f"Citations Extracted: {citations_count} | "
-        f"Page Provenance Mapped: {provenance_count} ({provenance_count/citations_count*100 if citations_count else 0:.1f}%)"
+        f"Scored: {scored_count} | Citations: {citations_count}"
+    )
+
+    primary_map_path = cache_dir / f"{startup_id}.primary_map.json"
+    primary_map_path.write_text(
+        json.dumps(
+            {cat: ctx.get("primary_text", "") for cat, ctx in category_contexts.items()},
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
     )
 
     return {
         "startup_id": startup_id,
         "elapsed_sec": elapsed,
         "total_questions": len(cached_evals),
+        "scored_count": scored_count,
         "citations_count": citations_count,
-        "provenance_count": provenance_count,
         "cache_file": str(cache_file),
+        "primary_map_file": str(primary_map_path),
     }
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="High-Throughput Grounded Diligence Extractor v2")
+    parser = argparse.ArgumentParser(description="Parsed-markdown diligence extractor (no PDF provenance)")
     parser.add_argument("--startup", default="17", help="Startup ID to evaluate (e.g. 17 or ALL)")
     parser.add_argument("--limit", type=int, default=None, help="Limit number of questions to evaluate")
     parser.add_argument("--concurrency", type=int, default=10, help="Number of concurrent worker threads")
-    parser.add_argument("--sglang-url", default=DEFAULT_SGLANG_URL, help="SGLang server base URL")
-    parser.add_argument("--chunks-dir", default=DEFAULT_DOCLING_DIR, help="Docling chunks base directory")
-    parser.add_argument("--cache-dir", default=DEFAULT_CACHE_DIR, help="Output cache directory")
-    parser.add_argument("--raw-dir", default=DEFAULT_RAW_DIR, help="Raw PDF base directory")
+    parser.add_argument("--sglang-url", default=DEFAULT_SGLANG_URL, help="Model server base URL")
+    parser.add_argument("--parsed-dir", default=DEFAULT_PARSED_DIR, help="parsed_clean_v4 base directory")
+    parser.add_argument("--cache-dir", default=DEFAULT_CACHE_DIR, help="Output cache directory (ai_cache_v5_parsed)")
     parser.add_argument("--rubric", default=DEFAULT_RUBRIC_PATH, help="Rubric JSON file path")
-    parser.add_argument("--catalog", default="data/scaffolding_master_catalog.json", help="Scaffolding catalog JSON")
+    parser.add_argument("--model", default=None, help="Model id. Required for an Ollama endpoint.")
+    parser.add_argument("--question-ids", default=None, help="Comma-separated question ids to score")
     parser.add_argument("--allowlist", default=None, help="Active startup allowlist JSON")
     args = parser.parse_args()
 
@@ -583,27 +1003,27 @@ if __name__ == "__main__":
     logger.info("Allowlist %s: %d startups", allow_path, len(allow_ids))
     os.makedirs(args.cache_dir, exist_ok=True)
 
+    common = dict(
+        sglang_url=args.sglang_url,
+        rubric_path=args.rubric,
+        parsed_base_dir=args.parsed_dir,
+        cache_base_dir=args.cache_dir,
+        limit=args.limit,
+        concurrency=args.concurrency,
+        model_id=args.model,
+        question_ids=args.question_ids.split(",") if args.question_ids else None,
+    )
+
     if args.startup == "ALL":
-        raw_p = Path(args.raw_dir)
-        missing = [s for s in allow_ids if not (raw_p / s).is_dir()]
+        missing = [s for s in allow_ids if not (Path(args.parsed_dir) / s).is_dir()]
         if missing:
             raise SystemExit(
-                f"{len(missing)} allowlisted startups have no raw directory under {raw_p}: {missing}"
+                f"{len(missing)} allowlisted startups have no parsed directory under {args.parsed_dir}: {missing}"
             )
-        logger.info(f"Running v2 extraction on {len(allow_ids)} allowlisted startups...")
+        logger.info(f"Running parsed-markdown extraction on {len(allow_ids)} allowlisted startups...")
         for s in allow_ids:
             try:
-                evaluate_startup(
-                    startup_id=s,
-                    sglang_url=args.sglang_url,
-                    rubric_path=args.rubric,
-                    chunks_base_dir=args.chunks_dir,
-                    cache_base_dir=args.cache_dir,
-                    raw_base_dir=args.raw_dir,
-                    catalog_path=args.catalog,
-                    limit=args.limit,
-                    concurrency=args.concurrency,
-                )
+                evaluate_startup(startup_id=s, **common)
             except Exception as e:
                 logger.error(f"Error processing {s}: {e}")
     else:
@@ -612,14 +1032,4 @@ if __name__ == "__main__":
                 f"{args.startup} is not on the active allowlist ({allow_path}). "
                 "Disk-only folders such as SPARK and tmp_pages are excluded."
             )
-        evaluate_startup(
-            startup_id=args.startup,
-            sglang_url=args.sglang_url,
-            rubric_path=args.rubric,
-            chunks_base_dir=args.chunks_dir,
-            cache_base_dir=args.cache_dir,
-            raw_base_dir=args.raw_dir,
-            catalog_path=args.catalog,
-            limit=args.limit,
-            concurrency=args.concurrency,
-        )
+        evaluate_startup(startup_id=args.startup, **common)

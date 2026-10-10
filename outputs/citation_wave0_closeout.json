@@ -1,0 +1,38 @@
+{
+  "wave": "0",
+  "generated_at": "2026-10-03T23:55:52.621461+00:00",
+  "restore": {
+    "restored": 92,
+    "already_real": 0,
+    "missing_backup": [],
+    "status": "GREEN",
+    "backup_dir": "/data/scraping/datasets/cto_accelerator/ai_cache_v5_parsed_pre_remediation_20261003T214821Z"
+  },
+  "integrity": {
+    "companies": 92,
+    "primary_maps": 92,
+    "readable_primary_maps": 92,
+    "status": "GREEN",
+    "hard_count": 0
+  },
+  "independent_audit": {
+    "status": "GREEN",
+    "hard": 0,
+    "soft": 12390,
+    "by_gate": {
+      "G1.4": 3241,
+      "G2.1": 5868,
+      "G2.2": 1,
+      "G3.2": 547,
+      "G3.3": 2730,
+      "G3.4": 3
+    },
+    "g0_0_in_by_gate": 0,
+    "out": "/data/scraping/datasets/cto_accelerator/citation_independent_audit_wave0.json"
+  },
+  "exit_criteria": {
+    "maps_readable": true,
+    "integrity_green": true,
+    "no_symlink_g0": true
+  }
+}

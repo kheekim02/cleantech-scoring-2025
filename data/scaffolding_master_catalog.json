@@ -3970,5 +3970,85 @@
         "pct": 26.3
       }
     ]
+  },
+  "UNIVERSAL": {
+    "name": "Universal residual worksheet stubs",
+    "pattern": "UNIVERSAL",
+    "total_files": 92,
+    "threshold_pct": 0.0,
+    "min_files": 1,
+    "total_scaffolding_items": 10,
+    "items": [
+      {
+        "text": "less taxation",
+        "count": 20,
+        "total_files": 92,
+        "pct": 21.7,
+        "source": "citation_remediation_2026-10-03"
+      },
+      {
+        "text": "Interview sampling",
+        "count": 20,
+        "total_files": 92,
+        "pct": 21.7,
+        "source": "citation_remediation_2026-10-03"
+      },
+      {
+        "text": "Customer interview guide",
+        "count": 20,
+        "total_files": 92,
+        "pct": 21.7,
+        "source": "citation_remediation_2026-10-03"
+      },
+      {
+        "text": "Sample interview questions",
+        "count": 20,
+        "total_files": 92,
+        "pct": 21.7,
+        "source": "citation_remediation_2026-10-03"
+      },
+      {
+        "text": "Assignment worksheet",
+        "count": 20,
+        "total_files": 92,
+        "pct": 21.7,
+        "source": "citation_remediation_2026-10-03"
+      },
+      {
+        "text": "Financial model template",
+        "count": 20,
+        "total_files": 92,
+        "pct": 21.7,
+        "source": "citation_remediation_2026-10-03"
+      },
+      {
+        "text": "Document a sampling (below) of at least 5 customer interviews",
+        "count": 20,
+        "total_files": 92,
+        "pct": 21.7,
+        "source": "wave1_2026-10-03"
+      },
+      {
+        "text": "Markets: Describe the size and growth rate of your first targeted segment",
+        "count": 20,
+        "total_files": 92,
+        "pct": 21.7,
+        "source": "wave1_2026-10-03"
+      },
+      {
+        "text": "Size the second and third markets you are targeting",
+        "count": 20,
+        "total_files": 92,
+        "pct": 21.7,
+        "source": "wave1_2026-10-03"
+      },
+      {
+        "text": "Use of funds: specific product, market",
+        "count": 20,
+        "total_files": 92,
+        "pct": 21.7,
+        "source": "wave1_2026-10-03"
+      }
+    ]
   }
 }

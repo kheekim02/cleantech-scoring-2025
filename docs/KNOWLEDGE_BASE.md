@@ -4,6 +4,15 @@ This document serves as the exhaustive architectural and operational reference f
 
 ---
 
+## 0. Project Boundaries & Prototype Distinction (Strict Rule)
+
+- **This Repository (`site/`, `api/`)**: Internal Human Scoring Prototype for CleanTech Open 2025 (Global Key Advisors + CleanTech Open) using **Vercel + Supabase**. It is solely for internal cohort evaluation.
+- **Nafees's Due Diligence Scoring Platform**: A separate due diligence prototype created by coworker **Nafees**. It is **not** this codebase.
+- **FrontSignal MVP**: The upcoming AWS-backed production intelligence platform (AWS Cognito, IAM, S3, DGX Spark, Cloudflare).
+- **Rule**: Never conflate these systems. Always ask for clarification before making architectural assumptions about any prototype.
+
+---
+
 ## 1. System Architecture & Component Interactions
 
 ```
@@ -124,3 +133,49 @@ The scorer interface ([`site/index.html`](../site/index.html)) provides zero-tab
 ### Explicit non-goals for the interface
 - Do **not** re-enable AI suggestion badges, confidence display, citation dossiers, or auto-jump from model evidence.
 - Offline extraction/push scripts may still store AI fields in `startup_extractions.payload` for ops; the scorer API should omit them from judge-facing responses.
+
+---
+
+## 6. Citation / rationale remediation (2026-10-03)
+
+**Problem:** Independent uniqueness audit on `ai_cache_v5_parsed` was RED (1,818 HARD) while production `audit_v5_parsed` stayed GREEN. Dominant cause was accept-path writers (`_sanitize_rationale` constant string, timeout/missing-primary prose) manufacturing cross-company clones — not citation fabrication.
+
+**Remediation (targeted, not blind full rescore):**
+1. Schema + auditor: `error_code` on `QuestionEvaluation`; HARD G3.2 only for non-zero/engineered clones; true-negative similarity is SOFT.
+2. Accept path: structured withholds (`TIMEOUT` / `NO_PRIMARY` / `WITHHELD_*`) with `rationale=null`; G2.3 mismatch reject; company-token prompt; retry-only `temperature=0.2`.
+3. Offline scrub → selective regen → corpus scaffolding stub expansion → sample5 HARD=0 gate → full `needs_regen` + follow-up pass.
+4. **Promoted:** `ai_cache_v5_parsed` (backup `ai_cache_v5_parsed_pre_remediation_20261003T214821Z`). Symlink `ai_cache_v5_remediated` → promoted path.
+
+**Gate results after promote:**
+| Gate | Before | After |
+|---|---|---|
+| Independent HARD | 1,818 RED | **0 GREEN** |
+| `audit_v5_parsed` | 92/92 PASS | **92/92 PASS** |
+| Engineered rationale strings | 1,885 | **0** |
+| Scored coverage | 22,437 | 22,105 (−332 sanitize/timeout→withhold drift) |
+
+**Closeout:** `/data/scraping/outputs/citation_remediation_closeout.json` (also under `datasets/cto_accelerator/`). **Supabase push not run** — awaiting explicit go-ahead; UI remains human-only.
+
+**Wave 0 (2026-10-03):** Post-promote `*.primary_map.json` self-loop symlinks restored — 92/92 real files copied from `ai_cache_v5_parsed_pre_remediation_20261003T214821Z`. Integrity gate: `scripts/check_cache_integrity.py`. Independent re-audit on promoted path: HARD=0, no G0.0. Closeout: `citation_wave0_closeout.json`.
+
+**Wave 1 (2026-10-04):** Offline hygiene — 1,330 shadow withholds → `NO_EVIDENCE`; scaffolding/junk micro-cite cleanup; G1.4 entity-only short-cite exemption; G3.1 indexes scaffolding cites even at 0.0. Independent HARD=0, SOFT≈11.0k. Closeout: `citation_wave1_closeout.json`.
+
+**Wave 2 (2026-10-04):** `ES_Q1` accept/prompt redesign (narrative impact OK; invented `SDG N`/`$`/`%` still blocked) + selective regen (92 rows, `qwen3.8:27b-32k`). `ES_Q1` withheld 90→14 (15.2%); scaffolding nonzero 0; independent HARD=0. Closeout: `citation_wave2_closeout.json`.
+
+**Wave 3 (2026-10-04):** Promote hardening — `scripts/promote_cache_gate.py` (integrity → independent HARD=0 → v5 grounding → atomic `--apply` only if GREEN; refuses symlink primary_maps; **refuses Supabase**). Scrub asserts copied maps are never symlinks. Check-only on live cache GREEN. Closeout: `citation_wave3_closeout.json`.
+
+**Roadmap before → after (Waves 0–3):**
+
+| Metric | Pre-critique / broken | After Waves 0–3 |
+|---|---|---|
+| Primary maps readable | 0/92 (self-loop symlinks) | **92/92 real files** |
+| Independent HARD | 1,818 → broken G0.0 post-promote | **0 GREEN** |
+| Shadow withholds (`null`/`null`) | 1,330 | **0** (`NO_EVIDENCE`) |
+| `ES_Q1` withheld | 90/92 (97.8%) | **14/92 (15.2%)** |
+| Template non-zero cites (`IS_Q21`-class) | ≥1 | **0** |
+| Engineered rationale strings | 1,885 → 0 | **0** |
+| Supabase / UI AI citations | N/A | **Not pushed / not enabled** (human-only interface) |
+
+**Promote procedure (ops):**  
+`python scripts/promote_cache_gate.py --candidate <remediated> --live .../ai_cache_v5_parsed --check-only`  
+then `--apply` only when GREEN. Never run `15_push_v2_extractions_to_supabase.py` for this remediation — judge UI stays human-only.

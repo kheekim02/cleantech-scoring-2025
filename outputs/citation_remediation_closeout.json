@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-10-03T21:48:21.878479+00:00",
+  "promoted_to": "/data/scraping/datasets/cto_accelerator/ai_cache_v5_parsed",
+  "backup": "/data/scraping/datasets/cto_accelerator/ai_cache_v5_parsed_pre_remediation_20261003T214821Z",
+  "before_coverage": {
+    "companies": 92,
+    "records": 25944,
+    "scored": 22437,
+    "cited": 16968,
+    "withheld": 3507,
+    "engineered_rationales": 1885
+  },
+  "after_coverage": {
+    "companies": 92,
+    "records": 25944,
+    "scored": 22105,
+    "cited": 16391,
+    "withheld": 3839,
+    "engineered_rationales": 0
+  },
+  "score_drift": {
+    "scored_delta": -332,
+    "withheld_delta": 332,
+    "engineered_cleared": 1885
+  },
+  "independent_before": {
+    "hard": 1818,
+    "status": "RED"
+  },
+  "independent_after": {
+    "hard": 0,
+    "status": "GREEN",
+    "soft": 12390,
+    "by_gate": {
+      "G1.4": 3241,
+      "G2.1": 5868,
+      "G2.2": 1,
+      "G3.2": 547,
+      "G3.3": 2730,
+      "G3.4": 3
+    }
+  },
+  "grounding_audit_v5": {
+    "ok": 92,
+    "fail": 0
+  },
+  "supabase_push": "NOT_DONE_awaiting_explicit_go_ahead"
+}

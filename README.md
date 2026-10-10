@@ -60,7 +60,7 @@ Evaluation is standardized across 10 categories in [`master_282_rubric.json`](./
 │       ├── scoring.js          # Progress calculation & score aggregation
 │       ├── admin.js            # Assignment tables, progress charts & filters
 │       └── export.js           # CSV/JSON audit and data export utilities
-├── api/                        # Serverless edge functions (Netlify / Supabase)
+├── api/                        # Serverless functions (Vercel)
 │   ├── get-startup.js          # Hydrates startup payload and judge reviews
 │   ├── save-score.js           # Debounced persistence for score & justification
 │   └── list-startups.js        # Supplies queue listings to dashboards

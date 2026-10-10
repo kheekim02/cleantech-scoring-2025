@@ -70,7 +70,19 @@ def clean_markdown_text(text, doc_type_code, catalog):
         r'(?im)^.*essential\s+business\s+deliverable.*$',
         r'(?im)^.*upload\s+(?:this\s+document\s+)?as.*$',
         r'(?im)^.*teamname_.*$',
-        r'(?is)if available, and relevant, provide written technology-related testimonials.*?\(one to three pages maximum\)\.?'
+        r'(?is)if available, and relevant, provide written technology-related testimonials.*?\(one to three pages maximum\)\.?',
+        # Residual worksheet stubs that still leaked into citations (G3.1)
+        r'(?im)^.*\bless\s+taxation\b.*$',
+        r'(?im)^.*\binterview\s+sampling\b.*$',
+        r'(?im)^.*\bcustomer\s+interview\s+(?:guide|script|template)\b.*$',
+        r'(?im)^.*\bsample\s+interview\s+questions\b.*$',
+        r'(?im)^.*\bassignment\s+worksheet\b.*$',
+        r'(?im)^.*\bfinancial\s+model\s+template\b.*$',
+        r'(?im)^.*document\s+a\s+sampling.*customer\s+interviews.*$',
+        r'(?im)^.*sampling\s*\(below\)\s*of\s+at\s+least\s+\d+\s+customer.*$',
+        r'(?im)^.*markets:\s*describe\s+the\s+size\s+and\s+growth\s+rate.*$',
+        r'(?im)^.*size\s+the\s+second\s+and\s+third\s+markets.*$',
+        r'(?im)^.*use\s+of\s+funds:\s*specific\s+product.*$',
     ]
     for p in universal_patterns:
         text = re.sub(p, '', text, flags=re.MULTILINE)
@@ -81,18 +93,23 @@ def clean_markdown_text(text, doc_type_code, catalog):
     text = re.sub(r'(?i)e\.g\.,\s*(?:add\s+multilingual|partner\s+with\s+hbcus|partner\s+with\s+local|reach\s+500|30%\s+increase|50%\s+increase)[^\n]*', '', text)
     
     # 4. Document-specific scaffolding from catalog
-    if doc_type_code in catalog:
-        items = catalog[doc_type_code].get('items', [])
+    catalog_keys = [doc_type_code]
+    if "UNIVERSAL" in catalog and "UNIVERSAL" not in catalog_keys:
+        catalog_keys.append("UNIVERSAL")
+    for key in catalog_keys:
+        items = catalog.get(key, {}).get("items", [])
         for item in items:
-            raw_target = item['text']
+            raw_target = item["text"]
             words = raw_target.split()
-            if len(words) < 4:
+            # UNIVERSAL residual stubs may be short (2-3 tokens); still strip.
+            min_words = 2 if key == "UNIVERSAL" else 4
+            if len(words) < min_words:
                 continue
-                
+
             # Build flexible regex allowing markdown characters, punctuation variants, and whitespace
             escaped_words = [re.escape(w) for w in words]
-            pattern = r'(?i)' + r'[\s\\_*\-]+'.join(escaped_words)
-            text = re.sub(pattern, '', text)
+            pattern = r"(?i)" + r"[\s\\_*\-]+".join(escaped_words)
+            text = re.sub(pattern, "", text)
 
     # 5. Clean up empty markdown headers, stray list markers, and excessive whitespace
     text = re.sub(r'(?m)^#+\s*$', '', text)

@@ -138,6 +138,23 @@ class TestDoclingIngestion(unittest.TestCase):
         self.assertIn("ammonia production solution", texts[0])
         self.assertNotIn("Cleantech Open Confidential", texts[0])
 
+        upload = clean_scaffolding_from_chunks(
+            [{
+                "chunk_id": "c4",
+                "page_no": 1,
+                "type": "paragraph",
+                "text": (
+                    "Upload this document as TeamName_Impact.pdf\n"
+                    "We protect the environment by upcycling waste plastic into graphite."
+                ),
+            }],
+            doc_type="EBD2",
+            catalog_path=self.catalog_path,
+        )
+        kept = " ".join(c["text"] for c in upload)
+        self.assertNotIn("Upload this document as", kept)
+        self.assertIn("upcycling waste plastic", kept)
+
     def test_04_chunk_provenance_schema(self):
         """Verify structure of extracted chunks: page_no, bbox coordinates, type, text."""
         try:

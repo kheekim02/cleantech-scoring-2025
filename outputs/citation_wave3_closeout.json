@@ -1,0 +1,47 @@
+{
+  "wave": "3",
+  "generated_at": "2026-10-04T00:41:00.592628+00:00",
+  "artifacts": {
+    "promote_gate_script": "/data/scraping/scripts/promote_cache_gate.py",
+    "promote_gate_report": "/data/scraping/datasets/cto_accelerator/promote_gate_report_wave3.json",
+    "scrub_copy_only": true
+  },
+  "gate_check_only": {
+    "status": "GREEN",
+    "gates_green": true,
+    "integrity": {
+      "status": "GREEN",
+      "hard_count": 0,
+      "readable_primary_maps": 92,
+      "symlink_primary_maps": []
+    },
+    "independent": {
+      "status": "GREEN",
+      "hard_count": 0,
+      "soft_count": 11055,
+      "out": "/data/scraping/datasets/cto_accelerator/citation_independent_audit_promote_20261004T004042Z.json"
+    },
+    "v5_grounding": {
+      "ok": 92,
+      "fail": 0,
+      "status": "PASS",
+      "failures": []
+    },
+    "supabase_push": "REFUSED_not_in_interface"
+  },
+  "before_after": {
+    "wave0_maps_readable": "0/92 \u2192 92/92",
+    "wave1_shadow_null_null": "1330 \u2192 0",
+    "wave2_es_q1_withheld": "90/92 \u2192 14/92 (15.2%)",
+    "independent_hard": "1818 \u2192 0 (held through Waves 0\u20133)",
+    "scaffolding_nonzero": "\u22651 \u2192 0"
+  },
+  "supabase_push": "NOT_DONE_interface_human_only",
+  "exit_criteria": {
+    "scrub_copies_maps": true,
+    "promote_gate_script_exists": true,
+    "check_only_green": true,
+    "supabase_not_pushed": true,
+    "kb_updated": true
+  }
+}
