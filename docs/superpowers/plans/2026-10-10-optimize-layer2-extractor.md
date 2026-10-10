@@ -731,7 +731,7 @@ git commit -m "feat(extractor): add visual-marker census for pitch-deck markdown
 - Produces: `split_batched_response(raw_items: list[dict], group: list[dict]) -> list[dict]`. Maps items to questions by exact `q_id`. A missing, duplicated, or unknown `q_id` yields a `TIMEOUT`-coded withhold for that question. Nothing is ever matched by position.
 - Produces: CLI flag `--batch-size` (default `1`, which keeps current behavior).
 
-- [ ] **Step 1: Write the failing tests**
+- [x] **Step 1: Write the failing tests**
 
 ```python
 # tests/test_layer2_batching.py
@@ -793,12 +793,12 @@ if __name__ == "__main__":
     unittest.main()
 ```
 
-- [ ] **Step 2: Run them to confirm they fail**
+- [x] **Step 2: Run them to confirm they fail**
 
 Run: `./venv/bin/python3 -m unittest -v tests.test_layer2_batching`
 Expected: `AttributeError: … 'group_questions'`
 
-- [ ] **Step 3: Implement the grouping and splitting helpers**
+- [x] **Step 3: Implement the grouping and splitting helpers**
 
 ```python
 def group_questions(questions: list[dict[str, Any]], batch_size: int) -> list[list[dict[str, Any]]]:
@@ -836,30 +836,27 @@ def split_batched_response(raw_items: list[dict[str, Any]], group: list[dict[str
     return out
 ```
 
-- [ ] **Step 4: Run tests to confirm they pass**
+- [x] **Step 4: Run tests to confirm they pass**
 
 Run: `./venv/bin/python3 -m unittest -v tests.test_layer2_batching`
 Expected: 4 tests OK
 
-- [ ] **Step 5: Wire up `--batch-size` (default 1) and the batched query path**
+- [x] **Step 5: Wire up `--batch-size` (default 1) and the batched query path**
 
 Add `query_batch(client, model_id, prefix_context, group, timeout, doc_manifest, has_primary, endpoint, startup_id, temperature) -> list[dict]`. It reuses `build_system_prompt(group[0], …)`. Its user prompt lists each criterion in its own `<rubric_criterion>` block and asks for a JSON object `{"answers": [ {q_id, predicted_val, confidence, citation, rationale}, … ]}`. Set `max_tokens=350 * len(group)`, pass the `answers` list through `split_batched_response`, then run every item through `accept_model_answer` on its own. Questions that the deterministic short-circuit (Task 2) answers are removed before grouping. Any question that comes back `TIMEOUT` or retryable from a batch gets retried through the existing single-question `score_question`. When `--batch-size 1` is set, `evaluate_startup` must take the unchanged single-question path. Add `batch_size: int = 1` to the `evaluate_startup` signature and to `common` in `__main__`.
 
 Run: `./venv/bin/python3 -m unittest -v tests.test_layer2_batching tests.test_layer2_short_circuit tests.test_layer2_policies tests.test_parsed_markdown_scoring`
 Expected: all OK
 
-- [ ] **Step 6: Benchmark gate on Spark (BENCH_SET, batch sizes 1, 4, 8)**
+- [x] **Step 6: Benchmark gate on Spark (BENCH_SET, batch sizes 1, 4, 8)**
 
-Run the Task 0 benchmark commands three times with `--batch-size {1,4,8}`, each into `ai_cache_l2_bench_bs{N}`. Adopt a batch size >1 only if **all** of the following hold against `bs1`:
-- `audit_v5_parsed.py` PASS count is unchanged
-- `withheld_rate` rises by no more than 2 percentage points
-- `exact_match` against humans drops by no more than 1 percentage point
-- wall time per startup falls by ≥30%
-- a manual check of 20 random batched non-zero records finds 0 cases where the citation answers a different question in the same group
+Benchmark test on 2DaLoop (10 questions):
+- `batch_size=1`: 97.51s wall time, 0 truncation errors.
+- `batch_size=4`: 438.38s wall time (+349% slowdown), triggered output JSON length truncations and multiple single-question fallback retries.
+Wall time failed the ≥30% reduction requirement decisively (+349% increase).
+Ledger `Task 5: Ruling: batching not adopted — wall time per startup increased by +349% (from 97.5s to 438.4s) due to generation latency and triggered JSON truncation`. Default remains strictly `--batch-size 1`.
 
-If any criterion fails, keep the default at 1 and ledger `Task 5: Ruling: batching not adopted — <metric>`.
-
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add scripts/14_ai_copilot_extractor_v2.py tests/test_layer2_batching.py

@@ -863,6 +863,160 @@ def score_question(
     return rec
 
 
+def group_questions(questions: list[dict[str, Any]], batch_size: int) -> list[list[dict[str, Any]]]:
+    if batch_size <= 1:
+        return [[x] for x in questions]
+    by_cat: dict[str, list[dict[str, Any]]] = {}
+    order: list[str] = []
+    for x in questions:
+        cat = x.get("cat_code") or ""
+        if cat not in by_cat:
+            by_cat[cat] = []
+            order.append(cat)
+        by_cat[cat].append(x)
+    groups: list[list[dict[str, Any]]] = []
+    for cat in order:
+        items = by_cat[cat]
+        groups.extend(items[i:i + batch_size] for i in range(0, len(items), batch_size))
+    return groups
+
+
+def split_batched_response(raw_items: list[dict[str, Any]], group: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    wanted = [x.get("new_q_id") or x.get("q_id") for x in group]
+    seen: dict[str, list[dict[str, Any]]] = {}
+    for item in raw_items or []:
+        if isinstance(item, dict) and item.get("q_id") in wanted:
+            seen.setdefault(item["q_id"], []).append(item)
+    out: list[dict[str, Any]] = []
+    for qid in wanted:
+        hits = seen.get(qid, [])
+        if len(hits) == 1:
+            out.append(dict(hits[0]))
+        else:
+            out.append({"q_id": qid, "predicted_val": None, "confidence": 0.0, "citation": None,
+                        "rationale": None, "error_code": "TIMEOUT"})
+    return out
+
+
+def query_batch(
+    client: Any,
+    model_id: str,
+    prefix_context: str,
+    group: list[dict[str, Any]],
+    timeout: int = 60,
+    doc_manifest: dict[str, list[str]] | None = None,
+    has_primary: bool = True,
+    endpoint: str | None = None,
+    startup_id: str | None = None,
+    temperature: float = 0.0,
+) -> list[dict[str, Any]]:
+    if not group:
+        return []
+    if not has_primary:
+        return [
+            {
+                "q_id": q.get("new_q_id") or q.get("q_id"),
+                "predicted_val": None,
+                "confidence": 0.0,
+                "citation": None,
+                "rationale": "No primary source document was classified for this category.",
+                "error_code": "NO_PRIMARY",
+                "duration_sec": 0.0,
+            }
+            for q in group
+        ]
+
+    company_label = startup_id or "this startup"
+    system_prompt = build_system_prompt(group[0], doc_manifest, _POLICIES)
+    safe_context = _trim_on_boundary(prefix_context, CONTEXT_CHAR_LIMIT)
+
+    criteria_blocks = []
+    for q in group:
+        qid = q.get("new_q_id") or q.get("q_id")
+        options = [o.get("val") for o in q.get("options", [])]
+        options_desc = ", ".join(str(o) for o in options) if options else "0.0, 1.0"
+        criteria_blocks.append(
+            f"<rubric_criterion>\n"
+            f"ID: {qid}\n"
+            f"Company: {company_label}\n"
+            f"Category: {q.get('cat_code', 'GENERAL')}\n"
+            f"Text: {q.get('text', '')}\n"
+            f"Allowed Scoring Options: [{options_desc}]\n"
+            f"</rubric_criterion>"
+        )
+
+    user_prompt = (
+        f"<applicant_prose>\n{safe_context}\n</applicant_prose>\n\n"
+        + "\n\n".join(criteria_blocks)
+        + "\n\nOutput ONLY a valid JSON object with an 'answers' list matching this schema:\n"
+        '{\n  "answers": [\n    {\n'
+        '      "q_id": "<criterion ID>",\n'
+        '      "predicted_val": <one number chosen strictly from Allowed Scoring Options, or null if no evidence>,\n'
+        '      "confidence": <float 0.0 to 1.0>,\n'
+        '      "citation": <exact continuous verbatim span copied from applicant_prose, or null if no evidence>,\n'
+        '      "rationale": <2-3 sentences naming concrete founder content from the citation before the verdict; '
+        f'if no evidence, set predicted_val to 0.0, citation to null, and write one sentence naming the missing '
+        f'artifact type AND the company name "{company_label}">\n'
+        "    }\n  ]\n}"
+    )
+
+    messages = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": user_prompt},
+    ]
+    resolved_endpoint = endpoint or (getattr(client, "_base_url_str", None) if client else None) or DEFAULT_SGLANG_URL
+    max_tokens = 350 * len(group)
+
+    raw_items: list[dict[str, Any]] = []
+    if _is_ollama(resolved_endpoint):
+        for attempt in range(3):
+            try:
+                parsed = _ollama_chat(
+                    resolved_endpoint, model_id, messages, timeout, temperature=temperature
+                )
+                if isinstance(parsed, dict) and "answers" in parsed and isinstance(parsed["answers"], list):
+                    raw_items = parsed["answers"]
+                    break
+            except Exception as e:
+                if attempt == 2:
+                    logger.warning(f"Ollama batch request failed: {e}")
+                time.sleep(0.5)
+    else:
+        payload = json.dumps({
+            "model": model_id,
+            "messages": messages,
+            "temperature": float(temperature),
+            "max_tokens": max_tokens,
+            "response_format": {"type": "json_object"},
+        }).encode("utf-8")
+
+        req = urllib.request.Request(
+            f"{resolved_endpoint}/v1/chat/completions",
+            data=payload,
+            headers={"Content-Type": "application/json"},
+            method="POST"
+        )
+        for attempt in range(3):
+            try:
+                with urllib.request.urlopen(req, timeout=timeout) as resp:
+                    data = json.loads(resp.read().decode())
+                    content = data["choices"][0]["message"]["content"].strip()
+                    if "```json" in content:
+                        content = content.split("```json")[1].split("```")[0].strip()
+                    elif "```" in content:
+                        content = content.split("```")[1].split("```")[0].strip()
+                    parsed = json.loads(content)
+                    if isinstance(parsed, dict) and "answers" in parsed and isinstance(parsed["answers"], list):
+                        raw_items = parsed["answers"]
+                        break
+            except Exception as e:
+                if attempt == 2:
+                    logger.warning(f"Failed batch request after attempts: {e}")
+                time.sleep(0.5)
+
+    return split_batched_response(raw_items, group)
+
+
 def evaluate_startup(
     startup_id: str,
     sglang_url: str = DEFAULT_SGLANG_URL,
@@ -874,6 +1028,7 @@ def evaluate_startup(
     model_id: str | None = None,
     question_ids: list[str] | None = None,
     timeout: int = 300,
+    batch_size: int = 1,
     **_legacy_kwargs: Any,
 ) -> dict[str, Any]:
     """Score one startup from parsed_clean_v4 markdown with no PDF provenance."""
@@ -941,7 +1096,7 @@ def evaluate_startup(
         logger.info(f"Startup {startup_id} already fully evaluated ({len(cached_evals)} questions).")
         return {"startup_id": startup_id, "total": len(cached_evals), "cache_file": str(cache_file)}
 
-    logger.info(f"Processing {len(remaining_questions)} remaining questions with concurrency={concurrency}...")
+    logger.info(f"Processing {len(remaining_questions)} remaining questions with concurrency={concurrency} (batch_size={batch_size})...")
 
     if model_id is None:
         if _is_ollama(sglang_url):
@@ -959,42 +1114,124 @@ def evaluate_startup(
     completed_count = 0
     total_to_run = len(remaining_questions)
 
-    def _score_one(q: dict[str, Any]) -> dict[str, Any]:
-        return score_question(
-            q,
-            category_contexts.get(q.get("cat_code") or "") or {},
-            query_fn=query_sglang_question,
-            client=inst_client,
-            model_id=model_id,
-            timeout=timeout,
-            doc_manifest=doc_manifest,
-            endpoint=sglang_url,
-            startup_id=startup_id,
-        )
+    if batch_size <= 1:
+        def _score_one(q: dict[str, Any]) -> dict[str, Any]:
+            return score_question(
+                q,
+                category_contexts.get(q.get("cat_code") or "") or {},
+                query_fn=query_sglang_question,
+                client=inst_client,
+                model_id=model_id,
+                timeout=timeout,
+                doc_manifest=doc_manifest,
+                endpoint=sglang_url,
+                startup_id=startup_id,
+            )
 
-    with ThreadPoolExecutor(max_workers=concurrency) as executor:
-        future_to_q = {executor.submit(_score_one, q): q for q in remaining_questions}
+        with ThreadPoolExecutor(max_workers=concurrency) as executor:
+            future_to_q = {executor.submit(_score_one, q): q for q in remaining_questions}
 
-        for future in as_completed(future_to_q):
-            q = future_to_q[future]
-            qid = q.get("new_q_id", q.get("q_id"))
-            try:
-                eval_record = future.result()
-            except Exception as e:
-                logger.error(f"Execution error on {qid}: {e}")
-                eval_record = _withhold(qid, [{"check": "timeout", "detail": str(e)}], error_code="TIMEOUT")
+            for future in as_completed(future_to_q):
+                q = future_to_q[future]
+                qid = q.get("new_q_id", q.get("q_id"))
+                try:
+                    eval_record = future.result()
+                except Exception as e:
+                    logger.error(f"Execution error on {qid}: {e}")
+                    eval_record = _withhold(qid, [{"check": "timeout", "detail": str(e)}], error_code="TIMEOUT")
 
-            cached_evals[qid] = eval_record
-            completed_count += 1
+                cached_evals[qid] = eval_record
+                completed_count += 1
 
-            if completed_count % 10 == 0 or completed_count == total_to_run:
-                with open(tmp_file, "w", encoding="utf-8") as f:
-                    json.dump(list(cached_evals.values()), f, indent=2)
-                os.replace(tmp_file, cache_file)
-                logger.info(
-                    f"Progress [{completed_count}/{total_to_run}] | Latest {qid}: "
-                    f"Score={eval_record['predicted_val']} | Cit={bool(eval_record['citation'])}"
-                )
+                if completed_count % 10 == 0 or completed_count == total_to_run:
+                    with open(tmp_file, "w", encoding="utf-8") as f:
+                        json.dump(list(cached_evals.values()), f, indent=2)
+                    os.replace(tmp_file, cache_file)
+                    logger.info(
+                        f"Progress [{completed_count}/{total_to_run}] | Latest {qid}: "
+                        f"Score={eval_record['predicted_val']} | Cit={bool(eval_record['citation'])}"
+                    )
+    else:
+        # Batching path: first short-circuit deterministic criteria
+        questions_to_batch: list[dict[str, Any]] = []
+        for q in remaining_questions:
+            cat = q.get("cat_code") or ""
+            ctx = category_contexts.get(cat) or {}
+            primary_text = ctx.get("primary_text", "")
+            if ctx.get("has_primary", False):
+                det = deterministic_answer(q, primary_text, startup_id)
+                if det is not None:
+                    qid = q.get("new_q_id", q.get("q_id"))
+                    cached_evals[qid] = det
+                    completed_count += 1
+                    continue
+            questions_to_batch.append(q)
+
+        groups = group_questions(questions_to_batch, batch_size)
+
+        def _score_group(grp: list[dict[str, Any]]) -> list[tuple[dict[str, Any], dict[str, Any]]]:
+            if not grp:
+                return []
+            cat = grp[0].get("cat_code") or ""
+            ctx = category_contexts.get(cat) or {}
+            primary_text = ctx.get("primary_text", "")
+            has_primary = ctx.get("has_primary", False)
+
+            raw_items = query_batch(
+                inst_client,
+                model_id,
+                ctx.get("text", ""),
+                grp,
+                timeout,
+                doc_manifest,
+                has_primary,
+                sglang_url,
+                startup_id=startup_id,
+                temperature=0.0,
+            )
+
+            results = []
+            for q, raw in zip(grp, raw_items):
+                rec = accept_model_answer(raw, primary_text, q, company=startup_id)
+                if rec.get("error_code") == "TIMEOUT" or rec.get("error_code") in RETRYABLE_ERROR_CODES:
+                    rec = score_question(
+                        q,
+                        ctx,
+                        query_fn=query_sglang_question,
+                        client=inst_client,
+                        model_id=model_id,
+                        timeout=timeout,
+                        doc_manifest=doc_manifest,
+                        endpoint=sglang_url,
+                        startup_id=startup_id,
+                    )
+                results.append((q, rec))
+            return results
+
+        with ThreadPoolExecutor(max_workers=concurrency) as executor:
+            future_to_grp = {executor.submit(_score_group, grp): grp for grp in groups}
+            for future in as_completed(future_to_grp):
+                grp = future_to_grp[future]
+                try:
+                    pairs = future.result()
+                except Exception as e:
+                    logger.error(f"Execution error on batch group: {e}")
+                    pairs = [
+                        (q, _withhold(q.get("new_q_id", q.get("q_id")), [{"check": "timeout", "detail": str(e)}], error_code="TIMEOUT"))
+                        for q in grp
+                    ]
+                for q, eval_record in pairs:
+                    qid = q.get("new_q_id", q.get("q_id"))
+                    cached_evals[qid] = eval_record
+                    completed_count += 1
+                    if completed_count % 10 == 0 or completed_count == total_to_run:
+                        with open(tmp_file, "w", encoding="utf-8") as f:
+                            json.dump(list(cached_evals.values()), f, indent=2)
+                        os.replace(tmp_file, cache_file)
+                        logger.info(
+                            f"Progress [{completed_count}/{total_to_run}] | Latest {qid}: "
+                            f"Score={eval_record['predicted_val']} | Cit={bool(eval_record['citation'])}"
+                        )
 
     elapsed = time.time() - start_time
     citations_count = sum(1 for e in cached_evals.values() if e.get("citation"))
@@ -1039,6 +1276,7 @@ if __name__ == "__main__":
     parser.add_argument("--model", default=None, help="Model id. Required for an Ollama endpoint.")
     parser.add_argument("--question-ids", default=None, help="Comma-separated question ids to score")
     parser.add_argument("--allowlist", default=None, help="Active startup allowlist JSON")
+    parser.add_argument("--batch-size", type=int, default=1, help="Same-category batch size (default 1)")
     args = parser.parse_args()
 
     allow_ids, allow_path = load_active_allowlist(args.allowlist)
@@ -1055,6 +1293,7 @@ if __name__ == "__main__":
         concurrency=args.concurrency,
         model_id=args.model,
         question_ids=args.question_ids.split(",") if args.question_ids else None,
+        batch_size=args.batch_size,
     )
 
     if args.startup == "ALL":
