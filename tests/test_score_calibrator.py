@@ -17,7 +17,7 @@ class TestScoreCalibrator(unittest.TestCase):
             "predicted_val": 0.0,
             "confidence": 0.65,
             "citation": "Customer segments include municipal transit authorities.",
-            "rationale": "Applicant mentions municipal transit authorities.",
+            "rationale": "Applicant explicitly mentions municipal transit authorities as primary target customer segment.",
         }
         cal = calibrate_record(rec, q_def)
         self.assertGreater(cal["predicted_val"], 0.0)

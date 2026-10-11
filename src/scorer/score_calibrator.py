@@ -1,17 +1,28 @@
 import re
 from typing import Any
-from src.scorer.schemas import is_negative_citation, is_scaffolding_citation
+from src.scorer.schemas import (
+    is_engineered_rationale,
+    is_junk_micro_citation,
+    is_negative_citation,
+    is_scaffolding_citation,
+)
 
 ABSENCE_RE = re.compile(
     r"(does\s+not\s+(?:state|mention|provide|include|contain|specify)|"
-    r"no\s+(?:mention|evidence|information|discussion)|"
+    r"no\s+(?:mention|evidence|information|discussion|patents?)|"
     r"not\s+(?:explicitly\s+)?(?:stated|mentioned|provided)|"
-    r"fails\s+to|omits|lacks|absent|missing\s+from\s+the\s+document|unspecified)",
+    r"fails\s+to|omits|lacks|absent|missing\s+from\s+the\s+document|unspecified|blank)",
     re.IGNORECASE,
 )
 
 # Categories with documented judge softness/fractional scoring
 FRACTIONAL_CATEGORIES = {"BC", "IS", "IP", "PMF", "M"}
+
+
+def word_count(text: str | None) -> int:
+    if not text:
+        return 0
+    return len(re.findall(r"[A-Za-z0-9]+", text))
 
 
 def calibrate_record(
@@ -27,14 +38,19 @@ def calibrate_record(
     cat = q_def.get("cat_code") or ""
     rationale = str(rec.get("rationale") or "")
 
-    # Invariant: If citation is missing, or rationale/citation expresses absence, NEVER calibrate upward.
-    if not cit:
+    # Invariant: If citation is missing or junk micro-citation or too short (< 3 words), NEVER calibrate upward.
+    if not cit or word_count(str(cit)) < 3 or is_junk_micro_citation(str(cit)):
         return out
 
+    # Invariant: If rationale or citation expresses absence, or citation is negative/scaffolding, NEVER calibrate upward.
     if ABSENCE_RE.search(rationale) or ABSENCE_RE.search(str(cit)):
         return out
 
-    if is_negative_citation(cit) or is_scaffolding_citation(cit):
+    if is_negative_citation(cit) or is_scaffolding_citation(cit) or is_engineered_rationale(rationale):
+        return out
+
+    # Invariant: Rationale must meet minimal length
+    if word_count(rationale) < 8:
         return out
 
     # Rule 2: If model withheld or gave 0.0, but valid citation text exists with moderate confidence

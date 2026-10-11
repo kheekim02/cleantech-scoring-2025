@@ -30,8 +30,8 @@ class TestGenerateCalibratedCache(unittest.TestCase):
         ]))
 
         (self.src_cache / "TestCo.json").write_text(json.dumps([
-            {"q_id": "BC_Q1", "predicted_val": 0.0, "confidence": 0.7, "citation": "Valid customer segment", "rationale": "Found"},
-            {"q_id": "IP_Q7", "predicted_val": 0.0, "confidence": 0.5, "citation": None, "rationale": "None"},
+            {"q_id": "BC_Q1", "predicted_val": 0.0, "confidence": 0.7, "citation": "Customer segments include municipal transit authorities.", "rationale": "Applicant explicitly mentions municipal transit authorities as primary target customer segment."},
+            {"q_id": "IP_Q7", "predicted_val": 0.0, "confidence": 0.5, "citation": None, "rationale": "No visual problem diagram found in pitch deck slides."},
         ]))
 
     def tearDown(self):

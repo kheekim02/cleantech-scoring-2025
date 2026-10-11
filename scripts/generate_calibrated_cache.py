@@ -12,6 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from collections import defaultdict
+from src.scorer.schemas import normalize_text
 from src.scorer.score_calibrator import calibrate_record
 from src.scorer.visual_deck_inspector import inspect_deck_visuals
 from src.scorer.deterministic_evaluator import evaluate_visual_criterion
@@ -36,6 +38,26 @@ def generate_calibrated_cache(
     rubric = json.loads(Path(rubric_path).read_text(encoding="utf-8"))
     rubric_map = {q.get("new_q_id", q.get("q_id")): q for q in rubric}
     startup_ids = [s["startup_id"] for s in allowlist.get("startups", [])]
+
+    # Pre-scan cohort to identify shared/clone citations and rationales
+    cite_by_qid_counts: dict[tuple[str, str], int] = defaultdict(int)
+    rat_by_qid_counts: dict[tuple[str, str], int] = defaultdict(int)
+    for sid in startup_ids:
+        src_path = src / f"{sid}.json"
+        if not src_path.exists():
+            continue
+        try:
+            records = json.loads(src_path.read_text(encoding="utf-8"))
+            for rec in records:
+                qid = rec.get("q_id")
+                c = normalize_text(str(rec.get("citation") or ""))
+                r = normalize_text(str(rec.get("rationale") or ""))
+                if c:
+                    cite_by_qid_counts[(qid, c)] += 1
+                if r:
+                    rat_by_qid_counts[(qid, r)] += 1
+        except Exception as e:
+            logger.warning(f"Error pre-scanning {sid}: {e}")
 
     calibrated_count = 0
     visual_override_count = 0
@@ -91,11 +113,17 @@ def generate_calibrated_cache(
                     visual_override_count += 1
                     continue
 
-            # Layer 3 Fractional calibration
-            cal = calibrate_record(rec, q_def)
-            if cal.get("calibrated"):
-                records_map[qid] = cal
-                calibrated_count += 1
+            # Layer 3 Fractional calibration (only if citation & rationale are unique across the cohort)
+            norm_c = normalize_text(str(rec.get("citation") or ""))
+            norm_r = normalize_text(str(rec.get("rationale") or ""))
+            if (
+                cite_by_qid_counts.get((qid, norm_c), 0) <= 1
+                and rat_by_qid_counts.get((qid, norm_r), 0) <= 1
+            ):
+                cal = calibrate_record(rec, q_def)
+                if cal.get("calibrated"):
+                    records_map[qid] = cal
+                    calibrated_count += 1
 
         # Preserve exact rubric order
         ordered = [
