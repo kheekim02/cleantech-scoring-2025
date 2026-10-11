@@ -10,6 +10,7 @@ from typing import Any
 from src.scorer.score_calibrator import calibrate_record
 from src.scorer.visual_deck_inspector import inspect_deck_visuals
 from src.scorer.deterministic_evaluator import evaluate_visual_criterion
+from scripts.docling_ingestion import detect_doc_type
 
 logger = logging.getLogger("generate_calibrated_cache")
 
@@ -41,15 +42,24 @@ def generate_calibrated_cache(
         records = json.loads(src_path.read_text(encoding="utf-8"))
         records_map = {r["q_id"]: r for r in records}
 
+        # Load primary map for verbatim citation grounding and audit compatibility
+        pmap: dict[str, Any] = {}
+        src_map_path = src / f"{sid}.primary_map.json"
+        if src_map_path.exists():
+            try:
+                pmap = json.loads(src_map_path.read_text(encoding="utf-8"))
+                (dst / f"{sid}.primary_map.json").write_text(
+                    json.dumps(pmap, indent=2) + "\n", encoding="utf-8"
+                )
+            except Exception as e:
+                logger.warning(f"Error reading/copying primary_map for {sid}: {e}")
+
         # Visual deck inspection if raw deck exists
         deck_pdf = None
         co_raw = raw / sid
         if co_raw.is_dir():
-            for p in co_raw.glob("08_*.pdf"):
-                deck_pdf = p
-                break
-            if not deck_pdf:
-                for p in co_raw.glob("*[Pp]itch*.pdf"):
+            for p in sorted(co_raw.rglob("*.pdf")):
+                if detect_doc_type(p.name) == "EBD8":
                     deck_pdf = p
                     break
 
@@ -65,9 +75,12 @@ def generate_calibrated_cache(
             if not q_def:
                 continue
 
-            # Visual criteria check
-            if qid in {"IP_Q7", "PMF_Q24"} and deck_meta:
-                vis_rec = evaluate_visual_criterion(qid, deck_meta, startup_id=sid)
+            # Visual criteria check strictly for IP_Q7 (pitch deck primary)
+            if qid == "IP_Q7" and deck_meta:
+                ip_primary = pmap.get("IP", "")
+                vis_rec = evaluate_visual_criterion(
+                    qid, deck_meta, startup_id=sid, primary_text=ip_primary
+                )
                 if vis_rec and vis_rec.get("predicted_val") == 1.0:
                     records_map[qid] = vis_rec
                     visual_override_count += 1

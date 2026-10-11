@@ -43,5 +43,40 @@ class TestScoreCalibrator(unittest.TestCase):
         self.assertFalse(cal.get("calibrated", False))
 
 
+    def test_strict_preservation_when_absence_in_rationale(self):
+        q_def = {
+            "q_id": "BC_Q1",
+            "cat_code": "BC",
+            "options": [{"val": 0.0}, {"val": 0.25}, {"val": 0.5}, {"val": 0.75}, {"val": 1.0}],
+        }
+        rec = {
+            "q_id": "BC_Q1",
+            "predicted_val": 0.0,
+            "confidence": 0.8,
+            "citation": "Transit authority contact listed.",
+            "rationale": "Document does not provide customer segment validation.",
+        }
+        cal = calibrate_record(rec, q_def)
+        self.assertEqual(cal["predicted_val"], 0.0)
+        self.assertFalse(cal.get("calibrated", False))
+
+    def test_strict_preservation_when_negative_citation(self):
+        q_def = {
+            "q_id": "BC_Q1",
+            "cat_code": "BC",
+            "options": [{"val": 0.0}, {"val": 0.5}, {"val": 1.0}],
+        }
+        rec = {
+            "q_id": "BC_Q1",
+            "predicted_val": 0.0,
+            "confidence": 0.7,
+            "citation": "not mentioned in the text",
+            "rationale": "Applicant mentions nothing about revenue.",
+        }
+        cal = calibrate_record(rec, q_def)
+        self.assertEqual(cal["predicted_val"], 0.0)
+        self.assertFalse(cal.get("calibrated", False))
+
+
 if __name__ == "__main__":
     unittest.main()

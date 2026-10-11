@@ -31,19 +31,28 @@ class TestVisualCriteriaEvaluation(unittest.TestCase):
 
     def test_evaluate_ip_q7_problem_model(self):
         deck_meta = inspect_deck_visuals(self.pdf_path)
-        rec = evaluate_visual_criterion("IP_Q7", deck_meta, startup_id="TestCo")
+        primary_text = "The Challenge: Grid Overload\nRenewable energy constraints"
+        rec = evaluate_visual_criterion("IP_Q7", deck_meta, startup_id="TestCo", primary_text=primary_text)
         self.assertIsNotNone(rec)
         self.assertEqual(rec["predicted_val"], 1.0)
-        self.assertIn("slide 2", rec["citation"].lower())
+        self.assertEqual(rec["citation"], "The Challenge: Grid Overload")
+        self.assertIn("TestCo", rec["rationale"])
         self.assertEqual(rec["source"], "visual_inspection")
 
     def test_evaluate_pmf_q24_billboard_logo(self):
         deck_meta = inspect_deck_visuals(self.pdf_path)
-        rec = evaluate_visual_criterion("PMF_Q24", deck_meta, startup_id="TestCo")
+        primary_text = "TestCo Brand Logo\nOfficial Pitch Deck Deliverables"
+        rec = evaluate_visual_criterion("PMF_Q24", deck_meta, startup_id="TestCo", primary_text=primary_text)
         self.assertIsNotNone(rec)
         self.assertEqual(rec["predicted_val"], 1.0)
-        self.assertIn("slide 1", rec["citation"].lower())
+        self.assertEqual(rec["citation"], "TestCo Brand Logo")
+        self.assertIn("TestCo", rec["rationale"])
         self.assertEqual(rec["source"], "visual_inspection")
+
+    def test_evaluate_ip_q7_no_matching_text(self):
+        deck_meta = inspect_deck_visuals(self.pdf_path)
+        rec = evaluate_visual_criterion("IP_Q7", deck_meta, startup_id="TestCo", primary_text="Unrelated content here")
+        self.assertIsNone(rec)
 
 
 if __name__ == "__main__":

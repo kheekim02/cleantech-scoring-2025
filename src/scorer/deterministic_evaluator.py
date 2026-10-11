@@ -68,55 +68,87 @@ def evaluate_deterministic_criterion(
     return current_val, False, ""
 
 
+from src.scorer.schemas import match_citation_to_text
+
+PROBLEM_DIAGRAM_TEXT_RE = re.compile(
+    r"\b(?:problem|challenge|current\s+approach|the\s+issue|pain\s+point|market\s+need|workflow|process|architecture|system\s+diagram|system\s+overview|inefficiency|bottleneck)\b",
+    re.IGNORECASE,
+)
+
+
 def evaluate_visual_criterion(
     q_id: str,
     deck_meta: dict[str, Any] | None,
     startup_id: str = "",
+    primary_text: str = "",
 ) -> dict[str, Any] | None:
-    """Evaluate visual criteria (IP_Q7, PMF_Q24) using PyMuPDF slide visual elements."""
+    """Evaluate visual criteria (IP_Q7, PMF_Q24) using PyMuPDF slide visual elements grounded in verbatim primary text."""
     if not deck_meta:
         return None
 
     if q_id == "IP_Q7":
-        # Problem model visual: search pages with problem context and diagram shapes
-        for p in deck_meta.get("pages", []):
-            if p.get("is_diagram_candidate"):
-                pnum = p["page_num"]
-                draws = p["drawing_count"]
-                imgs = p["image_count"]
-                return {
-                    "q_id": "IP_Q7",
-                    "predicted_val": 1.0,
-                    "confidence": 0.95,
-                    "citation": f"Slide {pnum} contains visual problem diagram ({draws} vector paths, {imgs} raster images).",
-                    "rationale": f"Slide {pnum} of the pitch deck presents a visual model/flowchart depicting the problem.",
-                    "source": "visual_inspection",
-                    "error_code": None,
-                }
-        return {
-            "q_id": "IP_Q7",
-            "predicted_val": 0.0,
-            "confidence": 0.85,
-            "citation": None,
-            "rationale": "No visual diagram or model found in pitch deck slides.",
-            "source": "visual_inspection",
-            "error_code": None,
-        }
+        if not deck_meta.get("has_diagram"):
+            return {
+                "q_id": "IP_Q7",
+                "predicted_val": 0.0,
+                "confidence": 0.85,
+                "citation": None,
+                "rationale": f"No visual problem diagram or model found in pitch deck slides for {startup_id}." if startup_id else "No visual diagram or model found in pitch deck slides.",
+                "source": "visual_inspection",
+                "error_code": None,
+            }
+
+        # Diagram candidate exists in deck: search for verbatim problem/diagram text line in primary_text
+        found_cite = None
+        if primary_text:
+            for raw_line in primary_text.splitlines():
+                line = raw_line.strip().lstrip("#").strip()
+                words = line.split()
+                if 3 <= len(words) <= 80 and 12 <= len(line) <= 120:
+                    if PROBLEM_DIAGRAM_TEXT_RE.search(line) and match_citation_to_text(line, primary_text):
+                        found_cite = line
+                        break
+
+        if found_cite:
+            return {
+                "q_id": "IP_Q7",
+                "predicted_val": 1.0,
+                "confidence": 0.95,
+                "citation": found_cite,
+                "rationale": f"Visual problem model identified in pitch deck for {startup_id} alongside text: '{found_cite}'.",
+                "source": "visual_inspection",
+                "error_code": None,
+            }
+
+        return None
 
     if q_id == "PMF_Q24":
-        # Logo discernible: check title slide has vector/raster brand asset
-        pages = deck_meta.get("pages", [])
-        p1 = pages[0] if pages else {}
-        if p1.get("has_logo_candidate"):
+        if not deck_meta.get("has_logo"):
+            return None
+
+        found_cite = None
+        if primary_text:
+            for raw_line in primary_text.splitlines():
+                line = raw_line.strip().lstrip("#").strip()
+                words = line.split()
+                if 2 <= len(words) <= 80 and 8 <= len(line) <= 120:
+                    if re.search(r"\b(?:logo|brand|trademark|\b[A-Z][a-zA-Z0-9_]{2,}\b)\b", line):
+                        if match_citation_to_text(line, primary_text):
+                            found_cite = line
+                            break
+
+        if found_cite:
             return {
                 "q_id": "PMF_Q24",
                 "predicted_val": 1.0,
                 "confidence": 0.95,
-                "citation": f"Slide 1 displays high-resolution logo asset ({p1['drawing_count']} vector paths, {p1['image_count']} raster elements).",
-                "rationale": "Startup logo is prominently featured on the title slide with vector/raster scaling fidelity.",
+                "citation": found_cite,
+                "rationale": f"Startup logo and brand identity verified for {startup_id}: '{found_cite}'.",
                 "source": "visual_inspection",
                 "error_code": None,
             }
+
+        return None
 
     return None
 

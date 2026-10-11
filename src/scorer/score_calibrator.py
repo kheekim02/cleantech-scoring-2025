@@ -1,7 +1,14 @@
-# src/scorer/score_calibrator.py
-from __future__ import annotations
-
+import re
 from typing import Any
+from src.scorer.schemas import is_negative_citation, is_scaffolding_citation
+
+ABSENCE_RE = re.compile(
+    r"(does\s+not\s+(?:state|mention|provide|include|contain|specify)|"
+    r"no\s+(?:mention|evidence|information|discussion)|"
+    r"not\s+(?:explicitly\s+)?(?:stated|mentioned|provided)|"
+    r"fails\s+to|omits|lacks|absent|missing\s+from\s+the\s+document|unspecified)",
+    re.IGNORECASE,
+)
 
 # Categories with documented judge softness/fractional scoring
 FRACTIONAL_CATEGORIES = {"BC", "IS", "IP", "PMF", "M"}
@@ -18,9 +25,16 @@ def calibrate_record(
     conf = float(rec.get("confidence") or 0.0)
     options = [opt["val"] for opt in q_def.get("options", []) if "val" in opt]
     cat = q_def.get("cat_code") or ""
+    rationale = str(rec.get("rationale") or "")
 
-    # Rule 1: Zero citation with zero score stays zero (anti-hallucination invariant)
-    if not cit and (val == 0.0 or val is None):
+    # Invariant: If citation is missing, or rationale/citation expresses absence, NEVER calibrate upward.
+    if not cit:
+        return out
+
+    if ABSENCE_RE.search(rationale) or ABSENCE_RE.search(str(cit)):
+        return out
+
+    if is_negative_citation(cit) or is_scaffolding_citation(cit):
         return out
 
     # Rule 2: If model withheld or gave 0.0, but valid citation text exists with moderate confidence
