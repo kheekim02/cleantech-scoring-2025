@@ -44,6 +44,7 @@ class TestGenerateCalibratedCache(unittest.TestCase):
             raw_dir=self.raw_dir,
             allowlist_path=self.allowlist_path,
             rubric_path=self.rubric_path,
+            calibrate_fractional=True,
         )
         self.assertEqual(stats["startups_processed"], 1)
         self.assertGreater(stats["calibrated_count"], 0)

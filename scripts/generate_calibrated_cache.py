@@ -28,6 +28,7 @@ def generate_calibrated_cache(
     raw_dir: Path | str,
     allowlist_path: Path | str,
     rubric_path: Path | str,
+    calibrate_fractional: bool = False,
 ) -> dict[str, Any]:
     src = Path(src_cache_dir)
     dst = Path(dst_cache_dir)
@@ -113,17 +114,18 @@ def generate_calibrated_cache(
                     visual_override_count += 1
                     continue
 
-            # Layer 3 Fractional calibration (only if citation & rationale are unique across the cohort)
-            norm_c = normalize_text(str(rec.get("citation") or ""))
-            norm_r = normalize_text(str(rec.get("rationale") or ""))
-            if (
-                cite_by_qid_counts.get((qid, norm_c), 0) <= 1
-                and rat_by_qid_counts.get((qid, norm_r), 0) <= 1
-            ):
-                cal = calibrate_record(rec, q_def)
-                if cal.get("calibrated"):
-                    records_map[qid] = cal
-                    calibrated_count += 1
+            # Layer 3 Fractional calibration (if enabled and citation & rationale are unique across the cohort)
+            if calibrate_fractional:
+                norm_c = normalize_text(str(rec.get("citation") or ""))
+                norm_r = normalize_text(str(rec.get("rationale") or ""))
+                if (
+                    cite_by_qid_counts.get((qid, norm_c), 0) <= 1
+                    and rat_by_qid_counts.get((qid, norm_r), 0) <= 1
+                ):
+                    cal = calibrate_record(rec, q_def)
+                    if cal.get("calibrated"):
+                        records_map[qid] = cal
+                        calibrated_count += 1
 
         # Preserve exact rubric order
         ordered = [
@@ -147,6 +149,12 @@ def main() -> None:
     parser.add_argument("--raw-dir", required=True)
     parser.add_argument("--allowlist", required=True)
     parser.add_argument("--rubric", required=True)
+    parser.add_argument(
+        "--calibrate-fractional",
+        action="store_true",
+        default=False,
+        help="Enable experimental fractional score calibration",
+    )
     args = parser.parse_args()
 
     stats = generate_calibrated_cache(
@@ -155,6 +163,7 @@ def main() -> None:
         args.raw_dir,
         args.allowlist,
         args.rubric,
+        calibrate_fractional=args.calibrate_fractional,
     )
     print(json.dumps(stats, indent=2))
 
