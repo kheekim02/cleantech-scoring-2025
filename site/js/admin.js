@@ -195,76 +195,108 @@ window.AdminApp = {
     const chartContainer = document.getElementById('assignment-chart');
     const selectedJudge = document.getElementById('judge-select').value;
     
-    // 1. Calculate scoring progress for the Bar Chart
-    const progressByStartup = {};
+    // 1. Calculate scoring progress across all 184 evaluator seats (Option A: 4-Bar Pipeline)
+    const testJudgeSet = new Set(
+      (this.data.judges || []).filter(j => j.is_test).map(j => j.judge_id)
+    );
+
+    const progMap = new Map();
     if (this.data.progress) {
-        this.data.progress.forEach(p => {
-            const count = parseInt(p.answered_count || 0, 10);
-            if (!progressByStartup[p.startup_id] || count > progressByStartup[p.startup_id]) {
-                progressByStartup[p.startup_id] = count;
-            }
-        });
+      this.data.progress.forEach(p => {
+        progMap.set(`${p.judge_id}__${p.startup_id}`, p);
+      });
     }
-    // 1b. Calculate global assignment counts for the list badges
-    const globalCounts = {};
-    this.data.assignments.forEach(a => {
-        globalCounts[a.startup_id] = (globalCounts[a.startup_id] || 0) + 1;
+
+    const assignmentsByStartup = new Map();
+    (this.data.assignments || []).forEach(a => {
+      if (testJudgeSet.has(a.judge_id)) return;
+      if (!assignmentsByStartup.has(a.startup_id)) assignmentsByStartup.set(a.startup_id, []);
+      assignmentsByStartup.get(a.startup_id).push(a);
     });
 
-    let countNotStarted = 0, countInProgress = 0, countFullyScored = 0;
-    this.data.startups.forEach(s => {
-        const maxScoreCount = progressByStartup[s.id] || 0;
-        if (maxScoreCount === 0) countNotStarted++;
-        else if (maxScoreCount < 282) countInProgress++;
-        else countFullyScored++;
+    let countCompleted = 0;
+    let countInProgress = 0;
+    let countAssignedNotStarted = 0;
+    let countUnassigned = 0;
+
+    (this.data.startups || []).forEach(s => {
+      const assigned = assignmentsByStartup.get(s.id) || [];
+      assigned.forEach(a => {
+        const p = progMap.get(`${a.judge_id}__${s.id}`);
+        const ans = p ? parseInt(p.answered_count || 0, 10) : 0;
+        if (ans >= 282) countCompleted++;
+        else if (ans > 0) countInProgress++;
+        else countAssignedNotStarted++;
+      });
+      countUnassigned += Math.max(0, 2 - assigned.length);
     });
-    
-    // Render Bar Chart with fixed pixel heights and aligned baseline
-    const maxVal = Math.max(countNotStarted, countInProgress, countFullyScored, 1);
+
+    // 1b. Calculate global assignment counts for the list badges
+    const globalCounts = {};
+    (this.data.assignments || []).forEach(a => {
+      if (!testJudgeSet.has(a.judge_id)) {
+        globalCounts[a.startup_id] = (globalCounts[a.startup_id] || 0) + 1;
+      }
+    });
+
+    // Render 4-Bar Chart with fixed pixel heights and aligned baseline (Total: 184 seats)
+    const maxVal = Math.max(countUnassigned, countAssignedNotStarted, countInProgress, countCompleted, 1);
     const trackHeight = 90;
-    const bar0 = countNotStarted > 0 ? Math.max(8, Math.round((countNotStarted / maxVal) * trackHeight)) : 3;
-    const bar1 = countInProgress > 0 ? Math.max(8, Math.round((countInProgress / maxVal) * trackHeight)) : 3;
-    const bar2 = countFullyScored > 0 ? Math.max(8, Math.round((countFullyScored / maxVal) * trackHeight)) : 3;
-    
+    const bar0 = countUnassigned > 0 ? Math.max(8, Math.round((countUnassigned / maxVal) * trackHeight)) : 3;
+    const bar1 = countAssignedNotStarted > 0 ? Math.max(8, Math.round((countAssignedNotStarted / maxVal) * trackHeight)) : 3;
+    const bar2 = countInProgress > 0 ? Math.max(8, Math.round((countInProgress / maxVal) * trackHeight)) : 3;
+    const bar3 = countCompleted > 0 ? Math.max(8, Math.round((countCompleted / maxVal) * trackHeight)) : 3;
+
     if (chartContainer) {
-        chartContainer.innerHTML = `
-          <div style="display: flex; justify-content: space-around; gap: 8px; margin-top: 12px; padding: 0 4px;">
-            
-            <div style="display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 0;">
-               <span style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">${countNotStarted}</span>
-               <div style="height: ${trackHeight}px; width: 100%; display: flex; align-items: flex-end; justify-content: center;">
-                 <div style="width: 38px; height: ${bar0}px; background: #e2e8f0; border-radius: 4px 4px 0 0; border: 1px solid #cbd5e1; border-bottom: none; box-sizing: border-box;"></div>
-               </div>
-               <div style="width: 100%; height: 1px; background: var(--border);"></div>
-               <div style="min-height: 32px; display: flex; align-items: flex-start; justify-content: center; text-align: center; margin-top: 6px;">
-                 <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); line-height: 1.2;">Not Started</span>
-               </div>
-            </div>
-            
-            <div style="display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 0;">
-               <span style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">${countInProgress}</span>
-               <div style="height: ${trackHeight}px; width: 100%; display: flex; align-items: flex-end; justify-content: center;">
-                 <div style="width: 38px; height: ${bar1}px; background: #fef08a; border-radius: 4px 4px 0 0; border: 1px solid #eab308; border-bottom: none; box-sizing: border-box;"></div>
-               </div>
-               <div style="width: 100%; height: 1px; background: var(--border);"></div>
-               <div style="min-height: 32px; display: flex; align-items: flex-start; justify-content: center; text-align: center; margin-top: 6px;">
-                 <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); line-height: 1.2;">In Progress</span>
-               </div>
-            </div>
-            
-            <div style="display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 0;">
-               <span style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">${countFullyScored}</span>
-               <div style="height: ${trackHeight}px; width: 100%; display: flex; align-items: flex-end; justify-content: center;">
-                 <div style="width: 38px; height: ${bar2}px; background: #4ade80; border-radius: 4px 4px 0 0; border: 1px solid #16a34a; border-bottom: none; box-sizing: border-box;"></div>
-               </div>
-               <div style="width: 100%; height: 1px; background: var(--border);"></div>
-               <div style="min-height: 32px; display: flex; align-items: flex-start; justify-content: center; text-align: center; margin-top: 6px;">
-                 <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); line-height: 1.2;">Fully Scored</span>
-               </div>
-            </div>
-            
+      chartContainer.innerHTML = `
+        <div style="display: flex; justify-content: space-between; gap: 6px; margin-top: 10px; padding: 0 2px;">
+          
+          <div style="display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 0;" title="Unassigned evaluation seats (${countUnassigned}/184)">
+             <span style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">${countUnassigned}</span>
+             <div style="height: ${trackHeight}px; width: 100%; display: flex; align-items: flex-end; justify-content: center;">
+               <div style="width: 28px; height: ${bar0}px; background: #f1f5f9; border-radius: 4px 4px 0 0; border: 1px dashed #94a3b8; border-bottom: none; box-sizing: border-box;"></div>
+             </div>
+             <div style="width: 100%; height: 1px; background: var(--border);"></div>
+             <div style="min-height: 32px; display: flex; align-items: flex-start; justify-content: center; text-align: center; margin-top: 6px;">
+               <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); line-height: 1.2;">Unassigned</span>
+             </div>
           </div>
-        `;
+          
+          <div style="display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 0;" title="Assigned but 0 answers submitted (${countAssignedNotStarted}/184)">
+             <span style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">${countAssignedNotStarted}</span>
+             <div style="height: ${trackHeight}px; width: 100%; display: flex; align-items: flex-end; justify-content: center;">
+               <div style="width: 28px; height: ${bar1}px; background: #e2e8f0; border-radius: 4px 4px 0 0; border: 1px solid #cbd5e1; border-bottom: none; box-sizing: border-box;"></div>
+             </div>
+             <div style="width: 100%; height: 1px; background: var(--border);"></div>
+             <div style="min-height: 32px; display: flex; align-items: flex-start; justify-content: center; text-align: center; margin-top: 6px;">
+               <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); line-height: 1.2;">Not Started</span>
+             </div>
+          </div>
+          
+          <div style="display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 0;" title="Active evaluations with 1-281 answers (${countInProgress}/184)">
+             <span style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">${countInProgress}</span>
+             <div style="height: ${trackHeight}px; width: 100%; display: flex; align-items: flex-end; justify-content: center;">
+               <div style="width: 28px; height: ${bar2}px; background: #fef08a; border-radius: 4px 4px 0 0; border: 1px solid #eab308; border-bottom: none; box-sizing: border-box;"></div>
+             </div>
+             <div style="width: 100%; height: 1px; background: var(--border);"></div>
+             <div style="min-height: 32px; display: flex; align-items: flex-start; justify-content: center; text-align: center; margin-top: 6px;">
+               <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); line-height: 1.2;">In Progress</span>
+             </div>
+          </div>
+          
+          <div style="display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 0;" title="Completed evaluations with 282/282 answers (${countCompleted}/184)">
+             <span style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">${countCompleted}</span>
+             <div style="height: ${trackHeight}px; width: 100%; display: flex; align-items: flex-end; justify-content: center;">
+               <div style="width: 28px; height: ${bar3}px; background: #4ade80; border-radius: 4px 4px 0 0; border: 1px solid #16a34a; border-bottom: none; box-sizing: border-box;"></div>
+             </div>
+             <div style="width: 100%; height: 1px; background: var(--border);"></div>
+             <div style="min-height: 32px; display: flex; align-items: flex-start; justify-content: center; text-align: center; margin-top: 6px;">
+               <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); line-height: 1.2;">Completed</span>
+             </div>
+          </div>
+          
+        </div>
+      `;
     }
 
     if (!selectedJudge) {
