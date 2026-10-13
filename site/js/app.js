@@ -7,6 +7,7 @@ CTO.App = {
     categories: ['BC', 'ES', 'F', 'IP', 'IS', 'L', 'M', 'PMF', 'T', 'TP'],
     evaluations: {},
     startups: {},
+    startupsList: [],
     syncQueue: [] // drained view; canonical pending state is _syncMap
   },
 
@@ -42,16 +43,80 @@ CTO.App = {
       });
   },
 
+  renderStartupPickerOptions(startups) {
+    const picker = document.getElementById('startup-picker');
+    if (!picker) return;
+
+    picker.innerHTML = (startups || [])
+      .map((s) => {
+        const isComplete = (s.answered_count >= 282) || s.is_submitted;
+        let prefix = '';
+        let suffix = '';
+        if (isComplete) {
+          prefix = '✓ ';
+          suffix = ' (Submitted)';
+        } else if (s.answered_count > 0) {
+          prefix = '◐ ';
+          suffix = ` (${s.answered_count}/282)`;
+        }
+        return `<option value="${s.id}">${prefix}${CTO.Render.escapeHtml(s.name)}${suffix}</option>`;
+      })
+      .join('');
+
+    if (this.state.activeStartupId) {
+      picker.value = this.state.activeStartupId;
+    }
+  },
+
+  updateStartupStatusPill() {
+    const pill = document.getElementById('startup-status-pill');
+    if (!pill) return;
+
+    const activeId = this.state.activeStartupId;
+    if (!activeId) {
+      pill.style.display = 'none';
+      return;
+    }
+
+    const startups = this.state.startupsList || [];
+    const startupMeta = startups.find((s) => s.id === activeId);
+
+    let answered = startupMeta ? (startupMeta.answered_count || 0) : 0;
+    const sEval = this.state.evaluations ? this.state.evaluations[activeId] : null;
+    if (sEval && sEval.humanAnswers) {
+      const localCount = Object.values(sEval.humanAnswers).filter(
+        (v) => v !== null && v !== undefined && !isNaN(v)
+      ).length;
+      if (localCount > answered) answered = localCount;
+    }
+
+    const isComplete = answered >= 282 || (startupMeta && startupMeta.is_submitted);
+
+    pill.style.display = 'inline-flex';
+    if (isComplete) {
+      pill.className = 'startup-status-pill submitted';
+      pill.innerHTML = '✓ Submitted';
+      pill.title = 'Evaluation completed (282/282 answers submitted)';
+    } else if (answered > 0) {
+      pill.className = 'startup-status-pill in-progress';
+      pill.innerHTML = `◐ ${answered} / 282 Answers`;
+      pill.title = `Evaluation in progress (${answered}/282 answered)`;
+    } else {
+      pill.className = 'startup-status-pill not-started';
+      pill.innerHTML = 'Not Started';
+      pill.title = 'Evaluation not started yet';
+    }
+  },
+
   applyBootstrapPayload(data) {
     this.currentUser = data.user;
     this.applyUserRoleUI();
 
     const startups = Array.isArray(data.startups) ? data.startups : [];
+    this.state.startupsList = startups;
     const picker = document.getElementById('startup-picker');
     if (picker) {
-      picker.innerHTML = startups
-        .map((s) => `<option value="${s.id}">${CTO.Render.escapeHtml(s.name)}</option>`)
-        .join('');
+      this.renderStartupPickerOptions(startups);
       picker.style.display = startups.length ? 'inline-block' : 'none';
       this.bindStartupPicker(picker);
     }
@@ -73,6 +138,7 @@ CTO.App = {
           data.active_startup.meta?.name || activeId;
       }
     }
+    this.updateStartupStatusPill();
   },
 
   bindStartupPicker(picker) {
@@ -84,6 +150,7 @@ CTO.App = {
       this.state.activeStartupId = e.target.value;
       this.state.currentStepIndex = 0;
       localStorage.setItem('cto2025_last_startup', this.state.activeStartupId);
+      this.updateStartupStatusPill();
       this.startApp();
     });
   },
@@ -155,17 +222,21 @@ CTO.App = {
       const res = await fetch('/api/list-startups');
       if (res.ok) {
         const startups = await res.json();
+        this.state.startupsList = startups;
+        this.renderStartupPickerOptions(startups);
         const picker = document.getElementById('startup-picker');
-        picker.innerHTML = startups.map(s => `<option value="${s.id}">${CTO.Render.escapeHtml(s.name)}</option>`).join('');
-        picker.style.display = 'inline-block';
-        
-        if (!startups.find(s => s.id === this.state.activeStartupId) && startups.length > 0) {
-          this.state.activeStartupId = startups[0].id;
-        } else {
-          picker.value = this.state.activeStartupId;
-        }
+        if (picker) {
+          picker.style.display = 'inline-block';
+          
+          if (!startups.find(s => s.id === this.state.activeStartupId) && startups.length > 0) {
+            this.state.activeStartupId = startups[0].id;
+          } else {
+            picker.value = this.state.activeStartupId;
+          }
 
-        this.bindStartupPicker(picker);
+          this.bindStartupPicker(picker);
+        }
+        this.updateStartupStatusPill();
       }
     } catch (e) {
       console.error("Failed to load startups list", e);
@@ -352,6 +423,18 @@ CTO.App = {
           this.setSaveStatus('Save failed — retrying');
           return;
         }
+
+        // Mark active startup as submitted in local state immediately
+        const activeId = this.state.activeStartupId;
+        if (this.state.startupsList) {
+          const item = this.state.startupsList.find((s) => s.id === activeId);
+          if (item) {
+            item.answered_count = 282;
+            item.is_submitted = true;
+          }
+        }
+        this.renderStartupPickerOptions(this.state.startupsList || []);
+        this.updateStartupStatusPill();
 
         confirmBtn.textContent = '✓ Logged to Database';
         confirmBtn.style.background = 'var(--accent-green)';
@@ -885,6 +968,7 @@ CTO.App = {
     const totalHumanQs = sData.human_questions.length;
     const answeredCount = Object.values(sEval.humanAnswers).filter(v => v !== null && v !== undefined && !isNaN(v)).length;
     CTO.Render.updateOverallProgress(answeredCount, totalHumanQs);
+    this.updateStartupStatusPill();
   },
 
   enqueueSync(partial) {
