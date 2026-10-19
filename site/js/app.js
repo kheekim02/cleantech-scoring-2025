@@ -12,6 +12,8 @@ CTO.App = {
   },
 
   _syncMap: new Map(),
+  _keyVersionMap: new Map(),
+  _fastSyncTimer: null,
   _justificationDebounce: null,
   _pendingJustification: null,
   _maximizedPane: null,
@@ -81,22 +83,31 @@ CTO.App = {
     const startups = this.state.startupsList || [];
     const startupMeta = startups.find((s) => s.id === activeId);
 
-    let answered = startupMeta ? (startupMeta.answered_count || 0) : 0;
+    const dbAnswered = startupMeta ? (startupMeta.answered_count || 0) : 0;
+    let localCount = 0;
     const sEval = this.state.evaluations ? this.state.evaluations[activeId] : null;
     if (sEval && sEval.humanAnswers) {
-      const localCount = Object.values(sEval.humanAnswers).filter(
+      localCount = Object.values(sEval.humanAnswers).filter(
         (v) => v !== null && v !== undefined && !isNaN(v)
       ).length;
-      if (localCount > answered) answered = localCount;
     }
+    const answered = Math.max(dbAnswered, localCount);
 
-    const isComplete = answered >= 282 || (startupMeta && startupMeta.is_submitted);
+    // Fixed: Only mark as Submitted when confirmed by DB (or in ephemeral test mode) to prevent dropdown/pill desync
+    const isComplete =
+      dbAnswered >= 282 ||
+      Boolean(startupMeta && startupMeta.is_submitted) ||
+      Boolean(this.currentUser && this.currentUser.is_test && localCount >= 282);
 
     pill.style.display = 'inline-flex';
     if (isComplete) {
       pill.className = 'startup-status-pill submitted';
       pill.innerHTML = '✓ Submitted';
       pill.title = 'Evaluation completed (282/282 answers submitted)';
+    } else if (localCount >= 282 && dbAnswered < 282) {
+      pill.className = 'startup-status-pill in-progress';
+      pill.innerHTML = '◐ Saving (282/282)…';
+      pill.title = `Syncing responses to database (${dbAnswered}/282 confirmed in database)`;
     } else if (answered > 0) {
       pill.className = 'startup-status-pill in-progress';
       pill.innerHTML = `◐ ${answered} / 282 Answers`;
@@ -138,6 +149,7 @@ CTO.App = {
           data.active_startup.meta?.name || activeId;
       }
     }
+    this.reconcileAllStartupsFromLocalStorage();
     this.updateStartupStatusPill();
   },
 
@@ -410,11 +422,26 @@ CTO.App = {
       }
     });
 
+    // Fixed: Flush any pending scores with keepalive when user hides tab or closes browser at session boundary
+    window.addEventListener('pagehide', () => {
+      this.flushSyncWithKeepalive();
+    });
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') {
+        this.flushSyncWithKeepalive();
+      }
+    });
+
     const confirmBtn = document.getElementById('modal-confirm-btn');
     if (confirmBtn) {
       confirmBtn.addEventListener('click', async () => {
         confirmBtn.textContent = 'Submitting to Database...';
         confirmBtn.disabled = true;
+
+        const activeId = this.state.activeStartupId;
+        this.commitPendingJustification();
+        // Fixed: Reconcile all local answers against DB before flushing so empty _syncMap never skips stranded localStorage scores
+        this.reconcileActiveStartupWithDatabase(activeId, { forceAllIfIncomplete: true });
 
         const saved = await this.flushSyncQueue();
         if (!saved) {
@@ -424,11 +451,10 @@ CTO.App = {
           return;
         }
 
-        // Mark active startup as submitted in local state immediately
-        const activeId = this.state.activeStartupId;
+        // Update active startup submission metadata if in test mode or confirmed
         if (this.state.startupsList) {
           const item = this.state.startupsList.find((s) => s.id === activeId);
-          if (item) {
+          if (item && (this.currentUser?.is_test || (item.answered_count || 0) >= 282)) {
             item.answered_count = 282;
             item.is_submitted = true;
           }
@@ -897,6 +923,7 @@ CTO.App = {
     const justification = sEval.humanJustifications ? (sEval.humanJustifications[qid] || '') : '';
     this.enqueueSync({ qid, value, justification });
     this.setSaveStatus('Saving…');
+    this.scheduleFastSync(350);
   },
 
 
@@ -922,6 +949,7 @@ CTO.App = {
         justification: pending.text,
       });
       this.setSaveStatus('Saving…');
+      this.scheduleFastSync(250);
     }, 500);
   },
 
@@ -950,6 +978,7 @@ CTO.App = {
     const justification = sEval.humanJustifications ? (sEval.humanJustifications[qid] || '') : '';
     this.enqueueSync({ qid, value, justification, is_flagged: newFlagState });
     this.setSaveStatus('Saving…');
+    this.scheduleFastSync(350);
   },
 
   refreshFlaggedCount() {
@@ -971,18 +1000,74 @@ CTO.App = {
     this.updateStartupStatusPill();
   },
 
+  isValidRubricQid(sId, qid) {
+    if (!qid || typeof qid !== 'string' || !/^(BC|ES|F|IP|IS|L|M|PMF|T|TP)_Q\d+$/.test(qid)) {
+      return false;
+    }
+    const sData = this.state.startups && this.state.startups[sId];
+    if (sData && Array.isArray(sData.human_questions) && sData.human_questions.length > 0) {
+      return sData.human_questions.some((item) => (item.new_q_id || item.q_id) === qid);
+    }
+    return true;
+  },
+
+  isValidRubricScore(sId, qid, rawVal) {
+    if (!this.isValidRubricQid(sId, qid)) return false;
+    if (rawVal === null || rawVal === undefined || rawVal === '' || typeof rawVal === 'boolean') {
+      return false;
+    }
+    const num = Number(rawVal);
+    if (!Number.isFinite(num)) return false;
+
+    const sData = this.state.startups && this.state.startups[sId];
+    if (sData && Array.isArray(sData.human_questions) && sData.human_questions.length > 0) {
+      const q = sData.human_questions.find((item) => (item.new_q_id || item.q_id) === qid);
+      if (!q) return false;
+      const allowed =
+        Array.isArray(q.options) && q.options.length > 0
+          ? q.options.map((o) => Number(o.val))
+          : [0, 0.25, 0.5, 0.75, 1];
+      return allowed.some((a) => Math.abs(a - num) < 1e-6);
+    }
+    return [0, 0.25, 0.33, 0.5, 0.67, 0.75, 1].some((a) => Math.abs(a - num) < 1e-6);
+  },
+
   enqueueSync(partial) {
     const startup_id = partial.startup_id || this.state.activeStartupId;
     const qid = partial.qid;
     if (!startup_id || !qid) return;
     const key = `${startup_id}:${qid}`;
+
+    // Fixed: Guard against out-of-order requeued batches clobbering newer mutations via monotonic key versions
+    if (partial.timestamp !== undefined) {
+      const latestTs = this._keyVersionMap.get(key) || 0;
+      if (partial.timestamp < latestTs) {
+        return;
+      }
+      const existingPending = this._syncMap.get(key);
+      if (existingPending && (existingPending.timestamp || 0) > partial.timestamp) {
+        return;
+      }
+      this._syncMap.set(key, {
+        ...partial,
+        startup_id,
+        qid,
+      });
+      return;
+    }
+
     const prev = this._syncMap.get(key) || {};
+    const now = Date.now();
+    const prevTs = this._keyVersionMap.get(key) || 0;
+    const ts = Math.max(now, prevTs + 1);
+    this._keyVersionMap.set(key, ts);
+
     const next = {
       ...prev,
       ...partial,
       startup_id,
       qid,
-      timestamp: Date.now(),
+      timestamp: ts,
     };
     if (partial.is_flagged === undefined && prev.is_flagged !== undefined) {
       next.is_flagged = prev.is_flagged;
@@ -994,6 +1079,96 @@ CTO.App = {
       next.justification = prev.justification;
     }
     this._syncMap.set(key, next);
+  },
+
+  scheduleFastSync(delayMs = 350) {
+    if (this._fastSyncTimer) {
+      clearTimeout(this._fastSyncTimer);
+    }
+    this._fastSyncTimer = setTimeout(() => {
+      this._fastSyncTimer = null;
+      this.flushSyncQueue();
+    }, delayMs);
+  },
+
+  flushSyncWithKeepalive() {
+    this.commitPendingJustification();
+    if (this._syncMap.size === 0 || !this.currentUser || !this.currentUser.id) return;
+    const batch = this.drainSyncMap();
+    const byStartup = {};
+    for (const item of batch) {
+      const sid = item.startup_id;
+      if (!byStartup[sid]) byStartup[sid] = [];
+      byStartup[sid].push(item);
+    }
+
+    const getByteLength = (str) =>
+      typeof Buffer !== 'undefined' && typeof Buffer.byteLength === 'function'
+        ? Buffer.byteLength(str, 'utf8')
+        : new TextEncoder().encode(str).length;
+    const MAX_KEEPALIVE_BYTES = 55000;
+
+    for (const [startup_id, scores] of Object.entries(byStartup)) {
+      const chunks = [];
+      let currentRaw = [];
+      let currentPayload = [];
+
+      for (const b of scores) {
+        const formatted = {
+          qid: b.qid,
+          val: b.value !== undefined ? b.value : null,
+          justification: b.justification || '',
+          is_flagged: b.is_flagged !== undefined ? b.is_flagged : null,
+        };
+        const candidatePayload = [...currentPayload, formatted];
+        const candidateBody = JSON.stringify({ startup_id, scores: candidatePayload });
+        if (currentPayload.length > 0 && getByteLength(candidateBody) > MAX_KEEPALIVE_BYTES) {
+          chunks.push({ raw: currentRaw, body: JSON.stringify({ startup_id, scores: currentPayload }) });
+          currentRaw = [b];
+          currentPayload = [formatted];
+        } else {
+          currentRaw.push(b);
+          currentPayload.push(formatted);
+        }
+      }
+      if (currentPayload.length > 0) {
+        chunks.push({ raw: currentRaw, body: JSON.stringify({ startup_id, scores: currentPayload }) });
+      }
+
+      for (const chunk of chunks) {
+        fetch('/api/sync-scores', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          keepalive: true,
+          body: chunk.body,
+        })
+          .then(async (res) => {
+            if (!res || !res.ok) {
+              if (res && res.status === 400) return;
+              throw new Error('KEEPALIVE_FAILED');
+            }
+            let resData = res.data || null;
+            if (!resData && typeof res.json === 'function') {
+              try {
+                resData = await res.json();
+              } catch (e) {}
+            }
+            if (resData && Number.isInteger(resData.answered_count) && Array.isArray(this.state.startupsList)) {
+              const targetId = resData.startup_id || startup_id;
+              const item = this.state.startupsList.find((s) => s.id === targetId);
+              if (item) {
+                item.answered_count = resData.answered_count;
+                item.is_submitted = Boolean(resData.is_submitted);
+                this.renderStartupPickerOptions(this.state.startupsList);
+                this.updateStartupStatusPill();
+              }
+            }
+          })
+          .catch(() => {
+            this.requeueBatch(chunk.raw);
+          });
+      }
+    }
   },
 
   commitPendingJustification() {
@@ -1042,7 +1217,55 @@ CTO.App = {
     if (res.status === 401) {
       throw new Error('401_UNAUTHORIZED');
     }
+    if (res.status === 400) {
+      throw new Error('400_BAD_REQUEST');
+    }
     if (!res.ok) throw new Error('NETWORK_ERROR');
+
+    // Fixed: Keep in-memory judge_reviews and startup metadata synchronized with authoritative DB response
+    let resData = res.data || null;
+    if (!resData && typeof res.json === 'function') {
+      try {
+        resData = await res.json();
+      } catch (e) {}
+    }
+
+    const sData = this.state.startups && this.state.startups[startup_id];
+    if (sData) {
+      if (!Array.isArray(sData.judge_reviews)) sData.judge_reviews = [];
+      for (const b of scores) {
+        const latestTs = this._keyVersionMap.get(`${startup_id}:${b.qid}`) || 0;
+        if (b.timestamp && b.timestamp < latestTs) continue;
+
+        const existing = sData.judge_reviews.find((r) => r.question_id === b.qid);
+        if (existing) {
+          if (b.value !== undefined && b.value !== null) existing.score_value = b.value;
+          if (b.justification !== undefined && String(b.justification).trim() !== '') {
+            existing.justification = b.justification;
+          }
+          if (b.is_flagged !== undefined && b.is_flagged !== null) existing.is_flagged = Boolean(b.is_flagged);
+        } else {
+          sData.judge_reviews.push({
+            question_id: b.qid,
+            score_value: b.value !== undefined ? b.value : null,
+            justification: b.justification || '',
+            is_flagged: Boolean(b.is_flagged),
+          });
+        }
+      }
+    }
+
+    if (resData && Number.isInteger(resData.answered_count) && Array.isArray(this.state.startupsList)) {
+      const targetId = resData.startup_id || startup_id;
+      const item = this.state.startupsList.find((s) => s.id === targetId);
+      if (item) {
+        item.answered_count = resData.answered_count;
+        item.is_submitted = Boolean(resData.is_submitted);
+        this.renderStartupPickerOptions(this.state.startupsList);
+        this.updateStartupStatusPill();
+      }
+    }
+
     return res;
   },
 
@@ -1064,7 +1287,9 @@ CTO.App = {
       return true;
     } catch (e) {
       console.error('Flush sync failed:', e);
-      this.requeueBatch(batch);
+      if (e.message !== '400_BAD_REQUEST') {
+        this.requeueBatch(batch);
+      }
       this.setSaveStatus('Save failed — retrying');
       return false;
     }
@@ -1291,7 +1516,9 @@ CTO.App = {
         }
         this.setSaveStatus('Saved');
       } catch (error) {
-        this.requeueBatch(batch);
+        if (error.message !== '400_BAD_REQUEST') {
+          this.requeueBatch(batch);
+        }
 
         if (error.message === "401_UNAUTHORIZED") {
            console.warn("Credentials rejected by server.");
@@ -1304,19 +1531,16 @@ CTO.App = {
 
   loadState() {
     const sId = this.state.activeStartupId;
-    if (!this.state.evaluations[sId]) {
-      this.state.evaluations[sId] = { humanAnswers: {}, humanJustifications: {}, humanFlags: {} };
-    }
-    if (!this.state.evaluations[sId].humanFlags) {
-      this.state.evaluations[sId].humanFlags = {};
-    }
+    this.state.evaluations[sId] = { humanAnswers: {}, humanJustifications: {}, humanFlags: {} };
 
     // 1. Seed from database reviews if returned by API
     const sData = this.state.startups[sId];
+    let seededDbCount = 0;
     if (sData && Array.isArray(sData.judge_reviews)) {
       sData.judge_reviews.forEach(r => {
-        if (r.score_value !== null && r.score_value !== undefined) {
+        if (r.score_value !== null && r.score_value !== undefined && !isNaN(parseFloat(r.score_value))) {
           this.state.evaluations[sId].humanAnswers[r.question_id] = parseFloat(r.score_value);
+          seededDbCount++;
         }
         if (r.justification) {
           this.state.evaluations[sId].humanJustifications[r.question_id] = r.justification;
@@ -1327,25 +1551,165 @@ CTO.App = {
       });
     }
 
-    // 2. Overlay any local storage changes
+    const startupMeta = (this.state.startupsList || []).find((s) => s.id === sId);
+    const dbAnsweredCount = Math.max(seededDbCount, startupMeta ? (startupMeta.answered_count || 0) : 0);
+
+    // 2. Overlay any valid local storage changes (quarantining poison-pill entries & preventing stale drafts from clobbering 282/282 completed DB evaluations)
     try {
       const stored = localStorage.getItem('cto2025_state');
       if (stored) {
         const data = JSON.parse(stored);
         const draftKey = `${this.currentUser?.id || 'unknown'}:${sId}`;
-        if (data[draftKey]) {
-          if (data[draftKey].humanAnswers) {
-            Object.assign(this.state.evaluations[sId].humanAnswers, data[draftKey].humanAnswers);
+        if (data && data[draftKey]) {
+          const validLocalAnswers = {};
+          if (data[draftKey].humanAnswers && typeof data[draftKey].humanAnswers === 'object') {
+            for (const [qid, val] of Object.entries(data[draftKey].humanAnswers)) {
+              if (this.isValidRubricScore(sId, qid, val)) {
+                validLocalAnswers[qid] = Number(val);
+              }
+            }
           }
-          if (data[draftKey].humanJustifications) {
-            Object.assign(this.state.evaluations[sId].humanJustifications, data[draftKey].humanJustifications);
-          }
-          if (data[draftKey].humanFlags) {
-            Object.assign(this.state.evaluations[sId].humanFlags, data[draftKey].humanFlags);
+
+          const localValidCount = Object.keys(validLocalAnswers).length;
+          const isStaleIncompleteDraftOverCompletedDb =
+            dbAnsweredCount >= 282 && localValidCount < 282;
+
+          if (!isStaleIncompleteDraftOverCompletedDb) {
+            Object.assign(this.state.evaluations[sId].humanAnswers, validLocalAnswers);
+
+            if (data[draftKey].humanJustifications && typeof data[draftKey].humanJustifications === 'object') {
+              for (const [qid, just] of Object.entries(data[draftKey].humanJustifications)) {
+                if (this.isValidRubricQid(sId, qid) && String(just || '').trim() !== '') {
+                  this.state.evaluations[sId].humanJustifications[qid] = String(just);
+                }
+              }
+            }
+            if (data[draftKey].humanFlags && typeof data[draftKey].humanFlags === 'object') {
+              for (const [qid, flag] of Object.entries(data[draftKey].humanFlags)) {
+                if (this.isValidRubricQid(sId, qid) && Boolean(flag)) {
+                  this.state.evaluations[sId].humanFlags[qid] = true;
+                }
+              }
+            }
           }
         }
       }
     } catch (e) {}
+
+    // 3. Reconcile any stranded localStorage answers not yet persisted in database judge_reviews
+    this.reconcileActiveStartupWithDatabase(sId);
+  },
+
+  reconcileActiveStartupWithDatabase(sId = this.state.activeStartupId, options = {}) {
+    if (!sId || this.currentUser?.is_test) return 0;
+    const sData = this.state.startups ? this.state.startups[sId] : null;
+    const sEval = this.state.evaluations ? this.state.evaluations[sId] : null;
+    if (!sData || !sEval) return 0;
+
+    const dbReviewsByQid = new Map();
+    if (Array.isArray(sData.judge_reviews)) {
+      sData.judge_reviews.forEach((r) => {
+        if (!r || !r.question_id) return;
+        const scoreVal =
+          r.score_value !== null && r.score_value !== undefined && !isNaN(parseFloat(r.score_value))
+            ? parseFloat(r.score_value)
+            : null;
+        const justVal = String(r.justification || '').trim();
+        const flagVal = Boolean(r.is_flagged);
+        dbReviewsByQid.set(r.question_id, { scoreVal, justVal, flagVal });
+      });
+    }
+
+    const startupMeta = (this.state.startupsList || []).find((s) => s.id === sId);
+    const dbCount = startupMeta ? (startupMeta.answered_count || 0) : dbReviewsByQid.size;
+    const forceAll = Boolean(options.forceAllIfIncomplete) && dbCount < 282;
+
+    const candidateQids = new Set([
+      ...Object.keys(sEval.humanAnswers || {}),
+      ...Object.keys(sEval.humanJustifications || {}),
+      ...Object.keys(sEval.humanFlags || {}),
+    ]);
+
+    let enqueued = 0;
+    for (const qid of candidateQids) {
+      if (!this.isValidRubricQid(sId, qid)) continue;
+      const rawAns = sEval.humanAnswers ? sEval.humanAnswers[qid] : undefined;
+      if (rawAns !== null && rawAns !== undefined && !this.isValidRubricScore(sId, qid, rawAns)) {
+        continue;
+      }
+      const localVal = this.isValidRubricScore(sId, qid, rawAns) ? Number(rawAns) : null;
+      const rawJust = sEval.humanJustifications ? (sEval.humanJustifications[qid] || '') : '';
+      const localJust = String(rawJust).trim();
+      const localFlag = Boolean(sEval.humanFlags && sEval.humanFlags[qid]);
+
+      const dbEntry = dbReviewsByQid.get(qid);
+      const scoreDiffers = localVal !== null && (!dbEntry || dbEntry.scoreVal !== localVal);
+      const justDiffers =
+        localJust !== '' && localJust !== (dbEntry ? dbEntry.justVal : '');
+      const flagDiffers = localFlag !== (dbEntry ? dbEntry.flagVal : false);
+
+      if (forceAll ? localVal !== null : (scoreDiffers || justDiffers || flagDiffers)) {
+        this.enqueueSync({
+          startup_id: sId,
+          qid,
+          value: localVal,
+          justification: rawJust,
+          is_flagged: localFlag,
+        });
+        enqueued++;
+      }
+    }
+
+    if (enqueued > 0) {
+      this.setSaveStatus('Saving…');
+      this.scheduleFastSync(100);
+    }
+    return enqueued;
+  },
+
+  reconcileAllStartupsFromLocalStorage() {
+    if (!this.currentUser?.id || this.currentUser?.is_test) return 0;
+    const startups = this.state.startupsList || [];
+    if (startups.length === 0) return 0;
+
+    let storedData = null;
+    try {
+      const raw = localStorage.getItem('cto2025_state');
+      if (raw) storedData = JSON.parse(raw);
+    } catch (e) {
+      return 0;
+    }
+    if (!storedData) return 0;
+
+    let totalEnqueued = 0;
+    for (const s of startups) {
+      if (!s || !s.id || s.id === this.state.activeStartupId) continue;
+      const draftKey = `${this.currentUser.id}:${s.id}`;
+      const draft = storedData[draftKey];
+      if (!draft || !draft.humanAnswers) continue;
+
+      const validEntries = Object.entries(draft.humanAnswers).filter(
+        ([qid, val]) => this.isValidRubricScore(s.id, qid, val)
+      );
+      if (validEntries.length > (s.answered_count || 0)) {
+        for (const [qid, val] of validEntries) {
+          this.enqueueSync({
+            startup_id: s.id,
+            qid,
+            value: Number(val),
+            justification: draft.humanJustifications?.[qid] || '',
+            is_flagged: Boolean(draft.humanFlags?.[qid]),
+          });
+          totalEnqueued++;
+        }
+      }
+    }
+
+    if (totalEnqueued > 0) {
+      this.setSaveStatus('Saving…');
+      this.scheduleFastSync(150);
+    }
+    return totalEnqueued;
   },
 
   saveState() {

@@ -153,7 +153,7 @@ module.exports = async (req, res) => {
       ON CONFLICT (startup_id, question_id, judge_id)
       DO UPDATE SET
         score_value = COALESCE(EXCLUDED.score_value, human_reviews.score_value),
-        justification = EXCLUDED.justification,
+        justification = CASE WHEN EXCLUDED.justification <> '' THEN EXCLUDED.justification ELSE human_reviews.justification END,
         is_flagged = COALESCE(EXCLUDED.is_flagged, human_reviews.is_flagged),
         updated_at = NOW();
       `,
@@ -167,8 +167,21 @@ module.exports = async (req, res) => {
       ]
     );
 
+    // Fixed: Return authoritative persisted answer count from human_reviews so client UI stays synchronized with DB
+    const countResult = await pool.query(
+      `SELECT COALESCE(COUNT(CASE WHEN score_value IS NOT NULL THEN 1 END), 0)::int AS answered_count
+       FROM human_reviews
+       WHERE startup_id = $1 AND judge_id = $2`,
+      [startup_id, session.principalId]
+    );
+    const answeredCount = countResult.rows[0] ? countResult.rows[0].answered_count : 0;
+    const isSubmitted = answeredCount >= 282;
+
     return res.status(200).json({
       success: true,
+      startup_id,
+      answered_count: answeredCount,
+      is_submitted: isSubmitted,
       message: `Successfully synced ${batch.count} scores.`,
     });
   } catch (err) {
