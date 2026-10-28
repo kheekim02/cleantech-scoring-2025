@@ -135,6 +135,11 @@ Extracted citations may still be grounded against founder text for pipeline QA a
 4. **Git Hygiene & Commit Discipline:**
    - Atomic commits following Conventional Commits (`feat:`, `fix:`, `refactor:`, `docs:`, `chore:`).
    - Pre-commit verification: verify scripts, tests, and builds cleanly before committing.
+5. **CleanTech Open Prototype Platform Invariants (Vercel & Supabase):**
+   - *Vercel Hobby Plan Serverless Function Ceiling (<= 12 Functions)*: The current scoring prototype runs on a Vercel Hobby plan, which enforces a strict ceiling of **12 Serverless Functions** per deployment. Do NOT add new un-prefixed `.js` files to `api/`. Route sub-actions through existing endpoints, use `_*.js` helper modules, or use `vercel.json` rewrites. Enforced by `tests/test_wavon_ceramics_deliverables.py::test_08_vercel_hobby_plan_function_limit_guard`.
+   - *Supabase PostgreSQL Row Level Security (RLS)*: Every table created in the `public` schema must execute `ALTER TABLE <table_name> ENABLE ROW LEVEL SECURITY;` and `REVOKE ALL ON <table_name> FROM anon, authenticated;`, and be registered in `tests/test_supabase_rls_security.py::PUBLIC_TABLES`.
+   - *Node.js Connection Pool Termination*: Integration tests or scripts invoking serverless handlers via Node subprocesses must call `process.exit(0)` to prevent the 30-second `idleTimeoutMillis` pool timer from stalling test suites.
+   - *Object Storage Key Sanitization*: Non-ASCII Unicode characters (such as em-dashes `—` `U+2014`) trigger S3/POSIX `400 InvalidKey` errors. Deliverables must be stored under ASCII keys with alias tolerance in retrieval APIs.
 
 ---
 
@@ -185,3 +190,21 @@ All authoritative model evaluation, extraction caches, and cohort deliverable da
 3. **Mandatory Provenance Header in Quantitative Reports:**
    - Every quantitative report, distribution audit, or IRR analysis must log its dataset provenance (source host, path, symlink target, startup count, record count, and timestamp) in its output header.
 
+
+<!-- BEGIN AWS Agent Toolkit rules -->
+# AWS Guidance
+
+- Where these AWS rules conflict with the project's own instructions, the
+  project's instructions take precedence.
+- Prefer the AWS MCP Server for AWS interactions — it provides sandboxed
+  execution, observability, and audit logging. If unavailable, use the
+  AWS CLI directly.
+- Before starting a task, check whether a relevant AWS skill is available.
+  Load the skill with `retrieve_skill` and prefer its guidance over
+  general knowledge.
+- When uncertain about specific AWS details (API parameters, permissions,
+  limits, error codes), verify against documentation rather than guessing.
+  State uncertainty explicitly if you cannot confirm.
+- When creating infrastructure, prefer infrastructure-as-code (AWS CDK or
+  CloudFormation) over direct CLI commands.
+<!-- END AWS Agent Toolkit rules -->
