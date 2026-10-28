@@ -1,9 +1,17 @@
 const { pool } = require('./_db');
 const { requireSession, isTestScorer } = require('./_auth');
 const { applyHumanProjectionInPlace } = require('./_project_startup');
+const { handlePdfDeliverable } = require('./_deliverable');
 
 module.exports = async (req, res) => {
-  const { id } = req.query || {};
+  const query = req.query || {};
+
+  // If a deliverable file is requested, route to deliverable streaming handler
+  if (query.file || query.filename) {
+    return handlePdfDeliverable(req, res);
+  }
+
+  const id = query.id || query.startup_id;
 
   if (!id) {
     return res.status(400).json({ error: 'Missing required parameters' });

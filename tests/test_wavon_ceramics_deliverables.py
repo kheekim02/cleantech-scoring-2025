@@ -101,9 +101,9 @@ class TestWavonCeramicsDeliverables(unittest.TestCase):
             conn.close()
 
     def test_02_pdf_api_endpoint_serves_all_18_deliverables(self):
-        """Invoke api/pdf.js handler for each of the 18 deliverables and confirm HTTP 200, PDF headers, and bytes."""
+        """Invoke api/get-startup.js handler for each of the 18 deliverables and confirm HTTP 200, PDF headers, and bytes."""
         cmd = """
-        const handler = require('./api/pdf');
+        const handler = require('./api/get-startup');
         const files = %s;
         const startupId = %s;
 
@@ -156,7 +156,7 @@ class TestWavonCeramicsDeliverables(unittest.TestCase):
     def test_03_pdf_api_http_caching_and_method_guards(self):
         """Verify conditional GET (304), HEAD request (200 empty body), and 405 Method Not Allowed."""
         cmd = """
-        const handler = require('./api/pdf');
+        const handler = require('./api/get-startup');
         (async () => {
           // 1. HEAD request
           let headStatus = null;
@@ -192,7 +192,7 @@ class TestWavonCeramicsDeliverables(unittest.TestCase):
           const postHeaders = {};
           await handler({
             method: 'POST',
-            query: {},
+            query: { startup_id: %s, file: '04_WavonCeramics_BusinessModelCanvas.pdf' },
             headers: {}
           }, {
             setHeader: (k, v) => { postHeaders[k.toLowerCase()] = v; },
@@ -203,7 +203,7 @@ class TestWavonCeramicsDeliverables(unittest.TestCase):
           console.log(JSON.stringify({ headStatus, hasHeadBody: !!headBody, condStatus, postStatus, allowHeader: postHeaders['allow'] }));
           process.exit(0);
         })();
-        """ % (json.dumps(self.STARTUP_ID), json.dumps(self.STARTUP_ID))
+        """ % (json.dumps(self.STARTUP_ID), json.dumps(self.STARTUP_ID), json.dumps(self.STARTUP_ID))
 
         proc = subprocess.run(
             ["node", "--env-file=.env", "-e", cmd],
@@ -222,7 +222,7 @@ class TestWavonCeramicsDeliverables(unittest.TestCase):
     def test_04_pdf_api_negative_and_security_boundaries(self):
         """Verify 400 Bad Request on missing params or path traversal, and 404 on non-existent files."""
         cmd = """
-        const handler = require('./api/pdf');
+        const handler = require('./api/get-startup');
         (async () => {
           const testCases = [
             { req: { method: 'GET', query: {}, headers: {} }, expected: 400, desc: 'missing params' },
@@ -281,7 +281,7 @@ class TestWavonCeramicsDeliverables(unittest.TestCase):
                 sec = cat_map[cat]
                 self.assertGreater(len(sec.get("pdfs", [])), 0, f"Category {cat} has 0 mapped PDFs")
                 for p in sec["pdfs"]:
-                    self.assertTrue(p["url"].startswith("/api/pdf?startup_id="), f"Invalid PDF URL: {p['url']}")
+                    self.assertTrue(p["url"].startswith("/api/get-startup?") or p["url"].startswith("/api/pdf?"), f"Invalid PDF URL: {p['url']}")
                     self.assertTrue(len(p.get("label", "")) > 0, "PDF label must not be empty")
 
             # Verify specific essential deliverables
@@ -376,6 +376,27 @@ class TestWavonCeramicsDeliverables(unittest.TestCase):
         finally:
             cur.close()
             conn.close()
+
+    def test_08_vercel_hobby_plan_function_limit_guard(self):
+        """Enforce Vercel Hobby plan limit of <= 12 serverless functions in api/ directory."""
+        api_dir = os.path.join(ROOT_DIR, "api")
+        functions = [f for f in os.listdir(api_dir) if f.endswith(".js") and not f.startswith("_")]
+        self.assertLessEqual(
+            len(functions),
+            12,
+            f"Vercel Hobby plan strictly limits to 12 Serverless Functions. Found {len(functions)}: {sorted(functions)}"
+        )
+
+        # Verify vercel.json rewrite exists
+        vercel_json_path = os.path.join(ROOT_DIR, "vercel.json")
+        self.assertTrue(os.path.exists(vercel_json_path), "vercel.json must exist")
+        with open(vercel_json_path) as f:
+            v_cfg = json.load(f)
+        rewrites = v_cfg.get("rewrites", [])
+        self.assertTrue(
+            any(r.get("source") == "/api/pdf" and r.get("destination") == "/api/get-startup" for r in rewrites),
+            "vercel.json must rewrite /api/pdf to /api/get-startup"
+        )
 
 
 if __name__ == "__main__":

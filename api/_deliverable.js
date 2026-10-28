@@ -1,11 +1,12 @@
 const { pool } = require('./_db');
 
 /**
- * Serverless deliverable viewer endpoint.
+ * Deliverable viewer handler.
  * Serves ingested PDF deliverable binaries directly from PostgreSQL.
  * Supports inline browser preview, HTTP caching, and conditional ETags.
+ * Prefixed with underscore so Vercel does not register it as a standalone serverless function.
  */
-module.exports = async (req, res) => {
+async function handlePdfDeliverable(req, res) {
   if (req.method !== 'GET' && req.method !== 'HEAD') {
     res.setHeader('Allow', 'GET, HEAD');
     return res.status(405).json({ error: 'Method Not Allowed' });
@@ -81,4 +82,8 @@ module.exports = async (req, res) => {
     console.error('[Deliverable API] Database query error:', err);
     return res.status(500).json({ error: 'Database error retrieving deliverable: ' + err.message });
   }
+}
+
+module.exports = {
+  handlePdfDeliverable,
 };

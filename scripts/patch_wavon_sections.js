@@ -90,7 +90,7 @@ function buildSections(startupId) {
     cat_code: cat.cat_code,
     heading: cat.heading,
     pdfs: cat.files.map(filename => ({
-      url: `/api/pdf?startup_id=${encodeURIComponent(startupId)}&file=${encodeURIComponent(filename)}`,
+      url: `/api/get-startup?id=${encodeURIComponent(startupId)}&file=${encodeURIComponent(filename)}`,
       label: filename.replace(/_/g, ' ').replace(/\.pdf$/i, '')
     }))
   }));
