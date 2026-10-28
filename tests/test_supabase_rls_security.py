@@ -14,6 +14,7 @@ PUBLIC_TABLES = [
     "judge_assignments",
     "judges",
     "scorer_feedback",
+    "startup_deliverable_files",
     "startup_extractions",
 ]
 
